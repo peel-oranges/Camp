@@ -3,7 +3,7 @@
    Strategy: always try the internet first (so new questions show up),
    and fall back to the saved copy when offline. */
 
-const CACHE = 'camp-v4';
+const CACHE = 'camp-v5';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'questions.json', 'guide.json', 'manifest.json', 'icon.png'];
 const FONT_CACHE = 'litquiz-fonts-v1';
 
@@ -44,8 +44,12 @@ self.addEventListener('fetch', event => {
   // Only handle this app's own files
   if (url.origin !== self.location.origin) return;
 
+  // The question bank is big (over 1 MB), so give it longer to download
+  // before falling back to the saved copy. Other files get 6 seconds.
+  const wait = url.pathname.endsWith('questions.json') ? 30000 : 6000;
+
   event.respondWith(
-    withTimeout(fetch(req), 6000)
+    withTimeout(fetch(req), wait)
       .then(res => {
         if (res && res.ok) {
           const copy = res.clone();
