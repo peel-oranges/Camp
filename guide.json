@@ -1,0 +1,39 @@
+{
+  "updated": "2026-10-22",
+  "topics": [
+    {
+      "id": "romantic-age",
+      "name": "Romantic Age",
+      "tags": ["Romantic Age"],
+      "demo": true,
+      "about": "Counts, writers and question types on this page are calculated live from questions.json. The notes below are layout examples only.",
+      "patterns": ["Example: chronology of major works"],
+      "works": [
+        {
+          "title": "Biographia Literaria",
+          "writer": "S. T. Coleridge",
+          "study": "selective",
+          "note": "Example layout of a selective entry.",
+          "asked": [{ "what": "Example: Coleridge's critique of Wordsworth's poetic diction", "source": "DEMO" }]
+        }
+      ],
+      "lines": [
+        { "text": "…a selection of language really used by men", "work": "Preface to Lyrical Ballads", "source": "DEMO" }
+      ]
+    },
+    {
+      "id": "indian-novel",
+      "name": "Indian English Novel",
+      "tags": ["Indian", "Novel"],
+      "demo": true,
+      "about": "Layout demo. Real entries are built from the PYQ batches."
+    },
+    {
+      "id": "abrams",
+      "name": "M H Abrams — Literary Terms",
+      "tags": ["Abrams"],
+      "demo": true,
+      "about": "Terms from A Glossary of Literary Terms. Layout demo."
+    }
+  ]
+}

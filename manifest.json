@@ -1,0 +1,15 @@
+{
+  "name": "Camp — NET & GATE English",
+  "short_name": "Camp",
+  "description": "Quiz and study guide for UGC NET English and GATE XH-C2 English",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8f1f8",
+  "theme_color": "#f6eef8",
+  "icons": [
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
