@@ -23,7 +23,9 @@ const MODES = [
   ['pyq', 'PYQs only'], ['probable', 'Probable only'], ['mix', 'Mix'],
   ['abrams', 'M H Abrams'], ['mistakes', 'My mistakes'], ['bookmarks', 'Bookmarks']
 ];
-const TYPES = ['MCQ', 'match', 'chronology', 'assertion-reason', 'passage'];
+const TYPES = ['MCQ', 'match', 'chronology', 'assertion-reason', 'passage', 'numerical'];
+// Answer formats: MCQ = one correct option, MSQ = one or more (answer like "A;C"), NAT = a number.
+const FORMATS = ['MCQ', 'MSQ', 'NAT'];
 
 /* ---------- Small helpers ---------- */
 const $ = (s, el = document) => el.querySelector(s);
@@ -44,6 +46,28 @@ function toast(msg, ms = 2800) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { t.hidden = true; }, ms);
 }
+
+/* ---------- Answer formats (single, multiple, number) ---------- */
+const letterList = s => [...new Set(String(s == null ? '' : s).toUpperCase().split(/[^A-D]+/).filter(x => LETTERS.includes(x)))].sort();
+const ansList = q => letterList(q.answer);
+const hasOptions = q => !!q.options && LETTERS.some(L => q.options[L] != null && q.options[L] !== '');
+const isNAT = q => q.format === 'NAT' || !hasOptions(q);
+const isMSQ = q => !isNAT(q) && (q.format === 'MSQ' || ansList(q).length > 1);
+const toNum = s => parseFloat(String(s == null ? '' : s).trim().replace(',', '.'));
+function isCorrect(q, given) {
+  if (given == null || given === '') return false;
+  if (isNAT(q)) {
+    const g = toNum(given);
+    if (isNaN(g)) return false;
+    const parts = String(q.answer).split(/\s+to\s+/i).map(toNum);   // official keys may give a range like "2.5 to 2.7"
+    const lo = Math.min(...parts), hi = Math.max(...parts);
+    return g >= lo - 1e-9 && g <= hi + 1e-9;
+  }
+  return letterList(given).join(';') === ansList(q).join(';');
+}
+const answerLetters = q => isNAT(q) ? String(q.answer) : ansList(q).join(', ');
+const answerText = q => isNAT(q) ? String(q.answer) : ansList(q).map(L => `${L}. ${(q.options || {})[L] || ''}`).join('  ·  ');
+const givenText = (q, g) => isNAT(q) ? String(g) : letterList(g).join(', ');
 
 /* ---------- Personal progress (this device only) ---------- */
 function blankProg() { return { v: 1, attempts: {}, mistakes: {}, bookmarks: {}, revision: {}, history: [] }; }
@@ -227,7 +251,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  S.questions = arr.filter(q => q && q.id && q.options);
+  S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
 
@@ -287,13 +311,24 @@ VIEWS.quiz = () => {
   if (!z) return VIEWS.home();
   const q = z.list[z.i], picked = z.answers[q.id], n = z.list.length;
   const bm = !!S.prog.bookmarks[q.id];
-  const opts = LETTERS.filter(L => q.options[L] != null && q.options[L] !== '').map(L => {
+  const nat = isNAT(q), multi = isMSQ(q);
+  const right = ansList(q), chosen = picked ? letterList(picked) : [];
+  const sel = (z.sel && z.sel[q.id]) || [];
+  const opts = nat ? '' : LETTERS.filter(L => q.options[L] != null && q.options[L] !== '').map(L => {
     let cls = '';
-    if (picked) cls = L === q.answer ? 'correct' : L === picked ? 'wrong' : 'dim';
-    const mark = picked && L === q.answer ? '<span class="mark">✓</span>' : picked && L === picked ? '<span class="mark">✕</span>' : '';
-    return `<button class="opt ${cls}" data-act="answer" data-v="${L}" ${picked ? 'disabled' : ''}><span class="letter">${L}</span><span class="otext">${esc(q.options[L])}</span>${mark}</button>`;
+    if (picked) cls = right.includes(L) ? 'correct' : chosen.includes(L) ? 'wrong' : 'dim';
+    else if (sel.includes(L)) cls = 'selected';
+    const mark = picked && right.includes(L) ? '<span class="mark">✓</span>'
+      : picked && chosen.includes(L) ? '<span class="mark">✕</span>'
+      : !picked && sel.includes(L) ? '<span class="mark">●</span>' : '';
+    return `<button class="opt ${cls}" data-act="answer" data-v="${L}" ${picked ? 'disabled' : ''} ${multi && !picked ? `aria-pressed="${sel.includes(L)}"` : ''}><span class="letter">${L}</span><span class="otext">${esc(q.options[L])}</span>${mark}</button>`;
   }).join('');
-  const ok = picked === q.answer;
+  const natBox = !nat ? '' : picked
+    ? `<p class="nat-given">Your answer: <b>${esc(picked)}</b></p>`
+    : `<label class="field-label" for="nat-input">Type your answer (a number)</label>
+       <input type="text" id="nat-input" inputmode="decimal" enterkeyhint="done" autocomplete="off" placeholder="e.g. 25">`;
+  const ok = picked ? isCorrect(q, picked) : false;
+  const needsCheck = !picked && (multi || nat);
   return `
   <div class="quiz-top">
     <button class="icon-btn" data-act="endQuiz" aria-label="End quiz">✕</button>
@@ -304,15 +339,19 @@ VIEWS.quiz = () => {
     <div class="tags">
       <span class="tag src">${esc(sourceTag(q))}</span>
       ${q.type && q.type !== 'MCQ' ? `<span class="tag">${esc(q.type)}</span>` : ''}
+      ${multi ? '<span class="tag">One or more answers</span>' : ''}
+      ${nat ? '<span class="tag">Number answer</span>' : ''}
       ${q.verified === false ? '<span class="tag warn">Unverified</span>' : ''}
     </div>
     <div class="qtext">${esc(q.question)}</div>
+    ${multi && !picked ? '<p class="small muted">Select all that apply, then tap Check answer.</p>' : ''}
     <div class="opts">${opts}</div>
+    ${natBox}
     ${picked ? `
-      <div class="verdict ${ok ? 'ok' : 'bad'}" id="verdict">${ok ? 'Correct ✿' : `Not quite — the answer is ${esc(q.answer)}`}</div>
+      <div class="verdict ${ok ? 'ok' : 'bad'}" id="verdict">${ok ? 'Correct ✿' : `Not quite — the answer is ${esc(answerLetters(q))}`}</div>
       ${q.infoBite ? `<div class="bite"><div class="bite-h">✦ Info bite</div><p>${esc(q.infoBite)}</p></div>` : ''}
       ${q.studyNote ? `<div class="bite study"><div class="bite-h">Study note</div><p>${esc(q.studyNote)}</p></div>` : ''}
-      ${q.verified === false && q.note ? `<p class="small warn-text">Note: ${esc(q.note)}</p>` : ''}
+      ${q.note ? `<p class="small ${q.verified === false ? 'warn-text' : 'muted'}">Note: ${esc(q.note)}</p>` : ''}
       ${(q.topics || []).length ? `<p class="small muted path">${esc(q.topics.join(' › '))}</p>` : ''}` : ''}
     <div class="qactions">
       <button class="chip ${bm ? 'on' : ''}" data-act="bookmark" data-id="${esc(q.id)}">${bm ? '★ Bookmarked' : '☆ Bookmark'}</button>
@@ -320,21 +359,29 @@ VIEWS.quiz = () => {
       ${isAdmin() ? `<button class="chip" data-act="editQ" data-id="${esc(q.id)}">✎ Edit</button>` : ''}
     </div>
   </article>
+  ${needsCheck ? '<button class="btn" data-act="check">Check answer</button>' : ''}
   ${picked ? `<button class="btn" data-act="next">${z.i < n - 1 ? 'Next question' : 'See results'}</button>` : ''}
   <p class="center small muted" style="margin-top:14px">${esc(q.id)}</p>`;
 };
 
 function startQuiz(list, title) {
   if (!list.length) { toast('No questions match yet'); return; }
-  S.quiz = { list, i: 0, answers: {}, start: Date.now(), title, mastered: 0 };
+  S.quiz = { list, i: 0, answers: {}, sel: {}, start: Date.now(), title, mastered: 0 };
   go('quiz');
+}
+function submitAnswer(q, given) {
+  const z = S.quiz;
+  z.answers[q.id] = given;
+  recordAnswer(q, isCorrect(q, given));
+  go('quiz', true);
+  const vd = $('#verdict'); if (vd) vd.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 function finishQuiz() {
   const z = S.quiz;
   z.ms = Date.now() - z.start;
   z.done = z.list.filter(q => z.answers[q.id]);
   if (!z.done.length) { S.quiz = null; go('home'); return; }
-  z.wrong = z.done.filter(q => z.answers[q.id] !== q.answer);
+  z.wrong = z.done.filter(q => !isCorrect(q, z.answers[q.id]));
   z.score = z.done.length - z.wrong.length;
   S.prog.history.unshift({ date: new Date().toISOString(), title: z.title, score: z.score, total: z.done.length, ms: z.ms });
   S.prog.history = S.prog.history.slice(0, 60);
@@ -374,7 +421,7 @@ VIEWS.results = () => {
       return `<div class="wrong-item">
         <div class="tags"><span class="tag src">${esc(sourceTag(q))}</span></div>
         <div class="q">${esc(q.question)}</div>
-        <div class="ans">You chose <s>${esc(z.answers[q.id])}</s> · Correct: <b>${esc(q.answer)}. ${esc(q.options[q.answer])}</b></div>
+        <div class="ans">You chose <s>${esc(givenText(q, z.answers[q.id]))}</s> · Correct: <b>${esc(answerText(q))}</b></div>
         <button class="chip ${bm ? 'on' : ''}" data-act="bookmark" data-id="${esc(q.id)}">${bm ? '★ Bookmarked' : '☆ Bookmark'}</button>
       </div>`;
     }).join('')}
@@ -611,8 +658,9 @@ VIEWS.adminList = () => `
 
 /* ---------- Admin: form ---------- */
 VIEWS.adminForm = () => {
-  const q = S.edit || { exam: 'NET', type: 'MCQ', options: {}, verified: true };
+  const q = S.edit || { exam: 'NET', type: 'MCQ', format: 'MCQ', options: {}, answer: 'A', verified: true };
   const o = q.options || {};
+  const fmt = q.format || (isNAT(q) && S.edit ? 'NAT' : ansList(q).length > 1 ? 'MSQ' : 'MCQ');
   const sel = (id, opts, v) => `<select id="${id}">${opts.map(x => `<option ${String(v) === x ? 'selected' : ''}>${x}</option>`).join('')}</select>`;
   const txt = (id, label, v, ph = '') => `<label class="field-label" for="${id}">${label}</label><input type="text" id="${id}" value="${esc(v)}" placeholder="${esc(ph)}">`;
   const area = (id, label, v, rows = 3, ph = '') => `<label class="field-label" for="${id}">${label}</label><textarea id="${id}" rows="${rows}" placeholder="${esc(ph)}">${esc(v)}</textarea>`;
@@ -632,7 +680,11 @@ VIEWS.adminForm = () => {
     </div>
     ${area('f-question', 'Question', q.question, 5, 'For match / chronology, put each list item on its own line')}
     ${LETTERS.map(L => area(`f-opt${L}`, `Option ${L}`, o[L], 2)).join('')}
-    <label class="field-label" for="f-answer">Correct option</label>${sel('f-answer', LETTERS, q.answer || 'A')}
+    <div class="grid2">
+      <div><label class="field-label" for="f-format">Answer format</label>${sel('f-format', FORMATS, fmt)}</div>
+      <div>${txt('f-answer', 'Correct answer', q.answer == null ? 'A' : q.answer, 'A  or  A;C  or  25')}</div>
+    </div>
+    <p class="small muted">MCQ = one letter (A). MSQ = one or more letters (A;C). NAT = a number (25); options can stay empty.</p>
     ${txt('f-topics', 'Topic tags (broad → narrow, commas)', (q.topics || []).join(', '), '19th century, Indian, Drama')}
     ${txt('f-writers', 'Writers (commas)', (q.writers || []).join(', '))}
     ${txt('f-works', 'Works (commas, or ; if a title has a comma)', (q.works || []).join(String((q.works || []).join('')).includes(',') ? '; ' : ', '))}
@@ -651,14 +703,18 @@ function collectForm() {
   const exam = v('f-exam');
   let id = v('f-id');
   if (!id) id = `${exam}-${v('f-year') || 'X'}-${Date.now().toString(36).toUpperCase()}`;
-  const q = { id, exam };
+  const keep = S.edit || {};
+  // Keep any extra fields an existing question already has (for example section or qno).
+  const q = Object.assign({}, keep, { id, exam });
+  ['year', 'session', 'shift', 'keywords', 'source', 'studyNote', 'note'].forEach(k => { delete q[k]; });
   const year = v('f-year'); if (year) q.year = /^\d+$/.test(year) ? +year : year;
   if (v('f-session')) q.session = v('f-session');
   if (v('f-shift')) q.shift = /^\d+$/.test(v('f-shift')) ? +v('f-shift') : v('f-shift');
   q.type = v('f-type');
+  q.format = v('f-format');
   q.question = v('f-question');
   q.options = {}; LETTERS.forEach(L => { q.options[L] = v('f-opt' + L); });
-  q.answer = v('f-answer');
+  q.answer = q.format === 'NAT' ? v('f-answer') : letterList(v('f-answer')).join(';');
   q.topics = splitList(v('f-topics'));
   q.writers = splitList(v('f-writers'));
   q.works = splitList(v('f-works'));
@@ -745,10 +801,28 @@ const ACT = {
   answer: d => {
     const z = S.quiz, q = z.list[z.i];
     if (z.answers[q.id]) return;
-    z.answers[q.id] = d.v;
-    recordAnswer(q, d.v === q.answer);
-    go('quiz', true);
-    const vd = $('#verdict'); if (vd) vd.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (isMSQ(q)) {                                   // multi-answer: tap to select / unselect
+      z.sel = z.sel || {};
+      const s = z.sel[q.id] || (z.sel[q.id] = []);
+      const i = s.indexOf(d.v);
+      if (i >= 0) s.splice(i, 1); else s.push(d.v);
+      go('quiz', true);
+      return;
+    }
+    submitAnswer(q, d.v);                             // single answer: locks on first tap
+  },
+  check: () => {
+    const z = S.quiz, q = z.list[z.i];
+    if (z.answers[q.id]) return;
+    if (isNAT(q)) {
+      const val = (($('#nat-input') || {}).value || '').trim();
+      if (!val || isNaN(toNum(val))) { toast('Type a number first'); return; }
+      submitAnswer(q, val);
+    } else {
+      const s = (z.sel && z.sel[q.id]) || [];
+      if (!s.length) { toast('Select at least one option'); return; }
+      submitAnswer(q, letterList(s.join(';')).join(';'));
+    }
   },
   next: () => { const z = S.quiz; if (z.i < z.list.length - 1) { z.i++; go('quiz'); } else finishQuiz(); },
   endQuiz: () => {
@@ -832,7 +906,14 @@ const ACT = {
   saveQ: async () => {
     const q = collectForm(), orig = S.edit ? S.edit.id : null;
     if (!q.question) return toast('Please write the question');
-    if (LETTERS.some(L => !q.options[L])) return toast('Please fill all four options');
+    if (q.format === 'NAT') {
+      if (isNaN(toNum(q.answer))) return toast('For NAT, the correct answer must be a number');
+    } else {
+      if (LETTERS.some(L => !q.options[L])) return toast('Please fill all four options');
+      const n = ansList(q).length;
+      if (q.format === 'MCQ' && n !== 1) return toast('MCQ needs exactly one answer letter (A–D)');
+      if (q.format === 'MSQ' && n < 1) return toast('MSQ needs at least one answer letter, like A;C');
+    }
     if (!q.topics.length) return toast('Please add at least one topic tag');
     if (!orig && byId(q.id)) return toast('That ID already exists — choose another');
     if (orig && q.id !== orig && byId(q.id)) return toast('That ID already exists — choose another');
@@ -902,12 +983,23 @@ document.addEventListener('input', e => { const el = e.target.closest('[data-in]
 document.addEventListener('change', e => { const el = e.target.closest('[data-change]'); if (el && CH[el.dataset.change]) CH[el.dataset.change](el); });
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.id === 'q-search') { e.target.blur(); }
+  if (e.key === 'Enter' && e.target.id === 'nat-input') { e.preventDefault(); ACT.check(); }
   if (e.key === 'Escape' && !$('#modal').hidden) closeModal();
 });
 
 /* =========================================================
    START
    ========================================================= */
+// Small extra styles for multi-answer selection and the number box (kept here so style.css needs no change).
+(function addAnswerStyles() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .opt.selected { outline: 2px solid #a98bd6; outline-offset: -2px; background: rgba(169, 139, 214, .18); }
+    #nat-input { width: 100%; margin-top: 6px; font-size: 1.1rem; }
+    .nat-given { margin-top: 12px; }`;
+  document.head.appendChild(s);
+})();
+
 async function loadData() {
   try {
     const [qs, guide] = await Promise.all([
