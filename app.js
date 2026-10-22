@@ -85,11 +85,11 @@ function saveProg() {
 
 /* ---------- App state ---------- */
 const S = {
-  questions: [], guide: { topics: [] }, loaded: false, loadError: false,
+  questions: [], guide: { categories: [] }, loaded: false, loadError: false,
   prog: loadProg(),
-  filters: { mode: 'mix', query: '', tags: null, count: '10', shuffle: true },
+  filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
-  quiz: null, guideId: null, guideQuery: '', adminQuery: '', edit: null
+  quiz: null, guideId: null, guideMode: 'cats', guideQuery: '', adminQuery: '', edit: null
 };
 
 /* ---------- Question helpers ---------- */
@@ -147,6 +147,7 @@ function filtered() {
   const f = S.filters;
   let list = poolForMode(f.mode);
   if (f.tags && f.tags.length) list = list.filter(q => hasTags(q, f.tags));
+  if (f.group) { const g = gNode(f.group.id); const ids = new Set(g ? g.qs.map(q => q.id) : []); list = list.filter(q => ids.has(q.id)); }
   const raw = f.query.trim();
   if (raw) {
     const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
@@ -251,6 +252,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
+  GCACHE = null;
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -287,7 +289,7 @@ VIEWS.home = () => {
       <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. 19th century Indian dramatists" autocomplete="off" enterkeyhint="search">
       <button class="icon-btn" id="clear-q" data-act="clearQuery" aria-label="Clear search" ${f.query ? '' : 'hidden'}>✕</button>
     </div>
-    ${f.tags ? `<div class="chips" style="margin-top:10px"><button class="chip on" data-act="clearTags">Topic: ${esc(f.tags.join(' › '))} ✕</button></div>` : ''}
+    ${f.tags || f.group ? `<div class="chips" style="margin-top:10px"><button class="chip on" data-act="clearTags">Topic: ${esc(f.group ? f.group.label : f.tags.join(' › '))} ✕</button></div>` : ''}
 
     <span class="field-label">Questions from</span>
     <div class="chips">${MODES.map(([k, l]) => `<button class="chip ${f.mode === k ? 'on' : ''}" data-act="mode" data-v="${k}">${l} <span class="count">${poolForMode(k).length}</span></button>`).join('')}</div>
@@ -430,42 +432,133 @@ VIEWS.results = () => {
   <button class="btn ghost" data-act="tab" data-tab="home">Back to quiz home</button>`;
 };
 
-/* ---------- Study guide ---------- */
-function guideData() {
-  const topics = (S.guide.topics || []).map(t => {
-    const tags = t.tags && t.tags.length ? t.tags : [t.name];
-    const qs = S.questions.filter(q => hasTags(q, tags));
+/* ---------- Study guide ----------
+   guide.json lists categories (British, American, Indian…), each with subtopics.
+   Every question is sorted into them automatically by its topic tags, using the
+   "match" rules in guide.json, so questions.json never needs re-tagging.
+   Rule keys (all optional, every key given must pass):
+     any: [tags]  – at least one of these tags is present (any level)
+     all: [tags]  – every one of these tags is present
+     first: [tags] – the broadest (first) tag is one of these
+     none: [tags] – none of these tags is present
+     text: "regex" – the question text matches
+     exam: [NET, GATE, Probable, Abrams]
+     quote: true  – the question is built on a quotation or passage            */
+const norm = s => String(s || '').toLowerCase().replace(/[‐-―]/g, '-').replace(/[’‘]/g, "'").trim();
+const AIDS = new WeakMap();
+function qTagSet(q) {
+  let s = AIDS.get(q);
+  if (!s) { s = new Set((q.topics || []).map(norm)); AIDS.set(q, s); }
+  return s;
+}
+const QUOTE_TAGS = ['identify the author', 'identify the text', 'identify the poem', 'opening lines', 'quotations', 'quotation', 'lines', 'identify the speaker'];
+function quoteSpan(q) {
+  const t = String(q.question || '');
+  const m = t.match(/[“"‘]([^”"’]{25,})[”"’]/g);
+  if (m) return m.sort((a, b) => b.length - a.length)[0].replace(/^[“"‘]|[”"’]$/g, '');
+  return '';
+}
+function isQuoteQ(q) {
+  const s = qTagSet(q);
+  return QUOTE_TAGS.some(x => s.has(x)) || q.type === 'passage' || !!quoteSpan(q);
+}
+function ruleOK(q, r) {
+  const s = qTagSet(q);
+  if (r.any && !r.any.some(x => s.has(norm(x)))) return false;
+  if (r.all && !r.all.every(x => s.has(norm(x)))) return false;
+  if (r.first && !r.first.map(norm).includes(norm((q.topics || [])[0]))) return false;
+  if (r.none && r.none.some(x => s.has(norm(x)))) return false;
+  if (r.exam && !r.exam.includes(q.exam)) return false;
+  if (r.quote && !isQuoteQ(q)) return false;
+  if (r.text) { try { if (!new RegExp(r.text, 'i').test(q.question || '')) return false; } catch (e) { return false; } }
+  return true;
+}
+function matchAny(q, rules, not) {
+  if (not && not.some(x => qTagSet(q).has(norm(x)))) return false;
+  return (rules || []).some(r => ruleOK(q, r));
+}
+
+let GCACHE = null;              // rebuilt whenever the question bank or guide changes
+function buildGuide() {
+  if (GCACHE) return GCACHE;
+  const cats = [], nodes = new Map(), Q = S.questions;
+  const counts = qs => {
     const pyq = qs.filter(isPYQ);
-    return Object.assign({}, t, {
-      tags, qs, pyq,
-      net: pyq.filter(q => q.exam === 'NET').length,
-      gate: pyq.filter(q => q.exam === 'GATE').length,
-      total: pyq.length
+    return { qs, pyq, net: pyq.filter(q => q.exam === 'NET').length, gate: pyq.filter(q => q.exam === 'GATE').length, total: pyq.length };
+  };
+  (S.guide.categories || []).forEach(c => {
+    if (c.auto === 'unmatched') return;
+    const inCat = Q.filter(q => matchAny(q, c.match, c.not));
+    const subs = (c.subtopics || []).map(t => {
+      const qs = inCat.filter(q => matchAny(q, t.match, t.not));
+      return Object.assign({}, t, counts(qs), { cat: c });
     });
+    const used = new Set(); subs.forEach(t => t.qs.forEach(q => used.add(q.id)));
+    const left = inCat.filter(q => !used.has(q.id));
+    if (left.length && subs.length) subs.push(Object.assign({ id: `${c.id}-other`, name: c.otherName || 'Other / not tagged to a topic', isOther: true, cat: c }, counts(left)));
+    const cat = Object.assign({}, c, counts(inCat), { subs });
+    cats.push(cat); nodes.set(c.id, cat);
+    subs.forEach(t => nodes.set(t.id, t));
   });
-  const ranked = topics.sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
-  const withQs = ranked.filter(t => t.total > 0).length;
-  ranked.forEach((t, i) => {
-    t.level = t.weight || (t.total === 0 ? 'Low' : i < Math.ceil(withQs / 3) ? 'High' : i < Math.ceil((2 * withQs) / 3) ? 'Medium' : 'Low');
-  });
-  return ranked;
+  const un = (S.guide.categories || []).find(c => c.auto === 'unmatched');
+  if (un) {
+    const seen = new Set();
+    cats.forEach(c => c.qs.forEach(q => seen.add(q.id)));
+    const cat = Object.assign({}, un, counts(Q.filter(q => !seen.has(q.id))), { subs: [] });
+    if (cat.qs.length) { cats.push(cat); nodes.set(un.id, cat); }
+  }
+  const level = list => {
+    const ranked = list.slice().sort((a, b) => b.total - a.total);
+    const w = ranked.filter(t => t.total > 0).length;
+    ranked.forEach((t, i) => { t.level = t.weight || (t.total === 0 ? 'Low' : i < Math.ceil(w / 3) ? 'High' : i < Math.ceil((2 * w) / 3) ? 'Medium' : 'Low'); });
+  };
+  level(cats);
+  const allSubs = cats.flatMap(c => c.subs);
+  level(allSubs);
+  GCACHE = { cats, nodes, allSubs };
+  return GCACHE;
+}
+const gNode = id => buildGuide().nodes.get(id);
+const nodeLabel = t => t.cat ? `${t.cat.name} › ${t.name}` : t.name;
+const nodeSub = t => `NET ${t.net} · GATE ${t.gate}${t.qs.length > t.total ? ` · ${t.qs.length - t.total} practice` : ''}`;
+
+function rowHTML(t, rank, showCat) {
+  const empty = !t.qs.length;
+  return `
+    <button class="row ${empty ? 'empty' : ''}" data-act="openGuide" data-id="${esc(t.id)}">
+      ${rank ? `<span class="rank">${rank}</span>` : ''}
+      <span class="grow">${showCat && t.cat ? `<span class="sub">${esc(t.cat.name)} ›</span><br>` : ''}<span class="name">${esc(t.name)}</span><br>
+        <span class="sub">${empty ? 'No PYQs yet' : nodeSub(t)}</span></span>
+      ${empty ? '' : `<span class="pill ${esc(t.level)}">${esc(t.level)}</span>`}<span class="chev">›</span>
+    </button>`;
 }
 function guideListHTML() {
-  const qs = queryTokens(S.guideQuery);
-  const list = guideData().map((t, i) => Object.assign(t, { rank: i + 1 }))
-    .filter(t => !qs.length || qs.every(tok => tokenMatch(tok, words([t.name, ...t.tags].join(' ')))));
-  if (!list.length) return '<p class="muted">No guide topics match.</p>';
-  return `<div class="list">${list.map(t => `
-    <button class="row" data-act="openGuide" data-id="${esc(t.id)}">
-      <span class="rank">${t.rank}</span>
-      <span class="grow"><span class="name">${esc(t.name)}</span><br><span class="sub">NET ${t.net} · GATE ${t.gate}${t.qs.length > t.total ? ` · ${t.qs.length - t.total} practice` : ''}</span></span>
-      <span class="pill ${esc(t.level)}">${esc(t.level)}</span><span class="chev">›</span>
+  const G = buildGuide(), toks = queryTokens(S.guideQuery);
+  if (toks.length) {
+    const hit = t => toks.every(tok => tokenMatch(tok, words([t.name, t.cat ? t.cat.name : '', t.about || ''].join(' '))));
+    const list = [...G.cats.filter(hit), ...G.allSubs.filter(hit)];
+    return list.length ? `<div class="list">${list.map(t => rowHTML(t, 0, true)).join('')}</div>` : '<p class="muted">No guide topics match.</p>';
+  }
+  if (S.guideMode === 'rank') {
+    const list = G.allSubs.filter(t => t.total > 0 && !t.cat.overlay).sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+    return list.length ? `<div class="list">${list.map((t, i) => rowHTML(t, i + 1, true)).join('')}</div>` : '<p class="muted">Rankings appear once PYQs are added.</p>';
+  }
+  return `<div class="cat-grid">${G.cats.map(c => `
+    <button class="cat-card ${c.overlay ? 'overlay' : ''} ${c.qs.length ? '' : 'empty'}" data-act="openGuide" data-id="${esc(c.id)}">
+      <span class="cat-icon" aria-hidden="true">${esc(c.icon || '✦')}</span>
+      <span class="cat-name">${esc(c.name)}</span>
+      <span class="sub">${c.qs.length ? `NET ${c.net} · GATE ${c.gate}` : 'No PYQs yet'}</span>
+      ${c.qs.length ? `<span class="pill ${esc(c.level)}">${esc(c.level)}</span>` : ''}
     </button>`).join('')}</div>`;
 }
 VIEWS.guide = () => `
   <section class="card">
     <h2>Must-learn overview</h2>
-    <p class="muted small">Topics ranked by how often they appear in NET and GATE papers. Counts update automatically as PYQs are added.</p>
+    <p class="muted small">Every PYQ is sorted into these sections automatically. Counts and High / Medium / Low update as new papers are added.</p>
+    <div class="seg" style="margin-bottom:12px">
+      <button class="${S.guideMode !== 'rank' ? 'on' : ''}" data-act="guideMode" data-v="cats">By section</button>
+      <button class="${S.guideMode === 'rank' ? 'on' : ''}" data-act="guideMode" data-v="rank">Rank all topics</button>
+    </div>
     <div class="search"><input type="search" data-in="guideQuery" value="${esc(S.guideQuery)}" placeholder="Find a topic" autocomplete="off"></div>
   </section>
   <section class="card" id="guide-list">${guideListHTML()}</section>`;
@@ -475,35 +568,86 @@ function freqList(qs, field) {
   qs.forEach(q => (q[field] || []).forEach(x => { const k = String(x).trim(); if (k) m.set(k, (m.get(k) || 0) + 1); }));
   return [...m].sort((a, b) => b[1] - a[1]).map(([name, count], i) => ({ name, count, frequent: count >= 3 || (count >= 2 && i < 3) }));
 }
-VIEWS.guideTopic = () => {
-  const t = guideData().find(x => x.id === S.guideId);
-  if (!t) return VIEWS.guide();
-  const writers = freqList(t.pyq, 'writers');
+function writersHTML(t, limit) {
+  const writers = freqList(t.pyq, 'writers').slice(0, limit || 999);
   const extraPink = (t.highlightWriters || []).map(x => x.toLowerCase());
+  return writers.length
+    ? `<table class="freq">${writers.map(w => `<tr class="${w.frequent || extraPink.includes(w.name.toLowerCase()) ? 'pink' : ''}"><td>${esc(w.name)}</td><td>${w.count}×</td></tr>`).join('')}</table>
+       <p class="small muted" style="margin-top:8px">Pink rows = frequently asked.</p>`
+    : '<p class="muted small">No PYQs tagged here yet.</p>';
+}
+// Quotation / award bank: the line or question, with the answer hidden until tapped.
+const byNewest = (a, b) => (isPYQ(b) - isPYQ(a)) || (+b.year || 0) - (+a.year || 0);
+function bankHTML(qs, kind, limit) {
+  const list = qs.slice().sort(byNewest).slice(0, limit || 999);
+  if (!list.length) return '<p class="muted small">Nothing recorded yet.</p>';
+  return list.map(q => {
+    const line = kind === 'quote' ? (quoteSpan(q) || q.question) : q.question;
+    const meta = [...(q.writers || []).slice(0, 2), ...(q.works || []).slice(0, 1)].join(' · ');
+    return `<div class="bank-item">
+      ${kind === 'quote' ? `<blockquote class="clamp">${esc(line)}</blockquote>` : `<div class="q">${esc(line)}</div>`}
+      <details><summary>Show answer</summary>
+        <p class="ans"><b>${esc(answerText(q))}</b></p>
+        ${meta ? `<p class="small muted">${esc(meta)}</p>` : ''}
+        ${q.infoBite ? `<p class="small">${esc(q.infoBite)}</p>` : ''}
+      </details>
+      <span class="tag src">${esc(sourceTag(q))}</span>
+    </div>`;
+  }).join('') + (qs.length > list.length ? `<p class="small muted">Showing ${list.length} of ${qs.length}. Use “Quiz me” to practise them all.</p>` : '');
+}
+
+VIEWS.guideCat = () => {
+  const c = gNode(S.guideId);
+  if (!c || c.cat) return VIEWS.guide();
+  const bank = c.kind === 'quotes' ? 'quote' : c.kind === 'awards' ? 'award' : '';
+  return `
+  <button class="chip back" data-act="tab" data-tab="guide">‹ All sections</button>
+  <section class="card">
+    <h2>${esc(c.icon ? c.icon + ' ' : '')}${esc(c.name)}</h2>
+    <div class="chips" style="margin-bottom:10px">
+      ${c.qs.length ? `<span class="pill ${esc(c.level)}">${esc(c.level)} weightage</span>` : ''}
+      <span class="pill Low">NET ${c.net}</span><span class="pill Low">GATE ${c.gate}</span>
+      ${c.qs.length > c.total ? `<span class="pill Low">${c.qs.length - c.total} practice</span>` : ''}
+    </div>
+    ${c.about ? `<p class="muted">${esc(c.about)}</p>` : ''}
+    ${c.qs.length ? `<button class="btn" data-act="quizTopic" data-id="${esc(c.id)}">Quiz me on this section</button>` : ''}
+  </section>
+  ${c.subs.length ? `<section class="card"><h3>Topics</h3><div class="list">${c.subs.map(t => rowHTML(t)).join('')}</div>
+    <p class="small muted" style="margin-top:8px">Greyed topics have no PYQs yet — still on the syllabus.</p></section>` : ''}
+  ${bank ? `<section class="card"><h3>${bank === 'quote' ? 'Quotation bank' : 'Awards asked'}</h3>
+    <p class="small muted">Read each one, guess, then tap “Show answer”.</p>${bankHTML(c.qs, bank)}</section>` : ''}
+  ${c.qs.length && !bank ? `<section class="card"><h3>Most-asked writers here</h3>${writersHTML(c, 15)}</section>` : ''}`;
+};
+
+VIEWS.guideTopic = () => {
+  const t = gNode(S.guideId);
+  if (!t || !t.cat) return VIEWS.guide();
   const liveWorks = freqList(t.pyq, 'works');
   const wmap = new Map();
   liveWorks.forEach(w => wmap.set(w.name.toLowerCase(), { title: w.name, count: w.count, frequent: w.frequent }));
   (t.works || []).forEach(g => { const k = g.title.toLowerCase(); wmap.set(k, Object.assign({ count: 0 }, wmap.get(k) || {}, g)); });
   const works = [...wmap.values()].sort((a, b) => (b.count || 0) - (a.count || 0));
   const types = freqList(t.pyq.map(q => ({ t: [q.type || 'MCQ'] })), 't');
+  const quoteQs = t.qs.filter(isQuoteQ);
+  const kind = t.cat.kind === 'awards' ? 'award' : 'quote';
 
   return `
-  <button class="chip back" data-act="tab" data-tab="guide">‹ All topics</button>
+  <button class="chip back" data-act="openGuide" data-id="${esc(t.cat.id)}">‹ ${esc(t.cat.name)}</button>
   <section class="card">
-    ${t.demo ? '<div class="demo-note">Layout demo — the notes on this page are placeholders until PYQ batches are analysed.</div>' : ''}
+    <span class="label">${esc(t.cat.name)}</span>
     <h2>${esc(t.name)}</h2>
     <div class="chips" style="margin-bottom:10px">
-      <span class="pill ${esc(t.level)}">${esc(t.level)} weightage</span>
+      ${t.qs.length ? `<span class="pill ${esc(t.level)}">${esc(t.level)} weightage</span>` : ''}
       <span class="pill Low">NET ${t.net}</span><span class="pill Low">GATE ${t.gate}</span>
     </div>
     ${t.about ? `<p class="muted">${esc(t.about)}</p>` : ''}
-    <button class="btn" data-act="quizTopic" data-id="${esc(t.id)}">Quiz me on this topic</button>
+    ${t.qs.length ? `<button class="btn" data-act="quizTopic" data-id="${esc(t.id)}">Quiz me on this topic</button>` : '<p class="muted small">No questions here yet. They appear automatically as papers are added.</p>'}
   </section>
 
+  ${t.cat.kind === 'awards' ? `<section class="card"><h3>Awards asked</h3>${bankHTML(t.qs, 'award')}</section>` : `
   <section class="card">
     <h3>Must-read writers</h3>
-    ${writers.length ? `<table class="freq">${writers.map(w => `<tr class="${w.frequent || extraPink.includes(w.name.toLowerCase()) ? 'pink' : ''}"><td>${esc(w.name)}</td><td>${w.count}×</td></tr>`).join('')}</table>
-      <p class="small muted" style="margin-top:8px">Pink rows = frequently asked.</p>` : '<p class="muted small">No PYQs tagged here yet.</p>'}
+    ${writersHTML(t)}
   </section>
 
   <section class="card">
@@ -522,8 +666,9 @@ VIEWS.guideTopic = () => {
 
   <section class="card">
     <h3>Lines asked</h3>
-    ${(t.lines || []).length ? t.lines.map(l => `<blockquote>${esc(l.text)}<cite>${esc([l.work, l.source].filter(Boolean).join(' · '))}</cite></blockquote>`).join('') : '<p class="muted small">No quoted lines recorded yet.</p>'}
-  </section>
+    ${(t.lines || []).map(l => `<blockquote>${esc(l.text)}<cite>${esc([l.work, l.source].filter(Boolean).join(' · '))}</cite></blockquote>`).join('')}
+    ${quoteQs.length ? bankHTML(quoteQs, kind, 30) : (t.lines || []).length ? '' : '<p class="muted small">No quoted lines asked here yet.</p>'}
+  </section>`}
 
   <section class="card">
     <h3>Recurring question patterns</h3>
@@ -685,7 +830,7 @@ VIEWS.adminForm = () => {
       <div>${txt('f-answer', 'Correct answer', q.answer == null ? 'A' : q.answer, 'A  or  A;C  or  25')}</div>
     </div>
     <p class="small muted">MCQ = one letter (A). MSQ = one or more letters (A;C). NAT = a number (25); options can stay empty.</p>
-    ${txt('f-topics', 'Topic tags (broad → narrow, commas)', (q.topics || []).join(', '), '19th century, Indian, Drama')}
+    ${txt('f-topics', 'Topic tags (broad → narrow, commas)', (q.topics || []).join(', '), 'British, Victorian, Novel  (start with the section)')}
     ${txt('f-writers', 'Writers (commas)', (q.writers || []).join(', '))}
     ${txt('f-works', 'Works (commas, or ; if a title has a comma)', (q.works || []).join(String((q.works || []).join('')).includes(',') ? '; ' : ', '))}
     ${txt('f-source', 'Source label (optional)', q.source, 'Blank = made from exam, session, year, shift')}
@@ -749,7 +894,7 @@ const closeModal = () => { const m = $('#modal'); m.hidden = true; m.innerHTML =
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', adminList: 'more', adminForm: 'more' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', adminList: 'more', adminForm: 'more' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -783,17 +928,17 @@ const ACT = {
   /* home */
   revise: () => startQuiz(shuffleArr(dueList()), 'Revision'),
   clearQuery: () => { S.filters.query = ''; render(); },
-  clearTags: () => { S.filters.tags = null; render(); },
+  clearTags: () => { S.filters.tags = null; S.filters.group = null; render(); },
   mode: d => { S.filters.mode = d.v; go('home', true); },
   count: d => { S.filters.count = d.v; go('home', true); },
-  pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; go('home', true); toast(`Showing “${d.v}”`); },
+  pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; S.filters.group = null; go('home', true); toast(`Showing “${d.v}”`); },
   start: () => {
     const f = S.filters;
     let list = filtered();
     list = f.shuffle ? shuffleArr(list) : list.slice();
     if (f.count !== 'all') list = list.slice(0, +f.count);
     const label = MODES.find(m => m[0] === f.mode)[1];
-    const what = f.tags ? f.tags.join(' › ') : f.query.trim();
+    const what = f.group ? f.group.label : f.tags ? f.tags.join(' › ') : f.query.trim();
     startQuiz(list, what ? `${what} · ${label}` : label);
   },
 
@@ -854,14 +999,15 @@ const ACT = {
   bookmarkWrong: () => { S.quiz.wrong.forEach(q => { if (!S.prog.bookmarks[q.id]) S.prog.bookmarks[q.id] = Date.now(); }); saveProg(); toast('All wrong questions bookmarked ★'); go('results', true); },
 
   /* guide & stats */
-  openGuide: d => { S.guideId = d.id; go('guideTopic'); },
+  openGuide: d => { const t = gNode(d.id); if (!t) return; S.guideId = d.id; go(t.cat ? 'guideTopic' : 'guideCat'); },
+  guideMode: d => { S.guideMode = d.v; S.guideQuery = ''; go('guide', true); },
   quizTopic: d => {
-    const t = guideData().find(x => x.id === d.id); if (!t) return;
-    Object.assign(S.filters, { tags: t.tags, query: '', mode: 'mix' });
+    const t = gNode(d.id); if (!t) return;
+    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix' });
     go('home'); toast('Topic set — pick PYQs, Probable or Mix, then Start');
   },
   statTopic: d => {
-    Object.assign(S.filters, { tags: d.key.split(' › '), query: '', mode: 'mix' });
+    Object.assign(S.filters, { tags: d.key.split(' › '), group: null, query: '', mode: 'mix' });
     go('home'); toast('Topic set — tap Start quiz');
   },
 
@@ -1007,7 +1153,8 @@ async function loadData() {
       fetch('guide.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { topics: [] }).catch(() => ({ topics: [] }))
     ]);
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
-    S.guide = guide && guide.topics ? guide : { topics: [] };
+    S.guide = guide && guide.categories ? guide : { categories: [] };
+    GCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();
