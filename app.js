@@ -11,7 +11,10 @@ const CONFIG = {
   reportWhatsApp: '',
   reportEmail: 'pallavijoshi.pj77@gmail.com',
   // Where the question bank lives on GitHub (used only by the admin "Add question" form).
-  github: { owner: 'peel-oranges', repo: 'Camp', branch: 'main', path: 'questions.json' }
+  github: { owner: 'peel-oranges', repo: 'Camp', branch: 'main', path: 'questions.json' },
+  // Visitor counter (GoatCounter account name). Leave '' to turn counting off.
+  // Visits from a device with the admin key are never counted.
+  goatcounter: 'camp-peel'
 };
 
 const REVISION_DAYS = [1, 3, 7, 14];          // the 4th step (14 days) is the final check
@@ -26,6 +29,8 @@ const MODES = [
 const TYPES = ['MCQ', 'match', 'chronology', 'assertion-reason', 'passage', 'numerical'];
 // Answer formats: MCQ = one correct option, MSQ = one or more (answer like "A;C"), NAT = a number.
 const FORMATS = ['MCQ', 'MSQ', 'NAT'];
+const ADMIN_FILTERS = [['all', 'All'], ['unverified', 'Unverified'], ['pyq', 'PYQ'], ['probable', 'Probable'], ['abrams', 'Abrams']];
+const ADMIN_PAGE = 40;
 
 /* ---------- Small helpers ---------- */
 const $ = (s, el = document) => el.querySelector(s);
@@ -89,7 +94,8 @@ const S = {
   prog: loadProg(),
   filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true, fresh: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
-  quiz: null, guideId: null, guideMode: 'cats', guideQuery: '', adminQuery: '', edit: null
+  quiz: null, guideId: null, guideMode: 'cats', guideQuery: '',
+  adminQuery: '', adminFilter: 'all', adminShow: ADMIN_PAGE, edit: null
 };
 
 /* ---------- Question helpers ---------- */
@@ -228,6 +234,7 @@ async function ghFetchMeta(g, token) {
 async function ghUpdate(mutate, message) {
   const g = ghSettings();
   if (!g.token) throw new Error('Admin key not set on this device.');
+  if (!navigator.onLine) throw new Error('You are offline. Connect to the internet, then save again.');
   for (let attempt = 0; attempt < 2; attempt++) {
     const { api, H, meta } = await ghFetchMeta(g, g.token);
     let text;
@@ -731,6 +738,7 @@ VIEWS.stats = () => {
 /* ---------- More ---------- */
 VIEWS.more = () => {
   const g = ghSettings(), admin = isAdmin();
+  const unver = S.questions.filter(q => q.verified === false).length;
   return `
   <section class="card">
     <h2>Appearance</h2>
@@ -759,9 +767,11 @@ VIEWS.more = () => {
     ${admin ? `
       <p class="small muted">Signed in on this device · ${esc(g.owner)}/${esc(g.repo)} (${esc(g.branch)})</p>
       <div class="btn-row">
-        <button class="btn" data-act="adminAdd">Add question</button>
-        <button class="btn ghost" data-act="adminList">Edit or delete</button>
+        <button class="btn" data-act="adminList">Manage questions</button>
+        <button class="btn ghost" data-act="adminAdd">Add question</button>
       </div>
+      ${unver ? `<p class="small" style="margin-top:10px"><button class="chip" data-act="adminUnverified">⚠ ${plural(unver, 'question')} still unverified ›</button></p>` : ''}
+      ${CONFIG.goatcounter ? `<p class="small muted" style="margin-top:10px">Visitors: <a href="https://${esc(CONFIG.goatcounter)}.goatcounter.com" target="_blank" rel="noopener">${esc(CONFIG.goatcounter)}.goatcounter.com</a> · your own visits on this device are not counted.</p>` : ''}
       <button class="btn text" data-act="logout">Remove admin key from this device</button>` : `
       <p class="small muted">For the app owner only. Paste your GitHub key to add, edit and delete questions. Friends can skip this.</p>
       <label class="field-label" for="gh-token">GitHub key</label>
@@ -783,26 +793,49 @@ VIEWS.more = () => {
   <p class="foot muted small">Camp · ${plural(S.questions.length, 'question')}</p>`;
 };
 
-/* ---------- Admin: list ---------- */
+/* ---------- Admin: Manage questions ---------- */
+function adminPool(key) {
+  const Q = S.questions;
+  switch (key) {
+    case 'unverified': return Q.filter(q => q.verified === false);
+    case 'pyq': return Q.filter(isPYQ);
+    case 'probable': return Q.filter(q => q.exam === 'Probable');
+    case 'abrams': return Q.filter(isAbrams);
+    default: return Q;
+  }
+}
 function adminListHTML() {
   const toks = queryTokens(S.adminQuery), raw = S.adminQuery.trim().toLowerCase();
-  let list = S.questions;
+  let list = adminPool(S.adminFilter);
   if (raw) list = list.filter(q => q.id.toLowerCase().includes(raw) || (toks.length && matchesQuery(q, toks)));
-  const shown = list.slice(-60).reverse();
-  if (!shown.length) return '<p class="muted">No questions match.</p>';
+  const shown = list.slice().reverse().slice(0, S.adminShow);
+  if (!shown.length) return `<p class="muted">${S.adminFilter === 'unverified' && !raw ? 'No unverified questions left ✿' : 'No questions match.'}</p>`;
   return `<p class="small muted">Showing ${shown.length} of ${list.length} (newest first)</p>` + shown.map(q => `
     <div class="wrong-item">
-      <div class="tags"><span class="tag src">${esc(sourceTag(q))}</span><span class="tag">${esc(q.id)}</span></div>
+      <div class="tags">
+        <span class="tag src">${esc(sourceTag(q))}</span><span class="tag">${esc(q.id)}</span>
+        ${q.verified === false ? '<span class="tag warn">Unverified</span>' : ''}
+      </div>
       <div class="q">${esc(q.question)}</div>
-      <div class="btn-row"><button class="chip" data-act="editQ" data-id="${esc(q.id)}">✎ Edit</button><button class="chip" data-act="deleteQ" data-id="${esc(q.id)}">🗑 Delete</button></div>
-    </div>`).join('');
+      <div class="ans">Answer: <b>${esc(answerText(q))}</b></div>
+      ${q.note ? `<p class="small ${q.verified === false ? 'warn-text' : 'muted'}" style="margin:6px 0 0">Note: ${esc(q.note)}</p>` : ''}
+      <div class="btn-row" style="margin-top:8px">
+        <button class="chip" data-act="editQ" data-id="${esc(q.id)}">✎ Edit</button>
+        ${q.verified === false
+          ? `<button class="chip" data-act="verifyQ" data-id="${esc(q.id)}">✓ Mark verified</button>`
+          : '<span class="small muted" style="align-self:center">✓ Verified</span>'}
+      </div>
+    </div>`).join('') + (list.length > shown.length
+    ? `<button class="btn ghost" data-act="adminMore" style="margin-top:12px">Show ${Math.min(ADMIN_PAGE, list.length - shown.length)} more</button>` : '');
 }
 VIEWS.adminList = () => `
   <button class="chip back" data-act="tab" data-tab="more">‹ Back</button>
   <section class="card">
-    <h2>Edit or delete</h2>
-    <div class="search"><input type="search" data-in="adminQuery" value="${esc(S.adminQuery)}" placeholder="Search by ID, writer, work, words…" autocomplete="off"></div>
-    <button class="btn" data-act="adminAdd">Add a new question</button>
+    <h2>Manage questions</h2>
+    <div class="search"><input type="search" data-in="adminQuery" value="${esc(S.adminQuery)}" placeholder="ID, words, writer, work or source (GATE 2023)…" autocomplete="off"></div>
+    <div class="chips" style="margin-top:12px">${ADMIN_FILTERS.map(([k, l]) => `<button class="chip ${S.adminFilter === k ? 'on' : ''}" data-act="adminFilter" data-v="${k}">${l} <span class="count">${adminPool(k).length}</span></button>`).join('')}</div>
+    <p class="small muted" style="margin-top:10px">Delete is inside ✎ Edit, at the bottom of the form.</p>
+    <button class="btn ghost" data-act="adminAdd">Add a new question</button>
   </section>
   <section class="card" id="admin-list">${adminListHTML()}</section>`;
 
@@ -894,6 +927,25 @@ function openReport(id) {
   m.hidden = false;
 }
 const closeModal = () => { const m = $('#modal'); m.hidden = true; m.innerHTML = ''; };
+
+/* ---------- Mark verified modal (admin) ---------- */
+function openVerify(id) {
+  const q = byId(id); if (!q) return;
+  const m = $('#modal');
+  m.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="Mark verified">
+    <h3>Mark as verified</h3>
+    <p class="small muted">${esc(q.id)} · ${esc(sourceTag(q))}</p>
+    <p class="small">Answer: <b>${esc(answerText(q))}</b></p>
+    <label class="field-label" for="verify-note">Note (optional — edit or clear the old one)</label>
+    <textarea id="verify-note" rows="3" placeholder="e.g. Checked with NTA final key">${esc(q.note || '')}</textarea>
+    <p class="small muted">If the answer itself is wrong, cancel and use ✎ Edit instead.</p>
+    <div class="btn-row">
+      <button class="btn" data-act="confirmVerify" data-id="${esc(q.id)}" id="verify-btn">✓ Mark verified</button>
+      <button class="btn ghost" data-act="closeModal">Cancel</button>
+    </div>
+  </div>`;
+  m.hidden = false;
+}
 
 /* =========================================================
    ROUTING & EVENTS
@@ -1059,14 +1111,42 @@ const ACT = {
     try {
       await ghFetchMeta(g, token);
       localStorage.setItem(ADMIN_KEY, JSON.stringify({ token, owner: g.owner, repo: g.repo, branch: g.branch }));
+      try { localStorage.setItem('skipgc', 't'); } catch (e) { /* ignore */ }
       toast('Signed in as admin on this device ✿'); render();
     } catch (e) { toast(e.message, 4500); btn.disabled = false; btn.textContent = 'Check key and sign in'; }
   },
-  logout: () => { if (confirm('Remove the GitHub key from this device?')) { localStorage.removeItem(ADMIN_KEY); render(); } },
+  logout: () => {
+    if (!confirm('Remove the GitHub key from this device?')) return;
+    localStorage.removeItem(ADMIN_KEY);
+    try { localStorage.removeItem('skipgc'); } catch (e) { /* ignore */ }
+    render();
+  },
   adminAdd: () => { S.edit = null; go('adminForm'); },
-  adminList: () => go('adminList'),
+  adminList: () => { S.adminShow = ADMIN_PAGE; go('adminList'); },
+  adminUnverified: () => { S.adminFilter = 'unverified'; S.adminQuery = ''; S.adminShow = ADMIN_PAGE; go('adminList'); },
+  adminFilter: d => { S.adminFilter = d.v; S.adminShow = ADMIN_PAGE; go('adminList', true); },
+  adminMore: () => { S.adminShow += ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); },
   editQ: d => { const q = byId(d.id); if (!q) return; S.edit = JSON.parse(JSON.stringify(q)); go('adminForm'); },
   cancelForm: () => { const back = S.prevScreen === 'adminForm' ? 'more' : S.prevScreen; S.edit = null; go(back || 'more'); },
+  verifyQ: d => openVerify(d.id),
+  confirmVerify: async d => {
+    const note = (($('#verify-note') || {}).value || '').trim();
+    const btn = $('#verify-btn'); if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+    try {
+      const arr = await ghUpdate(list => {
+        const i = list.findIndex(x => x.id === d.id);
+        if (i < 0) throw new Error('This question is no longer on GitHub.');
+        const q = Object.assign({}, list[i], { verified: true });
+        if (note) q.note = note; else delete q.note;
+        list[i] = q;
+        return list;
+      }, `Verify question ${d.id}`);
+      applyBank(arr);
+      closeModal();
+      toast('Marked verified ✓ Everyone sees it in 1–2 minutes', 4000);
+      go(S.screen, true);
+    } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = '✓ Mark verified'; } }
+  },
   saveQ: async () => {
     const q = collectForm(), orig = S.edit ? S.edit.id : null;
     if (!q.question) return toast('Please write the question');
@@ -1115,7 +1195,7 @@ const ACT = {
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
   guideQuery: v => { S.guideQuery = v; const el = $('#guide-list'); if (el) el.innerHTML = guideListHTML(); },
-  adminQuery: v => { S.adminQuery = v; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
+  adminQuery: v => { S.adminQuery = v; S.adminShow = ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
 };
 const CH = {
   shuffle: el => { S.filters.shuffle = el.checked; },
@@ -1161,7 +1241,19 @@ document.addEventListener('keydown', e => {
   s.textContent = `
     .opt.selected { outline: 2px solid #a98bd6; outline-offset: -2px; background: rgba(169, 139, 214, .18); }
     #nat-input { width: 100%; margin-top: 6px; font-size: 1.1rem; }
-    .nat-given { margin-top: 12px; }`;
+    .nat-given { margin-top: 12px; }
+    #verify-note { width: 100%; }`;
+  document.head.appendChild(s);
+})();
+
+// Visitor counter (GoatCounter). Counts only when online; never counts the admin's own device.
+(function addVisitorCounter() {
+  if (!CONFIG.goatcounter || isAdmin()) return;
+  if (!/github\.io$/.test(location.hostname)) return;   // don't count test copies opened elsewhere
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.dataset.goatcounter = `https://${CONFIG.goatcounter}.goatcounter.com/count`;
   document.head.appendChild(s);
 })();
 
