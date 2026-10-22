@@ -87,7 +87,7 @@ function saveProg() {
 const S = {
   questions: [], guide: { categories: [] }, loaded: false, loadError: false,
   prog: loadProg(),
-  filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true },
+  filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true, fresh: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
   quiz: null, guideId: null, guideMode: 'cats', guideQuery: '', adminQuery: '', edit: null
 };
@@ -263,15 +263,16 @@ function applyBank(arr) {
 const VIEWS = {};
 
 /* ---------- Home ---------- */
+const seenQ = q => !!S.prog.attempts[q.id];
 function matchText(n) {
   const c = S.filters.count, take = c === 'all' ? n : Math.min(n, +c);
-  return n ? `${plural(n, 'question')} match · this quiz will have ${take}` : 'No questions match yet. Try a broader search or another chip.';
+  if (!n) return 'No questions match yet. Try a broader search or another chip.';
+  const fresh = filtered().filter(q => !seenQ(q)).length;
+  return `${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
 }
 VIEWS.home = () => {
   const f = S.filters, due = dueList().length, n = filtered().length;
-  const firstTags = new Map();
-  S.questions.forEach(q => { const t = (q.topics || [])[0]; if (t) firstTags.set(t, (firstTags.get(t) || 0) + 1); });
-  const browse = [...firstTags].sort((a, b) => b[1] - a[1]).slice(0, 16);
+  const browse = buildGuide().cats.filter(c => c.qs.length);
   return `
   <section class="card revise ${due ? 'has-due' : ''}">
     <div>
@@ -298,12 +299,14 @@ VIEWS.home = () => {
     <div class="seg">${['5', '10', '20', '50', 'all'].map(c => `<button class="${f.count === c ? 'on' : ''}" data-act="count" data-v="${c}">${c === 'all' ? 'All' : c}</button>`).join('')}</div>
 
     <label class="switch-row"><span>Shuffle questions</span><input type="checkbox" class="switch" data-change="shuffle" ${f.shuffle ? 'checked' : ''}></label>
+    <label class="switch-row"><span>New questions first<br><span class="small muted" style="font-weight:600">Ones you haven't answered come before repeats</span></span><input type="checkbox" class="switch" data-change="fresh" ${f.fresh ? 'checked' : ''}></label>
 
     <p class="match muted" id="match-count">${matchText(n)}</p>
     <button class="btn" id="start-btn" data-act="start" ${n ? '' : 'disabled'}>Start quiz</button>
   </section>
 
-  ${browse.length ? `<section class="card"><h3>Browse topics</h3><div class="chips">${browse.map(([t, c]) => `<button class="chip soft" data-act="pickTopic" data-v="${esc(t)}">${esc(t)} <span class="count">${c}</span></button>`).join('')}</div></section>` : ''}
+  ${browse.length ? `<section class="card"><h3>Browse by section</h3><div class="chips">${browse.map(c => `<button class="chip soft ${f.group && f.group.id === c.id ? 'on' : ''}" data-act="pickSection" data-id="${esc(c.id)}">${esc(c.name)} <span class="count">${c.qs.length}</span></button>`).join('')}</div>
+    <p class="small muted" style="margin-top:8px">For smaller topics inside a section, open it in the Guide and tap “Quiz me”.</p></section>` : ''}
   <p class="foot muted small">${plural(S.questions.length, 'question')} in the bank</p>`;
 };
 
@@ -678,23 +681,29 @@ VIEWS.guideTopic = () => {
 };
 
 /* ---------- Stats ---------- */
-function topicStats() {
-  const m = new Map();
-  S.questions.forEach(q => {
-    const a = S.prog.attempts[q.id]; if (!a) return;
-    const tp = q.topics || [];
-    for (let i = 1; i <= tp.length; i++) {
-      const key = tp.slice(0, i).join(' › ');
-      const s = m.get(key) || { key, depth: i - 1, a: 0, c: 0 };
-      s.a += a.a; s.c += a.c; m.set(key, s);
-    }
-  });
-  return [...m.values()].map(s => Object.assign(s, { acc: s.c / s.a })).sort((x, y) => x.acc - y.acc || y.a - x.a);
+function groupStat(t) {
+  let a = 0, c = 0, seen = 0;
+  t.qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } });
+  return { t, a, c, seen, acc: a ? c / a : 0 };
+}
+const byWeakest = (x, y) => x.acc - y.acc || y.a - x.a;
+function statRow(s, showCat) {
+  const t = s.t;
+  return `<button class="row" data-act="statTopic" data-id="${esc(t.id)}">
+    <span class="grow">
+      ${showCat && t.cat ? `<span class="sub">${esc(t.cat.name)} ›</span><br>` : ''}
+      <span class="name">${esc(t.name)}</span>
+      <div class="bar"><div style="width:${Math.round(s.acc * 100)}%"></div></div>
+      <span class="sub">${Math.round(s.acc * 100)}% · ${s.a} attempted · ${s.c} ✓ · ${s.a - s.c} ✕</span><br>
+      <span class="sub">Done ${s.seen} of ${t.qs.length} questions</span>
+    </span><span class="chev">›</span></button>`;
 }
 VIEWS.stats = () => {
   let a = 0, c = 0;
   Object.values(S.prog.attempts).forEach(x => { a += x.a; c += x.c; });
-  const ts = topicStats(), hist = S.prog.history.slice(0, 6);
+  const G = buildGuide(), hist = S.prog.history.slice(0, 6);
+  const secs = G.cats.map(groupStat).filter(s => s.a).sort(byWeakest);
+  const subs = G.allSubs.map(groupStat).filter(s => s.a).sort(byWeakest);
   return `
   <section class="card">
     <h2>Your progress</h2>
@@ -707,18 +716,14 @@ VIEWS.stats = () => {
     <p class="small muted center" style="margin-top:12px">${plural(Object.keys(S.prog.mistakes).length, 'mistake')} saved · ${plural(dueList().length, 'question')} due today · ${plural(Object.keys(S.prog.bookmarks).length, 'bookmark')}</p>
   </section>
   <section class="card">
-    <h3>By topic — weakest first</h3>
-    ${ts.length ? `<div class="list">${ts.map(s => {
-      const parts = s.key.split(' › '), leaf = parts.pop();
-      return `<button class="row" data-act="statTopic" data-key="${esc(s.key)}">
-        <span class="grow">
-          ${parts.length ? `<span class="sub">${esc(parts.join(' › '))} ›</span><br>` : ''}
-          <span class="name">${esc(leaf)}</span>
-          <div class="bar"><div style="width:${Math.round(s.acc * 100)}%"></div></div>
-          <span class="sub">${Math.round(s.acc * 100)}% · ${s.a} attempted · ${s.c} ✓ · ${s.a - s.c} ✕</span>
-        </span><span class="chev">›</span></button>`;
-    }).join('')}</div>` : '<p class="muted small">Answer a few questions and your topic stats appear here.</p>'}
+    <h3>By section — weakest first</h3>
+    ${secs.length ? `<div class="list">${secs.map(s => statRow(s)).join('')}</div>` : '<p class="muted small">Answer a few questions and your section stats appear here.</p>'}
   </section>
+  ${subs.length ? `<section class="card">
+    <h3>By topic — weakest first</h3>
+    <div class="list">${subs.map(s => statRow(s, true)).join('')}</div>
+    <p class="small muted" style="margin-top:8px">Tap any row to quiz that topic.</p>
+  </section>` : ''}
   ${hist.length ? `<section class="card"><h3>Recent quizzes</h3><div class="list">${hist.map(h => `
     <div class="row"><span class="grow"><span class="name">${esc(h.title || 'Quiz')}</span><br><span class="sub">${new Date(h.date).toLocaleDateString()} · ${fmtTime(h.ms)}</span></span><span class="pill Medium">${h.score}/${h.total}</span></div>`).join('')}</div></section>` : ''}`;
 };
@@ -931,11 +936,23 @@ const ACT = {
   clearTags: () => { S.filters.tags = null; S.filters.group = null; render(); },
   mode: d => { S.filters.mode = d.v; go('home', true); },
   count: d => { S.filters.count = d.v; go('home', true); },
+  pickSection: d => {
+    const f = S.filters;
+    if (f.group && f.group.id === d.id) f.group = null;
+    else { const c = gNode(d.id); if (!c) return; Object.assign(f, { group: { id: c.id, label: c.name }, tags: null, query: '' }); }
+    go('home', true);
+  },
   pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; S.filters.group = null; go('home', true); toast(`Showing “${d.v}”`); },
   start: () => {
     const f = S.filters;
     let list = filtered();
-    list = f.shuffle ? shuffleArr(list) : list.slice();
+    const order = l => f.shuffle ? shuffleArr(l) : l.slice();
+    if (f.fresh) {
+      // unanswered first; then repeats, the ones answered longest ago first
+      const unseen = list.filter(q => !seenQ(q));
+      const seen = order(list.filter(seenQ)).sort((a, b) => String(S.prog.attempts[a.id].last || '').localeCompare(String(S.prog.attempts[b.id].last || '')));
+      list = order(unseen).concat(seen);
+    } else list = order(list);
     if (f.count !== 'all') list = list.slice(0, +f.count);
     const label = MODES.find(m => m[0] === f.mode)[1];
     const what = f.group ? f.group.label : f.tags ? f.tags.join(' › ') : f.query.trim();
@@ -1007,7 +1024,8 @@ const ACT = {
     go('home'); toast('Topic set — pick PYQs, Probable or Mix, then Start');
   },
   statTopic: d => {
-    Object.assign(S.filters, { tags: d.key.split(' › '), group: null, query: '', mode: 'mix' });
+    const t = gNode(d.id); if (!t) return;
+    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix' });
     go('home'); toast('Topic set — tap Start quiz');
   },
 
@@ -1101,6 +1119,7 @@ const IN = {
 };
 const CH = {
   shuffle: el => { S.filters.shuffle = el.checked; },
+  fresh: el => { S.filters.fresh = el.checked; },
   theme: el => setTheme(el.checked ? 'dark' : 'light'),
   importFile: el => {
     const file = el.files && el.files[0]; if (!file) return;

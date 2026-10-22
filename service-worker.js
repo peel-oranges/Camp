@@ -3,7 +3,7 @@
    Strategy: always try the internet first (so new questions show up),
    and fall back to the saved copy when offline. */
 
-const CACHE = 'camp-v3';
+const CACHE = 'camp-v4';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'questions.json', 'guide.json', 'manifest.json', 'icon.png'];
 const FONT_CACHE = 'litquiz-fonts-v1';
 
