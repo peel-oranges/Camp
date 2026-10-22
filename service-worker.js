@@ -1,14 +1,21 @@
 /* Camp — service-worker.js
    Makes the app work offline.
-   Strategy: always try the internet first (so new questions show up),
-   and fall back to the saved copy when offline. */
+   Strategy: always try the internet first (so new questions and app updates show up),
+   and fall back to the saved copy when offline.
+   "no-cache" below makes the phone ask GitHub "is there a newer version?" every time,
+   instead of reusing its own 10-minute browser copy. If nothing changed, GitHub answers
+   with a tiny "same as before", so this costs almost no data. */
 
-const CACHE = 'camp-v5';
+const CACHE = 'camp-v6';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'questions.json', 'guide.json', 'manifest.json', 'icon.png'];
 const FONT_CACHE = 'litquiz-fonts-v1';
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches.open(CACHE)
+      .then(c => Promise.all(SHELL.map(u => fetch(u, { cache: 'no-cache' }).then(r => { if (r.ok) return c.put(u, r); }).catch(() => {}))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', event => {
@@ -45,11 +52,14 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   // The question bank is big (over 1 MB), so give it longer to download
-  // before falling back to the saved copy. Other files get 6 seconds.
-  const wait = url.pathname.endsWith('questions.json') ? 30000 : 6000;
+  // before falling back to the saved copy. Other files get 8 seconds.
+  const wait = url.pathname.endsWith('questions.json') ? 30000 : 8000;
+  const fresh = req.mode === 'navigate'
+    ? fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' })
+    : fetch(req, { cache: 'no-cache' });
 
   event.respondWith(
-    withTimeout(fetch(req), wait)
+    withTimeout(fresh, wait)
       .then(res => {
         if (res && res.ok) {
           const copy = res.clone();
