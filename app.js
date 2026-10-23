@@ -1440,8 +1440,7 @@ function openReport(id) {
     <p class="small muted">${esc(q.id)} · ${esc(sourceTag(q))}</p>
     <textarea id="report-note" rows="4" placeholder="What looks wrong? (answer, spelling, tag, info bite…)"></textarea>
     <div class="btn-row">
-      <button class="btn" data-act="sendReport" data-via="wa" data-id="${esc(q.id)}">Send on WhatsApp</button>
-      <button class="btn ghost" data-act="sendReport" data-via="mail" data-id="${esc(q.id)}">Send by email</button>
+      <button class="btn" data-act="sendReport" data-via="mail" data-id="${esc(q.id)}">Send by email</button>
     </div>
     <button class="btn text" data-act="closeModal">Cancel</button>
   </div>`;
