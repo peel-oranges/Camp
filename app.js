@@ -1530,9 +1530,17 @@ function scopeTopics(scope) {
   if (scope === 'gate' || scope === 'net') return examTopics(scope);
   return sylTopics().filter(t => (t.gate || []).length || (t.net || []).length);
 }
+// How much of a topic is covered: 100% once done, otherwise the share of its questions attempted.
+function topicFrac(t) {
+  if (learnt(t)) return 1;
+  const qs = topicQs(t); if (!qs.length) return 0;
+  return qs.filter(q => S.prog.attempts[q.id]).length / qs.length;
+}
 function progOf(list) {
   const n = list.length, l = list.filter(learnt).length, q = list.filter(quizzed).length;
-  return { n, l, q, pct: n ? Math.round((l / n) * 100) : 0 };
+  const cov = n ? list.reduce((s, t) => s + topicFrac(t), 0) / n : 0;
+  const pct = Math.round(cov * 100);
+  return { n, l, q, pct: pct === 100 && l < n ? 99 : pct === 0 && cov > 0 ? 1 : pct };
 }
 const examDate = ex => { const pl = sylP().plan; return isDay(pl[ex + 'Date']) ? pl[ex + 'Date'] : ((sylExams()[ex] || {}).date || ''); };
 const daysTo = d => isDay(d) ? dayDiff(todayStr(), d) : null;
@@ -1589,7 +1597,7 @@ const fmtMarks = m => m == null ? null : (m >= 10 ? Math.round(m) : Math.round(m
 function sectionIds(s) { const ids = new Set(); topicsIn(s.id).forEach(t => topicQs(t).forEach(q => ids.add(q.id))); return [...ids]; }
 
 /* ---------- Syllabus tab ---------- */
-const segBar = (list, cls) => `<span class="sy-seg ${cls || ''}">${list.map(t => `<i class="${learnt(t) ? 'on' : ''}"></i>`).join('')}</span>`;
+const segBar = (list, cls) => `<span class="sy-seg ${cls || ''}">${list.map(t => `<i style="--f:${Math.round(topicFrac(t) * 100)}%"></i>`).join('')}</span>`;
 function nodeHTML(t, ex) {
   const L = learnt(t), M = manualLearnt(t), QD = quizDone(t), Q = quizzed(t), r = sylP().syl[t.id] || {}, desc = topicDesc(t);
   const cnt = topicExamCount(t, ex), qs = topicQs(t);
@@ -1614,32 +1622,52 @@ function nodeHTML(t, ex) {
 }
 function sectionCard(s, ui, W) {
   const ts = topicsIn(s.id), pr = progOf(ts), w = W[s.id] || {}, marks = fmtMarks(w.marks);
-  const outOf = s.exam === 'gate' ? 100 : s.part.marks;
-  return `<article class="sy-card">
-    <span class="sy-card-part">${esc(s.part.name)}</span>
-    <h3 class="sy-card-title">${esc(s.name)}</h3>
+  const outOf = s.exam === 'gate' ? 100 : s.part.marks, open = !!(S.sylOpen && S.sylOpen[s.id]);
+  return `<article class="sy-card ${open ? 'open' : ''}" id="sec-${esc(s.id)}">
+    <button class="sy-card-head" data-act="sylToggle" data-id="${esc(s.id)}" aria-expanded="${open}">
+      <span class="sy-card-part">${esc(s.part.name)}</span>
+      <span class="sy-card-title">${esc(s.name)}</span>
+      <span class="sy-chev" aria-hidden="true">${open ? '▴' : '▾'}</span>
+    </button>
     <div class="sy-card-pills">
       ${ui.weight ? (marks != null ? `<span class="sy-marks">~${marks} / ${outOf} marks</span>` : `<span class="sy-marks soft">No PYQs yet</span>`) : ''}
       ${w.n ? `<button class="sy-outline" data-act="sylQuizSec" data-id="${esc(s.id)}">Quiz section →</button>` : ''}
     </div>
-    ${ui.progress ? `<div class="sy-card-prog">${segBar(ts, 'small')}<span>${pr.l} / ${pr.n} learnt</span></div>` : ''}
-    ${s.about ? `<p class="sy-about clamp">${esc(s.about)}</p><button class="sy-more" data-act="sylMore">Show more</button>` : ''}
-    <ul class="sy-tree">${ts.map(t => nodeHTML(t, s.exam)).join('') || '<li class="sy-node"><span class="muted small">No topics yet</span></li>'}</ul>
+    ${ui.progress ? `<div class="sy-card-prog"><span class="sy-fill"><i style="width:${pr.pct}%"></i></span><span>${pr.pct}% covered · ${pr.l}/${pr.n} done</span></div>` : ''}
+    ${open ? `${s.about ? `<p class="sy-about clamp">${esc(s.about)}</p><button class="sy-more" data-act="sylMore">Show more</button>` : ''}
+    <ul class="sy-tree">${ts.map(t => nodeHTML(t, s.exam)).join('') || '<li class="sy-node"><span class="muted small">No topics yet</span></li>'}</ul>`
+    : `<button class="sy-expand" data-act="sylToggle" data-id="${esc(s.id)}">Show ${plural(ts.length, 'subtopic')} ▾</button>`}
   </article>`;
 }
-function examColumn(ex, ui) {
+function examHead(ex, ui, compact) {
   const E = sylExams()[ex]; if (!E) return '';
   const W = examWeights(ex), all = progOf(examTopics(ex)), d = daysTo(examDate(ex));
-  let secs = sylSections(ex);
-  if (ui.sort) secs = secs.slice().sort((a, b) => ((W[b.id] || {}).marks || 0) - ((W[a.id] || {}).marks || 0));
-  return `<div class="sy-col">
-    <div class="sy-col-head ${ex}">
+  return `<div class="sy-col-head ${ex}">
       <div class="sy-col-name">${esc(E.name)}</div>
-      <div class="small">${all.l} of ${all.n} topics learnt · ${all.pct}%${d != null && d >= 0 ? ` · ${d} days left` : ''}</div>
-      ${ui.weight ? `<div class="small muted">Weightage estimated from ${plural(W._used, 'PYQ')} in your bank${E.note ? '. ' + esc(E.note) : ''}</div>` : ''}
-    </div>
-    ${secs.map(s => sectionCard(s, ui, W)).join('')}
-  </div>`;
+      ${ui.progress ? `<span class="sy-fill"><i style="width:${all.pct}%"></i></span>` : ''}
+      <div class="small">${all.pct}% covered · ${all.l}/${all.n} done${d != null && d >= 0 ? ` · ${d} days left` : ''}</div>
+      ${ui.weight ? `<div class="small muted">${compact ? `Weightage from ${plural(W._used, 'PYQ')}` : `Weightage estimated from ${plural(W._used, 'PYQ')} in your bank${E.note ? '. ' + esc(E.note) : ''}`}</div>` : ''}
+    </div>`;
+}
+function examSecs(ex, ui) {
+  const W = examWeights(ex); let secs = sylSections(ex);
+  if (ui.sort) secs = secs.slice().sort((a, b) => ((W[b.id] || {}).marks || 0) - ((W[a.id] || {}).marks || 0));
+  return { W, secs };
+}
+// One exam: a single column. Both: GATE on the left, NET on the right, even on a phone;
+// an opened section stretches across both columns so its subtopics have room.
+function boardHTML(ex, ui) {
+  if (ex !== 'both') { const { W, secs } = examSecs(ex, ui); return `<div class="sy-board">${examHead(ex, ui)}${secs.map(s => sectionCard(s, ui, W)).join('')}</div>`; }
+  const G = examSecs('gate', ui), N = examSecs('net', ui), rows = Math.max(G.secs.length, N.secs.length);
+  let cells = `<div class="sy-cell c1">${examHead('gate', ui, true)}</div><div class="sy-cell c2">${examHead('net', ui, true)}</div>`;
+  for (let i = 0; i < rows; i++) {
+    [[G, 'c1'], [N, 'c2']].forEach(([X, c]) => {
+      const s = X.secs[i]; if (!s) return;
+      const open = !!(S.sylOpen && S.sylOpen[s.id]);
+      cells += `<div class="sy-cell ${open ? 'wide' : c}">${sectionCard(s, ui, X.W)}</div>`;
+    });
+  }
+  return `<div class="sy-pair">${cells}</div>`;
 }
 VIEWS.syllabus = () => {
   if (!S.syllabus) return `<section class="card center"><h3>Syllabus not loaded</h3><p class="muted">syllabus.json is missing from the app, or you're offline on the first visit.</p></section>`;
@@ -1650,25 +1678,26 @@ VIEWS.syllabus = () => {
     <h2>Syllabus</h2>
     <div class="seg" style="margin-bottom:14px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${ex === k ? 'on' : ''}" data-act="sylExam" data-v="${k}">${l}</button>`).join('')}</div>
     <div class="sy-controls">
-      <div>
+      <div class="sy-ctl">
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="progress" ${ui.progress ? 'checked' : ''}> Show my progress</label>
-        ${ui.progress ? `<div class="sy-progress"><span class="lbl">Progress</span>${segBar(shown)}</div>
-        <p class="small muted">${all.l} of ${all.n} topics done. A topic counts as done when you tick Learnt, or by itself once you've attempted every one of its questions. The Quizzed tick is only a reminder for you.</p>` : ''}
+        ${ui.progress ? `<div class="sy-progress"><span class="lbl">Progress</span><span class="sy-fill dark"><i style="width:${all.pct}%"></i></span><b class="pct">${all.pct}%</b></div>
+        <p class="small muted"><b>${all.pct}% covered</b> · ${all.l} of ${all.n} topics done. Each bar fills as you attempt a topic's questions, and is full once you tick Learnt or attempt them all. The Quizzed tick is only a reminder for you.</p>` : ''}
       </div>
-      <div>
+      <div class="sy-ctl">
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="weight" ${ui.weight ? 'checked' : ''}> Show weightage</label>
         <button class="sy-sort ${ui.sort ? 'on' : ''}" data-act="sylSort">${ui.sort ? 'Sorted by weightage ✓' : 'Sort by weightage'}</button>
         <p class="small muted">Estimated marks per section, worked out from the PYQs in your bank.</p>
       </div>
     </div>
   </section>
-  <div class="sy-board ${ex === 'both' ? 'two' : ''}">${ex === 'net' ? '' : examColumn('gate', ui)}${ex === 'gate' ? '' : examColumn('net', ui)}</div>
+  ${boardHTML(ex, ui)}
   <section class="card">
     <h3>Add your own topic</h3>
     <p class="small muted">For anything not in the list, for example one text you want to track. Pick the sections it belongs to.</p>
     <button class="btn ghost" data-act="sylAddCustom">＋ Add a topic</button>
   </section>
-  <p class="small muted center">Sources: ${esc(sylExams().gate ? sylExams().gate.source : '')} · ${esc(sylExams().net ? sylExams().net.source : '')}</p>`;
+  ${isAdmin() ? `<section class="card"><h3>Keep the syllabus up to date</h3><p class="small muted">Change the exam year, dates, sections or topics for everyone. Only this device sees this, because it has your GitHub key.</p><button class="btn ghost" data-act="sylAdminOpen">✎ Edit syllabus</button></section>` : ''}
+  <p class="small muted center">Updated ${esc((S.syllabus && S.syllabus.updated) || '')} · Sources: ${esc(sylExams().gate ? sylExams().gate.source : '')} · ${esc(sylExams().net ? sylExams().net.source : '')}</p>`;
 };
 
 function openCustomTopic() {
@@ -1759,8 +1788,8 @@ function paceHTML(P) {
   const wk = x => x == null ? '–' : (Math.round(x * 7 * 10) / 10).toString();
   let verdict = '', cls = '';
   if (!P.left.length) { verdict = 'Every topic in this scope is learnt ✿ Time to revise and quiz.'; cls = 'ok'; }
-  else if (P.daysLeft == null) verdict = 'Set a finish-by date in More to see whether you are on time.';
-  else if (P.daysLeft <= 0) { verdict = `Your finish-by date has passed with ${plural(P.left.length, 'topic')} left. Set a new date in More.`; cls = 'bad'; }
+  else if (P.daysLeft == null) verdict = 'Set a finish date in My target to see whether you are on time.';
+  else if (P.daysLeft <= 0) { verdict = `Your finish-by date has passed with ${plural(P.left.length, 'topic')} left. Choose a new date in My target.`; cls = 'bad'; }
   else if (!P.rate) verdict = `To finish by ${fmtDay(P.target)}, learn about ${wk(P.need)} topics a week. Your own pace shows here after 3 days of ticking.`;
   else if (P.finish <= P.target) { verdict = `On track ✿ At your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.finish, P.target), 'day')} early.`; cls = 'ok'; }
   else { verdict = `Behind: at your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.target, P.finish), 'day')} late. Aim for ${wk(P.need)} topics a week.`; cls = 'bad'; }
@@ -1849,6 +1878,34 @@ function planMonthView() {
       ${topics.map(tp => `<div class="pl-item"><span class="pl-check static ${learnt(tp) ? 'on' : ''}">${learnt(tp) ? '✓' : ''}</span><button class="pl-text" data-act="planOpenTopic" data-id="${esc(tp.id)}">${esc(shortName(tp))}</button></div>`).join('')}</article>` : ''}
   </div>`;
 }
+// Your own finish date, and how many topics a day and a week it takes to get there.
+function targetCard() {
+  const pl = sylP().plan, P = paceInfo(), sc = P.scope, own = isDay(pl.target);
+  const fmtN = x => x == null ? '–' : x >= 10 ? String(Math.round(x)) : String(Math.round(x * 10) / 10);
+  const perDay = P.need, perWeek = P.need != null ? P.need * 7 : null;
+  let line;
+  if (!P.left.length) line = 'Every topic is done ✿ Use the time left to revise.';
+  else if (P.daysLeft == null) line = 'Pick a finish date to see your daily and weekly target.';
+  else if (P.daysLeft <= 0) line = `That date has passed with ${plural(P.left.length, 'topic')} left. Choose a new date.`;
+  else line = `To finish the ${plural(P.left.length, 'topic')} left by ${fmtDay(P.target)}, cover <b>${fmtN(perDay)} a day</b>${perDay < 1 ? ` (about one every ${Math.round(1 / perDay)} days)` : ''}, which is <b>${fmtN(perWeek)} a week</b>.`;
+  return `<section class="card pl-target">
+    <h3>My target</h3>
+    <div class="seg" style="margin-bottom:12px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${sc === k ? 'on' : ''}" data-act="planScope" data-v="${k}">${l}</button>`).join('')}</div>
+    <label class="field-label" for="pl-target-main">Finish my syllabus by</label>
+    <div class="pl-target-row">
+      <input type="date" id="pl-target-main" data-change="planDate" data-k="target" value="${esc(own ? pl.target : '')}">
+      ${own ? '<button class="btn text" data-act="planClearTarget" style="width:auto;min-height:44px;padding:0 8px">Clear</button>' : ''}
+    </div>
+    <p class="small muted">${own ? 'Your own target date.' : `No date set, so this uses the ${sc === 'net' ? 'NET' : sc === 'gate' ? 'GATE' : 'earlier exam'} date (${esc(isDay(P.target) ? fmtDay(P.target) : '–')}). Setting a date a few weeks before leaves time to revise.`}</p>
+    <div class="stat-grid" style="margin-top:10px">
+      <div><div class="n">${P.left.length}</div><div class="l">Topics left</div></div>
+      <div><div class="n">${P.daysLeft == null ? '–' : Math.max(0, P.daysLeft)}</div><div class="l">Days left</div></div>
+      <div><div class="n">${fmtN(perDay)}</div><div class="l">A day</div></div>
+      <div><div class="n">${fmtN(perWeek)}</div><div class="l">A week</div></div>
+    </div>
+    <p class="pl-verdict">${line}</p>
+  </section>`;
+}
 function planFinalView() {
   const P = paceInfo(), t = todayStr(), sc = P.scope;
   const end = isDay(P.target) ? P.target : shiftDay(t, 120);
@@ -1858,7 +1915,6 @@ function planFinalView() {
   const secRows = exs.flatMap(ex => { const W = examWeights(ex); return sylSections(ex).map(s => ({ s, w: (W[s.id] || {}).marks, left: topicsIn(s.id).filter(x => !learnt(x)).length, n: topicsIn(s.id).length })); })
     .filter(r => r.left).sort((a, b) => (b.w || 0) - (a.w || 0));
   return `
-  <div class="seg" style="margin-bottom:12px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${sc === k ? 'on' : ''}" data-act="planScope" data-v="${k}">${l}</button>`).join('')}</div>
   ${paceHTML(P)}
   <section class="card">
     <h3>The road to ${sc === 'both' ? 'your exams' : EXAM_KEY[sc]}</h3>
@@ -1894,6 +1950,7 @@ VIEWS.plan = () => {
       <button class="pl-view ${v === 'final' ? 'on' : ''}" data-act="planView" data-v="final"><b>Final</b><span>The road to ${esc(finalName === 'the exams' ? 'the exams' : finalName)}</span></button>
     </div>
   </section>
+  ${targetCard()}
   ${v === 'week' ? planWeekView() : v === 'month' ? planMonthView() : planFinalView()}`;
 };
 
@@ -1943,17 +2000,12 @@ function openItemMenu(key, id) {
 function openPlanMore() {
   const pl = sylP().plan, m = $('#modal');
   m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Plan settings">
-    <h3>Dates & deadline</h3>
+    <h3>Exam dates</h3>
     <div class="grid2">
       <div><label class="field-label" for="pl-gate">GATE date</label><input type="date" id="pl-gate" value="${esc(examDate('gate'))}"></div>
       <div><label class="field-label" for="pl-net">NET date</label><input type="date" id="pl-net" value="${esc(examDate('net'))}"></div>
     </div>
     <p class="small muted">${esc((sylExams().gate || {}).dateNote || '')} ${esc((sylExams().net || {}).dateNote || '')}</p>
-    <label class="field-label" for="pl-target">Finish syllabus by (your own deadline)</label>
-    <input type="date" id="pl-target" value="${esc(isDay(pl.target) ? pl.target : '')}">
-    <p class="small muted">Leave blank to use the exam date. A few weeks before the exam leaves time to revise.</p>
-    <label class="field-label">Plan for</label>
-    <div class="seg">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${(pl.scope || 'both') === k ? 'on' : ''}" data-act="planScope" data-v="${k}" data-keep="1">${l}</button>`).join('')}</div>
     <div class="btn-row" style="margin-top:14px"><button class="btn" data-act="planSaveMore">Save</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
     <button class="btn text" data-act="planRestart">Count my pace from today</button>
   </div>`;
@@ -1983,12 +2035,20 @@ function moveItem(from, id, to) {
 function jumpToTopic(id) {
   const t = topicById(id); if (!t) return;
   S.sylExam = (t.gate || []).length ? (S.sylExam === 'net' && (t.net || []).length ? 'net' : S.sylExam || 'both') : 'net';
+  S.sylOpen = S.sylOpen || {};
+  [...(t.gate || []), ...(t.net || [])].forEach(s => { S.sylOpen[s] = true; });
   go('syllabus');
   setTimeout(() => { const el = document.getElementById('t-' + id); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('flash'); } }, 60);
 }
 
 const SYL_ACT = {
   sylExam: d => { S.sylExam = d.v; go('syllabus', true); },
+  sylToggle: d => {
+    S.sylOpen = S.sylOpen || {};
+    S.sylOpen[d.id] = !S.sylOpen[d.id];
+    go('syllabus', true);
+    if (S.sylOpen[d.id]) { const el = document.getElementById('sec-' + d.id); if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: 'start' }); }
+  },
   sylSort: () => { const ui = sylP().sylUI; ui.sort = !ui.sort; saveProg(); go('syllabus', true); },
   sylMore: (d, el) => { const c = el.previousElementSibling; if (!c) return; const open = c.classList.toggle('open'); el.textContent = open ? 'Show less' : 'Show more'; },
   sylLearnt: d => { const t = topicById(d.id); if (!t) return; setLearnt(t.id, !manualLearnt(t)); saveProg(); go(S.screen, true); },
@@ -2043,9 +2103,10 @@ const SYL_ACT = {
     go('plan', true);
   },
   planMore: () => openPlanMore(),
+  planClearTarget: () => { delete sylP().plan.target; saveProg(); go('plan', true); },
   planSaveMore: () => {
     const pl = sylP().plan;
-    [['pl-gate', 'gateDate'], ['pl-net', 'netDate'], ['pl-target', 'target']].forEach(([id, k]) => { const v = ($('#' + id) || {}).value; if (isDay(v)) pl[k] = v; else delete pl[k]; });
+    [['pl-gate', 'gateDate'], ['pl-net', 'netDate']].forEach(([id, k]) => { const v = ($('#' + id) || {}).value; if (isDay(v)) pl[k] = v; else delete pl[k]; });
     saveProg(); closeModal(); go('plan', true);
   },
   planAddOpen: d => openAddSheet(d.d),
@@ -2082,6 +2143,7 @@ const SYL_ACT = {
 };
 const SYL_IN = {};
 const SYL_CH = {
+  planDate: el => { const k = el.dataset.k; if (isDay(el.value)) sylP().plan[k] = el.value; else delete sylP().plan[k]; saveProg(); go('plan', true); },
   sylUI: el => { sylP().sylUI[el.dataset.k] = el.checked; saveProg(); go('syllabus', true); }
 };
 
@@ -2096,18 +2158,22 @@ const SYL_CH = {
     .sy-link-u { border: 0; background: none; padding: 6px 2px; min-height: 36px; font: inherit; font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
     .sy-controls { display: grid; grid-template-columns: 1fr; gap: 6px; }
     .sy-controls > div { min-width: 0; }
-    @media (min-width: 640px) { .sy-controls { grid-template-columns: 1fr 1fr; gap: 20px; } }
+    .sy-ctl + .sy-ctl { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+    .sy-card-head { display: block; width: 100%; position: relative; padding: 0 30px 0 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+    .sy-card-head .sy-card-part { display: block; }
+    .sy-card-head .sy-card-title { display: block; }
+    .sy-chev { position: absolute; right: 0; top: 18px; font-size: 18px; color: var(--muted); }
+    .sy-expand { width: 100%; min-height: 44px; margin: 4px 0 10px; border: 1.5px dashed var(--border); border-radius: 14px; background: none; font: inherit; font-size: 14px; font-weight: 800; color: var(--accent-ink); cursor: pointer; }
+    .sy-card { padding-bottom: 10px; }
     .sy-check { min-height: 42px; font-weight: 600; font-size: 14.5px; }
     .sy-progress { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 999px; background: #3b3150; color: #fdf6fb; }
     :root[data-theme="dark"] .sy-progress { background: #1b1529; border: 1px solid var(--border); }
     .sy-progress .lbl { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
     .sy-seg { display: flex; flex: 1; gap: 2px; min-width: 0; height: 12px; }
-    .sy-seg i { flex: 1; border-radius: 2px; background: rgba(255,255,255,.18); min-width: 1px; }
-    .sy-seg i.on { background: var(--pink-strong); }
+    .sy-seg i { flex: 1; border-radius: 2px; min-width: 1px; background: linear-gradient(to top, var(--pink-strong) var(--f, 0%), rgba(255,255,255,.18) var(--f, 0%)); }
     .sy-seg.small { flex: 0 1 auto; height: 10px; gap: 2px; overflow: hidden; }
-    .sy-seg.small i { flex: 0 1 7px; width: 7px; background: var(--border); }
+    .sy-seg.small i { flex: 0 1 7px; width: 7px; background: linear-gradient(to top, var(--purple) var(--f, 0%), var(--border) var(--f, 0%)); }
     .sy-card-prog span:last-child { white-space: nowrap; }
-    .sy-seg.small i.on { background: var(--purple); }
     .sy-sort { min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
     .sy-sort.on { background: var(--lilac-soft); border-color: var(--lilac); color: var(--accent-ink); }
     .sy-board { display: grid; grid-template-columns: 1fr; gap: 16px; }
@@ -2147,6 +2213,8 @@ const SYL_CH = {
     .sy-node.flash { animation: syflash 1.6s ease; }
     @keyframes syflash { 0%, 60% { background: var(--lilac-soft); } 100% { background: transparent; } }
     .sy-sheet { max-height: 85vh; overflow-y: auto; }
+    .pl-target-row { display: flex; gap: 8px; align-items: center; }
+    .pl-target .pl-verdict b { color: var(--accent-ink); }
     .pl-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .pl-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.1rem; letter-spacing: .02em; margin: 0; }
     .pl-views { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 6px; }
@@ -2206,15 +2274,213 @@ const SYL_CH = {
     .pl-rw .b { height: 7px; border-radius: 999px; background: var(--border); overflow: hidden; }
     .pl-rw .b i { display: block; height: 100%; background: linear-gradient(90deg, var(--pink-strong), var(--purple)); }
     .pl-rw .c { font-size: 12.5px; color: var(--muted); }
+    .sy-fill { display: block; flex: 1; min-width: 0; height: 10px; border-radius: 999px; background: var(--border); overflow: hidden; margin: 6px 0 4px; }
+    .sy-fill i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--pink-strong), var(--purple)); }
+    .sy-fill.dark { margin: 0; background: rgba(255,255,255,.16); }
+    .sy-progress .pct { font-size: 13px; }
+    .sy-progress { min-width: 0; overflow: hidden; }
+    .sy-card-prog { min-width: 0; overflow: hidden; }
+    .sy-seg.small { min-width: 0; }
+    .sy-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-auto-flow: row dense; gap: 10px; align-items: start; }
+    .sy-cell { min-width: 0; }
+    .sy-cell.c1 { grid-column: 1; } .sy-cell.c2 { grid-column: 2; } .sy-cell.wide { grid-column: 1 / -1; }
+    .sy-cell .sy-col-head { margin-bottom: 0; height: 100%; }
+    .sy-cell .sy-card { margin-bottom: 0; }
+    @media (max-width: 640px) {
+      .sy-pair .sy-col-head { padding: 12px; }
+      .sy-pair .sy-col-name { font-size: 1.3rem; }
+      .sy-pair .sy-cell.c1 .sy-card, .sy-pair .sy-cell.c2 .sy-card { padding: 12px 12px 6px; border-radius: 18px; }
+      .sy-pair .sy-cell.c1 .sy-card-title, .sy-pair .sy-cell.c2 .sy-card-title { font-size: 1.12rem; }
+      .sy-pair .sy-cell.c1 .sy-card-part, .sy-pair .sy-cell.c2 .sy-card-part { font-size: 9.5px; }
+      .sy-pair .sy-cell.c1 .sy-marks, .sy-pair .sy-cell.c2 .sy-marks, .sy-pair .sy-cell.c1 .sy-outline, .sy-pair .sy-cell.c2 .sy-outline { min-height: 28px; padding: 0 9px; font-size: 11.5px; }
+      .sy-pair .sy-cell.c1 .sy-card-prog, .sy-pair .sy-cell.c2 .sy-card-prog { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 11.5px; }
+      .sy-pair .sy-cell.c1 .sy-card-prog .sy-fill, .sy-pair .sy-cell.c2 .sy-card-prog .sy-fill { flex: none; width: 100%; margin: 0; }
+      .sy-pair .sy-cell.c1 .sy-expand, .sy-pair .sy-cell.c2 .sy-expand { font-size: 12px; min-height: 38px; }
+      .sy-pair .sy-cell.c1 .sy-chev, .sy-pair .sy-cell.c2 .sy-chev { top: 12px; }
+      .sy-pair .sy-cell.c1 .sy-card-head, .sy-pair .sy-cell.c2 .sy-card-head { padding-right: 18px; }
+    }
+    .sa-part { margin-top: 18px; padding-top: 6px; border-top: 1px solid var(--border); }
+    .sa-sec { margin: 8px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 14px; background: var(--card-2); }
+    .sa-sec summary { font-weight: 700; cursor: pointer; }
+    .sa-save { position: sticky; bottom: calc(env(safe-area-inset-bottom) + 84px); z-index: 5; display: flex; gap: 10px; padding: 10px; border-radius: 20px; background: var(--tabs-bg); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--border); margin-bottom: 16px; }
+    .sa-save .btn { flex: 1; }
     input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }`;
   document.head.appendChild(s);
 })();
+
+/* ---------- Edit syllabus (only on the device with the GitHub key) ----------
+   Changes are made on a copy, then saved to syllabus.json on GitHub, so every
+   friend's app picks them up. Personal ticks are kept by topic id.            */
+async function ghSaveJSON(path, build, message) {
+  const g = Object.assign({}, ghSettings(), { path });
+  if (!g.token) throw new Error('Admin key not set on this device.');
+  if (!navigator.onLine) throw new Error('You are offline. Connect to the internet, then save again.');
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { api, H, meta } = await ghFetchMeta(g, g.token);
+    const obj = build();
+    const put = await fetch(api, {
+      method: 'PUT',
+      headers: Object.assign({ Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' }, H),
+      body: JSON.stringify({ message, content: utf8ToB64(JSON.stringify(obj, null, 1) + '\n'), sha: meta.sha, branch: g.branch })
+    });
+    if (put.status === 409 && attempt === 0) continue;
+    if (!put.ok) throw new Error(ghErr(put.status).replace('questions.json', path));
+    return obj;
+  }
+  throw new Error(ghErr(409));
+}
+const sedit = () => S.sylEdit || (S.sylEdit = JSON.parse(JSON.stringify(S.syllabus)));
+function setPath(obj, path, v) {
+  const keys = path.split('.');
+  let o = obj;
+  for (let i = 0; i < keys.length - 1; i++) o = o[/^\d+$/.test(keys[i]) ? +keys[i] : keys[i]];
+  o[keys[keys.length - 1]] = v;
+}
+const editSections = (E, ex) => E.exams[ex].parts.flatMap(p => p.sections);
+const fld = (label, path, v, type = 'text', ph = '') => `<label class="field-label">${label}</label>${type === 'area'
+  ? `<textarea rows="3" data-change="sylEdit" data-path="${esc(path)}" placeholder="${esc(ph)}">${esc(v || '')}</textarea>`
+  : `<input type="${type}" data-change="sylEdit" data-path="${esc(path)}" ${type === 'number' ? 'data-num="1"' : ''} value="${esc(v == null ? '' : v)}" placeholder="${esc(ph)}">`}`;
+VIEWS.sylAdmin = () => {
+  if (!isAdmin() || !S.syllabus) return VIEWS.syllabus();
+  const E = sedit(), q = queryTokens(S.sylAdminQuery || '');
+  const examCard = ex => {
+    const X = E.exams[ex];
+    return `<section class="card form">
+      <h3>${esc(X.name)}</h3>
+      ${fld('Short name (shown on cards, e.g. GATE 2028)', `exams.${ex}.name`, X.name)}
+      ${fld('Full name', `exams.${ex}.full`, X.full)}
+      ${fld('Exam date (first day)', `exams.${ex}.date`, X.date, 'date')}
+      ${fld('Date note', `exams.${ex}.dateNote`, X.dateNote, 'area')}
+      ${fld('Source of the syllabus', `exams.${ex}.source`, X.source)}
+      ${fld('Note shown under the exam', `exams.${ex}.note`, X.note, 'area')}
+      ${X.parts.map((p, pi) => `
+        <div class="sa-part">
+          <div class="grid2"><div>${fld('Part', `exams.${ex}.parts.${pi}.name`, p.name)}</div><div>${fld('Marks', `exams.${ex}.parts.${pi}.marks`, p.marks, 'number')}</div></div>
+          ${p.sections.map((s, si) => `<details class="sa-sec"><summary>${esc(s.name)} <span class="muted small">· ${topicCountIn(E, s.id)} topics</span></summary>
+            ${fld('Section name', `exams.${ex}.parts.${pi}.sections.${si}.name`, s.name)}
+            ${fld('Official description', `exams.${ex}.parts.${pi}.sections.${si}.about`, s.about, 'area')}
+            <button class="btn text danger" data-act="saDelSec" data-ex="${ex}" data-pi="${pi}" data-si="${si}">Delete this section</button>
+          </details>`).join('')}
+          <button class="pl-addline" data-act="saAddSec" data-ex="${ex}" data-pi="${pi}">＋ Add a section to this part</button>
+        </div>`).join('')}
+    </section>`;
+  };
+  let topics = E.topics.map((t, i) => ({ t, i }));
+  if (q.length) topics = topics.filter(({ t }) => q.every(tok => tokenMatch(tok, words(t.name + ' ' + t.group))));
+  return `
+  <button class="chip back" data-act="tab" data-tab="syllabus">‹ Syllabus</button>
+  <section class="card">
+    <h2>Edit syllabus</h2>
+    <p class="small muted">Only this device can do this, because it has your GitHub key. Change the year, dates, sections or topics, then tap <b>Save to GitHub</b>. Everyone sees the change in 1–2 minutes. Ticks people have made are kept.</p>
+  </section>
+  ${examCard('gate')}${examCard('net')}
+  <section class="card">
+    <h3>Topics <span class="small muted">· ${E.topics.length}</span></h3>
+    <div class="search"><input type="search" data-in="sylAdminQuery" value="${esc(S.sylAdminQuery || '')}" placeholder="Find a topic" autocomplete="off"></div>
+    <button class="btn ghost" data-act="saTopic" data-i="new" style="margin-top:12px">＋ Add a topic</button>
+    <div class="list" id="sa-topics" style="margin-top:8px">${saTopicsHTML(topics)}</div>
+  </section>
+  <div class="sa-save">
+    <button class="btn" data-act="saSave" id="sa-save-btn">Save to GitHub</button>
+    <button class="btn ghost" data-act="saDiscard">Discard changes</button>
+  </div>`;
+};
+function topicCountIn(E, sid) { return E.topics.filter(t => (t.gate || []).includes(sid) || (t.net || []).includes(sid)).length; }
+function saTopicsHTML(list) {
+  return list.map(({ t, i }) => `<button class="row" data-act="saTopic" data-i="${i}">
+    <span class="grow"><span class="name">${esc(t.name)}</span><br><span class="sub">${esc(t.group)} · GATE ${(t.gate || []).length} · NET ${(t.net || []).length}</span></span><span class="chev">›</span></button>`).join('') || '<p class="muted small">No topics match.</p>';
+}
+function openTopicEditor(i) {
+  const E = sedit(), isNew = i === 'new', t = isNew ? { name: '', group: '', gate: [], net: [] } : E.topics[+i];
+  const groups = [...new Set(E.topics.map(x => x.group))];
+  const box = ex => editSections(E, ex).map(s => `<label class="check-row sy-check"><input type="checkbox" class="sa-sec" value="${esc(s.id)}" ${(t[ex] || []).includes(s.id) ? 'checked' : ''}> ${esc(s.name)}</label>`).join('');
+  const G = buildGuide(), guideOpts = G.cats.flatMap(c => [[c.id, c.name], ...c.subs.filter(s => !s.isOther).map(s => [s.id, `${c.name} › ${s.name}`])]);
+  const m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Edit topic">
+    <h3>${isNew ? 'Add a topic' : 'Edit topic'}</h3>
+    <label class="field-label" for="sa-name">Topic (write "Title: details")</label>
+    <input type="text" id="sa-name" value="${esc(t.name)}" placeholder="e.g. Partition novels: Train to Pakistan, Ice-Candy-Man">
+    <label class="field-label" for="sa-group">Group</label>
+    <input type="text" id="sa-group" list="sa-groups" value="${esc(t.group)}" placeholder="e.g. Indian Literature">
+    <datalist id="sa-groups">${groups.map(g => `<option value="${esc(g)}">`).join('')}</datalist>
+    <details open><summary class="field-label">GATE sections</summary>${box('gate')}</details>
+    <details><summary class="field-label">NET units</summary>${box('net')}</details>
+    <label class="field-label" for="sa-guide">Questions come from this Guide topic</label>
+    <select id="sa-guide"><option value="">None</option>${guideOpts.map(([id, n]) => `<option value="${esc(id)}" ${t.guide === id ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select>
+    <label class="field-label" for="sa-q">…or from a search (used when no Guide topic is chosen)</label>
+    <input type="text" id="sa-q" value="${esc(t.q || '')}" placeholder="e.g. Partition">
+    <div class="btn-row" style="margin-top:12px"><button class="btn" data-act="saTopicSave" data-i="${esc(String(i))}">Done</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
+    ${isNew ? '' : `<button class="btn text danger" data-act="saTopicDel" data-i="${esc(String(i))}">Delete this topic</button>`}
+  </div>`;
+  m.hidden = false;
+}
+const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30);
+const SA_ACT = {
+  sylAdminOpen: () => { S.sylEdit = null; go('sylAdmin'); },
+  saAddSec: d => {
+    const E = sedit(), p = E.exams[d.ex].parts[+d.pi];
+    p.sections.push({ id: `${d.ex}-${uid()}`, name: 'New section', about: '' });
+    go('sylAdmin', true); toast('Section added — open it to rename');
+  },
+  saDelSec: d => {
+    const E = sedit(), p = E.exams[d.ex].parts[+d.pi], s = p.sections[+d.si];
+    if (!confirm(`Delete “${s.name}”? Topics linked to it lose that link.`)) return;
+    p.sections.splice(+d.si, 1);
+    E.topics.forEach(t => { t.gate = (t.gate || []).filter(x => x !== s.id); t.net = (t.net || []).filter(x => x !== s.id); });
+    go('sylAdmin', true);
+  },
+  saTopic: d => openTopicEditor(d.i),
+  saTopicSave: d => {
+    const E = sedit(), name = (($('#sa-name') || {}).value || '').trim(), group = (($('#sa-group') || {}).value || '').trim();
+    if (!name) return toast('Write the topic name');
+    if (!group) return toast('Write a group, e.g. Indian Literature');
+    const secs = [...document.querySelectorAll('.sa-sec:checked')].map(x => x.value);
+    const gIds = editSections(E, 'gate').map(s => s.id);
+    const t = d.i === 'new' ? { id: `${slug(name.split(':')[0])}-${uid().slice(-4)}` } : E.topics[+d.i];
+    Object.assign(t, { name, group, gate: secs.filter(s => gIds.includes(s)), net: secs.filter(s => !gIds.includes(s)) });
+    const guide = ($('#sa-guide') || {}).value, q = (($('#sa-q') || {}).value || '').trim();
+    if (guide) t.guide = guide; else delete t.guide;
+    if (q) t.q = q; else delete t.q;
+    if (d.i === 'new') E.topics.push(t);
+    closeModal(); go('sylAdmin', true); toast('Topic updated — remember to Save to GitHub');
+  },
+  saTopicDel: d => {
+    const E = sedit(); if (!confirm('Delete this topic for everyone?')) return;
+    E.topics.splice(+d.i, 1); closeModal(); go('sylAdmin', true);
+  },
+  saDiscard: () => { if (!confirm('Discard your unsaved changes?')) return; S.sylEdit = null; go('syllabus'); },
+  saSave: async () => {
+    const E = sedit(), btn = $('#sa-save-btn');
+    E.updated = todayStr();
+    if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+    try {
+      await ghSaveJSON('syllabus.json', () => E, 'Update syllabus');
+      S.syllabus = JSON.parse(JSON.stringify(E)); S.sylEdit = null;
+      TQCACHE = { key: '', map: new Map() }; WTCACHE = {}; QDCACHE = { key: '', map: new Map() };
+      toast('Syllabus saved ✿ Everyone sees it in 1–2 minutes', 4500);
+      go('syllabus');
+    } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = 'Save to GitHub'; } }
+  }
+};
+const SA_CH = {
+  sylEdit: el => { const v = el.dataset.num ? (parseFloat(el.value) || 0) : el.value.trim(); setPath(sedit(), el.dataset.path, v); }
+};
+const SA_IN = {
+  sylAdminQuery: v => {
+    S.sylAdminQuery = v; const E = sedit(), q = queryTokens(v);
+    let list = E.topics.map((t, i) => ({ t, i }));
+    if (q.length) list = list.filter(({ t }) => q.every(tok => tokenMatch(tok, words(t.name + ' ' + t.group))));
+    const el = $('#sa-topics'); if (el) el.innerHTML = saTopicsHTML(list);
+  }
+};
+
+Object.assign(SYL_ACT, SA_ACT); Object.assign(SYL_CH, SA_CH); Object.assign(SYL_IN, SA_IN);
 
 /* =========================================================
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', sylAdmin: 'syllabus' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
