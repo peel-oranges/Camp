@@ -75,7 +75,7 @@ const answerText = q => isNAT(q) ? String(q.answer) : ansList(q).map(L => `${L}.
 const givenText = (q, g) => isNAT(q) ? String(g) : letterList(g).join(', ');
 
 /* ---------- Personal progress (this device only) ---------- */
-function blankProg() { return { v: 1, attempts: {}, mistakes: {}, bookmarks: {}, revision: {}, history: [] }; }
+function blankProg() { return { v: 1, attempts: {}, mistakes: {}, bookmarks: {}, revision: {}, history: [], syl: {}, sylCustom: [], plan: { days: {} } }; }
 function loadProg() {
   try {
     const p = JSON.parse(localStorage.getItem(PROG_KEY));
@@ -94,6 +94,7 @@ const S = {
   prog: loadProg(),
   filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true, fresh: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
+  syllabus: null, sylMode: 'exam', sylSec: null, sylFilter: 'all', sylQuery: '', planDay: null,
   quiz: null, guideId: null, guideMode: 'cats', guideQuery: '',
   adminQuery: '', adminFilter: 'all', adminShow: ADMIN_PAGE, edit: null
 };
@@ -1267,7 +1268,7 @@ VIEWS.more = () => {
 
   <section class="card">
     <h2>Backup</h2>
-    <p class="muted small">Your mistakes, bookmarks, stats and revision schedule are saved only on this device. Export a backup now and then, and import it on a new phone.</p>
+    <p class="muted small">Your mistakes, bookmarks, stats, revision schedule, syllabus ticks and plan are saved only on this device. Export a backup now and then, and import it on a new phone.</p>
     <div class="btn-row">
       <button class="btn ghost" data-act="export">Export backup</button>
       <button class="btn ghost" data-act="import">Import backup</button>
@@ -1468,10 +1469,435 @@ function openVerify(id) {
 }
 
 /* =========================================================
+   SYLLABUS TRACKER & MY PLAN  (data: syllabus.json)
+   Every topic is listed once and linked to the GATE and NET sections
+   it belongs to, so ticking it once fills in both exams.
+   "Learnt" is what counts as done. "Quizzed" is only for your own awareness.
+   Everything is saved on this device, inside the normal backup.
+   ========================================================= */
+const parseDay = s => { const [y, m, d] = String(s).split('-').map(Number); return new Date(y, (m || 1) - 1, d || 1); };
+const dayDiff = (a, b) => Math.round((parseDay(b) - parseDay(a)) / 86400000);      // b − a, in days
+const shiftDay = (s, n) => { const d = parseDay(s); d.setDate(d.getDate() + n); return todayStr(d); };
+const fmtDay = (s, opt) => parseDay(s).toLocaleDateString(undefined, opt || { day: 'numeric', month: 'short', year: 'numeric' });
+const isDay = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const EXAMS = [['gate', 'GATE'], ['net', 'NET']];
+const shortName = t => t.name.split(':')[0].trim();
+
+function sylP() {
+  const p = S.prog;
+  if (!p.syl) p.syl = {};
+  if (!p.sylCustom) p.sylCustom = [];
+  if (!p.plan) p.plan = {};
+  if (!p.plan.days) p.plan.days = {};
+  if (!p.plan.start) p.plan.start = todayStr();          // pace is counted from the first day you open the tracker
+  return p;
+}
+const sylExams = () => (S.syllabus && S.syllabus.exams) || {};
+function sylTopics() {
+  const base = (S.syllabus && S.syllabus.topics) || [];
+  return base.concat(sylP().sylCustom.map(c => Object.assign({ group: 'My own topics', custom: true }, c)));
+}
+const topicById = id => sylTopics().find(t => t.id === id);
+const sylSections = ex => (sylExams()[ex] ? sylExams()[ex].parts : []).flatMap(p => p.sections.map(s => Object.assign({ part: p }, s)));
+const sectionById = id => { for (const [ex] of EXAMS) { const s = sylSections(ex).find(x => x.id === id); if (s) return Object.assign({ exam: ex }, s); } return null; };
+const learnt = t => !!(sylP().syl[t.id] && sylP().syl[t.id].l);
+const quizzed = t => !!(sylP().syl[t.id] && sylP().syl[t.id].q);
+const topicsIn = sid => sylTopics().filter(t => (t.gate || []).includes(sid) || (t.net || []).includes(sid));
+const examTopics = ex => sylTopics().filter(t => (t[ex] || []).length);
+function scopeTopics(scope) {
+  if (scope === 'gate' || scope === 'net') return examTopics(scope);
+  return sylTopics().filter(t => (t.gate || []).length || (t.net || []).length);
+}
+function progOf(list) {
+  const n = list.length, l = list.filter(learnt).length, q = list.filter(quizzed).length;
+  return { n, l, q, pct: n ? Math.round((l / n) * 100) : 0 };
+}
+const examDate = ex => { const pl = sylP().plan; return isDay(pl[ex + 'Date']) ? pl[ex + 'Date'] : ((sylExams()[ex] || {}).date || ''); };
+const daysTo = d => isDay(d) ? dayDiff(todayStr(), d) : null;
+
+// Quiz link for a topic: a Guide section if it has questions, otherwise a search.
+function topicQuiz(t) {
+  if (t.guide) { const g = gNode(t.guide); if (g && g.qs.length) return { kind: 'guide', id: t.guide, n: g.qs.length, stat: groupStat(g) }; }
+  if (t.q) return { kind: 'search', v: t.q };
+  return null;
+}
+function setLearnt(id, on) {
+  const p = sylP(), r = p.syl[id] || (p.syl[id] = {});
+  if (on) r.l = r.l || todayStr(); else delete r.l;
+  if (!r.l && !r.q) delete p.syl[id];
+}
+function setQuizzed(id, on) {
+  const p = sylP(), r = p.syl[id] || (p.syl[id] = {});
+  if (on) r.q = r.q || todayStr(); else delete r.q;
+  if (!r.l && !r.q) delete p.syl[id];
+}
+
+/* ---------- Syllabus tab ---------- */
+function secCard(s) {
+  const pr = progOf(topicsIn(s.id));
+  return `<button class="sy-sec ${pr.n && pr.l === pr.n ? 'done' : ''}" data-act="sylOpen" data-id="${esc(s.id)}">
+    <span class="sy-sec-name">${esc(s.name)}</span>
+    <span class="bar"><span style="width:${pr.pct}%"></span></span>
+    <span class="sy-sec-meta">${pr.l}/${pr.n} learnt${pr.q ? ` · ${pr.q} quizzed` : ''}</span>
+  </button>`;
+}
+function examCol(ex) {
+  const E = sylExams()[ex]; if (!E) return '';
+  const pr = progOf(examTopics(ex)), d = daysTo(examDate(ex));
+  return `<div class="sy-col">
+    <div class="sy-col-head ${ex}">
+      <div class="sy-col-name">${esc(E.name)}</div>
+      <div class="sy-big">${pr.pct}%</div>
+      <div class="bar"><div style="width:${pr.pct}%"></div></div>
+      <div class="sub">${pr.l} of ${pr.n} topics learnt${d != null && d >= 0 ? ` · ${d} days left` : ''}</div>
+    </div>
+    ${E.parts.map(p => `<div class="sy-part">${esc(p.name)} <span class="muted">· ${p.marks} marks</span></div>${p.sections.map(secCard).join('')}`).join('')}
+  </div>`;
+}
+function topicRow(t, opts = {}) {
+  const L = learnt(t), Q = quizzed(t), qz = topicQuiz(t);
+  const r = sylP().syl[t.id] || {};
+  const tags = [(t.gate || []).length ? '<span class="sy-tag gate">GATE</span>' : '', (t.net || []).length ? '<span class="sy-tag net">NET</span>' : ''].join('');
+  const st = qz && qz.stat && qz.stat.a ? ` · quiz ${Math.round(qz.stat.acc * 100)}% (${qz.stat.seen}/${qz.n} done)` : qz && qz.n ? ` · ${qz.n} questions` : '';
+  return `<div class="sy-topic ${L ? 'is-learnt' : ''}">
+    <div class="sy-topic-name">${esc(t.name)}</div>
+    <div class="sy-topic-sub">${opts.noTags ? '' : tags}${L ? `<span class="small muted">Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}</span>` : ''}<span class="small muted">${esc(st)}</span></div>
+    <div class="sy-actions">
+      <button class="sy-tick ${L ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${L}"><span class="box">${L ? '✓' : ''}</span>Learnt</button>
+      <button class="sy-tick q ${Q ? 'on' : ''}" data-act="sylQuizzed" data-id="${esc(t.id)}" aria-pressed="${Q}"><span class="box">${Q ? '✓' : ''}</span>Quizzed</button>
+      ${qz ? `<button class="chip" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz me ›</button>` : ''}
+      <button class="chip" data-act="planTopic" data-id="${esc(t.id)}">＋ Plan</button>
+      ${t.custom ? `<button class="chip" data-act="sylDelCustom" data-id="${esc(t.id)}" aria-label="Delete my topic">✕</button>` : ''}
+    </div>
+  </div>`;
+}
+function allTopicsHTML() {
+  const f = S.sylFilter || 'all', q = queryTokens(S.sylQuery || '');
+  let list = sylTopics();
+  if (f === 'gate' || f === 'net') list = list.filter(t => (t[f] || []).length);
+  if (f === 'left') list = list.filter(t => !learnt(t));
+  if (q.length) list = list.filter(t => q.every(tok => tokenMatch(tok, words(t.name + ' ' + t.group))));
+  if (!list.length) return '<p class="muted">No topics match.</p>';
+  const groups = new Map();
+  list.forEach(t => { if (!groups.has(t.group)) groups.set(t.group, []); groups.get(t.group).push(t); });
+  return [...groups].map(([g, ts]) => { const pr = progOf(ts); return `<section class="card">
+    <h3>${esc(g)} <span class="small muted">· ${pr.l}/${pr.n}</span></h3>
+    ${ts.map(t => topicRow(t)).join('')}</section>`; }).join('');
+}
+VIEWS.syllabus = () => {
+  if (!S.syllabus) return `<section class="card center"><h3>Syllabus not loaded</h3><p class="muted">syllabus.json is missing from the app, or you're offline on the first visit.</p></section>`;
+  const mode = S.sylMode === 'topics' ? 'topics' : 'exam';
+  const all = progOf(scopeTopics('both'));
+  return `
+  <section class="card">
+    <h2>Syllabus tracker</h2>
+    <p class="muted small">Tick <b>Learnt</b> once you have studied a topic. It fills in every GATE and NET section the topic belongs to. <b>Quizzed</b> is only a reminder for you and doesn't change your progress.</p>
+    <div class="sy-overall"><span>Both exams</span><b>${all.l} / ${all.n} topics · ${all.pct}%</b></div>
+    <div class="bar"><div style="width:${all.pct}%"></div></div>
+    <div class="seg" style="margin-top:14px">
+      <button class="${mode === 'exam' ? 'on' : ''}" data-act="sylMode" data-v="exam">Side by side</button>
+      <button class="${mode === 'topics' ? 'on' : ''}" data-act="sylMode" data-v="topics">All topics</button>
+    </div>
+  </section>
+  ${mode === 'exam' ? `
+  <div class="sy-cols">${examCol('gate')}${examCol('net')}</div>
+  <p class="small muted center" style="margin-top:12px">Tap any section to see and tick its topics.</p>` : `
+  <section class="card">
+    <div class="search"><input type="search" data-in="sylQuery" value="${esc(S.sylQuery || '')}" placeholder="Find a topic, e.g. Romantic" autocomplete="off"></div>
+    <div class="chips" style="margin-top:10px">${[['all', 'All'], ['left', 'Not learnt yet'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="chip ${(S.sylFilter || 'all') === k ? 'on' : ''}" data-act="sylFilter" data-v="${k}">${l}</button>`).join('')}</div>
+  </section>
+  <div id="sy-topic-list">${allTopicsHTML()}</div>`}
+  <section class="card">
+    <h3>Add your own topic</h3>
+    <p class="small muted">For anything not in the list, for example a single text you want to track. Pick the sections it belongs to.</p>
+    <button class="btn ghost" data-act="sylAddCustom">＋ Add a topic</button>
+  </section>
+  <p class="small muted center">Sources: ${esc(sylExams().gate ? sylExams().gate.source : '')} · ${esc(sylExams().net ? sylExams().net.source : '')}</p>`;
+};
+VIEWS.sylSection = () => {
+  const s = sectionById(S.sylSec);
+  if (!s) return VIEWS.syllabus();
+  const E = sylExams()[s.exam], ts = topicsIn(s.id), pr = progOf(ts);
+  return `
+  <button class="chip back" data-act="tab" data-tab="syllabus">‹ Syllabus</button>
+  <section class="card">
+    <span class="label">${esc(E.name)} · ${esc(s.part.name)}</span>
+    <h2>${esc(s.name)}</h2>
+    ${s.about ? `<p class="muted">${esc(s.about)}</p>` : ''}
+    ${s.exam === 'net' && s.part.id === 'p2' && /^n[1-4]$/.test(s.id) && E.note ? `<p class="small muted">${esc(E.note)}</p>` : ''}
+    ${s.exam === 'gate' && s.part.id === 'xh2' && E.note ? `<p class="small muted">${esc(E.note)}</p>` : ''}
+    <div class="sy-overall"><span>Learnt</span><b>${pr.l} / ${pr.n} · ${pr.pct}%</b></div>
+    <div class="bar"><div style="width:${pr.pct}%"></div></div>
+    ${pr.q ? `<p class="small muted">${pr.q} quizzed</p>` : ''}
+  </section>
+  <section class="card">
+    <h3>Topics</h3>
+    ${ts.length ? ts.map(t => topicRow(t)).join('') : '<p class="muted small">No topics here yet.</p>'}
+  </section>`;
+};
+
+function openCustomTopic() {
+  const box = ex => sylSections(ex).map(s => `<label class="check-row sy-check"><input type="checkbox" class="cust-sec" value="${esc(s.id)}"> ${esc(s.name)}</label>`).join('');
+  const m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Add your own topic">
+    <h3>Add your own topic</h3>
+    <label class="field-label" for="cust-name">Topic name</label>
+    <input type="text" id="cust-name" placeholder="e.g. Partition novels">
+    <details open><summary class="field-label">GATE sections</summary>${box('gate')}</details>
+    <details><summary class="field-label">NET units</summary>${box('net')}</details>
+    <div class="btn-row" style="margin-top:12px">
+      <button class="btn" data-act="sylSaveCustom">Add topic</button>
+      <button class="btn ghost" data-act="closeModal">Cancel</button>
+    </div>
+  </div>`;
+  m.hidden = false;
+}
+
+/* ---------- Plan tab ---------- */
+const planDays = () => sylP().plan.days;
+const dayItems = d => planDays()[d] || [];
+function pruneDay(d) { if (planDays()[d] && !planDays()[d].length) delete planDays()[d]; }
+function overdueItems() {
+  const t = todayStr(), out = [];
+  Object.keys(planDays()).filter(d => d < t).forEach(d => dayItems(d).forEach(it => { if (!it.done) out.push({ d, it }); }));
+  return out;
+}
+function paceInfo() {
+  const pl = sylP().plan, scope = pl.scope || 'both', t = todayStr();
+  const list = scopeTopics(scope), left = list.filter(x => !learnt(x));
+  const target = isDay(pl.target) ? pl.target : (scope === 'net' ? examDate('net') : scope === 'gate' ? examDate('gate') : [examDate('gate'), examDate('net')].filter(isDay).sort()[0]);
+  const start = isDay(pl.start) ? pl.start : t;
+  // Pace counts only topics learnt AFTER the start day, so ticking old work doesn't inflate it.
+  const recent = list.filter(x => { const r = sylP().syl[x.id]; return r && r.l && r.l > start; });
+  const since = Math.max(0, dayDiff(start, t));
+  const window = Math.min(14, since);
+  const inWin = window ? recent.filter(x => dayDiff(sylP().syl[x.id].l, t) < window).length : 0;
+  const rate = window >= 3 ? inWin / window : null;                     // topics per day
+  const daysLeft = isDay(target) ? dayDiff(t, target) : null;
+  const need = daysLeft != null && daysLeft > 0 ? left.length / daysLeft : null;
+  const finish = rate ? shiftDay(t, Math.ceil(left.length / rate)) : null;
+  // Planned: unlearnt topics linked to an unfinished to-do on or before the target day.
+  const planned = new Set();
+  Object.entries(planDays()).forEach(([d, items]) => { if (d >= t && (!isDay(target) || d <= target)) items.forEach(it => { if (it.topic && !it.done) planned.add(it.topic); }); });
+  const plannedLeft = left.filter(x => planned.has(x.id)).length;
+  return { scope, list, left, target, start, rate, need, daysLeft, finish, plannedLeft, since };
+}
+function weekStrip(sel) {
+  const t = todayStr(), base = parseDay(sel), dow = (base.getDay() + 6) % 7;     // Monday first
+  const mon = shiftDay(sel, -dow);
+  return `<div class="pl-week">${[0, 1, 2, 3, 4, 5, 6].map(i => {
+    const d = shiftDay(mon, i), items = dayItems(d), done = items.filter(x => x.done).length;
+    const dd = parseDay(d);
+    return `<button class="pl-day ${d === sel ? 'on' : ''} ${d === t ? 'today' : ''}" data-act="planGo" data-v="${d}">
+      <span class="w">${dd.toLocaleDateString(undefined, { weekday: 'short' }).slice(0, 2)}</span>
+      <span class="n">${dd.getDate()}</span>
+      <span class="c ${items.length && done === items.length ? 'all' : ''}">${items.length ? `${done}/${items.length}` : '·'}</span>
+    </button>`;
+  }).join('')}</div>`;
+}
+function topicSelect(id, selected) {
+  const groups = new Map();
+  sylTopics().forEach(t => { if (!groups.has(t.group)) groups.set(t.group, []); groups.get(t.group).push(t); });
+  return `<select id="${id}"><option value="">No linked topic</option>${[...groups].map(([g, ts]) => `<optgroup label="${esc(g)}">${ts.map(t => `<option value="${esc(t.id)}" ${selected === t.id ? 'selected' : ''}>${learnt(t) ? '✓ ' : ''}${esc(t.name)}</option>`).join('')}</optgroup>`).join('')}</select>`;
+}
+function paceHTML(P) {
+  const scopeName = { both: 'GATE + NET', gate: 'GATE', net: 'NET' }[P.scope];
+  const wk = x => x == null ? '–' : (Math.round(x * 7 * 10) / 10).toString();
+  let verdict = '', cls = '';
+  if (!P.left.length) { verdict = 'Every topic in this scope is learnt ✿ Time to revise and quiz.'; cls = 'ok'; }
+  else if (P.daysLeft == null) verdict = 'Set a finish-by date below to see whether you are on time.';
+  else if (P.daysLeft <= 0) { verdict = `Your finish-by date has passed with ${plural(P.left.length, 'topic')} left. Set a new date below.`; cls = 'bad'; }
+  else if (!P.rate) verdict = `To finish by ${fmtDay(P.target)}, learn about ${wk(P.need)} topics a week. Your own pace shows here after 3 days of ticking.`;
+  else if (P.finish <= P.target) { verdict = `On track ✿ At your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.finish, P.target), 'day')} before your date.`; cls = 'ok'; }
+  else { verdict = `Behind: at your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.target, P.finish), 'day')} late. Aim for ${wk(P.need)} topics a week.`; cls = 'bad'; }
+  return `
+  <section class="card">
+    <h2>Will I finish in time?</h2>
+    <div class="seg" style="margin-bottom:12px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${P.scope === k ? 'on' : ''}" data-act="planScope" data-v="${k}">${l}</button>`).join('')}</div>
+    <div class="stat-grid">
+      <div><div class="n">${P.left.length}</div><div class="l">Topics left</div></div>
+      <div><div class="n">${P.daysLeft == null ? '–' : Math.max(0, P.daysLeft)}</div><div class="l">Days to finish-by</div></div>
+      <div><div class="n">${wk(P.need)}</div><div class="l">Needed a week</div></div>
+      <div><div class="n">${wk(P.rate)}</div><div class="l">Your pace a week</div></div>
+    </div>
+    <p class="pl-verdict ${cls}">${esc(verdict)}</p>
+    ${P.left.length ? `<p class="small muted">${scopeName}: ${plural(P.plannedLeft, 'topic')} of the ${P.left.length} left already have a day in your plan${P.daysLeft > 0 ? ' before your finish-by date' : ''}. ${P.left.length - P.plannedLeft ? `${P.left.length - P.plannedLeft} still need a day.` : 'Everything left is planned ✿'}</p>` : ''}
+    <p class="small muted">Pace counts topics you tick Learnt after ${esc(fmtDay(P.start))}, so topics you finished earlier don't inflate it.</p>
+  </section>`;
+}
+VIEWS.plan = () => {
+  if (!S.syllabus) return VIEWS.syllabus();
+  const pl = sylP().plan, t = todayStr(), sel = isDay(S.planDay) ? S.planDay : t;
+  const items = dayItems(sel), over = overdueItems(), P = paceInfo();
+  const cd = EXAMS.map(([ex, nm]) => { const d = daysTo(examDate(ex)); return d == null ? '' : `<div class="pl-cd ${ex}"><span class="n">${d >= 0 ? d : '–'}</span><span class="l">days to ${nm}<br>${esc(fmtDay(examDate(ex), { day: 'numeric', month: 'short' }))}</span></div>`; }).join('');
+  const label = sel === t ? 'Today' : sel === shiftDay(t, 1) ? 'Tomorrow' : sel === shiftDay(t, -1) ? 'Yesterday' : fmtDay(sel, { weekday: 'long', day: 'numeric', month: 'short' });
+  const doneN = items.filter(x => x.done).length;
+  return `
+  <section class="card">
+    <h2>My plan</h2>
+    <div class="pl-cds">${cd}</div>
+  </section>
+
+  ${over.length ? `<section class="card pl-over">
+    <h3>${plural(over.length, 'unfinished to-do')} from earlier days</h3>
+    <div class="btn-row"><button class="btn ghost" data-act="planCarry">Move all to today</button><button class="btn text" data-act="planShowOver">See them</button></div>
+  </section>` : ''}
+
+  <section class="card">
+    <div class="pl-nav">
+      <button class="icon-btn" data-act="planGo" data-v="${shiftDay(sel, -1)}" aria-label="Previous day">‹</button>
+      <div class="pl-nav-mid"><div class="pl-nav-day">${esc(label)}</div>${sel !== t ? '<button class="btn text" data-act="planGo" data-v="today" style="min-height:30px;padding:0">Back to today</button>' : ''}</div>
+      <button class="icon-btn" data-act="planGo" data-v="${shiftDay(sel, 1)}" aria-label="Next day">›</button>
+    </div>
+    ${weekStrip(sel)}
+    <p class="small muted" style="margin:12px 0 4px">${items.length ? `${doneN} of ${items.length} done` : 'Nothing planned for this day yet.'}</p>
+    <div class="pl-items">${items.map(it => { const tp = it.topic && topicById(it.topic); return `
+      <div class="pl-item ${it.done ? 'done' : ''}">
+        <button class="pl-check ${it.done ? 'on' : ''}" data-act="planToggle" data-d="${sel}" data-id="${esc(it.id)}" aria-label="${it.done ? 'Mark not done' : 'Mark done'}">${it.done ? '✓' : ''}</button>
+        <div class="grow"><div class="pl-text">${esc(it.t)}</div>${tp ? `<button class="sy-link" data-act="planOpenTopic" data-id="${esc(tp.id)}">${learnt(tp) ? '✓ ' : ''}${esc(tp.name)}</button>` : ''}</div>
+        <button class="icon-btn" data-act="planMove" data-d="${sel}" data-id="${esc(it.id)}" aria-label="Move to another day">⇄</button>
+        <button class="icon-btn" data-act="planDel" data-d="${sel}" data-id="${esc(it.id)}" aria-label="Delete">✕</button>
+      </div>`; }).join('')}</div>
+    <div class="pl-add">
+      <label class="field-label" for="pl-text">Add a to-do for ${esc(label.toLowerCase() === 'today' ? 'today' : fmtDay(sel, { day: 'numeric', month: 'short' }))}</label>
+      <input type="text" id="pl-text" placeholder="e.g. Read The Waste Land, sections I–III" enterkeyhint="done" autocomplete="off">
+      <label class="field-label" for="pl-topic">Syllabus topic (optional)</label>
+      ${topicSelect('pl-topic', S.planPreTopic || '')}
+      <p class="small muted">If you link a topic, ticking the to-do marks that topic Learnt.</p>
+      <button class="btn" data-act="planAdd">Add to-do</button>
+    </div>
+  </section>
+
+  ${paceHTML(P)}
+
+  <section class="card">
+    <h3>Dates</h3>
+    <div class="grid2">
+      <div><label class="field-label" for="pl-gate">GATE date</label><input type="date" id="pl-gate" data-change="planDate" data-k="gateDate" value="${esc(examDate('gate'))}"></div>
+      <div><label class="field-label" for="pl-net">NET date</label><input type="date" id="pl-net" data-change="planDate" data-k="netDate" value="${esc(examDate('net'))}"></div>
+    </div>
+    <p class="small muted">${esc((sylExams().gate || {}).dateNote || '')} ${esc((sylExams().net || {}).dateNote || '')}</p>
+    <label class="field-label" for="pl-target">Finish syllabus by (your own deadline)</label>
+    <input type="date" id="pl-target" data-change="planDate" data-k="target" value="${esc(isDay(pl.target) ? pl.target : '')}">
+    <p class="small muted">Leave blank to use the exam date. Keeping a few weeks before the exam gives you time to revise.</p>
+    <button class="btn text" data-act="planRestart">Count my pace from today</button>
+  </section>`;
+};
+function openOverdue() {
+  const over = overdueItems(), m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Unfinished to-dos">
+    <h3>Unfinished to-dos</h3>
+    ${over.map(({ d, it }) => `<div class="pl-item"><div class="grow"><div class="pl-text">${esc(it.t)}</div><div class="small muted">${esc(fmtDay(d, { weekday: 'short', day: 'numeric', month: 'short' }))}</div></div>
+      <button class="chip" data-act="planMoveOne" data-d="${d}" data-id="${esc(it.id)}">To today</button></div>`).join('')}
+    <div class="btn-row" style="margin-top:12px"><button class="btn" data-act="planCarry">Move all to today</button><button class="btn ghost" data-act="closeModal">Close</button></div>
+  </div>`;
+  m.hidden = false;
+}
+function openPlanDay(title, onPick, def) {
+  S.planPick = onPick;
+  const m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="${esc(title)}">
+    <h3>${esc(title)}</h3>
+    <label class="field-label" for="pick-day">Day</label>
+    <input type="date" id="pick-day" value="${esc(def || todayStr())}">
+    <div class="chips" style="margin-top:10px">
+      <button class="chip" data-act="pickQuick" data-v="0">Today</button><button class="chip" data-act="pickQuick" data-v="1">Tomorrow</button><button class="chip" data-act="pickQuick" data-v="7">In a week</button>
+    </div>
+    <div class="btn-row" style="margin-top:14px"><button class="btn" data-act="pickConfirm">Save</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
+  </div>`;
+  m.hidden = false;
+}
+function moveItem(from, id, to) {
+  const list = dayItems(from), i = list.findIndex(x => x.id === id);
+  if (i < 0 || from === to) return;
+  const [it] = list.splice(i, 1);
+  (planDays()[to] || (planDays()[to] = [])).push(it);
+  pruneDay(from);
+}
+
+const SYL_ACT = {
+  sylMode: d => { S.sylMode = d.v; go('syllabus', true); },
+  sylFilter: d => { S.sylFilter = d.v; go('syllabus', true); },
+  sylOpen: d => { S.sylSec = d.id; go('sylSection'); },
+  sylLearnt: d => { const t = topicById(d.id); if (!t) return; setLearnt(t.id, !learnt(t)); saveProg(); go(S.screen, true); },
+  sylQuizzed: d => { const t = topicById(d.id); if (!t) return; setQuizzed(t.id, !quizzed(t)); saveProg(); go(S.screen, true); },
+  sylQuiz: d => {
+    const t = topicById(d.id), qz = t && topicQuiz(t); if (!qz) return;
+    if (qz.kind === 'guide') ACT.quizTopic({ id: qz.id });
+    else ACT.pickTopic({ v: qz.v });
+  },
+  sylAddCustom: () => openCustomTopic(),
+  sylSaveCustom: () => {
+    const name = (($('#cust-name') || {}).value || '').trim();
+    const secs = [...document.querySelectorAll('.cust-sec:checked')].map(x => x.value);
+    if (!name) return toast('Give the topic a name');
+    if (!secs.length) return toast('Pick at least one section');
+    const g = sylSections('gate').map(s => s.id);
+    sylP().sylCustom.push({ id: 'my-' + uid(), name, gate: secs.filter(s => g.includes(s)), net: secs.filter(s => !g.includes(s)) });
+    saveProg(); closeModal(); toast('Topic added ✿'); go(S.screen, true);
+  },
+  sylDelCustom: d => {
+    if (!confirm('Delete this topic of your own?')) return;
+    const p = sylP(); p.sylCustom = p.sylCustom.filter(c => c.id !== d.id); delete p.syl[d.id];
+    saveProg(); go(S.screen, true);
+  },
+  planTopic: d => {
+    const t = topicById(d.id); if (!t) return;
+    openPlanDay(`Plan: ${t.name}`, day => {
+      (planDays()[day] || (planDays()[day] = [])).push({ id: uid(), t: `Study ${shortName(t)}`, topic: t.id, done: false });
+      saveProg(); toast(`Added to ${fmtDay(day, { weekday: 'short', day: 'numeric', month: 'short' })}`);
+    });
+  },
+  pickQuick: d => { const el = $('#pick-day'); if (el) el.value = shiftDay(todayStr(), +d.v); },
+  pickConfirm: () => {
+    const v = (($('#pick-day') || {}).value || '');
+    if (!isDay(v)) return toast('Choose a day');
+    const fn = S.planPick; S.planPick = null; closeModal();
+    if (fn) fn(v);
+    go(S.screen, true);
+  },
+  planGo: d => { S.planDay = d.v === 'today' ? todayStr() : d.v; go('plan', true); },
+  planScope: d => { sylP().plan.scope = d.v; saveProg(); go('plan', true); },
+  planAdd: () => {
+    const text = (($('#pl-text') || {}).value || '').trim(), topic = (($('#pl-topic') || {}).value || '');
+    const tp = topic && topicById(topic);
+    if (!text && !tp) return toast('Write a to-do first');
+    const day = isDay(S.planDay) ? S.planDay : todayStr();
+    (planDays()[day] || (planDays()[day] = [])).push({ id: uid(), t: text || `Study ${shortName(tp)}`, topic: tp ? tp.id : '', done: false });
+    S.planPreTopic = '';
+    saveProg(); go('plan', true);
+    const el = $('#pl-text'); if (el) el.focus();
+  },
+  planToggle: d => {
+    const it = dayItems(d.d).find(x => x.id === d.id); if (!it) return;
+    it.done = !it.done;
+    if (it.done && it.topic) { const tp = topicById(it.topic); if (tp && !learnt(tp)) { setLearnt(tp.id, true); toast(`“${tp.name}” marked Learnt ✿`, 3500); } }
+    saveProg(); go('plan', true);
+  },
+  planDel: d => {
+    const list = dayItems(d.d), i = list.findIndex(x => x.id === d.id); if (i < 0) return;
+    list.splice(i, 1); pruneDay(d.d); saveProg(); go('plan', true);
+  },
+  planMove: d => openPlanDay('Move to another day', day => { moveItem(d.d, d.id, day); saveProg(); toast('Moved'); }, shiftDay(d.d, 1)),
+  planMoveOne: d => { moveItem(d.d, d.id, todayStr()); saveProg(); if (overdueItems().length) openOverdue(); else closeModal(); go('plan', true); },
+  planCarry: () => { overdueItems().forEach(({ d, it }) => moveItem(d, it.id, todayStr())); saveProg(); closeModal(); S.planDay = todayStr(); toast('Moved to today'); go('plan', true); },
+  planShowOver: () => openOverdue(),
+  planOpenTopic: d => { const t = topicById(d.id); if (!t) return; const s = [...(t.gate || []), ...(t.net || [])][0]; if (s) { S.sylSec = s; go('sylSection'); } },
+  planRestart: () => { if (!confirm('Count your pace from today? Topics learnt before today will not count towards it.')) return; sylP().plan.start = todayStr(); saveProg(); go('plan', true); }
+};
+const SYL_IN = {
+  sylQuery: v => { S.sylQuery = v; const el = $('#sy-topic-list'); if (el) el.innerHTML = allTopicsHTML(); }
+};
+const SYL_CH = {
+  planDate: el => { const k = el.dataset.k; if (isDay(el.value)) sylP().plan[k] = el.value; else delete sylP().plan[k]; saveProg(); go('plan', true); }
+};
+
+/* =========================================================
    ROUTING & EVENTS
    ========================================================= */
-const MAIN_TABS = ['home', 'guide', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more' };
+const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', sylSection: 'syllabus' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -1637,7 +2063,7 @@ const ACT = {
   },
   import: () => $('#import-file').click(),
   resetProg: () => {
-    if (!confirm('Clear all mistakes, bookmarks, stats and revision on this device? This cannot be undone.')) return;
+    if (!confirm('Clear all mistakes, bookmarks, stats, revision, syllabus ticks and your plan on this device? This cannot be undone.')) return;
     S.prog = blankProg(); saveProg(); toast('Progress cleared'); render();
   },
 
@@ -1731,11 +2157,14 @@ const ACT = {
   }
 };
 
+Object.assign(ACT, SYL_ACT);
+
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
   guideQuery: v => { S.guideQuery = v; const el = $('#guide-list'); if (el) el.innerHTML = guideListHTML(); },
   adminQuery: v => { S.adminQuery = v; S.adminShow = ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
 };
+Object.assign(IN, SYL_IN);
 const CH = {
   shuffle: el => { S.filters.shuffle = el.checked; },
   fresh: el => { S.filters.fresh = el.checked; },
@@ -1755,6 +2184,8 @@ const CH = {
     r.readAsText(file);
   }
 };
+
+Object.assign(CH, SYL_CH);
 
 document.addEventListener('click', e => {
   if (e.target.id === 'modal') { closeModal(); return; }
@@ -1814,7 +2245,76 @@ document.addEventListener('keydown', e => {
     .nr-asked ul { margin: 8px 0 0; padding-left: 18px; }
     .nr-asked li { margin-bottom: 6px; }
     .nr-fact .name { font-weight: 700; }
-    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }`;
+    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }
+    .tabs { grid-template-columns: repeat(6, 1fr); padding-left: 6px; padding-right: 6px; }
+    .tabs button { font-size: 11px; padding: 0 2px; min-width: 0; }
+    .sy-overall { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; font-size: .95rem; }
+    .sy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; }
+    .sy-col { min-width: 0; }
+    .sy-col-head { border-radius: 18px; padding: 14px 12px; margin-bottom: 6px; border: 1px solid var(--border); }
+    .sy-col-head.gate { background: var(--blue-soft); }
+    .sy-col-head.net { background: var(--pinkrow); }
+    .sy-col-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; font-weight: 700; line-height: 1.1; }
+    .sy-big { font-size: 1.7rem; font-weight: 800; color: var(--accent-ink); margin-top: 4px; }
+    .sy-col-head .sub { font-size: 12.5px; color: var(--muted); }
+    .sy-part { font-size: 11.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 14px 4px 6px; line-height: 1.35; }
+    .sy-sec { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 10px 11px; margin-bottom: 8px; box-shadow: 0 2px 10px var(--shadow); cursor: pointer; }
+    .sy-sec.done { border-color: var(--ok); }
+    .sy-sec-name { display: block; font-weight: 700; font-size: 13.5px; line-height: 1.3; }
+    .sy-sec-meta { display: block; font-size: 11.5px; color: var(--muted); }
+    .sy-sec .bar { display: block; }
+    .bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--pink-strong), var(--purple)); }
+    .sy-topic { padding: 12px 0; border-top: 1px solid var(--border); }
+    .card h3 + .sy-topic { border-top: 0; }
+    .sy-topic-name { font-family: "Lora", Georgia, serif; font-size: 1rem; line-height: 1.4; }
+    .sy-topic.is-learnt .sy-topic-name { color: var(--muted); }
+    .sy-topic-sub { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
+    .sy-tag { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
+    .sy-tag.gate { background: var(--blue); } .sy-tag.net { background: var(--pink); }
+    .sy-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .sy-actions .chip { min-height: 40px; font-size: 13.5px; }
+    .sy-tick { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 8px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--chip); font-weight: 800; font-size: 13.5px; color: var(--ink); cursor: pointer; }
+    .sy-tick .box { width: 24px; height: 24px; border-radius: 8px; border: 2px solid var(--lilac); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+    .sy-tick.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+    .sy-tick.on .box { background: var(--ok); border-color: var(--ok); color: var(--card-2); }
+    .sy-tick.q.on { background: var(--lilac-soft); border-color: var(--lilac); color: var(--accent-ink); }
+    .sy-tick.q.on .box { background: var(--purple); border-color: var(--purple); }
+    .sy-sheet { max-height: 85vh; overflow-y: auto; }
+    .sy-check { min-height: 42px; font-weight: 600; font-size: 14px; }
+    .sy-link { border: 0; background: var(--blue-soft); color: var(--accent-ink); border-radius: 999px; padding: 4px 10px; margin-top: 6px; font: inherit; font-size: 12.5px; font-weight: 700; text-align: left; cursor: pointer; }
+    .pl-cds { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pl-cd { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 16px; border: 1px solid var(--border); }
+    .pl-cd.gate { background: var(--blue-soft); } .pl-cd.net { background: var(--pinkrow); }
+    .pl-cd .n { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--accent-ink); }
+    .pl-cd .l { font-size: 12px; color: var(--muted); font-weight: 700; line-height: 1.3; }
+    .pl-over { background: var(--warn-bg); }
+    .pl-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .pl-nav-mid { text-align: center; }
+    .pl-nav-day { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+    .pl-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 12px; }
+    .pl-day { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 7px 0; border-radius: 14px; border: 1.5px solid var(--border); background: var(--chip); font: inherit; color: inherit; cursor: pointer; min-width: 0; }
+    .pl-day .w { font-size: 10.5px; font-weight: 800; color: var(--muted); text-transform: uppercase; }
+    .pl-day .n { font-weight: 800; font-size: 15px; }
+    .pl-day .c { font-size: 10.5px; color: var(--muted); }
+    .pl-day .c.all { color: var(--ok); font-weight: 800; }
+    .pl-day.today { border-color: var(--pink-strong); }
+    .pl-day.on { background: var(--lilac-soft); border-color: var(--lilac); }
+    .pl-items { display: flex; flex-direction: column; }
+    .pl-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border); }
+    .pl-items .pl-item:first-child { border-top: 0; }
+    .pl-item .grow { flex: 1; min-width: 0; }
+    .pl-text { line-height: 1.45; padding-top: 6px; }
+    .pl-item.done .pl-text { text-decoration: line-through; color: var(--muted); }
+    .pl-check { flex: none; width: 34px; height: 34px; border-radius: 10px; border: 2px solid var(--lilac); background: var(--input); font-weight: 800; color: var(--card-2); cursor: pointer; }
+    .pl-check.on { background: var(--ok); border-color: var(--ok); }
+    .pl-item .icon-btn { flex: none; }
+    .pl-add { margin-top: 10px; padding-top: 6px; border-top: 1px dashed var(--border); }
+    .pl-add .btn { margin-top: 12px; }
+    .pl-verdict { margin: 14px 0 8px; padding: 12px 14px; border-radius: 14px; background: var(--lilac-soft); line-height: 1.5; font-weight: 600; }
+    .pl-verdict.ok { background: var(--ok-bg); color: var(--ok); }
+    .pl-verdict.bad { background: var(--bad-bg); color: var(--bad); }
+    input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }
+    @media (max-width: 360px) { .sy-cols { grid-template-columns: 1fr; } }`;
   document.head.appendChild(s);
 })();
 
@@ -1831,12 +2331,14 @@ document.addEventListener('keydown', e => {
 
 async function loadData() {
   try {
-    const [qs, guide] = await Promise.all([
+    const [qs, guide, syllabus] = await Promise.all([
       fetch('questions.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch('guide.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { topics: [] }).catch(() => ({ topics: [] }))
+      fetch('guide.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : { topics: [] }).catch(() => ({ topics: [] })),
+      fetch('syllabus.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)
     ]);
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
+    S.syllabus = syllabus && syllabus.exams && syllabus.topics ? syllabus : null;
     GCACHE = null; WCACHE = null; ECACHE = null; NCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }

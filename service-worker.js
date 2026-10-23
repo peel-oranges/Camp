@@ -6,8 +6,8 @@
    instead of reusing its own 10-minute browser copy. If nothing changed, GitHub answers
    with a tiny "same as before", so this costs almost no data. */
 
-const CACHE = 'camp-v6';
-const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'questions.json', 'guide.json', 'manifest.json', 'icon.png'];
+const CACHE = 'camp-v7';
+const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'questions.json', 'guide.json', 'syllabus.json', 'manifest.json', 'icon.png'];
 const FONT_CACHE = 'litquiz-fonts-v1';
 
 self.addEventListener('install', event => {

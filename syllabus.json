@@ -1,0 +1,1420 @@
+{
+ "updated": "2026-10-23",
+ "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to, so ticking it once updates both exams.",
+ "exams": {
+  "gate": {
+   "name": "GATE 2027",
+   "full": "GATE 2027 · XH (Humanities) with XH2 English",
+   "date": "2027-02-06",
+   "dateNote": "GATE 2027 runs on 6–7, 13–14 and 20–21 Feb 2027 (IIT Madras). Set your own paper's date once it is announced.",
+   "source": "Official GATE 2027 syllabus, IIT Madras (gate2027.iitm.ac.in)",
+   "note": "XH2's official note says the paper is not split by section, so there are no official marks per section.",
+   "parts": [
+    {
+     "id": "ga",
+     "name": "General Aptitude",
+     "marks": 15,
+     "sections": [
+      {
+       "id": "ga1",
+       "name": "Verbal Aptitude",
+       "about": "Basic English grammar, vocabulary, idioms and phrases in context; reading and comprehension; narrative sequencing."
+      },
+      {
+       "id": "ga2",
+       "name": "Quantitative Aptitude",
+       "about": "Data interpretation (graphs, charts, plots, maps, tables); ratios, percentages, powers, logarithms, permutations and combinations, series; mensuration, geometry, elementary statistics and probability."
+      },
+      {
+       "id": "ga3",
+       "name": "Analytical Aptitude",
+       "about": "Logic: deduction and induction; analogy; numerical relations and reasoning."
+      },
+      {
+       "id": "ga4",
+       "name": "Spatial Aptitude",
+       "about": "Transforming shapes: translation, rotation, scaling, mirroring, assembling and grouping; paper folding, cutting and patterns in 2D and 3D."
+      }
+     ]
+    },
+    {
+     "id": "xh0",
+     "name": "XH0 · Reasoning and Comprehension",
+     "marks": 25,
+     "sections": [
+      {
+       "id": "xh01",
+       "name": "Reading Comprehension",
+       "about": "Understanding complex language in short paragraphs and answering questions on them."
+      },
+      {
+       "id": "xh02",
+       "name": "Expression",
+       "about": "Stylistic and rhetorical aspects of a short passage, including correcting or modifying particular sentences."
+      },
+      {
+       "id": "xh03",
+       "name": "Analytical Reasoning",
+       "about": "Understanding relationships in statements or short passages and drawing reasonable conclusions from them."
+      },
+      {
+       "id": "xh04",
+       "name": "Logical Reasoning",
+       "about": "Thinking critically to evaluate or predict an argument, identify main and supporting arguments, and predict outcomes."
+      }
+     ]
+    },
+    {
+     "id": "xh2",
+     "name": "XH2 · English",
+     "marks": 60,
+     "sections": [
+      {
+       "id": "g1",
+       "name": "Literary Forms, Genres and Modes of Expression",
+       "about": "Poetry, drama, fiction (novels, short stories, graphic narratives), creative non-fiction and non-fiction prose from the Medieval period to the present. Genres and subgenres: history, evolution and why categorisation matters. Aesthetic and rhetorical strategies: narrative and poetic techniques, figures of speech."
+      },
+      {
+       "id": "g2",
+       "name": "History of English Literature and Literary Studies",
+       "about": "English literary traditions from Chaucer to the contemporary. Anglophone literatures: British, American, Canadian and other postcolonial literatures. Literature and political, social and intellectual movements. Literary studies and sociology, psychology, philosophy, environment and other allied disciplines."
+      },
+      {
+       "id": "g3",
+       "name": "Comparative and World Literatures in English Translation",
+       "about": "Literatures in English translation, especially from India and the Global South. Cross-cultural exchanges. Comparative frameworks: intertextuality, adaptation, interconnectedness, cosmopolitanism. Multilingualism, translation studies and the politics of language."
+      },
+      {
+       "id": "g4",
+       "name": "Critical Theories and Intellectual Traditions",
+       "about": "Structuralism, Marxism, Feminism, Existentialism, Poststructuralism, Modernism, Postmodernism, New Historicism, Postcolonialism, Posthumanism, etc. Cultural studies; film and media; memory and trauma; Dalit and Subaltern studies; environmental, medical and digital humanities. Indian poetics: Rasa, Dhvani, Vakrokti, Alamkara, Riti, Aucitya and other indigenous frameworks."
+      },
+      {
+       "id": "g5",
+       "name": "Contemporary Literary Cultures and Research Methodologies",
+       "about": "Literary awards and prizes, festivals, associations and networks. Archival research, ethnographic methods, textual and discourse analysis, AI-assisted and multimodal approaches. Structuring arguments, academic integrity, plagiarism checking, citation ethics, engaging with scholarship."
+      }
+     ]
+    }
+   ]
+  },
+  "net": {
+   "name": "UGC NET",
+   "full": "UGC NET English · Paper 1 + Paper 2 (code 30)",
+   "date": "2026-12-14",
+   "dateNote": "NTA's revised schedule for December 2026: 14–18 and 21 Dec. Your subject's exact day comes with the city slip.",
+   "source": "UGC NET Bureau syllabus for English (code 30), in force since 2019",
+   "note": "Units I–IV are also tested through comprehension passages and cover all literatures in English.",
+   "parts": [
+    {
+     "id": "p1",
+     "name": "Paper 1 · Teaching & Research Aptitude",
+     "marks": 100,
+     "sections": [
+      {
+       "id": "p1u1",
+       "name": "I · Teaching Aptitude"
+      },
+      {
+       "id": "p1u2",
+       "name": "II · Research Aptitude"
+      },
+      {
+       "id": "p1u3",
+       "name": "III · Comprehension"
+      },
+      {
+       "id": "p1u4",
+       "name": "IV · Communication"
+      },
+      {
+       "id": "p1u5",
+       "name": "V · Mathematical Reasoning & Aptitude"
+      },
+      {
+       "id": "p1u6",
+       "name": "VI · Logical Reasoning"
+      },
+      {
+       "id": "p1u7",
+       "name": "VII · Data Interpretation"
+      },
+      {
+       "id": "p1u8",
+       "name": "VIII · ICT"
+      },
+      {
+       "id": "p1u9",
+       "name": "IX · People, Development & Environment"
+      },
+      {
+       "id": "p1u10",
+       "name": "X · Higher Education System"
+      }
+     ]
+    },
+    {
+     "id": "p2",
+     "name": "Paper 2 · English",
+     "marks": 200,
+     "sections": [
+      {
+       "id": "n1",
+       "name": "I · Drama"
+      },
+      {
+       "id": "n2",
+       "name": "II · Poetry"
+      },
+      {
+       "id": "n3",
+       "name": "III · Fiction, Short Story"
+      },
+      {
+       "id": "n4",
+       "name": "IV · Non-Fictional Prose"
+      },
+      {
+       "id": "n5",
+       "name": "V · Language: Concepts, Theories, Pedagogy; English in Use"
+      },
+      {
+       "id": "n6",
+       "name": "VI · English in India: History, Evolution, Futures"
+      },
+      {
+       "id": "n7",
+       "name": "VII · Cultural Studies"
+      },
+      {
+       "id": "n8",
+       "name": "VIII · Literary Criticism"
+      },
+      {
+       "id": "n9",
+       "name": "IX · Literary Theory post World War II"
+      },
+      {
+       "id": "n10",
+       "name": "X · Research Methods and Materials in English"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "topics": [
+  {
+   "id": "br-medieval",
+   "name": "Old & Middle English: Beowulf, Chaucer, Langland, Gower",
+   "group": "British Literature",
+   "gate": [
+    "g2",
+    "g1"
+   ],
+   "net": [
+    "n2"
+   ],
+   "guide": "british-medieval"
+  },
+  {
+   "id": "br-medieval-drama",
+   "name": "Medieval drama: mystery, miracle & morality plays",
+   "group": "British Literature",
+   "gate": [
+    "g2",
+    "g1"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "morality play"
+  },
+  {
+   "id": "br-ren-poetry",
+   "name": "Renaissance poetry: Wyatt, Surrey, Sidney, Spenser, the sonnet",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "guide": "british-renaissance"
+  },
+  {
+   "id": "br-eliz-drama",
+   "name": "Elizabethan drama & University Wits: Kyd, Marlowe, Lyly",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "Marlowe"
+  },
+  {
+   "id": "br-shak-com",
+   "name": "Shakespeare: comedies & histories",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "Shakespeare"
+  },
+  {
+   "id": "br-shak-trag",
+   "name": "Shakespeare: tragedies, problem plays, romances & sonnets",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1",
+    "n2"
+   ],
+   "q": "Shakespeare"
+  },
+  {
+   "id": "br-jacobean",
+   "name": "Jacobean & Caroline drama: Jonson, Webster, Middleton, Ford",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "Jacobean"
+  },
+  {
+   "id": "br-metaphysical",
+   "name": "Metaphysical & Cavalier poets: Donne, Herbert, Marvell, Jonson",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "Metaphysical"
+  },
+  {
+   "id": "br-milton",
+   "name": "Milton & the Puritan Age: Milton, Bunyan",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n4"
+   ],
+   "q": "Milton"
+  },
+  {
+   "id": "br-ren-prose",
+   "name": "Renaissance prose: More, Bacon, Burton, Browne, Hobbes",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n4"
+   ],
+   "q": "Bacon"
+  },
+  {
+   "id": "br-restoration",
+   "name": "Restoration drama: comedy of manners, heroic drama",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "Restoration"
+  },
+  {
+   "id": "br-neoclassical",
+   "name": "Neoclassical poetry & satire: Dryden, Pope, Johnson",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "Pope"
+  },
+  {
+   "id": "br-18-prose",
+   "name": "18th-century prose & periodical essay: Addison, Steele, Swift, Johnson",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n4"
+   ],
+   "q": "Periodical essay"
+  },
+  {
+   "id": "br-novel-rise",
+   "name": "Rise of the novel: Defoe, Richardson, Fielding, Sterne, Smollett",
+   "group": "British Literature",
+   "gate": [
+    "g2",
+    "g1"
+   ],
+   "net": [
+    "n3"
+   ],
+   "q": "18th century novel"
+  },
+  {
+   "id": "br-preromantic",
+   "name": "Transition poets: Gray, Collins, Cowper, Blake, Burns",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "Pre-Romanticism"
+  },
+  {
+   "id": "br-romantic",
+   "name": "Romantic poetry: Wordsworth, Coleridge, Byron, Shelley, Keats",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "guide": "british-romantic"
+  },
+  {
+   "id": "br-romantic-prose",
+   "name": "Romantic prose & novel: Lamb, Hazlitt, De Quincey, Austen, Scott, Mary Shelley",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3",
+    "n4"
+   ],
+   "q": "Romantic"
+  },
+  {
+   "id": "br-vic-poetry",
+   "name": "Victorian poetry: Tennyson, Browning, Arnold, Pre-Raphaelites, Hopkins",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "Victorian poetry"
+  },
+  {
+   "id": "br-vic-novel",
+   "name": "Victorian novel: Dickens, the Brontës, George Eliot, Thackeray, Hardy",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3"
+   ],
+   "q": "Victorian novel"
+  },
+  {
+   "id": "br-vic-prose",
+   "name": "Victorian prose: Carlyle, Ruskin, Newman, Mill, Pater",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n4"
+   ],
+   "q": "Victorian prose"
+  },
+  {
+   "id": "br-mod-poetry",
+   "name": "Modern poetry: Hardy, Yeats, Eliot, war poets, Auden",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "Modernism poetry"
+  },
+  {
+   "id": "br-mod-fiction",
+   "name": "Modern novel & short story: Conrad, Joyce, Woolf, Lawrence, Forster",
+   "group": "British Literature",
+   "gate": [
+    "g2",
+    "g1"
+   ],
+   "net": [
+    "n3"
+   ],
+   "q": "Modernism novel"
+  },
+  {
+   "id": "br-mod-drama",
+   "name": "Modern drama: Shaw, Irish revival, Eliot, Beckett, Osborne, Pinter",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "20th century drama"
+  },
+  {
+   "id": "br-contemporary",
+   "name": "Post-war & contemporary British writing: Movement, Larkin, Hughes, Golding, Murdoch",
+   "group": "British Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n3"
+   ],
+   "guide": "british-contemporary"
+  },
+  {
+   "id": "am-early",
+   "name": "Colonial & early American writing",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n4"
+   ],
+   "guide": "american-early"
+  },
+  {
+   "id": "am-19th",
+   "name": "19th century: Transcendentalists, Hawthorne, Melville, Poe, Whitman, Dickinson, Twain",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n3",
+    "n4"
+   ],
+   "guide": "american-19th"
+  },
+  {
+   "id": "am-fiction",
+   "name": "20th-century fiction: Fitzgerald, Hemingway, Faulkner, Steinbeck",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3"
+   ],
+   "guide": "american-modern"
+  },
+  {
+   "id": "am-poetry",
+   "name": "American poetry: Frost, Stevens, Williams, Beats, Confessional poets",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "q": "American poetry"
+  },
+  {
+   "id": "am-drama",
+   "name": "American drama: O'Neill, Miller, Tennessee Williams, Albee",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n1"
+   ],
+   "q": "American drama"
+  },
+  {
+   "id": "am-african",
+   "name": "African American literature & the Harlem Renaissance",
+   "group": "American Literature",
+   "gate": [
+    "g2",
+    "g4"
+   ],
+   "net": [
+    "n2",
+    "n3",
+    "n7"
+   ],
+   "guide": "american-african"
+  },
+  {
+   "id": "am-contemporary",
+   "name": "Contemporary & postmodern American writing",
+   "group": "American Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3"
+   ],
+   "guide": "american-contemporary"
+  },
+  {
+   "id": "in-early",
+   "name": "Early Indian writing in English: Derozio, Toru Dutt, Tagore, Aurobindo, Naidu",
+   "group": "Indian Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n6"
+   ],
+   "guide": "indian-colonial"
+  },
+  {
+   "id": "in-novel-early",
+   "name": "Indian English novel to 1980: Anand, Raja Rao, Narayan, Markandaya, Anita Desai",
+   "group": "Indian Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3"
+   ],
+   "guide": "indian-novel"
+  },
+  {
+   "id": "in-novel-late",
+   "name": "Indian English novel after 1980: Rushdie, Ghosh, Seth, Roy, 21st-century novelists",
+   "group": "Indian Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n3"
+   ],
+   "q": "Indian English novel"
+  },
+  {
+   "id": "in-poetry",
+   "name": "Indian English poetry: Ezekiel, Ramanujan, Kamala Das, Kolatkar, Parthasarathy",
+   "group": "Indian Literature",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2"
+   ],
+   "guide": "indian-poetry"
+  },
+  {
+   "id": "in-drama",
+   "name": "Indian drama: Karnad, Tendulkar, Sircar, Dattani",
+   "group": "Indian Literature",
+   "gate": [
+    "g2",
+    "g3"
+   ],
+   "net": [
+    "n1"
+   ],
+   "guide": "indian-drama"
+  },
+  {
+   "id": "in-prose",
+   "name": "Indian prose, essays & life writing",
+   "group": "Indian Literature",
+   "gate": [
+    "g1",
+    "g2"
+   ],
+   "net": [
+    "n4"
+   ],
+   "guide": "indian-prose"
+  },
+  {
+   "id": "in-bhasha",
+   "name": "Bhasha literatures in English translation",
+   "group": "Indian Literature",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n3",
+    "n2"
+   ],
+   "guide": "indian-bhasha"
+  },
+  {
+   "id": "in-dalit",
+   "name": "Dalit writing",
+   "group": "Indian Literature",
+   "gate": [
+    "g3",
+    "g4"
+   ],
+   "net": [
+    "n7"
+   ],
+   "guide": "indian-dalit"
+  },
+  {
+   "id": "in-diaspora",
+   "name": "Indian diaspora writing",
+   "group": "Indian Literature",
+   "gate": [
+    "g2",
+    "g3"
+   ],
+   "net": [
+    "n3"
+   ],
+   "guide": "indian-diaspora"
+  },
+  {
+   "id": "in-aesthetics",
+   "name": "Indian poetics: Rasa, Dhvani, Vakrokti, Alamkara, Riti, Aucitya",
+   "group": "Indian Literature",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n8"
+   ],
+   "guide": "theory-indian"
+  },
+  {
+   "id": "in-english",
+   "name": "English in India: Macaulay's Minute, English education, Indian English, the language debate",
+   "group": "Indian Literature",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n6"
+   ],
+   "q": "English in India"
+  },
+  {
+   "id": "wd-african",
+   "name": "African literature: Achebe, Soyinka, Ngugi, Gordimer, Coetzee",
+   "group": "World Literatures",
+   "gate": [
+    "g2",
+    "g3"
+   ],
+   "net": [
+    "n3",
+    "n1"
+   ],
+   "guide": "world-african"
+  },
+  {
+   "id": "wd-caribbean",
+   "name": "Caribbean literature: Walcott, Naipaul, Brathwaite, Lamming, Rhys",
+   "group": "World Literatures",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n3"
+   ],
+   "guide": "world-caribbean"
+  },
+  {
+   "id": "wd-commonwealth",
+   "name": "Canadian, Australian & New Zealand literature",
+   "group": "World Literatures",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n2",
+    "n3"
+   ],
+   "guide": "world-commonwealth"
+  },
+  {
+   "id": "wd-european",
+   "name": "European & Russian literature in translation",
+   "group": "World Literatures",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n1",
+    "n3"
+   ],
+   "guide": "world-european"
+  },
+  {
+   "id": "wd-south",
+   "name": "Latin American & Global South literature in translation",
+   "group": "World Literatures",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n3"
+   ],
+   "q": "Latin American"
+  },
+  {
+   "id": "wd-classical",
+   "name": "Classical Greek & Latin: epic, tragedy, comedy",
+   "group": "World Literatures",
+   "gate": [
+    "g1",
+    "g3"
+   ],
+   "net": [
+    "n1",
+    "n2"
+   ],
+   "guide": "world-classical"
+  },
+  {
+   "id": "wd-comparative",
+   "name": "Comparative literature: intertextuality, adaptation, cosmopolitanism",
+   "group": "World Literatures",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n7"
+   ],
+   "q": "Adaptation"
+  },
+  {
+   "id": "wd-translation",
+   "name": "Translation studies, multilingualism & the politics of language",
+   "group": "World Literatures",
+   "gate": [
+    "g3"
+   ],
+   "net": [
+    "n9",
+    "n6"
+   ],
+   "q": "Translation"
+  },
+  {
+   "id": "fm-genres",
+   "name": "Literary forms & genres: epic, ode, elegy, sonnet, novel types, graphic narrative, creative non-fiction",
+   "group": "Forms, Genres & Terms",
+   "gate": [
+    "g1"
+   ],
+   "net": [
+    "n1",
+    "n2",
+    "n3",
+    "n4"
+   ],
+   "guide": "abrams-genres"
+  },
+  {
+   "id": "fm-prosody",
+   "name": "Prosody, figures of speech & rhetoric",
+   "group": "Forms, Genres & Terms",
+   "gate": [
+    "g1"
+   ],
+   "net": [
+    "n2"
+   ],
+   "guide": "abrams-rhetoric"
+  },
+  {
+   "id": "fm-narrative",
+   "name": "Narrative techniques: point of view, stream of consciousness, metafiction",
+   "group": "Forms, Genres & Terms",
+   "gate": [
+    "g1"
+   ],
+   "net": [
+    "n3"
+   ],
+   "guide": "abrams-narrative"
+  },
+  {
+   "id": "fm-abrams",
+   "name": "M H Abrams, A Glossary of Literary Terms",
+   "group": "Forms, Genres & Terms",
+   "gate": [
+    "g1",
+    "g4"
+   ],
+   "net": [
+    "n8",
+    "n9"
+   ],
+   "guide": "abrams"
+  },
+  {
+   "id": "th-classical",
+   "name": "Classical criticism: Plato, Aristotle, Horace, Longinus",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n8"
+   ],
+   "guide": "theory-classical"
+  },
+  {
+   "id": "th-sidney-johnson",
+   "name": "English criticism, Sidney to Johnson: Sidney, Dryden, Pope, Johnson",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g2",
+    "g4"
+   ],
+   "net": [
+    "n8"
+   ],
+   "q": "Literary criticism"
+  },
+  {
+   "id": "th-romantic-arnold",
+   "name": "English criticism, Wordsworth to Pater: Wordsworth, Coleridge, Shelley, Arnold, Pater",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g2",
+    "g4"
+   ],
+   "net": [
+    "n8"
+   ],
+   "q": "Romantic theory"
+  },
+  {
+   "id": "th-newcriticism",
+   "name": "Eliot, Richards, Leavis & New Criticism",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n8"
+   ],
+   "guide": "theory-formalism"
+  },
+  {
+   "id": "th-formalism",
+   "name": "Russian Formalism & Bakhtin",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "q": "Russian Formalism"
+  },
+  {
+   "id": "th-structuralism",
+   "name": "Structuralism & semiotics: Saussure, Barthes, Lévi-Strauss",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-structuralism"
+  },
+  {
+   "id": "th-poststructuralism",
+   "name": "Post-structuralism & deconstruction: Derrida, Foucault, Lacan",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "q": "Post-structuralism"
+  },
+  {
+   "id": "th-marxism",
+   "name": "Marxism & the Frankfurt School",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-marxism"
+  },
+  {
+   "id": "th-feminism",
+   "name": "Feminism, gender & queer theory",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-feminism"
+  },
+  {
+   "id": "th-psycho",
+   "name": "Psychoanalytic criticism",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-psycho"
+  },
+  {
+   "id": "th-reader",
+   "name": "Reader-response & phenomenology",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-reader"
+  },
+  {
+   "id": "th-postcolonial",
+   "name": "Postcolonial theory & Subaltern Studies",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9",
+    "n7"
+   ],
+   "guide": "theory-postcolonial"
+  },
+  {
+   "id": "th-newhistoricism",
+   "name": "New Historicism & cultural materialism",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ],
+   "q": "New Historicism"
+  },
+  {
+   "id": "th-postmodern",
+   "name": "Modernism & postmodernism as movements",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4",
+    "g2"
+   ],
+   "net": [
+    "n9"
+   ],
+   "q": "Postmodernism"
+  },
+  {
+   "id": "th-existentialism",
+   "name": "Existentialism & the Absurd",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n1",
+    "n9"
+   ],
+   "q": "Existentialism"
+  },
+  {
+   "id": "th-eco",
+   "name": "Ecocriticism & environmental humanities",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4",
+    "g2"
+   ],
+   "net": [
+    "n9"
+   ],
+   "guide": "theory-eco"
+  },
+  {
+   "id": "th-new-fields",
+   "name": "Posthumanism, memory & trauma, medical & digital humanities",
+   "group": "Criticism & Theory",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n9"
+   ]
+  },
+  {
+   "id": "cs-theory",
+   "name": "Cultural studies: Birmingham School, Williams, Hoggart, Hall",
+   "group": "Cultural Studies & Allied",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n7"
+   ],
+   "guide": "cultural-theory"
+  },
+  {
+   "id": "cs-film",
+   "name": "Film, media & adaptation studies",
+   "group": "Cultural Studies & Allied",
+   "gate": [
+    "g4",
+    "g3"
+   ],
+   "net": [
+    "n7"
+   ],
+   "guide": "cultural-film"
+  },
+  {
+   "id": "cs-race",
+   "name": "Race, identity, popular & genre fiction",
+   "group": "Cultural Studies & Allied",
+   "gate": [
+    "g4"
+   ],
+   "net": [
+    "n7"
+   ],
+   "guide": "cultural-race"
+  },
+  {
+   "id": "cs-movements",
+   "name": "Literature and political, social & intellectual movements",
+   "group": "Cultural Studies & Allied",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n7"
+   ]
+  },
+  {
+   "id": "cs-allied",
+   "name": "Literature and allied disciplines: sociology, psychology, philosophy, environment",
+   "group": "Cultural Studies & Allied",
+   "gate": [
+    "g2"
+   ],
+   "net": [
+    "n7"
+   ]
+  },
+  {
+   "id": "lg-history",
+   "name": "History of the English language",
+   "group": "Language",
+   "gate": [],
+   "net": [
+    "n5",
+    "n6"
+   ],
+   "guide": "language-history"
+  },
+  {
+   "id": "lg-phonetics",
+   "name": "Phonetics & phonology",
+   "group": "Language",
+   "gate": [],
+   "net": [
+    "n5"
+   ],
+   "guide": "language-phonetics"
+  },
+  {
+   "id": "lg-grammar",
+   "name": "Grammar: morphology, syntax, semantics",
+   "group": "Language",
+   "gate": [
+    "ga1"
+   ],
+   "net": [
+    "n5"
+   ],
+   "guide": "language-grammar"
+  },
+  {
+   "id": "lg-theory",
+   "name": "Linguistic theory: Saussure, Chomsky, speech acts",
+   "group": "Language",
+   "gate": [],
+   "net": [
+    "n5"
+   ],
+   "q": "Linguistics"
+  },
+  {
+   "id": "lg-elt",
+   "name": "ELT methods & pedagogy",
+   "group": "Language",
+   "gate": [],
+   "net": [
+    "n5",
+    "n6"
+   ],
+   "guide": "language-elt"
+  },
+  {
+   "id": "lg-use",
+   "name": "English in use: vocabulary, idioms, usage",
+   "group": "Language",
+   "gate": [
+    "ga1"
+   ],
+   "net": [
+    "n5"
+   ]
+  },
+  {
+   "id": "rs-methods",
+   "name": "Research methods: archival, ethnographic, textual & discourse analysis",
+   "group": "Research & Literary Cultures",
+   "gate": [
+    "g5"
+   ],
+   "net": [
+    "n10"
+   ],
+   "guide": "research-methods"
+  },
+  {
+   "id": "rs-mla",
+   "name": "MLA documentation, citation ethics, academic integrity, plagiarism",
+   "group": "Research & Literary Cultures",
+   "gate": [
+    "g5"
+   ],
+   "net": [
+    "n10"
+   ],
+   "guide": "research-docs"
+  },
+  {
+   "id": "rs-argument",
+   "name": "Structuring research arguments; AI-assisted & multimodal approaches",
+   "group": "Research & Literary Cultures",
+   "gate": [
+    "g5"
+   ],
+   "net": [
+    "n10"
+   ]
+  },
+  {
+   "id": "rs-awards",
+   "name": "Literary awards & prizes",
+   "group": "Research & Literary Cultures",
+   "gate": [
+    "g5"
+   ],
+   "net": [],
+   "guide": "awards"
+  },
+  {
+   "id": "rs-festivals",
+   "name": "Literary festivals, associations & networks",
+   "group": "Research & Literary Cultures",
+   "gate": [
+    "g5"
+   ],
+   "net": []
+  },
+  {
+   "id": "ap-verbal",
+   "name": "Verbal aptitude: grammar, vocabulary, narrative sequencing",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "ga1"
+   ],
+   "net": [],
+   "guide": "apt-verbal"
+  },
+  {
+   "id": "ap-quant",
+   "name": "Quantitative aptitude & data interpretation",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "ga2"
+   ],
+   "net": [
+    "p1u5",
+    "p1u7"
+   ],
+   "guide": "apt-quant"
+  },
+  {
+   "id": "ap-analytical",
+   "name": "Analytical aptitude: deduction, induction, analogy",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "ga3"
+   ],
+   "net": [
+    "p1u6"
+   ],
+   "guide": "apt-logic"
+  },
+  {
+   "id": "ap-spatial",
+   "name": "Spatial aptitude: shapes, folding, patterns",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "ga4"
+   ],
+   "net": []
+  },
+  {
+   "id": "ap-rc",
+   "name": "Reading comprehension",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "xh01",
+    "ga1"
+   ],
+   "net": [
+    "p1u3"
+   ],
+   "guide": "apt-rc"
+  },
+  {
+   "id": "ap-expression",
+   "name": "Expression: style, rhetoric & sentence correction",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "xh02"
+   ],
+   "net": []
+  },
+  {
+   "id": "ap-areasoning",
+   "name": "Analytical reasoning: relationships & inferences",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "xh03"
+   ],
+   "net": [
+    "p1u6"
+   ],
+   "guide": "apt-logic"
+  },
+  {
+   "id": "ap-logical",
+   "name": "Logical & critical reasoning: arguments and outcomes",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "xh04"
+   ],
+   "net": [
+    "p1u6"
+   ],
+   "guide": "apt-logic"
+  },
+  {
+   "id": "p1-teaching",
+   "name": "Teaching aptitude",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u1"
+   ]
+  },
+  {
+   "id": "p1-research",
+   "name": "Research aptitude",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u2"
+   ]
+  },
+  {
+   "id": "p1-communication",
+   "name": "Communication",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u4"
+   ]
+  },
+  {
+   "id": "p1-ict",
+   "name": "Information & Communication Technology (ICT)",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u8"
+   ]
+  },
+  {
+   "id": "p1-environment",
+   "name": "People, development & environment",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u9"
+   ]
+  },
+  {
+   "id": "p1-highered",
+   "name": "Higher education system",
+   "group": "NET Paper 1",
+   "gate": [],
+   "net": [
+    "p1u10"
+   ]
+  }
+ ]
+}
