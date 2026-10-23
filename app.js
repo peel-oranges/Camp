@@ -266,6 +266,7 @@ function filtered() {
   let list = poolForMode(f.mode);
   if (f.tags && f.tags.length) list = list.filter(q => hasTags(q, f.tags));
   if (f.group) { const g = gNode(f.group.id); const ids = new Set(g ? g.qs.map(q => q.id) : []); list = list.filter(q => ids.has(q.id)); }
+  if (f.work) { const ids = new Set(f.work.ids); list = list.filter(q => ids.has(q.id)); }
   const raw = f.query.trim();
   S.searchInfo = null;
   if (raw) {
@@ -386,7 +387,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -428,7 +429,7 @@ VIEWS.home = () => {
       <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. 19th century Indian dramatists" autocomplete="off" enterkeyhint="search">
       <button class="icon-btn" id="clear-q" data-act="clearQuery" aria-label="Clear search" ${f.query ? '' : 'hidden'}>✕</button>
     </div>
-    ${f.tags || f.group ? `<div class="chips" style="margin-top:10px"><button class="chip on" data-act="clearTags">Topic: ${esc(f.group ? f.group.label : f.tags.join(' › '))} ✕</button></div>` : ''}
+    ${f.tags || f.group || f.work ? `<div class="chips" style="margin-top:10px"><button class="chip on" data-act="clearTags">${f.work ? 'Work' : 'Topic'}: ${esc(f.work ? f.work.label : f.group ? f.group.label : f.tags.join(' › '))} ✕</button></div>` : ''}
 
     <span class="field-label">Questions from</span>
     <div class="chips">${MODES.map(([k, l]) => `<button class="chip ${f.mode === k ? 'on' : ''}" data-act="mode" data-v="${k}">${l} <span class="count">${poolForMode(k).length}</span></button>`).join('')}</div>
@@ -704,6 +705,11 @@ VIEWS.guide = () => `
   <button class="card kx-entry" data-act="openExam">
     <span class="cat-icon" aria-hidden="true">⚖</span>
     <span class="grow"><span class="name">Know your exam</span><br><span class="sub">How NET and GATE ask differently, with real examples</span></span>
+    <span class="chev">›</span>
+  </button>
+  <button class="card kx-entry" data-act="openNotes">
+    <span class="cat-icon" aria-hidden="true">✎</span>
+    <span class="grow"><span class="name">Short notes</span><br><span class="sub">Must-study works, must-learn facts and the 🎯 GATE radar</span></span>
     <span class="chev">›</span>
   </button>
   <section class="card">
@@ -1029,6 +1035,13 @@ VIEWS.exam = () => {
   </section>
 
   <section class="card">
+    <h3>Preparing for GATE’s style</h3>
+    <div class="kx-tip"><b>Learn texts by their features.</b> For each text, note its form (epistolary, verse novel, mock-epic), setting (Bombay, Calcutta, Wessex), technique (interior monologue, story within a story, unreliable narrator) and movement. GATE groups texts this way and asks “which of these are…”.</div>
+    <div class="kx-tip"><b>Theory: understand, don’t memorise.</b> Know what each critic or theorist argues well enough to judge whether a statement about them is true. GATE asks “which statements are correct” far more than “who wrote it”.</div>
+    <button class="btn ghost" data-act="openNotes" style="margin-top:12px">Open Short notes ›</button>
+  </section>
+
+  <section class="card">
     <h3>Repeats and “soft launch”</h3>
     ${bar('GATE re-asks a work from an earlier GATE paper', E.gateRepeat)}
     ${bar('GATE answer was a wrong option in an earlier NET paper', E.softGate)}
@@ -1066,6 +1079,132 @@ VIEWS.exam = () => {
     ${E.ex.length ? E.ex.slice(0, shown).map(exampleHTML).join('') : '<p class="muted small">Examples appear as more papers are added.</p>'}
     ${E.ex.length > shown ? `<button class="btn ghost" data-act="moreExamples">Show more examples (${E.ex.length - shown} left)</button>` : ''}
   </section>`;
+};
+
+
+/* ---------- Short notes ----------
+   Lists are counted live from questions.json:
+   • Study whole = works NET has asked 7+ times (hand-written notes live in guide.json → shortNotes)
+   • Must-learn facts = works NET has asked 4–6 times (fact lines taken from the bank's own info bites)
+   • 🎯 GATE radar = one of these works that GATE hasn't asked yet                                   */
+let NCACHE = null;
+function factClauses(qs, k, max) {
+  const out = [], seen = new Set();
+  qs.forEach(q => String(q.infoBite || '').split(/;\s+|\.\s+(?=[A-Z'‘“(])|\s+→\s+/).forEach(c => {
+    c = c.trim().replace(/[.;]+$/, '');
+    if (c.length < 30 || c.length > 230) return;
+    if (/\b(was|were) (also )?asked\b|\basked (again|in)\b|\bre-exam\b|\bshift \d|\b(so|hence) [A-D]\b|\b[A-D] is (wrong|right|correct|true|false)\b|\boptions?\b/i.test(c)) return;   // notes about papers, not facts
+    const n = ` ${words(c).join(' ')} `;
+    if (!n.includes(` ${k} `) || seen.has(n)) return;
+    // the clause must say more than just the title and a date
+    const extra = words(c).filter(w => !k.split(' ').includes(w) && !/^\d+$/.test(w) && !STOP.has(w));
+    if (extra.length < 3) return;
+    seen.add(n); out.push({ c, score: (/\b1[0-9]{3}\b|\b20[0-2][0-9]\b/.test(c) ? 2 : 0) + Math.min(extra.length, 10) / 4 - Math.abs(c.length - 120) / 120 });
+  }));
+  out.sort((a, b) => b.score - a.score);
+  return out.slice(0, max).map(x => x.c);
+}
+function notesData() {
+  if (NCACHE) return NCACHE;
+  const curated = (S.guide && S.guide.shortNotes) || {};
+  const alias = new Map();                         // other title → main title key
+  Object.entries(curated).forEach(([t, v]) => { alias.set(normTitle(t), normTitle(t)); (v.aka || []).forEach(a => alias.set(normTitle(a), normTitle(t))); });
+  const noteOf = new Map(Object.entries(curated).map(([t, v]) => [normTitle(t), Object.assign({ title: t }, v)]));
+  const fixes = new Map(Object.entries((S.guide && S.guide.writerFixes) || {}).map(([t, w]) => [normTitle(t), w]));   // hand corrections
+  const W = new Map();
+  const entry = k => { if (!W.has(k)) W.set(k, { k, titles: new Map(), qs: [], net: new Set(), gate: new Set(), writers: new Map() }); return W.get(k); };
+  S.questions.forEach(q => {
+    if (!isLitQ(q)) return;
+    const ks = new Set((q.works || []).map(w => alias.get(normTitle(w)) || normTitle(w)).filter(Boolean));
+    (q.works || []).forEach(w => { const k = alias.get(normTitle(w)) || normTitle(w); if (!k) return; const e = entry(k); e.titles.set(w, (e.titles.get(w) || 0) + 1); });
+    ks.forEach(k => {
+      const e = entry(k);
+      e.qs.push(q);
+      if (q.exam === 'NET') e.net.add(q.id);
+      if (q.exam === 'GATE') e.gate.add(q.id);
+      // a writer counts only when the question is about this one work and names one writer
+      if ((q.writers || []).length === 1 && (q.works || []).length === 1) { const w = q.writers[0]; e.writers.set(w, (e.writers.get(w) || 0) + 1); }
+      (q.writers || []).forEach(w => { e.cands = e.cands || new Map(); e.cands.set(w, (e.cands.get(w) || 0) + 1); });
+    });
+  });
+  const top = m => [...m.entries()].sort((a, b) => b[1] - a[1]).map(x => x[0])[0] || '';
+  // No single-writer question? Look for "Shelley's Adonais" or "Untouchable by Anand" in the bank's own text.
+  const findWriter = e => {
+    if (e.writers.size) return top(e.writers);
+    // otherwise only accept a writer the bank itself pairs with the title (blank is better than wrong)
+    const text = ' ' + e.qs.map(q => words(q.question + ' ' + (q.infoBite || '')).join(' ')).join(' | ') + ' ';
+    let best = '', bestN = 0;
+    (e.cands ? [...e.cands.keys()] : []).forEach(w => {
+      const sur = words(w).filter(x => x.length > 2).pop(); if (!sur) return;
+      const n = text.split(` ${sur} s ${e.k} `).length - 1 + text.split(` ${e.k} by ${sur} `).length - 1 + text.split(` ${e.k} by ${words(w).join(' ')} `).length - 1;
+      if (n > bestN) { best = w; bestN = n; }
+    });
+    return best;
+  };
+  const all = [...W.values()].map(e => {
+    const c = noteOf.get(e.k);
+    return {
+      k: e.k, title: c ? c.title : top(e.titles), writer: c ? c.writer : (fixes.get(e.k) || findWriter(e)), note: c ? c.note : '',
+      rcOnly: e.qs.every(q => (q.topics || []).some(t => /comprehension/i.test(t))),
+      net: e.net.size, gate: e.gate.size, radar: e.gate.size === 0, ids: e.qs.map(q => q.id), qs: e.qs
+    };
+  });
+  const byNet = (a, b) => b.net - a.net || a.title.localeCompare(b.title);
+  const whole = all.filter(x => x.net >= 7).sort(byNet);
+  whole.forEach(x => { x.asked = factClauses(x.qs, x.k, 3); });
+  // unseen comprehension poems with no named poet are not study material
+  const facts = all.filter(x => x.net >= 4 && x.net <= 6 && !(x.rcOnly && !x.writer)).sort(byNet);
+  facts.forEach(x => { x.fact = factClauses(x.qs, x.k, 1)[0] || ''; });
+  NCACHE = { whole, facts };
+  return NCACHE;
+}
+const radarTag = x => x.radar ? '<span class="pill nr-radar">🎯 Not yet in GATE</span>' : '';
+const countTags = x => `<span class="pill Low">NET ${x.net}×</span><span class="pill Low">GATE ${x.gate}×</span>`;
+VIEWS.notes = () => {
+  const N = notesData(), only = !!S.notesRadar, tab = S.notesTab === 'facts' ? 'facts' : 'whole';
+  const whole = N.whole.filter(x => !only || x.radar), facts = N.facts.filter(x => !only || x.radar);
+  return `
+  <button class="chip back" data-act="tab" data-tab="guide">‹ Guide</button>
+  <section class="card">
+    <h2>Short notes</h2>
+    <p class="muted small">Built from the papers in the bank, so the lists update as new papers are added. Patterns from past papers show what to study first; they are not guarantees.</p>
+    <div class="chips" style="margin-top:10px">
+      <button class="chip ${only ? '' : 'on'}" data-act="notesFilter" data-v="all">All works</button>
+      <button class="chip ${only ? 'on' : ''}" data-act="notesFilter" data-v="radar">🎯 GATE radar only</button>
+    </div>
+    <p class="small muted" style="margin-top:8px">🎯 GATE radar = asked often in NET, not yet in GATE. Works NET asked 7+ times were later picked by GATE about half the time.</p>
+    <div class="seg" style="margin-top:12px">
+      <button class="${tab === 'whole' ? 'on' : ''}" data-act="notesTab" data-v="whole">Study whole · ${whole.length}</button>
+      <button class="${tab === 'facts' ? 'on' : ''}" data-act="notesTab" data-v="facts">Must-learn facts · ${facts.length}</button>
+    </div>
+  </section>
+  ${tab === 'whole' ? `
+  <section class="card">
+    <h3>Study whole <span class="muted small">· NET asked 7+ times · ${whole.length}</span></h3>
+    <p class="small muted">Read these properly: story or argument, characters, key lines, and the ideas critics attach to them.</p>
+  </section>
+  ${whole.map(x => `
+  <article class="card nr-card">
+    <div class="nr-title">${esc(x.title)}</div>
+    ${x.writer ? `<div class="nr-writer">${esc(x.writer)}</div>` : ''}
+    <div class="chips nr-tags">${countTags(x)}${radarTag(x)}</div>
+    ${x.note ? `<p class="nr-note">${esc(x.note)}</p>` : ''}
+    ${x.asked && x.asked.length ? `<details class="nr-asked"><summary>What NET/GATE asked</summary><ul>${x.asked.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
+    <button class="chip" data-act="quizWork" data-k="${esc(x.k)}">Quiz me on this · ${x.ids.length}</button>
+  </article>`).join('') || '<section class="card"><p class="muted small">Nothing here yet.</p></section>'}` : `
+
+  <section class="card">
+    <h3>Must-learn facts <span class="muted small">· NET asked 4–6 times · ${facts.length}</span></h3>
+    <p class="small muted">Know the author, date, form and movement, plus the fact below (taken from what was actually asked). Tap a row to quiz on it.</p>
+    <div class="list">${facts.map(x => `
+      <button class="row nr-fact" data-act="quizWork" data-k="${esc(x.k)}">
+        <span class="grow">
+          <span class="name">${esc(x.title)}</span>${x.writer ? ` <span class="sub">— ${esc(x.writer)}</span>` : ''}<br>
+          ${x.fact ? `<span class="nr-fact-line">${esc(x.fact)}</span><br>` : ''}
+          <span class="sub">NET ${x.net}× · GATE ${x.gate}×</span>${x.radar ? ' <span class="nr-radar-dot">🎯</span>' : ''}
+        </span><span class="chev">›</span>
+      </button>`).join('') || '<p class="muted small">Nothing here yet.</p>'}</div>
+  </section>`}`;
 };
 
 /* ---------- Stats ---------- */
@@ -1332,7 +1471,7 @@ function openVerify(id) {
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', adminList: 'more', adminForm: 'more' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -1366,16 +1505,16 @@ const ACT = {
   /* home */
   revise: () => startQuiz(shuffleArr(dueList()), 'Revision'),
   clearQuery: () => { S.filters.query = ''; render(); },
-  clearTags: () => { S.filters.tags = null; S.filters.group = null; render(); },
+  clearTags: () => { S.filters.tags = null; S.filters.group = null; S.filters.work = null; render(); },
   mode: d => { S.filters.mode = d.v; go('home', true); },
   count: d => { S.filters.count = d.v; go('home', true); },
   pickSection: d => {
     const f = S.filters;
     if (f.group && f.group.id === d.id) f.group = null;
-    else { const c = gNode(d.id); if (!c) return; Object.assign(f, { group: { id: c.id, label: c.name }, tags: null, query: '' }); }
+    else { const c = gNode(d.id); if (!c) return; Object.assign(f, { group: { id: c.id, label: c.name }, tags: null, query: '', work: null }); }
     go('home', true);
   },
-  pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; S.filters.group = null; go('home', true); toast(`Showing “${d.v}”`); },
+  pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; S.filters.group = null; S.filters.work = null; go('home', true); toast(`Showing “${d.v}”`); },
   start: () => {
     const f = S.filters;
     let list = filtered();
@@ -1388,7 +1527,7 @@ const ACT = {
     } else list = order(list);
     if (f.count !== 'all') list = list.slice(0, +f.count);
     const label = MODES.find(m => m[0] === f.mode)[1];
-    const what = f.group ? f.group.label : f.tags ? f.tags.join(' › ') : f.query.trim();
+    const what = f.work ? f.work.label : f.group ? f.group.label : f.tags ? f.tags.join(' › ') : f.query.trim();
     startQuiz(list, what ? `${what} · ${label}` : label);
   },
 
@@ -1460,16 +1599,24 @@ const ACT = {
   /* guide & stats */
   openGuide: d => { const t = gNode(d.id); if (!t) return; S.guideId = d.id; go(t.cat ? 'guideTopic' : 'guideCat'); },
   openExam: () => { S.examShow = 3; go('exam'); },
+  openNotes: () => go('notes'),
+  notesFilter: d => { S.notesRadar = d.v === 'radar'; go('notes', true); },
+  notesTab: d => { S.notesTab = d.v; go('notes', true); },
+  quizWork: d => {
+    const x = [...notesData().whole, ...notesData().facts].find(w => w.k === d.k); if (!x) return;
+    Object.assign(S.filters, { work: { label: x.title, ids: x.ids }, group: null, tags: null, query: '', mode: 'mix' });
+    go('home'); toast('Work set — tap Start quiz');
+  },
   moreExamples: () => { S.examShow = (S.examShow || 3) + 3; go('exam', true); },
   guideMode: d => { S.guideMode = d.v; S.guideQuery = ''; go('guide', true); },
   quizTopic: d => {
     const t = gNode(d.id); if (!t) return;
-    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix' });
+    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix', work: null });
     go('home'); toast('Topic set — pick PYQs, Probable or Mix, then Start');
   },
   statTopic: d => {
     const t = gNode(d.id); if (!t) return;
-    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix' });
+    Object.assign(S.filters, { group: { id: t.id, label: nodeLabel(t) }, tags: null, query: '', mode: 'mix', work: null });
     go('home'); toast('Topic set — tap Start quiz');
   },
 
@@ -1654,7 +1801,20 @@ document.addEventListener('keydown', e => {
     .ex-work { font-weight: 700; color: var(--accent-ink); margin-bottom: 8px; }
     .ex-side .q { white-space: pre-line; margin: 6px 0; }
     .ex-side .ans { font-size: .9rem; }
-    .ex-arrow { text-align: center; color: var(--muted); font-size: .85rem; margin: 10px 0; }`;
+    .ex-arrow { text-align: center; color: var(--muted); font-size: .85rem; margin: 10px 0; }
+    .kx-tip { margin-top: 12px; padding: 12px 14px; border-radius: 14px; background: var(--blue-soft); line-height: 1.5; }
+    .nr-card { padding-top: 18px; }
+    .nr-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.4rem; font-weight: 700; line-height: 1.25; }
+    .nr-writer { color: var(--accent-ink); font-weight: 600; margin-top: 2px; }
+    .nr-tags { margin: 10px 0 4px; }
+    .nr-note { margin: 10px 0; padding: 12px 14px; border-radius: 14px; background: var(--pinkrow); line-height: 1.55; }
+    .pill.nr-radar { background: var(--blue); color: var(--ink); }
+    .nr-asked { margin: 6px 0 12px; font-size: .92rem; }
+    .nr-asked summary { cursor: pointer; color: var(--accent-ink); font-weight: 600; }
+    .nr-asked ul { margin: 8px 0 0; padding-left: 18px; }
+    .nr-asked li { margin-bottom: 6px; }
+    .nr-fact .name { font-weight: 700; }
+    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }`;
   document.head.appendChild(s);
 })();
 
@@ -1677,7 +1837,7 @@ async function loadData() {
     ]);
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
-    GCACHE = null; WCACHE = null; ECACHE = null;
+    GCACHE = null; WCACHE = null; ECACHE = null; NCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();

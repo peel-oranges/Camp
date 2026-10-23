@@ -1,1429 +1,1953 @@
 {
- "updated": "2026-10-22",
- "note": "Sections and their tag rules. Each question is sorted automatically by its topic tags; add works, lines, patterns or highlightWriters to any subtopic to enrich its page.",
- "categories": [
-  {
-   "id": "british",
-   "name": "British Literature",
-   "icon": "♛",
-   "about": "From Old English to the contemporary, period by period.",
-   "match": [
+  "updated": "2026-10-22",
+  "note": "Sections and their tag rules. Each question is sorted automatically by its topic tags; add works, lines, patterns or highlightWriters to any subtopic to enrich its page.",
+  "categories": [
     {
-     "any": [
-      "British",
-      "English literature",
-      "Irish",
-      "Medieval",
-      "Age of Chaucer",
-      "Old English",
-      "Middle English",
-      "Anglo-Saxon",
-      "Renaissance",
-      "Elizabethan",
-      "Jacobean",
-      "Caroline",
-      "Restoration",
-      "Romantic Age",
-      "Victorian",
-      "Edwardian",
-      "Georgian",
-      "Puritan Age",
-      "Neoclassical",
-      "Augustan",
-      "Metaphysical poets",
-      "Cavalier poets",
-      "Lake Poets",
-      "Pre-Romanticism",
-      "University Wits",
-      "War poets",
-      "The Movement",
-      "Angry Young Men",
-      "Pre-Raphaelites",
-      "Bloomsbury Group",
-      "16th–17th century",
-      "Periodical essay"
-     ]
+      "id": "british",
+      "name": "British Literature",
+      "icon": "♛",
+      "about": "From Old English to the contemporary, period by period.",
+      "match": [
+        {
+          "any": [
+            "British",
+            "English literature",
+            "Irish",
+            "Medieval",
+            "Age of Chaucer",
+            "Old English",
+            "Middle English",
+            "Anglo-Saxon",
+            "Renaissance",
+            "Elizabethan",
+            "Jacobean",
+            "Caroline",
+            "Restoration",
+            "Romantic Age",
+            "Victorian",
+            "Edwardian",
+            "Georgian",
+            "Puritan Age",
+            "Neoclassical",
+            "Augustan",
+            "Metaphysical poets",
+            "Cavalier poets",
+            "Lake Poets",
+            "Pre-Romanticism",
+            "University Wits",
+            "War poets",
+            "The Movement",
+            "Angry Young Men",
+            "Pre-Raphaelites",
+            "Bloomsbury Group",
+            "16th–17th century",
+            "Periodical essay"
+          ]
+        },
+        {
+          "first": [
+            "Modernism",
+            "20th century",
+            "19th century",
+            "18th century",
+            "17th century"
+          ],
+          "none": [
+            "American",
+            "African American",
+            "Indian",
+            "Indian diaspora",
+            "African",
+            "Nigerian",
+            "Caribbean",
+            "Canadian",
+            "Australian",
+            "Russian",
+            "French",
+            "German",
+            "Philosophy",
+            "Postcolonialism"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "british-medieval",
+          "name": "Old & Middle English",
+          "match": [
+            {
+              "any": [
+                "Medieval",
+                "Age of Chaucer",
+                "Old English",
+                "Middle English",
+                "Anglo-Saxon"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-renaissance",
+          "name": "Renaissance & Elizabethan",
+          "match": [
+            {
+              "any": [
+                "Renaissance",
+                "Elizabethan",
+                "Humanism",
+                "University Wits",
+                "Tudor"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-17th",
+          "name": "Jacobean, Metaphysical & Puritan Age",
+          "match": [
+            {
+              "any": [
+                "Jacobean",
+                "Caroline",
+                "17th century",
+                "16th–17th century",
+                "Metaphysical poets",
+                "Cavalier poets",
+                "Puritan Age"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-18th",
+          "name": "Restoration & 18th Century",
+          "match": [
+            {
+              "any": [
+                "Restoration",
+                "18th century",
+                "Neoclassical",
+                "Augustan",
+                "Periodical essay",
+                "Pre-Romanticism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-romantic",
+          "name": "Romantic Age",
+          "match": [
+            {
+              "any": [
+                "Romantic Age",
+                "Romantic",
+                "Romanticism",
+                "Lake Poets"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-victorian",
+          "name": "Victorian Age",
+          "match": [
+            {
+              "any": [
+                "Victorian",
+                "Pre-Raphaelites"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-modern",
+          "name": "Modern & 20th Century",
+          "match": [
+            {
+              "any": [
+                "20th century",
+                "Modernism",
+                "Edwardian",
+                "Georgian",
+                "War poets",
+                "The Movement",
+                "Angry Young Men",
+                "Bloomsbury Group",
+                "Irish"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "british-contemporary",
+          "name": "Post-war & Contemporary",
+          "match": [
+            {
+              "any": [
+                "Contemporary",
+                "21st century",
+                "Post-war"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other — period not tagged"
     },
     {
-     "first": [
-      "Modernism",
-      "20th century",
-      "19th century",
-      "18th century",
-      "17th century"
-     ],
-     "none": [
-      "American",
-      "African American",
-      "Indian",
-      "Indian diaspora",
-      "African",
-      "Nigerian",
-      "Caribbean",
-      "Canadian",
-      "Australian",
-      "Russian",
-      "French",
-      "German",
-      "Philosophy",
-      "Postcolonialism"
-     ]
+      "id": "american",
+      "name": "American Literature",
+      "icon": "✪",
+      "about": "Colonial beginnings to the contemporary, including African American writing.",
+      "match": [
+        {
+          "any": [
+            "American",
+            "African American",
+            "American Renaissance",
+            "Harlem Renaissance",
+            "Transcendentalism",
+            "Beat Generation",
+            "Native American",
+            "Lost Generation"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "american-early",
+          "name": "Colonial & Early American",
+          "match": [
+            {
+              "any": [
+                "Colonial America",
+                "Early American",
+                "17th century",
+                "18th century"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "american-19th",
+          "name": "19th Century & American Renaissance",
+          "match": [
+            {
+              "any": [
+                "19th century",
+                "American Renaissance",
+                "Transcendentalism",
+                "Realism",
+                "Naturalism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "american-modern",
+          "name": "Modernism & 20th Century",
+          "match": [
+            {
+              "any": [
+                "20th century",
+                "Modernism",
+                "Lost Generation",
+                "Beat Generation",
+                "Confessional"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "american-african",
+          "name": "African American & Harlem Renaissance",
+          "match": [
+            {
+              "any": [
+                "African American",
+                "Harlem Renaissance"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "american-contemporary",
+          "name": "Contemporary & Postmodern",
+          "match": [
+            {
+              "any": [
+                "Contemporary",
+                "21st century",
+                "Postmodernism"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other American writing"
+    },
+    {
+      "id": "indian",
+      "name": "Indian Literature",
+      "icon": "❁",
+      "about": "Indian writing in English, in translation, Dalit writing, diaspora and Indian aesthetics.",
+      "match": [
+        {
+          "any": [
+            "Indian",
+            "Indian diaspora",
+            "Colonial India",
+            "Dalit writing",
+            "Dalit literature",
+            "Bengali",
+            "Urdu",
+            "Hindi",
+            "Sanskrit",
+            "Indian aesthetics",
+            "Bhasha literature",
+            "Malayalam",
+            "Tamil",
+            "Kannada",
+            "Marathi",
+            "Mahabharata retellings",
+            "Partition"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "indian-novel",
+          "name": "Novel & Fiction",
+          "match": [
+            {
+              "any": [
+                "Indian English novel",
+                "Indian English fiction",
+                "Novel",
+                "Fiction",
+                "Short story"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-poetry",
+          "name": "Poetry",
+          "match": [
+            {
+              "any": [
+                "Indian English poetry",
+                "Poetry"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-drama",
+          "name": "Drama",
+          "match": [
+            {
+              "any": [
+                "Indian drama",
+                "Indian English drama",
+                "Drama"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-prose",
+          "name": "Prose & Life Writing",
+          "match": [
+            {
+              "any": [
+                "Life writing",
+                "Autobiography",
+                "Prose",
+                "Essay"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-diaspora",
+          "name": "Diaspora Writing",
+          "match": [
+            {
+              "any": [
+                "Indian diaspora"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-dalit",
+          "name": "Dalit Writing",
+          "match": [
+            {
+              "any": [
+                "Dalit writing",
+                "Dalit literature"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-bhasha",
+          "name": "Bhasha Literature & Translation",
+          "match": [
+            {
+              "any": [
+                "Bengali",
+                "Urdu",
+                "Hindi",
+                "Malayalam",
+                "Tamil",
+                "Kannada",
+                "Marathi",
+                "Translation",
+                "Bhasha literature",
+                "Progressive Writers' Movement"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-colonial",
+          "name": "Colonial & Early Writing",
+          "match": [
+            {
+              "any": [
+                "Colonial India",
+                "Early Indian writing in English",
+                "19th century",
+                "Orientalism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "indian-aesthetics",
+          "name": "Indian Aesthetics & Sanskrit",
+          "match": [
+            {
+              "any": [
+                "Indian aesthetics",
+                "Rasa theory",
+                "Sanskrit",
+                "Dhvani"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other Indian writing"
+    },
+    {
+      "id": "world",
+      "name": "World & Postcolonial Literature",
+      "icon": "◎",
+      "about": "African, Caribbean, Canadian, Australian, European and Russian writing in translation, and the classics.",
+      "match": [
+        {
+          "any": [
+            "World literature",
+            "African",
+            "Nigerian",
+            "South African",
+            "Kenyan",
+            "Caribbean",
+            "Canadian",
+            "Australian",
+            "New Zealand",
+            "Russian",
+            "French",
+            "German",
+            "European",
+            "Latin American",
+            "Greek",
+            "Latin",
+            "Roman",
+            "Classical",
+            "Existentialism",
+            "Absurdism"
+          ]
+        },
+        {
+          "first": [
+            "Postcolonialism"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension",
+        "Sanskrit"
+      ],
+      "subtopics": [
+        {
+          "id": "world-african",
+          "name": "African",
+          "match": [
+            {
+              "any": [
+                "African",
+                "Nigerian",
+                "South African",
+                "Kenyan"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-caribbean",
+          "name": "Caribbean",
+          "match": [
+            {
+              "any": [
+                "Caribbean"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-commonwealth",
+          "name": "Canadian & Australian",
+          "match": [
+            {
+              "any": [
+                "Canadian",
+                "Australian",
+                "New Zealand"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-european",
+          "name": "European & Russian (in translation)",
+          "match": [
+            {
+              "any": [
+                "Russian",
+                "French",
+                "German",
+                "European",
+                "Italian",
+                "Spanish",
+                "Latin American",
+                "World literature",
+                "Existentialism",
+                "Absurdism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-classical",
+          "name": "Classical Greek & Latin",
+          "match": [
+            {
+              "any": [
+                "Greek",
+                "Latin",
+                "Roman",
+                "Classical"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "world-postcolonial",
+          "name": "Postcolonial Writing",
+          "match": [
+            {
+              "first": [
+                "Postcolonialism"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other world writing"
+    },
+    {
+      "id": "theory",
+      "name": "Literary Theory & Criticism",
+      "icon": "✎",
+      "about": "Classical and Indian poetics, English criticism from Sidney to Eliot, and modern theory.",
+      "match": [
+        {
+          "any": [
+            "Literary theory",
+            "Literary criticism",
+            "Criticism",
+            "Indian aesthetics",
+            "Rasa theory",
+            "New Criticism",
+            "Russian Formalism",
+            "Structuralism",
+            "Post-structuralism",
+            "Deconstruction",
+            "Reader-response criticism",
+            "Phenomenology",
+            "Psychoanalytic criticism",
+            "Marxism",
+            "Feminism",
+            "Queer theory",
+            "Ecocriticism",
+            "New Historicism",
+            "Postmodernism",
+            "Mimesis",
+            "Romantic theory",
+            "Shakespeare criticism"
+          ]
+        },
+        {
+          "first": [
+            "Postcolonialism"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "theory-classical",
+          "name": "Classical Criticism",
+          "match": [
+            {
+              "any": [
+                "Mimesis",
+                "Poetics",
+                "Sublime"
+              ]
+            },
+            {
+              "all": [
+                "Classical",
+                "Literary criticism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-indian",
+          "name": "Indian Poetics",
+          "match": [
+            {
+              "any": [
+                "Indian aesthetics",
+                "Rasa theory",
+                "Dhvani"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-english",
+          "name": "English Criticism: Sidney to Eliot",
+          "match": [
+            {
+              "any": [
+                "Romantic theory",
+                "Shakespeare criticism",
+                "Culture criticism",
+                "Tradition",
+                "Impersonality",
+                "Criticism"
+              ]
+            },
+            {
+              "any": [
+                "Literary criticism"
+              ],
+              "none": [
+                "Classical",
+                "Greek"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-formalism",
+          "name": "New Criticism & Formalism",
+          "match": [
+            {
+              "any": [
+                "New Criticism",
+                "Russian Formalism",
+                "Formalism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-structuralism",
+          "name": "Structuralism & Post-structuralism",
+          "match": [
+            {
+              "any": [
+                "Structuralism",
+                "Post-structuralism",
+                "Deconstruction",
+                "Yale School",
+                "Death of the author",
+                "Minor literature"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-marxism",
+          "name": "Marxism",
+          "match": [
+            {
+              "any": [
+                "Marxism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-feminism",
+          "name": "Feminism & Gender",
+          "match": [
+            {
+              "any": [
+                "Feminism",
+                "Gynocriticism",
+                "French feminism",
+                "Queer theory",
+                "Ecofeminism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-psycho",
+          "name": "Psychoanalytic Criticism",
+          "match": [
+            {
+              "any": [
+                "Psychoanalytic criticism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-reader",
+          "name": "Reader-response & Phenomenology",
+          "match": [
+            {
+              "any": [
+                "Reader-response criticism",
+                "Phenomenology",
+                "Transactional theory"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-postcolonial",
+          "name": "Postcolonial Theory & Translation",
+          "match": [
+            {
+              "any": [
+                "Postcolonialism",
+                "Subaltern Studies",
+                "Orientalism",
+                "Translation studies",
+                "Language debate"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-postmodern",
+          "name": "Postmodernism & New Historicism",
+          "match": [
+            {
+              "any": [
+                "Postmodernism",
+                "New Historicism",
+                "Simulacra"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "theory-eco",
+          "name": "Ecocriticism",
+          "match": [
+            {
+              "any": [
+                "Ecocriticism"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other theorists (e.g. Bakhtin)"
+    },
+    {
+      "id": "cultural",
+      "name": "Cultural Studies",
+      "icon": "❖",
+      "about": "The Birmingham School, film and adaptation, race and identity, popular and genre fiction.",
+      "match": [
+        {
+          "any": [
+            "Cultural studies",
+            "Birmingham School",
+            "Film",
+            "Adaptation",
+            "Popular culture",
+            "Censorship",
+            "Race",
+            "Globalisation",
+            "Publishing",
+            "Media",
+            "Genre fiction",
+            "Children's literature",
+            "Detective fiction",
+            "Noir"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "cultural-theory",
+          "name": "Cultural Studies Theory",
+          "match": [
+            {
+              "any": [
+                "Cultural studies",
+                "Birmingham School"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cultural-film",
+          "name": "Film & Adaptation",
+          "match": [
+            {
+              "any": [
+                "Film",
+                "Adaptation",
+                "Rewritings",
+                "Sources and adaptations"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cultural-race",
+          "name": "Race & Identity",
+          "match": [
+            {
+              "any": [
+                "Race"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cultural-popular",
+          "name": "Popular & Genre Fiction",
+          "match": [
+            {
+              "any": [
+                "Popular culture",
+                "Genre fiction",
+                "Children's literature",
+                "Fantasy",
+                "Detective fiction",
+                "Noir"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cultural-publishing",
+          "name": "Publishing, Censorship & Globalisation",
+          "match": [
+            {
+              "any": [
+                "Publishing",
+                "Censorship",
+                "Globalisation",
+                "Media"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other"
+    },
+    {
+      "id": "abrams",
+      "name": "M H Abrams & Literary Terms",
+      "icon": "Aa",
+      "about": "Terms and concepts from A Glossary of Literary Terms, plus other literary-terms questions.",
+      "match": [
+        {
+          "any": [
+            "Abrams",
+            "Literary terms",
+            "Prosody"
+          ]
+        },
+        {
+          "exam": [
+            "Abrams"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "abrams-rhetoric",
+          "name": "Figures of Speech & Rhetoric",
+          "match": [
+            {
+              "any": [
+                "Figures of speech",
+                "Rhetorical devices",
+                "Irony",
+                "Sound devices",
+                "Paradox",
+                "Ambiguity",
+                "Imagery",
+                "Prosody",
+                "Free verse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "abrams-narrative",
+          "name": "Narrative & Fiction Terms",
+          "match": [
+            {
+              "any": [
+                "Narrative technique",
+                "Point of view",
+                "Stream of consciousness",
+                "Frame narrative",
+                "Metafiction",
+                "Magic realism"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "abrams-genres",
+          "name": "Genres & Forms",
+          "match": [
+            {
+              "any": [
+                "Epic",
+                "Elegy",
+                "Pastoral",
+                "Tragedy",
+                "Comedy",
+                "Closet drama",
+                "Dramatic monologue",
+                "Drama",
+                "Ode",
+                "Satire"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "abrams-critical",
+          "name": "Critical & Theory Terms",
+          "match": [
+            {
+              "any": [
+                "Literary theory",
+                "New Criticism",
+                "Criticism",
+                "Gynocriticism",
+                "Queer theory",
+                "New Historicism",
+                "Reader-response criticism",
+                "Bakhtin",
+                "Mimesis"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "abrams-periods",
+          "name": "Periods & Movements",
+          "match": [
+            {
+              "any": [
+                "Medieval",
+                "Renaissance",
+                "Humanism",
+                "Neoclassical",
+                "Modernism",
+                "Postmodernism",
+                "Elizabethan",
+                "Romantic Age"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other terms"
+    },
+    {
+      "id": "language",
+      "name": "Language & Linguistics",
+      "icon": "ə",
+      "about": "History of English, phonetics, grammar, word formation, ELT and English in India.",
+      "match": [
+        {
+          "any": [
+            "Linguistics",
+            "Phonetics",
+            "Phonology",
+            "Grammar",
+            "Morphology",
+            "Syntax",
+            "Semantics",
+            "Etymology",
+            "Word formation",
+            "History of English",
+            "History of the English language",
+            "ELT",
+            "English Language Teaching",
+            "Pedagogy",
+            "Sociolinguistics",
+            "English in India"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "language-history",
+          "name": "History of English & Etymology",
+          "match": [
+            {
+              "any": [
+                "History of English",
+                "History of the English language",
+                "Etymology",
+                "Anglo-Indian words"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "language-phonetics",
+          "name": "Phonetics & Phonology",
+          "match": [
+            {
+              "any": [
+                "Phonetics",
+                "Phonology"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "language-grammar",
+          "name": "Grammar & Word Formation",
+          "match": [
+            {
+              "any": [
+                "Grammar",
+                "Morphology",
+                "Syntax",
+                "Semantics",
+                "Word formation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "language-elt",
+          "name": "ELT, Pedagogy & English in India",
+          "match": [
+            {
+              "any": [
+                "ELT",
+                "English Language Teaching",
+                "Pedagogy",
+                "Sociolinguistics",
+                "English in India"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other language questions"
+    },
+    {
+      "id": "research",
+      "name": "Research Methods",
+      "icon": "⌕",
+      "about": "Research methodology, documentation and MLA style (a NET unit).",
+      "match": [
+        {
+          "any": [
+            "Research methodology",
+            "Research methods",
+            "MLA",
+            "Citation",
+            "Documentation",
+            "Bibliography"
+          ]
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "research-methods",
+          "name": "Research Methodology",
+          "match": [
+            {
+              "any": [
+                "Research methodology",
+                "Research methods",
+                "Qualitative methods",
+                "Quantitative methods"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "research-docs",
+          "name": "Documentation & MLA",
+          "match": [
+            {
+              "any": [
+                "MLA",
+                "Citation",
+                "Documentation",
+                "Bibliography"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other"
+    },
+    {
+      "id": "quotes",
+      "name": "Quotes & Lines",
+      "icon": "❝",
+      "kind": "quotes",
+      "overlay": true,
+      "about": "Every PYQ built on a quotation, opening line or passage, gathered from all sections. Read the line, guess the writer or work, then reveal.",
+      "match": [
+        {
+          "quote": true
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "quotes-author",
+          "name": "Identify the Author",
+          "match": [
+            {
+              "any": [
+                "Identify the author",
+                "Identify the speaker"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quotes-text",
+          "name": "Identify the Text / Poem",
+          "match": [
+            {
+              "any": [
+                "Identify the text",
+                "Identify the poem"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quotes-opening",
+          "name": "Opening Lines",
+          "match": [
+            {
+              "any": [
+                "Opening lines"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quotes-poems",
+          "name": "Lines from Poems",
+          "match": [
+            {
+              "quote": true,
+              "any": [
+                "Poetry",
+                "Indian English poetry",
+                "Ode",
+                "Elegy",
+                "Epic"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quotes-critics",
+          "name": "Critics' & Theorists' Statements",
+          "match": [
+            {
+              "quote": true,
+              "any": [
+                "Literary theory",
+                "Literary criticism",
+                "Criticism",
+                "Romantic theory",
+                "Tradition",
+                "Impersonality",
+                "Postcolonialism",
+                "Feminism",
+                "Subaltern Studies",
+                "Language debate"
+              ]
+            }
+          ]
+        }
+      ],
+      "otherName": "Other passages & extracts"
+    },
+    {
+      "id": "awards",
+      "name": "Awards & Prizes",
+      "icon": "✧",
+      "kind": "awards",
+      "overlay": true,
+      "about": "Every PYQ about literary awards — Nobel, Booker, Pulitzer, Sahitya Akademi, Jnanpith and more.",
+      "match": [
+        {
+          "any": [
+            "Awards",
+            "Booker Prize",
+            "Nobel Prize",
+            "Pulitzer Prize",
+            "Sahitya Akademi",
+            "Jnanpith"
+          ]
+        },
+        {
+          "text": "\\b(Booker|Nobel|Pulitzer|Sahitya Akademi|Jnanpith|Jnanpeeth|Saraswati Samman|Commonwealth Writers|Costa Book|Neustadt|Goncourt)\\b"
+        }
+      ],
+      "not": [
+        "General Aptitude",
+        "Reasoning & Comprehension"
+      ],
+      "subtopics": [
+        {
+          "id": "awards-nobel",
+          "name": "Nobel Prize",
+          "match": [
+            {
+              "any": [
+                "Nobel Prize"
+              ]
+            },
+            {
+              "text": "Nobel"
+            }
+          ]
+        },
+        {
+          "id": "awards-booker",
+          "name": "Booker & International Booker",
+          "match": [
+            {
+              "any": [
+                "Booker Prize"
+              ]
+            },
+            {
+              "text": "Booker"
+            }
+          ]
+        },
+        {
+          "id": "awards-pulitzer",
+          "name": "Pulitzer Prize",
+          "match": [
+            {
+              "any": [
+                "Pulitzer Prize"
+              ]
+            },
+            {
+              "text": "Pulitzer"
+            }
+          ]
+        },
+        {
+          "id": "awards-indian",
+          "name": "Sahitya Akademi, Jnanpith & Indian Awards",
+          "match": [
+            {
+              "any": [
+                "Sahitya Akademi",
+                "Jnanpith"
+              ]
+            },
+            {
+              "text": "Sahitya Akademi|Jnanpith|Jnanpeeth|Saraswati Samman"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aptitude",
+      "name": "GATE Aptitude & Reasoning",
+      "icon": "∑",
+      "about": "GATE General Aptitude and XH-B1 Reasoning & Comprehension — compulsory in every GATE XH paper.",
+      "match": [
+        {
+          "first": [
+            "General Aptitude",
+            "Reasoning & Comprehension"
+          ]
+        }
+      ],
+      "subtopics": [
+        {
+          "id": "apt-verbal",
+          "name": "Verbal Ability",
+          "match": [
+            {
+              "any": [
+                "Verbal"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "apt-quant",
+          "name": "Quantitative Aptitude",
+          "match": [
+            {
+              "any": [
+                "Quantitative"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "apt-logic",
+          "name": "Logical & Critical Reasoning",
+          "match": [
+            {
+              "any": [
+                "Logical reasoning",
+                "Critical reasoning"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "apt-rc",
+          "name": "Reading Comprehension",
+          "match": [
+            {
+              "any": [
+                "Reading comprehension"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "apt-di",
+          "name": "Data Interpretation",
+          "match": [
+            {
+              "any": [
+                "Data interpretation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "name": "Mixed & Cross-period",
+      "icon": "⁂",
+      "auto": "unmatched",
+      "about": "Questions that span several literatures or periods (genres, pseudonyms, adaptations, odd-one-out). Added automatically."
     }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "british-medieval",
-     "name": "Old & Middle English",
-     "match": [
-      {
-       "any": [
-        "Medieval",
-        "Age of Chaucer",
-        "Old English",
-        "Middle English",
-        "Anglo-Saxon"
-       ]
-      }
-     ]
+  ],
+  "shortNotes": {
+    "Paradise Lost": {
+      "writer": "John Milton",
+      "note": "Blank-verse epic: 10 books (1667) → 12 (1674). Aim: “justify the ways of God to men”. Satan dominates Books I–II; the Fall is Book IX."
     },
-    {
-     "id": "british-renaissance",
-     "name": "Renaissance & Elizabethan",
-     "match": [
-      {
-       "any": [
-        "Renaissance",
-        "Elizabethan",
-        "Humanism",
-        "University Wits",
-        "Tudor"
-       ]
-      }
-     ]
+    "MLA Handbook": {
+      "writer": "Modern Language Association",
+      "note": "9th edition (2021). Know the core elements in order: author, title of source, container, other contributors, version, number, publisher, date, location. Three or more authors → “et al.”"
     },
-    {
-     "id": "british-17th",
-     "name": "Jacobean, Metaphysical & Puritan Age",
-     "match": [
-      {
-       "any": [
-        "Jacobean",
-        "Caroline",
-        "17th century",
-        "16th–17th century",
-        "Metaphysical poets",
-        "Cavalier poets",
-        "Puritan Age"
-       ]
-      }
-     ]
+    "Course in General Linguistics": {
+      "writer": "Ferdinand de Saussure",
+      "note": "Published 1916 after his death, from students’ notes (Bally & Sechehaye). Sign = signifier + signified, arbitrary. Langue/parole, synchronic/diachronic, syntagmatic/paradigmatic."
     },
-    {
-     "id": "british-18th",
-     "name": "Restoration & 18th Century",
-     "match": [
-      {
-       "any": [
-        "Restoration",
-        "18th century",
-        "Neoclassical",
-        "Augustan",
-        "Periodical essay",
-        "Pre-Romanticism"
-       ]
-      }
-     ]
+    "An Apology for Poetry": {
+      "writer": "Philip Sidney",
+      "aka": [
+        "The Defence of Poesy"
+      ],
+      "note": "Same essay, two titles: written c. 1580, printed 1595. Answers Gosson’s School of Abuse (1579). Poet beats philosopher and historian; poetry teaches and delights; nature’s world is “brazen”, the poet’s “golden”."
     },
-    {
-     "id": "british-romantic",
-     "name": "Romantic Age",
-     "match": [
-      {
-       "any": [
-        "Romantic Age",
-        "Romantic",
-        "Romanticism",
-        "Lake Poets"
-       ]
-      }
-     ]
+    "The Canterbury Tales": {
+      "writer": "Geoffrey Chaucer",
+      "note": "c. 1387–1400, unfinished. “Nine and twenty” pilgrims set out from the Tabard Inn, Southwark, for Becket’s shrine; host Harry Bailly; the Knight tells the first tale. Mostly heroic couplets."
     },
-    {
-     "id": "british-victorian",
-     "name": "Victorian Age",
-     "match": [
-      {
-       "any": [
-        "Victorian",
-        "Pre-Raphaelites"
-       ]
-      }
-     ]
+    "The Spectator": {
+      "writer": "Joseph Addison & Richard Steele",
+      "note": "Daily, 1711–12. Mr Spectator’s club, Sir Roger de Coverley. Aim: “to enliven morality with wit”. Addison’s papers on Paradise Lost and on the Pleasures of the Imagination."
     },
-    {
-     "id": "british-modern",
-     "name": "Modern & 20th Century",
-     "match": [
-      {
-       "any": [
-        "20th century",
-        "Modernism",
-        "Edwardian",
-        "Georgian",
-        "War poets",
-        "The Movement",
-        "Angry Young Men",
-        "Bloomsbury Group",
-        "Irish"
-       ]
-      }
-     ]
+    "Hamlet": {
+      "writer": "William Shakespeare",
+      "note": "c. 1600–01 revenge tragedy. Play within the play (The Mousetrap), Yorick’s skull, “To be, or not to be”. Eliot’s “Hamlet and His Problems” (1919) gives the objective correlative."
     },
-    {
-     "id": "british-contemporary",
-     "name": "Post-war & Contemporary",
-     "match": [
-      {
-       "any": [
-        "Contemporary",
-        "21st century",
-        "Post-war"
-       ]
-      }
-     ]
+    "An Essay of Dramatic Poesy": {
+      "writer": "John Dryden",
+      "note": "1668 dialogue on a Thames boat during the 1665 sea battle. Crites (ancients), Eugenius (moderns), Lisideius (French), Neander (English = Dryden). Defends rhyme; praises Shakespeare."
+    },
+    "Of Grammatology": {
+      "writer": "Jacques Derrida",
+      "note": "1967; English by Gayatri Spivak (1976). Attacks logocentrism and phonocentrism; the supplement (via Rousseau); “there is nothing outside the text”."
+    },
+    "Seven Types of Ambiguity": {
+      "writer": "William Empson",
+      "note": "1930, by I. A. Richards’s student. Close reading of verbal ambiguity in seven types, ending with full contradiction that shows a division in the writer’s mind."
+    },
+    "King Lear": {
+      "writer": "William Shakespeare",
+      "note": "c. 1605–06. Double plot: Lear’s daughters and Gloucester’s sons (Edgar, Edmund). The Fool, the storm on the heath, Cordelia’s “Nothing”. Nahum Tate gave it a happy ending (1681)."
+    },
+    "Poetics": {
+      "writer": "Aristotle",
+      "note": "c. 335 BCE. Tragedy imitates an action and brings catharsis through pity and fear. Six parts, plot first. Hamartia, peripeteia, anagnorisis; unity of action."
+    },
+    "The Faerie Queene": {
+      "writer": "Edmund Spenser",
+      "note": "Books I–III 1590, IV–VI 1596 (12 planned). Allegory for Elizabeth (Gloriana); Book I: Redcrosse Knight, Holiness. Spenserian stanza: 9 lines, ababbcbcc, ending in an alexandrine."
+    },
+    "Lives of the Poets": {
+      "writer": "Samuel Johnson",
+      "note": "1779–81, lives of 52 poets. The Life of Cowley defines the metaphysical poets; the Life of Milton attacks Lycidas."
+    },
+    "Biographia Literaria": {
+      "writer": "S. T. Coleridge",
+      "note": "1817. Chapter XIII: primary and secondary imagination vs fancy. Chapter XIV: “willing suspension of disbelief”. Disagrees with Wordsworth on poetic diction."
+    },
+    "The Way of the World": {
+      "writer": "William Congreve",
+      "note": "1700 comedy of manners. Mirabell and Millamant’s “proviso scene” (Act IV); Lady Wishfort, Fainall, Mrs Marwood."
+    },
+    "The Waste Land": {
+      "writer": "T. S. Eliot",
+      "note": "1922, five parts: Burial of the Dead, A Game of Chess, The Fire Sermon, Death by Water, What the Thunder Said. Edited by Pound (“il miglior fabbro”); Tiresias; ends “Shantih shantih shantih”."
+    },
+    "Ulysses": {
+      "writer": "James Joyce",
+      "note": "Paris, 1922 (Shakespeare and Company). One day, 16 June 1904 (“Bloomsday”); Bloom, Stephen Dedalus, Molly’s closing “yes”. 18 episodes mirroring the Odyssey; stream of consciousness."
+    },
+    "Utopia": {
+      "writer": "Thomas More",
+      "note": "1516, in Latin; English by Ralph Robinson (1551). Raphael Hythloday describes the island; the title puns on “no place” and “good place”."
+    },
+    "Culture and Anarchy": {
+      "writer": "Matthew Arnold",
+      "note": "1869. Culture = “the best which has been thought and said”; “sweetness and light”; Hellenism vs Hebraism; Barbarians, Philistines, Populace."
+    },
+    "An Essay on Criticism": {
+      "writer": "Alexander Pope",
+      "note": "1711, heroic couplets. “A little learning is a dang’rous thing”, “To err is human, to forgive divine”, “Fools rush in where angels fear to tread”."
+    },
+    "Look Back in Anger": {
+      "writer": "John Osborne",
+      "note": "Royal Court, 1956: the “Angry Young Men” and kitchen-sink drama. Jimmy Porter, Alison, Cliff, Helena; the ironing board; the bear-and-squirrel game."
+    },
+    "A Literature of Their Own": {
+      "writer": "Elaine Showalter",
+      "note": "1977. Women’s writing in three phases: Feminine (1840–80), Feminist (1880–1920), Female (1920 on). She later coined “gynocriticism”."
+    },
+    "Culture and Society": {
+      "writer": "Raymond Williams",
+      "note": "1958. Traces the idea of “culture” in British thought, 1780–1950, through keywords like industry, democracy, class, art and culture."
+    },
+    "The Advancement of Learning": {
+      "writer": "Francis Bacon",
+      "note": "1605, in English, for James I. Maps human knowledge and lists the “distempers” of learning. Trap: the four Idols are in Novum Organum (1620), not here."
+    },
+    "The Tempest": {
+      "writer": "William Shakespeare",
+      "note": "c. 1610–11, his last solo play. Prospero, Miranda, Ariel, Caliban; keeps the unities. Central to postcolonial readings; Césaire rewrote it as Une Tempête (1969)."
+    },
+    "The Pilgrim's Progress": {
+      "writer": "John Bunyan",
+      "note": "1678 (Part II 1684), a dream allegory begun in Bedford gaol. Christian, Evangelist, the Slough of Despond, Vanity Fair, the Celestial City."
+    },
+    "Macbeth": {
+      "writer": "William Shakespeare",
+      "note": "c. 1606, the shortest tragedy. Witches, the Porter scene, “Tomorrow, and tomorrow, and tomorrow”. De Quincey’s essay “On the Knocking at the Gate in Macbeth” (1823)."
+    },
+    "The Location of Culture": {
+      "writer": "Homi K. Bhabha",
+      "note": "1994. Hybridity, ambivalence, the Third Space, the “unhomely”; mimicry as “almost the same, but not quite”."
+    },
+    "Waiting for Godot": {
+      "writer": "Samuel Beckett",
+      "note": "French 1953, English 1955. Vladimir, Estragon, Pozzo, Lucky, a Boy; opens “Nothing to be done”. Theatre of the Absurd; Mercier: a play where “nothing happens, twice”."
+    },
+    "The Well Wrought Urn": {
+      "writer": "Cleanth Brooks",
+      "note": "1947, New Criticism. “The Language of Paradox” and “the heresy of paraphrase”; readings of Donne’s “The Canonization” and Keats’s Grecian Urn."
+    },
+    "A Room of One's Own": {
+      "writer": "Virginia Woolf",
+      "note": "1929, from 1928 talks at Newnham and Girton. A woman needs “money and a room of her own” to write; Shakespeare’s imagined sister Judith; the androgynous mind."
+    },
+    "Sons and Lovers": {
+      "writer": "D. H. Lawrence",
+      "note": "1913, Nottinghamshire mining country. Paul Morel torn between his mother Gertrude and Miriam Leivers, then Clara Dawes; an Oedipal novel."
+    },
+    "The Wretched of the Earth": {
+      "writer": "Frantz Fanon",
+      "note": "1961, preface by Sartre. On the violence of decolonisation, national consciousness and national culture; three phases of the native intellectual."
+    },
+    "Practical Criticism": {
+      "writer": "I. A. Richards",
+      "note": "1929, from Cambridge experiments with unsigned poems. Four kinds of meaning: sense, feeling, tone, intention; “stock responses”."
+    },
+    "Wide Sargasso Sea": {
+      "writer": "Jean Rhys",
+      "note": "1966 prequel to Jane Eyre: Bertha’s story as Antoinette Cosway, from Jamaica (Coulibri) to Dominica; Rochester narrates Part Two, unnamed."
+    },
+    "Mythologies": {
+      "writer": "Roland Barthes",
+      "note": "1957. Everyday “myths” (wrestling, wine, Einstein’s brain, the Paris-Match saluting soldier); myth as a second-order sign system."
+    },
+    "Jane Eyre": {
+      "writer": "Charlotte Brontë",
+      "note": "1847, as “Currer Bell”. Lowood, Thornfield, Bertha in the attic; “Reader, I married him.” Basis of Gilbert & Gubar’s The Madwoman in the Attic and Rhys’s Wide Sargasso Sea."
+    },
+    "Gulliver's Travels": {
+      "writer": "Jonathan Swift",
+      "note": "1726. Four voyages: Lilliput, Brobdingnag, Laputa (with Balnibarbi, Glubbdubdrib, Luggnagg, Japan), the Houyhnhnms and Yahoos. Big-Endians vs Little-Endians."
+    },
+    "Aspects of the Theory of Syntax": {
+      "writer": "Noam Chomsky",
+      "note": "1965, the “Standard Theory”. Competence vs performance; deep and surface structure. Comes after Syntactic Structures (1957)."
+    },
+    "Tess of the d'Urbervilles": {
+      "writer": "Thomas Hardy",
+      "note": "1891, subtitled “A Pure Woman”. Alec and Angel Clare; Wessex; ends at Stonehenge and “the President of the Immortals … had ended his sport with Tess”."
+    },
+    "Essays": {
+      "writer": "Francis Bacon",
+      "note": "1597 (10), 1612 (38), 1625 (58). Aphoristic. “Of Studies”: “Studies serve for delight, for ornament, and for ability”; “Of Truth”: “What is truth? said jesting Pilate”."
+    },
+    "Hayavadana": {
+      "writer": "Girish Karnad",
+      "note": "1971, Kannada. From Thomas Mann’s The Transposed Heads, rooted in the Kathasaritsagara. Devadatta, Kapila, Padmini; a Bhagavata narrator; the horse-headed man."
+    },
+    "The Handmaid's Tale": {
+      "writer": "Margaret Atwood",
+      "note": "1985 dystopia of Gilead, narrated by Offred; Aunt Lydia; a “Historical Notes” epilogue. Atwood calls it speculative fiction."
+    },
+    "The Dialogic Imagination": {
+      "writer": "Mikhail Bakhtin",
+      "note": "Essays, English 1981 (ed. Holquist). Dialogism, heteroglossia, the chronotope; the open novel vs the closed epic."
+    },
+    "Kanthapura": {
+      "writer": "Raja Rao",
+      "note": "1938. A Gandhian village in Mysore, told by grandmother Achakka; Moorthy. The foreword is on writing in English, “a language that is not one’s own”."
+    },
+    "Orientalism": {
+      "writer": "Edward Said",
+      "note": "1978. Uses Foucault’s idea of discourse: the “Orient” as the West’s construction. Latent vs manifest Orientalism; Flaubert and Kuchuk Hanem."
+    },
+    "Culture and Imperialism": {
+      "writer": "Edward W. Said",
+      "note": "1993. “Contrapuntal” reading of empire in canonical texts: Mansfield Park (Antigua), Kim, Heart of Darkness, Verdi’s Aida."
+    },
+    "Lyrical Ballads": {
+      "writer": "William Wordsworth & S. T. Coleridge",
+      "note": "1798, anonymous. Opens with the Ancient Mariner, ends with Tintern Abbey. Wordsworth’s Preface added in 1800, enlarged in 1802."
+    },
+    "Preface to Lyrical Ballads": {
+      "writer": "William Wordsworth",
+      "note": "1800/1802. Poetry is “the spontaneous overflow of powerful feelings … recollected in tranquillity”; “a selection of language really used by men”; the poet as “a man speaking to men”."
+    },
+    "Beloved": {
+      "writer": "Toni Morrison",
+      "note": "1987, Pulitzer 1988. Sethe and the haunted house at 124 Bluestone Road; based on Margaret Garner; dedicated to “Sixty Million and more”."
+    },
+    "Untouchable": {
+      "writer": "Mulk Raj Anand",
+      "note": "1935, one day in Bakha’s life; preface by E. M. Forster. Three “solutions”: Christianity, Gandhi, and the flush toilet."
+    },
+    "The Implied Reader": {
+      "writer": "Wolfgang Iser",
+      "note": "1972 (English 1974), reader-response theory. The text’s gaps or blanks are filled by the reader; followed by The Act of Reading (1976)."
+    },
+    "Othello": {
+      "writer": "William Shakespeare",
+      "note": "c. 1603–04, from Cinthio. Iago, Desdemona, the handkerchief. Coleridge on Iago’s “motiveless malignity”; Rymer’s attack (1693)."
+    },
+    "The Postmodern Condition": {
+      "writer": "Jean-François Lyotard",
+      "note": "1979, a report on knowledge for Quebec. Postmodernism as “incredulity toward metanarratives”; language games."
+    },
+    "The Deserted Village": {
+      "writer": "Oliver Goldsmith",
+      "note": "1770. Auburn, “loveliest village of the plain”, emptied by enclosure. “Ill fares the land … where wealth accumulates, and men decay.”"
+    },
+    "Frankenstein": {
+      "writer": "Mary Shelley",
+      "note": "1818 (revised 1831), “The Modern Prometheus”. Born of the 1816 ghost-story contest at Villa Diodati; Walton’s letters frame it; the creature reads Paradise Lost."
+    },
+    "The Death of the Author": {
+      "writer": "Roland Barthes",
+      "note": "1967 (Aspen), French 1968. The text is “a tissue of quotations”; the author gives way to the “scriptor”; “the birth of the reader must be at the cost of the death of the Author”."
+    },
+    "The Rainbow": {
+      "writer": "D. H. Lawrence",
+      "note": "1915, seized for obscenity. Three generations of Brangwens ending with Ursula; continued in Women in Love."
+    },
+    "Black Skin, White Masks": {
+      "writer": "Frantz Fanon",
+      "note": "1952. The psychology of colonised Black people: language, race, the white gaze (“Look, a Negro!”), epidermalisation."
+    },
+    "The Tatler": {
+      "writer": "Richard Steele",
+      "note": "1709–11, three times a week, written as “Isaac Bickerstaff”; Addison joined. Forerunner of The Spectator."
+    },
+    "Distinction": {
+      "writer": "Pierre Bourdieu",
+      "note": "1979. Taste marks class: cultural capital, habitus, and the “new cultural intermediaries”."
+    },
+    "Great Expectations": {
+      "writer": "Charles Dickens",
+      "note": "1860–61 (All the Year Round). Pip, Magwitch, Miss Havisham, Estella; the ending was softened on Bulwer-Lytton’s advice."
+    },
+    "Life of Cowley": {
+      "writer": "Samuel Johnson",
+      "note": "In Lives of the Poets (1779). Defines the metaphysical poets: “heterogeneous ideas … yoked by violence together”, a kind of discordia concors."
+    },
+    "The Country Wife": {
+      "writer": "William Wycherley",
+      "note": "1675 Restoration comedy. Horner pretends to be impotent; Margery Pinchwife; the notorious “china scene”."
+    },
+    "The Study of Poetry": {
+      "writer": "Matthew Arnold",
+      "note": "1880, introduction to Ward’s The English Poets. Poetry as a “criticism of life”; the touchstone method; Chaucer lacks “high seriousness”; Dryden and Pope are “classics of our prose”."
+    },
+    "How to Do Things with Words": {
+      "writer": "J. L. Austin",
+      "note": "1962, from 1955 Harvard lectures. Speech acts: performatives vs constatives; locutionary, illocutionary, perlocutionary acts."
+    },
+    "Marxism and Literature": {
+      "writer": "Raymond Williams",
+      "note": "1977, cultural materialism. Dominant, residual and emergent culture; “structures of feeling”."
+    },
+    "Hard Times": {
+      "writer": "Charles Dickens",
+      "note": "1854, dedicated to Carlyle. Coketown, Gradgrind’s “Facts”, Bounderby, Sissy Jupe, Stephen Blackpool. Books: Sowing, Reaping, Garnering."
+    },
+    "Vanity Fair": {
+      "writer": "W. M. Thackeray",
+      "note": "1847–48, “A Novel without a Hero”. Becky Sharp vs Amelia Sedley; Waterloo; the title comes from Bunyan."
+    },
+    "Wuthering Heights": {
+      "writer": "Emily Brontë",
+      "note": "1847, as “Ellis Bell”. Narrated by Lockwood and Nelly Dean; Heathcliff and Catherine (“I am Heathcliff”); the Heights vs Thrushcross Grange."
+    },
+    "Preface to Shakespeare": {
+      "writer": "Samuel Johnson",
+      "note": "1765. Shakespeare is the “poet of nature”, drawing species, not individuals. Defends tragicomedy, rejects the unities of time and place; “a quibble was to him the fatal Cleopatra”."
+    },
+    "Modern Painters": {
+      "writer": "John Ruskin",
+      "note": "Five volumes, 1843–60, defending Turner. Volume III (1856) coins the “pathetic fallacy”."
+    },
+    "The History of Sexuality": {
+      "writer": "Michel Foucault",
+      "note": "Volume 1, 1976. Rejects the “repressive hypothesis”; sex as discourse and power; biopower; scientia sexualis vs ars erotica."
+    },
+    "Tradition and the Individual Talent": {
+      "writer": "T. S. Eliot",
+      "note": "1919 (The Egoist). The historical sense; impersonality; the poet’s mind as catalyst (platinum). Poetry is “an escape from emotion”."
+    },
+    "The Birthday Party": {
+      "writer": "Harold Pinter",
+      "note": "1958. Stanley Webber, his visitors Goldberg and McCann, Meg and Petey; Irving Wardle called it a “comedy of menace”."
+    },
+    "Lord of the Flies": {
+      "writer": "William Golding",
+      "note": "1954, an answer to Ballantyne’s The Coral Island. Ralph, Piggy’s glasses, Jack, Simon, the conch. Golding: Nobel 1983."
+    },
+    "The Duchess of Malfi": {
+      "writer": "John Webster",
+      "note": "c. 1613–14 Jacobean tragedy. Bosola, Ferdinand, the Cardinal, Antonio; “I am Duchess of Malfi still”; “Cover her face; mine eyes dazzle: she died young”."
+    },
+    "Bleak House": {
+      "writer": "Charles Dickens",
+      "note": "1852–53 satire on Chancery (Jarndyce and Jarndyce). Opens in fog; two narrators (Esther plus a present-tense voice); Inspector Bucket; Krook’s spontaneous combustion."
+    },
+    "Minute on Indian Education": {
+      "writer": "Thomas Babington Macaulay",
+      "note": "2 February 1835. “A single shelf of a good European library …”; a class “Indian in blood and colour, but English in taste”. Led to the English Education Act, 1835."
+    },
+    "Oliver Twist": {
+      "writer": "Charles Dickens",
+      "note": "1837–39 in Bentley’s Miscellany, “The Parish Boy’s Progress”. Attacks the 1834 Poor Law; Fagin, Sikes, Nancy, the Artful Dodger; “Please, sir, I want some more.”"
+    },
+    "Women in Love": {
+      "writer": "D. H. Lawrence",
+      "note": "1920 sequel to The Rainbow. Ursula and Gudrun Brangwen with Birkin and Gerald Crich; ends in the Alps."
+    },
+    "A Midsummer Night's Dream": {
+      "writer": "William Shakespeare",
+      "note": "c. 1595–96. Theseus and Hippolyta’s wedding; Oberon, Titania, Puck; the mechanicals stage Pyramus and Thisbe; Bottom."
+    },
+    "A Defence of Poetry": {
+      "writer": "P. B. Shelley",
+      "note": "Written 1821, printed 1840, answering Peacock’s The Four Ages of Poetry. Ends: “Poets are the unacknowledged legislators of the world.”"
+    },
+    "The Prelude": {
+      "writer": "William Wordsworth",
+      "note": "Versions of 1799, 1805 and 1850 (posthumous, titled by his wife). Addressed to Coleridge; “Growth of a Poet’s Mind”; “spots of time”; the stolen boat."
+    },
+    "The Uses of Literacy": {
+      "writer": "Richard Hoggart",
+      "note": "1957. Working-class culture vs new mass culture. Hoggart founded Birmingham’s Centre for Contemporary Cultural Studies (1964)."
+    },
+    "Lycidas": {
+      "writer": "John Milton",
+      "note": "1637 pastoral elegy for Edward King. St Peter attacks corrupt clergy; “Fame is the spur”; ends “Tomorrow to fresh woods, and pastures new.” Johnson disliked it."
+    },
+    "The Rambler": {
+      "writer": "Samuel Johnson",
+      "note": "Twice-weekly periodical, 1750–52, 208 essays, nearly all by Johnson."
+    },
+    "Prison Notebooks": {
+      "writer": "Antonio Gramsci",
+      "note": "Written 1929–35 in Mussolini’s prison. Hegemony, organic vs traditional intellectuals, the subaltern, war of position."
+    },
+    "The Whitsun Weddings": {
+      "writer": "Philip Larkin",
+      "note": "1964. Title poem: a train from Hull to London. Also “Here”, “Mr Bleaney”, “MCMXIV”, “Days” and “An Arundel Tomb” (“What will survive of us is love”). Movement poet."
+    },
+    "David Copperfield": {
+      "writer": "Charles Dickens",
+      "note": "1849–50, his most autobiographical novel, in the first person. Micawber, Uriah Heep, Steerforth, Betsey Trotwood, Dora, Agnes."
+    },
+    "Doctor Faustus": {
+      "writer": "Christopher Marlowe",
+      "note": "c. 1592; A-text 1604, B-text 1616; from the English Faust Book. Mephistopheles, Good and Evil Angels, the Seven Deadly Sins; “Was this the face that launched a thousand ships”."
+    },
+    "Robinson Crusoe": {
+      "writer": "Daniel Defoe",
+      "note": "1719, often called the first English novel; inspired by Alexander Selkirk. Friday. Ian Watt reads it as economic individualism."
+    },
+    "Midnight's Children": {
+      "writer": "Salman Rushdie",
+      "note": "1981 Booker, later Booker of Bookers (1993) and Best of the Booker (2008). Saleem Sinai, born at midnight, 15 August 1947; Padma; swapped with Shiva; magic realism."
+    },
+    "The Rape of the Lock": {
+      "writer": "Alexander Pope",
+      "note": "Mock-epic: 2 cantos 1712, 5 cantos 1714. Belinda (Arabella Fermor) and the Baron (Lord Petre); sylphs led by Ariel; the game of ombre; the Cave of Spleen."
+    },
+    "Measure for Measure": {
+      "writer": "William Shakespeare",
+      "note": "c. 1603–04 problem play. The Duke disguised as a friar; Angelo, Isabella, Claudio; Mariana and the bed-trick."
+    },
+    "Sexual Politics": {
+      "writer": "Kate Millett",
+      "note": "1970. Patriarchy as a political system, read through D. H. Lawrence, Henry Miller, Norman Mailer and Jean Genet."
+    },
+    "Political Shakespeare": {
+      "writer": "Jonathan Dollimore & Alan Sinfield (eds)",
+      "note": "1985, the manifesto of British cultural materialism, set beside American New Historicism (Greenblatt)."
+    },
+    "The New Criticism": {
+      "writer": "John Crowe Ransom",
+      "note": "1941. Named the movement; discusses Richards, Empson, Eliot and Winters, and calls for an “ontological critic”."
+    },
+    "A Portrait of the Artist as a Young Man": {
+      "writer": "James Joyce",
+      "note": "1916 (serialised in The Egoist, 1914–15). Stephen Dedalus’s growth as an artist; epiphanies; “silence, exile, and cunning”. Opens with the “moocow”."
+    },
+    "Simulacra and Simulation": {
+      "writer": "Jean Baudrillard",
+      "note": "1981. Hyperreality; the map comes before the territory; Disneyland; four phases of the image."
+    },
+    "Keywords": {
+      "writer": "Raymond Williams",
+      "note": "1976. The changing meanings of key words of culture and society, such as culture, class, art, industry and democracy."
+    },
+    "Elegy Written in a Country Churchyard": {
+      "writer": "Thomas Gray",
+      "note": "1751, Stoke Poges, heroic quatrains. “Full many a flower is born to blush unseen”; “some mute inglorious Milton”; ends with “The Epitaph”."
+    },
+    "Dialectic of Enlightenment": {
+      "writer": "Max Horkheimer & Theodor Adorno",
+      "note": "1944/1947, Frankfurt School. Enlightenment turning into myth; the chapter “The Culture Industry: Enlightenment as Mass Deception”."
+    },
+    "Middlemarch": {
+      "writer": "George Eliot",
+      "note": "1871–72, “A Study of Provincial Life”. Dorothea, Casaubon, Lydgate, Ladislaw. Woolf: one of the few English novels “written for grown-up people”."
+    },
+    "Revolution in Poetic Language": {
+      "writer": "Julia Kristeva",
+      "note": "1974. The semiotic (including the chora) vs the symbolic; poetic language as a revolutionary force."
+    },
+    "Nation and Narration": {
+      "writer": "Homi K. Bhabha (ed.)",
+      "note": "1990 essay collection on the nation as a narrative; Bhabha’s own essay is “DissemiNation”."
+    },
+    "Beowulf": {
+      "writer": "Anonymous (Old English)",
+      "note": "Old English epic in one manuscript (Cotton Vitellius A.xv). Grendel, his mother, the dragon; Hrothgar’s hall Heorot. Tolkien’s 1936 lecture; Heaney’s 1999 translation."
+    },
+    "The Anatomy of Melancholy": {
+      "writer": "Robert Burton",
+      "note": "1621, written under the name “Democritus Junior”."
+    },
+    "Leviathan": {
+      "writer": "Thomas Hobbes",
+      "note": "1651. Without a sovereign, life is “solitary, poor, nasty, brutish, and short”; social contract."
+    },
+    "Adam Bede": {
+      "writer": "George Eliot",
+      "note": "1859, her first novel. Hayslope; Hetty Sorrel’s child-murder trial; Dinah Morris the Methodist preacher; Chapter 17 defends realism."
+    },
+    "Voss": {
+      "writer": "Patrick White",
+      "note": "1957. A German explorer crossing the Australian interior (based on Leichhardt) and Laura Trevelyan. White: Nobel 1973."
+    },
+    "The Metaphysical Poets": {
+      "writer": "T. S. Eliot",
+      "note": "1921 review of Grierson’s anthology. The “dissociation of sensibility” set in after the 17th century; “A thought to Donne was an experience”."
+    },
+    "Is There a Text in This Class?": {
+      "writer": "Stanley Fish",
+      "note": "1980, reader-response. Meaning comes from “interpretive communities”."
+    },
+    "Anatomy of Criticism": {
+      "writer": "Northrop Frye",
+      "note": "1957, four essays: modes, symbols, myths, genres. Archetypal myths by season: comedy (spring), romance (summer), tragedy (autumn), irony and satire (winter)."
+    },
+    "Style": {
+      "writer": "Walter Pater",
+      "note": "1888 essay, collected in Appreciations (1889). Imaginative prose is “the special art of the modern world”."
+    },
+    "Volpone": {
+      "writer": "Ben Jonson",
+      "note": "1606 Venetian satire on greed, a beast fable: Volpone (the fox), Mosca (the fly), Voltore, Corbaccio, Corvino."
+    },
+    "A Valediction: Forbidding Mourning": {
+      "writer": "John Donne",
+      "note": "Donne’s love poem, printed 1633: the compass conceit and “gold to airy thinness beat”. Also Adrienne Rich’s feminist poem of the same title (1970)."
+    },
+    "Sailing to Byzantium": {
+      "writer": "W. B. Yeats",
+      "note": "In The Tower (1928), ottava rima. “That is no country for old men”; the golden bird; “the artifice of eternity”."
+    },
+    "Tristram Shandy": {
+      "writer": "Laurence Sterne",
+      "note": "Nine volumes, 1759–67. Digressions, the black page and marbled page; Uncle Toby; Locke’s association of ideas. Shklovsky called it the most typical novel."
     }
-   ],
-   "otherName": "Other — period not tagged"
   },
-  {
-   "id": "american",
-   "name": "American Literature",
-   "icon": "✪",
-   "about": "Colonial beginnings to the contemporary, including African American writing.",
-   "match": [
-    {
-     "any": [
-      "American",
-      "African American",
-      "American Renaissance",
-      "Harlem Renaissance",
-      "Transcendentalism",
-      "Beat Generation",
-      "Native American",
-      "Lost Generation"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "american-early",
-     "name": "Colonial & Early American",
-     "match": [
-      {
-       "any": [
-        "Colonial America",
-        "Early American",
-        "17th century",
-        "18th century"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "american-19th",
-     "name": "19th Century & American Renaissance",
-     "match": [
-      {
-       "any": [
-        "19th century",
-        "American Renaissance",
-        "Transcendentalism",
-        "Realism",
-        "Naturalism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "american-modern",
-     "name": "Modernism & 20th Century",
-     "match": [
-      {
-       "any": [
-        "20th century",
-        "Modernism",
-        "Lost Generation",
-        "Beat Generation",
-        "Confessional"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "american-african",
-     "name": "African American & Harlem Renaissance",
-     "match": [
-      {
-       "any": [
-        "African American",
-        "Harlem Renaissance"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "american-contemporary",
-     "name": "Contemporary & Postmodern",
-     "match": [
-      {
-       "any": [
-        "Contemporary",
-        "21st century",
-        "Postmodernism"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other American writing"
-  },
-  {
-   "id": "indian",
-   "name": "Indian Literature",
-   "icon": "❁",
-   "about": "Indian writing in English, in translation, Dalit writing, diaspora and Indian aesthetics.",
-   "match": [
-    {
-     "any": [
-      "Indian",
-      "Indian diaspora",
-      "Colonial India",
-      "Dalit writing",
-      "Dalit literature",
-      "Bengali",
-      "Urdu",
-      "Hindi",
-      "Sanskrit",
-      "Indian aesthetics",
-      "Bhasha literature",
-      "Malayalam",
-      "Tamil",
-      "Kannada",
-      "Marathi",
-      "Mahabharata retellings",
-      "Partition"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "indian-novel",
-     "name": "Novel & Fiction",
-     "match": [
-      {
-       "any": [
-        "Indian English novel",
-        "Indian English fiction",
-        "Novel",
-        "Fiction",
-        "Short story"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-poetry",
-     "name": "Poetry",
-     "match": [
-      {
-       "any": [
-        "Indian English poetry",
-        "Poetry"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-drama",
-     "name": "Drama",
-     "match": [
-      {
-       "any": [
-        "Indian drama",
-        "Indian English drama",
-        "Drama"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-prose",
-     "name": "Prose & Life Writing",
-     "match": [
-      {
-       "any": [
-        "Life writing",
-        "Autobiography",
-        "Prose",
-        "Essay"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-diaspora",
-     "name": "Diaspora Writing",
-     "match": [
-      {
-       "any": [
-        "Indian diaspora"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-dalit",
-     "name": "Dalit Writing",
-     "match": [
-      {
-       "any": [
-        "Dalit writing",
-        "Dalit literature"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-bhasha",
-     "name": "Bhasha Literature & Translation",
-     "match": [
-      {
-       "any": [
-        "Bengali",
-        "Urdu",
-        "Hindi",
-        "Malayalam",
-        "Tamil",
-        "Kannada",
-        "Marathi",
-        "Translation",
-        "Bhasha literature",
-        "Progressive Writers' Movement"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-colonial",
-     "name": "Colonial & Early Writing",
-     "match": [
-      {
-       "any": [
-        "Colonial India",
-        "Early Indian writing in English",
-        "19th century",
-        "Orientalism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "indian-aesthetics",
-     "name": "Indian Aesthetics & Sanskrit",
-     "match": [
-      {
-       "any": [
-        "Indian aesthetics",
-        "Rasa theory",
-        "Sanskrit",
-        "Dhvani"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other Indian writing"
-  },
-  {
-   "id": "world",
-   "name": "World & Postcolonial Literature",
-   "icon": "◎",
-   "about": "African, Caribbean, Canadian, Australian, European and Russian writing in translation, and the classics.",
-   "match": [
-    {
-     "any": [
-      "World literature",
-      "African",
-      "Nigerian",
-      "South African",
-      "Kenyan",
-      "Caribbean",
-      "Canadian",
-      "Australian",
-      "New Zealand",
-      "Russian",
-      "French",
-      "German",
-      "European",
-      "Latin American",
-      "Greek",
-      "Latin",
-      "Roman",
-      "Classical",
-      "Existentialism",
-      "Absurdism"
-     ]
-    },
-    {
-     "first": [
-      "Postcolonialism"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension",
-    "Sanskrit"
-   ],
-   "subtopics": [
-    {
-     "id": "world-african",
-     "name": "African",
-     "match": [
-      {
-       "any": [
-        "African",
-        "Nigerian",
-        "South African",
-        "Kenyan"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "world-caribbean",
-     "name": "Caribbean",
-     "match": [
-      {
-       "any": [
-        "Caribbean"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "world-commonwealth",
-     "name": "Canadian & Australian",
-     "match": [
-      {
-       "any": [
-        "Canadian",
-        "Australian",
-        "New Zealand"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "world-european",
-     "name": "European & Russian (in translation)",
-     "match": [
-      {
-       "any": [
-        "Russian",
-        "French",
-        "German",
-        "European",
-        "Italian",
-        "Spanish",
-        "Latin American",
-        "World literature",
-        "Existentialism",
-        "Absurdism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "world-classical",
-     "name": "Classical Greek & Latin",
-     "match": [
-      {
-       "any": [
-        "Greek",
-        "Latin",
-        "Roman",
-        "Classical"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "world-postcolonial",
-     "name": "Postcolonial Writing",
-     "match": [
-      {
-       "first": [
-        "Postcolonialism"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other world writing"
-  },
-  {
-   "id": "theory",
-   "name": "Literary Theory & Criticism",
-   "icon": "✎",
-   "about": "Classical and Indian poetics, English criticism from Sidney to Eliot, and modern theory.",
-   "match": [
-    {
-     "any": [
-      "Literary theory",
-      "Literary criticism",
-      "Criticism",
-      "Indian aesthetics",
-      "Rasa theory",
-      "New Criticism",
-      "Russian Formalism",
-      "Structuralism",
-      "Post-structuralism",
-      "Deconstruction",
-      "Reader-response criticism",
-      "Phenomenology",
-      "Psychoanalytic criticism",
-      "Marxism",
-      "Feminism",
-      "Queer theory",
-      "Ecocriticism",
-      "New Historicism",
-      "Postmodernism",
-      "Mimesis",
-      "Romantic theory",
-      "Shakespeare criticism"
-     ]
-    },
-    {
-     "first": [
-      "Postcolonialism"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "theory-classical",
-     "name": "Classical Criticism",
-     "match": [
-      {
-       "any": [
-        "Mimesis",
-        "Poetics",
-        "Sublime"
-       ]
-      },
-      {
-       "all": [
-        "Classical",
-        "Literary criticism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-indian",
-     "name": "Indian Poetics",
-     "match": [
-      {
-       "any": [
-        "Indian aesthetics",
-        "Rasa theory",
-        "Dhvani"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-english",
-     "name": "English Criticism: Sidney to Eliot",
-     "match": [
-      {
-       "any": [
-        "Romantic theory",
-        "Shakespeare criticism",
-        "Culture criticism",
-        "Tradition",
-        "Impersonality",
-        "Criticism"
-       ]
-      },
-      {
-       "any": [
-        "Literary criticism"
-       ],
-       "none": [
-        "Classical",
-        "Greek"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-formalism",
-     "name": "New Criticism & Formalism",
-     "match": [
-      {
-       "any": [
-        "New Criticism",
-        "Russian Formalism",
-        "Formalism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-structuralism",
-     "name": "Structuralism & Post-structuralism",
-     "match": [
-      {
-       "any": [
-        "Structuralism",
-        "Post-structuralism",
-        "Deconstruction",
-        "Yale School",
-        "Death of the author",
-        "Minor literature"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-marxism",
-     "name": "Marxism",
-     "match": [
-      {
-       "any": [
-        "Marxism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-feminism",
-     "name": "Feminism & Gender",
-     "match": [
-      {
-       "any": [
-        "Feminism",
-        "Gynocriticism",
-        "French feminism",
-        "Queer theory",
-        "Ecofeminism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-psycho",
-     "name": "Psychoanalytic Criticism",
-     "match": [
-      {
-       "any": [
-        "Psychoanalytic criticism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-reader",
-     "name": "Reader-response & Phenomenology",
-     "match": [
-      {
-       "any": [
-        "Reader-response criticism",
-        "Phenomenology",
-        "Transactional theory"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-postcolonial",
-     "name": "Postcolonial Theory & Translation",
-     "match": [
-      {
-       "any": [
-        "Postcolonialism",
-        "Subaltern Studies",
-        "Orientalism",
-        "Translation studies",
-        "Language debate"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-postmodern",
-     "name": "Postmodernism & New Historicism",
-     "match": [
-      {
-       "any": [
-        "Postmodernism",
-        "New Historicism",
-        "Simulacra"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "theory-eco",
-     "name": "Ecocriticism",
-     "match": [
-      {
-       "any": [
-        "Ecocriticism"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other theorists (e.g. Bakhtin)"
-  },
-  {
-   "id": "cultural",
-   "name": "Cultural Studies",
-   "icon": "❖",
-   "about": "The Birmingham School, film and adaptation, race and identity, popular and genre fiction.",
-   "match": [
-    {
-     "any": [
-      "Cultural studies",
-      "Birmingham School",
-      "Film",
-      "Adaptation",
-      "Popular culture",
-      "Censorship",
-      "Race",
-      "Globalisation",
-      "Publishing",
-      "Media",
-      "Genre fiction",
-      "Children's literature",
-      "Detective fiction",
-      "Noir"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "cultural-theory",
-     "name": "Cultural Studies Theory",
-     "match": [
-      {
-       "any": [
-        "Cultural studies",
-        "Birmingham School"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "cultural-film",
-     "name": "Film & Adaptation",
-     "match": [
-      {
-       "any": [
-        "Film",
-        "Adaptation",
-        "Rewritings",
-        "Sources and adaptations"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "cultural-race",
-     "name": "Race & Identity",
-     "match": [
-      {
-       "any": [
-        "Race"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "cultural-popular",
-     "name": "Popular & Genre Fiction",
-     "match": [
-      {
-       "any": [
-        "Popular culture",
-        "Genre fiction",
-        "Children's literature",
-        "Fantasy",
-        "Detective fiction",
-        "Noir"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "cultural-publishing",
-     "name": "Publishing, Censorship & Globalisation",
-     "match": [
-      {
-       "any": [
-        "Publishing",
-        "Censorship",
-        "Globalisation",
-        "Media"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other"
-  },
-  {
-   "id": "abrams",
-   "name": "M H Abrams & Literary Terms",
-   "icon": "Aa",
-   "about": "Terms and concepts from A Glossary of Literary Terms, plus other literary-terms questions.",
-   "match": [
-    {
-     "any": [
-      "Abrams",
-      "Literary terms",
-      "Prosody"
-     ]
-    },
-    {
-     "exam": [
-      "Abrams"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "abrams-rhetoric",
-     "name": "Figures of Speech & Rhetoric",
-     "match": [
-      {
-       "any": [
-        "Figures of speech",
-        "Rhetorical devices",
-        "Irony",
-        "Sound devices",
-        "Paradox",
-        "Ambiguity",
-        "Imagery",
-        "Prosody",
-        "Free verse"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "abrams-narrative",
-     "name": "Narrative & Fiction Terms",
-     "match": [
-      {
-       "any": [
-        "Narrative technique",
-        "Point of view",
-        "Stream of consciousness",
-        "Frame narrative",
-        "Metafiction",
-        "Magic realism"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "abrams-genres",
-     "name": "Genres & Forms",
-     "match": [
-      {
-       "any": [
-        "Epic",
-        "Elegy",
-        "Pastoral",
-        "Tragedy",
-        "Comedy",
-        "Closet drama",
-        "Dramatic monologue",
-        "Drama",
-        "Ode",
-        "Satire"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "abrams-critical",
-     "name": "Critical & Theory Terms",
-     "match": [
-      {
-       "any": [
-        "Literary theory",
-        "New Criticism",
-        "Criticism",
-        "Gynocriticism",
-        "Queer theory",
-        "New Historicism",
-        "Reader-response criticism",
-        "Bakhtin",
-        "Mimesis"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "abrams-periods",
-     "name": "Periods & Movements",
-     "match": [
-      {
-       "any": [
-        "Medieval",
-        "Renaissance",
-        "Humanism",
-        "Neoclassical",
-        "Modernism",
-        "Postmodernism",
-        "Elizabethan",
-        "Romantic Age"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other terms"
-  },
-  {
-   "id": "language",
-   "name": "Language & Linguistics",
-   "icon": "ə",
-   "about": "History of English, phonetics, grammar, word formation, ELT and English in India.",
-   "match": [
-    {
-     "any": [
-      "Linguistics",
-      "Phonetics",
-      "Phonology",
-      "Grammar",
-      "Morphology",
-      "Syntax",
-      "Semantics",
-      "Etymology",
-      "Word formation",
-      "History of English",
-      "History of the English language",
-      "ELT",
-      "English Language Teaching",
-      "Pedagogy",
-      "Sociolinguistics",
-      "English in India"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "language-history",
-     "name": "History of English & Etymology",
-     "match": [
-      {
-       "any": [
-        "History of English",
-        "History of the English language",
-        "Etymology",
-        "Anglo-Indian words"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "language-phonetics",
-     "name": "Phonetics & Phonology",
-     "match": [
-      {
-       "any": [
-        "Phonetics",
-        "Phonology"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "language-grammar",
-     "name": "Grammar & Word Formation",
-     "match": [
-      {
-       "any": [
-        "Grammar",
-        "Morphology",
-        "Syntax",
-        "Semantics",
-        "Word formation"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "language-elt",
-     "name": "ELT, Pedagogy & English in India",
-     "match": [
-      {
-       "any": [
-        "ELT",
-        "English Language Teaching",
-        "Pedagogy",
-        "Sociolinguistics",
-        "English in India"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other language questions"
-  },
-  {
-   "id": "research",
-   "name": "Research Methods",
-   "icon": "⌕",
-   "about": "Research methodology, documentation and MLA style (a NET unit).",
-   "match": [
-    {
-     "any": [
-      "Research methodology",
-      "Research methods",
-      "MLA",
-      "Citation",
-      "Documentation",
-      "Bibliography"
-     ]
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "research-methods",
-     "name": "Research Methodology",
-     "match": [
-      {
-       "any": [
-        "Research methodology",
-        "Research methods",
-        "Qualitative methods",
-        "Quantitative methods"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "research-docs",
-     "name": "Documentation & MLA",
-     "match": [
-      {
-       "any": [
-        "MLA",
-        "Citation",
-        "Documentation",
-        "Bibliography"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other"
-  },
-  {
-   "id": "quotes",
-   "name": "Quotes & Lines",
-   "icon": "❝",
-   "kind": "quotes",
-   "overlay": true,
-   "about": "Every PYQ built on a quotation, opening line or passage, gathered from all sections. Read the line, guess the writer or work, then reveal.",
-   "match": [
-    {
-     "quote": true
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "quotes-author",
-     "name": "Identify the Author",
-     "match": [
-      {
-       "any": [
-        "Identify the author",
-        "Identify the speaker"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "quotes-text",
-     "name": "Identify the Text / Poem",
-     "match": [
-      {
-       "any": [
-        "Identify the text",
-        "Identify the poem"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "quotes-opening",
-     "name": "Opening Lines",
-     "match": [
-      {
-       "any": [
-        "Opening lines"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "quotes-poems",
-     "name": "Lines from Poems",
-     "match": [
-      {
-       "quote": true,
-       "any": [
-        "Poetry",
-        "Indian English poetry",
-        "Ode",
-        "Elegy",
-        "Epic"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "quotes-critics",
-     "name": "Critics' & Theorists' Statements",
-     "match": [
-      {
-       "quote": true,
-       "any": [
-        "Literary theory",
-        "Literary criticism",
-        "Criticism",
-        "Romantic theory",
-        "Tradition",
-        "Impersonality",
-        "Postcolonialism",
-        "Feminism",
-        "Subaltern Studies",
-        "Language debate"
-       ]
-      }
-     ]
-    }
-   ],
-   "otherName": "Other passages & extracts"
-  },
-  {
-   "id": "awards",
-   "name": "Awards & Prizes",
-   "icon": "✧",
-   "kind": "awards",
-   "overlay": true,
-   "about": "Every PYQ about literary awards — Nobel, Booker, Pulitzer, Sahitya Akademi, Jnanpith and more.",
-   "match": [
-    {
-     "any": [
-      "Awards",
-      "Booker Prize",
-      "Nobel Prize",
-      "Pulitzer Prize",
-      "Sahitya Akademi",
-      "Jnanpith"
-     ]
-    },
-    {
-     "text": "\\b(Booker|Nobel|Pulitzer|Sahitya Akademi|Jnanpith|Jnanpeeth|Saraswati Samman|Commonwealth Writers|Costa Book|Neustadt|Goncourt)\\b"
-    }
-   ],
-   "not": [
-    "General Aptitude",
-    "Reasoning & Comprehension"
-   ],
-   "subtopics": [
-    {
-     "id": "awards-nobel",
-     "name": "Nobel Prize",
-     "match": [
-      {
-       "any": [
-        "Nobel Prize"
-       ]
-      },
-      {
-       "text": "Nobel"
-      }
-     ]
-    },
-    {
-     "id": "awards-booker",
-     "name": "Booker & International Booker",
-     "match": [
-      {
-       "any": [
-        "Booker Prize"
-       ]
-      },
-      {
-       "text": "Booker"
-      }
-     ]
-    },
-    {
-     "id": "awards-pulitzer",
-     "name": "Pulitzer Prize",
-     "match": [
-      {
-       "any": [
-        "Pulitzer Prize"
-       ]
-      },
-      {
-       "text": "Pulitzer"
-      }
-     ]
-    },
-    {
-     "id": "awards-indian",
-     "name": "Sahitya Akademi, Jnanpith & Indian Awards",
-     "match": [
-      {
-       "any": [
-        "Sahitya Akademi",
-        "Jnanpith"
-       ]
-      },
-      {
-       "text": "Sahitya Akademi|Jnanpith|Jnanpeeth|Saraswati Samman"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "aptitude",
-   "name": "GATE Aptitude & Reasoning",
-   "icon": "∑",
-   "about": "GATE General Aptitude and XH-B1 Reasoning & Comprehension — compulsory in every GATE XH paper.",
-   "match": [
-    {
-     "first": [
-      "General Aptitude",
-      "Reasoning & Comprehension"
-     ]
-    }
-   ],
-   "subtopics": [
-    {
-     "id": "apt-verbal",
-     "name": "Verbal Ability",
-     "match": [
-      {
-       "any": [
-        "Verbal"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "apt-quant",
-     "name": "Quantitative Aptitude",
-     "match": [
-      {
-       "any": [
-        "Quantitative"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "apt-logic",
-     "name": "Logical & Critical Reasoning",
-     "match": [
-      {
-       "any": [
-        "Logical reasoning",
-        "Critical reasoning"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "apt-rc",
-     "name": "Reading Comprehension",
-     "match": [
-      {
-       "any": [
-        "Reading comprehension"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "apt-di",
-     "name": "Data Interpretation",
-     "match": [
-      {
-       "any": [
-        "Data interpretation"
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "mixed",
-   "name": "Mixed & Cross-period",
-   "icon": "⁂",
-   "auto": "unmatched",
-   "about": "Questions that span several literatures or periods (genres, pseudonyms, adaptations, odd-one-out). Added automatically."
+  "writerFixes": {
+    "Songs of Experience": "William Blake",
+    "Iliad": "Homer",
+    "Odyssey": "Homer",
+    "The Madwoman in the Attic": "Sandra Gilbert & Susan Gubar",
+    "Anti-Oedipus": "Gilles Deleuze & Félix Guattari",
+    "The Empire Writes Back": "Bill Ashcroft, Gareth Griffiths & Helen Tiffin",
+    "Everyman": "Anonymous (morality play)",
+    "Agamemnon": "Aeschylus",
+    "Appreciations": "Walter Pater",
+    "Coolie": "Mulk Raj Anand",
+    "In Search of Our Mothers' Gardens": "Alice Walker",
+    "Men and Women": "Robert Browning",
+    "Postmodernism, or the Cultural Logic of Late Capitalism": "Fredric Jameson",
+    "The Guide": "R. K. Narayan",
+    "The Pleasure of the Text": "Roland Barthes",
+    "Waiting for the Mahatma": "R. K. Narayan",
+    "Comus": "John Milton",
+    "Deconstruction and Criticism": "Bloom, de Man, Derrida, Hartman & Miller",
+    "I'm Talking About Jerusalem": "Arnold Wesker",
+    "Leaves of Grass": "Walt Whitman",
+    "Remembered Village": "M. N. Srinivas",
+    "Scrutiny": "Journal led by F. R. Leavis",
+    "So Many Hungers!": "Bhabani Bhattacharya",
+    "Speaking of Siva": "A. K. Ramanujan (translator)",
+    "The Calcutta Chromosome": "Amitav Ghosh",
+    "The Country and the City": "Raymond Williams",
+    "The Female Imagination": "Patricia Meyer Spacks",
+    "The Function of Criticism at the Present Time": "Matthew Arnold",
+    "The Mimic Men": "V. S. Naipaul",
+    "The Serpent and the Rope": "Raja Rao",
+    "The Shadow Lines": "Amitav Ghosh",
+    "The Shepheardes Calender": "Edmund Spenser",
+    "The Use of Poetry and the Use of Criticism": "T. S. Eliot",
+    "The Weave of My Life": "Urmila Pawar",
+    "Thinking About Women": "Mary Ellmann",
+    "Waterland": "Graham Swift",
+    "Écrits": "Jacques Lacan"
   }
- ]
 }
