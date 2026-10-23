@@ -1537,7 +1537,60 @@ function scopeTopics(scope) {
 function topicFrac(t) {
   if (learnt(t)) return 1;
   const qs = topicQs(t); if (!qs.length) return 0;
-  return qs.filter(q => S.prog.attempts[q.id]).length / qs.length;
+  // A question counts in full once attempted; otherwise by the share of its writers (or works) you have covered.
+  const C = covIndex(), W = topicWriters(t);
+  const wOn = w => { const g = W.byVariant.get(norm(w)); return g ? g.names.some(n => C.writers.has(norm(n))) : C.writers.has(norm(w)); };
+  return qs.reduce((sum, q) => {
+    if (S.prog.attempts[q.id]) return sum + 1;
+    const ws = q.writers || [], wk = q.works || [];
+    const a = ws.length ? ws.filter(wOn).length / ws.length : 0;
+    const b = wk.length ? wk.filter(x => C.works.has(norm(x))).length / wk.length : 0;
+    return sum + Math.max(a, b);
+  }, 0) / qs.length;
+}
+// Writers and works you have covered (Quick log or the writer ticks in Syllabus), in any topic.
+const COV_EMPTY = {};
+let COVC = { ref: null, ver: -1 }, COVVER = 0;
+function covIndex() {
+  const c = S.prog.covered || COV_EMPTY;
+  if (COVC.ref === c && COVC.ver === COVVER) return COVC;
+  const writers = new Set(), works = new Set();
+  Object.values(c).forEach(l => (l || []).forEach(x => { if (x.k === 'writer') writers.add(norm(x.n)); else if (x.k === 'work') works.add(norm(x.n)); }));
+  COVC = { ref: c, ver: COVVER, writers, works };
+  return COVC;
+}
+// The writers asked in a topic's PYQs, most asked first. The same person spelt with and
+// without initials ("Edward Said", "Edward W. Said") is listed once.
+let TWCACHE = { key: '', map: new Map() };
+function topicWriters(t) {
+  const key = `${S.questions.length}:${S.syllabus ? S.syllabus.updated : ''}`;
+  if (TWCACHE.key !== key) TWCACHE = { key, map: new Map() };
+  if (TWCACHE.map.has(t.id)) return TWCACHE.map.get(t.id);
+  const raw = new Map();
+  topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => { const n = String(w).trim(); if (n) raw.set(n, (raw.get(n) || 0) + 1); }));
+  const groups = [];
+  [...raw.entries()].sort((a, b) => b[1] - a[1]).forEach(([n, c]) => {
+    const full = words(n), key2 = full.filter(x => x.length > 1).join(' ');
+    const g = groups.find(x => x.key === key2 && x.names.some(m => { const f = words(m); return f.every(y => full.includes(y)) || full.every(y => f.includes(y)); }));
+    if (g) { g.names.push(n); g.n += c; } else groups.push({ key: key2, name: n, names: [n], n: c });
+  });
+  groups.sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
+  const byVariant = new Map(); groups.forEach(g => g.names.forEach(n => byVariant.set(norm(n), g)));
+  const res = { groups, byVariant };
+  TWCACHE.map.set(t.id, res);
+  return res;
+}
+const writerOn = g => { const C = covIndex(); return g.names.some(n => C.writers.has(norm(n))); };
+function writersHTMLFor(t) {
+  const W = topicWriters(t); if (!W.groups.length) return '';
+  const tiers = [['often', 'Asked often · 3+ PYQs', g => g.n >= 3], ['twice', 'Asked twice', g => g.n === 2], ['once', 'Asked once', g => g.n === 1]];
+  const done = W.groups.filter(writerOn).length;
+  return `<div class="sy-writers">
+    <div class="sy-w-head">Writers asked · ${done} of ${W.groups.length} covered</div>
+    ${tiers.map(([cls, label, f]) => { const gs = W.groups.filter(f); return gs.length ? `<div class="sy-w-line ${cls}"><span class="sy-w-lbl">${label}</span>
+      ${gs.map(g => { const on = writerOn(g); return `<button class="sy-w ${cls} ${on ? 'on' : ''}" data-act="sylWriter" data-id="${esc(t.id)}" data-n="${esc(g.name)}" aria-pressed="${on}">${on ? '✓ ' : ''}${esc(g.name)} <span>${g.n}</span></button>`; }).join('')}</div>` : ''; }).join('')}
+    <p class="small muted sy-w-note">Tap a writer once you've covered them. The bar fills by their share of this topic's PYQs.</p>
+  </div>`;
 }
 function progOf(list) {
   const n = list.length, l = list.filter(learnt).length, q = list.filter(quizzed).length;
@@ -1567,6 +1620,12 @@ function topicQs(t) {
   let qs = [];
   if (t.guide) { const g = gNode(t.guide); if (g) qs = g.qs; }
   if (!qs.length && t.q) { const toks = queryTokens(t.q); if (toks.length) qs = S.questions.filter(q => matchesQuery(q, toks)); }
+  // e.g. "Indian English novel after 1980" keeps only questions on post-1980 novelists,
+  // and "to 1980" drops questions that are only about them.
+  const wkey = n => words(n).filter(x => x.length > 1).join(' ');
+  const hasW = (q, set) => (q.writers || []).filter(w => set.has(wkey(w)));
+  if ((t.onlyWriters || []).length) { const set = new Set(t.onlyWriters.map(wkey)); qs = qs.filter(q => hasW(q, set).length); }
+  if ((t.exceptWriters || []).length) { const set = new Set(t.exceptWriters.map(wkey)); qs = qs.filter(q => !(q.writers || []).length || hasW(q, set).length < q.writers.length); }
   TQCACHE.map.set(t.id, qs);
   return qs;
 }
@@ -1606,13 +1665,14 @@ function nodeHTML(t, ex) {
   const cnt = topicExamCount(t, ex), qs = topicQs(t);
   let stat = null;
   if (qs.length) { let a = 0, c = 0, seen = 0; qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } }); if (a) stat = { acc: Math.round((c / a) * 100), seen, n: qs.length }; }
-  const status = M ? (r.pre ? 'Learnt before today (Quick log)' : `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}`) : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat ? 'In progress' : 'Not started';
+  const FR = topicFrac(t);
+  const status = M ? (r.pre ? 'Learnt before today (Quick log)' : `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}`) : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat || FR > 0 ? `In progress · ${Math.round(FR * 100)}%` : 'Not started';
   return `<li class="sy-node ${L ? 'is-learnt' : ''}" id="t-${esc(t.id)}">
     <div class="sy-node-name">${esc(shortName(t))} <span class="cnt" title="${EXAM_KEY[ex]} PYQs">(${cnt} ${EXAM_KEY[ex]})</span></div>
     ${desc ? `<div class="sy-node-desc clamp">${esc(desc)}</div>${desc.length > 46 ? '<button class="sy-more" data-act="sylMore">Show more</button>' : ''}` : ''}
-    ${(() => { const cv = ((sylP().covered || {})[t.id] || []).filter(x => x.k !== 'topic'); return cv.length ? `<div class="sy-node-cov">✓ Covered: ${esc(cv.map(x => x.n).join(', '))}</div>` : ''; })()}
+    ${(() => { const TW = topicWriters(t), cv = ((sylP().covered || {})[t.id] || []).filter(x => x.k !== 'topic' && !(x.k === 'writer' && TW.byVariant.has(norm(x.n)))); return cv.length ? `<div class="sy-node-cov">✓ Covered: ${esc(cv.map(x => x.n).join(', '))}</div>` : ''; })()}
     <div class="sy-node-status">
-      <span class="sy-mini"><i style="width:${L ? 100 : stat ? Math.round((stat.seen / stat.n) * 100) : 0}%"></i></span>
+      <span class="sy-mini"><i style="width:${Math.round(topicFrac(t) * 100)}%"></i></span>
       <span class="st">${status}${Q ? ' · quizzed' : ''}${stat && !QD ? ` · ${stat.seen} of ${stat.n} questions attempted, ${stat.acc}% right` : stat ? ` · ${stat.acc}% right` : ''}</span>
       ${qs.length ? `<button class="sy-link-u" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz</button>` : ''}
     </div>
@@ -1622,6 +1682,7 @@ function nodeHTML(t, ex) {
       <button class="sy-link-u" data-act="planTopic" data-id="${esc(t.id)}">＋ Plan</button>
       ${t.custom ? `<button class="sy-link-u" data-act="sylDelCustom" data-id="${esc(t.id)}">Delete</button>` : ''}
     </div>
+    ${writersHTMLFor(t)}
   </li>`;
 }
 function sectionCard(s, ui, W) {
@@ -1685,7 +1746,7 @@ VIEWS.syllabus = () => {
       <div class="sy-ctl">
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="progress" ${ui.progress ? 'checked' : ''}> Show my progress</label>
         ${ui.progress ? `<div class="sy-progress"><span class="lbl">Progress</span><span class="sy-fill dark"><i style="width:${all.pct}%"></i></span><b class="pct">${all.pct}%</b></div>
-        <p class="small muted"><b>${all.pct}% covered</b> · ${all.l} of ${all.n} topics done. Each bar fills as you attempt a topic's questions, and is full once you tick Learnt or attempt them all. The Quizzed tick is only a reminder for you.</p>` : ''}
+        <p class="small muted"><b>${all.pct}% covered</b> · ${all.l} of ${all.n} topics done. Each bar fills as you attempt a topic's questions or tick the writers you've covered, and is full once you tick Learnt or attempt them all. The Quizzed tick is only a reminder for you.</p>` : ''}
       </div>
       <div class="sy-ctl">
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="weight" ${ui.weight ? 'checked' : ''}> Show weightage</label>
@@ -2770,7 +2831,7 @@ const QL_ACT = {
     });
     Q.wholeOn.forEach(id => { const t = topicById(id); if (!t) return; qlLearnOld(id); qlAdd(id, { n: shortName(t), k: 'topic' }); });
     if (!n && !Q.wholeOn.size) return toast('Nothing is ticked');
-    saveProg(); closeModal(); S.ql = null; S.qlText = ''; S.qlOpen = true;
+    COVVER++; saveProg(); closeModal(); S.ql = null; S.qlText = ''; S.qlOpen = true;
     toast(`Logged ${plural(n + Q.wholeOn.size, 'item')} ✿`);
     go('plan', true);
   },
@@ -2781,8 +2842,17 @@ const QL_ACT = {
       const r = p.syl[d.t]; if (r && r.pre) setLearnt(d.t, false);
     }
     list.splice(+d.i, 1); if (!list.length) delete p.covered[d.t];
-    S.qlOpen = true; saveProg(); go(S.screen, true);
+    COVVER++; S.qlOpen = true; saveProg(); go(S.screen, true);
   }
+};
+QL_ACT.sylWriter = d => {
+  const t = topicById(d.id); if (!t) return;
+  const g = topicWriters(t).groups.find(x => x.name === d.n); if (!g) return;
+  const p = qlP(), keys = new Set(g.names.map(norm));
+  if (writerOn(g)) {
+    Object.keys(p.covered).forEach(k => { p.covered[k] = p.covered[k].filter(x => !(x.k === 'writer' && keys.has(norm(x.n)))); if (!p.covered[k].length) delete p.covered[k]; });
+  } else qlAdd(t.id, { n: g.name, k: 'writer' });
+  COVVER++; saveProg(); go(S.screen, true);
 };
 const QL_CH = { qlTopic: () => { qlCapture(); qlSheet(); } };
 const QL_IN = { qlText: v => { S.qlText = v; } };
@@ -2811,6 +2881,18 @@ Object.assign(SYL_ACT, QL_ACT); Object.assign(SYL_CH, QL_CH); Object.assign(SYL_
     .ql-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .ql-chip { display: inline-flex; align-items: center; gap: 2px; padding: 2px 2px 2px 12px; border-radius: 999px; background: var(--chip); border: 1.5px solid var(--border); font-size: 13.5px; font-weight: 600; }
     .ql-chip button { border: 0; background: none; width: 34px; height: 34px; border-radius: 999px; font-size: 13px; color: var(--muted); cursor: pointer; }
+    .sy-writers { margin-top: 10px; padding: 10px 12px; border-radius: 14px; background: var(--card-2); border: 1px solid var(--border); }
+    .sy-w-head { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .sy-w-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 0; }
+    .sy-w-line + .sy-w-line { border-top: 1px dashed var(--border); }
+    .sy-w-lbl { flex-basis: 100%; font-size: 11.5px; font-weight: 800; color: var(--accent-ink); }
+    .sy-w { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; padding: 0 11px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--chip); color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+    .sy-w span { font-size: 11px; font-weight: 800; color: var(--muted); }
+    .sy-w.often { background: var(--pinkrow); border-color: var(--pink); font-weight: 800; }
+    .sy-w.once { font-size: 12.5px; min-height: 32px; }
+    .sy-w.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+    .sy-w.on span { color: var(--ok); }
+    .sy-w-note { margin: 4px 0 0; }
     .sy-node-cov { margin-top: 5px; font-size: 13px; line-height: 1.45; color: var(--ok); }`;
   document.head.appendChild(s);
 })();
