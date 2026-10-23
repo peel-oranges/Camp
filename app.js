@@ -1567,7 +1567,12 @@ function topicWriters(t) {
   if (TWCACHE.key !== key) TWCACHE = { key, map: new Map() };
   if (TWCACHE.map.has(t.id)) return TWCACHE.map.get(t.id);
   const raw = new Map();
-  topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => { const n = String(w).trim(); if (n) raw.set(n, (raw.get(n) || 0) + 1); }));
+  const H = writerHomes(), wk = n => words(n).filter(x => x.length > 1).join(' ');
+  const only = new Set((t.onlyWriters || []).map(wk)), except = new Set((t.exceptWriters || []).map(wk));
+  const okW = n => (!only.size || only.has(wk(n))) && !except.has(wk(n));
+  // Only writers whose home is this topic: a writer merely mentioned here (a wrong option,
+  // a chronology across ages) is listed under their own topic instead.
+  topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => { const n = String(w).trim(); if (n && (H.get(norm(n)) || new Set()).has(t.id) && okW(n)) raw.set(n, (raw.get(n) || 0) + 1); }));
   const groups = [];
   [...raw.entries()].sort((a, b) => b[1] - a[1]).forEach(([n, c]) => {
     const full = words(n), key2 = full.filter(x => x.length > 1).join(' ');
@@ -1579,6 +1584,52 @@ function topicWriters(t) {
   const res = { groups, byVariant };
   TWCACHE.map.set(t.id, res);
   return res;
+}
+// Each writer's home topic(s):
+// • a writer the syllabus names in a topic ("Romantic poetry: Wordsworth, Coleridge…", "Shakespeare: …")
+//   lives in the topic(s) that name them;
+// • anyone else lives where most of their PYQs sit, plus any topic with at least half as many.
+// A writer merely mentioned in another topic's question (a wrong option, a chronology) is not listed there.
+let WHCACHE = { key: '', map: null };
+function writerHomes() {
+  const key = `${S.questions.length}:${S.syllabus ? S.syllabus.updated : ''}:${sylTopics().length}`;
+  if (WHCACHE.key === key) return WHCACHE.map;
+  const per = new Map(), total = new Map();
+  sylTopics().forEach(t => {
+    topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => {
+      const k = norm(w); if (!per.has(k)) per.set(k, new Map());
+      const m = per.get(k); m.set(t.id, (m.get(t.id) || 0) + 1);
+    }));
+  });
+  S.questions.filter(isPYQ).forEach(q => (q.writers || []).forEach(w => { const k = norm(w); total.set(k, (total.get(k) || 0) + 1); }));
+  // For a surname listed alone ("Shelley", "Eliot"), the most-asked writer with that surname.
+  const bestBy = new Map();
+  [...total.entries()].sort((x, y) => y[1] - x[1]).forEach(([k]) => words(k).forEach(x => { if (x.length > 1 && !bestBy.has(x)) bestBy.set(x, k); }));
+  const fits = (ws, k) => {
+    const kw = words(k);
+    if (ws.length === 1) {
+      const x = ws[0];
+      if (kw.includes(x)) return bestBy.get(x) === k;
+      return x.length > 3 && x.endsWith('s') && kw.includes(x.slice(0, -1));     // "the Brontës" = all the Brontës
+    }
+    return ws.every(x => kw.includes(x));
+  };
+  const lists = sylTopics().map(t => ({ id: t.id, items: [shortName(t), topicDesc(t)].join(',').split(/,|&|\band\b|:/)
+    .map(x => words(x).filter(y => y.length > 1 && !STOP.has(y))).filter(x => x.length && x.length <= 3),
+    only: (t.onlyWriters || []).map(norm), except: new Set((t.exceptWriters || []).map(norm)) }));
+  const map = new Map();
+  per.forEach((m, k) => {
+    const named = lists.filter(L => m.has(L.id) && !L.except.has(k) && L.items.some(ws => fits(ws, k))).map(L => L.id);
+    let home;
+    if (named.length) home = new Set(named);
+    else {
+      const max = Math.max(...m.values());
+      home = new Set([...m.entries()].filter(([, c]) => c === max || (c >= 0.5 * max && c >= 3)).map(([id]) => id));
+    }
+    map.set(k, home);
+  });
+  WHCACHE = { key, map };
+  return map;
 }
 const writerOn = g => { const C = covIndex(); return g.names.some(n => C.writers.has(norm(n))); };
 function writersHTMLFor(t) {
@@ -1620,12 +1671,20 @@ function topicQs(t) {
   let qs = [];
   if (t.guide) { const g = gNode(t.guide); if (g) qs = g.qs; }
   if (!qs.length && t.q) { const toks = queryTokens(t.q); if (toks.length) qs = S.questions.filter(q => matchesQuery(q, toks)); }
+  // A topic with only a writer list takes every question on those writers.
+  if (!qs.length && !t.guide && !t.q && (t.onlyWriters || []).length) { const set = new Set(t.onlyWriters.map(n => words(n).filter(x => x.length > 1).join(' '))); qs = S.questions.filter(q => (q.writers || []).some(w => set.has(words(w).filter(x => x.length > 1).join(' ')))); }
   // e.g. "Indian English novel after 1980" keeps only questions on post-1980 novelists,
   // and "to 1980" drops questions that are only about them.
   const wkey = n => words(n).filter(x => x.length > 1).join(' ');
   const hasW = (q, set) => (q.writers || []).filter(w => set.has(wkey(w)));
   if ((t.onlyWriters || []).length) { const set = new Set(t.onlyWriters.map(wkey)); qs = qs.filter(q => hasW(q, set).length); }
   if ((t.exceptWriters || []).length) { const set = new Set(t.exceptWriters.map(wkey)); qs = qs.filter(q => !(q.writers || []).length || hasW(q, set).length < q.writers.length); }
+  // …and by work: a question tagged with works is kept only if one of them is on the topic's list.
+  if ((t.onlyWorks || []).length) {
+    const list = t.onlyWorks.map(normTitle).filter(Boolean);
+    const fits = w => { const k = normTitle(w); return list.some(x => k === x || k.startsWith(x + ' ') || x.startsWith(k + ' ') || k.endsWith(' ' + x)); };
+    qs = qs.filter(q => !(q.works || []).length || q.works.some(fits));
+  }
   TQCACHE.map.set(t.id, qs);
   return qs;
 }

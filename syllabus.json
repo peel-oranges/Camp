@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to, so ticking it once updates both exams.",
  "exams": {
   "gate": {
@@ -264,7 +264,27 @@
    "net": [
     "n1"
    ],
-   "q": "Shakespeare"
+   "q": "Shakespeare",
+   "onlyWorks": [
+    "As You Like It",
+    "Twelfth Night",
+    "Much Ado About Nothing",
+    "A Midsummer Night's Dream",
+    "The Merchant of Venice",
+    "The Taming of the Shrew",
+    "The Comedy of Errors",
+    "The Two Gentlemen of Verona",
+    "Love's Labour's Lost",
+    "The Merry Wives of Windsor",
+    "Richard II",
+    "Richard III",
+    "Henry IV",
+    "Henry V",
+    "Henry VI",
+    "Henry VIII",
+    "King John",
+    "Falstaff"
+   ]
   },
   {
    "id": "br-shak-trag",
@@ -277,7 +297,32 @@
     "n1",
     "n2"
    ],
-   "q": "Shakespeare"
+   "q": "Shakespeare",
+   "onlyWorks": [
+    "Hamlet",
+    "Macbeth",
+    "Othello",
+    "King Lear",
+    "Romeo and Juliet",
+    "Julius Caesar",
+    "Antony and Cleopatra",
+    "Coriolanus",
+    "Titus Andronicus",
+    "Timon of Athens",
+    "Troilus and Cressida",
+    "Measure for Measure",
+    "All's Well That Ends Well",
+    "The Tempest",
+    "The Winter's Tale",
+    "Cymbeline",
+    "Pericles",
+    "Sonnets",
+    "Sonnet",
+    "Venus and Adonis",
+    "The Rape of Lucrece",
+    "The Phoenix and the Turtle",
+    "The Two Noble Kinsmen"
+   ]
   },
   {
    "id": "br-jacobean",
@@ -387,7 +432,27 @@
    "net": [
     "n2"
    ],
-   "q": "Pre-Romanticism"
+   "onlyWriters": [
+    "Thomas Gray",
+    "William Collins",
+    "William Cowper",
+    "William Blake",
+    "Robert Burns",
+    "James Thomson",
+    "Edward Young",
+    "George Crabbe",
+    "Thomas Chatterton",
+    "James Macpherson",
+    "Christopher Smart",
+    "Thomas Percy",
+    "Mark Akenside",
+    "Robert Blair",
+    "Joseph Warton",
+    "Thomas Warton",
+    "Henry Mackenzie",
+    "Anne Finch",
+    "Charlotte Smith"
+   ]
   },
   {
    "id": "br-romantic",
@@ -412,7 +477,35 @@
     "n3",
     "n4"
    ],
-   "q": "Romantic"
+   "q": "Romantic",
+   "onlyWriters": [
+    "Charles Lamb",
+    "William Hazlitt",
+    "Thomas De Quincey",
+    "Leigh Hunt",
+    "Jane Austen",
+    "Walter Scott",
+    "Mary Shelley",
+    "Thomas Love Peacock",
+    "William Godwin",
+    "Mary Wollstonecraft",
+    "Maria Edgeworth",
+    "Francis Jeffrey",
+    "Robert Southey",
+    "Walter Savage Landor",
+    "William Cobbett",
+    "John Galt",
+    "James Hogg",
+    "Susan Ferrier",
+    "Matthew Gregory Lewis",
+    "Ann Radcliffe",
+    "Charles Maturin",
+    "John Gibson Lockhart",
+    "John Wilson",
+    "Dorothy Wordsworth",
+    "Edmund Burke",
+    "Thomas Paine"
+   ]
   },
   {
    "id": "br-vic-poetry",
@@ -485,7 +578,26 @@
    "net": [
     "n1"
    ],
-   "q": "20th century drama"
+   "q": "20th century drama",
+   "exceptWriters": [
+    "Eugene O'Neill",
+    "Arthur Miller",
+    "Edward Albee",
+    "Tennessee Williams",
+    "Susan Glaspell",
+    "David Mamet",
+    "Sam Shepard",
+    "Thornton Wilder",
+    "Clifford Odets",
+    "Lorraine Hansberry",
+    "August Wilson",
+    "Tony Kushner",
+    "Elmer Rice",
+    "Amiri Baraka",
+    "Lillian Hellman",
+    "Paula Vogel",
+    "Suzan-Lori Parks"
+   ]
   },
   {
    "id": "br-contemporary",
@@ -878,7 +990,31 @@
    "net": [
     "n6"
    ],
-   "q": "English in India"
+   "q": "English in India",
+   "onlyWriters": [
+    "Thomas Babington Macaulay",
+    "Braj B. Kachru",
+    "Gauri Viswanathan",
+    "Raja Ram Mohan Roy",
+    "Ram Mohan Roy",
+    "William Bentinck",
+    "Charles Grant",
+    "Charles Wood",
+    "Charles Trevelyan",
+    "Rama Kant Agnihotri",
+    "A. L. Khanna",
+    "N. Krishnaswamy",
+    "S. N. Sridhar",
+    "Kamal K. Sridhar",
+    "Probal Dasgupta",
+    "Harish Trivedi",
+    "Rajeswari Sunder Rajan",
+    "Alok Rai",
+    "Svati Joshi",
+    "Ngũgĩ wa Thiong’o",
+    "Ngugi wa Thiong'o",
+    "Robert Phillipson"
+   ]
   },
   {
    "id": "wd-african",
@@ -1060,7 +1196,37 @@
    "net": [
     "n8"
    ],
-   "q": "Literary criticism"
+   "q": "Literary criticism",
+   "onlyWriters": [
+    "Philip Sidney",
+    "Stephen Gosson",
+    "George Puttenham",
+    "Roger Ascham",
+    "Thomas Wilson",
+    "William Webbe",
+    "Samuel Daniel",
+    "Thomas Campion",
+    "Ben Jonson",
+    "Francis Bacon",
+    "John Dryden",
+    "Thomas Rymer",
+    "John Dennis",
+    "Alexander Pope",
+    "Joseph Addison",
+    "Richard Steele",
+    "Samuel Johnson",
+    "Edward Young",
+    "Joseph Warton",
+    "Thomas Warton",
+    "Richard Hurd",
+    "Edmund Burke",
+    "Hugh Blair",
+    "Lord Kames",
+    "Henry Home",
+    "Thomas Sprat",
+    "William Davenant",
+    "Thomas Hobbes"
+   ]
   },
   {
    "id": "th-romantic-arnold",
@@ -1073,7 +1239,32 @@
    "net": [
     "n8"
    ],
-   "q": "Romantic theory"
+   "q": "criticism",
+   "onlyWriters": [
+    "William Wordsworth",
+    "S. T. Coleridge",
+    "P. B. Shelley",
+    "John Keats",
+    "William Hazlitt",
+    "Charles Lamb",
+    "Thomas De Quincey",
+    "Leigh Hunt",
+    "Thomas Love Peacock",
+    "Francis Jeffrey",
+    "Matthew Arnold",
+    "Walter Pater",
+    "John Ruskin",
+    "A. C. Swinburne",
+    "Oscar Wilde",
+    "John Henry Newman",
+    "Thomas Carlyle",
+    "John Stuart Mill",
+    "Arthur Hallam",
+    "Leslie Stephen",
+    "Robert Buchanan",
+    "George Henry Lewes",
+    "Walter Bagehot"
+   ]
   },
   {
    "id": "th-newcriticism",
