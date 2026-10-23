@@ -1507,7 +1507,22 @@ function sylTopics() {
 const topicById = id => sylTopics().find(t => t.id === id);
 const sylSections = ex => (sylExams()[ex] ? sylExams()[ex].parts : []).flatMap(p => p.sections.map(s => Object.assign({ part: p, exam: ex }, s)));
 const sectionById = id => { for (const [ex] of EXAMS) { const s = sylSections(ex).find(x => x.id === id); if (s) return s; } return null; };
-const learnt = t => !!(sylP().syl[t.id] && sylP().syl[t.id].l);
+const manualLearnt = t => !!(sylP().syl[t.id] && sylP().syl[t.id].l);
+// A topic also counts as done (without ticking Learnt) once every one of its questions has been attempted.
+let QDCACHE = { key: '', map: new Map() };
+function quizDone(t) {
+  const key = `${S.questions.length}:${Object.keys(S.prog.attempts).length}`;
+  if (QDCACHE.key !== key) QDCACHE = { key, map: new Map() };
+  if (QDCACHE.map.has(t.id)) return QDCACHE.map.get(t.id);
+  const qs = topicQs(t);
+  let res = null;
+  if (qs.length && qs.every(q => S.prog.attempts[q.id])) res = qs.reduce((m, q) => { const d = S.prog.attempts[q.id].last || ''; return d > m ? d : m; }, '') || todayStr();
+  QDCACHE.map.set(t.id, res);
+  return res;
+}
+const learnt = t => manualLearnt(t) || !!quizDone(t);
+// The day a topic became done: the Learnt tick's day, otherwise the day its last question was attempted.
+const doneDate = t => { const r = sylP().syl[t.id]; return (r && r.l) || quizDone(t) || ''; };
 const quizzed = t => !!(sylP().syl[t.id] && sylP().syl[t.id].q);
 const topicsIn = sid => sylTopics().filter(t => (t.gate || []).includes(sid) || (t.net || []).includes(sid));
 const examTopics = ex => sylTopics().filter(t => (t[ex] || []).length);
@@ -1576,21 +1591,21 @@ function sectionIds(s) { const ids = new Set(); topicsIn(s.id).forEach(t => topi
 /* ---------- Syllabus tab ---------- */
 const segBar = (list, cls) => `<span class="sy-seg ${cls || ''}">${list.map(t => `<i class="${learnt(t) ? 'on' : ''}"></i>`).join('')}</span>`;
 function nodeHTML(t, ex) {
-  const L = learnt(t), Q = quizzed(t), r = sylP().syl[t.id] || {}, desc = topicDesc(t);
+  const L = learnt(t), M = manualLearnt(t), QD = quizDone(t), Q = quizzed(t), r = sylP().syl[t.id] || {}, desc = topicDesc(t);
   const cnt = topicExamCount(t, ex), qs = topicQs(t);
   let stat = null;
   if (qs.length) { let a = 0, c = 0, seen = 0; qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } }); if (a) stat = { acc: Math.round((c / a) * 100), seen, n: qs.length }; }
-  const status = L ? `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}` : 'Not started';
+  const status = M ? `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}` : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat ? 'In progress' : 'Not started';
   return `<li class="sy-node ${L ? 'is-learnt' : ''}" id="t-${esc(t.id)}">
-    <div class="sy-node-name">${esc(shortName(t))} <span class="cnt">(${cnt})</span></div>
+    <div class="sy-node-name">${esc(shortName(t))} <span class="cnt" title="${EXAM_KEY[ex]} PYQs">(${cnt} ${EXAM_KEY[ex]})</span></div>
     ${desc ? `<div class="sy-node-desc clamp">${esc(desc)}</div>${desc.length > 46 ? '<button class="sy-more" data-act="sylMore">Show more</button>' : ''}` : ''}
     <div class="sy-node-status">
-      <span class="sy-mini"><i style="width:${L ? 100 : 0}%"></i></span>
-      <span class="st">${status}${Q ? ' · quizzed' : ''}${stat ? ` · ${stat.acc}% on ${stat.seen}/${stat.n}` : ''}</span>
+      <span class="sy-mini"><i style="width:${L ? 100 : stat ? Math.round((stat.seen / stat.n) * 100) : 0}%"></i></span>
+      <span class="st">${status}${Q ? ' · quizzed' : ''}${stat && !QD ? ` · ${stat.seen} of ${stat.n} questions attempted, ${stat.acc}% right` : stat ? ` · ${stat.acc}% right` : ''}</span>
       ${qs.length ? `<button class="sy-link-u" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz</button>` : ''}
     </div>
     <div class="sy-node-ticks">
-      <button class="sy-tick ${L ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${L}"><span class="box">${L ? '✓' : ''}</span>Learnt</button>
+      <button class="sy-tick ${M ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${M}"><span class="box">${M ? '✓' : ''}</span>Learnt</button>
       <button class="sy-tick q ${Q ? 'on' : ''}" data-act="sylQuizzed" data-id="${esc(t.id)}" aria-pressed="${Q}"><span class="box">${Q ? '✓' : ''}</span>Quizzed</button>
       <button class="sy-link-u" data-act="planTopic" data-id="${esc(t.id)}">＋ Plan</button>
       ${t.custom ? `<button class="sy-link-u" data-act="sylDelCustom" data-id="${esc(t.id)}">Delete</button>` : ''}
@@ -1638,7 +1653,7 @@ VIEWS.syllabus = () => {
       <div>
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="progress" ${ui.progress ? 'checked' : ''}> Show my progress</label>
         ${ui.progress ? `<div class="sy-progress"><span class="lbl">Progress</span>${segBar(shown)}</div>
-        <p class="small muted">${all.l} of ${all.n} topics learnt. Quizzed is only a reminder for you and doesn't count.</p>` : ''}
+        <p class="small muted">${all.l} of ${all.n} topics done. A topic counts as done when you tick Learnt, or by itself once you've attempted every one of its questions. The Quizzed tick is only a reminder for you.</p>` : ''}
       </div>
       <div>
         <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="weight" ${ui.weight ? 'checked' : ''}> Show weightage</label>
@@ -1691,10 +1706,10 @@ function paceInfo() {
   const target = isDay(pl.target) ? pl.target : (scope === 'net' ? examDate('net') : scope === 'gate' ? examDate('gate') : [examDate('gate'), examDate('net')].filter(isDay).sort()[0]);
   const start = pl.start;
   // Pace counts only topics learnt AFTER the start day, so ticking old work doesn't inflate it.
-  const recent = list.filter(x => { const r = sylP().syl[x.id]; return r && r.l && r.l > start; });
+  const recent = list.filter(x => { const d = doneDate(x); return d && d > start; });
   const since = Math.max(0, dayDiff(start, t));
   const win = Math.min(14, since);
-  const inWin = win ? recent.filter(x => dayDiff(sylP().syl[x.id].l, t) < win).length : 0;
+  const inWin = win ? recent.filter(x => dayDiff(doneDate(x), t) < win).length : 0;
   const rate = win >= 3 ? inWin / win : null;
   const daysLeft = isDay(target) ? dayDiff(t, target) : null;
   const need = daysLeft != null && daysLeft > 0 ? left.length / daysLeft : null;
@@ -1773,7 +1788,7 @@ function planWeekView() {
     const tp = now.it ? (now.it.topic && topicById(now.it.topic)) : now.topic;
     const sec = now.sec || (tp ? sectionById([...(tp.gate || []), ...(tp.net || [])][0]) : null);
     const title = now.it ? now.it.t : `Learn: ${shortName(now.topic)}`;
-    const sub = [sec ? sec.name : '', tp ? (learnt(tp) ? 'Learnt already' : 'Not started yet') : '', now.note].filter(Boolean).join('. ');
+    const sub = [sec ? sec.name : '', tp ? (learnt(tp) ? 'Done already' : 'Not started yet') : '', now.note].filter(Boolean).join('. ');
     nowCard = `<article class="pl-now">
       <span class="pl-now-k">Do this now</span>
       <h3 class="pl-now-t">${esc(title)}</h3>
@@ -1976,7 +1991,7 @@ const SYL_ACT = {
   sylExam: d => { S.sylExam = d.v; go('syllabus', true); },
   sylSort: () => { const ui = sylP().sylUI; ui.sort = !ui.sort; saveProg(); go('syllabus', true); },
   sylMore: (d, el) => { const c = el.previousElementSibling; if (!c) return; const open = c.classList.toggle('open'); el.textContent = open ? 'Show less' : 'Show more'; },
-  sylLearnt: d => { const t = topicById(d.id); if (!t) return; setLearnt(t.id, !learnt(t)); saveProg(); go(S.screen, true); },
+  sylLearnt: d => { const t = topicById(d.id); if (!t) return; setLearnt(t.id, !manualLearnt(t)); saveProg(); go(S.screen, true); },
   sylQuizzed: d => { const t = topicById(d.id); if (!t) return; setQuizzed(t.id, !quizzed(t)); saveProg(); go(S.screen, true); },
   sylQuiz: d => {
     const t = topicById(d.id), qs = t ? topicQs(t) : []; if (!qs.length) return toast('No questions for this topic yet');
@@ -2054,7 +2069,7 @@ const SYL_ACT = {
   planToggle: d => {
     const it = findItem(d.d, d.id); if (!it) return;
     it.done = !it.done;
-    if (it.done && it.topic) { const tp = topicById(it.topic); if (tp && !learnt(tp)) { setLearnt(tp.id, true); toast(`“${shortName(tp)}” marked Learnt ✿`, 3500); } }
+    if (it.done && it.topic) { const tp = topicById(it.topic); if (tp && !manualLearnt(tp)) { setLearnt(tp.id, true); toast(`“${shortName(tp)}” marked Learnt ✿`, 3500); } }
     saveProg(); go('plan', true);
   },
   planDel: d => {
