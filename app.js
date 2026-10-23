@@ -1549,7 +1549,7 @@ const examDate = ex => { const pl = sylP().plan; return isDay(pl[ex + 'Date']) ?
 const daysTo = d => isDay(d) ? dayDiff(todayStr(), d) : null;
 function setLearnt(id, on) {
   const p = sylP(), r = p.syl[id] || (p.syl[id] = {});
-  if (on) r.l = r.l || todayStr(); else delete r.l;
+  if (on) r.l = r.l || todayStr(); else { delete r.l; delete r.pre; }
   if (!r.l && !r.q) delete p.syl[id];
 }
 function setQuizzed(id, on) {
@@ -1606,10 +1606,11 @@ function nodeHTML(t, ex) {
   const cnt = topicExamCount(t, ex), qs = topicQs(t);
   let stat = null;
   if (qs.length) { let a = 0, c = 0, seen = 0; qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } }); if (a) stat = { acc: Math.round((c / a) * 100), seen, n: qs.length }; }
-  const status = M ? `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}` : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat ? 'In progress' : 'Not started';
+  const status = M ? (r.pre ? 'Learnt before today (Quick log)' : `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}`) : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat ? 'In progress' : 'Not started';
   return `<li class="sy-node ${L ? 'is-learnt' : ''}" id="t-${esc(t.id)}">
     <div class="sy-node-name">${esc(shortName(t))} <span class="cnt" title="${EXAM_KEY[ex]} PYQs">(${cnt} ${EXAM_KEY[ex]})</span></div>
     ${desc ? `<div class="sy-node-desc clamp">${esc(desc)}</div>${desc.length > 46 ? '<button class="sy-more" data-act="sylMore">Show more</button>' : ''}` : ''}
+    ${(() => { const cv = ((sylP().covered || {})[t.id] || []).filter(x => x.k !== 'topic'); return cv.length ? `<div class="sy-node-cov">✓ Covered: ${esc(cv.map(x => x.n).join(', '))}</div>` : ''; })()}
     <div class="sy-node-status">
       <span class="sy-mini"><i style="width:${L ? 100 : stat ? Math.round((stat.seen / stat.n) * 100) : 0}%"></i></span>
       <span class="st">${status}${Q ? ' · quizzed' : ''}${stat && !QD ? ` · ${stat.seen} of ${stat.n} questions attempted, ${stat.acc}% right` : stat ? ` · ${stat.acc}% right` : ''}</span>
@@ -1841,6 +1842,7 @@ function planWeekView() {
     <button class="icon-btn" data-act="planWeekGo" data-v="${shiftDay(mon, 7)}" aria-label="Next week">›</button>
   </div>
   ${over.length ? `<div class="pl-over"><span>${plural(over.length, 'unfinished to-do')} from earlier days</span><button class="sy-link-u" data-act="planCarry">Move all to today</button></div>` : ''}
+  ${quickLogCard()}
   <div class="pl-board">
     ${nowCard}
     <div class="pl-days">${days.map(dayCard).join('')}</div>
@@ -2484,6 +2486,334 @@ const SA_IN = {
 };
 
 Object.assign(SYL_ACT, SA_ACT); Object.assign(SYL_CH, SA_CH); Object.assign(SYL_IN, SA_IN);
+
+/* =========================================================
+   QUICK LOG  (Plan → Weekly, below "This week")
+   Type what you covered before today: topics, writers, works or theories.
+   The app finds each one in the syllabus (and in the question bank),
+   shows a list to check, and logs it after you tap "Log these".
+   • A whole topic logged here is ticked Learnt, but it does not count
+     towards "Your pace", because it was done before today.
+   • A writer, work or theory is noted under its topic ("Covered: …")
+     without ticking the whole topic, unless you choose to.
+   Everything is saved on this device (progress.covered), inside the backup.
+   ========================================================= */
+const QL_SYN = { poets: 'poetry', poet: 'poetry', poems: 'poetry', poem: 'poetry', novelists: 'novel', novelist: 'novel', novels: 'novel',
+  dramatists: 'drama', dramatist: 'drama', playwrights: 'drama', playwright: 'drama', plays: 'drama', critics: 'criticism', critic: 'criticism',
+  theorists: 'theory', theories: 'theory', essayists: 'prose', essays: 'prose', essay: 'prose' };
+const QL_GENERIC = new Set('writers writer authors author works work texts text done finished finish completed complete covered cover read studied study all whole full basics basic part parts some intro introduction chapter chapters notes revision revised literature literatures lit etc'.split(' '));
+const QL_CTX = new Set('writers writer authors author poets poet poetry novelists novelist novel novels fiction dramatists drama plays playwrights critics criticism theory theories theorists literature lit prose essayists thinkers'.split(' '));
+const qlRaw = s => words(s).filter(w => !STOP.has(w) && !QL_GENERIC.has(w) && (w.length > 1 || /\d/.test(w)));
+const qlTopical = s => [...new Set(qlRaw(s).map(w => QL_SYN[w] || w))];
+// How well a typed word a fits a real word b: 3 exact, 2 half-typed or plural, 1 small spelling slip, 0 no.
+function qlTok(a, b, strict) {
+  if (a === b) return 3;
+  if (a.length >= 4 && b.length > a.length && b.startsWith(a)) return 2;
+  if (b.length >= 3 && (a === b + 's' || a === b + 'es' || b === a + 's' || b === a + 'es')) return 2;
+  if (strict || /\d/.test(a) || /\d/.test(b)) return 0;
+  const max = a.length >= 7 ? 2 : a.length >= 4 ? 1 : 0;
+  if (max && b.length >= 4 && editDist(a, b, max) <= max) return 1;
+  return 0;
+}
+// Every typed word must fit a word of the target. s = average fit, cov = share of the target's words used.
+function qlFit(toks, W, strict) {
+  if (!toks.length || !W.length) return null;
+  let s = 0; const hit = new Set();
+  for (const a of toks) {
+    let best = 0, bw = null;
+    for (const w of W) { const v = qlTok(a, w, strict); if (v > best) { best = v; bw = w; } if (best === 3) break; }
+    if (!best) return null;
+    s += best; hit.add(bw);
+  }
+  return { s: s / toks.length, cov: hit.size / W.length };
+}
+
+let QLIDX = null;
+function qlIndex() {
+  const ts = sylTopics(), key = `${S.questions.length}:${ts.length}`;
+  if (QLIDX && QLIDX.key === key) return QLIDX;
+  const topics = ts.map(t => ({ t, all: qlTopical(shortName(t) + ' ' + t.group + ' ' + topicDesc(t)), head: qlTopical(shortName(t) + ' ' + t.group), short: qlTopical(shortName(t)) }));
+  const names = new Map();
+  const add = (kind, name, tid, w) => {
+    const ws = [...new Set(words(name).filter(x => !STOP.has(x) && (x.length > 1 || /\d/.test(x))))];
+    if (!ws.length) return null;
+    const k = kind + ':' + words(name).join(' ');          // initials kept here, so F. R. and Q. D. Leavis stay apart
+    let e = names.get(k);
+    if (!e) { e = { kind, name: String(name).trim(), words: ws, topics: new Map(), qn: 0 }; names.set(k, e); }
+    if (tid) e.topics.set(tid, (e.topics.get(tid) || 0) + w);
+    return e;
+  };
+  const qTopics = new Map();
+  ts.forEach(t => {
+    const g = t.guide && gNode(t.guide), wt = g && g.qs.length ? 1 : 0.25;     // topics found by a word search are a looser fit
+    topicQs(t).forEach(q => { if (!qTopics.has(q.id)) qTopics.set(q.id, []); qTopics.get(q.id).push([t.id, wt]); });
+  });
+  S.questions.forEach(q => {
+    const tids = qTopics.get(q.id) || [];
+    (q.writers || []).forEach(w => { const e = add('writer', w, null, 0); if (!e) return; e.qn++; tids.forEach(([id, wt]) => add('writer', w, id, wt)); });
+    (q.works || []).forEach(w => { const e = add('work', w, null, 0); if (!e) return; e.qn++; tids.forEach(([id, wt]) => add('work', w, id, wt)); });
+  });
+  // Names and terms listed in a topic itself, e.g. "Romantic poetry: Wordsworth, Coleridge…" or "…stream of consciousness…".
+  const writers = [...names.values()].filter(e => e.kind === 'writer');
+  // (for a title that is itself a list, like "Eliot, Richards, Leavis & New Criticism", the names after the first)
+  const listOf = t => topicDesc(t) || (t.name.includes(',') ? t.name.split(',').slice(1).join(',') : '');
+  ts.forEach(t => listOf(t).split(/,|&|\band\b/).map(x => x.trim()).filter(x => x && x.length < 45 && !/\b(etc|other|others)\b/i.test(x)).forEach(n => {
+    const ws = words(n).filter(x => !STOP.has(x) && x.length > 1);
+    const same = ws.length && ws.length <= 2 ? writers.filter(e => ws.every(x => e.words.some(y => qlTok(x, y, true) >= 2))) : [];
+    if (same.length) same.forEach(e => e.topics.set(t.id, (e.topics.get(t.id) || 0) + 1000));     // listed in the syllabus = its home topic
+    else add('named', n, t.id, 1000);
+  }));
+  QLIDX = { key, topics, names: [...names.values()], byId: new Map(topics.map(x => [x.t.id, x])) };
+  return QLIDX;
+}
+const qlHintFits = (X, H) => !H.length || H.every(h => X.head.some(w => qlTok(h, w) >= 2));
+function qlBestTopic(e, H) {
+  const I = qlIndex();
+  const list = [...e.topics.entries()].map(([id, w]) => {
+    const X = I.byId.get(id);
+    return { id, w: w * (H.length && X && qlHintFits(X, H) ? 4 : 1) };
+  }).sort((a, b) => b.w - a.w);
+  return list.length ? list[0].id : '';
+}
+
+// One typed entry → rows to show. Returns [] when nothing fits.
+// Exact spellings are tried first; small spelling slips only if nothing fits exactly.
+function qlEntry(raw, hint) {
+  const T = qlTopical(raw), R = qlRaw(raw), H = qlTopical(hint || '');
+  if (!T.length && !R.length) return [];
+  return qlStage(raw, T, R, H, true) || qlStage(raw, T, R, H, false) || [];
+}
+function qlStage(raw, T, R, H, strict) {
+  const I = qlIndex();
+  // Topics: every typed word is in the topic's title, group or list of contents
+  let cands = T.length ? I.topics.map(X => {
+    const f = qlFit(T, X.all, strict); if (!f) return null;
+    const cov = X.short.length ? X.short.filter(w => T.some(a => qlTok(a, w, strict))).length / X.short.length : 0;
+    return { X, s: f.s, cov };
+  }).filter(Boolean) : [];
+  if (H.length && cands.length > 1) { const h = cands.filter(c => qlHintFits(c.X, H)); if (h.length) cands = h; }
+  // Only names from a topic's list ("Keats and Shelley") don't make it the whole topic.
+  const headCands = cands.filter(c => T.some(a => c.X.head.some(w => qlTok(a, w, strict))));
+  const topicRows = (list, on) => list.map(c => ({ kind: 'topic', name: shortName(c.X.t), topic: c.X.t.id, on }));
+  // 1) The typed words are a topic's whole title, e.g. "Romantic poetry", "Shakespeare"
+  const full = cands.filter(c => c.cov === 1 && qlFit(T, c.X.head, strict));
+  if (full.length) return topicRows(full.slice(0, 4), true);
+  // 2) Writers, works, and names or terms listed inside a topic
+  let ns = R.length ? I.names.map(e => {
+    const f = qlFit(R, e.words, strict); if (!f) return null;
+    if (e.kind === 'work' && !(f.cov >= 0.6 || (R.length >= 2 && f.cov >= 0.5))) return null;
+    if (e.kind === 'named' && f.cov < 0.5) return null;
+    const bonus = e.kind === 'writer' ? 0.05 : e.kind === 'work' ? -0.35 : 0;     // a name on its own usually means the writer
+    return { e, f, score: f.s * (0.6 + 0.4 * f.cov) + bonus };
+  }).filter(Boolean).sort((a, b) => b.score - a.score || b.e.qn - a.e.qn) : [];
+  // The same person spelt with and without initials ("Edward Said", "Edward W. Said") counts once.
+  ns = ns.filter((x, i) => !ns.some((y, j) => j !== i && y.e.kind === x.e.kind && y.e.words.join(' ') === x.e.words.join(' ')
+    && (y.e.qn > x.e.qn || (y.e.qn === x.e.qn && j < i)) && (() => { const a = words(x.e.name), b = words(y.e.name); return a.every(w => b.includes(w)) || b.every(w => a.includes(w)); })()));
+  // A title that is only a writer's name ("Milton", "To Wordsworth") gives way to the writer.
+  const wr = ns.filter(x => x.e.kind === 'writer');
+  if (wr.length) ns = ns.filter(x => x.e.kind !== 'work' || !x.e.words.every(w => wr.some(y => y.e.words.includes(w))));
+  const bestTopic = headCands.reduce((m, c) => Math.max(m, c.s), 0);
+  const bestName = ns.length ? ns[0] : null;
+  const topicWins = headCands.length && (!bestName || bestTopic > bestName.f.s || (bestTopic === bestName.f.s && bestName.e.kind === 'work' && bestName.f.cov < 1));
+  if (bestName && !topicWins) {
+    const top = ns[0], second = ns[1];
+    const clear = !second || top.score - second.score >= 0.15 || (top.e.qn >= 3 * Math.max(1, second.e.qn) && top.score >= second.score - 0.01);
+    const sure = clear && (top.f.s >= 2 || R.length >= 2);
+    ns = ns.filter(x => x.score >= top.score - 0.6).slice(0, 4);
+    const rows = ns.map((x, i) => ({ kind: x.e.kind === 'work' ? 'work' : x.e.kind === 'named' ? 'part' : 'writer', name: x.e.name, topic: qlBestTopic(x.e, H), on: i === 0 && sure }));
+    if (!rows.some(r => r.on) && rows.length > 1) rows.unshift({ kind: 'head', name: `“${raw}” fits more than one. Tick the one you mean:` });
+    return rows;
+  }
+  // 3) Topics that contain the typed words, but not as their full title
+  if (headCands.length === 1) return topicRows(headCands, true);
+  if (headCands.length > 1) {
+    const list = headCands.sort((a, b) => b.cov - a.cov || b.s - a.s).slice(0, 12);
+    return [{ kind: 'head', name: `“${raw}” fits ${plural(headCands.length, 'topic')}. Tick the ones you finished:` }].concat(topicRows(list, false));
+  }
+  return null;
+}
+// Split what was typed into entries. "Indian writers - Attia Hosain, Chetan Bhagat":
+// the part before the dash is a hint for which topic the names belong to.
+function qlParse(text) {
+  const items = [];
+  String(text || '').split(/\n+/).forEach(line => {
+    line = line.trim(); if (!line) return;
+    let hint = '';
+    const head = line.split(/[,;]/)[0], re = /\s*(?::|–|—|-)\s*/g;
+    let m;
+    while ((m = re.exec(head))) {
+      const left = head.slice(0, m.index).trim();
+      if (left.length < 2) continue;
+      const lw = words(left);
+      const isCtx = lw.some(w => QL_CTX.has(w)) || (qlTopical(left).length && qlIndex().topics.some(X => qlFit(qlTopical(left), X.head, true)) && !qlIndex().names.some(e => e.kind !== 'named' && qlFit(qlRaw(left), e.words) && qlFit(qlRaw(left), e.words).cov === 1));
+      if (isCtx) { hint = left; line = line.slice(m.index + m[0].length); break; }
+    }
+    line.split(/[,;]+/).forEach(p => {
+      p = p.trim().replace(/^(?:and|&)\s+/i, '').replace(/[.\s]+$/, '');
+      if (p) items.push({ raw: p, hint });
+    });
+  });
+  return items;
+}
+function qlFind(text) {
+  const rows = [], seen = new Set();
+  const push = r => { const k = `${r.kind}|${norm(r.name)}|${r.topic || ''}`; if (r.kind !== 'head' && seen.has(k)) return; seen.add(k); rows.push(r); };
+  qlParse(text).forEach(({ raw, hint }) => {
+    let got = qlEntry(raw, hint);
+    if (!got.length) {
+      // Try the pieces: "Hard Times by Dickens", "Hard Times – Dickens", "Keats and Shelley"
+      for (const sep of [/\s+by\s+/i, /\s+[-–—]\s+|[–—]/, /\s+(?:and|&)\s+/i]) {
+        const parts = raw.split(sep).map(x => x.trim()).filter(Boolean);
+        if (parts.length < 2) continue;
+        const sub = parts.map(p => qlEntry(p, hint));
+        if (sub.every(x => x.length)) { got = sub.flat(); break; }
+      }
+    }
+    if (!got.length) {
+      // Not found anywhere: keep it as a note, filed under the hint's topic when the hint points to just one.
+      const H = qlTopical(hint), fits = H.length ? qlIndex().topics.filter(X => qlFit(H, X.head, true)) : [];
+      got = [{ kind: 'note', name: raw, topic: fits.length === 1 ? fits[0].t.id : '', on: true }];
+    }
+    got.forEach(push);
+  });
+  return rows;
+}
+
+const qlP = () => { const p = sylP(); if (!p.covered) p.covered = {}; return p; };
+function qlAdd(tid, item) {
+  const c = qlP().covered, list = c[tid] || (c[tid] = []);
+  if (!list.some(x => x.k === item.k && norm(x.n) === norm(item.n))) list.push(item);
+}
+// Learnt, dated the day before you started tracking, so it doesn't count towards "Your pace".
+function qlLearnOld(id) {
+  const t = topicById(id); if (!t || manualLearnt(t)) return false;
+  const p = qlP(), r = p.syl[id] || (p.syl[id] = {}), t0 = todayStr();
+  r.l = shiftDay(p.plan.start && p.plan.start < t0 ? p.plan.start : t0, -1);
+  r.pre = 1;
+  return true;
+}
+const QL_KIND = { topic: 'whole topic', writer: 'writer', work: 'work', part: 'part of a topic', note: 'not found' };
+function qlWholeList() {
+  const Q = S.ql, seen = new Set(), out = [];
+  Q.rows.forEach(r => {
+    if (!r.on || r.kind === 'topic' || r.kind === 'head' || !r.topic || seen.has(r.topic)) return;
+    const t = topicById(r.topic); if (!t || learnt(t)) return;
+    if (Q.rows.some(x => x.kind === 'topic' && x.on && x.topic === r.topic)) return;
+    seen.add(r.topic); out.push(t);
+  });
+  return out;
+}
+function qlSheet() {
+  const Q = S.ql, m = $('#modal');
+  const found = Q.rows.filter(r => r.kind !== 'head').length;
+  const wholes = qlWholeList();
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Quick log">
+    <h3>Is this right?</h3>
+    <p class="small muted">${found} ${found === 1 ? 'match' : 'matches'} found. Untick anything wrong, change the topic if needed, then tap Log these.</p>
+    <div class="ql-list">${Q.rows.map((r, i) => {
+      if (r.kind === 'head') return `<p class="ql-head">${esc(r.name)}</p>`;
+      const t = r.topic && topicById(r.topic);
+      const box = `<label class="ql-box"><input type="checkbox" class="ql-on" data-i="${i}" ${r.on ? 'checked' : ''} aria-label="Log ${esc(r.name)}"></label>`;
+      if (r.kind === 'topic') return `<div class="ql-row">${box}<div class="grow"><b>${esc(r.name)}</b> <span class="ql-kind">${QL_KIND.topic}</span><br>
+        <span class="sub">${esc(t ? (topicDesc(t) || t.group) : '')}${t && learnt(t) ? ' · already done ✓' : ' · ticks it Learnt'}</span></div></div>`;
+      return `<div class="ql-row ${r.kind === 'note' ? 'note' : ''}">${box}<div class="grow"><b>${esc(r.name)}</b> <span class="ql-kind">${QL_KIND[r.kind]}</span>
+        ${r.kind === 'note' ? '<br><span class="sub">Not in the syllabus or the question bank. Pick a topic to file it under, or keep it as a note.</span>' : ''}
+        <div class="ql-sel">${topicSelect('ql-t-' + i, r.topic || '').replace('<select ', `<select data-change="qlTopic" data-i="${i}" aria-label="Topic for ${esc(r.name)}" `)}</div></div></div>`;
+    }).join('')}</div>
+    ${wholes.length ? `<div class="ql-whole-box"><p class="small"><b>Finished the whole topic?</b> Tick it to mark it Learnt too.</p>
+      ${wholes.map(t => `<label class="check-row sy-check"><input type="checkbox" class="ql-whole" value="${esc(t.id)}" ${Q.wholeOn.has(t.id) ? 'checked' : ''}> ${esc(shortName(t))}</label>`).join('')}</div>` : ''}
+    <div class="btn-row" style="margin-top:14px"><button class="btn" data-act="qlSave">Log these</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
+  </div>`;
+  m.hidden = false;
+}
+// Read the ticks and topic choices from the open list back into memory.
+function qlCapture() {
+  const Q = S.ql; if (!Q) return;
+  Q.rows.forEach((r, i) => {
+    const c = document.querySelector(`.ql-on[data-i="${i}"]`); if (c) r.on = c.checked;
+    const s = document.getElementById('ql-t-' + i); if (s) r.topic = s.value;
+  });
+  document.querySelectorAll('.ql-whole').forEach(b => { if (b.checked) Q.wholeOn.add(b.value); else Q.wholeOn.delete(b.value); });
+}
+function quickLogCard() {
+  if (!S.syllabus) return '';
+  const cov = qlP().covered, order = new Map(sylTopics().map((t, i) => [t.id, i]));
+  const keys = Object.keys(cov).filter(k => (cov[k] || []).length).sort((a, b) => (a === '_') - (b === '_') || (order.get(a) || 0) - (order.get(b) || 0));
+  const total = keys.reduce((s, k) => s + cov[k].length, 0);
+  return `<section class="card ql-card">
+    <h3>Quick log</h3>
+    <p class="small muted">Quickly add the areas you covered before today: topics, writers, works or theories. Separate them with commas. Use a new line to start a new group.</p>
+    <textarea id="ql-text" data-in="qlText" rows="4" placeholder="e.g. Romantic poetry, Hard Times, Marxism&#10;Indian writers - Attia Hosain, Chetan Bhagat">${esc(S.qlText || '')}</textarea>
+    <button class="btn" data-act="qlFind" style="margin-top:10px">Find in syllabus</button>
+    ${total ? `<details class="ql-done" ${S.qlOpen ? 'open' : ''}><summary>Logged so far · ${total}</summary>
+      ${keys.map(k => { const t = k !== '_' && topicById(k); return `<div class="ql-group"><div class="ql-gname">${esc(t ? shortName(t) : k === '_' ? 'Not linked to a topic' : 'Removed topic')}</div>
+        <div class="ql-chips">${cov[k].map((x, i) => `<span class="ql-chip">${esc(x.k === 'topic' ? 'Whole topic ✓' : x.n)}<button data-act="qlDel" data-t="${esc(k)}" data-i="${i}" aria-label="Remove ${esc(x.n)}">✕</button></span>`).join('')}</div></div>`; }).join('')}
+      <p class="small muted">Writers and works also show under their topic in Syllabus. ✕ removes one.</p></details>` : ''}
+  </section>`;
+}
+const QL_ACT = {
+  qlFind: () => {
+    S.qlText = (($('#ql-text') || {}).value || '');
+    if (!S.qlText.trim()) return toast('Type what you covered, separated by commas');
+    const rows = qlFind(S.qlText);
+    S.ql = { rows, wholeOn: new Set() };
+    qlSheet();
+  },
+  qlSave: () => {
+    qlCapture();
+    const Q = S.ql; if (!Q) return;
+    let n = 0;
+    Q.rows.forEach(r => {
+      if (!r.on || r.kind === 'head') return;
+      if (r.kind === 'topic') { const t = topicById(r.topic); if (!t) return; qlLearnOld(t.id); qlAdd(t.id, { n: shortName(t), k: 'topic' }); n++; return; }
+      qlAdd(r.topic || '_', { n: r.name, k: r.kind }); n++;
+    });
+    Q.wholeOn.forEach(id => { const t = topicById(id); if (!t) return; qlLearnOld(id); qlAdd(id, { n: shortName(t), k: 'topic' }); });
+    if (!n && !Q.wholeOn.size) return toast('Nothing is ticked');
+    saveProg(); closeModal(); S.ql = null; S.qlText = ''; S.qlOpen = true;
+    toast(`Logged ${plural(n + Q.wholeOn.size, 'item')} ✿`);
+    go('plan', true);
+  },
+  qlDel: d => {
+    const p = qlP(), list = p.covered[d.t] || [], it = list[+d.i]; if (!it) return;
+    if (it.k === 'topic') {
+      if (!confirm(`Remove “${it.n}” from Quick log? It will no longer be ticked Learnt.`)) return;
+      const r = p.syl[d.t]; if (r && r.pre) setLearnt(d.t, false);
+    }
+    list.splice(+d.i, 1); if (!list.length) delete p.covered[d.t];
+    S.qlOpen = true; saveProg(); go(S.screen, true);
+  }
+};
+const QL_CH = { qlTopic: () => { qlCapture(); qlSheet(); } };
+const QL_IN = { qlText: v => { S.qlText = v; } };
+Object.assign(SYL_ACT, QL_ACT); Object.assign(SYL_CH, QL_CH); Object.assign(SYL_IN, QL_IN);
+
+(function addQuickLogStyles() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .ql-card textarea { width: 100%; font-size: 16px; line-height: 1.45; }
+    .ql-list { margin-top: 6px; }
+    .ql-head { margin: 14px 0 2px; font-weight: 700; font-size: 14px; color: var(--accent-ink); }
+    .ql-row { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-top: 1px solid var(--border); }
+    .ql-row .grow { flex: 1; min-width: 0; line-height: 1.4; }
+    .ql-row .sub { font-size: 13px; color: var(--muted); }
+    .ql-row.note b { color: var(--warn); }
+    .ql-box { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin: -6px 0 0 -6px; cursor: pointer; }
+    .ql-box input { width: 22px; height: 22px; accent-color: var(--purple); cursor: pointer; }
+    .ql-kind { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--lilac-soft); color: var(--accent-ink); font-size: 11px; font-weight: 800; letter-spacing: .04em; vertical-align: 2px; }
+    .ql-sel { margin-top: 8px; }
+    .ql-sel select { width: 100%; min-height: 42px; font-size: 14px; }
+    .ql-whole-box { margin-top: 10px; padding: 10px 14px; border-radius: 16px; background: var(--lilac-soft); }
+    .ql-done { margin-top: 14px; }
+    .ql-done summary { cursor: pointer; font-weight: 700; color: var(--accent-ink); min-height: 40px; display: flex; align-items: center; }
+    .ql-group { margin-top: 10px; }
+    .ql-gname { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .ql-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ql-chip { display: inline-flex; align-items: center; gap: 2px; padding: 2px 2px 2px 12px; border-radius: 999px; background: var(--chip); border: 1.5px solid var(--border); font-size: 13.5px; font-weight: 600; }
+    .ql-chip button { border: 0; background: none; width: 34px; height: 34px; border-radius: 999px; font-size: 13px; color: var(--muted); cursor: pointer; }
+    .sy-node-cov { margin-top: 5px; font-size: 13px; line-height: 1.45; color: var(--ok); }`;
+  document.head.appendChild(s);
+})();
 
 /* ---------- PYQ years line (home screen footer) ---------- */
 function pyqYearsLine() {
