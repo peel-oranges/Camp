@@ -117,8 +117,10 @@ function hasTags(q, tags) {
 const SYN = { nineteenth: '19th', twentieth: '20th', eighteenth: '18th', seventeenth: '17th', sixteenth: '16th', fifteenth: '15th', fourteenth: '14th' };
 const STOP = new Set('the of and in on a an by to for with from about quiz questions question me my'.split(' '));
 const IDX = new WeakMap();
+// Accents are removed first, so "Ngugi" finds "Ngũgĩ" and "Thiong'o" finds "Thiong’o".
+const deaccent = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
 function words(str) {
-  return String(str || '').toLowerCase().replace(/twenty[\s-]first/g, '21st')
+  return deaccent(str).toLowerCase().replace(/twenty[\s-]first/g, '21st')
     .split(/[^a-z0-9]+/).filter(Boolean).map(w => SYN[w] || w);
 }
 function indexQ(q) {
@@ -131,12 +133,101 @@ function indexQ(q) {
   }
   return w;
 }
+const ENDINGS = /^(s|es|ed|er|ers|al|ic|ics|tic|ist|ists|tist|tists|ian|ians|ism|isms|an|ans|ese|ity|ly|ry|tions?|ation|ations)$/;
 function tokenMatch(tok, W) {
   const stem = tok.length > 4 ? tok.slice(0, Math.max(4, tok.length - 2)) : tok;
-  return W.some(w => w.startsWith(stem) || (w.length >= 4 && tok.startsWith(w)));
+  // A word plus a real ending also counts: "dramatists" finds "drama", "novels" finds "novel".
+  // (But "wordsworth" must not find "words", nor "postcolonial" find "post".)
+  return W.some(w => w.startsWith(stem) || (w.length >= 4 && tok.startsWith(w) && ENDINGS.test(tok.slice(w.length))));
 }
 const queryTokens = s => words(s).filter(t => !STOP.has(t) && (t.length > 1 || /\d/.test(t)));
-function matchesQuery(q, toks) { const W = indexQ(q); return toks.every(t => tokenMatch(t, W)); }
+// toks can be plain words, or groups of alternatives (from spelling fixes): every group needs one hit.
+function matchesQuery(q, toks) {
+  const W = indexQ(q);
+  return toks.every(t => (Array.isArray(t) ? t : [t]).some(x => tokenMatch(x, W)));
+}
+
+/* Spelling help: a word that matches nothing in the bank is swapped for the
+   closest real words (1 letter off, or 2 for long words), e.g. "attai" → "attia". */
+let VOCAB = null;
+function vocab() {
+  if (!VOCAB) { const s = new Set(); S.questions.forEach(q => indexQ(q).forEach(w => s.add(w))); VOCAB = [...s]; }
+  return VOCAB;
+}
+function editDist(a, b, max) {             // letters added, removed, changed or swapped
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  const d = [];
+  for (let i = 0; i <= a.length; i++) { d[i] = [i]; }
+  for (let j = 0; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    let rowMin = Infinity;
+    for (let j = 1; j <= b.length; j++) {
+      const c = a[i - 1] === b[j - 1] ? 0 : 1;
+      let v = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, d[i - 2][j - 2] + 1);
+      d[i][j] = v; if (v < rowMin) rowMin = v;
+    }
+    if (rowMin > max) return max + 1;
+  }
+  return d[a.length][b.length];
+}
+let RTMEMO = { key: null, val: null };
+function resolveTokens(toks) {
+  const key = toks.join(' ');
+  if (RTMEMO.key === key && RTMEMO.val) return RTMEMO.val;
+  const V = vocab();
+  let groups = toks.map(t => [t]);
+  // Only when the search as typed finds nothing in the whole bank do we try spelling fixes.
+  if (!S.questions.some(q => matchesQuery(q, toks))) {
+    groups = toks.map(t => {
+      if (t.length < 4 || /\d/.test(t) || V.includes(t)) return [t];     // a real word stays as typed
+      const max = t.length >= 8 ? 2 : 1;
+      const alts = V.filter(w => w !== t && (w[0] === t[0] || w[1] === t[1])).map(w => [w, editDist(t, w, max)]).filter(x => x[1] <= max)
+        .sort((x, y) => x[1] - y[1]).map(x => x[0]).slice(0, 8);
+      return alts.concat([t]);                       // closest spellings first, the typed word last
+    });
+  }
+  RTMEMO = { key, val: groups };
+  return groups;
+}
+
+/* Writer → works: searching a writer also finds questions on that writer's works,
+   even when the question itself doesn't name the writer.
+   The list is learnt from the bank (questions tagged with one writer) and from guide.json. */
+let WCACHE = null;
+const normTitle = t => words(t).join(' ');
+const TEXT_IDX = new WeakMap();
+function writerWorks() {
+  if (WCACHE) return WCACHE;
+  const m = new Map();
+  const add = (w, t) => {
+    const k = words(w).join(' '), title = normTitle(t);
+    if (!k || !title) return;
+    let e = m.get(k);
+    if (!e) { e = { name: w, toks: words(w), works: new Set() }; m.set(k, e); }
+    e.works.add(title);
+  };
+  S.questions.forEach(q => { const ws = q.writers || []; if (ws.length === 1) (q.works || []).forEach(t => add(ws[0], t)); });
+  (S.guide.categories || []).forEach(c => (c.subtopics || []).forEach(t => (t.works || []).forEach(g => { if (g && g.writer && g.title) add(g.writer, g.title); })));
+  WCACHE = [...m.values()];
+  return WCACHE;
+}
+function worksForQuery(groups) {
+  const hit = writerWorks().filter(e => groups.every(g => g.some(t => tokenMatch(t, e.toks))));
+  const works = new Set();
+  hit.forEach(e => e.works.forEach(t => works.add(t)));
+  return { works, writers: hit.map(e => e.name) };
+}
+// Short or one-word titles ("Nature", "Words", "I Am") are only matched by their tag,
+// never inside question text, so they don't pull in unrelated questions.
+const longTitle = t => t.split(' ').filter(w => w.length >= 3 && !STOP.has(w)).length >= 2;
+function aboutWorks(q, works) {
+  if ((q.works || []).some(t => works.has(normTitle(t)))) return true;
+  let text = TEXT_IDX.get(q);
+  if (!text) { text = ` ${words(q.question).join(' ')} `; TEXT_IDX.set(q, text); }
+  for (const t of works) if (longTitle(t) && text.includes(` ${t} `)) return true;
+  return false;
+}
 
 function poolForMode(mode) {
   const Q = S.questions, p = S.prog;
@@ -155,11 +246,26 @@ function filtered() {
   if (f.tags && f.tags.length) list = list.filter(q => hasTags(q, f.tags));
   if (f.group) { const g = gNode(f.group.id); const ids = new Set(g ? g.qs.map(q => q.id) : []); list = list.filter(q => ids.has(q.id)); }
   const raw = f.query.trim();
+  S.searchInfo = null;
   if (raw) {
     const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
     if (exact.length) return exact;
     const toks = queryTokens(raw);
-    if (toks.length) list = list.filter(q => matchesQuery(q, toks));
+    if (toks.length) {
+      const groups = resolveTokens(toks);
+      const direct = list.filter(q => matchesQuery(q, groups));
+      const { works, writers } = worksForQuery(groups);
+      let extra = [];
+      if (works.size) {
+        const ids = new Set(direct.map(q => q.id));
+        extra = list.filter(q => !ids.has(q.id) && aboutWorks(q, works));
+      }
+      // For the "Showing results for…" line, pick the spelling in each group that actually found questions.
+      const used = groups.map((g, i) => g.length === 1 ? toks[i] : ([toks[i]].concat(g).find(x => direct.some(q => tokenMatch(x, indexQ(q)))) || toks[i]));
+      const fixed = used.some((u, i) => u !== toks[i]);
+      S.searchInfo = { fix: fixed && direct.length ? used.join(' ') : '', extra: extra.length, writers };
+      list = direct.concat(extra);
+    }
   }
   return list;
 }
@@ -259,7 +365,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null;
+  GCACHE = null; WCACHE = null; VOCAB = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -275,7 +381,11 @@ function matchText(n) {
   const c = S.filters.count, take = c === 'all' ? n : Math.min(n, +c);
   if (!n) return 'No questions match yet. Try a broader search or another chip.';
   const fresh = filtered().filter(q => !seenQ(q)).length;
-  return `${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
+  const info = S.searchInfo || {};
+  const notes = [];
+  if (info.fix) notes.push(`Showing results for “${info.fix}”`);
+  if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
+  return `${notes.length ? notes.join(' · ') + '. ' : ''}${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
 }
 VIEWS.home = () => {
   const f = S.filters, due = dueList().length, n = filtered().length;
@@ -1284,7 +1394,7 @@ async function loadData() {
     ]);
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
-    GCACHE = null;
+    GCACHE = null; WCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();
