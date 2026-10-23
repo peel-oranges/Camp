@@ -447,7 +447,7 @@ VIEWS.home = () => {
 
   ${browse.length ? `<section class="card"><h3>Browse by section</h3><div class="chips">${browse.map(c => `<button class="chip soft ${f.group && f.group.id === c.id ? 'on' : ''}" data-act="pickSection" data-id="${esc(c.id)}">${esc(c.name)} <span class="count">${c.qs.length}</span></button>`).join('')}</div>
     <p class="small muted" style="margin-top:8px">For smaller topics inside a section, open it in the Guide and tap “Quiz me”.</p></section>` : ''}
-  <p class="foot muted small">${plural(S.questions.length, 'question')} in the bank</p>`;
+  <p class="foot muted small">${plural(S.questions.length, 'question')} in the bank${pyqYearsLine() ? `<br>${esc(pyqYearsLine())}` : ''}</p>`;
 };
 
 /* ---------- Quiz ---------- */
@@ -1290,6 +1290,7 @@ VIEWS.more = () => {
       <div class="btn-row">
         <button class="btn" data-act="adminList">Manage questions</button>
         <button class="btn ghost" data-act="adminAdd">Add question</button>
+        <button class="btn ghost" data-act="adminBulk">Paste a whole paper</button>
       </div>
       ${unver ? `<p class="small" style="margin-top:10px"><button class="chip" data-act="adminUnverified">⚠ ${plural(unver, 'question')} still unverified ›</button></p>` : ''}
       ${CONFIG.goatcounter ? `<p class="small muted" style="margin-top:10px">Visitors: <a href="https://${esc(CONFIG.goatcounter)}.goatcounter.com" target="_blank" rel="noopener">${esc(CONFIG.goatcounter)}.goatcounter.com</a> · your own visits on this device are not counted.</p>` : ''}
@@ -1356,7 +1357,7 @@ VIEWS.adminList = () => `
     <div class="search"><input type="search" data-in="adminQuery" value="${esc(S.adminQuery)}" placeholder="ID, words, writer, work or source (GATE 2023)…" autocomplete="off"></div>
     <div class="chips" style="margin-top:12px">${ADMIN_FILTERS.map(([k, l]) => `<button class="chip ${S.adminFilter === k ? 'on' : ''}" data-act="adminFilter" data-v="${k}">${l} <span class="count">${adminPool(k).length}</span></button>`).join('')}</div>
     <p class="small muted" style="margin-top:10px">Delete is inside ✎ Edit, at the bottom of the form.</p>
-    <button class="btn ghost" data-act="adminAdd">Add a new question</button>
+    <div class="btn-row"><button class="btn ghost" data-act="adminAdd">Add a new question</button><button class="btn ghost" data-act="adminBulk">Paste a whole paper</button></div>
   </section>
   <section class="card" id="admin-list">${adminListHTML()}</section>`;
 
@@ -2303,6 +2304,9 @@ const SYL_CH = {
     .sa-sec summary { font-weight: 700; cursor: pointer; }
     .sa-save { position: sticky; bottom: calc(env(safe-area-inset-bottom) + 84px); z-index: 5; display: flex; gap: 10px; padding: 10px; border-radius: 20px; background: var(--tabs-bg); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid var(--border); margin-bottom: 16px; }
     .sa-save .btn { flex: 1; }
+    .bulk-ex { white-space: pre-wrap; font-size: 12.5px; line-height: 1.45; background: var(--input); border: 1px solid var(--border); border-radius: 12px; padding: 10px; overflow-x: auto; }
+    .wrong-item.bulk-bad { border-left: 4px solid var(--bad); padding-left: 10px; }
+    #bulk-text { font-size: 14px; line-height: 1.45; }
     input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }`;
   document.head.appendChild(s);
 })();
@@ -2475,11 +2479,202 @@ const SA_IN = {
 
 Object.assign(SYL_ACT, SA_ACT); Object.assign(SYL_CH, SA_CH); Object.assign(SYL_IN, SA_IN);
 
+/* ---------- PYQ years line (home screen footer) ---------- */
+function pyqYearsLine() {
+  const span = ex => { const ys = S.questions.filter(q => q.exam === ex).map(qYear).filter(Boolean); return ys.length ? (Math.min(...ys) === Math.max(...ys) ? `${Math.max(...ys)}` : `${Math.max(...ys)}–${Math.min(...ys)}`) : ''; };
+  const parts = [['NET', span('NET')], ['GATE', span('GATE')]].filter(x => x[1]).map(([e, s]) => `${e} PYQs ${s}`);
+  return parts.length ? parts.join(' · ') : '';
+}
+
+/* ---------- Admin: paste a whole paper ----------
+   Paste the paper as plain text (as it looks in a Word file), or paste the JSON
+   batch Claude gives you. The app reads every question, shows a preview, and
+   saves all of them to GitHub in one go.                                     */
+const BULK_EXAMPLE = `Exam: NET
+Year: 2024
+Session: June
+Shift: 1
+Topics: British, Romantic Age, Poetry
+
+1. Who wrote "Tintern Abbey"?
+A) S. T. Coleridge
+B) William Wordsworth
+C) John Keats
+D) P. B. Shelley
+Answer: B
+Writers: William Wordsworth
+Works: Tintern Abbey
+Info: Published in Lyrical Ballads (1798), the volume's closing poem.
+
+2. Match List I with List II
+List I
+A. Beowulf
+B. The Prelude
+List II
+I. Old English
+II. Romantic
+(1) A-I, B-II
+(2) A-II, B-I
+(3) A-I, B-I
+(4) A-II, B-II
+Answer: 1
+Topics: British, Chronology`;
+const BH_RE = /^\s*(exam|year|session|shift|topics?|writers?|works?|source|verified|section)\s*[:=]\s*(.*)$/i;
+const BQ_RE = /^\s*(?:Q(?:uestion)?\s*\.?\s*)?(\d{1,3})\s*[.):]\s+(.*)$/i;
+const BF_RE = /^\s*(answer|ans|correct(?: answer)?|key|topics?|writers?|works?|info(?: ?bite)?|note|type|id|study(?: note)?|keywords?)\s*[:=]\s*(.*)$/i;
+const BO_RE = /^\s*[\(\[]?([A-Da-d1-4])[\)\].]\s+(.+)$/;
+function parseBulk(text) {
+  const raw = String(text || '').trim();
+  if (!raw) return { qs: [], errs: [] };
+  if (raw[0] === '[' || raw[0] === '{') {
+    try {
+      let arr = JSON.parse(raw); if (!Array.isArray(arr)) arr = arr.questions || [arr];
+      return { qs: arr.map((q, i) => ({ q, no: i + 1, errs: bulkCheck(q) })), json: true };
+    } catch (e) { return { qs: [], fatal: 'This looks like JSON but has a typing error: ' + e.message }; }
+  }
+  const head = {}, blocks = [];
+  let cur = null;
+  raw.replace(/\r/g, '').split('\n').forEach(line => {
+    const qm = line.match(BQ_RE);
+    if (qm && !(cur && BO_RE.test(line) && /^\s*[\(\[]/.test(line))) { cur = { no: +qm[1], lines: [qm[2]] }; blocks.push(cur); return; }
+    if (!cur) { const hm = line.match(BH_RE); if (hm) head[hm[1].toLowerCase().replace(/s$/, '')] = hm[2].trim(); return; }
+    cur.lines.push(line);
+  });
+  const sess = String(head.session || '').trim(), yr = String(head.year || '').trim(), sh = String(head.shift || '').trim();
+  const exam = /gate/i.test(head.exam || '') ? 'GATE' : /prob/i.test(head.exam || '') ? 'Probable' : /abrams/i.test(head.exam || '') ? 'Abrams' : 'NET';
+  const qs = blocks.map(b => {
+    const fields = {}, body = [];
+    b.lines.forEach(l => { const fm = l.match(BF_RE); if (fm) fields[fm[1].toLowerCase()] = fm[2].trim(); else body.push(l); });
+    // Options = the LAST run of four lines marked A–D (or 1–4), so lists inside the question stay in the question.
+    let optStart = -1, kind = '';
+    for (let i = body.length - 1; i >= 0; i--) {
+      const m = body[i].match(BO_RE); if (!m) continue;
+      const k = m[1].toUpperCase();
+      if (k === 'A' || k === '1') {
+        const run = []; let j = i;
+        while (j < body.length && run.length < 4) { const mm = body[j].match(BO_RE); if (mm) run.push(mm[1].toUpperCase()); else if (body[j].trim()) break; j++; }
+        if (run.join('') === 'ABCD' || run.join('') === '1234') { optStart = i; kind = run[0]; break; }
+      }
+    }
+    const options = {};
+    let qLines = body;
+    if (optStart >= 0) {
+      qLines = body.slice(0, optStart);
+      let n = 0;
+      body.slice(optStart).forEach(l => { const m = l.match(BO_RE); if (m && n < 4) { options[LETTERS[n]] = m[2].trim(); n++; } else if (l.trim() && n) options[LETTERS[n - 1]] += ' ' + l.trim(); });
+    }
+    const question = qLines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    let ans = fields.answer || fields.ans || fields['correct answer'] || fields.correct || fields.key || '';
+    ans = ans.replace(/[()\[\]]/g, '').trim();
+    const nat = !Object.keys(options).length;
+    let answer = nat ? ans : ans.toUpperCase().split(/[^A-D1-4]+/).filter(Boolean).map(x => /\d/.test(x) ? LETTERS[+x - 1] : x).filter(Boolean);
+    if (!nat) answer = [...new Set(answer)].sort().join(';');
+    const tl = (fields.type || '').toLowerCase();
+    const type = tl || (/list\s*-?\s*i\b|match/i.test(question) ? 'match' : /assertion/i.test(question) ? 'assertion-reason' : /chronolog|sequence|correct order|earliest to|order of (their )?(publication|appearance)/i.test(question) ? 'chronology' : /passage|read the (following )?(extract|lines|poem)/i.test(question) ? 'passage' : nat ? 'numerical' : 'MCQ');
+    const id = fields.id || (exam === 'GATE' ? `GATE-${yr || 'X'}-Q${b.no}` : exam === 'NET' ? `NET-${yr || 'X'}-${(sess || 'X').slice(0, 3).toUpperCase()}${sh ? '-S' + sh : ''}-Q${b.no}` : `${exam.toUpperCase()}-${yr || 'X'}-Q${b.no}`);
+    const q = { id, exam, question, options: nat ? {} : options, answer, type, format: nat ? 'NAT' : answer.includes(';') ? 'MSQ' : 'MCQ',
+      topics: splitList(fields.topics || fields.topic || head.topic || ''), writers: splitList(fields.writers || fields.writer || head.writer || ''), works: splitList(fields.works || fields.work || head.work || ''),
+      infoBite: fields.info || fields['info bite'] || fields.infobite || '', verified: !/^(no|false|n)$/i.test(head.verified || 'yes') };
+    if (yr) q.year = /^\d+$/.test(yr) ? +yr : yr;
+    if (sess) q.session = sess;
+    if (sh) q.shift = /^\d+$/.test(sh) ? +sh : sh;
+    if (head.source) q.source = head.source;
+    if (head.section) q.topics = q.topics.length ? q.topics : splitList(head.section);
+    if (fields.note) q.note = fields.note;
+    if (fields.study || fields['study note']) q.studyNote = fields.study || fields['study note'];
+    if (fields.keywords || fields.keyword) q.keywords = splitList(fields.keywords || fields.keyword);
+    const errs = bulkCheck(q); if (!yr && (exam === 'NET' || exam === 'GATE')) errs.push('Add a “Year:” line at the top');
+    return { q, no: b.no, errs, warn: !q.topics.length ? 'No topic tags, so it lands in “Mixed” in the Guide' : '' };
+  });
+  return { qs, head };
+}
+function bulkCheck(q) {
+  const e = [];
+  if (!q || !q.question) e.push('No question text');
+  if (q && !q.id) e.push('No ID');
+  if (q && q.format !== 'NAT' && hasOptions(q) && LETTERS.some(L => !(q.options || {})[L])) e.push('Needs four options A–D');
+  if (q && (q.answer == null || q.answer === '')) e.push('No answer (add a line “Answer: B”)');
+  else if (q && q.format !== 'NAT' && hasOptions(q) && !ansList(q).length) e.push('Answer must be A–D or 1–4');
+  if (q && byId(q.id)) e.push('This ID is already in the bank');
+  return e;
+}
+VIEWS.adminBulk = () => {
+  if (!isAdmin()) return VIEWS.more();
+  const P = S.bulk || { qs: [] }, ok = (P.qs || []).filter(x => !x.errs.length), bad = (P.qs || []).filter(x => x.errs.length);
+  const ids = new Map(); (P.qs || []).forEach(x => { if (x.q && x.q.id) ids.set(x.q.id, (ids.get(x.q.id) || 0) + 1); });
+  return `
+  <button class="chip back" data-act="tab" data-tab="more">‹ Back</button>
+  <section class="card form">
+    <h2>Paste a whole paper</h2>
+    <p class="small muted">Copy the paper from your Word file and paste it below. Put the paper details at the top, then each question with its number, four options and an <b>Answer:</b> line. You can also paste the JSON batch I give you.</p>
+    <details class="sa-sec"><summary>See the format (with an example)</summary>
+      <pre class="bulk-ex">${esc(BULK_EXAMPLE)}</pre>
+      <ul class="small">
+        <li>Number each question: <b>1.</b> or <b>Q1.</b> at the start of a line. Word's automatic numbering often disappears when you copy, so type the numbers if they vanish.</li>
+        <li>Options: <b>A)</b> … <b>D)</b>, or <b>(A)</b>, or <b>(1)</b> … <b>(4)</b>. Lists inside a match question can stay as they are.</li>
+        <li><b>Answer:</b> a letter or number (B or 2); for more than one, <b>A, C</b>; for a number answer with no options, just the number.</li>
+        <li>Optional lines under any question: <b>Topics:</b>, <b>Writers:</b>, <b>Works:</b>, <b>Info:</b>, <b>Note:</b>. A <b>Topics:</b> line at the top applies to every question that has none.</li>
+        <li>Add <b>Verified: no</b> at the top if the answers are not from the final official key yet.</li>
+      </ul>
+      <button class="btn ghost" data-act="bulkExample">Fill in the example</button>
+    </details>
+    <label class="field-label" for="bulk-text">Paper</label>
+    <textarea id="bulk-text" rows="14" placeholder="Exam: NET&#10;Year: 2024&#10;Session: June&#10;Shift: 1&#10;&#10;1. Question…&#10;A) …&#10;B) …&#10;C) …&#10;D) …&#10;Answer: B">${esc(S.bulkText || '')}</textarea>
+    <button class="btn" data-act="bulkRead">Read questions</button>
+  </section>
+  ${P.fatal ? `<section class="card"><p class="warn-text">${esc(P.fatal)}</p></section>` : ''}
+  ${(P.qs || []).length ? `
+  <section class="card">
+    <h3>Preview</h3>
+    <p class="small"><b>${plural(ok.length, 'question')}</b> ready${bad.length ? ` · <span class="warn-text">${bad.length} need fixing</span> (they won't be saved)` : ''}.</p>
+    ${(P.qs || []).map(x => {
+      const q = x.q || {}, dup = ids.get(q.id) > 1;
+      const errs = x.errs.concat(dup ? ['Same ID twice in this paste'] : []);
+      return `<div class="wrong-item ${errs.length ? 'bulk-bad' : ''}">
+        <div class="tags"><span class="tag src">${esc(q.id || '#' + x.no)}</span>${q.type && q.type !== 'MCQ' ? `<span class="tag">${esc(q.type)}</span>` : ''}${q.verified === false ? '<span class="tag warn">Unverified</span>' : ''}</div>
+        <div class="q" style="white-space:pre-line">${esc(q.question || '')}</div>
+        ${hasOptions(q) ? `<div class="small" style="margin-top:6px">${LETTERS.map(L => `<div>${L}. ${esc((q.options || {})[L] || '—')}</div>`).join('')}</div>` : ''}
+        <div class="ans">Answer: <b>${esc(q.answer ? answerText(q) : '—')}</b></div>
+        ${(q.topics || []).length ? `<p class="small muted" style="margin:4px 0 0">${esc(q.topics.join(' › '))}</p>` : ''}
+        ${errs.length ? `<p class="small warn-text" style="margin:6px 0 0">⚠ ${esc(errs.join(' · '))}</p>` : x.warn ? `<p class="small muted" style="margin:6px 0 0">${esc(x.warn)}</p>` : ''}
+      </div>`;
+    }).join('')}
+    <button class="btn" data-act="bulkSave" id="bulk-save" ${ok.length ? '' : 'disabled'}>Save ${plural(ok.length, 'question')} to GitHub</button>
+  </section>` : ''}`;
+};
+const BULK_ACT = {
+  adminBulk: () => { S.bulk = null; go('adminBulk'); },
+  bulkExample: () => { S.bulkText = BULK_EXAMPLE; S.bulk = null; go('adminBulk', true); },
+  bulkRead: () => {
+    S.bulkText = ($('#bulk-text') || {}).value || '';
+    S.bulk = parseBulk(S.bulkText);
+    if (!S.bulk.fatal && !S.bulk.qs.length) toast('No numbered questions found. Start each with 1. or Q1.', 4500);
+    go('adminBulk', true);
+    const el = document.querySelector('.bulk-bad') || $('#bulk-save'); if (el && S.bulk.qs.length) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  },
+  bulkSave: async () => {
+    const P = S.bulk; if (!P) return;
+    const seen = new Map(); P.qs.forEach(x => { if (x.q && x.q.id) seen.set(x.q.id, (seen.get(x.q.id) || 0) + 1); });
+    const ok = P.qs.filter(x => !x.errs.length && seen.get(x.q.id) === 1).map(x => x.q);
+    if (!ok.length) return;
+    if (!confirm(`Add ${plural(ok.length, 'question')} to the bank for everyone?`)) return;
+    const btn = $('#bulk-save'); if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+    try {
+      let added = 0;
+      const arr = await ghUpdate(list => { const have = new Set(list.map(x => x.id)); ok.forEach(q => { if (!have.has(q.id)) { list.push(q); added++; } }); return list; }, `Add ${ok.length} questions (paste)`);
+      applyBank(arr);
+      S.bulk = null; S.bulkText = '';
+      toast(`Saved ${plural(added, 'question')} ✿ Everyone sees them in 1–2 minutes`, 4500);
+      go('adminList');
+    } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = 'Try saving again'; } }
+  }
+};
+
 /* =========================================================
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', sylAdmin: 'syllabus' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', adminBulk: 'more', sylAdmin: 'syllabus' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -2739,7 +2934,7 @@ const ACT = {
   }
 };
 
-Object.assign(ACT, SYL_ACT);
+Object.assign(ACT, SYL_ACT, BULK_ACT);
 
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
