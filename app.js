@@ -9,7 +9,7 @@ const CONFIG = {
   // WhatsApp: country code + number, digits only, e.g. '919876543210'.
   // If left empty, WhatsApp opens and lets the user choose the chat; email opens with a blank "To".
   reportWhatsApp: '',
-  reportEmail: 'pallavijoshi.pj77@gmail.com',
+  reportEmail: 'pallavijoshii.pj77@gmail.com',
   // Where the question bank lives on GitHub (used only by the admin "Add question" form).
   github: { owner: 'peel-oranges', repo: 'Camp', branch: 'main', path: 'questions.json' },
   // Visitor counter (GoatCounter account name). Leave '' to turn counting off.
@@ -1287,6 +1287,9 @@ VIEWS.more = () => {
     <h2>Admin</h2>
     ${admin ? `
       <p class="small muted">Signed in on this device · ${esc(g.owner)}/${esc(g.repo)} (${esc(g.branch)})</p>
+      <label class="field-label" for="report-email">Mistake reports go to</label>
+      <div class="pl-target-row"><input type="email" id="report-email" value="${esc(reportEmail())}" autocomplete="email" inputmode="email"><button class="btn" data-act="saveReportEmail" id="report-email-btn" style="width:auto;padding:0 18px">Save</button></div>
+      <p class="small muted">Changes it for everyone's app, within 1–2 minutes.</p>
       <div class="btn-row">
         <button class="btn" data-act="adminList">Manage questions</button>
         <button class="btn ghost" data-act="adminAdd">Add question</button>
@@ -2307,6 +2310,7 @@ const SYL_CH = {
     .bulk-ex { white-space: pre-wrap; font-size: 12.5px; line-height: 1.45; background: var(--input); border: 1px solid var(--border); border-radius: 12px; padding: 10px; overflow-x: auto; }
     .wrong-item.bulk-bad { border-left: 4px solid var(--bad); padding-left: 10px; }
     #bulk-text { font-size: 14px; line-height: 1.45; }
+    input[type="email"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); font-size: 16px; }
     input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }`;
   document.head.appendChild(s);
 })();
@@ -2320,7 +2324,9 @@ async function ghSaveJSON(path, build, message) {
   if (!navigator.onLine) throw new Error('You are offline. Connect to the internet, then save again.');
   for (let attempt = 0; attempt < 2; attempt++) {
     const { api, H, meta } = await ghFetchMeta(g, g.token);
-    const obj = build();
+    let cur = null;
+    try { if (meta.content && meta.encoding === 'base64') cur = JSON.parse(b64ToUtf8(meta.content)); } catch (e) { cur = null; }
+    const obj = build(cur);
     const put = await fetch(api, {
       method: 'PUT',
       headers: Object.assign({ Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' }, H),
@@ -2457,7 +2463,7 @@ const SA_ACT = {
     E.updated = todayStr();
     if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
     try {
-      await ghSaveJSON('syllabus.json', () => E, 'Update syllabus');
+      await ghSaveJSON('syllabus.json', cur => { if (cur && cur.settings) E.settings = cur.settings; return E; }, 'Update syllabus');
       S.syllabus = JSON.parse(JSON.stringify(E)); S.sylEdit = null;
       TQCACHE = { key: '', map: new Map() }; WTCACHE = {}; QDCACHE = { key: '', map: new Map() };
       toast('Syllabus saved ✿ Everyone sees it in 1–2 minutes', 4500);
@@ -2670,6 +2676,27 @@ const BULK_ACT = {
   }
 };
 
+/* ---------- Where "Report a mistake" emails go (shared, saved in syllabus.json → settings) ---------- */
+const reportEmail = () => (S.syllabus && S.syllabus.settings && S.syllabus.settings.reportEmail) || CONFIG.reportEmail;
+const EMAIL_ACT = {
+  saveReportEmail: async () => {
+    const v = (($('#report-email') || {}).value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return toast('That doesn’t look like an email address');
+    if (v === reportEmail()) return toast('That is already the address');
+    const btn = $('#report-email-btn'); if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+    try {
+      const saved = await ghSaveJSON('syllabus.json', cur => {
+        const base = cur || JSON.parse(JSON.stringify(S.syllabus || {}));
+        base.settings = Object.assign({}, base.settings, { reportEmail: v });
+        return base;
+      }, 'Change report email');
+      S.syllabus = saved; TQCACHE = { key: '', map: new Map() }; WTCACHE = {};
+      toast('Saved ✿ Reports now go to ' + v, 4000);
+      render();
+    } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = 'Save'; } }
+  }
+};
+
 /* =========================================================
    ROUTING & EVENTS
    ========================================================= */
@@ -2789,7 +2816,7 @@ const ACT = {
       const num = String(CONFIG.reportWhatsApp).replace(/\D/g, '');
       window.open(`https://wa.me/${num}?text=${encodeURIComponent(text)}`, '_blank');
     } else {
-      window.location.href = `mailto:${CONFIG.reportEmail}?subject=${encodeURIComponent('Camp mistake: ' + q.id)}&body=${encodeURIComponent(text)}`;
+      window.location.href = `mailto:${reportEmail()}?subject=${encodeURIComponent('Camp mistake: ' + q.id)}&body=${encodeURIComponent(text)}`;
     }
     closeModal();
   },
@@ -2934,7 +2961,7 @@ const ACT = {
   }
 };
 
-Object.assign(ACT, SYL_ACT, BULK_ACT);
+Object.assign(ACT, SYL_ACT, BULK_ACT, EMAIL_ACT);
 
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
