@@ -94,7 +94,7 @@ const S = {
   prog: loadProg(),
   filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true, fresh: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
-  syllabus: null, sylMode: 'exam', sylSec: null, sylFilter: 'all', sylQuery: '', planDay: null,
+  syllabus: null, sylExam: 'both', planView: 'week', planWeek: null, planMonth: null,
   quiz: null, guideId: null, guideMode: 'cats', guideQuery: '',
   adminQuery: '', adminFilter: 'all', adminShow: ADMIN_PAGE, edit: null
 };
@@ -1473,6 +1473,7 @@ function openVerify(id) {
    Every topic is listed once and linked to the GATE and NET sections
    it belongs to, so ticking it once fills in both exams.
    "Learnt" is what counts as done. "Quizzed" is only for your own awareness.
+   Weightage is estimated from the PYQs in questions.json.
    Everything is saved on this device, inside the normal backup.
    ========================================================= */
 const parseDay = s => { const [y, m, d] = String(s).split('-').map(Number); return new Date(y, (m || 1) - 1, d || 1); };
@@ -1480,9 +1481,12 @@ const dayDiff = (a, b) => Math.round((parseDay(b) - parseDay(a)) / 86400000);   
 const shiftDay = (s, n) => { const d = parseDay(s); d.setDate(d.getDate() + n); return todayStr(d); };
 const fmtDay = (s, opt) => parseDay(s).toLocaleDateString(undefined, opt || { day: 'numeric', month: 'short', year: 'numeric' });
 const isDay = s => /^\d{4}-\d{2}-\d{2}$/.test(String(s || ''));
+const mondayOf = s => shiftDay(s, -((parseDay(s).getDay() + 6) % 7));
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 const EXAMS = [['gate', 'GATE'], ['net', 'NET']];
+const EXAM_KEY = { gate: 'GATE', net: 'NET' };
 const shortName = t => t.name.split(':')[0].trim();
+const topicDesc = t => t.name.includes(':') ? t.name.slice(t.name.indexOf(':') + 1).trim() : '';
 
 function sylP() {
   const p = S.prog;
@@ -1490,7 +1494,9 @@ function sylP() {
   if (!p.sylCustom) p.sylCustom = [];
   if (!p.plan) p.plan = {};
   if (!p.plan.days) p.plan.days = {};
+  if (!p.plan.months) p.plan.months = {};
   if (!p.plan.start) p.plan.start = todayStr();          // pace is counted from the first day you open the tracker
+  if (!p.sylUI) p.sylUI = { progress: true, weight: true, sort: false };
   return p;
 }
 const sylExams = () => (S.syllabus && S.syllabus.exams) || {};
@@ -1499,8 +1505,8 @@ function sylTopics() {
   return base.concat(sylP().sylCustom.map(c => Object.assign({ group: 'My own topics', custom: true }, c)));
 }
 const topicById = id => sylTopics().find(t => t.id === id);
-const sylSections = ex => (sylExams()[ex] ? sylExams()[ex].parts : []).flatMap(p => p.sections.map(s => Object.assign({ part: p }, s)));
-const sectionById = id => { for (const [ex] of EXAMS) { const s = sylSections(ex).find(x => x.id === id); if (s) return Object.assign({ exam: ex }, s); } return null; };
+const sylSections = ex => (sylExams()[ex] ? sylExams()[ex].parts : []).flatMap(p => p.sections.map(s => Object.assign({ part: p, exam: ex }, s)));
+const sectionById = id => { for (const [ex] of EXAMS) { const s = sylSections(ex).find(x => x.id === id); if (s) return s; } return null; };
 const learnt = t => !!(sylP().syl[t.id] && sylP().syl[t.id].l);
 const quizzed = t => !!(sylP().syl[t.id] && sylP().syl[t.id].q);
 const topicsIn = sid => sylTopics().filter(t => (t.gate || []).includes(sid) || (t.net || []).includes(sid));
@@ -1515,13 +1521,6 @@ function progOf(list) {
 }
 const examDate = ex => { const pl = sylP().plan; return isDay(pl[ex + 'Date']) ? pl[ex + 'Date'] : ((sylExams()[ex] || {}).date || ''); };
 const daysTo = d => isDay(d) ? dayDiff(todayStr(), d) : null;
-
-// Quiz link for a topic: a Guide section if it has questions, otherwise a search.
-function topicQuiz(t) {
-  if (t.guide) { const g = gNode(t.guide); if (g && g.qs.length) return { kind: 'guide', id: t.guide, n: g.qs.length, stat: groupStat(g) }; }
-  if (t.q) return { kind: 'search', v: t.q };
-  return null;
-}
 function setLearnt(id, on) {
   const p = sylP(), r = p.syl[id] || (p.syl[id] = {});
   if (on) r.l = r.l || todayStr(); else delete r.l;
@@ -1533,108 +1532,128 @@ function setQuizzed(id, on) {
   if (!r.l && !r.q) delete p.syl[id];
 }
 
-/* ---------- Syllabus tab ---------- */
-function secCard(s) {
-  const pr = progOf(topicsIn(s.id));
-  return `<button class="sy-sec ${pr.n && pr.l === pr.n ? 'done' : ''}" data-act="sylOpen" data-id="${esc(s.id)}">
-    <span class="sy-sec-name">${esc(s.name)}</span>
-    <span class="bar"><span style="width:${pr.pct}%"></span></span>
-    <span class="sy-sec-meta">${pr.l}/${pr.n} learnt${pr.q ? ` · ${pr.q} quizzed` : ''}</span>
-  </button>`;
+/* ---------- Questions behind each topic (for counts, weightage and quizzes) ---------- */
+let TQCACHE = { key: '', map: new Map() };
+function topicQs(t) {
+  const key = `${S.questions.length}`;
+  if (TQCACHE.key !== key) TQCACHE = { key, map: new Map() };
+  if (TQCACHE.map.has(t.id)) return TQCACHE.map.get(t.id);
+  let qs = [];
+  if (t.guide) { const g = gNode(t.guide); if (g) qs = g.qs; }
+  if (!qs.length && t.q) { const toks = queryTokens(t.q); if (toks.length) qs = S.questions.filter(q => matchesQuery(q, toks)); }
+  TQCACHE.map.set(t.id, qs);
+  return qs;
 }
-function examCol(ex) {
+const topicExamCount = (t, ex) => topicQs(t).filter(q => q.exam === EXAM_KEY[ex]).length;
+// Estimated marks: each PYQ of the exam is shared equally among the sections its topics belong to,
+// then each part's official marks are split in proportion.
+let WTCACHE = {};
+function examWeights(ex) {
+  const key = `${ex}:${S.questions.length}:${sylP().sylCustom.length}`;
+  if (WTCACHE[key]) return WTCACHE[key];
+  const E = sylExams()[ex], res = {}; let used = 0;
+  (E ? E.parts : []).forEach(p => {
+    const qSecs = new Map();
+    p.sections.forEach(s => topicsIn(s.id).forEach(t => topicQs(t).forEach(q => {
+      if (q.exam !== EXAM_KEY[ex]) return;
+      if (!qSecs.has(q.id)) qSecs.set(q.id, new Set());
+      qSecs.get(q.id).add(s.id);
+    })));
+    const total = qSecs.size, share = {};
+    used += total;
+    qSecs.forEach(set => set.forEach(sid => { share[sid] = (share[sid] || 0) + 1 / set.size; }));
+    p.sections.forEach(s => {
+      const n = [...qSecs.values()].filter(x => x.has(s.id)).length;
+      res[s.id] = { n, marks: total && n ? ((share[s.id] || 0) / total) * p.marks : null };
+    });
+  });
+  WTCACHE = { [key]: Object.assign(res, { _used: used }) };
+  return WTCACHE[key];
+}
+const fmtMarks = m => m == null ? null : (m >= 10 ? Math.round(m) : Math.round(m * 10) / 10);
+function sectionIds(s) { const ids = new Set(); topicsIn(s.id).forEach(t => topicQs(t).forEach(q => ids.add(q.id))); return [...ids]; }
+
+/* ---------- Syllabus tab ---------- */
+const segBar = (list, cls) => `<span class="sy-seg ${cls || ''}">${list.map(t => `<i class="${learnt(t) ? 'on' : ''}"></i>`).join('')}</span>`;
+function nodeHTML(t, ex) {
+  const L = learnt(t), Q = quizzed(t), r = sylP().syl[t.id] || {}, desc = topicDesc(t);
+  const cnt = topicExamCount(t, ex), qs = topicQs(t);
+  let stat = null;
+  if (qs.length) { let a = 0, c = 0, seen = 0; qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } }); if (a) stat = { acc: Math.round((c / a) * 100), seen, n: qs.length }; }
+  const status = L ? `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}` : 'Not started';
+  return `<li class="sy-node ${L ? 'is-learnt' : ''}" id="t-${esc(t.id)}">
+    <div class="sy-node-name">${esc(shortName(t))} <span class="cnt">(${cnt})</span></div>
+    ${desc ? `<div class="sy-node-desc clamp">${esc(desc)}</div>${desc.length > 46 ? '<button class="sy-more" data-act="sylMore">Show more</button>' : ''}` : ''}
+    <div class="sy-node-status">
+      <span class="sy-mini"><i style="width:${L ? 100 : 0}%"></i></span>
+      <span class="st">${status}${Q ? ' · quizzed' : ''}${stat ? ` · ${stat.acc}% on ${stat.seen}/${stat.n}` : ''}</span>
+      ${qs.length ? `<button class="sy-link-u" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz</button>` : ''}
+    </div>
+    <div class="sy-node-ticks">
+      <button class="sy-tick ${L ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${L}"><span class="box">${L ? '✓' : ''}</span>Learnt</button>
+      <button class="sy-tick q ${Q ? 'on' : ''}" data-act="sylQuizzed" data-id="${esc(t.id)}" aria-pressed="${Q}"><span class="box">${Q ? '✓' : ''}</span>Quizzed</button>
+      <button class="sy-link-u" data-act="planTopic" data-id="${esc(t.id)}">＋ Plan</button>
+      ${t.custom ? `<button class="sy-link-u" data-act="sylDelCustom" data-id="${esc(t.id)}">Delete</button>` : ''}
+    </div>
+  </li>`;
+}
+function sectionCard(s, ui, W) {
+  const ts = topicsIn(s.id), pr = progOf(ts), w = W[s.id] || {}, marks = fmtMarks(w.marks);
+  const outOf = s.exam === 'gate' ? 100 : s.part.marks;
+  return `<article class="sy-card">
+    <span class="sy-card-part">${esc(s.part.name)}</span>
+    <h3 class="sy-card-title">${esc(s.name)}</h3>
+    <div class="sy-card-pills">
+      ${ui.weight ? (marks != null ? `<span class="sy-marks">~${marks} / ${outOf} marks</span>` : `<span class="sy-marks soft">No PYQs yet</span>`) : ''}
+      ${w.n ? `<button class="sy-outline" data-act="sylQuizSec" data-id="${esc(s.id)}">Quiz section →</button>` : ''}
+    </div>
+    ${ui.progress ? `<div class="sy-card-prog">${segBar(ts, 'small')}<span>${pr.l} / ${pr.n} learnt</span></div>` : ''}
+    ${s.about ? `<p class="sy-about clamp">${esc(s.about)}</p><button class="sy-more" data-act="sylMore">Show more</button>` : ''}
+    <ul class="sy-tree">${ts.map(t => nodeHTML(t, s.exam)).join('') || '<li class="sy-node"><span class="muted small">No topics yet</span></li>'}</ul>
+  </article>`;
+}
+function examColumn(ex, ui) {
   const E = sylExams()[ex]; if (!E) return '';
-  const pr = progOf(examTopics(ex)), d = daysTo(examDate(ex));
+  const W = examWeights(ex), all = progOf(examTopics(ex)), d = daysTo(examDate(ex));
+  let secs = sylSections(ex);
+  if (ui.sort) secs = secs.slice().sort((a, b) => ((W[b.id] || {}).marks || 0) - ((W[a.id] || {}).marks || 0));
   return `<div class="sy-col">
     <div class="sy-col-head ${ex}">
       <div class="sy-col-name">${esc(E.name)}</div>
-      <div class="sy-big">${pr.pct}%</div>
-      <div class="bar"><div style="width:${pr.pct}%"></div></div>
-      <div class="sub">${pr.l} of ${pr.n} topics learnt${d != null && d >= 0 ? ` · ${d} days left` : ''}</div>
+      <div class="small">${all.l} of ${all.n} topics learnt · ${all.pct}%${d != null && d >= 0 ? ` · ${d} days left` : ''}</div>
+      ${ui.weight ? `<div class="small muted">Weightage estimated from ${plural(W._used, 'PYQ')} in your bank${E.note ? '. ' + esc(E.note) : ''}</div>` : ''}
     </div>
-    ${E.parts.map(p => `<div class="sy-part">${esc(p.name)} <span class="muted">· ${p.marks} marks</span></div>${p.sections.map(secCard).join('')}`).join('')}
+    ${secs.map(s => sectionCard(s, ui, W)).join('')}
   </div>`;
-}
-function topicRow(t, opts = {}) {
-  const L = learnt(t), Q = quizzed(t), qz = topicQuiz(t);
-  const r = sylP().syl[t.id] || {};
-  const tags = [(t.gate || []).length ? '<span class="sy-tag gate">GATE</span>' : '', (t.net || []).length ? '<span class="sy-tag net">NET</span>' : ''].join('');
-  const st = qz && qz.stat && qz.stat.a ? ` · quiz ${Math.round(qz.stat.acc * 100)}% (${qz.stat.seen}/${qz.n} done)` : qz && qz.n ? ` · ${qz.n} questions` : '';
-  return `<div class="sy-topic ${L ? 'is-learnt' : ''}">
-    <div class="sy-topic-name">${esc(t.name)}</div>
-    <div class="sy-topic-sub">${opts.noTags ? '' : tags}${L ? `<span class="small muted">Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}</span>` : ''}<span class="small muted">${esc(st)}</span></div>
-    <div class="sy-actions">
-      <button class="sy-tick ${L ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${L}"><span class="box">${L ? '✓' : ''}</span>Learnt</button>
-      <button class="sy-tick q ${Q ? 'on' : ''}" data-act="sylQuizzed" data-id="${esc(t.id)}" aria-pressed="${Q}"><span class="box">${Q ? '✓' : ''}</span>Quizzed</button>
-      ${qz ? `<button class="chip" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz me ›</button>` : ''}
-      <button class="chip" data-act="planTopic" data-id="${esc(t.id)}">＋ Plan</button>
-      ${t.custom ? `<button class="chip" data-act="sylDelCustom" data-id="${esc(t.id)}" aria-label="Delete my topic">✕</button>` : ''}
-    </div>
-  </div>`;
-}
-function allTopicsHTML() {
-  const f = S.sylFilter || 'all', q = queryTokens(S.sylQuery || '');
-  let list = sylTopics();
-  if (f === 'gate' || f === 'net') list = list.filter(t => (t[f] || []).length);
-  if (f === 'left') list = list.filter(t => !learnt(t));
-  if (q.length) list = list.filter(t => q.every(tok => tokenMatch(tok, words(t.name + ' ' + t.group))));
-  if (!list.length) return '<p class="muted">No topics match.</p>';
-  const groups = new Map();
-  list.forEach(t => { if (!groups.has(t.group)) groups.set(t.group, []); groups.get(t.group).push(t); });
-  return [...groups].map(([g, ts]) => { const pr = progOf(ts); return `<section class="card">
-    <h3>${esc(g)} <span class="small muted">· ${pr.l}/${pr.n}</span></h3>
-    ${ts.map(t => topicRow(t)).join('')}</section>`; }).join('');
 }
 VIEWS.syllabus = () => {
   if (!S.syllabus) return `<section class="card center"><h3>Syllabus not loaded</h3><p class="muted">syllabus.json is missing from the app, or you're offline on the first visit.</p></section>`;
-  const mode = S.sylMode === 'topics' ? 'topics' : 'exam';
-  const all = progOf(scopeTopics('both'));
+  const ui = sylP().sylUI, ex = S.sylExam || 'both';
+  const shown = ex === 'both' ? scopeTopics('both') : examTopics(ex), all = progOf(shown);
   return `
-  <section class="card">
-    <h2>Syllabus tracker</h2>
-    <p class="muted small">Tick <b>Learnt</b> once you have studied a topic. It fills in every GATE and NET section the topic belongs to. <b>Quizzed</b> is only a reminder for you and doesn't change your progress.</p>
-    <div class="sy-overall"><span>Both exams</span><b>${all.l} / ${all.n} topics · ${all.pct}%</b></div>
-    <div class="bar"><div style="width:${all.pct}%"></div></div>
-    <div class="seg" style="margin-top:14px">
-      <button class="${mode === 'exam' ? 'on' : ''}" data-act="sylMode" data-v="exam">Side by side</button>
-      <button class="${mode === 'topics' ? 'on' : ''}" data-act="sylMode" data-v="topics">All topics</button>
+  <section class="card sy-top">
+    <h2>Syllabus</h2>
+    <div class="seg" style="margin-bottom:14px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${ex === k ? 'on' : ''}" data-act="sylExam" data-v="${k}">${l}</button>`).join('')}</div>
+    <div class="sy-controls">
+      <div>
+        <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="progress" ${ui.progress ? 'checked' : ''}> Show my progress</label>
+        ${ui.progress ? `<div class="sy-progress"><span class="lbl">Progress</span>${segBar(shown)}</div>
+        <p class="small muted">${all.l} of ${all.n} topics learnt. Quizzed is only a reminder for you and doesn't count.</p>` : ''}
+      </div>
+      <div>
+        <label class="check-row sy-check"><input type="checkbox" data-change="sylUI" data-k="weight" ${ui.weight ? 'checked' : ''}> Show weightage</label>
+        <button class="sy-sort ${ui.sort ? 'on' : ''}" data-act="sylSort">${ui.sort ? 'Sorted by weightage ✓' : 'Sort by weightage'}</button>
+        <p class="small muted">Estimated marks per section, worked out from the PYQs in your bank.</p>
+      </div>
     </div>
   </section>
-  ${mode === 'exam' ? `
-  <div class="sy-cols">${examCol('gate')}${examCol('net')}</div>
-  <p class="small muted center" style="margin-top:12px">Tap any section to see and tick its topics.</p>` : `
-  <section class="card">
-    <div class="search"><input type="search" data-in="sylQuery" value="${esc(S.sylQuery || '')}" placeholder="Find a topic, e.g. Romantic" autocomplete="off"></div>
-    <div class="chips" style="margin-top:10px">${[['all', 'All'], ['left', 'Not learnt yet'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="chip ${(S.sylFilter || 'all') === k ? 'on' : ''}" data-act="sylFilter" data-v="${k}">${l}</button>`).join('')}</div>
-  </section>
-  <div id="sy-topic-list">${allTopicsHTML()}</div>`}
+  <div class="sy-board ${ex === 'both' ? 'two' : ''}">${ex === 'net' ? '' : examColumn('gate', ui)}${ex === 'gate' ? '' : examColumn('net', ui)}</div>
   <section class="card">
     <h3>Add your own topic</h3>
-    <p class="small muted">For anything not in the list, for example a single text you want to track. Pick the sections it belongs to.</p>
+    <p class="small muted">For anything not in the list, for example one text you want to track. Pick the sections it belongs to.</p>
     <button class="btn ghost" data-act="sylAddCustom">＋ Add a topic</button>
   </section>
   <p class="small muted center">Sources: ${esc(sylExams().gate ? sylExams().gate.source : '')} · ${esc(sylExams().net ? sylExams().net.source : '')}</p>`;
-};
-VIEWS.sylSection = () => {
-  const s = sectionById(S.sylSec);
-  if (!s) return VIEWS.syllabus();
-  const E = sylExams()[s.exam], ts = topicsIn(s.id), pr = progOf(ts);
-  return `
-  <button class="chip back" data-act="tab" data-tab="syllabus">‹ Syllabus</button>
-  <section class="card">
-    <span class="label">${esc(E.name)} · ${esc(s.part.name)}</span>
-    <h2>${esc(s.name)}</h2>
-    ${s.about ? `<p class="muted">${esc(s.about)}</p>` : ''}
-    ${s.exam === 'net' && s.part.id === 'p2' && /^n[1-4]$/.test(s.id) && E.note ? `<p class="small muted">${esc(E.note)}</p>` : ''}
-    ${s.exam === 'gate' && s.part.id === 'xh2' && E.note ? `<p class="small muted">${esc(E.note)}</p>` : ''}
-    <div class="sy-overall"><span>Learnt</span><b>${pr.l} / ${pr.n} · ${pr.pct}%</b></div>
-    <div class="bar"><div style="width:${pr.pct}%"></div></div>
-    ${pr.q ? `<p class="small muted">${pr.q} quizzed</p>` : ''}
-  </section>
-  <section class="card">
-    <h3>Topics</h3>
-    ${ts.length ? ts.map(t => topicRow(t)).join('') : '<p class="muted small">No topics here yet.</p>'}
-  </section>`;
 };
 
 function openCustomTopic() {
@@ -1643,7 +1662,8 @@ function openCustomTopic() {
   m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Add your own topic">
     <h3>Add your own topic</h3>
     <label class="field-label" for="cust-name">Topic name</label>
-    <input type="text" id="cust-name" placeholder="e.g. Partition novels">
+    <input type="text" id="cust-name" placeholder="e.g. Partition novels: Train to Pakistan, Ice-Candy-Man">
+    <p class="small muted">Tip: write "Title: details" and the details show under the title.</p>
     <details open><summary class="field-label">GATE sections</summary>${box('gate')}</details>
     <details><summary class="field-label">NET units</summary>${box('net')}</details>
     <div class="btn-row" style="margin-top:12px">
@@ -1657,140 +1677,270 @@ function openCustomTopic() {
 /* ---------- Plan tab ---------- */
 const planDays = () => sylP().plan.days;
 const dayItems = d => planDays()[d] || [];
+const monthItems = m => sylP().plan.months[m] || [];
 function pruneDay(d) { if (planDays()[d] && !planDays()[d].length) delete planDays()[d]; }
 function overdueItems() {
   const t = todayStr(), out = [];
-  Object.keys(planDays()).filter(d => d < t).forEach(d => dayItems(d).forEach(it => { if (!it.done) out.push({ d, it }); }));
+  Object.keys(planDays()).filter(d => d < t).sort().forEach(d => dayItems(d).forEach(it => { if (!it.done) out.push({ d, it }); }));
   return out;
 }
+const mainExam = () => { const sc = sylP().plan.scope || 'both'; if (sc !== 'both') return sc; return 'gate'; };
 function paceInfo() {
   const pl = sylP().plan, scope = pl.scope || 'both', t = todayStr();
   const list = scopeTopics(scope), left = list.filter(x => !learnt(x));
   const target = isDay(pl.target) ? pl.target : (scope === 'net' ? examDate('net') : scope === 'gate' ? examDate('gate') : [examDate('gate'), examDate('net')].filter(isDay).sort()[0]);
-  const start = isDay(pl.start) ? pl.start : t;
+  const start = pl.start;
   // Pace counts only topics learnt AFTER the start day, so ticking old work doesn't inflate it.
   const recent = list.filter(x => { const r = sylP().syl[x.id]; return r && r.l && r.l > start; });
   const since = Math.max(0, dayDiff(start, t));
-  const window = Math.min(14, since);
-  const inWin = window ? recent.filter(x => dayDiff(sylP().syl[x.id].l, t) < window).length : 0;
-  const rate = window >= 3 ? inWin / window : null;                     // topics per day
+  const win = Math.min(14, since);
+  const inWin = win ? recent.filter(x => dayDiff(sylP().syl[x.id].l, t) < win).length : 0;
+  const rate = win >= 3 ? inWin / win : null;
   const daysLeft = isDay(target) ? dayDiff(t, target) : null;
   const need = daysLeft != null && daysLeft > 0 ? left.length / daysLeft : null;
   const finish = rate ? shiftDay(t, Math.ceil(left.length / rate)) : null;
-  // Planned: unlearnt topics linked to an unfinished to-do on or before the target day.
   const planned = new Set();
   Object.entries(planDays()).forEach(([d, items]) => { if (d >= t && (!isDay(target) || d <= target)) items.forEach(it => { if (it.topic && !it.done) planned.add(it.topic); }); });
   const plannedLeft = left.filter(x => planned.has(x.id)).length;
-  return { scope, list, left, target, start, rate, need, daysLeft, finish, plannedLeft, since };
-}
-function weekStrip(sel) {
-  const t = todayStr(), base = parseDay(sel), dow = (base.getDay() + 6) % 7;     // Monday first
-  const mon = shiftDay(sel, -dow);
-  return `<div class="pl-week">${[0, 1, 2, 3, 4, 5, 6].map(i => {
-    const d = shiftDay(mon, i), items = dayItems(d), done = items.filter(x => x.done).length;
-    const dd = parseDay(d);
-    return `<button class="pl-day ${d === sel ? 'on' : ''} ${d === t ? 'today' : ''}" data-act="planGo" data-v="${d}">
-      <span class="w">${dd.toLocaleDateString(undefined, { weekday: 'short' }).slice(0, 2)}</span>
-      <span class="n">${dd.getDate()}</span>
-      <span class="c ${items.length && done === items.length ? 'all' : ''}">${items.length ? `${done}/${items.length}` : '·'}</span>
-    </button>`;
-  }).join('')}</div>`;
+  return { scope, list, left, target, start, rate, need, daysLeft, finish, plannedLeft };
 }
 function topicSelect(id, selected) {
   const groups = new Map();
   sylTopics().forEach(t => { if (!groups.has(t.group)) groups.set(t.group, []); groups.get(t.group).push(t); });
   return `<select id="${id}"><option value="">No linked topic</option>${[...groups].map(([g, ts]) => `<optgroup label="${esc(g)}">${ts.map(t => `<option value="${esc(t.id)}" ${selected === t.id ? 'selected' : ''}>${learnt(t) ? '✓ ' : ''}${esc(t.name)}</option>`).join('')}</optgroup>`).join('')}</select>`;
 }
+// The next thing to do: an overdue to-do, then today's, then the rest of the week, else a suggestion.
+function doThisNow() {
+  const t = todayStr(), over = overdueItems();
+  if (over.length) return { d: over[0].d, it: over[0].it, note: `Left over from ${fmtDay(over[0].d, { weekday: 'short', day: 'numeric', month: 'short' })}` };
+  const todayIt = dayItems(t).find(x => !x.done);
+  if (todayIt) return { d: t, it: todayIt, note: 'On today’s list' };
+  for (let i = 1; i <= 7; i++) { const d = shiftDay(t, i), it = dayItems(d).find(x => !x.done); if (it) return { d, it, note: `Planned for ${fmtDay(d, { weekday: 'long' })}` }; }
+  const ex = mainExam(), W = examWeights(ex);
+  const best = sylSections(ex).slice().sort((a, b) => ((W[b.id] || {}).marks || 0) - ((W[a.id] || {}).marks || 0))
+    .flatMap(s => topicsIn(s.id).filter(x => !learnt(x)).map(x => ({ x, s })))[0];
+  return best ? { topic: best.x, sec: best.s, note: `Suggested: highest-weightage section of ${EXAM_KEY[ex]}` } : null;
+}
+function itemHTML(d, it) {
+  const tp = it.topic && topicById(it.topic);
+  return `<div class="pl-item ${it.done ? 'done' : ''}">
+    <button class="pl-check ${it.done ? 'on' : ''}" data-act="planToggle" data-d="${esc(d)}" data-id="${esc(it.id)}" aria-label="${it.done ? 'Mark not done' : 'Mark done'}">${it.done ? '✓' : ''}</button>
+    <button class="pl-text" data-act="planItemMenu" data-d="${esc(d)}" data-id="${esc(it.id)}">${esc(it.t)}${tp && !it.t.includes(shortName(tp)) ? `<span class="pl-tp">${esc(shortName(tp))}</span>` : ''}</button>
+  </div>`;
+}
+const STRIPS = ['blue', 'pink', 'lilac'];
+function dayCard(d, i) {
+  const items = dayItems(d), done = items.filter(x => x.done).length, t = todayStr();
+  const names = [...new Set(items.map(it => { const tp = it.topic && topicById(it.topic); return tp ? shortName(tp) : null; }).filter(Boolean))];
+  const head = names.length ? names.slice(0, 3).join(' / ') + (names.length > 3 ? ' …' : '') : (items.length ? 'Own tasks' : 'Nothing planned');
+  return `<article class="pl-dcard strip-${STRIPS[i % 3]} ${d === t ? 'today' : ''} ${d < t ? 'past' : ''}">
+    <span class="pl-dcount">${done} of ${items.length} done${d === t ? ' · today' : ''}</span>
+    <h4 class="pl-dtitle">${esc(fmtDay(d, { weekday: 'short' }))} ${parseDay(d).getDate()} · ${esc(head)}</h4>
+    <div class="pl-items">${items.map(it => itemHTML(d, it)).join('')}</div>
+    <button class="pl-addline" data-act="planAddOpen" data-d="${esc(d)}">＋ Add</button>
+  </article>`;
+}
 function paceHTML(P) {
-  const scopeName = { both: 'GATE + NET', gate: 'GATE', net: 'NET' }[P.scope];
   const wk = x => x == null ? '–' : (Math.round(x * 7 * 10) / 10).toString();
   let verdict = '', cls = '';
   if (!P.left.length) { verdict = 'Every topic in this scope is learnt ✿ Time to revise and quiz.'; cls = 'ok'; }
-  else if (P.daysLeft == null) verdict = 'Set a finish-by date below to see whether you are on time.';
-  else if (P.daysLeft <= 0) { verdict = `Your finish-by date has passed with ${plural(P.left.length, 'topic')} left. Set a new date below.`; cls = 'bad'; }
+  else if (P.daysLeft == null) verdict = 'Set a finish-by date in More to see whether you are on time.';
+  else if (P.daysLeft <= 0) { verdict = `Your finish-by date has passed with ${plural(P.left.length, 'topic')} left. Set a new date in More.`; cls = 'bad'; }
   else if (!P.rate) verdict = `To finish by ${fmtDay(P.target)}, learn about ${wk(P.need)} topics a week. Your own pace shows here after 3 days of ticking.`;
-  else if (P.finish <= P.target) { verdict = `On track ✿ At your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.finish, P.target), 'day')} before your date.`; cls = 'ok'; }
+  else if (P.finish <= P.target) { verdict = `On track ✿ At your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.finish, P.target), 'day')} early.`; cls = 'ok'; }
   else { verdict = `Behind: at your pace you finish around ${fmtDay(P.finish)}, ${plural(dayDiff(P.target, P.finish), 'day')} late. Aim for ${wk(P.need)} topics a week.`; cls = 'bad'; }
-  return `
-  <section class="card">
-    <h2>Will I finish in time?</h2>
-    <div class="seg" style="margin-bottom:12px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${P.scope === k ? 'on' : ''}" data-act="planScope" data-v="${k}">${l}</button>`).join('')}</div>
+  return `<section class="card">
+    <h3>Will I finish in time?</h3>
     <div class="stat-grid">
       <div><div class="n">${P.left.length}</div><div class="l">Topics left</div></div>
-      <div><div class="n">${P.daysLeft == null ? '–' : Math.max(0, P.daysLeft)}</div><div class="l">Days to finish-by</div></div>
+      <div><div class="n">${P.daysLeft == null ? '–' : Math.max(0, P.daysLeft)}</div><div class="l">Days left</div></div>
       <div><div class="n">${wk(P.need)}</div><div class="l">Needed a week</div></div>
       <div><div class="n">${wk(P.rate)}</div><div class="l">Your pace a week</div></div>
     </div>
     <p class="pl-verdict ${cls}">${esc(verdict)}</p>
-    ${P.left.length ? `<p class="small muted">${scopeName}: ${plural(P.plannedLeft, 'topic')} of the ${P.left.length} left already have a day in your plan${P.daysLeft > 0 ? ' before your finish-by date' : ''}. ${P.left.length - P.plannedLeft ? `${P.left.length - P.plannedLeft} still need a day.` : 'Everything left is planned ✿'}</p>` : ''}
-    <p class="small muted">Pace counts topics you tick Learnt after ${esc(fmtDay(P.start))}, so topics you finished earlier don't inflate it.</p>
+    ${P.left.length ? `<p class="small muted">${plural(P.plannedLeft, 'topic')} of the ${P.left.length} left already have a day in your plan. ${P.left.length - P.plannedLeft ? `${P.left.length - P.plannedLeft} still need a day.` : 'Everything left is planned ✿'}</p>` : ''}
+    <p class="small muted">Pace counts topics ticked Learnt after ${esc(fmtDay(P.start))}, so earlier work doesn't inflate it.</p>
+  </section>`;
+}
+function planWeekView() {
+  const t = todayStr(), mon = isDay(S.planWeek) ? S.planWeek : mondayOf(t);
+  const days = [0, 1, 2, 3, 4, 5, 6].map(i => shiftDay(mon, i));
+  const all = days.flatMap(dayItems), done = all.filter(x => x.done).length;
+  const now = doThisNow(), over = overdueItems();
+  const cur = mon === mondayOf(t);
+  let nowCard = '';
+  if (now) {
+    const tp = now.it ? (now.it.topic && topicById(now.it.topic)) : now.topic;
+    const sec = now.sec || (tp ? sectionById([...(tp.gate || []), ...(tp.net || [])][0]) : null);
+    const title = now.it ? now.it.t : `Learn: ${shortName(now.topic)}`;
+    const sub = [sec ? sec.name : '', tp ? (learnt(tp) ? 'Learnt already' : 'Not started yet') : '', now.note].filter(Boolean).join('. ');
+    nowCard = `<article class="pl-now">
+      <span class="pl-now-k">Do this now</span>
+      <h3 class="pl-now-t">${esc(title)}</h3>
+      <p class="pl-now-s">${esc(sub)}.${tp ? ' Read your notes, then quiz yourself.' : ''}</p>
+      <div class="pl-now-b">
+        ${tp && topicQs(tp).length ? `<button class="btn pl-start" data-act="sylQuiz" data-id="${esc(tp.id)}">Start →</button>` : tp ? `<button class="btn pl-start" data-act="planOpenTopic" data-id="${esc(tp.id)}">Open topic →</button>` : ''}
+        ${now.it ? `<button class="sy-link-u" data-act="planToggle" data-d="${esc(now.d)}" data-id="${esc(now.it.id)}">Mark done</button>` : `<button class="sy-link-u" data-act="sylLearnt" data-id="${esc(tp.id)}">Mark learnt</button><button class="sy-link-u" data-act="planTopic" data-id="${esc(tp.id)}">Plan it</button>`}
+      </div>
+    </article>`;
+  }
+  return `
+  <div class="pl-weekbar"><span>${done} of ${all.length} done ${cur ? 'this week' : 'that week'}</span><div class="bar"><div style="width:${all.length ? (done / all.length) * 100 : 0}%"></div></div></div>
+  <div class="pl-nav">
+    <button class="icon-btn" data-act="planWeekGo" data-v="${shiftDay(mon, -7)}" aria-label="Previous week">‹</button>
+    <div class="pl-nav-mid"><div class="pl-nav-day">${cur ? 'This week' : esc(fmtDay(mon, { day: 'numeric', month: 'short' }) + ' week')}</div>
+      <div class="small muted">${esc(fmtDay(mon, { day: 'numeric', month: 'short' }))} – ${esc(fmtDay(days[6], { day: 'numeric', month: 'short' }))}</div>
+      ${cur ? '' : '<button class="btn text" data-act="planWeekGo" data-v="now" style="min-height:30px;padding:0">Back to this week</button>'}</div>
+    <button class="icon-btn" data-act="planWeekGo" data-v="${shiftDay(mon, 7)}" aria-label="Next week">›</button>
+  </div>
+  ${over.length ? `<div class="pl-over"><span>${plural(over.length, 'unfinished to-do')} from earlier days</span><button class="sy-link-u" data-act="planCarry">Move all to today</button></div>` : ''}
+  <div class="pl-board">
+    ${nowCard}
+    <div class="pl-days">${days.map(dayCard).join('')}</div>
+  </div>`;
+}
+function planMonthView() {
+  const t = todayStr(), m = /^\d{4}-\d{2}$/.test(S.planMonth || '') ? S.planMonth : t.slice(0, 7);
+  const first = m + '-01', d0 = parseDay(first), daysIn = new Date(d0.getFullYear(), d0.getMonth() + 1, 0).getDate();
+  const days = Array.from({ length: daysIn }, (_, i) => shiftDay(first, i));
+  const all = days.flatMap(dayItems), done = all.filter(x => x.done).length;
+  const goals = monthItems(m), gdone = goals.filter(x => x.done).length;
+  const prevM = shiftDay(first, -1).slice(0, 7), nextM = shiftDay(first, daysIn).slice(0, 7);
+  const lead = (d0.getDay() + 6) % 7;
+  const topics = [...new Set(all.map(it => it.topic).filter(Boolean))].map(topicById).filter(Boolean);
+  return `
+  <div class="pl-weekbar"><span>${done} of ${all.length} daily to-dos done this month</span><div class="bar"><div style="width:${all.length ? (done / all.length) * 100 : 0}%"></div></div></div>
+  <div class="pl-nav">
+    <button class="icon-btn" data-act="planMonthGo" data-v="${prevM}" aria-label="Previous month">‹</button>
+    <div class="pl-nav-mid"><div class="pl-nav-day">${esc(d0.toLocaleDateString(undefined, { month: 'long', year: 'numeric' }))}</div></div>
+    <button class="icon-btn" data-act="planMonthGo" data-v="${nextM}" aria-label="Next month">›</button>
+  </div>
+  <div class="pl-board">
+    <article class="pl-dcard strip-pink">
+      <span class="pl-dcount">${gdone} of ${goals.length} done</span>
+      <h4 class="pl-dtitle">What to finish this month</h4>
+      <div class="pl-items">${goals.map(it => itemHTML('M' + m, it)).join('') || '<p class="small muted">Write your goals for the month, for example “Finish Victorian novel”.</p>'}</div>
+      <button class="pl-addline" data-act="planAddOpen" data-d="M${m}">＋ Add a month goal</button>
+    </article>
+    <article class="pl-dcard strip-blue">
+      <h4 class="pl-dtitle">Month at a glance</h4>
+      <div class="pl-cal">${['M', 'T', 'W', 'T', 'F', 'S', 'S'].map(x => `<span class="h">${x}</span>`).join('')}${'<span></span>'.repeat(lead)}${days.map(d => {
+        const it = dayItems(d), dn = it.filter(x => x.done).length;
+        return `<button class="pl-cday ${d === t ? 'today' : ''} ${it.length && dn === it.length ? 'all' : ''}" data-act="planWeekGo" data-v="${mondayOf(d)}" data-view="week"><b>${parseDay(d).getDate()}</b><span>${it.length ? `${dn}/${it.length}` : ''}</span></button>`;
+      }).join('')}</div>
+      <p class="small muted">Tap a day to open its week.</p>
+    </article>
+    ${topics.length ? `<article class="pl-dcard strip-lilac"><h4 class="pl-dtitle">Topics planned this month · ${topics.filter(learnt).length}/${topics.length} learnt</h4>
+      ${topics.map(tp => `<div class="pl-item"><span class="pl-check static ${learnt(tp) ? 'on' : ''}">${learnt(tp) ? '✓' : ''}</span><button class="pl-text" data-act="planOpenTopic" data-id="${esc(tp.id)}">${esc(shortName(tp))}</button></div>`).join('')}</article>` : ''}
+  </div>`;
+}
+function planFinalView() {
+  const P = paceInfo(), t = todayStr(), sc = P.scope;
+  const end = isDay(P.target) ? P.target : shiftDay(t, 120);
+  const weeks = [];
+  for (let w = mondayOf(t); w <= end && weeks.length < 26; w = shiftDay(w, 7)) weeks.push(w);
+  const exs = sc === 'both' ? ['gate', 'net'] : [sc];
+  const secRows = exs.flatMap(ex => { const W = examWeights(ex); return sylSections(ex).map(s => ({ s, w: (W[s.id] || {}).marks, left: topicsIn(s.id).filter(x => !learnt(x)).length, n: topicsIn(s.id).length })); })
+    .filter(r => r.left).sort((a, b) => (b.w || 0) - (a.w || 0));
+  return `
+  <div class="seg" style="margin-bottom:12px">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${sc === k ? 'on' : ''}" data-act="planScope" data-v="${k}">${l}</button>`).join('')}</div>
+  ${paceHTML(P)}
+  <section class="card">
+    <h3>The road to ${sc === 'both' ? 'your exams' : EXAM_KEY[sc]}</h3>
+    <div class="pl-road">${weeks.map(w => {
+      const its = [0, 1, 2, 3, 4, 5, 6].flatMap(i => dayItems(shiftDay(w, i))), dn = its.filter(x => x.done).length;
+      const tps = new Set(its.map(x => x.topic).filter(Boolean)).size;
+      const marks = EXAMS.filter(([ex]) => exs.includes(ex) && examDate(ex) >= w && examDate(ex) <= shiftDay(w, 6)).map(([, n]) => n);
+      return `<button class="pl-rw ${w === mondayOf(t) ? 'now' : ''}" data-act="planWeekGo" data-v="${w}" data-view="week">
+        <span class="d">${esc(fmtDay(w, { day: 'numeric', month: 'short' }))}</span>
+        <span class="b"><i style="width:${its.length ? (dn / its.length) * 100 : 0}%"></i></span>
+        <span class="c">${its.length ? `${dn}/${its.length} · ${plural(tps, 'topic')}` : 'empty'}${marks.length ? ` · <b>${marks.join(' & ')} exam</b>` : ''}</span>
+      </button>`;
+    }).join('')}</div>
+    <p class="small muted">Weeks up to your finish-by date. Tap a week to open it.</p>
+  </section>
+  <section class="card">
+    <h3>Still to learn, biggest sections first</h3>
+    ${secRows.length ? `<div class="list">${secRows.map(r => `<div class="row"><span class="grow"><span class="name">${esc(r.s.name)}</span><br><span class="sub">${EXAM_KEY[r.s.exam]} · ${r.left} of ${r.n} topics left</span></span>${r.w != null ? `<span class="pill Medium">~${fmtMarks(r.w)} marks</span>` : ''}</div>`).join('')}</div>` : '<p class="muted small">Nothing left ✿</p>'}
   </section>`;
 }
 VIEWS.plan = () => {
   if (!S.syllabus) return VIEWS.syllabus();
-  const pl = sylP().plan, t = todayStr(), sel = isDay(S.planDay) ? S.planDay : t;
-  const items = dayItems(sel), over = overdueItems(), P = paceInfo();
-  const cd = EXAMS.map(([ex, nm]) => { const d = daysTo(examDate(ex)); return d == null ? '' : `<div class="pl-cd ${ex}"><span class="n">${d >= 0 ? d : '–'}</span><span class="l">days to ${nm}<br>${esc(fmtDay(examDate(ex), { day: 'numeric', month: 'short' }))}</span></div>`; }).join('');
-  const label = sel === t ? 'Today' : sel === shiftDay(t, 1) ? 'Tomorrow' : sel === shiftDay(t, -1) ? 'Yesterday' : fmtDay(sel, { weekday: 'long', day: 'numeric', month: 'short' });
-  const doneN = items.filter(x => x.done).length;
+  const v = ['week', 'month', 'final'].includes(S.planView) ? S.planView : 'week';
+  const ex = mainExam(), d = daysTo(examDate(ex)), other = ex === 'gate' ? 'net' : 'gate', d2 = daysTo(examDate(other));
+  const finalName = (sylP().plan.scope || 'both') === 'both' ? 'the exams' : EXAM_KEY[ex];
   return `
-  <section class="card">
-    <h2>My plan</h2>
-    <div class="pl-cds">${cd}</div>
-  </section>
-
-  ${over.length ? `<section class="card pl-over">
-    <h3>${plural(over.length, 'unfinished to-do')} from earlier days</h3>
-    <div class="btn-row"><button class="btn ghost" data-act="planCarry">Move all to today</button><button class="btn text" data-act="planShowOver">See them</button></div>
-  </section>` : ''}
-
-  <section class="card">
-    <div class="pl-nav">
-      <button class="icon-btn" data-act="planGo" data-v="${shiftDay(sel, -1)}" aria-label="Previous day">‹</button>
-      <div class="pl-nav-mid"><div class="pl-nav-day">${esc(label)}</div>${sel !== t ? '<button class="btn text" data-act="planGo" data-v="today" style="min-height:30px;padding:0">Back to today</button>' : ''}</div>
-      <button class="icon-btn" data-act="planGo" data-v="${shiftDay(sel, 1)}" aria-label="Next day">›</button>
-    </div>
-    ${weekStrip(sel)}
-    <p class="small muted" style="margin:12px 0 4px">${items.length ? `${doneN} of ${items.length} done` : 'Nothing planned for this day yet.'}</p>
-    <div class="pl-items">${items.map(it => { const tp = it.topic && topicById(it.topic); return `
-      <div class="pl-item ${it.done ? 'done' : ''}">
-        <button class="pl-check ${it.done ? 'on' : ''}" data-act="planToggle" data-d="${sel}" data-id="${esc(it.id)}" aria-label="${it.done ? 'Mark not done' : 'Mark done'}">${it.done ? '✓' : ''}</button>
-        <div class="grow"><div class="pl-text">${esc(it.t)}</div>${tp ? `<button class="sy-link" data-act="planOpenTopic" data-id="${esc(tp.id)}">${learnt(tp) ? '✓ ' : ''}${esc(tp.name)}</button>` : ''}</div>
-        <button class="icon-btn" data-act="planMove" data-d="${sel}" data-id="${esc(it.id)}" aria-label="Move to another day">⇄</button>
-        <button class="icon-btn" data-act="planDel" data-d="${sel}" data-id="${esc(it.id)}" aria-label="Delete">✕</button>
-      </div>`; }).join('')}</div>
-    <div class="pl-add">
-      <label class="field-label" for="pl-text">Add a to-do for ${esc(label.toLowerCase() === 'today' ? 'today' : fmtDay(sel, { day: 'numeric', month: 'short' }))}</label>
-      <input type="text" id="pl-text" placeholder="e.g. Read The Waste Land, sections I–III" enterkeyhint="done" autocomplete="off">
-      <label class="field-label" for="pl-topic">Syllabus topic (optional)</label>
-      ${topicSelect('pl-topic', S.planPreTopic || '')}
-      <p class="small muted">If you link a topic, ticking the to-do marks that topic Learnt.</p>
-      <button class="btn" data-act="planAdd">Add to-do</button>
+  <section class="card pl-headcard">
+    <div class="pl-head"><h2 class="pl-title">My plan</h2><button class="chip" data-act="planMore">More</button></div>
+    <p class="muted">${d != null ? `${d} days to ${esc(sylExams()[ex].name)}` : ''}${d2 != null && d2 >= 0 ? ` · ${d2} days to ${esc(sylExams()[other].name)}` : ''}. Three views: this week, this month, and the road to ${esc(finalName)}.</p>
+    <div class="pl-views">
+      <button class="pl-view ${v === 'week' ? 'on' : ''}" data-act="planView" data-v="week"><b>Weekly</b><span>What to do today</span></button>
+      <button class="pl-view ${v === 'month' ? 'on' : ''}" data-act="planView" data-v="month"><b>Monthly</b><span>What to finish this month</span></button>
+      <button class="pl-view ${v === 'final' ? 'on' : ''}" data-act="planView" data-v="final"><b>Final</b><span>The road to ${esc(finalName === 'the exams' ? 'the exams' : finalName)}</span></button>
     </div>
   </section>
+  ${v === 'week' ? planWeekView() : v === 'month' ? planMonthView() : planFinalView()}`;
+};
 
-  ${paceHTML(P)}
-
-  <section class="card">
-    <h3>Dates</h3>
+/* ---------- Plan sheets ---------- */
+function listFor(key) {
+  if (key[0] === 'M') { const m = key.slice(1), ms = sylP().plan.months; return ms[m] || (ms[m] = []); }
+  return planDays()[key] || (planDays()[key] = []);
+}
+function pruneKey(key) {
+  if (key[0] === 'M') { const ms = sylP().plan.months, m = key.slice(1); if (ms[m] && !ms[m].length) delete ms[m]; }
+  else pruneDay(key);
+}
+function findItem(key, id) { const l = key[0] === 'M' ? monthItems(key.slice(1)) : dayItems(key); return l.find(x => x.id === id); }
+function openAddSheet(key, preTopic) {
+  const isMonth = key[0] === 'M', m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Add">
+    <h3>${isMonth ? 'Add a month goal' : 'Add a to-do'}</h3>
+    <label class="field-label" for="pl-text">What will you do?</label>
+    <input type="text" id="pl-text" placeholder="${isMonth ? 'e.g. Finish the Victorian novel' : 'e.g. Read The Waste Land, sections I–III'}" autocomplete="off">
+    ${isMonth ? `<input type="hidden" id="pl-day" value="${esc(key)}">` : `<label class="field-label" for="pl-day">Day</label><input type="date" id="pl-day" value="${esc(key)}">`}
+    <label class="field-label" for="pl-topic">Syllabus topic (optional)</label>
+    ${topicSelect('pl-topic', preTopic || '')}
+    <p class="small muted">If you link a topic, ticking this off marks the topic Learnt.</p>
+    <div class="btn-row" style="margin-top:12px"><button class="btn" data-act="planAdd">Add</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
+  </div>`;
+  m.hidden = false;
+  setTimeout(() => { const el = $('#pl-text'); if (el) el.focus(); }, 50);
+}
+function openItemMenu(key, id) {
+  const it = findItem(key, id); if (!it) return;
+  const tp = it.topic && topicById(it.topic), isMonth = key[0] === 'M', m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Edit to-do">
+    <h3>Edit</h3>
+    <label class="field-label" for="ed-text">Text</label>
+    <input type="text" id="ed-text" value="${esc(it.t)}">
+    ${isMonth ? '' : `<label class="field-label" for="ed-day">Day</label><input type="date" id="ed-day" value="${esc(key)}">`}
+    <label class="field-label" for="ed-topic">Syllabus topic</label>
+    ${topicSelect('ed-topic', it.topic || '')}
+    <div class="btn-row" style="margin-top:12px">
+      <button class="btn" data-act="planSaveItem" data-d="${esc(key)}" data-id="${esc(id)}">Save</button>
+      ${tp ? `<button class="btn ghost" data-act="planOpenTopic" data-id="${esc(tp.id)}">Open topic</button>` : ''}
+    </div>
+    <button class="btn text danger" data-act="planDel" data-d="${esc(key)}" data-id="${esc(id)}">Delete</button>
+  </div>`;
+  m.hidden = false;
+}
+function openPlanMore() {
+  const pl = sylP().plan, m = $('#modal');
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Plan settings">
+    <h3>Dates & deadline</h3>
     <div class="grid2">
-      <div><label class="field-label" for="pl-gate">GATE date</label><input type="date" id="pl-gate" data-change="planDate" data-k="gateDate" value="${esc(examDate('gate'))}"></div>
-      <div><label class="field-label" for="pl-net">NET date</label><input type="date" id="pl-net" data-change="planDate" data-k="netDate" value="${esc(examDate('net'))}"></div>
+      <div><label class="field-label" for="pl-gate">GATE date</label><input type="date" id="pl-gate" value="${esc(examDate('gate'))}"></div>
+      <div><label class="field-label" for="pl-net">NET date</label><input type="date" id="pl-net" value="${esc(examDate('net'))}"></div>
     </div>
     <p class="small muted">${esc((sylExams().gate || {}).dateNote || '')} ${esc((sylExams().net || {}).dateNote || '')}</p>
     <label class="field-label" for="pl-target">Finish syllabus by (your own deadline)</label>
-    <input type="date" id="pl-target" data-change="planDate" data-k="target" value="${esc(isDay(pl.target) ? pl.target : '')}">
-    <p class="small muted">Leave blank to use the exam date. Keeping a few weeks before the exam gives you time to revise.</p>
+    <input type="date" id="pl-target" value="${esc(isDay(pl.target) ? pl.target : '')}">
+    <p class="small muted">Leave blank to use the exam date. A few weeks before the exam leaves time to revise.</p>
+    <label class="field-label">Plan for</label>
+    <div class="seg">${[['both', 'Both'], ['gate', 'GATE'], ['net', 'NET']].map(([k, l]) => `<button class="${(pl.scope || 'both') === k ? 'on' : ''}" data-act="planScope" data-v="${k}" data-keep="1">${l}</button>`).join('')}</div>
+    <div class="btn-row" style="margin-top:14px"><button class="btn" data-act="planSaveMore">Save</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
     <button class="btn text" data-act="planRestart">Count my pace from today</button>
-  </section>`;
-};
-function openOverdue() {
-  const over = overdueItems(), m = $('#modal');
-  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="Unfinished to-dos">
-    <h3>Unfinished to-dos</h3>
-    ${over.map(({ d, it }) => `<div class="pl-item"><div class="grow"><div class="pl-text">${esc(it.t)}</div><div class="small muted">${esc(fmtDay(d, { weekday: 'short', day: 'numeric', month: 'short' }))}</div></div>
-      <button class="chip" data-act="planMoveOne" data-d="${d}" data-id="${esc(it.id)}">To today</button></div>`).join('')}
-    <div class="btn-row" style="margin-top:12px"><button class="btn" data-act="planCarry">Move all to today</button><button class="btn ghost" data-act="closeModal">Close</button></div>
   </div>`;
   m.hidden = false;
 }
@@ -1815,17 +1965,29 @@ function moveItem(from, id, to) {
   (planDays()[to] || (planDays()[to] = [])).push(it);
   pruneDay(from);
 }
+function jumpToTopic(id) {
+  const t = topicById(id); if (!t) return;
+  S.sylExam = (t.gate || []).length ? (S.sylExam === 'net' && (t.net || []).length ? 'net' : S.sylExam || 'both') : 'net';
+  go('syllabus');
+  setTimeout(() => { const el = document.getElementById('t-' + id); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.add('flash'); } }, 60);
+}
 
 const SYL_ACT = {
-  sylMode: d => { S.sylMode = d.v; go('syllabus', true); },
-  sylFilter: d => { S.sylFilter = d.v; go('syllabus', true); },
-  sylOpen: d => { S.sylSec = d.id; go('sylSection'); },
+  sylExam: d => { S.sylExam = d.v; go('syllabus', true); },
+  sylSort: () => { const ui = sylP().sylUI; ui.sort = !ui.sort; saveProg(); go('syllabus', true); },
+  sylMore: (d, el) => { const c = el.previousElementSibling; if (!c) return; const open = c.classList.toggle('open'); el.textContent = open ? 'Show less' : 'Show more'; },
   sylLearnt: d => { const t = topicById(d.id); if (!t) return; setLearnt(t.id, !learnt(t)); saveProg(); go(S.screen, true); },
   sylQuizzed: d => { const t = topicById(d.id); if (!t) return; setQuizzed(t.id, !quizzed(t)); saveProg(); go(S.screen, true); },
   sylQuiz: d => {
-    const t = topicById(d.id), qz = t && topicQuiz(t); if (!qz) return;
-    if (qz.kind === 'guide') ACT.quizTopic({ id: qz.id });
-    else ACT.pickTopic({ v: qz.v });
+    const t = topicById(d.id), qs = t ? topicQs(t) : []; if (!qs.length) return toast('No questions for this topic yet');
+    Object.assign(S.filters, { work: { label: shortName(t), ids: qs.map(q => q.id) }, group: null, tags: null, query: '', mode: 'mix' });
+    closeModal(); go('home'); toast('Topic set — pick PYQs or Mix, then Start quiz');
+  },
+  sylQuizSec: d => {
+    const s = sectionById(d.id); if (!s) return;
+    const ids = sectionIds(s); if (!ids.length) return;
+    Object.assign(S.filters, { work: { label: s.name, ids }, group: null, tags: null, query: '', mode: 'mix' });
+    go('home'); toast('Section set — tap Start quiz');
   },
   sylAddCustom: () => openCustomTopic(),
   sylSaveCustom: () => {
@@ -1844,8 +2006,8 @@ const SYL_ACT = {
   },
   planTopic: d => {
     const t = topicById(d.id); if (!t) return;
-    openPlanDay(`Plan: ${t.name}`, day => {
-      (planDays()[day] || (planDays()[day] = [])).push({ id: uid(), t: `Study ${shortName(t)}`, topic: t.id, done: false });
+    openPlanDay(`Plan: ${shortName(t)}`, day => {
+      (planDays()[day] || (planDays()[day] = [])).push({ id: uid(), t: `Learn ${shortName(t)}`, topic: t.id, done: false });
       saveProg(); toast(`Added to ${fmtDay(day, { weekday: 'short', day: 'numeric', month: 'short' })}`);
     });
   },
@@ -1857,47 +2019,187 @@ const SYL_ACT = {
     if (fn) fn(v);
     go(S.screen, true);
   },
-  planGo: d => { S.planDay = d.v === 'today' ? todayStr() : d.v; go('plan', true); },
-  planScope: d => { sylP().plan.scope = d.v; saveProg(); go('plan', true); },
+  planView: d => { S.planView = d.v; go('plan', true); },
+  planWeekGo: (d, el) => { S.planWeek = d.v === 'now' ? mondayOf(todayStr()) : d.v; if (el && el.dataset.view) S.planView = 'week'; go('plan', true); },
+  planMonthGo: d => { S.planMonth = d.v; go('plan', true); },
+  planScope: (d, el) => {
+    sylP().plan.scope = d.v; saveProg();
+    if (el && el.dataset.keep) { el.parentNode.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === el)); return; }
+    go('plan', true);
+  },
+  planMore: () => openPlanMore(),
+  planSaveMore: () => {
+    const pl = sylP().plan;
+    [['pl-gate', 'gateDate'], ['pl-net', 'netDate'], ['pl-target', 'target']].forEach(([id, k]) => { const v = ($('#' + id) || {}).value; if (isDay(v)) pl[k] = v; else delete pl[k]; });
+    saveProg(); closeModal(); go('plan', true);
+  },
+  planAddOpen: d => openAddSheet(d.d),
   planAdd: () => {
-    const text = (($('#pl-text') || {}).value || '').trim(), topic = (($('#pl-topic') || {}).value || '');
+    const text = (($('#pl-text') || {}).value || '').trim(), topic = (($('#pl-topic') || {}).value || ''), key = (($('#pl-day') || {}).value || '');
     const tp = topic && topicById(topic);
     if (!text && !tp) return toast('Write a to-do first');
-    const day = isDay(S.planDay) ? S.planDay : todayStr();
-    (planDays()[day] || (planDays()[day] = [])).push({ id: uid(), t: text || `Study ${shortName(tp)}`, topic: tp ? tp.id : '', done: false });
-    S.planPreTopic = '';
-    saveProg(); go('plan', true);
-    const el = $('#pl-text'); if (el) el.focus();
+    if (key[0] !== 'M' && !isDay(key)) return toast('Choose a day');
+    listFor(key).push({ id: uid(), t: text || `Learn ${shortName(tp)}`, topic: tp ? tp.id : '', done: false });
+    saveProg(); closeModal(); go('plan', true);
+  },
+  planItemMenu: d => openItemMenu(d.d, d.id),
+  planSaveItem: d => {
+    const it = findItem(d.d, d.id); if (!it) return;
+    const text = (($('#ed-text') || {}).value || '').trim(), topic = (($('#ed-topic') || {}).value || ''), day = (($('#ed-day') || {}).value || '');
+    if (text) it.t = text;
+    it.topic = topic;
+    if (d.d[0] !== 'M' && isDay(day) && day !== d.d) moveItem(d.d, d.id, day);
+    saveProg(); closeModal(); go('plan', true);
   },
   planToggle: d => {
-    const it = dayItems(d.d).find(x => x.id === d.id); if (!it) return;
+    const it = findItem(d.d, d.id); if (!it) return;
     it.done = !it.done;
-    if (it.done && it.topic) { const tp = topicById(it.topic); if (tp && !learnt(tp)) { setLearnt(tp.id, true); toast(`“${tp.name}” marked Learnt ✿`, 3500); } }
+    if (it.done && it.topic) { const tp = topicById(it.topic); if (tp && !learnt(tp)) { setLearnt(tp.id, true); toast(`“${shortName(tp)}” marked Learnt ✿`, 3500); } }
     saveProg(); go('plan', true);
   },
   planDel: d => {
-    const list = dayItems(d.d), i = list.findIndex(x => x.id === d.id); if (i < 0) return;
-    list.splice(i, 1); pruneDay(d.d); saveProg(); go('plan', true);
+    const l = d.d[0] === 'M' ? monthItems(d.d.slice(1)) : dayItems(d.d), i = l.findIndex(x => x.id === d.id); if (i < 0) return;
+    l.splice(i, 1); pruneKey(d.d); saveProg(); closeModal(); go('plan', true);
   },
-  planMove: d => openPlanDay('Move to another day', day => { moveItem(d.d, d.id, day); saveProg(); toast('Moved'); }, shiftDay(d.d, 1)),
-  planMoveOne: d => { moveItem(d.d, d.id, todayStr()); saveProg(); if (overdueItems().length) openOverdue(); else closeModal(); go('plan', true); },
-  planCarry: () => { overdueItems().forEach(({ d, it }) => moveItem(d, it.id, todayStr())); saveProg(); closeModal(); S.planDay = todayStr(); toast('Moved to today'); go('plan', true); },
-  planShowOver: () => openOverdue(),
-  planOpenTopic: d => { const t = topicById(d.id); if (!t) return; const s = [...(t.gate || []), ...(t.net || [])][0]; if (s) { S.sylSec = s; go('sylSection'); } },
-  planRestart: () => { if (!confirm('Count your pace from today? Topics learnt before today will not count towards it.')) return; sylP().plan.start = todayStr(); saveProg(); go('plan', true); }
+  planCarry: () => { overdueItems().forEach(({ d, it }) => moveItem(d, it.id, todayStr())); saveProg(); closeModal(); S.planWeek = mondayOf(todayStr()); toast('Moved to today'); go('plan', true); },
+  planOpenTopic: d => { closeModal(); jumpToTopic(d.id); },
+  planRestart: () => { if (!confirm('Count your pace from today? Topics learnt before today will not count towards it.')) return; sylP().plan.start = todayStr(); saveProg(); closeModal(); go('plan', true); }
 };
-const SYL_IN = {
-  sylQuery: v => { S.sylQuery = v; const el = $('#sy-topic-list'); if (el) el.innerHTML = allTopicsHTML(); }
-};
+const SYL_IN = {};
 const SYL_CH = {
-  planDate: el => { const k = el.dataset.k; if (isDay(el.value)) sylP().plan[k] = el.value; else delete sylP().plan[k]; saveProg(); go('plan', true); }
+  sylUI: el => { sylP().sylUI[el.dataset.k] = el.checked; saveProg(); go('syllabus', true); }
 };
+
+(function addTrackerStyles() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .tabs { grid-template-columns: repeat(6, 1fr); padding-left: 6px; padding-right: 6px; }
+    .tabs button { font-size: 11px; padding: 0 2px; min-width: 0; }
+    .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .clamp.open { display: block; -webkit-line-clamp: unset; }
+    .sy-more { border: 0; background: none; padding: 2px 0; font: inherit; font-size: 13px; font-weight: 700; color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .sy-link-u { border: 0; background: none; padding: 6px 2px; min-height: 36px; font: inherit; font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+    .sy-controls { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .sy-controls > div { min-width: 0; }
+    @media (min-width: 640px) { .sy-controls { grid-template-columns: 1fr 1fr; gap: 20px; } }
+    .sy-check { min-height: 42px; font-weight: 600; font-size: 14.5px; }
+    .sy-progress { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 999px; background: #3b3150; color: #fdf6fb; }
+    :root[data-theme="dark"] .sy-progress { background: #1b1529; border: 1px solid var(--border); }
+    .sy-progress .lbl { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
+    .sy-seg { display: flex; flex: 1; gap: 2px; min-width: 0; height: 12px; }
+    .sy-seg i { flex: 1; border-radius: 2px; background: rgba(255,255,255,.18); min-width: 1px; }
+    .sy-seg i.on { background: var(--pink-strong); }
+    .sy-seg.small { flex: 0 1 auto; height: 10px; gap: 2px; overflow: hidden; }
+    .sy-seg.small i { flex: 0 1 7px; width: 7px; background: var(--border); }
+    .sy-card-prog span:last-child { white-space: nowrap; }
+    .sy-seg.small i.on { background: var(--purple); }
+    .sy-sort { min-height: 44px; padding: 0 18px; border-radius: 12px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .sy-sort.on { background: var(--lilac-soft); border-color: var(--lilac); color: var(--accent-ink); }
+    .sy-board { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 760px) { .sy-board.two { grid-template-columns: 1fr 1fr; } }
+    .sy-col { min-width: 0; }
+    .sy-col-head { border-radius: 20px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid var(--border); }
+    .sy-col-head.gate { background: var(--blue-soft); } .sy-col-head.net { background: var(--pinkrow); }
+    .sy-col-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.6rem; font-weight: 700; line-height: 1.1; margin-bottom: 4px; }
+    .sy-card { background: var(--card); border: 1px solid var(--border); border-radius: 22px; padding: 18px 18px 8px; margin-bottom: 14px; box-shadow: 0 6px 22px var(--shadow); }
+    .sy-card-part { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .sy-card-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.55rem; font-weight: 700; line-height: 1.15; margin: 4px 0 10px; }
+    .sy-card-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .sy-marks { display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border-radius: 999px; background: var(--ink); color: var(--card-2); font-weight: 800; font-size: 13.5px; }
+    .sy-marks.soft { background: var(--chip); color: var(--muted); border: 1.5px solid var(--border); }
+    .sy-outline { min-height: 34px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer; }
+    .sy-card-prog { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .sy-about { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin: 4px 0 0; }
+    .sy-tree { list-style: none; margin: 12px 0 0 8px; padding: 0 0 0 0; border-left: 2px solid var(--ink); }
+    .sy-node { position: relative; padding: 10px 0 14px 26px; }
+    .sy-node::before { content: ""; position: absolute; left: -2px; top: 0; width: 18px; height: 24px; border-left: 2px solid var(--ink); border-bottom: 2px solid var(--ink); border-bottom-left-radius: 12px; }
+    .sy-tree .sy-node:last-child { background: var(--card); margin-left: -2px; padding-left: 28px; }
+    .sy-tree .sy-node:last-child::before { left: 0; }
+    .sy-node-name { font-family: "Lora", Georgia, serif; font-size: 1.02rem; line-height: 1.35; }
+    .sy-node-name .cnt { font-family: "Nunito", sans-serif; font-size: 12.5px; color: var(--muted); }
+    .sy-node.is-learnt .sy-node-name { color: var(--ok); }
+    .sy-node-desc { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin-top: 3px; }
+    .sy-node-status { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 6px; font-size: 13px; color: var(--muted); }
+    .sy-mini { width: 54px; height: 6px; border-radius: 999px; background: var(--border); overflow: hidden; }
+    .sy-mini i { display: block; height: 100%; background: var(--ok); }
+    .sy-node-ticks { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
+    .sy-tick { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; padding: 0 12px 0 7px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--chip); font: inherit; font-weight: 800; font-size: 13px; color: var(--ink); cursor: pointer; }
+    .sy-tick .box { width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--lilac); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+    .sy-tick.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+    .sy-tick.on .box { background: var(--ok); border-color: var(--ok); color: var(--card-2); }
+    .sy-tick.q.on { background: var(--lilac-soft); border-color: var(--lilac); color: var(--accent-ink); }
+    .sy-tick.q.on .box { background: var(--purple); border-color: var(--purple); }
+    .sy-node.flash { animation: syflash 1.6s ease; }
+    @keyframes syflash { 0%, 60% { background: var(--lilac-soft); } 100% { background: transparent; } }
+    .sy-sheet { max-height: 85vh; overflow-y: auto; }
+    .pl-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .pl-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.1rem; letter-spacing: .02em; margin: 0; }
+    .pl-views { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 6px; }
+    .pl-view { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 12px; border-radius: 18px; border: 1.5px solid var(--border); background: var(--chip); font: inherit; color: var(--ink); text-align: left; cursor: pointer; min-width: 0; }
+    .pl-view b { font-size: 15px; }
+    .pl-view span { font-size: 11.5px; color: var(--muted); line-height: 1.25; }
+    .pl-view.on { background: var(--ink); border-color: var(--ink); color: var(--card-2); }
+    .pl-view.on span { color: var(--card-2); opacity: .8; }
+    .pl-weekbar { display: flex; align-items: center; gap: 12px; margin: 4px 4px 14px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .pl-weekbar span { white-space: nowrap; }
+    .pl-weekbar .bar { flex: 1; margin: 0; }
+    .pl-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+    .pl-nav-mid { text-align: center; }
+    .pl-nav-day { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+    .pl-over { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 8px 14px; margin-bottom: 12px; border-radius: 16px; background: var(--warn-bg); color: var(--warn); font-weight: 700; font-size: 14px; }
+    .pl-board { border-radius: 24px; padding: 16px 12px; margin-bottom: 16px; border: 1px solid var(--border);
+      background-color: var(--lilac-soft);
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 22px 22px; }
+    .pl-now { background: var(--card-2); border-radius: 18px; padding: 18px; margin-bottom: 16px; border-top: 6px solid var(--pink); box-shadow: 0 8px 24px var(--shadow); }
+    .pl-now-k { font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .pl-now-t { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.9rem; line-height: 1.15; margin: 8px 0; }
+    .pl-now-s { color: var(--muted); line-height: 1.5; margin: 0 0 14px; }
+    .pl-now-b { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+    .pl-start { width: auto; padding: 0 22px; }
+    .pl-days { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 380px) { .pl-days { grid-template-columns: 1fr; } }
+    .pl-dcard { background: var(--card-2); border-radius: 16px; padding: 14px 12px 6px; border-top: 6px solid var(--blue); box-shadow: 0 6px 18px var(--shadow); min-width: 0; margin-bottom: 0; }
+    .pl-board > .pl-dcard { margin-bottom: 12px; }
+    .pl-dcard.strip-pink { border-top-color: var(--pink-strong); } .pl-dcard.strip-lilac { border-top-color: var(--lilac); } .pl-dcard.strip-blue { border-top-color: var(--blue); }
+    .pl-dcard.today { outline: 2px solid var(--purple); outline-offset: 2px; }
+    .pl-dcard.past { opacity: .85; }
+    .pl-dcount { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .pl-dtitle { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.3rem; font-weight: 700; line-height: 1.2; margin: 6px 0 8px; overflow-wrap: anywhere; }
+    .pl-items { display: flex; flex-direction: column; }
+    .pl-item { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; }
+    .pl-check { flex: none; width: 26px; height: 26px; margin-top: 2px; border-radius: 7px; border: 2px solid var(--lilac); background: var(--input); font-weight: 800; font-size: 14px; color: var(--card-2); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+    .pl-check.on { background: var(--ok); border-color: var(--ok); }
+    .pl-check.static { cursor: default; }
+    .pl-text { flex: 1; min-width: 0; border: 0; background: none; padding: 3px 0; font: inherit; font-size: 14px; line-height: 1.4; color: var(--ink); text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+    .pl-item.done .pl-text { text-decoration: line-through; color: var(--muted); }
+    .pl-tp { display: block; font-size: 12px; color: var(--accent-ink); font-weight: 700; }
+    .pl-addline { width: 100%; min-height: 40px; margin-top: 4px; border: 1.5px dashed var(--border); border-radius: 12px; background: none; font: inherit; font-size: 13.5px; font-weight: 800; color: var(--accent-ink); cursor: pointer; }
+    .pl-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .pl-cal .h { text-align: center; font-size: 11px; font-weight: 800; color: var(--muted); }
+    .pl-cday { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 46px; border-radius: 10px; border: 1px solid var(--border); background: var(--input); font: inherit; color: var(--ink); cursor: pointer; padding: 0; }
+    .pl-cday b { font-size: 14px; } .pl-cday span { font-size: 10px; color: var(--muted); }
+    .pl-cday.today { border: 2px solid var(--purple); }
+    .pl-cday.all { background: var(--ok-bg); } .pl-cday.all span { color: var(--ok); font-weight: 800; }
+    .pl-verdict { margin: 14px 0 8px; padding: 12px 14px; border-radius: 14px; background: var(--lilac-soft); line-height: 1.5; font-weight: 600; }
+    .pl-verdict.ok { background: var(--ok-bg); color: var(--ok); }
+    .pl-verdict.bad { background: var(--bad-bg); color: var(--bad); }
+    .pl-road { display: flex; flex-direction: column; gap: 6px; }
+    .pl-rw { display: grid; grid-template-columns: 62px 1fr; grid-template-rows: auto auto; gap: 2px 10px; align-items: center; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--input); font: inherit; color: var(--ink); text-align: left; cursor: pointer; }
+    .pl-rw.now { border-color: var(--purple); background: var(--lilac-soft); }
+    .pl-rw .d { grid-row: span 2; font-weight: 800; font-size: 13.5px; }
+    .pl-rw .b { height: 7px; border-radius: 999px; background: var(--border); overflow: hidden; }
+    .pl-rw .b i { display: block; height: 100%; background: linear-gradient(90deg, var(--pink-strong), var(--purple)); }
+    .pl-rw .c { font-size: 12.5px; color: var(--muted); }
+    input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }`;
+  document.head.appendChild(s);
+})();
 
 /* =========================================================
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', sylSection: 'syllabus' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -2245,76 +2547,7 @@ document.addEventListener('keydown', e => {
     .nr-asked ul { margin: 8px 0 0; padding-left: 18px; }
     .nr-asked li { margin-bottom: 6px; }
     .nr-fact .name { font-weight: 700; }
-    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }
-    .tabs { grid-template-columns: repeat(6, 1fr); padding-left: 6px; padding-right: 6px; }
-    .tabs button { font-size: 11px; padding: 0 2px; min-width: 0; }
-    .sy-overall { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; font-size: .95rem; }
-    .sy-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; }
-    .sy-col { min-width: 0; }
-    .sy-col-head { border-radius: 18px; padding: 14px 12px; margin-bottom: 6px; border: 1px solid var(--border); }
-    .sy-col-head.gate { background: var(--blue-soft); }
-    .sy-col-head.net { background: var(--pinkrow); }
-    .sy-col-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; font-weight: 700; line-height: 1.1; }
-    .sy-big { font-size: 1.7rem; font-weight: 800; color: var(--accent-ink); margin-top: 4px; }
-    .sy-col-head .sub { font-size: 12.5px; color: var(--muted); }
-    .sy-part { font-size: 11.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 14px 4px 6px; line-height: 1.35; }
-    .sy-sec { display: block; width: 100%; text-align: left; font: inherit; color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 10px 11px; margin-bottom: 8px; box-shadow: 0 2px 10px var(--shadow); cursor: pointer; }
-    .sy-sec.done { border-color: var(--ok); }
-    .sy-sec-name { display: block; font-weight: 700; font-size: 13.5px; line-height: 1.3; }
-    .sy-sec-meta { display: block; font-size: 11.5px; color: var(--muted); }
-    .sy-sec .bar { display: block; }
-    .bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--pink-strong), var(--purple)); }
-    .sy-topic { padding: 12px 0; border-top: 1px solid var(--border); }
-    .card h3 + .sy-topic { border-top: 0; }
-    .sy-topic-name { font-family: "Lora", Georgia, serif; font-size: 1rem; line-height: 1.4; }
-    .sy-topic.is-learnt .sy-topic-name { color: var(--muted); }
-    .sy-topic-sub { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
-    .sy-tag { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; }
-    .sy-tag.gate { background: var(--blue); } .sy-tag.net { background: var(--pink); }
-    .sy-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .sy-actions .chip { min-height: 40px; font-size: 13.5px; }
-    .sy-tick { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 8px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--chip); font-weight: 800; font-size: 13.5px; color: var(--ink); cursor: pointer; }
-    .sy-tick .box { width: 24px; height: 24px; border-radius: 8px; border: 2px solid var(--lilac); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
-    .sy-tick.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
-    .sy-tick.on .box { background: var(--ok); border-color: var(--ok); color: var(--card-2); }
-    .sy-tick.q.on { background: var(--lilac-soft); border-color: var(--lilac); color: var(--accent-ink); }
-    .sy-tick.q.on .box { background: var(--purple); border-color: var(--purple); }
-    .sy-sheet { max-height: 85vh; overflow-y: auto; }
-    .sy-check { min-height: 42px; font-weight: 600; font-size: 14px; }
-    .sy-link { border: 0; background: var(--blue-soft); color: var(--accent-ink); border-radius: 999px; padding: 4px 10px; margin-top: 6px; font: inherit; font-size: 12.5px; font-weight: 700; text-align: left; cursor: pointer; }
-    .pl-cds { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .pl-cd { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 16px; border: 1px solid var(--border); }
-    .pl-cd.gate { background: var(--blue-soft); } .pl-cd.net { background: var(--pinkrow); }
-    .pl-cd .n { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.2rem; font-weight: 700; line-height: 1; color: var(--accent-ink); }
-    .pl-cd .l { font-size: 12px; color: var(--muted); font-weight: 700; line-height: 1.3; }
-    .pl-over { background: var(--warn-bg); }
-    .pl-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-    .pl-nav-mid { text-align: center; }
-    .pl-nav-day { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.5rem; font-weight: 700; }
-    .pl-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 12px; }
-    .pl-day { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 7px 0; border-radius: 14px; border: 1.5px solid var(--border); background: var(--chip); font: inherit; color: inherit; cursor: pointer; min-width: 0; }
-    .pl-day .w { font-size: 10.5px; font-weight: 800; color: var(--muted); text-transform: uppercase; }
-    .pl-day .n { font-weight: 800; font-size: 15px; }
-    .pl-day .c { font-size: 10.5px; color: var(--muted); }
-    .pl-day .c.all { color: var(--ok); font-weight: 800; }
-    .pl-day.today { border-color: var(--pink-strong); }
-    .pl-day.on { background: var(--lilac-soft); border-color: var(--lilac); }
-    .pl-items { display: flex; flex-direction: column; }
-    .pl-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-top: 1px solid var(--border); }
-    .pl-items .pl-item:first-child { border-top: 0; }
-    .pl-item .grow { flex: 1; min-width: 0; }
-    .pl-text { line-height: 1.45; padding-top: 6px; }
-    .pl-item.done .pl-text { text-decoration: line-through; color: var(--muted); }
-    .pl-check { flex: none; width: 34px; height: 34px; border-radius: 10px; border: 2px solid var(--lilac); background: var(--input); font-weight: 800; color: var(--card-2); cursor: pointer; }
-    .pl-check.on { background: var(--ok); border-color: var(--ok); }
-    .pl-item .icon-btn { flex: none; }
-    .pl-add { margin-top: 10px; padding-top: 6px; border-top: 1px dashed var(--border); }
-    .pl-add .btn { margin-top: 12px; }
-    .pl-verdict { margin: 14px 0 8px; padding: 12px 14px; border-radius: 14px; background: var(--lilac-soft); line-height: 1.5; font-weight: 600; }
-    .pl-verdict.ok { background: var(--ok-bg); color: var(--ok); }
-    .pl-verdict.bad { background: var(--bad-bg); color: var(--bad); }
-    input[type="date"] { width: 100%; min-height: 48px; border: 1.5px solid var(--border); border-radius: 14px; padding: 0 12px; background: var(--input); color: var(--ink); }
-    @media (max-width: 360px) { .sy-cols { grid-template-columns: 1fr; } }`;
+    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }`;
   document.head.appendChild(s);
 })();
 
