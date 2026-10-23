@@ -341,6 +341,7 @@ VIEWS.quiz = () => {
        <input type="text" id="nat-input" inputmode="decimal" enterkeyhint="done" autocomplete="off" placeholder="e.g. 25">`;
   const ok = picked ? isCorrect(q, picked) : false;
   const needsCheck = !picked && (multi || nat);
+  const last = z.i >= n - 1;
   return `
   <div class="quiz-top">
     <button class="icon-btn" data-act="endQuiz" aria-label="End quiz">✕</button>
@@ -372,7 +373,9 @@ VIEWS.quiz = () => {
     </div>
   </article>
   ${needsCheck ? '<button class="btn" data-act="check">Check answer</button>' : ''}
-  ${picked ? `<button class="btn" data-act="next">${z.i < n - 1 ? 'Next question' : 'See results'}</button>` : ''}
+  ${picked
+    ? `<button class="btn" data-act="next">${last ? 'See results' : 'Next question'}</button>`
+    : `<button class="btn ghost skip-btn" data-act="skip">${last ? 'Skip and see results' : 'Skip this question ›'}</button>`}
   <p class="center small muted" style="margin-top:14px">${esc(q.id)}</p>`;
 };
 
@@ -392,7 +395,9 @@ function finishQuiz() {
   const z = S.quiz;
   z.ms = Date.now() - z.start;
   z.done = z.list.filter(q => z.answers[q.id]);
-  if (!z.done.length) { S.quiz = null; go('home'); return; }
+  // Skipped = every question in this quiz that was not answered (skipped, or not reached if ended early).
+  z.skippedList = z.list.filter(q => !z.answers[q.id]);
+  if (!z.done.length) { S.quiz = null; go('home'); toast('No questions answered, so there is no score'); return; }
   z.wrong = z.done.filter(q => !isCorrect(q, z.answers[q.id]));
   z.score = z.done.length - z.wrong.length;
   S.prog.history.unshift({ date: new Date().toISOString(), title: z.title, score: z.score, total: z.done.length, ms: z.ms });
@@ -406,6 +411,7 @@ VIEWS.results = () => {
   const z = S.quiz;
   if (!z || !z.done) return VIEWS.home();
   const total = z.done.length, pct = Math.round((z.score / total) * 100);
+  const skipped = (z.skippedList || []).length;
   const missed = new Map();
   z.wrong.forEach(q => { const k = (q.topics || []).join(' › ') || 'Untagged'; missed.set(k, (missed.get(k) || 0) + 1); });
   const missedList = [...missed].sort((a, b) => b[1] - a[1]);
@@ -413,9 +419,11 @@ VIEWS.results = () => {
   <section class="card score">
     <span class="label">${esc(z.title || 'Quiz')} · results</span>
     <div class="big">${z.score} / ${total}</div>
-    <div class="meta"><span>${pct}%</span><span>⏱ ${fmtTime(z.ms)}</span>${total < z.list.length ? `<span>${z.list.length - total} skipped</span>` : ''}</div>
+    <div class="meta"><span>${pct}%</span><span>⏱ ${fmtTime(z.ms)}</span>${skipped ? `<span>${skipped} skipped</span>` : ''}</div>
     ${z.mastered ? `<p class="small" style="margin-top:10px">✿ ${plural(z.mastered, 'question')} passed the final revision check</p>` : ''}
   </section>
+
+  ${skipped ? `<button class="btn ghost" data-act="retrySkipped" style="margin-bottom:16px">Answer the ${plural(skipped, 'skipped question')}</button>` : ''}
 
   ${z.wrong.length ? `
   <div class="btn-row" style="margin-bottom:16px">
@@ -437,7 +445,7 @@ VIEWS.results = () => {
         <button class="chip ${bm ? 'on' : ''}" data-act="bookmark" data-id="${esc(q.id)}">${bm ? '★ Bookmarked' : '☆ Bookmark'}</button>
       </div>`;
     }).join('')}
-  </section>` : '<section class="card center"><h3>A perfect round ✿</h3><p class="muted">Every answer correct.</p></section>'}
+  </section>` : `<section class="card center"><h3>${skipped ? 'No wrong answers ✿' : 'A perfect round ✿'}</h3><p class="muted">Every answer${skipped ? ' you gave was' : ''} correct.</p></section>`}
 
   <button class="btn ghost" data-act="tab" data-tab="home">Back to quiz home</button>`;
 };
@@ -1039,6 +1047,14 @@ const ACT = {
     }
   },
   next: () => { const z = S.quiz; if (z.i < z.list.length - 1) { z.i++; go('quiz'); } else finishQuiz(); },
+  // Skip: moves on without answering. Nothing is recorded — not wrong, not a mistake, no change to revision.
+  skip: () => {
+    const z = S.quiz, q = z.list[z.i];
+    if (z.answers[q.id]) return;
+    if (z.sel) delete z.sel[q.id];
+    if (z.i < z.list.length - 1) { z.i++; go('quiz'); toast('Skipped — you can answer it from the results'); }
+    else finishQuiz();
+  },
   endQuiz: () => {
     const z = S.quiz, answered = Object.keys(z.answers).length;
     if (!answered) { if (confirm('Leave this quiz?')) { S.quiz = null; go('home'); } return; }
@@ -1065,6 +1081,7 @@ const ACT = {
 
   /* results */
   retryWrong: () => startQuiz(shuffleArr(S.quiz.wrong), 'Retry wrong ones'),
+  retrySkipped: () => startQuiz((S.quiz.skippedList || []).slice(), 'Skipped questions'),
   bookmarkWrong: () => { S.quiz.wrong.forEach(q => { if (!S.prog.bookmarks[q.id]) S.prog.bookmarks[q.id] = Date.now(); }); saveProg(); toast('All wrong questions bookmarked ★'); go('results', true); },
 
   /* guide & stats */
@@ -1235,14 +1252,16 @@ document.addEventListener('keydown', e => {
 /* =========================================================
    START
    ========================================================= */
-// Small extra styles for multi-answer selection and the number box (kept here so style.css needs no change).
+// Small extra styles for multi-answer selection, the number box and the Skip button
+// (kept here so style.css needs no change).
 (function addAnswerStyles() {
   const s = document.createElement('style');
   s.textContent = `
     .opt.selected { outline: 2px solid #a98bd6; outline-offset: -2px; background: rgba(169, 139, 214, .18); }
     #nat-input { width: 100%; margin-top: 6px; font-size: 1.1rem; }
     .nat-given { margin-top: 12px; }
-    #verify-note { width: 100%; }`;
+    #verify-note { width: 100%; }
+    .btn + .skip-btn { margin-top: 10px; }`;
   document.head.appendChild(s);
 })();
 
