@@ -135,6 +135,8 @@ function indexQ(q) {
 }
 const ENDINGS = /^(s|es|ed|er|ers|al|ic|ics|tic|ist|ists|tist|tists|ian|ians|ism|isms|an|ans|ese|ity|ly|ry|tions?|ation|ations)$/;
 function tokenMatch(tok, W) {
+  // "=name" means a writer's name: match the whole name (so "attia" doesn't find "attic").
+  if (tok[0] === '=') { const n = tok.slice(1); return W.some(w => w.startsWith(n)); }
   const stem = tok.length > 4 ? tok.slice(0, Math.max(4, tok.length - 2)) : tok;
   // A word plus a real ending also counts: "dramatists" finds "drama", "novels" finds "novel".
   // (But "wordsworth" must not find "words", nor "postcolonial" find "post".)
@@ -171,13 +173,32 @@ function editDist(a, b, max) {             // letters added, removed, changed or
   }
   return d[a.length][b.length];
 }
+// Words that make up writers' names, e.g. attia, hosain, kamala, dickens.
+let NAMES = null;
+function nameWords() {
+  if (!NAMES) { const s = new Set(); S.questions.forEach(q => (q.writers || []).forEach(w => words(w).forEach(x => { if (x.length >= 4) s.add(x); }))); NAMES = [...s]; }
+  return NAMES;
+}
 let RTMEMO = { key: null, val: null };
 function resolveTokens(toks) {
   const key = toks.join(' ');
   if (RTMEMO.key === key && RTMEMO.val) return RTMEMO.val;
-  const V = vocab();
-  let groups = toks.map(t => [t]);
-  // Only when the search as typed finds nothing in the whole bank do we try spelling fixes.
+  const V = vocab(), N = nameWords();
+  // 1) Writer names: an exact name is matched as a whole name; a misspelt name
+  //    (not just half-typed) goes to the closest real name, e.g. "attai" → "attia".
+  let groups = toks.map(t => {
+    if (t.length < 4 || /\d/.test(t)) return [t];
+    if (N.includes(t)) return ['=' + t];
+    if (V.includes(t) || N.some(n => n.startsWith(t))) return [t];
+    const max = t.length >= 8 ? 2 : 1;
+    const alts = N.map(n => [n, editDist(t, n, max)]).filter(x => x[1] <= max)
+      .sort((x, y) => x[1] - y[1]).map(x => '=' + x[0]).slice(0, 6);
+    return alts.length ? alts : [t];
+  });
+  if (S.questions.some(q => matchesQuery(q, groups))) { RTMEMO = { key, val: groups }; return groups; }
+  groups = toks.map(t => [t]);
+  // 2) Other words:
+  // only when the search as typed finds nothing in the whole bank do we try spelling fixes.
   if (!S.questions.some(q => matchesQuery(q, toks))) {
     groups = toks.map(t => {
       if (t.length < 4 || /\d/.test(t) || V.includes(t)) return [t];     // a real word stays as typed
@@ -261,7 +282,7 @@ function filtered() {
         extra = list.filter(q => !ids.has(q.id) && aboutWorks(q, works));
       }
       // For the "Showing results for…" line, pick the spelling in each group that actually found questions.
-      const used = groups.map((g, i) => g.length === 1 ? toks[i] : ([toks[i]].concat(g).find(x => direct.some(q => tokenMatch(x, indexQ(q)))) || toks[i]));
+      const used = groups.map((g, i) => (g.length === 1 ? g[0] : ([toks[i]].concat(g).find(x => direct.some(q => tokenMatch(x, indexQ(q)))) || toks[i])).replace(/^=/, ''));
       const fixed = used.some((u, i) => u !== toks[i]);
       S.searchInfo = { fix: fixed && direct.length ? used.join(' ') : '', extra: extra.length, writers };
       list = direct.concat(extra);
@@ -365,7 +386,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; VOCAB = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
