@@ -386,7 +386,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -701,6 +701,11 @@ function guideListHTML() {
     </button>`).join('')}</div>`;
 }
 VIEWS.guide = () => `
+  <button class="card kx-entry" data-act="openExam">
+    <span class="cat-icon" aria-hidden="true">⚖</span>
+    <span class="grow"><span class="name">Know your exam</span><br><span class="sub">How NET and GATE ask differently, with real examples</span></span>
+    <span class="chev">›</span>
+  </button>
   <section class="card">
     <h2>Must-learn overview</h2>
     <p class="muted small">Every PYQ is sorted into these sections automatically. Counts and High / Medium / Low update as new papers are added.</p>
@@ -823,6 +828,150 @@ VIEWS.guideTopic = () => {
     <h3>Recurring question patterns</h3>
     ${types.length ? `<div class="chips" style="margin-bottom:10px">${types.map(x => `<span class="chip soft">${esc(x.name)} ×${x.count}</span>`).join('')}</div>` : ''}
     ${(t.patterns || []).length ? `<ul>${t.patterns.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : (types.length ? '' : '<p class="muted small">Patterns appear once PYQs are tagged.</p>')}
+  </section>`;
+};
+
+/* ---------- Know your exam ----------
+   Everything here is counted live from questions.json, so it updates as papers are added.
+   GATE's General Aptitude and Reasoning & Comprehension sections are left out, so
+   only the English (literature) questions of both exams are compared.               */
+const NON_LIT = new Set(['reasoning & comprehension', 'general aptitude', 'ga']);
+const qYear = q => { const m = String(q.year || q.session || '').match(/\d{4}/); return m ? +m[0] : 0; };
+const isLitQ = q => !NON_LIT.has(norm((q.topics || [])[0]));
+const ansKeys = q => isNAT(q) ? [] : ansList(q).map(L => normTitle((q.options || {})[L] || '')).filter(x => x.length > 3);
+const pct = (a, b) => b ? Math.round((a / b) * 100) : 0;
+let ECACHE = null;
+function examStats() {
+  if (ECACHE) return ECACHE;
+  const net = S.questions.filter(q => q.exam === 'NET' && qYear(q) && isLitQ(q));
+  const gate = S.questions.filter(q => q.exam === 'GATE' && qYear(q) && isLitQ(q));
+  // When did NET first ask each work, writer and answer?
+  const workFirst = new Map(), writerFirst = new Map(), ansFirst = new Map(), workNet = new Map();
+  const first = (m, k, y) => { if (k && (!m.has(k) || m.get(k) > y)) m.set(k, y); };
+  net.forEach(q => {
+    const y = qYear(q);
+    (q.works || []).forEach(w => { const k = normTitle(w); if (!k) return; first(workFirst, k, y); if (!workNet.has(k)) workNet.set(k, []); workNet.get(k).push(q); });
+    (q.writers || []).forEach(w => first(writerFirst, normTitle(w), y));
+    ansKeys(q).forEach(k => first(ansFirst, k, y));
+  });
+  let work = 0, writer = 0, fresh = 0, same = 0;
+  const examples = [];
+  gate.forEach(g => {
+    const Y = qYear(g);
+    const seenWorks = (g.works || []).map(normTitle).filter(k => workFirst.has(k) && workFirst.get(k) < Y);
+    const seenWriter = (g.writers || []).map(normTitle).some(k => writerFirst.has(k) && writerFirst.get(k) < Y);
+    if (seenWorks.length) work++; else if (seenWriter) writer++; else fresh++;
+    const gAns = ansKeys(g);
+    if (gAns.some(k => ansFirst.has(k) && ansFirst.get(k) < Y)) same++;
+    // Example pairs: same work, earlier NET question, but a different answer (= a new angle).
+    if (seenWorks.length && (g.works || []).length <= 2 && String(g.question).length < 600) {
+      seenWorks.forEach(k => {
+        const n = (workNet.get(k) || []).filter(x => qYear(x) < Y && (x.works || []).length <= 3 && String(x.question).length < 600 && !ansKeys(x).some(a => gAns.includes(a)))
+          .sort((a, b) => (a.works || []).length - (b.works || []).length || qYear(b) - qYear(a))[0];
+        if (!n) return;
+        // Clearer pairs first: the work's title appears in both questions (or their answers).
+        const mentions = q => ` ${words(q.question + ' ' + answerText(q)).join(' ')} `.includes(` ${k} `);
+        const score = (g.works || []).length + (n.works || []).length - (mentions(n) ? 3 : 0) - (mentions(g) ? 3 : 0);
+        examples.push({ work: (g.works || []).find(w => normTitle(w) === k) || k, net: n, gate: g, score });
+      });
+    }
+  });
+  const seen = new Set();
+  const best = examples.sort((a, b) => a.score - b.score || qYear(b.gate) - qYear(a.gate))
+    .filter(e => { const k = normTitle(e.work); if (seen.has(k) || seen.has(e.gate.id)) return false; seen.add(k); seen.add(e.gate.id); return true; });
+  // Mix GATE years: take the best pair from each year in turn, newest year first.
+  const byYear = new Map();
+  best.forEach(e => { const y = qYear(e.gate); if (!byYear.has(y)) byYear.set(y, []); byYear.get(y).push(e); });
+  const queues = [...byYear.keys()].sort((a, b) => b - a).map(y => byYear.get(y));
+  const ex = [];
+  while (queues.some(q => q.length)) queues.forEach(q => { if (q.length) ex.push(q.shift()); });
+  const profile = list => {
+    const n = list.length, c = f => list.filter(f).length;
+    return {
+      n,
+      msq: pct(c(isMSQ), n),
+      passage: pct(c(q => q.type === 'passage' || isQuoteQ(q)), n),
+      match: pct(c(q => q.type === 'match'), n),
+      chron: pct(c(q => q.type === 'chronology'), n),
+      ar: pct(c(q => q.type === 'assertion-reason'), n),
+      single: pct(c(q => !isMSQ(q) && !isNAT(q) && (q.type || 'MCQ') === 'MCQ' && !isQuoteQ(q)), n)
+    };
+  };
+  const G = buildGuide();
+  const areas = G.cats.filter(c => !c.overlay && c.auto !== 'unmatched').map(c => {
+    const ids = new Set(c.qs.map(q => q.id));
+    return { name: c.name, net: pct(net.filter(q => ids.has(q.id)).length, net.length), gate: pct(gate.filter(q => ids.has(q.id)).length, gate.length) };
+  }).filter(a => a.net >= 2 || a.gate >= 2).sort((a, b) => b.gate - a.gate || b.net - a.net);
+  const years = list => { const y = list.map(qYear); return y.length ? `${Math.min(...y)}–${Math.max(...y)}` : ''; };
+  ECACHE = { net: profile(net), gate: profile(gate), gN: gate.length, nN: net.length, work, writer, fresh, same, ex, areas, gYears: years(gate), nYears: years(net) };
+  return ECACHE;
+}
+function exampleHTML(e) {
+  const side = (q, label) => `
+    <div class="ex-side">
+      <div class="tags"><span class="tag src">${esc(label)} · ${esc(sourceTag(q))}</span></div>
+      <div class="q">${esc(q.question)}</div>
+      <div class="ans">Answer: <b>${esc(answerText(q))}</b></div>
+    </div>`;
+  return `<div class="ex-pair">
+    <div class="ex-work">✦ ${esc(e.work)}</div>
+    ${side(e.net, 'First in NET')}
+    <div class="ex-arrow">↓ asked again, differently</div>
+    ${side(e.gate, 'Then in GATE')}
+  </div>`;
+}
+VIEWS.exam = () => {
+  const E = examStats();
+  if (!E.gN || !E.nN) return `<button class="chip back" data-act="tab" data-tab="guide">‹ Guide</button>
+    <section class="card"><h2>Know your exam</h2><p class="muted">This fills in once both NET and GATE papers are in the bank.</p></section>`;
+  const bar = (label, v) => `<div class="kx-row"><span>${label}</span><b>${v}%</b></div><div class="bar"><div style="width:${v}%"></div></div>`;
+  const cmp = (label, a, b) => `<tr><td>${label}</td><td>${a}%</td><td>${b}%</td></tr>`;
+  const shown = S.examShow || 3;
+  return `
+  <button class="chip back" data-act="tab" data-tab="guide">‹ Guide</button>
+  <section class="card">
+    <h2>Know your exam</h2>
+    <p class="muted small">How NET and GATE English papers differ, counted from the ${plural(E.nN, 'NET question')} (${esc(E.nYears)}) and ${plural(E.gN, 'GATE question')} (${esc(E.gYears)}) in the bank. GATE's aptitude and reasoning sections are left out. These numbers update as papers are added.</p>
+  </section>
+
+  <section class="card">
+    <h3>How GATE uses NET</h3>
+    <p class="small muted">For each GATE question: had NET already asked about it in an earlier year?</p>
+    ${bar('Same <i>work</i> NET had asked', pct(E.work, E.gN))}
+    ${bar('Same <i>writer</i> NET had asked (different work)', pct(E.writer, E.gN))}
+    ${bar('Completely new ground', pct(E.fresh, E.gN))}
+    <p class="kx-key">But only <b>${pct(E.same, E.gN)}%</b> had the <b>same answer</b> as an earlier NET question. GATE reuses NET's texts and writers, then asks them from a new angle.</p>
+  </section>
+
+  <section class="card">
+    <h3>How each exam asks</h3>
+    <table class="kx-table">
+      <tr><th></th><th>NET</th><th>GATE</th></tr>
+      ${cmp('Multi-answer (MSQ)', E.net.msq, E.gate.msq)}
+      ${cmp('Passage or quotation based', E.net.passage, E.gate.passage)}
+      ${cmp('Match the following', E.net.match, E.gate.match)}
+      ${cmp('Chronology', E.net.chron, E.gate.chron)}
+      ${cmp('Assertion–reason', E.net.ar, E.gate.ar)}
+      ${cmp('Plain single-answer MCQ', E.net.single, E.gate.single)}
+    </table>
+    <p class="small muted" style="margin-top:8px">A question can count in more than one row (for example, a passage-based MSQ).</p>
+  </section>
+
+  <section class="card">
+    <h3>What each exam favours</h3>
+    <p class="small muted">Share of each exam's questions, by Guide section.</p>
+    <table class="kx-table">
+      <tr><th></th><th>NET</th><th>GATE</th></tr>
+      ${E.areas.map(a => `<tr class="${a.gate - a.net >= 5 ? 'gate-more' : a.net - a.gate >= 5 ? 'net-more' : ''}"><td>${esc(a.name)}</td><td>${a.net}%</td><td>${a.gate}%</td></tr>`).join('')}
+    </table>
+    <p class="small muted" style="margin-top:8px"><span class="kx-dot gate-more"></span> GATE asks this noticeably more · <span class="kx-dot net-more"></span> NET asks it more</p>
+  </section>
+
+  <section class="card">
+    <h3>Same text, new angle</h3>
+    <p class="small muted">Real pairs from the bank: NET asked about a work first, then GATE asked about the same work in a different way.</p>
+    ${E.ex.length ? E.ex.slice(0, shown).map(exampleHTML).join('') : '<p class="muted small">Examples appear as more papers are added.</p>'}
+    ${E.ex.length > shown ? `<button class="btn ghost" data-act="moreExamples">Show more examples (${E.ex.length - shown} left)</button>` : ''}
   </section>`;
 };
 
@@ -1090,7 +1239,7 @@ function openVerify(id) {
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', adminList: 'more', adminForm: 'more' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', adminList: 'more', adminForm: 'more' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -1217,6 +1366,8 @@ const ACT = {
 
   /* guide & stats */
   openGuide: d => { const t = gNode(d.id); if (!t) return; S.guideId = d.id; go(t.cat ? 'guideTopic' : 'guideCat'); },
+  openExam: () => { S.examShow = 3; go('exam'); },
+  moreExamples: () => { S.examShow = (S.examShow || 3) + 3; go('exam', true); },
   guideMode: d => { S.guideMode = d.v; S.guideQuery = ''; go('guide', true); },
   quizTopic: d => {
     const t = gNode(d.id); if (!t) return;
@@ -1392,7 +1543,25 @@ document.addEventListener('keydown', e => {
     #nat-input { width: 100%; margin-top: 6px; font-size: 1.1rem; }
     .nat-given { margin-top: 12px; }
     #verify-note { width: 100%; }
-    .btn + .skip-btn { margin-top: 10px; }`;
+    .btn + .skip-btn { margin-top: 10px; }
+    .kx-entry { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; cursor: pointer; font: inherit; color: inherit; }
+    .kx-entry .name { font-weight: 700; font-size: 1.05rem; }
+    .kx-entry .sub { color: var(--muted); font-size: .88rem; }
+    .kx-row { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: .95rem; }
+    .kx-key { margin: 16px 0 0; padding: 12px 14px; border-radius: 14px; background: var(--lilac-soft); }
+    .kx-table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    .kx-table th { text-align: right; color: var(--muted); font-weight: 700; padding: 6px 4px; font-size: .8rem; letter-spacing: .04em; }
+    .kx-table td { padding: 9px 4px; border-top: 1px solid var(--border); }
+    .kx-table td:not(:first-child) { text-align: right; white-space: nowrap; width: 3.6em; font-weight: 700; }
+    .kx-table tr.gate-more td { background: var(--blue-soft); }
+    .kx-table tr.net-more td { background: var(--pinkrow); }
+    .kx-dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; vertical-align: middle; }
+    .kx-dot.gate-more { background: var(--blue); } .kx-dot.net-more { background: var(--pink); }
+    .ex-pair { border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin-top: 14px; background: var(--card-2); }
+    .ex-work { font-weight: 700; color: var(--accent-ink); margin-bottom: 8px; }
+    .ex-side .q { white-space: pre-line; margin: 6px 0; }
+    .ex-side .ans { font-size: .9rem; }
+    .ex-arrow { text-align: center; color: var(--muted); font-size: .85rem; margin: 10px 0; }`;
   document.head.appendChild(s);
 })();
 
@@ -1415,7 +1584,7 @@ async function loadData() {
     ]);
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
-    GCACHE = null; WCACHE = null;
+    GCACHE = null; WCACHE = null; ECACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();
