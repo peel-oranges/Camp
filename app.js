@@ -903,7 +903,69 @@ function examStats() {
     return { name: c.name, net: pct(net.filter(q => ids.has(q.id)).length, net.length), gate: pct(gate.filter(q => ids.has(q.id)).length, gate.length) };
   }).filter(a => a.net >= 2 || a.gate >= 2).sort((a, b) => b.gate - a.gate || b.net - a.net);
   const years = list => { const y = list.map(qYear); return y.length ? `${Math.min(...y)}–${Math.max(...y)}` : ''; };
-  ECACHE = { net: profile(net), gate: profile(gate), gN: gate.length, nN: net.length, work, writer, fresh, same, ex, areas, gYears: years(gate), nYears: years(net) };
+
+  // Deep dive 1: the more often NET asked a work, the likelier GATE picks it up.
+  const picked = new Map();                     // work → how many earlier NET questions it had when GATE used it
+  gate.forEach(g => (g.works || []).forEach(w => {
+    const k = normTitle(w), p = (workNet.get(k) || []).filter(q => qYear(q) < qYear(g)).length;
+    if (p) picked.set(k, Math.max(picked.get(k) || 0, p));
+  }));
+  const BANDS = [['once', 1, 1], ['2–3 times', 2, 3], ['4–6 times', 4, 6], ['7 or more times', 7, 1e9]];
+  const pickup = BANDS.map(([label, lo, hi]) => {
+    const ws = [...workNet.entries()].filter(([, v]) => v.length >= lo && v.length <= hi);
+    const hit = ws.filter(([k]) => picked.has(k)).length;
+    return { label, works: ws.length, hit, rate: ws.length ? Math.round((hit / ws.length) * 1000) / 10 : 0 };
+  });
+  const titleOf = new Map();
+  gate.forEach(g => (g.works || []).forEach(w => { const k = normTitle(w); if (!titleOf.has(k)) titleOf.set(k, w); }));
+  const borrowed = [...picked.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, n]) => ({ title: titleOf.get(k) || k, n }));
+
+  // Deep dive 2: writer fame (NET's 25 most-asked writers) in each exam.
+  const wc = new Map(), wName = new Map();
+  net.forEach(q => (q.writers || []).forEach(w => { const k = normTitle(w); if (k) { wc.set(k, (wc.get(k) || 0) + 1); if (!wName.has(k)) wName.set(k, w); } }));
+  const top25 = new Set([...wc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25).map(e => e[0]));
+  const famous = list => pct(list.filter(q => (q.writers || []).some(w => top25.has(normTitle(w)))).length, list.length);
+
+  // Deep dive 3: question angle.
+  const ANGLES = ['Group texts or writers by a feature', 'Which statements are true', 'Term or definition', 'Passage or quotation', 'Odd one out (NOT / except)', 'Match the following', 'Who wrote it', 'Character, plot or date', 'Chronology', 'Assertion–reason'];
+  const angleOf = q => {
+    const raw = String(q.question || ''), t = deaccent(raw).toLowerCase().replace(/\s+/g, ' ');
+    if (q.type === 'match') return 'Match the following';
+    if (q.type === 'chronology') return 'Chronology';
+    if (q.type === 'assertion-reason') return 'Assertion–reason';
+    if (q.type === 'passage' || /[“"‘][^”"’]{40,}/.test(raw)) return 'Passage or quotation';
+    if (/\b(not|except|does not|do not|odd)\b/.test(t) && /which|identify/.test(t)) return 'Odd one out (NOT / except)';
+    if (/statements?\(?s?\)? (is|are)|is\/are (true|correct)|(true|correct) (of|about)|proposes|advocated|argues|according to/.test(t)) return 'Which statements are true';
+    if (/(what is common|which of the following|which among the following|which one of the following)[^?]*?\b(novels?|poems?|plays?|works?|texts?|writers?|poets?|critics?|thinkers?|theorists?|dramatists?|novelists?|narratives?|essays?)\b/.test(t) && !/who wrote|author of|written by/.test(t)) return 'Group texts or writers by a feature';
+    if (/\b(who (wrote|is the author|authored)|author of|written by|which (writer|poet|novelist|dramatist|critic)\b)/.test(t)) return 'Who wrote it';
+    if (/(_{3,}|example of|is called|is known as|\bterm\b|refers to|defin)/.test(t)) return 'Term or definition';
+    if (/\b(character|narrator|protagonist|hero|heroine|speaker|published|first performed|edition)\b/.test(t)) return 'Character, plot or date';
+    return null;
+  };
+  const angleShare = list => { const c = {}; list.forEach(q => { const a = angleOf(q); if (a) c[a] = (c[a] || 0) + 1; }); return c; };
+  const aN = angleShare(net), aG = angleShare(gate);
+  const angles = ANGLES.map(a => ({ name: a, net: pct(aN[a] || 0, net.length), gate: pct(aG[a] || 0, gate.length) }))
+    .sort((x, y) => (y.gate - y.net) - (x.gate - x.net));
+
+  // Deep dive 4: "soft launch" (answer was a wrong option in an earlier NET paper), GATE vs NET itself.
+  const wrongFirst = new Map();
+  net.forEach(q => {
+    const right = new Set(ansKeys(q)), y = qYear(q);
+    Object.values(q.options || {}).map(normTitle).filter(k => k.length > 3 && !right.has(k)).forEach(k => first(wrongFirst, k, y));
+  });
+  const softRate = list => pct(list.filter(q => ansKeys(q).some(k => wrongFirst.has(k) && wrongFirst.get(k) < qYear(q))).length, list.length);
+  const netRecent = net.filter(q => qYear(q) >= 2022);
+
+  // Deep dive 5: GATE re-asking a work from an earlier GATE paper.
+  const gateFirst = new Map();
+  gate.forEach(g => (g.works || []).forEach(w => first(gateFirst, normTitle(w), qYear(g))));
+  const gateRepeat = pct(gate.filter(g => (g.works || []).some(w => gateFirst.get(normTitle(w)) < qYear(g))).length, gate.length);
+
+  ECACHE = {
+    net: profile(net), gate: profile(gate), gN: gate.length, nN: net.length, work, writer, fresh, same, ex, areas, gYears: years(gate), nYears: years(net),
+    pickup, borrowed, famousNet: famous(net), famousGate: famous(gate), top25: [...top25].slice(0, 6).map(k => wName.get(k) || k), angles,
+    softGate: softRate(gate), softNet: softRate(netRecent), gateRepeat
+  };
   return ECACHE;
 }
 function exampleHTML(e) {
@@ -941,6 +1003,37 @@ VIEWS.exam = () => {
     ${bar('Same <i>writer</i> NET had asked (different work)', pct(E.writer, E.gN))}
     ${bar('Completely new ground', pct(E.fresh, E.gN))}
     <p class="kx-key">But only <b>${pct(E.same, E.gN)}%</b> had the <b>same answer</b> as an earlier NET question. GATE reuses NET's texts and writers, then asks them from a new angle.</p>
+  </section>
+
+  <section class="card">
+    <h3>Which NET works GATE picks</h3>
+    <p class="small muted">The more often NET has asked a work, the likelier GATE asks it too. This is the strongest pattern in the bank.</p>
+    <table class="kx-table">
+      <tr><th style="text-align:left">NET asked the work</th><th>Works</th><th>GATE asked</th></tr>
+      ${E.pickup.map(b => `<tr class="${b.rate >= 25 ? 'gate-more' : ''}"><td>${b.label}</td><td>${b.works}</td><td>${b.rate}%</td></tr>`).join('')}
+    </table>
+    ${E.borrowed.length ? `<span class="field-label">Most-asked NET works GATE has used</span>
+    <div class="chips">${E.borrowed.map(b => `<button class="chip soft" data-act="pickTopic" data-v="${esc(b.title)}">${esc(b.title)} <span class="count">${b.n}× NET</span></button>`).join('')}</div>
+    <p class="small muted" style="margin-top:8px">Tap a work to quiz on it.</p>` : ''}
+    <p class="kx-key">Writer fame matters less than the work: NET's 25 most-asked writers (${esc(E.top25.join(', '))}…) appear in <b>${E.famousGate}%</b> of GATE questions and <b>${E.famousNet}%</b> of NET questions.</p>
+  </section>
+
+  <section class="card">
+    <h3>How GATE changes the angle</h3>
+    <p class="small muted">Same texts, different question styles. Sorted by how much more GATE uses each style.</p>
+    <table class="kx-table">
+      <tr><th></th><th>NET</th><th>GATE</th></tr>
+      ${E.angles.map(a => `<tr class="${a.gate - a.net >= 4 ? 'gate-more' : a.net - a.gate >= 4 ? 'net-more' : ''}"><td>${esc(a.name)}</td><td>${a.net}%</td><td>${a.gate}%</td></tr>`).join('')}
+    </table>
+    <p class="small muted" style="margin-top:8px">“Group by a feature” means questions like “Which of these are epistolary novels?” or “…are set in Bombay?”. Sorting is automatic, so some questions fit no style and are left out.</p>
+  </section>
+
+  <section class="card">
+    <h3>Repeats and “soft launch”</h3>
+    ${bar('GATE re-asks a work from an earlier GATE paper', E.gateRepeat)}
+    ${bar('GATE answer was a wrong option in an earlier NET paper', E.softGate)}
+    ${bar('NET answer (2022 on) was a wrong option in an earlier NET paper', E.softNet)}
+    <p class="kx-key">Soft launch (wrong options coming back as answers) is mainly a <b>NET</b> habit. For GATE, the better guide is how often NET has asked a work. Old GATE papers are worth revising too.</p>
   </section>
 
   <section class="card">
