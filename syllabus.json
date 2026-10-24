@@ -1712,7 +1712,8 @@
    "gate": [],
    "net": [
     "p1u1"
-   ]
+   ],
+   "q": "paperone teaching aptitude"
   },
   {
    "id": "p1-research",
@@ -1721,7 +1722,8 @@
    "gate": [],
    "net": [
     "p1u2"
-   ]
+   ],
+   "q": "paperone research aptitude"
   },
   {
    "id": "p1-communication",
@@ -1730,7 +1732,8 @@
    "gate": [],
    "net": [
     "p1u4"
-   ]
+   ],
+   "q": "paperone communication"
   },
   {
    "id": "p1-ict",
@@ -1739,7 +1742,8 @@
    "gate": [],
    "net": [
     "p1u8"
-   ]
+   ],
+   "q": "paperone ict"
   },
   {
    "id": "p1-environment",
@@ -1748,7 +1752,8 @@
    "gate": [],
    "net": [
     "p1u9"
-   ]
+   ],
+   "q": "paperone environment"
   },
   {
    "id": "p1-highered",
@@ -1757,7 +1762,8 @@
    "gate": [],
    "net": [
     "p1u10"
-   ]
+   ],
+   "q": "paperone higher education"
   }
  ]
 }
