@@ -710,7 +710,7 @@ VIEWS.guide = () => `
   </button>
   <button class="card kx-entry" data-act="openNotes">
     <span class="cat-icon" aria-hidden="true">✎</span>
-    <span class="grow"><span class="name">Short notes</span><br><span class="sub">Must-study works, must-learn facts and the 🎯 GATE radar</span></span>
+    <span class="grow"><span class="name">Short notes</span><br><span class="sub">Must-study works, must-learn facts, founders & pioneers and the 🎯 GATE radar</span></span>
     <span class="chev">›</span>
   </button>
   <section class="card">
@@ -1159,27 +1159,52 @@ function notesData() {
   NCACHE = { whole, facts };
   return NCACHE;
 }
+/* Founders / Pioneers (Abrams): who coined or pioneered a term, from guide.json → pioneers.
+   Each entry: t = term, w = who coined / pioneered it, n = note (work, year, meaning). */
+const pioneers = () => ((S.guide && S.guide.pioneers) || []).filter(x => x && x.t);
+const pnKey = x => deaccent(x.t).replace(/^[^A-Za-z0-9]+/, '').toLowerCase();
+const pnText = x => deaccent([x.t, x.w, x.n].join(' ')).toLowerCase();
+function pioneerListHTML() {
+  const q = deaccent(S.pioneerQuery || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const list = pioneers().filter(x => q.every(w => pnText(x).includes(w))).sort((a, b) => pnKey(a).localeCompare(pnKey(b)));
+  if (!list.length) return '<p class="muted small">No term or name matches.</p>';
+  let last = '', out = q.length ? `<p class="small muted">${plural(list.length, 'match')}</p>` : '';
+  list.forEach(x => {
+    const L = (pnKey(x)[0] || '#').toUpperCase();
+    if (L !== last) { out += `<div class="pn-letter">${esc(L)}</div>`; last = L; }
+    out += `<div class="pn-row"><div class="pn-term">${esc(x.t)}</div>${x.w ? `<div class="pn-who">${esc(x.w)}</div>` : ''}${x.n ? `<div class="pn-note">${esc(x.n)}</div>` : ''}</div>`;
+  });
+  return out;
+}
+const pioneersHTML = () => `
+  <section class="card">
+    <h3>Founders / Pioneers <span class="muted small">· Abrams · ${pioneers().length} terms</span></h3>
+    <p class="small muted">Who coined or first used a term, movement or idea. Search by term, name or work.</p>
+    <div class="search"><input type="search" data-in="pioneerQuery" value="${esc(S.pioneerQuery || '')}" placeholder="e.g. Bakhtin, Chora, 1957" autocomplete="off"></div>
+    <div id="pn-list" style="margin-top:12px">${pioneerListHTML()}</div>
+  </section>`;
 const radarTag = x => x.radar ? '<span class="pill nr-radar">🎯 Not yet in GATE</span>' : '';
 const countTags = x => `<span class="pill Low">NET ${x.net}×</span><span class="pill Low">GATE ${x.gate}×</span>`;
 VIEWS.notes = () => {
-  const N = notesData(), only = !!S.notesRadar, tab = S.notesTab === 'facts' ? 'facts' : 'whole';
+  const N = notesData(), only = !!S.notesRadar, tab = ['facts', 'pioneers'].includes(S.notesTab) ? S.notesTab : 'whole';
   const whole = N.whole.filter(x => !only || x.radar), facts = N.facts.filter(x => !only || x.radar);
   return `
   <button class="chip back" data-act="tab" data-tab="guide">‹ Guide</button>
   <section class="card">
     <h2>Short notes</h2>
-    <p class="muted small">Built from the papers in the bank, so the lists update as new papers are added. Patterns from past papers show what to study first; they are not guarantees.</p>
-    <div class="chips" style="margin-top:10px">
+    <p class="muted small">Study whole and Must-learn facts are built from the papers in the bank, so they update as new papers are added. Patterns from past papers show what to study first; they are not guarantees.</p>
+    ${tab === 'pioneers' ? '' : `<div class="chips" style="margin-top:10px">
       <button class="chip ${only ? '' : 'on'}" data-act="notesFilter" data-v="all">All works</button>
       <button class="chip ${only ? 'on' : ''}" data-act="notesFilter" data-v="radar">🎯 GATE radar only</button>
     </div>
-    <p class="small muted" style="margin-top:8px">🎯 GATE radar = asked often in NET, not yet in GATE. Works NET asked 7+ times were later picked by GATE about half the time.</p>
-    <div class="seg" style="margin-top:12px">
+    <p class="small muted" style="margin-top:8px">🎯 GATE radar = asked often in NET, not yet in GATE. Works NET asked 7+ times were later picked by GATE about half the time.</p>`}
+    <div class="seg nr-seg" style="margin-top:12px">
       <button class="${tab === 'whole' ? 'on' : ''}" data-act="notesTab" data-v="whole">Study whole · ${whole.length}</button>
       <button class="${tab === 'facts' ? 'on' : ''}" data-act="notesTab" data-v="facts">Must-learn facts · ${facts.length}</button>
+      <button class="${tab === 'pioneers' ? 'on' : ''}" data-act="notesTab" data-v="pioneers">Founders / Pioneers (Abrams) · ${pioneers().length}</button>
     </div>
   </section>
-  ${tab === 'whole' ? `
+  ${tab === 'pioneers' ? pioneersHTML() : tab === 'whole' ? `
   <section class="card">
     <h3>Study whole <span class="muted small">· NET asked 7+ times · ${whole.length}</span></h3>
     <p class="small muted">Read these properly: story or argument, characters, key lines, and the ideas critics attach to them.</p>
@@ -3436,6 +3461,7 @@ Object.assign(ACT, SYL_ACT, BULK_ACT, EMAIL_ACT);
 
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
+  pioneerQuery: v => { S.pioneerQuery = v; const el = $('#pn-list'); if (el) el.innerHTML = pioneerListHTML(); },
   guideQuery: v => { S.guideQuery = v; const el = $('#guide-list'); if (el) el.innerHTML = guideListHTML(); },
   adminQuery: v => { S.adminQuery = v; S.adminShow = ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
 };
@@ -3520,7 +3546,16 @@ document.addEventListener('keydown', e => {
     .nr-asked ul { margin: 8px 0 0; padding-left: 18px; }
     .nr-asked li { margin-bottom: 6px; }
     .nr-fact .name { font-weight: 700; }
-    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }`;
+    .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }
+    .nr-seg { flex-wrap: wrap; }
+    .nr-seg button { flex: 1 1 40%; }
+    .nr-seg button:last-child { flex-basis: 100%; }
+    .pn-letter { margin: 14px 0 2px; padding: 4px 10px; border-radius: 10px; background: var(--lilac-soft); color: var(--accent-ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; font-weight: 700; }
+    .pn-row { padding: 10px 2px; border-bottom: 1px solid var(--border); }
+    .pn-row:last-child { border-bottom: 0; }
+    .pn-term { font-family: "Lora", Georgia, serif; font-size: 1.05rem; font-weight: 600; line-height: 1.35; }
+    .pn-who { color: var(--accent-ink); font-weight: 700; margin-top: 2px; }
+    .pn-note { font-size: .9rem; color: var(--muted); line-height: 1.45; margin-top: 3px; }`;
   document.head.appendChild(s);
 })();
 
