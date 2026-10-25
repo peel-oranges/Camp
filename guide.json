@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-25",
   "note": "Sections and their tag rules. Each question is sorted automatically by its topic tags; add works, lines, patterns or highlightWriters to any subtopic to enrich its page.",
   "categories": [
     {
@@ -1373,11 +1373,12 @@
         },
         {
           "id": "apt-quant",
-          "name": "Quantitative Aptitude",
+          "name": "Quantitative Aptitude & Mathematical Reasoning",
           "match": [
             {
               "any": [
-                "Quantitative"
+                "Quantitative",
+                "Mathematical reasoning"
               ]
             }
           ]

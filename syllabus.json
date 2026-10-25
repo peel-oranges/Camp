@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to, so ticking it once updates both exams.",
  "exams": {
   "gate": {
@@ -1627,16 +1627,27 @@
   },
   {
    "id": "ap-quant",
-   "name": "Quantitative aptitude & data interpretation",
+   "name": "Quantitative aptitude & mathematical reasoning",
    "group": "GATE Aptitude & Reasoning",
    "gate": [
     "ga2"
    ],
    "net": [
-    "p1u5",
-    "p1u7"
+    "p1u5"
    ],
    "guide": "apt-quant"
+  },
+  {
+   "id": "ap-di",
+   "name": "Data interpretation: tables, charts & graphs",
+   "group": "GATE Aptitude & Reasoning",
+   "gate": [
+    "ga2"
+   ],
+   "net": [
+    "p1u7"
+   ],
+   "guide": "apt-di"
   },
   {
    "id": "ap-analytical",
