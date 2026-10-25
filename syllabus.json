@@ -1690,7 +1690,8 @@
    "gate": [
     "xh02"
    ],
-   "net": []
+   "net": [],
+   "guide": "apt-expression"
   },
   {
    "id": "ap-areasoning",

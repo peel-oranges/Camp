@@ -1380,6 +1380,27 @@
           ]
         },
         {
+          "id": "apt-expression",
+          "name": "Expression (XH-B1)",
+          "match": [
+            {
+              "first": [
+                "Reasoning & Comprehension"
+              ],
+              "any": [
+                "Grammar",
+                "Punctuation",
+                "Prepositions",
+                "Fill in the blanks",
+                "Sentence rearrangement",
+                "Para jumbles",
+                "Sentence correction",
+                "Expression"
+              ]
+            }
+          ]
+        },
+        {
           "id": "apt-quant",
           "name": "Quantitative Aptitude & Mathematical Reasoning",
           "match": [
