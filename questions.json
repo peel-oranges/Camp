@@ -179329,5 +179329,3269 @@
   "infoBite": "Protests against the World Bank were organised through Internet media — virtual assemblies producing real ones.",
   "verified": true,
   "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11118), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q01",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the number of students who appeared (A) and passed (P) in a competitive examination from four zones (K, L, M, N), 2014–2019.\nYear | K: A, P | L: A, P | M: A, P | N: A, P\n2014 | 782, 360 | 612, 310 | 720, 410 | 1020, 802\n2015 | 804, 472 | 608, 324 | 728, 480 | 1135, 840\n2016 | 720, 448 | 636, 298 | 680, 390 | 1084, 864\n2017 | 750, 360 | 655, 305 | 695, 396 | 1096, 766\n2018 | 824, 504 | 640, 346 | 712, 424 | 1180, 752\n2019 | 850, 496 | 600, 315 | 740, 464 | 1165, 780\n\nWhat is the difference between the total number of students who appeared in the exam and the total number of students who passed in the exam from Zone-K in all the six years taken together?",
+  "options": {
+   "A": "2060",
+   "B": "2070",
+   "C": "2080",
+   "D": "2090"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Totals"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Zone K: appeared 4730, passed 2640; 4730 − 2640 = 2090.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299069). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q02",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the number of students who appeared (A) and passed (P) in a competitive examination from four zones (K, L, M, N), 2014–2019.\nYear | K: A, P | L: A, P | M: A, P | N: A, P\n2014 | 782, 360 | 612, 310 | 720, 410 | 1020, 802\n2015 | 804, 472 | 608, 324 | 728, 480 | 1135, 840\n2016 | 720, 448 | 636, 298 | 680, 390 | 1084, 864\n2017 | 750, 360 | 655, 305 | 695, 396 | 1096, 766\n2018 | 824, 504 | 640, 346 | 712, 424 | 1180, 752\n2019 | 850, 496 | 600, 315 | 740, 464 | 1165, 780\n\nWhat is the average number of students who passed in the exam from all the four Zones in the year 2015?",
+  "options": {
+   "A": "528",
+   "B": "529",
+   "C": "530",
+   "D": "531"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2015 passed: 472 + 324 + 480 + 840 = 2116; 2116 ÷ 4 = 529.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299070). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q03",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the number of students who appeared (A) and passed (P) in a competitive examination from four zones (K, L, M, N), 2014–2019.\nYear | K: A, P | L: A, P | M: A, P | N: A, P\n2014 | 782, 360 | 612, 310 | 720, 410 | 1020, 802\n2015 | 804, 472 | 608, 324 | 728, 480 | 1135, 840\n2016 | 720, 448 | 636, 298 | 680, 390 | 1084, 864\n2017 | 750, 360 | 655, 305 | 695, 396 | 1096, 766\n2018 | 824, 504 | 640, 346 | 712, 424 | 1180, 752\n2019 | 850, 496 | 600, 315 | 740, 464 | 1165, 780\n\nFor which of the following Zones, the percentage of students who passed out to the total of those who appeared in the examination is minimum in the year 2019?",
+  "options": {
+   "A": "K",
+   "B": "L",
+   "C": "M",
+   "D": "N"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2019 pass %: K 58.4, L 52.5, M 62.7, N 67.0 — L is lowest.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299071). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q04",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the number of students who appeared (A) and passed (P) in a competitive examination from four zones (K, L, M, N), 2014–2019.\nYear | K: A, P | L: A, P | M: A, P | N: A, P\n2014 | 782, 360 | 612, 310 | 720, 410 | 1020, 802\n2015 | 804, 472 | 608, 324 | 728, 480 | 1135, 840\n2016 | 720, 448 | 636, 298 | 680, 390 | 1084, 864\n2017 | 750, 360 | 655, 305 | 695, 396 | 1096, 766\n2018 | 824, 504 | 640, 346 | 712, 424 | 1180, 752\n2019 | 850, 496 | 600, 315 | 740, 464 | 1165, 780\n\nWhat is the ratio of the number of students who passed from Zone-K in the year 2017 compared to that in 2018?",
+  "options": {
+   "A": "7:5",
+   "B": "3:5",
+   "C": "5:7",
+   "D": "5:3"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Zone K passed: 2017 = 360, 2018 = 504; 360 : 504 = 5 : 7.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299072). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q05",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the number of students who appeared (A) and passed (P) in a competitive examination from four zones (K, L, M, N), 2014–2019.\nYear | K: A, P | L: A, P | M: A, P | N: A, P\n2014 | 782, 360 | 612, 310 | 720, 410 | 1020, 802\n2015 | 804, 472 | 608, 324 | 728, 480 | 1135, 840\n2016 | 720, 448 | 636, 298 | 680, 390 | 1084, 864\n2017 | 750, 360 | 655, 305 | 695, 396 | 1096, 766\n2018 | 824, 504 | 640, 346 | 712, 424 | 1180, 752\n2019 | 850, 496 | 600, 315 | 740, 464 | 1165, 780\n\nThe total number of students who passed from Zone-M in all the six years taken together is approximately what percentage of the total number of students who appeared from Zone-M in all the six years taken together?",
+  "options": {
+   "A": "56%",
+   "B": "58%",
+   "C": "60%",
+   "D": "64%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Zone M: passed 2564 of 4275 appeared ≈ 60%.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299073). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q06",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify those teaching strategies which are learner-centred:\nA. Cooperative learning\nB. Team teaching\nC. Laboratory based projects\nD. Pair-share discussions\nE. Lecturing with PowerPoint presentations\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, C and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Team teaching and PowerPoint lectures are teacher-centred; cooperative learning, lab projects and think-pair-share put learners in charge.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299074). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q07",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Reflective level teaching is different from memory level teaching because the pattern of communication that is involved in reflective level teaching is basically:",
+  "options": {
+   "A": "Linear",
+   "B": "Bottom-up",
+   "C": "Interactional",
+   "D": "Transactional"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Levels of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Levels of teaching: memory (Herbart), understanding (Morrison), reflective (Hunt) — reflective teaching is problem-centred and two-way.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299075). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q08",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the following, identify those features which are associated with 'Indirect Instructional Strategies':\nA. Guided student practice\nB. Focus on concept acquisition through question-answer sessions\nC. Presenting the stimulus material in small, easy to take steps\nD. Problem based presentation\nE. Participatory and collaborative moves stressed\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "B, D and E only",
+   "B": "A, B and C only",
+   "C": "B, C and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Instructional strategies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Guided practice and small-step presentation belong to direct (explicit) instruction; indirect instruction is inquiry- and problem-based.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299076). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q09",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following assessment procedures is conducted during an in-progress teaching-learning session?",
+  "options": {
+   "A": "Summative",
+   "B": "Formative",
+   "C": "Norm-referenced",
+   "D": "Criterion-referenced"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formative assessment happens during teaching (feedback); summative comes at the end. Term coined by Michael Scriven (1967).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299077). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q10",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The use of ICT in organizing teaching-learning programmes in the universities has the potential to optimise learning outcomes.\nStatement II: Formative assessment provides support to enhancing the quality of teaching-learning sessions.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "ICT and assessment"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Both are standard claims: ICT can optimise outcomes, and formative feedback improves teaching-learning quality.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299078). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q11",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify sampling procedures in which units are chosen giving an equal and independent chance:\nA. Quota sampling procedure\nB. Stratified sampling procedure\nC. Dimensional sampling procedure\nD. Random sampling procedure\nE. Systematic sampling procedure\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "C, D and E only",
+   "D": "B, D and E only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Sampling"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Quota and dimensional sampling are non-probability methods; random, stratified and systematic are probability methods.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299079). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q12",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Qualitative research paradigm emphasizes participant perspectives and uses an empirico-inductive approach.\nStatement II: In the same research project, it is neither possible nor desirable to use both Qualitative and Quantitative research paradigms.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research paradigms"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mixed-methods research combines qualitative and quantitative paradigms in one project (e.g., Creswell's convergent and sequential designs).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299080). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q13",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The research method which focuses on establishing causal relationships with controls among variables — independent, moderator and dependent — is called:",
+  "options": {
+   "A": "Ex post facto method",
+   "B": "Survey method",
+   "C": "Case study method",
+   "D": "Experimental method"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Only the experimental method manipulates the independent variable under controls; ex post facto studies causes after the event, without control.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299081). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q14",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What are the characteristic features of the Quantitative Research paradigm?\nA. It is hypothetico-deductive\nB. It is focused on natural settings\nC. It lays stress on generalizations to the population characteristics\nD. It emphasizes numeric data from a large number of people\nE. It says that the literature review plays a minor role but justify the problem\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, C and D only",
+   "B": "A, B and C only",
+   "C": "B, C and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research paradigms"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Natural settings and a minor role for the literature review mark qualitative research (Creswell).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299082). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q15",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "What is the usual sequence of steps in the scientific method?\nA. Hypothesis making by identifying the variables\nB. Felt need which is creating the problem\nC. Identifying the difficulty and problem statement formulation\nD. Data analysis and interpretation\nE. Collection of data using appropriate research tools\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, C, B, D, E",
+   "B": "B, C, A, E, D",
+   "C": "C, D, E, B, A",
+   "D": "B, A, C, E, D"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Scientific method"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Dewey's reflective thinking: felt difficulty → define the problem → hypothesis → collect data → analyse and conclude.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299083). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q16",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In communication, interpretation of the message depends upon:",
+  "options": {
+   "A": "The context",
+   "B": "Transmission speed",
+   "C": "Associated noise",
+   "D": "Channel efficiency"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Meaning and context"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Meaning is context-bound: the same words read differently in different situations and cultures.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299084). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q17",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following factors are important in communication?\nA. Slang\nB. Cynical attitude\nC. Framing\nD. Priming\nE. Immediacy\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, D and E only",
+   "D": "C, D and E only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Media effects"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Framing (Goffman, Entman) and priming are media-effects concepts; immediacy (Mehrabian) is the sense of closeness a speaker creates.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299085). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q18",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "The sequence of cultural institutions in communication is:\nA. Family\nB. School\nC. Religion\nD. Mass media\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C, D",
+   "B": "B, C, D, A",
+   "C": "C, D, A, B",
+   "D": "D, A, B, C"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Socialisation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Family is the primary agent of socialisation, followed by school and religion; mass media is a secondary agent.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299086). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q19",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one is labelled as Assertion A and the other is labelled as Reason R.\nAssertion A: Giving orders to students in the classroom is a specific form of communication.\nReason R: The manner of orders depends upon the cultural background of the students involved.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both A and R are true and R is the correct explanation of A",
+   "B": "Both A and R are true but R is NOT the correct explanation of A",
+   "C": "A is true but R is false",
+   "D": "A is false but R is true"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Directive (order-giving) talk is one classroom communication form; how it is received depends on students' cultural background.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299087). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q20",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Examples):\nA. Meaningless sound and words\nB. Traffic light signals\nC. Words that have different meanings\nD. Two persons exchanging greetings\nList II (Type of communication):\nI. Polysemy\nII. Dyadic communication\nIII. Paralinguistic\nIV. Non-verbal communication\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-I, B-II, C-IV, D-III",
+   "B": "A-II, B-III, C-I, D-IV",
+   "C": "A-III, B-IV, C-I, D-II",
+   "D": "A-IV, B-I, C-II, D-III"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Types of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Polysemy = one word, many meanings; dyadic = two-person communication; paralanguage = vocal cues like tone, pitch, fillers.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299088). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q21",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The product of the ages of Sagun and Srishti is 240. If twice the age of Srishti is more than Sagun's age by 4 years, then what is Srishti's age?",
+  "options": {
+   "A": "15",
+   "B": "12",
+   "C": "10",
+   "D": "20"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ages"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Srishti 12, Sagun 20: 12 × 20 = 240 and 2 × 12 = 20 + 4.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299089). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q22",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Complete the following series:\n9, 11, 15, 23, 39, __?",
+  "options": {
+   "A": "71",
+   "B": "65",
+   "C": "44",
+   "D": "68"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences double: +2, +4, +8, +16, +32 → 39 + 32 = 71.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299090). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q23",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Sum of the angles of a triangle is 180°.\nStatement II: The sum of any two sides of a triangle is greater than the third side.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Geometry"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Angle-sum property and the triangle inequality — both always hold for a Euclidean triangle.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299091). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q24",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Consider the following three sets of numbers:\nA. 2, 5, 9\nB. 1, 6, 10\nC. 3, 4, 8\nWhich of the following represents correct ascending order of the averages of three sets A, B and C?\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "C < A < B",
+   "B": "B < C < A",
+   "C": "B < A < C",
+   "D": "C < B < A"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Sums: A = 16, B = 17, C = 15 (same count), so C < A < B.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299092). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q25",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If 30% of A = 0.25 of B = 1/5 of C, then which of the following is true about A : B : C?",
+  "options": {
+   "A": "10:11:12",
+   "B": "10:15:12",
+   "C": "10:12:15",
+   "D": "10:11:15"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ratio and proportion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "0.3A = 0.25B = 0.2C = k → A = 10k/3, B = 4k, C = 5k → 10 : 12 : 15.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299093). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q26",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A, B, C, D, E and F are standing in a circle and looking at the centre. Only D is between A and B. Only F is between A and C. E is just left of B. Who is the only one standing between E and F?",
+  "options": {
+   "A": "A",
+   "B": "B",
+   "C": "D",
+   "D": "C"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Seating arrangement"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Circle order: C, F, A, D, B, E — E and F are separated only by C.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299094). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q27",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "All things which have smoke have fire;\nThis hill has smoke;\nTherefore, the hill has smoke [sic]; and\nNo non-fiery things have smoke;\nThis hill has smoke;\nTherefore, this hill is not non-fiery.\n\nThe above is an example of which type of inference in Indian logic?",
+  "options": {
+   "A": "Pūrvavat",
+   "B": "Anvayavyatireki",
+   "C": "Kevalānvayi",
+   "D": "Kevalavyatireki"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Nyāya: anvaya-vyatireki uses both agreement in presence (smoke–fire) and agreement in absence (no fire, no smoke).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299095). Answer re-checked by Claude. Line 3 is printed 'Therefore, The hill has smoke' (should read 'has fire') — kept as printed."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q28",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Asiddha is a fallacy when the middle term is:",
+  "options": {
+   "A": "Unproved",
+   "B": "Too wide",
+   "C": "Too narrow",
+   "D": "Non-exclusive"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Nyāya hetvābhāsas: savyabhicāra (too wide), viruddha, satpratipakṣa, asiddha (unproved), bādhita.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299096). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q29",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Pairs):\nA. Assign : Allot\nB. Length : Meter\nC. Doctor : Hospital\nD. Lock : Key\nList II (Pairs of analogies):\nI. Code : Password\nII. Clerk : Office\nIII. Mend : Repair\nIV. Mass : Kilogram\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-III, B-IV, C-II, D-I",
+   "B": "A-IV, B-II, C-III, D-I",
+   "C": "A-II, B-IV, C-I, D-III",
+   "D": "A-IV, B-III, C-II, D-I"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Analogies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Synonyms (assign/allot, mend/repair); quantity : unit; worker : workplace; lock : what opens it.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299097). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q30",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A man is facing south-west. If he turns 90° in the anticlockwise direction and then 135° in the clockwise direction, which direction is he facing now?",
+  "options": {
+   "A": "West",
+   "B": "North-West",
+   "C": "North-East",
+   "D": "East"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Directions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Net turn = 45° clockwise from south-west → west.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299098). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q31",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "RAM is placed on:",
+  "options": {
+   "A": "Hard disk",
+   "B": "Extension board",
+   "C": "Motherboard",
+   "D": "USB"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "RAM modules sit in DIMM slots on the motherboard, next to the CPU socket.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299099). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q32",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct?\nA. NKN stands for New Knowledge Network\nB. MOOCs are offline courses\nC. National Supercomputing Mission is a Government of India initiative\nD. Clock rate of CPU is measured in Gigabytes\nE. Param Shivay is a super computer\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "C and E only",
+   "B": "B and C only",
+   "C": "C and D only",
+   "D": "A and E only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT initiatives"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NKN = National Knowledge Network; MOOCs are online; clock rate is in GHz. PARAM Shivay (IIT BHU, 2019) was the first supercomputer under the NSM.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299100). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q33",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Cache memory is faster than random access memory.\nStatement II: Random access memory is closer to the processor than cache memory.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Memory hierarchy: registers → cache → RAM → secondary storage; cache sits closer to the CPU than RAM.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299101). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q34",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is NOT a web browser?",
+  "options": {
+   "A": "Firefox",
+   "B": "Facebook",
+   "C": "Chrome",
+   "D": "Safari"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Facebook is a social networking site; Firefox (Mozilla), Chrome (Google) and Safari (Apple) are browsers.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299102). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q35",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "URL stands for:",
+  "options": {
+   "A": "Universal Resource Location",
+   "B": "Universal Response Locator",
+   "C": "Unified Response Location",
+   "D": "Uniform Resource Locator"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A URL (Tim Berners-Lee, 1994) has a scheme, domain and path, e.g. https://www.ugc.gov.in/.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299103). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q37",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Dissolved oxygen (DO), an important parameter of water quality, is essential for survival of:",
+  "options": {
+   "A": "Humans",
+   "B": "Animals",
+   "C": "Fish",
+   "D": "Crops and vegetables"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Fish need about 5 mg/L DO or more; organic pollution raises BOD and lowers DO.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299105). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q38",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following elements which is typically the most abundant in dried sewage sludge?",
+  "options": {
+   "A": "Total nitrogen",
+   "B": "Total sulphur",
+   "C": "Calcium",
+   "D": "Total phosphorus"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Waste management"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Dried sewage sludge is rich in calcium (especially lime-treated sludge), with nitrogen and phosphorus as the main nutrients.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299106). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q39",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Identify the correct sequence of sectoral global CO2 emissions in increasing order as per IPCC (2014) report:\nA. Electricity and heat production\nB. Buildings\nC. Transportation\nD. Industry\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "B, C, D, A",
+   "B": "B, C, A, D",
+   "C": "B, D, C, A",
+   "D": "B, D, A, C"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "IPCC AR5 (2014) shares: buildings 6% < transport 14% < industry 21% < electricity and heat 25%.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299107). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q40",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Under Goal 2 of Millennium Development Goals, UN member countries were to ensure that by 2015, children everywhere, boys and girls would be able to complete a full course of:",
+  "options": {
+   "A": "Primary education",
+   "B": "Secondary education",
+   "C": "Tertiary education",
+   "D": "Skill based education"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Sustainable development"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "MDG 2 = universal primary education; MDG 1 = end extreme poverty and hunger. The 8 MDGs ran 2000–2015.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299108). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q41",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: A deemed to be university is a non-affiliating university.\nStatement II: The teacher-student ratio in a deemed to be university must not be less than 1:10.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Deemed universities"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Deemed universities are declared under Section 3 of the UGC Act, 1956; they cannot affiliate colleges.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299109). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q43",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "According to the census of 2011, which state/union territory had the maximum number of graduates in relation to its population?",
+  "options": {
+   "A": "Uttar Pradesh",
+   "B": "Kerala",
+   "C": "Daman and Diu",
+   "D": "Chandigarh"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Census and literacy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Census 2011: Chandigarh had the highest share of graduates; Kerala leads in overall literacy.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299111). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q44",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The full form of 'NEAT', a recently launched scheme of MHRD, Government of India, is:",
+  "options": {
+   "A": "National Engineering Aptitude Test",
+   "B": "National Educational Alliance for Technology",
+   "C": "National Education Alliance for Testing",
+   "D": "National English Aptitude Test"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NEAT (2019, run by AICTE) brings ed-tech firms' AI-based adaptive learning products to students.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299112). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q45",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "An Inter-University Centre for Yogic Sciences has been set up by University Grants Commission in the state of:",
+  "options": {
+   "A": "Karnataka",
+   "B": "Madhya Pradesh",
+   "C": "Uttarakhand",
+   "D": "Himachal Pradesh"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Indian knowledge system"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The UGC's IUC for Yogic Sciences is at Bengaluru, Karnataka (hosted by S-VYASA).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299113). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q46",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: In Skinner's system, reinforcement is automatic, almost by definition. Perhaps the most convincing demonstration of the automatic effect of a reinforcer is what Skinner (1948) has called \"superstitious behaviour\". In this situation, an event known to be reinforcing is presented intermittently without respect to what the subject is doing. But if it is doing anything (and this can be made likely through deprivation, etc.), the response just prior to the delivery of the reinforcer is strengthened, as evidenced by an increase in its rate of emission. The subject comes to \"act as if\" the response that has been fortuitously strengthened somehow produces the reinforcement. This occurs even though the reinforcer is actually delivered by a mechanical device that is in no way responsive to the subject's behaviour.\nThe automatic effect of reinforcement is also illustrated in Skinner's effective techniques of shaping behaviour. These procedures could hardly have sprung from a point of view that regarded all behaviour as elicited. But with the organism viewed as \"emitting\" the varied responses already in his repertoire, it was an easy step to conceive of shaping. If the observer simply controlled the quick presentation of a reinforcer, then he could strengthen any behaviour the organism happened to emit. Responses not in the subject's repertoire could then be built into it by appropriate arrangements of environmental conditions and the successive approximation technique.\n\nAccording to Skinner, the superstitious behaviour of individuals is the outcome of:",
+  "options": {
+   "A": "Constant exposure to an event",
+   "B": "Exposure to an event without regularity",
+   "C": "Occasional exposure to an event",
+   "D": "Natural exposure to an event"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [
+   "B. F. Skinner"
+  ],
+  "works": [],
+  "infoBite": "The reinforcing event is presented intermittently, without regard to what the subject is doing.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299115). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q47",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: In Skinner's system, reinforcement is automatic, almost by definition. Perhaps the most convincing demonstration of the automatic effect of a reinforcer is what Skinner (1948) has called \"superstitious behaviour\". In this situation, an event known to be reinforcing is presented intermittently without respect to what the subject is doing. But if it is doing anything (and this can be made likely through deprivation, etc.), the response just prior to the delivery of the reinforcer is strengthened, as evidenced by an increase in its rate of emission. The subject comes to \"act as if\" the response that has been fortuitously strengthened somehow produces the reinforcement. This occurs even though the reinforcer is actually delivered by a mechanical device that is in no way responsive to the subject's behaviour.\nThe automatic effect of reinforcement is also illustrated in Skinner's effective techniques of shaping behaviour. These procedures could hardly have sprung from a point of view that regarded all behaviour as elicited. But with the organism viewed as \"emitting\" the varied responses already in his repertoire, it was an easy step to conceive of shaping. If the observer simply controlled the quick presentation of a reinforcer, then he could strengthen any behaviour the organism happened to emit. Responses not in the subject's repertoire could then be built into it by appropriate arrangements of environmental conditions and the successive approximation technique.\n\nThe delivery of the reinforcer gets strengthened due to:",
+  "options": {
+   "A": "The subject's involvement in the event",
+   "B": "Increase in the rate of reinforcement",
+   "C": "Factors such as deprivation",
+   "D": "The use of a mechanical device"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [
+   "B. F. Skinner"
+  ],
+  "works": [],
+  "infoBite": "The passage links the strengthened response to activity made likely 'through deprivation, etc.'",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299116). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q48",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: In Skinner's system, reinforcement is automatic, almost by definition. Perhaps the most convincing demonstration of the automatic effect of a reinforcer is what Skinner (1948) has called \"superstitious behaviour\". In this situation, an event known to be reinforcing is presented intermittently without respect to what the subject is doing. But if it is doing anything (and this can be made likely through deprivation, etc.), the response just prior to the delivery of the reinforcer is strengthened, as evidenced by an increase in its rate of emission. The subject comes to \"act as if\" the response that has been fortuitously strengthened somehow produces the reinforcement. This occurs even though the reinforcer is actually delivered by a mechanical device that is in no way responsive to the subject's behaviour.\nThe automatic effect of reinforcement is also illustrated in Skinner's effective techniques of shaping behaviour. These procedures could hardly have sprung from a point of view that regarded all behaviour as elicited. But with the organism viewed as \"emitting\" the varied responses already in his repertoire, it was an easy step to conceive of shaping. If the observer simply controlled the quick presentation of a reinforcer, then he could strengthen any behaviour the organism happened to emit. Responses not in the subject's repertoire could then be built into it by appropriate arrangements of environmental conditions and the successive approximation technique.\n\nThe example of a mechanical device reinforcing the subject's behaviour demonstrates:",
+  "options": {
+   "A": "The automatic effect of reinforcement",
+   "B": "The illusion of reinforcement",
+   "C": "The discrepancy in subject's behaviour",
+   "D": "The belief that every reaction is an act of reinforcement"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [
+   "B. F. Skinner"
+  ],
+  "works": [],
+  "infoBite": "The mechanical device is offered as the most convincing demonstration of the automatic effect of a reinforcer.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299117). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q49",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: In Skinner's system, reinforcement is automatic, almost by definition. Perhaps the most convincing demonstration of the automatic effect of a reinforcer is what Skinner (1948) has called \"superstitious behaviour\". In this situation, an event known to be reinforcing is presented intermittently without respect to what the subject is doing. But if it is doing anything (and this can be made likely through deprivation, etc.), the response just prior to the delivery of the reinforcer is strengthened, as evidenced by an increase in its rate of emission. The subject comes to \"act as if\" the response that has been fortuitously strengthened somehow produces the reinforcement. This occurs even though the reinforcer is actually delivered by a mechanical device that is in no way responsive to the subject's behaviour.\nThe automatic effect of reinforcement is also illustrated in Skinner's effective techniques of shaping behaviour. These procedures could hardly have sprung from a point of view that regarded all behaviour as elicited. But with the organism viewed as \"emitting\" the varied responses already in his repertoire, it was an easy step to conceive of shaping. If the observer simply controlled the quick presentation of a reinforcer, then he could strengthen any behaviour the organism happened to emit. Responses not in the subject's repertoire could then be built into it by appropriate arrangements of environmental conditions and the successive approximation technique.\n\nThe procedure of shaping a subject's behaviour is related to his:\nA. Susceptibility\nB. Desire for reinforcement\nC. Responses already in his repertoire\nD. Responses reinforced by approximation techniques\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and B only",
+   "B": "B and C only",
+   "C": "C and D only",
+   "D": "A and D only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [
+   "B. F. Skinner"
+  ],
+  "works": [],
+  "infoBite": "Shaping works on responses already in the repertoire, and builds new ones by successive approximation.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299118). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S1-P1-Q50",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 1",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: In Skinner's system, reinforcement is automatic, almost by definition. Perhaps the most convincing demonstration of the automatic effect of a reinforcer is what Skinner (1948) has called \"superstitious behaviour\". In this situation, an event known to be reinforcing is presented intermittently without respect to what the subject is doing. But if it is doing anything (and this can be made likely through deprivation, etc.), the response just prior to the delivery of the reinforcer is strengthened, as evidenced by an increase in its rate of emission. The subject comes to \"act as if\" the response that has been fortuitously strengthened somehow produces the reinforcement. This occurs even though the reinforcer is actually delivered by a mechanical device that is in no way responsive to the subject's behaviour.\nThe automatic effect of reinforcement is also illustrated in Skinner's effective techniques of shaping behaviour. These procedures could hardly have sprung from a point of view that regarded all behaviour as elicited. But with the organism viewed as \"emitting\" the varied responses already in his repertoire, it was an easy step to conceive of shaping. If the observer simply controlled the quick presentation of a reinforcer, then he could strengthen any behaviour the organism happened to emit. Responses not in the subject's repertoire could then be built into it by appropriate arrangements of environmental conditions and the successive approximation technique.\n\nThe responses that are not in the emission list of a subject can be observed by:",
+  "options": {
+   "A": "Coercive measures",
+   "B": "Creating suitable environmental conditions",
+   "C": "Inhibiting his natural emission behaviour",
+   "D": "Using mechanical devices for reinforcement"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [
+   "B. F. Skinner"
+  ],
+  "works": [],
+  "infoBite": "New responses are built in by arranging environmental conditions plus successive approximation.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, First shift, Q-ID 2105299119). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q01",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the results of a competitive MCQ examination in Physics, Chemistry, Mathematics and Computer Science: the number of candidates scoring within each range of marks (e.g. [81-100] means ≥81 and ≤100).\nSubject (total marks) | 81-100 | 71-80 | 61-70 | 51-60 | 41-50 | 31-40 | 21-30 | 11-20 | 0-10\nPhysics (100) | 0 | 1 | 4 | 85 | 730 | 4205 | 10885 | 9170 | 1920\nChemistry (100) | 2 | 5 | 875 | 3350 | 6775 | 7778 | 5065 | 1800 | 1350\nMathematics (100) | 0 | 0 | 0 | 6 | 199 | 3400 | 15045 | 6975 | 1375\nComputer science (50) | 0 | 0 | 0 | 0 | 220 | 2145 | 10140 | 11858 | 2637\n(For Computer science, out of 50, the columns still show the raw-mark ranges.)\n\nAssuming that there are no absentees, what is the total number of candidates who appeared for the examination?",
+  "options": {
+   "A": "More than 50000",
+   "B": "25635",
+   "C": "26973",
+   "D": "27000"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Totals"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Add any one subject's row: Physics 0 + 1 + 4 + 85 + 730 + 4205 + 10885 + 9170 + 1920 = 27000.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299225). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q02",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the results of a competitive MCQ examination in Physics, Chemistry, Mathematics and Computer Science: the number of candidates scoring within each range of marks (e.g. [81-100] means ≥81 and ≤100).\nSubject (total marks) | 81-100 | 71-80 | 61-70 | 51-60 | 41-50 | 31-40 | 21-30 | 11-20 | 0-10\nPhysics (100) | 0 | 1 | 4 | 85 | 730 | 4205 | 10885 | 9170 | 1920\nChemistry (100) | 2 | 5 | 875 | 3350 | 6775 | 7778 | 5065 | 1800 | 1350\nMathematics (100) | 0 | 0 | 0 | 6 | 199 | 3400 | 15045 | 6975 | 1375\nComputer science (50) | 0 | 0 | 0 | 0 | 220 | 2145 | 10140 | 11858 | 2637\n(For Computer science, out of 50, the columns still show the raw-mark ranges.)\n\nWhat is the ratio of the total number of candidates who scored more than 50 marks in Physics to those who scored more than 40 marks in Mathematics?",
+  "options": {
+   "A": "17:49",
+   "B": "18:41",
+   "C": "43:61",
+   "D": "85:199"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Physics > 50: 85 + 4 + 1 = 90; Maths > 40: 199 + 6 = 205; 90 : 205 = 18 : 41.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299226). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q03",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the results of a competitive MCQ examination in Physics, Chemistry, Mathematics and Computer Science: the number of candidates scoring within each range of marks (e.g. [81-100] means ≥81 and ≤100).\nSubject (total marks) | 81-100 | 71-80 | 61-70 | 51-60 | 41-50 | 31-40 | 21-30 | 11-20 | 0-10\nPhysics (100) | 0 | 1 | 4 | 85 | 730 | 4205 | 10885 | 9170 | 1920\nChemistry (100) | 2 | 5 | 875 | 3350 | 6775 | 7778 | 5065 | 1800 | 1350\nMathematics (100) | 0 | 0 | 0 | 6 | 199 | 3400 | 15045 | 6975 | 1375\nComputer science (50) | 0 | 0 | 0 | 0 | 220 | 2145 | 10140 | 11858 | 2637\n(For Computer science, out of 50, the columns still show the raw-mark ranges.)\n\nIf securing over 40% marks is the qualifying criteria for each subject, then the ratio of the number of candidates who qualify in Mathematics compared to those who qualify in Computer science is:",
+  "options": {
+   "A": "15:42",
+   "B": "1:2",
+   "C": "56:1",
+   "D": "1:61"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Maths > 40 of 100: 205. Computer science > 20 of 50: 220 + 2145 + 10140 = 12505. 205 : 12505 = 1 : 61.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299227). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q04",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the results of a competitive MCQ examination in Physics, Chemistry, Mathematics and Computer Science: the number of candidates scoring within each range of marks (e.g. [81-100] means ≥81 and ≤100).\nSubject (total marks) | 81-100 | 71-80 | 61-70 | 51-60 | 41-50 | 31-40 | 21-30 | 11-20 | 0-10\nPhysics (100) | 0 | 1 | 4 | 85 | 730 | 4205 | 10885 | 9170 | 1920\nChemistry (100) | 2 | 5 | 875 | 3350 | 6775 | 7778 | 5065 | 1800 | 1350\nMathematics (100) | 0 | 0 | 0 | 6 | 199 | 3400 | 15045 | 6975 | 1375\nComputer science (50) | 0 | 0 | 0 | 0 | 220 | 2145 | 10140 | 11858 | 2637\n(For Computer science, out of 50, the columns still show the raw-mark ranges.)\n\nIf securing over 60% marks is the qualifying criteria for the subject of Computer science, then what is the approximate percentage of qualified candidates in the subject of Computer science (assume no absentees)?",
+  "options": {
+   "A": "12.65%",
+   "B": "8.76%",
+   "C": "8.65%",
+   "D": "0%"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Over 30 of 50: 220 + 2145 = 2365; 2365 ÷ 27000 ≈ 8.76%.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299228). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q05",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the results of a competitive MCQ examination in Physics, Chemistry, Mathematics and Computer Science: the number of candidates scoring within each range of marks (e.g. [81-100] means ≥81 and ≤100).\nSubject (total marks) | 81-100 | 71-80 | 61-70 | 51-60 | 41-50 | 31-40 | 21-30 | 11-20 | 0-10\nPhysics (100) | 0 | 1 | 4 | 85 | 730 | 4205 | 10885 | 9170 | 1920\nChemistry (100) | 2 | 5 | 875 | 3350 | 6775 | 7778 | 5065 | 1800 | 1350\nMathematics (100) | 0 | 0 | 0 | 6 | 199 | 3400 | 15045 | 6975 | 1375\nComputer science (50) | 0 | 0 | 0 | 0 | 220 | 2145 | 10140 | 11858 | 2637\n(For Computer science, out of 50, the columns still show the raw-mark ranges.)\n\nIf securing over 60% marks is the qualifying criteria for each of the three subjects of Physics, Chemistry and Mathematics, then the number of candidates who have qualified in all three subjects is:",
+  "options": {
+   "A": "0",
+   "B": "90",
+   "C": "6",
+   "D": "5"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Totals"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "No one scored above 60 in Mathematics, so no one can qualify in all three.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299229). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q06",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The view that teaching-learning situations may be characterized to fall on a continuum ranging from memory level to reflective level was advanced by:",
+  "options": {
+   "A": "Kurt Lewin",
+   "B": "Stephen M. Corey",
+   "C": "Morris L. Bigge",
+   "D": "B. F. Skinner"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Levels of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Morris L. Bigge, Learning Theories for Teachers: memory (Herbart) → understanding (Morrison) → reflective (Hunt).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299230). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q07",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which committee/commission recommended the choice-based credit system in higher education?",
+  "options": {
+   "A": "Administrative and Academic Reform Committee of the UGC",
+   "B": "Justice Verma Commission on Teacher Education",
+   "C": "Ramamurti Committee on Higher Education",
+   "D": "Chattopadhyay Committee on Teacher Education"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Committees and commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The UGC launched the Choice Based Credit System across universities in 2015.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299231). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q08",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A teacher in a particular college assigns percentile ranks to indicate his/her students' performance in the unit tests conducted. What type of assessment procedure will it be called?",
+  "options": {
+   "A": "Criterion-referenced",
+   "B": "Norm-referenced",
+   "C": "Formative",
+   "D": "Summative"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Percentile ranks compare a student with the group (norm); criterion-referenced tests compare with a fixed standard.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299232). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q09",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following support materials in learning use the procedures of programmed Instructional Technology based on Skinner and Crowder's principles?\nA. Modular instructional material\nB. Branching programmes based material\nC. Linear programmes based materials\nD. Specially prepared supplement programme materials\nE. Lecture outlines with components of 'to reflect' and 'to do'\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "B and C only",
+   "B": "A and C only",
+   "C": "C and D only",
+   "D": "D and E only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Programmed instruction"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Skinner devised linear programming (1954); Norman Crowder devised branching (intrinsic) programming.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299233). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q10",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the features of understanding level teaching from the following:\nA. The teacher takes the initiative in organizing subject matter, in structuring the various units and in controlling the practice taken up by students\nB. It is basically devoted to helping students in seeing of relationships and tool use of a fact\nC. It is directed at problem raising and problem-solving in a collaborative manner\nD. It is aimed at the conceptualization of ideas and facts\nE. The purpose is to promote autonomy in the learning process through self-regulation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and B only",
+   "B": "B and D only",
+   "C": "C and D only",
+   "D": "D and E only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Levels of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Understanding level (Morrison) seeks relationships and concepts; problem-solving and learner autonomy belong to the reflective level.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299234). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q11",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A university teacher administers a self-made test for summative evaluation of his/her students. The distribution of scores of students is found to be positively skewed. What inference he/she should make about the difficulty level of this test?",
+  "options": {
+   "A": "The test is much too easy for students",
+   "B": "The test is difficult for students",
+   "C": "The test is quite interesting to students",
+   "D": "The test is favouring those students who are low rankers"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Positive skew = most scores bunched at the low end with a long tail of high scores → a hard test. Negative skew → an easy test.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299235). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q12",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A college teacher intends to find out as to what extent student involvement in learning of boys and girls from rural/urban areas is attributable to the socio-economic status of the family from which they hail. What will be designated as an independent variable in this research project?",
+  "options": {
+   "A": "Student involvement in learning",
+   "B": "Socio-economic status of the family",
+   "C": "Rural/urban areas",
+   "D": "Gender (Boys and Girls)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Variables"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SES is the presumed cause (independent); student involvement is the outcome (dependent); gender and locale act as moderators.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299236). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q13",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A research scholar finds through statistical analysis that the value of 't' is significant. What decision is warranted on the basis of this hypothesis?\nA. The null hypothesis should be rejected\nB. The research hypothesis should be accepted\nC. The null hypothesis should be accepted\nD. The research hypothesis should be rejected\nE. No decision is warranted in respect of research hypothesis\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and B only",
+   "B": "B and C only",
+   "C": "C and D only",
+   "D": "D and E only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Hypothesis testing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A significant t means p < α: reject the null hypothesis, which supports the research (alternative) hypothesis.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299237). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q14",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the characteristics of a 'good sample' in research?\nA. Readily accessible\nB. Representative of population characteristics\nC. Serving the personal considerations of the researcher\nD. Precision and accuracy in approximating the parameters\nE. Freedom from bias\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, D and E only",
+   "C": "B, C and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Sampling"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ready access and the researcher's convenience lead to convenience sampling and bias, not a good sample.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299238). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q15",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: In research, formulation of policies for admission tests/screening cannot neglect the constitutional provisions.\nStatement II: While awarding research degrees the minorities quota have to be protected in the interest of equity.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Reservation policy applies at admission (UGC M.Phil./Ph.D. Regulations); degrees are awarded on merit of the thesis, not by quota.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299239). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q16",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Reframing in communication means:",
+  "options": {
+   "A": "Employment of new metaphors",
+   "B": "Rejecting the conventional expressions",
+   "C": "Opting for hyperbole",
+   "D": "Preferring oppositional binaries"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Reframing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Reframing presents the same situation in a new frame — often through a new metaphor (Lakoff: frames are built by metaphors).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299240). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q17",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following contribute for effective cross-cultural communication?\nA. Quick flow of words\nB. Use of foreign words\nC. Selection of simple words\nD. Taking turns to speak\nE. Maintenance of etiquette\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, D and E only",
+   "D": "C, D and E only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Cross-cultural communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Speak slowly, use plain words, take turns and observe etiquette; rapid speech and foreign words create barriers.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299241). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q18",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Cross communication promotes teamwork in the classroom.\nStatement II: Exactness of communication in a cross-cultural setting is flexible and responsive.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Cross-cultural communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Cross-talk (people talking across each other) disrupts classroom teamwork; cross-cultural exchanges need flexible, responsive precision.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299242). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q19",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "The emergence of media of communication, in chronological sequence, is:\nA. Radio\nB. Newspaper\nC. Film\nD. Television\nE. Internet\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, C, D, E, B",
+   "B": "B, C, A, D, E",
+   "C": "C, D, E, A, B",
+   "D": "D, E, C, B, A"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Media history"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Newspaper (17th c.) → film (1895, Lumière) → radio broadcasting (1920) → television (1930s) → internet (1969 ARPANET; web 1991).",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299243). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q20",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I:\nA. Prayer in silence\nB. Teacher talking to students outside the classroom\nC. The CEO of a company issues a circular to his subordinates\nD. Rumour mongering among employees of an organisation\nList II:\nI. Vertical communication\nII. Grapevine\nIII. Inter-personal communication\nIV. Group communication\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-IV, C-I, D-III",
+   "B": "A-III, B-IV, C-I, D-II",
+   "C": "A-IV, B-III, C-II, D-I",
+   "D": "A-I, B-II, C-III, D-IV"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Types of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Grapevine = informal rumour channel; a top-down circular = vertical (downward) communication. (Silent prayer is usually called intrapersonal; the key pairs it with III.)",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299244). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q21",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The salary of Hamid was reduced by 10%. By what per cent should his salary be raised to bring it back to his original salary?",
+  "options": {
+   "A": "10%",
+   "B": "11%",
+   "C": "11 1/7 %",
+   "D": "11 1/9 %"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Required rise = 10 ÷ (100 − 10) × 100 = 11 1/9 %.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299245). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q22",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Consider the following fractions:\nA. 6/11\nB. 4/9\nC. 3/8\nD. 2/5\nE. 5/13\nFor the above fractions, which one of the following is in the correct descending order?\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A > B > D > E > C",
+   "B": "A > D > B > E > C",
+   "C": "A > B > D > C > E",
+   "D": "A > D > B > C > E"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Fractions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Decimals: 0.545 > 0.444 > 0.400 > 0.385 > 0.375.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299246). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q23",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The time is 2:15 pm. What is the angle between the hour and the minute hand?",
+  "options": {
+   "A": "20 1/2°",
+   "B": "30°",
+   "C": "22 1/2°",
+   "D": "25°"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Clocks"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Angle = |30H − 5.5M| = |60 − 82.5| = 22.5°.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299247). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q24",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The mean is the numerical average and is found by adding up all the values and dividing the sum by the number of values.\nStatement II: The mean of the following wages is 16000: (i) 12000 (ii) 10000 (iii) 23000 (iv) 15000\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "60000 ÷ 4 = 15000, not 16000.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299248). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q25",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If January 1, 2007, was a Monday, then January 1, 2008, is a:",
+  "options": {
+   "A": "Sunday",
+   "B": "Monday",
+   "C": "Tuesday",
+   "D": "Wednesday"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Calendar"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2007 is not a leap year: 365 days = 52 weeks + 1 odd day → Tuesday.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299249). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q26",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Next letter in the logical pattern O, T, T, F, F, S, S, E, N, __ is:",
+  "options": {
+   "A": "N",
+   "B": "E",
+   "C": "F",
+   "D": "T"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Initials of One, Two, Three … Nine, Ten → T.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299250). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q27",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A's father has five sons. Names of four sons are M, O, Q and S. What is the name of his fifth son?",
+  "options": {
+   "A": "T",
+   "B": "U",
+   "C": "A",
+   "D": "K"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Verbal reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A is himself the fifth son — the M, O, Q, S pattern is a distraction.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299251). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q28",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Pairs):\nA. Owl : Flight\nB. Bell : Chime\nC. Knife : Cut\nD. Farmer : Crop\nList II (Pairs of analogies):\nI. Dairy farmer : Milk\nII. Snake : Crawl\nIII. Thunder : roar\nIV. Sword : Slaughter\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-IV, C-III, D-I",
+   "B": "A-IV, B-III, C-I, D-II",
+   "C": "A-I, B-IV, C-II, D-III",
+   "D": "A-II, B-III, C-IV, D-I"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Analogies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Creature : movement; thing : sound; tool : action; producer : product.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299252). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q29",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Today is what day if, day before yesterday it was 13th of the present month and 3rd day of the last month, with 31 days, was a Tuesday?",
+  "options": {
+   "A": "Sunday",
+   "B": "Tuesday",
+   "C": "Wednesday",
+   "D": "Friday"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Calendar"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Last month's 31st was a Tuesday (3 + 28), so this month's 1st and 15th (today) are Wednesdays.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299253). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q30",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: If A, B and C are standing in a circle looking at the centre and B is just left of A, then C is just right of B.\nStatement II: If X, Y and Z are standing in a circle looking at the centre and X is just right of Y, then Z is just right of X.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Seating arrangement"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "With three in a circle, if B is on A's left then A is on B's right, so C is on B's left (I false); by the same logic II holds.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299254). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q31",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Consider the following sizes of computer memory. Choose the correct ascending order:\nA. MB\nB. GB\nC. KB\nD. TB\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "B, D, A, C",
+   "B": "D, B, A, C",
+   "C": "A, B, C, D",
+   "D": "C, A, B, D"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory units"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "KB < MB < GB < TB < PB, each 1024 times the previous.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299255). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q32",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Printed output from a computer system is called soft copy.\nStatement II: RAM is a read/write memory.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Printed output is hard copy; screen output is soft copy. RAM is read/write and volatile; ROM is read-only.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299256). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q33",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is NOT used to avail internet connectivity?",
+  "options": {
+   "A": "Wi-Fi",
+   "B": "3G",
+   "C": "Scanner",
+   "D": "4G"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A scanner is an input device that digitises paper documents.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299257). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q34",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I:\nA. Input device\nB. Output device\nC. Software\nD. Web browser\nList II:\nI. Chrome\nII. MS-Office\nIII. Mouse\nIV. Monitor\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-III, C-I, D-IV",
+   "B": "A-III, B-IV, C-II, D-I",
+   "C": "A-I, B-II, C-IV, D-III",
+   "D": "A-IV, B-III, C-II, D-I"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware and software"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mouse = input; monitor = output; MS-Office = application software; Chrome = browser.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299258). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q35",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Radha receives an email claiming that her credit card account is about to be suspended unless she emails her credit card details and personal identification number (PIN) immediately. What is this an example of?",
+  "options": {
+   "A": "Spamming",
+   "B": "Phishing",
+   "C": "Virus signing",
+   "D": "Scanning"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Cyber security"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Phishing = fake messages that trick users into revealing passwords or card details; done by phone it is 'vishing', by SMS 'smishing'.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299259). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q36",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "To put the world on a least cost pathway to limiting global warming to 2°C above the pre-industrial level, global greenhouse gas emissions by 2030 with reference to 2017, require reduction to the extent of:",
+  "options": {
+   "A": "25%",
+   "B": "15%",
+   "C": "10%",
+   "D": "20%"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UNEP Emissions Gap Report 2018: about 25% below 2017 levels by 2030 for 2 °C, about 55% for 1.5 °C.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299260). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q37",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Identify the correct sequence in decreasing order of the carbon content per unit mass of the following carbon reservoirs in the aquatic environment of oceans:\nA. Sediments\nB. Living organisms\nC. Dissolved organic matter\nD. Dissolved inorganic matter\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "D, A, B, C",
+   "B": "A, D, C, B",
+   "C": "B, C, A, D",
+   "D": "C, B, A, D"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Carbon cycle"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Marine sediments hold the most carbon, then dissolved inorganic carbon, then dissolved organic matter; living biomass holds the least.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299261). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q38",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one is labelled as Assertion A and the other is labelled as Reason R.\nAssertion A: Hydrofluorocarbons (HFCs) need to be phased out to protect the Ozone layer.\nReason R: HFCs have a high global warming potential.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both A and R are correct and R is the correct explanation of A",
+   "B": "Both A and R are correct but R is NOT the correct explanation of A",
+   "C": "A is correct but R is not correct",
+   "D": "A is not correct but R is correct"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Ozone and climate"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "HFCs contain no chlorine and do not deplete ozone; they are phased down under the Kigali Amendment (2016) to the Montreal Protocol because of their high GWP.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299262). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q39",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (International Agreements):\nA. Kyoto Protocol\nB. Paris Agreement\nC. Rio Summit\nD. International Solar Alliance\nList II (Provisions):\nI. Convention on Biodiversity\nII. Affordable, reliable clean energy\nIII. Nationally Determined Contributions\nIV. Joint Implementation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-III, B-IV, C-I, D-II",
+   "B": "A-IV, B-III, C-I, D-II",
+   "C": "A-IV, B-III, C-II, D-I",
+   "D": "A-III, B-II, C-IV, D-I"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kyoto (1997) flexible mechanisms: JI, CDM, emissions trading. Rio Earth Summit (1992) opened the CBD. ISA launched by India and France in 2015.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299263). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q40",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Mitigation measures to cope with floods include:\nA. Elevating or protecting electrical service panels\nB. Upsizing culverts to better handle flood surges\nC. Protecting facilities with barriers and sandbags\nD. Removing trees and debris from the flood plain\nE. Relocating equipment outside the flood plain\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, C, D and E only",
+   "B": "A, B, C and E only",
+   "C": "A, B, C, D and E",
+   "D": "B, C, D and E only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Disaster management"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Trees on the flood plain slow and absorb floodwater; removing them is not mitigation.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299264). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q41",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: An institution in the field of higher education seeking deemed to be university status must have been in existence for at least 10 years.\nStatement II: A deemed to be university must have at least five post-graduate departments.\n\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is correct but Statement II is false",
+   "D": "Statement I is incorrect but Statement II is true"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Deemed universities"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Deemed universities are governed by the UGC (Institutions Deemed to be Universities) Regulations, 2019.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299265). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q42",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "According to National Skills Qualifications Framework (NSQF), the level 8 competency is equivalent to:",
+  "options": {
+   "A": "Post graduate degree",
+   "B": "Under graduate degree",
+   "C": "Under graduate (honours) degree",
+   "D": "Doctoral degree"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Skill education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NSQF (2013) has 10 levels; level 10 corresponds to the doctoral degree.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299266). Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q43",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "MHRD's scheme 'VIDWAN' is aimed at:",
+  "options": {
+   "A": "Creating a database and national research network",
+   "B": "Making available e-resources",
+   "C": "Promoting entrepreneurship among faculty",
+   "D": "Awarding national professorship to a faculty"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "VIDWAN, hosted by INFLIBNET, is the national database of experts and researchers' profiles.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299267). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q44",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In ancient India, the eligibility criterion in respect of age for students seeking admission to Takshashila University was set at:",
+  "options": {
+   "A": "22 years",
+   "B": "20 years",
+   "C": "18 years",
+   "D": "16 years"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Ancient universities"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Takshashila (near modern Rawalpindi) admitted students at about 16; Chanakya and Panini are linked with it.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299268). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q45",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Kothari Commission had recommended a certain percentage of national income to be invested in education. What was that percentage?",
+  "options": {
+   "A": "10%",
+   "B": "8%",
+   "C": "6%",
+   "D": "5%"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Committees and commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kothari Commission (1964–66) — 6% of national income; the NPE 1968, NPE 1986 and NEP 2020 reaffirm the 6% target.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299269). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q46",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: To be swayed by emotions can surely be a problem, but otherwise, emotions are such a wealth within us that they are rightly called a source of human energy, information and influence. When we understand them well and handle them wisely, they can help us mend fences or move mountains. They touch our hearts and a rich life is necessarily one that is centred in the heart. To love and be loved is the greatest privilege of life, said Chinmaya, the popular teacher of the Vedanta.\nTo put in efforts towards understanding our own and others' emotions leads to an enhancement of our Emotional Quotient (EQ). By broadening our outlook, we can discard false judgments and this leads to the rise of healthy emotions within us. Just to be aware of the factors that activate particular emotions that arise in us, paves the way to a better handling of these forces at work. We need to train ourselves to be rightly assertive in the face of injustice or some unfair treatment meted out to us. This means that we rise above all passivity that is inaction and at the same time avoid aggressive behaviour that could be harsh or violent. Even skills that we develop to handle stress fall under emotional maturity for a lot of stress is the result of certain negative emotions making situations look darker than what they actually are. Developing empathy is another aspect of emotional growth, where we \"emotionally read\" others and thus relate with them very accurately rather than in some imagined way.\n\nHuman emotions are:\nA. Neither good nor bad\nB. Source of human energy\nC. Passive in nature\nD. Beneficial when handled wisely\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and B only",
+   "B": "B and C only",
+   "C": "C and D only",
+   "D": "B and D only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage calls emotions a source of human energy and says they help when handled wisely.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299271). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q47",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: To be swayed by emotions can surely be a problem, but otherwise, emotions are such a wealth within us that they are rightly called a source of human energy, information and influence. When we understand them well and handle them wisely, they can help us mend fences or move mountains. They touch our hearts and a rich life is necessarily one that is centred in the heart. To love and be loved is the greatest privilege of life, said Chinmaya, the popular teacher of the Vedanta.\nTo put in efforts towards understanding our own and others' emotions leads to an enhancement of our Emotional Quotient (EQ). By broadening our outlook, we can discard false judgments and this leads to the rise of healthy emotions within us. Just to be aware of the factors that activate particular emotions that arise in us, paves the way to a better handling of these forces at work. We need to train ourselves to be rightly assertive in the face of injustice or some unfair treatment meted out to us. This means that we rise above all passivity that is inaction and at the same time avoid aggressive behaviour that could be harsh or violent. Even skills that we develop to handle stress fall under emotional maturity for a lot of stress is the result of certain negative emotions making situations look darker than what they actually are. Developing empathy is another aspect of emotional growth, where we \"emotionally read\" others and thus relate with them very accurately rather than in some imagined way.\n\nUsed properly, emotions lead us to:",
+  "options": {
+   "A": "Accumulate wealth",
+   "B": "A rich and joyous life",
+   "C": "Being judgemental",
+   "D": "Relate with others in some imagined way"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A rich life is one centred in the heart; 'wealth' in the passage is figurative.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299272). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q48",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: To be swayed by emotions can surely be a problem, but otherwise, emotions are such a wealth within us that they are rightly called a source of human energy, information and influence. When we understand them well and handle them wisely, they can help us mend fences or move mountains. They touch our hearts and a rich life is necessarily one that is centred in the heart. To love and be loved is the greatest privilege of life, said Chinmaya, the popular teacher of the Vedanta.\nTo put in efforts towards understanding our own and others' emotions leads to an enhancement of our Emotional Quotient (EQ). By broadening our outlook, we can discard false judgments and this leads to the rise of healthy emotions within us. Just to be aware of the factors that activate particular emotions that arise in us, paves the way to a better handling of these forces at work. We need to train ourselves to be rightly assertive in the face of injustice or some unfair treatment meted out to us. This means that we rise above all passivity that is inaction and at the same time avoid aggressive behaviour that could be harsh or violent. Even skills that we develop to handle stress fall under emotional maturity for a lot of stress is the result of certain negative emotions making situations look darker than what they actually are. Developing empathy is another aspect of emotional growth, where we \"emotionally read\" others and thus relate with them very accurately rather than in some imagined way.\n\nBy a clear assessment of emotional factors, we can become:",
+  "options": {
+   "A": "Highly aggressive",
+   "B": "Rigidly judicious",
+   "C": "Passively righteous",
+   "D": "Better handlers of negativity"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Awareness of what triggers emotions paves the way to handling them better.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299273). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q49",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: To be swayed by emotions can surely be a problem, but otherwise, emotions are such a wealth within us that they are rightly called a source of human energy, information and influence. When we understand them well and handle them wisely, they can help us mend fences or move mountains. They touch our hearts and a rich life is necessarily one that is centred in the heart. To love and be loved is the greatest privilege of life, said Chinmaya, the popular teacher of the Vedanta.\nTo put in efforts towards understanding our own and others' emotions leads to an enhancement of our Emotional Quotient (EQ). By broadening our outlook, we can discard false judgments and this leads to the rise of healthy emotions within us. Just to be aware of the factors that activate particular emotions that arise in us, paves the way to a better handling of these forces at work. We need to train ourselves to be rightly assertive in the face of injustice or some unfair treatment meted out to us. This means that we rise above all passivity that is inaction and at the same time avoid aggressive behaviour that could be harsh or violent. Even skills that we develop to handle stress fall under emotional maturity for a lot of stress is the result of certain negative emotions making situations look darker than what they actually are. Developing empathy is another aspect of emotional growth, where we \"emotionally read\" others and thus relate with them very accurately rather than in some imagined way.\n\nEmotional maturity:",
+  "options": {
+   "A": "Handles negative emotions effectively",
+   "B": "Makes a person passive",
+   "C": "Makes life look darker than what it is",
+   "D": "May give rise to aggressive behaviour against injustice"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Stress-handling skills fall under emotional maturity, since stress comes from negative emotions.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299274). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2020-JUN-S2-P1-Q50",
+  "exam": "NET",
+  "year": 2020,
+  "session": "June",
+  "shift": "1 Oct 2020, Shift 2",
+  "source": "UGC NET June 2020 (held late 2020) · 1 Oct 2020 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: To be swayed by emotions can surely be a problem, but otherwise, emotions are such a wealth within us that they are rightly called a source of human energy, information and influence. When we understand them well and handle them wisely, they can help us mend fences or move mountains. They touch our hearts and a rich life is necessarily one that is centred in the heart. To love and be loved is the greatest privilege of life, said Chinmaya, the popular teacher of the Vedanta.\nTo put in efforts towards understanding our own and others' emotions leads to an enhancement of our Emotional Quotient (EQ). By broadening our outlook, we can discard false judgments and this leads to the rise of healthy emotions within us. Just to be aware of the factors that activate particular emotions that arise in us, paves the way to a better handling of these forces at work. We need to train ourselves to be rightly assertive in the face of injustice or some unfair treatment meted out to us. This means that we rise above all passivity that is inaction and at the same time avoid aggressive behaviour that could be harsh or violent. Even skills that we develop to handle stress fall under emotional maturity for a lot of stress is the result of certain negative emotions making situations look darker than what they actually are. Developing empathy is another aspect of emotional growth, where we \"emotionally read\" others and thus relate with them very accurately rather than in some imagined way.\n\nDeveloping empathy makes a person:",
+  "options": {
+   "A": "Understand himself",
+   "B": "Relate with others emotionally",
+   "C": "Cope with stress",
+   "D": "Relate to others in some imagined way"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Empathy means 'emotionally reading' others and relating to them accurately, not in an imagined way.",
+  "verified": true,
+  "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299275). Answer re-checked by Claude."
  }
 ]
