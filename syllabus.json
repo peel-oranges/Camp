@@ -1,6 +1,6 @@
 {
  "updated": "2026-10-25",
- "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to, so ticking it once updates both exams.",
+ "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to. Questions are linked to topics by writer first (writers, plus alsoWriters for a writer's secondary topic), then by tags (each rule is a list that must all match; 'sec:X' = paper section, '!Tag' = must not have), then by the Guide topic. Each question gets one home topic (counted once) and may also be listed in a few others for quizzing.",
  "exams": {
   "gate": {
    "name": "GATE 2027",
@@ -215,7 +215,45 @@
    "net": [
     "n2"
    ],
-   "guide": "british-medieval"
+   "guide": "british-medieval",
+   "writers": [
+    "Geoffrey Chaucer",
+    "William Langland",
+    "John Gower",
+    "Thomas Malory",
+    "William Caxton",
+    "John Wycliffe",
+    "William Dunbar",
+    "Robert Henryson",
+    "John Skelton",
+    "Gawain",
+    "Bede",
+    "Caedmon",
+    "Cynewulf",
+    "Margery Kempe",
+    "Julian of Norwich",
+    "John Lydgate",
+    "Thomas Hoccleve",
+    "John Barbour",
+    "Gavin Douglas"
+   ],
+   "tags": [
+    [
+     "Medieval"
+    ],
+    [
+     "Age of Chaucer"
+    ],
+    [
+     "Old English"
+    ],
+    [
+     "Middle English"
+    ],
+    [
+     "Beowulf"
+    ]
+   ]
   },
   {
    "id": "br-medieval-drama",
@@ -228,7 +266,28 @@
    "net": [
     "n1"
    ],
-   "q": "morality play"
+   "writers": [
+    "John Heywood",
+    "Everyman"
+   ],
+   "tags": [
+    [
+     "Morality play"
+    ],
+    [
+     "Mystery plays"
+    ],
+    [
+     "Miracle plays"
+    ],
+    [
+     "Interlude"
+    ],
+    [
+     "Medieval",
+     "Drama"
+    ]
+   ]
   },
   {
    "id": "br-ren-poetry",
@@ -240,7 +299,56 @@
    "net": [
     "n2"
    ],
-   "guide": "british-renaissance"
+   "guide": "british-renaissance",
+   "writers": [
+    "Edmund Spenser",
+    "Philip Sidney",
+    "Thomas Wyatt",
+    "Henry Howard, Earl of Surrey",
+    "Samuel Daniel",
+    "Michael Drayton",
+    "Richard Tottel",
+    "Walter Raleigh",
+    "Thomas Campion",
+    "George Gascoigne",
+    "Fulke Greville",
+    "Edmund Waller",
+    "Sonnet"
+   ],
+   "tags": [
+    [
+     "Elizabethan",
+     "Poetry"
+    ],
+    [
+     "Renaissance",
+     "Poetry"
+    ],
+    [
+     "Tudor",
+     "Poetry"
+    ],
+    [
+     "16th century",
+     "Poetry"
+    ],
+    [
+     "Sonnet",
+     "!Shakespeare"
+    ],
+    [
+     "Renaissance"
+    ],
+    [
+     "Tudor"
+    ],
+    [
+     "16th century"
+    ],
+    [
+     "Humanism"
+    ]
+   ]
   },
   {
    "id": "br-eliz-drama",
@@ -252,7 +360,42 @@
    "net": [
     "n1"
    ],
-   "q": "Marlowe"
+   "writers": [
+    "Christopher Marlowe",
+    "Thomas Kyd",
+    "John Lyly",
+    "Robert Greene",
+    "George Peele",
+    "Thomas Nashe",
+    "Thomas Lodge",
+    "Thomas Norton",
+    "Thomas Sackville",
+    "Nicholas Udall",
+    "Philip Henslowe",
+    "Thomas Dekker",
+    "Thomas Heywood",
+    "George Chapman"
+   ],
+   "tags": [
+    [
+     "University Wits"
+    ],
+    [
+     "Elizabethan",
+     "Drama",
+     "!Shakespeare"
+    ],
+    [
+     "Revenge tragedy"
+    ],
+    [
+     "Theatre history",
+     "Elizabethan"
+    ],
+    [
+     "Elizabethan"
+    ]
+   ]
   },
   {
    "id": "br-shak-com",
@@ -264,8 +407,10 @@
    "net": [
     "n1"
    ],
-   "q": "Shakespeare",
-   "onlyWorks": [
+   "writers": [
+    "William Shakespeare"
+   ],
+   "works": [
     "As You Like It",
     "Twelfth Night",
     "Much Ado About Nothing",
@@ -279,11 +424,23 @@
     "Richard II",
     "Richard III",
     "Henry IV",
+    "Henry IV, Part 1",
+    "Henry IV, Part 2",
     "Henry V",
     "Henry VI",
     "Henry VIII",
     "King John",
-    "Falstaff"
+    "Edward III"
+   ],
+   "tags": [
+    [
+     "Shakespeare",
+     "Comedy"
+    ],
+    [
+     "Shakespeare",
+     "History play"
+    ]
    ]
   },
   {
@@ -297,8 +454,12 @@
     "n1",
     "n2"
    ],
-   "q": "Shakespeare",
-   "onlyWorks": [
+   "writers": [
+    "William Shakespeare",
+    "John Heminges",
+    "Henry Condell"
+   ],
+   "works": [
     "Hamlet",
     "Macbeth",
     "Othello",
@@ -317,11 +478,23 @@
     "Cymbeline",
     "Pericles",
     "Sonnets",
-    "Sonnet",
     "Venus and Adonis",
     "The Rape of Lucrece",
     "The Phoenix and the Turtle",
-    "The Two Noble Kinsmen"
+    "The Two Noble Kinsmen",
+    "A Lover's Complaint"
+   ],
+   "tags": [
+    [
+     "Shakespeare",
+     "Tragedy"
+    ],
+    [
+     "Shakespeare"
+    ],
+    [
+     "Shakespeare criticism"
+    ]
    ]
   },
   {
@@ -334,7 +507,34 @@
    "net": [
     "n1"
    ],
-   "q": "Jacobean"
+   "writers": [
+    "Ben Jonson",
+    "John Webster",
+    "Thomas Middleton",
+    "John Ford",
+    "Cyril Tourneur",
+    "John Marston",
+    "Francis Beaumont",
+    "John Fletcher",
+    "Philip Massinger",
+    "William Rowley",
+    "James Shirley",
+    "Inigo Jones"
+   ],
+   "tags": [
+    [
+     "Jacobean"
+    ],
+    [
+     "Comedy of humours"
+    ],
+    [
+     "Masque"
+    ],
+    [
+     "Caroline"
+    ]
+   ]
   },
   {
    "id": "br-metaphysical",
@@ -346,7 +546,34 @@
    "net": [
     "n2"
    ],
-   "q": "Metaphysical"
+   "writers": [
+    "John Donne",
+    "George Herbert",
+    "Andrew Marvell",
+    "Henry Vaughan",
+    "Richard Crashaw",
+    "Abraham Cowley",
+    "Thomas Carew",
+    "Robert Herrick",
+    "Richard Lovelace",
+    "John Suckling",
+    "Thomas Traherne",
+    "Edward Herbert"
+   ],
+   "tags": [
+    [
+     "Metaphysical poets"
+    ],
+    [
+     "Metaphysical poetry"
+    ],
+    [
+     "Cavalier poets"
+    ],
+    [
+     "Metaphysical"
+    ]
+   ]
   },
   {
    "id": "br-milton",
@@ -359,7 +586,24 @@
     "n2",
     "n4"
    ],
-   "q": "Milton"
+   "writers": [
+    "John Milton",
+    "John Bunyan",
+    "Izaak Walton"
+   ],
+   "tags": [
+    [
+     "Puritan Age"
+    ],
+    [
+     "Milton"
+    ],
+    [
+     "17th century",
+     "Poetry",
+     "Epic"
+    ]
+   ]
   },
   {
    "id": "br-ren-prose",
@@ -371,7 +615,52 @@
    "net": [
     "n4"
    ],
-   "q": "Bacon"
+   "writers": [
+    "Francis Bacon",
+    "Thomas More",
+    "Robert Burton",
+    "Thomas Browne",
+    "Thomas Hobbes",
+    "Richard Hooker",
+    "Roger Ascham",
+    "Thomas Fuller",
+    "William Tyndale",
+    "Miles Coverdale",
+    "Bible translation",
+    "Thomas Elyot",
+    "Jeremy Taylor",
+    "Thomas Sprat"
+   ],
+   "alsoWriters": [
+    "John Lyly"
+   ],
+   "tags": [
+    [
+     "w:John Milton",
+     "Prose"
+    ],
+    [
+     "17th century",
+     "Prose"
+    ],
+    [
+     "Renaissance",
+     "Prose"
+    ],
+    [
+     "Bible translation"
+    ],
+    [
+     "Bible"
+    ],
+    [
+     "Essay",
+     "17th century"
+    ],
+    [
+     "17th century"
+    ]
+   ]
   },
   {
    "id": "br-restoration",
@@ -383,7 +672,54 @@
    "net": [
     "n1"
    ],
-   "q": "Restoration"
+   "writers": [
+    "William Congreve",
+    "William Wycherley",
+    "George Etherege",
+    "John Vanbrugh",
+    "George Farquhar",
+    "Aphra Behn",
+    "Thomas Otway",
+    "Thomas Shadwell",
+    "Jeremy Collier",
+    "Richard Brinsley Sheridan",
+    "R. B. Sheridan",
+    "Samuel Pepys",
+    "John Evelyn",
+    "Colley Cibber",
+    "Nathaniel Lee",
+    "Thomas Southerne"
+   ],
+   "alsoWriters": [
+    "Oliver Goldsmith"
+   ],
+   "tags": [
+    [
+     "w:Oliver Goldsmith",
+     "Drama"
+    ],
+    [
+     "w:John Dryden",
+     "Drama"
+    ],
+    [
+     "w:Samuel Johnson",
+     "Drama"
+    ],
+    [
+     "Restoration",
+     "Drama"
+    ],
+    [
+     "Comedy of manners"
+    ],
+    [
+     "Heroic drama"
+    ],
+    [
+     "Restoration"
+    ]
+   ]
   },
   {
    "id": "br-neoclassical",
@@ -395,7 +731,54 @@
    "net": [
     "n2"
    ],
-   "q": "Pope"
+   "writers": [
+    "John Dryden",
+    "Alexander Pope",
+    "Matthew Prior",
+    "John Gay",
+    "James Thomson",
+    "Edward Young"
+   ],
+   "alsoWriters": [
+    "Samuel Butler",
+    "Samuel Johnson",
+    "Oliver Goldsmith"
+   ],
+   "tags": [
+    [
+     "w:Oliver Goldsmith",
+     "Poetry"
+    ],
+    [
+     "w:Samuel Johnson",
+     "Poetry"
+    ],
+    [
+     "w:Jonathan Swift",
+     "Poetry"
+    ],
+    [
+     "Neoclassical",
+     "Poetry"
+    ],
+    [
+     "Mock epic"
+    ],
+    [
+     "Mock-epic"
+    ],
+    [
+     "Satire",
+     "Poetry"
+    ],
+    [
+     "18th century",
+     "Poetry"
+    ],
+    [
+     "Neoclassical"
+    ]
+   ]
   },
   {
    "id": "br-18-prose",
@@ -407,7 +790,54 @@
    "net": [
     "n4"
    ],
-   "q": "Periodical essay"
+   "writers": [
+    "Joseph Addison",
+    "Richard Steele",
+    "Jonathan Swift",
+    "Samuel Johnson",
+    "James Boswell",
+    "Edward Gibbon",
+    "Edmund Burke",
+    "Lord Chesterfield",
+    "John Arbuthnot",
+    "Edward Cave",
+    "Richard Bentley",
+    "William Temple",
+    "John Locke",
+    "David Hume",
+    "Thomas Paine",
+    "Mary Wollstonecraft",
+    "William Godwin",
+    "Jeremy Bentham"
+   ],
+   "tags": [
+    [
+     "Periodical essay"
+    ],
+    [
+     "Periodicals",
+     "18th century"
+    ],
+    [
+     "18th century",
+     "Prose"
+    ],
+    [
+     "18th century",
+     "Satire"
+    ],
+    [
+     "Literary groups",
+     "18th century"
+    ],
+    [
+     "Lexicography",
+     "18th century"
+    ],
+    [
+     "18th century"
+    ]
+   ]
   },
   {
    "id": "br-novel-rise",
@@ -420,7 +850,42 @@
    "net": [
     "n3"
    ],
-   "q": "18th century novel"
+   "writers": [
+    "Daniel Defoe",
+    "Samuel Richardson",
+    "Henry Fielding",
+    "Laurence Sterne",
+    "Tobias Smollett",
+    "Oliver Goldsmith",
+    "Fanny Burney",
+    "Horace Walpole",
+    "Ann Radcliffe",
+    "M. G. Lewis",
+    "William Beckford",
+    "Henry Mackenzie",
+    "Clara Reeve",
+    "Eliza Haywood"
+   ],
+   "tags": [
+    [
+     "18th century",
+     "Novel"
+    ],
+    [
+     "Epistolary novel"
+    ],
+    [
+     "Gothic",
+     "18th century"
+    ],
+    [
+     "Gothic",
+     "!Victorian"
+    ],
+    [
+     "Picaresque"
+    ]
+   ]
   },
   {
    "id": "br-preromantic",
@@ -432,26 +897,35 @@
    "net": [
     "n2"
    ],
-   "onlyWriters": [
+   "writers": [
     "Thomas Gray",
     "William Collins",
     "William Cowper",
     "William Blake",
     "Robert Burns",
-    "James Thomson",
-    "Edward Young",
-    "George Crabbe",
     "Thomas Chatterton",
     "James Macpherson",
     "Christopher Smart",
-    "Thomas Percy",
-    "Mark Akenside",
+    "George Crabbe",
     "Robert Blair",
+    "Mark Akenside",
     "Joseph Warton",
     "Thomas Warton",
-    "Henry Mackenzie",
-    "Anne Finch",
-    "Charlotte Smith"
+    "Thomas Percy"
+   ],
+   "alsoWriters": [
+    "Edward Young"
+   ],
+   "tags": [
+    [
+     "Pre-Romanticism"
+    ],
+    [
+     "Graveyard poets"
+    ],
+    [
+     "Transition poets"
+    ]
    ]
   },
   {
@@ -464,7 +938,44 @@
    "net": [
     "n2"
    ],
-   "guide": "british-romantic"
+   "guide": "british-romantic",
+   "writers": [
+    "William Wordsworth",
+    "S. T. Coleridge",
+    "Lord Byron",
+    "P. B. Shelley",
+    "John Keats",
+    "Robert Southey",
+    "Leigh Hunt",
+    "John Clare",
+    "Thomas Moore",
+    "Felicia Hemans",
+    "Walter Savage Landor",
+    "Thomas Campbell"
+   ],
+   "alsoWriters": [
+    "Walter Scott"
+   ],
+   "tags": [
+    [
+     "w:Walter Scott",
+     "Poetry"
+    ],
+    [
+     "Romantic Age",
+     "Poetry"
+    ],
+    [
+     "Lake Poets"
+    ],
+    [
+     "Ode",
+     "Romantic Age"
+    ],
+    [
+     "Romantic Age"
+    ]
+   ]
   },
   {
    "id": "br-romantic-prose",
@@ -477,34 +988,36 @@
     "n3",
     "n4"
    ],
-   "q": "Romantic",
-   "onlyWriters": [
+   "writers": [
     "Charles Lamb",
     "William Hazlitt",
     "Thomas De Quincey",
-    "Leigh Hunt",
     "Jane Austen",
     "Walter Scott",
     "Mary Shelley",
     "Thomas Love Peacock",
-    "William Godwin",
-    "Mary Wollstonecraft",
     "Maria Edgeworth",
     "Francis Jeffrey",
-    "Robert Southey",
-    "Walter Savage Landor",
-    "William Cobbett",
-    "John Galt",
-    "James Hogg",
-    "Susan Ferrier",
-    "Matthew Gregory Lewis",
-    "Ann Radcliffe",
-    "Charles Maturin",
-    "John Gibson Lockhart",
-    "John Wilson",
     "Dorothy Wordsworth",
-    "Edmund Burke",
-    "Thomas Paine"
+    "John Wilson"
+   ],
+   "tags": [
+    [
+     "Romantic Age",
+     "Novel"
+    ],
+    [
+     "Romantic Age",
+     "Prose"
+    ],
+    [
+     "Romantic Age",
+     "Essay"
+    ],
+    [
+     "Historical novel",
+     "Romantic Age"
+    ]
    ]
   },
   {
@@ -517,7 +1030,45 @@
    "net": [
     "n2"
    ],
-   "q": "Victorian poetry"
+   "writers": [
+    "Alfred Tennyson",
+    "Robert Browning",
+    "Matthew Arnold",
+    "Elizabeth Barrett Browning",
+    "D. G. Rossetti",
+    "Dante Gabriel Rossetti",
+    "Christina Rossetti",
+    "A. C. Swinburne",
+    "Gerard Manley Hopkins",
+    "G. M. Hopkins",
+    "William Morris",
+    "Edward FitzGerald",
+    "Arthur Hugh Clough",
+    "Robert Bridges",
+    "Coventry Patmore",
+    "Arthur Henry Hallam",
+    "Robert Buchanan",
+    "John Everett Millais",
+    "William Holman Hunt",
+    "Francis Thompson",
+    "Ernest Dowson",
+    "A. E. Housman"
+   ],
+   "tags": [
+    [
+     "Victorian",
+     "Poetry"
+    ],
+    [
+     "Pre-Raphaelites"
+    ],
+    [
+     "Dramatic monologue"
+    ],
+    [
+     "Fleshly School"
+    ]
+   ]
   },
   {
    "id": "br-vic-novel",
@@ -529,7 +1080,56 @@
    "net": [
     "n3"
    ],
-   "q": "Victorian novel"
+   "writers": [
+    "Charles Dickens",
+    "Charlotte Brontë",
+    "Emily Brontë",
+    "Anne Brontë",
+    "George Eliot",
+    "W. M. Thackeray",
+    "Thomas Hardy",
+    "Elizabeth Gaskell",
+    "Anthony Trollope",
+    "Wilkie Collins",
+    "George Meredith",
+    "Samuel Butler",
+    "Benjamin Disraeli",
+    "Charles Kingsley",
+    "Edward Bulwer-Lytton",
+    "Lewis Carroll",
+    "Robert Louis Stevenson",
+    "Bram Stoker",
+    "George Gissing",
+    "Oscar Wilde",
+    "Rudyard Kipling",
+    "Arthur Conan Doyle",
+    "H. Rider Haggard",
+    "George Moore"
+   ],
+   "tags": [
+    [
+     "Victorian",
+     "Novel"
+    ],
+    [
+     "Condition of England"
+    ],
+    [
+     "Victorian",
+     "Fiction"
+    ],
+    [
+     "Victorian",
+     "Short story"
+    ],
+    [
+     "Victorian",
+     "Drama"
+    ],
+    [
+     "Victorian"
+    ]
+   ]
   },
   {
    "id": "br-vic-prose",
@@ -541,7 +1141,40 @@
    "net": [
     "n4"
    ],
-   "q": "Victorian prose"
+   "writers": [
+    "Thomas Carlyle",
+    "John Ruskin",
+    "John Henry Newman",
+    "John Stuart Mill",
+    "J. S. Mill",
+    "Walter Pater",
+    "Thomas Babington Macaulay",
+    "T. B. Macaulay",
+    "T. H. Huxley",
+    "Charles Darwin",
+    "Henry Mayhew",
+    "Herbert Spencer",
+    "Walter Bagehot"
+   ],
+   "alsoWriters": [
+    "Matthew Arnold"
+   ],
+   "tags": [
+    [
+     "Victorian",
+     "Prose"
+    ],
+    [
+     "Aestheticism"
+    ],
+    [
+     "Victorian",
+     "Essay"
+    ],
+    [
+     "Oxford Movement"
+    ]
+   ]
   },
   {
    "id": "br-mod-poetry",
@@ -553,7 +1186,76 @@
    "net": [
     "n2"
    ],
-   "q": "Modernism poetry"
+   "writers": [
+    "W. B. Yeats",
+    "T. S. Eliot",
+    "Ezra Pound",
+    "W. H. Auden",
+    "Wilfred Owen",
+    "Siegfried Sassoon",
+    "Rupert Brooke",
+    "Isaac Rosenberg",
+    "Edward Thomas",
+    "Stephen Spender",
+    "Louis MacNeice",
+    "Cecil Day-Lewis",
+    "C. Day Lewis",
+    "C. Day-Lewis",
+    "Dylan Thomas",
+    "Robert Graves",
+    "Walter de la Mare",
+    "T. E. Hulme",
+    "Hilda Doolittle",
+    "Edith Sitwell",
+    "Hugh MacDiarmid",
+    "John Masefield"
+   ],
+   "alsoWriters": [
+    "Thomas Hardy",
+    "Rudyard Kipling",
+    "D. H. Lawrence"
+   ],
+   "tags": [
+    [
+     "w:Thomas Hardy",
+     "Poetry"
+    ],
+    [
+     "w:Rudyard Kipling",
+     "Poetry"
+    ],
+    [
+     "w:D. H. Lawrence",
+     "Poetry"
+    ],
+    [
+     "w:James Joyce",
+     "Poetry"
+    ],
+    [
+     "20th century",
+     "Poetry"
+    ],
+    [
+     "Modernism",
+     "Poetry"
+    ],
+    [
+     "War poets"
+    ],
+    [
+     "Imagism"
+    ],
+    [
+     "Auden Group"
+    ],
+    [
+     "Georgian poetry"
+    ],
+    [
+     "Symbolism"
+    ]
+   ]
   },
   {
    "id": "br-mod-fiction",
@@ -566,7 +1268,79 @@
    "net": [
     "n3"
    ],
-   "q": "Modernism novel"
+   "writers": [
+    "Joseph Conrad",
+    "James Joyce",
+    "Virginia Woolf",
+    "D. H. Lawrence",
+    "E. M. Forster",
+    "Aldous Huxley",
+    "George Orwell",
+    "Evelyn Waugh",
+    "Graham Greene",
+    "Henry James",
+    "H. G. Wells",
+    "Arnold Bennett",
+    "John Galsworthy",
+    "W. Somerset Maugham",
+    "Ford Madox Ford",
+    "Dorothy Richardson",
+    "May Sinclair",
+    "Katherine Mansfield",
+    "Lytton Strachey",
+    "Saki",
+    "Christopher Isherwood",
+    "Elizabeth Bowen",
+    "Ivy Compton-Burnett",
+    "J. R. R. Tolkien",
+    "C. S. Lewis",
+    "Agatha Christie",
+    "Wyndham Lewis",
+    "Radclyffe Hall"
+   ],
+   "alsoWriters": [
+    "Jean Rhys"
+   ],
+   "tags": [
+    [
+     "w:Samuel Beckett",
+     "Novel"
+    ],
+    [
+     "w:Rudyard Kipling",
+     "20th century",
+     "Novel"
+    ],
+    [
+     "Modernism",
+     "Novel"
+    ],
+    [
+     "20th century",
+     "Novel"
+    ],
+    [
+     "Modernism",
+     "Short story"
+    ],
+    [
+     "20th century",
+     "Short story"
+    ],
+    [
+     "Bloomsbury Group"
+    ],
+    [
+     "Stream of consciousness",
+     "20th century"
+    ],
+    [
+     "Modernism"
+    ],
+    [
+     "Edwardian"
+    ]
+   ]
   },
   {
    "id": "br-mod-drama",
@@ -578,25 +1352,82 @@
    "net": [
     "n1"
    ],
-   "q": "20th century drama",
-   "exceptWriters": [
-    "Eugene O'Neill",
-    "Arthur Miller",
-    "Edward Albee",
-    "Tennessee Williams",
-    "Susan Glaspell",
-    "David Mamet",
-    "Sam Shepard",
-    "Thornton Wilder",
-    "Clifford Odets",
-    "Lorraine Hansberry",
-    "August Wilson",
-    "Tony Kushner",
-    "Elmer Rice",
-    "Amiri Baraka",
-    "Lillian Hellman",
-    "Paula Vogel",
-    "Suzan-Lori Parks"
+   "writers": [
+    "George Bernard Shaw",
+    "G. B. Shaw",
+    "Samuel Beckett",
+    "John Osborne",
+    "Harold Pinter",
+    "J. M. Synge",
+    "Sean O'Casey",
+    "Lady Gregory",
+    "Arnold Wesker",
+    "Tom Stoppard",
+    "John Arden",
+    "Edward Bond",
+    "Joe Orton",
+    "Caryl Churchill",
+    "Noël Coward",
+    "J. M. Barrie",
+    "J. B. Priestley",
+    "Terence Rattigan",
+    "Shelagh Delaney",
+    "Brian Friel",
+    "Christopher Fry",
+    "Peter Shaffer",
+    "David Hare",
+    "Howard Brenton",
+    "Alan Ayckbourn",
+    "Martin McDonagh"
+   ],
+   "alsoWriters": [
+    "T. S. Eliot",
+    "W. B. Yeats"
+   ],
+   "tags": [
+    [
+     "w:T. S. Eliot",
+     "Drama"
+    ],
+    [
+     "w:W. B. Yeats",
+     "Drama"
+    ],
+    [
+     "w:James Joyce",
+     "Drama"
+    ],
+    [
+     "20th century",
+     "Drama"
+    ],
+    [
+     "Modernism",
+     "Drama"
+    ],
+    [
+     "Comedy of menace"
+    ],
+    [
+     "Theatre of the Absurd",
+     "British"
+    ],
+    [
+     "Angry Young Men",
+     "Drama"
+    ],
+    [
+     "Irish Literary Revival"
+    ],
+    [
+     "Abbey Theatre"
+    ],
+    [
+     "Verse drama"
+    ],
+    [
+     "Kitchen sink drama"
+    ]
    ]
   },
   {
@@ -610,7 +1441,82 @@
     "n2",
     "n3"
    ],
-   "guide": "british-contemporary"
+   "guide": "british-contemporary",
+   "writers": [
+    "Philip Larkin",
+    "Ted Hughes",
+    "William Golding",
+    "Iris Murdoch",
+    "Kingsley Amis",
+    "Seamus Heaney",
+    "John Wain",
+    "Donald Davie",
+    "D. J. Enright",
+    "Elizabeth Jennings",
+    "Thom Gunn",
+    "Robert Conquest",
+    "Geoffrey Hill",
+    "Ian McEwan",
+    "Doris Lessing",
+    "Muriel Spark",
+    "John Fowles",
+    "Anthony Burgess",
+    "A. S. Byatt",
+    "Angela Carter",
+    "Julian Barnes",
+    "Kazuo Ishiguro",
+    "Graham Swift",
+    "Peter Ackroyd",
+    "Jeanette Winterson",
+    "Martin Amis",
+    "Malcolm Bradbury",
+    "David Lodge",
+    "Margaret Drabble",
+    "J. G. Ballard",
+    "J. G. Farrell",
+    "Hanif Kureishi",
+    "Zadie Smith",
+    "Hilary Mantel",
+    "Alan Sillitoe",
+    "John Braine",
+    "Angus Wilson",
+    "C. P. Snow",
+    "Carol Ann Duffy",
+    "Paul Muldoon",
+    "Tony Harrison",
+    "Derek Mahon",
+    "Ali Smith",
+    "Sarah Waters",
+    "Bernardine Evaristo",
+    "Kate Atkinson",
+    "Penelope Fitzgerald",
+    "William Boyd"
+   ],
+   "tags": [
+    [
+     "The Movement"
+    ],
+    [
+     "Angry Young Men"
+    ],
+    [
+     "Campus novel"
+    ],
+    [
+     "21st century",
+     "British"
+    ],
+    [
+     "21st century",
+     "Novel"
+    ],
+    [
+     "Contemporary fiction"
+    ],
+    [
+     "Postwar"
+    ]
+   ]
   },
   {
    "id": "am-early",
@@ -623,7 +1529,42 @@
     "n2",
     "n4"
    ],
-   "guide": "american-early"
+   "guide": "american-early",
+   "writers": [
+    "Anne Bradstreet",
+    "Edward Taylor",
+    "Cotton Mather",
+    "Benjamin Franklin",
+    "Jonathan Edwards",
+    "Phillis Wheatley",
+    "Thomas Jefferson",
+    "Michael Wigglesworth",
+    "William Bradford",
+    "John Winthrop",
+    "Philip Freneau",
+    "Charles Brockden Brown",
+    "Washington Irving",
+    "James Fenimore Cooper",
+    "Hector St. John de Crèvecœur",
+    "Mary Rowlandson"
+   ],
+   "tags": [
+    [
+     "American",
+     "Colonial"
+    ],
+    [
+     "Puritan",
+     "American"
+    ],
+    [
+     "American",
+     "18th century"
+    ],
+    [
+     "American Revolution"
+    ]
+   ]
   },
   {
    "id": "am-19th",
@@ -637,7 +1578,63 @@
     "n3",
     "n4"
    ],
-   "guide": "american-19th"
+   "guide": "american-19th",
+   "writers": [
+    "Nathaniel Hawthorne",
+    "Herman Melville",
+    "Edgar Allan Poe",
+    "Walt Whitman",
+    "Emily Dickinson",
+    "Mark Twain",
+    "R. W. Emerson",
+    "Ralph Waldo Emerson",
+    "Henry David Thoreau",
+    "H. W. Longfellow",
+    "Harriet Beecher Stowe",
+    "Kate Chopin",
+    "Stephen Crane",
+    "William Dean Howells",
+    "Margaret Fuller",
+    "Louisa May Alcott",
+    "Charlotte Perkins Gilman",
+    "Bret Harte",
+    "O. Henry",
+    "Sarah Orne Jewett",
+    "Frank Norris",
+    "Theodore Dreiser",
+    "Jack London",
+    "Edith Wharton"
+   ],
+   "alsoWriters": [
+    "Henry James"
+   ],
+   "tags": [
+    [
+     "w:Henry James",
+     "American"
+    ],
+    [
+     "Transcendentalism"
+    ],
+    [
+     "American",
+     "19th century"
+    ],
+    [
+     "American Renaissance"
+    ],
+    [
+     "Dark Romanticism"
+    ],
+    [
+     "American",
+     "Realism"
+    ],
+    [
+     "American",
+     "Naturalism"
+    ]
+   ]
   },
   {
    "id": "am-fiction",
@@ -649,7 +1646,63 @@
    "net": [
     "n3"
    ],
-   "guide": "american-modern"
+   "guide": "american-modern",
+   "writers": [
+    "F. Scott Fitzgerald",
+    "Ernest Hemingway",
+    "William Faulkner",
+    "John Steinbeck",
+    "Sinclair Lewis",
+    "John Dos Passos",
+    "Sherwood Anderson",
+    "Gertrude Stein",
+    "Willa Cather",
+    "J. D. Salinger",
+    "Harper Lee",
+    "Saul Bellow",
+    "Flannery O'Connor",
+    "Carson McCullers",
+    "Eudora Welty",
+    "Jack Kerouac",
+    "Henry Miller",
+    "Upton Sinclair",
+    "Thomas Wolfe",
+    "Nathanael West",
+    "Ray Bradbury",
+    "Vladimir Nabokov",
+    "Joseph Heller",
+    "Kurt Vonnegut",
+    "Norman Mailer",
+    "Bernard Malamud",
+    "John Updike",
+    "Philip Roth",
+    "Truman Capote",
+    "Pearl S. Buck",
+    "Raymond Carver"
+   ],
+   "tags": [
+    [
+     "American",
+     "Novel"
+    ],
+    [
+     "American",
+     "Fiction"
+    ],
+    [
+     "American",
+     "Short story"
+    ],
+    [
+     "Lost Generation"
+    ],
+    [
+     "Southern Gothic"
+    ],
+    [
+     "Jazz Age"
+    ]
+   ]
   },
   {
    "id": "am-poetry",
@@ -661,7 +1714,57 @@
    "net": [
     "n2"
    ],
-   "q": "American poetry"
+   "writers": [
+    "Robert Frost",
+    "Wallace Stevens",
+    "William Carlos Williams",
+    "Allen Ginsberg",
+    "Sylvia Plath",
+    "Robert Lowell",
+    "Anne Sexton",
+    "Marianne Moore",
+    "E. E. Cummings",
+    "Hart Crane",
+    "Carl Sandburg",
+    "Edna St. Vincent Millay",
+    "Elizabeth Bishop",
+    "John Berryman",
+    "Theodore Roethke",
+    "W. D. Snodgrass",
+    "Adrienne Rich",
+    "Edgar Lee Masters",
+    "Edwin Arlington Robinson",
+    "Amy Lowell",
+    "Charles Olson",
+    "Lawrence Ferlinghetti",
+    "Gregory Corso",
+    "Gary Snyder",
+    "John Ashbery",
+    "Frank O'Hara",
+    "Robert Creeley",
+    "Denise Levertov",
+    "Louise Glück",
+    "Mary Oliver",
+    "Hilda Doolittle"
+   ],
+   "tags": [
+    [
+     "American",
+     "Poetry"
+    ],
+    [
+     "Confessional poetry"
+    ],
+    [
+     "Beat Generation"
+    ],
+    [
+     "Black Mountain"
+    ],
+    [
+     "New York School"
+    ]
+   ]
   },
   {
    "id": "am-drama",
@@ -673,7 +1776,29 @@
    "net": [
     "n1"
    ],
-   "q": "American drama"
+   "writers": [
+    "Eugene O'Neill",
+    "Arthur Miller",
+    "Tennessee Williams",
+    "Edward Albee",
+    "Thornton Wilder",
+    "Lillian Hellman",
+    "Clifford Odets",
+    "Sam Shepard",
+    "David Mamet",
+    "Elmer Rice",
+    "Susan Glaspell",
+    "Tony Kushner"
+   ],
+   "tags": [
+    [
+     "American",
+     "Drama"
+    ],
+    [
+     "American drama"
+    ]
+   ]
   },
   {
    "id": "am-african",
@@ -688,7 +1813,54 @@
     "n3",
     "n7"
    ],
-   "guide": "american-african"
+   "guide": "american-african",
+   "writers": [
+    "Toni Morrison",
+    "Alice Walker",
+    "Langston Hughes",
+    "Zora Neale Hurston",
+    "Ralph Ellison",
+    "Richard Wright",
+    "James Baldwin",
+    "Maya Angelou",
+    "Frederick Douglass",
+    "W. E. B. Du Bois",
+    "Alain Locke",
+    "Booker T. Washington",
+    "Countee Cullen",
+    "Claude McKay",
+    "Jean Toomer",
+    "Lorraine Hansberry",
+    "Amiri Baraka",
+    "Gwendolyn Brooks",
+    "Rita Dove",
+    "August Wilson",
+    "Harriet Jacobs",
+    "Paul Laurence Dunbar",
+    "Nella Larsen",
+    "Ishmael Reed",
+    "Ntozake Shange",
+    "Audre Lorde",
+    "bell hooks",
+    "Henry Louis Gates Jr.",
+    "Colson Whitehead",
+    "Octavia E. Butler",
+    "Octavia Butler"
+   ],
+   "tags": [
+    [
+     "African American"
+    ],
+    [
+     "Harlem Renaissance"
+    ],
+    [
+     "Slave narrative"
+    ],
+    [
+     "Black Arts Movement"
+    ]
+   ]
   },
   {
    "id": "am-contemporary",
@@ -700,7 +1872,51 @@
    "net": [
     "n3"
    ],
-   "guide": "american-contemporary"
+   "guide": "american-contemporary",
+   "writers": [
+    "Thomas Pynchon",
+    "Don DeLillo",
+    "Cormac McCarthy",
+    "Paul Auster",
+    "John Barth",
+    "Donald Barthelme",
+    "E. L. Doctorow",
+    "Joyce Carol Oates",
+    "Sandra Cisneros",
+    "Louise Erdrich",
+    "N. Scott Momaday",
+    "Leslie Marmon Silko",
+    "Amy Tan",
+    "Maxine Hong Kingston",
+    "Junot Díaz",
+    "Ocean Vuong",
+    "Jonathan Franzen",
+    "Gabrielle Zevin",
+    "Philip K. Dick",
+    "William Gibson"
+   ],
+   "alsoWriters": [
+    "Jhumpa Lahiri"
+   ],
+   "tags": [
+    [
+     "American",
+     "Postmodernism"
+    ],
+    [
+     "American",
+     "21st century"
+    ],
+    [
+     "Native American"
+    ],
+    [
+     "Asian American"
+    ],
+    [
+     "Chicano"
+    ]
+   ]
   },
   {
    "id": "in-early",
@@ -713,7 +1929,43 @@
     "n2",
     "n6"
    ],
-   "guide": "indian-colonial"
+   "guide": "indian-colonial",
+   "writers": [
+    "Henry Louis Vivian Derozio",
+    "Toru Dutt",
+    "Rabindranath Tagore",
+    "Sri Aurobindo",
+    "Sarojini Naidu",
+    "Michael Madhusudan Dutt",
+    "Manmohan Ghose",
+    "Romesh Chunder Dutt",
+    "Kashiprasad Ghosh",
+    "Aru Dutt",
+    "Harindranath Chattopadhyay",
+    "Bankim Chandra Chattopadhyay",
+    "Bankim Chandra Chatterjee",
+    "Rajmohan",
+    "Cavelly Venkata Boriah",
+    "Sake Dean Mahomed",
+    "Dean Mahomed",
+    "Krupabai Satthianadhan",
+    "Cornelia Sorabji",
+    "Pandita Ramabai"
+   ],
+   "tags": [
+    [
+     "Indian",
+     "Colonial India",
+     "Poetry"
+    ],
+    [
+     "Indian",
+     "19th century"
+    ],
+    [
+     "Bengal Renaissance"
+    ]
+   ]
   },
   {
    "id": "in-novel-early",
@@ -726,81 +1978,52 @@
     "n3"
    ],
    "guide": "indian-novel",
-   "exceptWriters": [
-    "Salman Rushdie",
-    "Amitav Ghosh",
-    "Vikram Seth",
-    "Arundhati Roy",
-    "Kiran Desai",
-    "Rohinton Mistry",
-    "Aravind Adiga",
-    "Upamanyu Chatterjee",
-    "Allan Sealy",
-    "Kiran Nagarkar",
-    "Shashi Tharoor",
-    "Vikram Chandra",
-    "Amit Chaudhuri",
-    "Chetan Bhagat",
-    "Jhumpa Lahiri",
-    "Chitra Banerjee Divakaruni",
-    "Bharati Mukherjee",
-    "Shashi Deshpande",
-    "Manju Kapur",
-    "Anita Nair",
-    "Githa Hariharan",
-    "Namita Gokhale",
-    "Jeet Thayil",
-    "Amish Tripathi",
-    "Ashwin Sanghi",
-    "Devdutt Pattanaik",
-    "Anand Neelakantan",
-    "Kavita Kané",
-    "Anuja Chandramouli",
-    "Anuja Chauhan",
-    "Advaita Kala",
-    "Mukul Kesavan",
-    "Rana Dasgupta",
-    "Neel Mukherjee",
-    "Raj Kamal Jha",
-    "Siddharth Dhanvant Shanghvi",
-    "Anuradha Roy",
-    "Anees Salim",
-    "Cyrus Mistry",
-    "Tabish Khair",
-    "Pankaj Mishra",
-    "Manu Joseph",
-    "Kunal Basu",
-    "Shobhaa De",
-    "Jerry Pinto",
-    "David Davidar",
-    "Rukun Advani",
-    "Neelum Saran Gour",
-    "Meena Kandasamy",
-    "P. Sivakami",
-    "Perumal Murugan",
-    "Geetanjali Shree",
-    "Daisy Rockwell",
-    "Bani Basu",
-    "Mirza Waheed",
-    "Siddhartha Gigoo",
-    "Shahnaz Bashir",
-    "Amandeep Sandhu",
-    "Amrit Shetty",
-    "Easterine Kire",
-    "Mamang Dai",
-    "Avni Doshi",
-    "Megha Majumdar",
-    "Deepa Anappara",
-    "Anita Rau Badami",
-    "Anjana Appachana",
-    "Indira Ganesan",
-    "Shauna Singh Baldwin",
-    "Shyam Selvadurai",
-    "Kamila Shamsie",
-    "Mohsin Hamid",
-    "Bapsi Sidhwa",
-    "Nadeem Aslam",
-    "Taslima Nasrin"
+   "writers": [
+    "Mulk Raj Anand",
+    "Raja Rao",
+    "R. K. Narayan",
+    "Narayan",
+    "Kamala Markandaya",
+    "Anita Desai",
+    "Manohar Malgonkar",
+    "Bhabani Bhattacharya",
+    "Khushwant Singh",
+    "Chaman Nahal",
+    "Nayantara Sahgal",
+    "Arun Joshi",
+    "G. V. Desani",
+    "Ruth Prawer Jhabvala",
+    "K. S. Venkataramani",
+    "Ahmed Ali",
+    "Attia Hosain",
+    "Sudhin Ghose",
+    "Balachandra Rajan",
+    "Humayun Kabir",
+    "K. A. Abbas",
+    "Santha Rama Rau",
+    "Ruskin Bond"
+   ],
+   "tags": [
+    [
+     "Indian English novel"
+    ],
+    [
+     "Indian English fiction"
+    ],
+    [
+     "Indian English short story"
+    ],
+    [
+     "Indian",
+     "Short story"
+    ],
+    [
+     "Partition"
+    ],
+    [
+     "Indian",
+     "Novel"
+    ]
    ]
   },
   {
@@ -814,81 +2037,66 @@
     "n3"
    ],
    "guide": "indian-novel",
-   "onlyWriters": [
+   "writers": [
     "Salman Rushdie",
     "Amitav Ghosh",
     "Vikram Seth",
     "Arundhati Roy",
-    "Kiran Desai",
-    "Rohinton Mistry",
-    "Aravind Adiga",
-    "Upamanyu Chatterjee",
-    "Allan Sealy",
-    "Kiran Nagarkar",
-    "Shashi Tharoor",
-    "Vikram Chandra",
-    "Amit Chaudhuri",
-    "Chetan Bhagat",
-    "Jhumpa Lahiri",
-    "Chitra Banerjee Divakaruni",
-    "Bharati Mukherjee",
     "Shashi Deshpande",
-    "Manju Kapur",
-    "Anita Nair",
+    "Upamanyu Chatterjee",
+    "Kiran Desai",
+    "Aravind Adiga",
+    "Vikram Chandra",
+    "Shashi Tharoor",
+    "Allan Sealy",
+    "I. Allan Sealy",
+    "Amit Chaudhuri",
     "Githa Hariharan",
-    "Namita Gokhale",
-    "Jeet Thayil",
-    "Amish Tripathi",
-    "Ashwin Sanghi",
-    "Devdutt Pattanaik",
-    "Anand Neelakantan",
-    "Kavita Kané",
-    "Anuja Chandramouli",
-    "Anuja Chauhan",
-    "Advaita Kala",
-    "Mukul Kesavan",
-    "Rana Dasgupta",
-    "Neel Mukherjee",
-    "Raj Kamal Jha",
-    "Siddharth Dhanvant Shanghvi",
-    "Anuradha Roy",
-    "Anees Salim",
+    "Kiran Nagarkar",
     "Cyrus Mistry",
-    "Tabish Khair",
-    "Pankaj Mishra",
-    "Manu Joseph",
-    "Kunal Basu",
-    "Shobhaa De",
-    "Jerry Pinto",
-    "David Davidar",
-    "Rukun Advani",
-    "Neelum Saran Gour",
-    "Meena Kandasamy",
-    "P. Sivakami",
+    "Manju Kapur",
+    "Anuradha Roy",
+    "Jeet Thayil",
+    "Chetan Bhagat",
     "Perumal Murugan",
     "Geetanjali Shree",
-    "Daisy Rockwell",
-    "Bani Basu",
-    "Mirza Waheed",
-    "Siddhartha Gigoo",
-    "Shahnaz Bashir",
-    "Amandeep Sandhu",
-    "Amrit Shetty",
+    "Mukul Kesavan",
+    "Raj Kamal Jha",
+    "Pankaj Mishra",
+    "Arundhati Subramaniam",
     "Easterine Kire",
+    "Temsula Ao",
     "Mamang Dai",
-    "Avni Doshi",
-    "Megha Majumdar",
-    "Deepa Anappara",
-    "Anita Rau Badami",
-    "Anjana Appachana",
-    "Indira Ganesan",
-    "Shauna Singh Baldwin",
-    "Shyam Selvadurai",
-    "Kamila Shamsie",
-    "Mohsin Hamid",
+    "Kavita Kané",
+    "Anand Neelakantan",
+    "Amish Tripathi",
+    "Devdutt Pattanaik",
+    "Ashok Banker",
+    "Tishani Doshi",
+    "Siddhartha Deb",
+    "Ashwin Sanghi",
+    "Nilanjana Roy",
     "Bapsi Sidhwa",
-    "Nadeem Aslam",
-    "Taslima Nasrin"
+    "Rana Dasgupta",
+    "Omair Ahmad",
+    "Meena Kandasamy"
+   ],
+   "alsoWriters": [
+    "Rohinton Mistry",
+    "Kamila Shamsie"
+   ],
+   "tags": [
+    [
+     "Indian",
+     "21st century"
+    ],
+    [
+     "Myth retellings"
+    ],
+    [
+     "Indian",
+     "Contemporary fiction"
+    ]
    ]
   },
   {
@@ -901,7 +2109,49 @@
    "net": [
     "n2"
    ],
-   "guide": "indian-poetry"
+   "guide": "indian-poetry",
+   "writers": [
+    "Nissim Ezekiel",
+    "A. K. Ramanujan",
+    "Kamala Das",
+    "Arun Kolatkar",
+    "R. Parthasarathy",
+    "Jayanta Mahapatra",
+    "Dom Moraes",
+    "Gieve Patel",
+    "Adil Jussawalla",
+    "Keki N. Daruwalla",
+    "Eunice de Souza",
+    "Imtiaz Dharker",
+    "Dilip Chitre",
+    "P. Lal",
+    "Agha Shahid Ali",
+    "Arvind Krishna Mehrotra",
+    "Mamta Kalia",
+    "Shiv K. Kumar",
+    "Sujata Bhatt",
+    "Meena Alexander",
+    "Ranjit Hoskote",
+    "Melanie Silgardo",
+    "Tishani Doshi",
+    "K. Satchidanandan",
+    "G. S. Sharat Chandra",
+    "V. K. Gokak",
+    "Writers Workshop"
+   ],
+   "alsoWriters": [
+    "Jeet Thayil",
+    "Vikram Seth"
+   ],
+   "tags": [
+    [
+     "Indian English poetry"
+    ],
+    [
+     "Indian",
+     "Poetry"
+    ]
+   ]
   },
   {
    "id": "in-drama",
@@ -914,7 +2164,54 @@
    "net": [
     "n1"
    ],
-   "guide": "indian-drama"
+   "guide": "indian-drama",
+   "writers": [
+    "Girish Karnad",
+    "Vijay Tendulkar",
+    "Badal Sircar",
+    "Mahesh Dattani",
+    "Asif Currimbhoy",
+    "Mohan Rakesh",
+    "Habib Tanvir",
+    "Utpal Dutt",
+    "Partap Sharma",
+    "Manjula Padmanabhan",
+    "Gurcharan Das",
+    "Dharamvir Bharati",
+    "Bharatendu Harishchandra",
+    "Ratan Thiyam",
+    "Kavalam Narayana Panikkar",
+    "Shudraka",
+    "Bhasa",
+    "Kalidasa",
+    "Bhavabhuti",
+    "Poile Sengupta",
+    "Ebrahim Alkazi",
+    "Safdar Hashmi"
+   ],
+   "alsoWriters": [
+    "Rabindranath Tagore",
+    "Cyrus Mistry"
+   ],
+   "tags": [
+    [
+     "w:Rabindranath Tagore",
+     "Drama"
+    ],
+    [
+     "Indian drama"
+    ],
+    [
+     "Indian English drama"
+    ],
+    [
+     "Indian",
+     "Drama"
+    ],
+    [
+     "Sanskrit drama"
+    ]
+   ]
   },
   {
    "id": "in-prose",
@@ -927,7 +2224,60 @@
    "net": [
     "n4"
    ],
-   "guide": "indian-prose"
+   "guide": "indian-prose",
+   "writers": [
+    "M. K. Gandhi",
+    "Nirad C. Chaudhuri",
+    "Jawaharlal Nehru",
+    "B. R. Ambedkar",
+    "Ved Mehta",
+    "S. Radhakrishnan",
+    "Swami Vivekananda",
+    "Raja Rammohun Roy",
+    "Sudha Murty",
+    "Ramachandra Guha",
+    "Amartya Sen",
+    "Mahatma Gandhi",
+    "Dalip Kaur Tiwana"
+   ],
+   "alsoWriters": [
+    "Rabindranath Tagore",
+    "Sri Aurobindo",
+    "Dom Moraes"
+   ],
+   "tags": [
+    [
+     "w:Rabindranath Tagore",
+     "Prose"
+    ],
+    [
+     "w:Rabindranath Tagore",
+     "Essay"
+    ],
+    [
+     "w:Rabindranath Tagore",
+     "Life writing"
+    ],
+    [
+     "Indian English prose"
+    ],
+    [
+     "Indian",
+     "Prose"
+    ],
+    [
+     "Indian",
+     "Life writing"
+    ],
+    [
+     "Indian",
+     "Autobiography"
+    ],
+    [
+     "Indian",
+     "Essay"
+    ]
+   ]
   },
   {
    "id": "in-bhasha",
@@ -940,7 +2290,123 @@
     "n3",
     "n2"
    ],
-   "guide": "indian-bhasha"
+   "guide": "indian-bhasha",
+   "writers": [
+    "Premchand",
+    "Mahasweta Devi",
+    "U. R. Ananthamurthy",
+    "O. V. Vijayan",
+    "Saadat Hasan Manto",
+    "Ismat Chughtai",
+    "Rajinder Singh Bedi",
+    "Bhisham Sahni",
+    "Krishna Sobti",
+    "Nirmal Verma",
+    "Qurratulain Hyder",
+    "Amrita Pritam",
+    "Bibhutibhushan Bandyopadhyay",
+    "Sarat Chandra Chattopadhyay",
+    "Thakazhi Sivasankara Pillai",
+    "Vaikom Muhammad Basheer",
+    "Kamleshwar",
+    "Gopinath Mohanty",
+    "Subramania Bharati",
+    "Kabir",
+    "Mirabai",
+    "Tulsidas",
+    "Surdas",
+    "Akka Mahadevi",
+    "Basavanna",
+    "Lal Ded",
+    "Ghalib",
+    "Mirza Ghalib",
+    "Faiz Ahmed Faiz",
+    "Muhammad Iqbal",
+    "Jibanananda Das",
+    "Phanishwar Nath Renu",
+    "Shrilal Shukla",
+    "Yashpal",
+    "Agyeya",
+    "Nagarjuna",
+    "Muktibodh",
+    "Suryakant Tripathi Nirala",
+    "Mahadevi Varma",
+    "Jaishankar Prasad",
+    "Harivansh Rai Bachchan",
+    "Kunwar Narayan",
+    "Ambai",
+    "Salma",
+    "K. R. Meera",
+    "Benyamin",
+    "Vivek Shanbhag",
+    "Valmiki",
+    "Vyasa",
+    "Somadeva",
+    "Vishnu Sharma",
+    "Bhartrhari",
+    "Ilango Adigal",
+    "Tiruvalluvar",
+    "Jayadeva",
+    "Andal",
+    "Thiruvalluvar"
+   ],
+   "alsoWriters": [
+    "Mohan Rakesh",
+    "Bama"
+   ],
+   "tags": [
+    [
+     "Bhasha"
+    ],
+    [
+     "Indian",
+     "Translation"
+    ],
+    [
+     "Hindi"
+    ],
+    [
+     "Bengali"
+    ],
+    [
+     "Marathi"
+    ],
+    [
+     "Tamil"
+    ],
+    [
+     "Urdu"
+    ],
+    [
+     "Kannada"
+    ],
+    [
+     "Malayalam"
+    ],
+    [
+     "Sanskrit",
+     "!Indian aesthetics",
+     "!Sanskrit poetics"
+    ],
+    [
+     "Odia"
+    ],
+    [
+     "Telugu"
+    ],
+    [
+     "Gujarati"
+    ],
+    [
+     "Punjabi"
+    ],
+    [
+     "Assamese"
+    ],
+    [
+     "Bhakti"
+    ]
+   ]
   },
   {
    "id": "in-dalit",
@@ -953,7 +2419,44 @@
    "net": [
     "n7"
    ],
-   "guide": "indian-dalit"
+   "guide": "indian-dalit",
+   "writers": [
+    "Sharankumar Limbale",
+    "Omprakash Valmiki",
+    "Bama",
+    "Urmila Pawar",
+    "Baby Kamble",
+    "Namdeo Dhasal",
+    "Daya Pawar",
+    "Kumud Pawde",
+    "J. V. Pawar",
+    "Raja Dhale",
+    "Arjun Dangle",
+    "Laxman Mane",
+    "Laxman Gaikwad",
+    "Narendra Jadhav",
+    "Sujatha Gidla",
+    "Yashica Dutt",
+    "Joseph Macwan",
+    "Kancha Ilaiah",
+    "Siddalingaiah",
+    "Shantabai Krushnaji Kamble",
+    "Gogu Shyamala"
+   ],
+   "alsoWriters": [
+    "Meena Kandasamy"
+   ],
+   "tags": [
+    [
+     "Dalit writing"
+    ],
+    [
+     "Dalit literature"
+    ],
+    [
+     "Dalit"
+    ]
+   ]
   },
   {
    "id": "in-diaspora",
@@ -966,7 +2469,69 @@
    "net": [
     "n3"
    ],
-   "guide": "indian-diaspora"
+   "guide": "indian-diaspora",
+   "writers": [
+    "Jhumpa Lahiri",
+    "Rohinton Mistry",
+    "Bharati Mukherjee",
+    "Chitra Banerjee Divakaruni",
+    "Shauna Singh Baldwin",
+    "M. G. Vassanji",
+    "Shyam Selvadurai",
+    "Michael Ondaatje",
+    "Romesh Gunesekera",
+    "Sunetra Gupta",
+    "Hari Kunzru",
+    "Meera Syal",
+    "Kamila Shamsie",
+    "Mohsin Hamid",
+    "Uzma Aslam Khan",
+    "Nadeem Aslam",
+    "Monica Ali",
+    "Tahmima Anam",
+    "Anita Rau Badami",
+    "David Dabydeen",
+    "Sam Selvon",
+    "Satendra Nandan",
+    "Subramani"
+   ],
+   "alsoWriters": [
+    "V. S. Naipaul",
+    "Sujata Bhatt",
+    "Meena Alexander",
+    "Kiran Desai",
+    "Abdulrazak Gurnah"
+   ],
+   "tags": [
+    [
+     "Indian diaspora"
+    ],
+    [
+     "Diaspora",
+     "Indian"
+    ],
+    [
+     "South Asian"
+    ],
+    [
+     "Indo-Caribbean"
+    ],
+    [
+     "Indo-Fijian"
+    ],
+    [
+     "Sri Lankan"
+    ],
+    [
+     "Pakistani"
+    ],
+    [
+     "Bangladeshi"
+    ],
+    [
+     "Diaspora"
+    ]
+   ]
   },
   {
    "id": "in-aesthetics",
@@ -978,7 +2543,51 @@
    "net": [
     "n8"
    ],
-   "guide": "theory-indian"
+   "guide": "theory-indian",
+   "writers": [
+    "Bharata",
+    "Anandavardhana",
+    "Abhinavagupta",
+    "Kuntaka",
+    "Bhamaha",
+    "Dandin",
+    "Vamana",
+    "Kshemendra",
+    "Mammata",
+    "Rajashekhara",
+    "Dhananjaya",
+    "Vishwanatha",
+    "Bhoja",
+    "Jagannatha",
+    "Rupa Goswami",
+    "Udbhata",
+    "Rudrata",
+    "Panini",
+    "Bhattanayaka",
+    "Bhatta Lollata",
+    "Shankuka",
+    "Mahimabhatta"
+   ],
+   "alsoWriters": [
+    "Bhartrhari"
+   ],
+   "tags": [
+    [
+     "Indian aesthetics"
+    ],
+    [
+     "Sanskrit poetics"
+    ],
+    [
+     "Rasa theory"
+    ],
+    [
+     "Dhvani"
+    ],
+    [
+     "Natyashastra"
+    ]
+   ]
   },
   {
    "id": "in-english",
@@ -990,30 +2599,71 @@
    "net": [
     "n6"
    ],
-   "q": "English in India",
-   "onlyWriters": [
-    "Thomas Babington Macaulay",
-    "Braj B. Kachru",
-    "Gauri Viswanathan",
-    "Raja Ram Mohan Roy",
-    "Ram Mohan Roy",
-    "William Bentinck",
+   "writers": [
     "Charles Grant",
+    "William Bentinck",
+    "William Jones",
+    "Charles Wilkins",
+    "Nathaniel Brassey Halhed",
     "Charles Wood",
-    "Charles Trevelyan",
-    "Rama Kant Agnihotri",
-    "A. L. Khanna",
-    "N. Krishnaswamy",
-    "S. N. Sridhar",
-    "Kamal K. Sridhar",
-    "Probal Dasgupta",
+    "William Carey",
+    "Gauri Viswanathan",
+    "Braj Kachru",
+    "Braj B. Kachru",
+    "B. B. Kachru",
     "Harish Trivedi",
-    "Rajeswari Sunder Rajan",
-    "Alok Rai",
-    "Svati Joshi",
+    "Meenakshi Mukherjee",
+    "G. N. Devy",
+    "M. K. Naik",
+    "K. R. Srinivasa Iyengar",
+    "Ralph T. H. Griffith",
+    "Manmatha Nath Dutt",
+    "D. S. Kothari",
+    "Rammohan Roy"
+   ],
+   "alsoWriters": [
+    "Thomas Babington Macaulay",
+    "T. B. Macaulay",
+    "Raja Rammohun Roy",
     "Ngũgĩ wa Thiong’o",
-    "Ngugi wa Thiong'o",
-    "Robert Phillipson"
+    "Ngũgĩ wa Thiong'o"
+   ],
+   "tags": [
+    [
+     "English in India"
+    ],
+    [
+     "English education in India"
+    ],
+    [
+     "Colonial education"
+    ],
+    [
+     "Language policy"
+    ],
+    [
+     "Education commissions",
+     "!sec:Paper 1"
+    ],
+    [
+     "Indian English"
+    ],
+    [
+     "Language debate"
+    ],
+    [
+     "Orientalism",
+     "Indian"
+    ],
+    [
+     "Colonial India"
+    ],
+    [
+     "English education"
+    ],
+    [
+     "Indian English literature"
+    ]
    ]
   },
   {
@@ -1028,7 +2678,78 @@
     "n3",
     "n1"
    ],
-   "guide": "world-african"
+   "guide": "world-african",
+   "writers": [
+    "Chinua Achebe",
+    "Wole Soyinka",
+    "Ngũgĩ wa Thiong’o",
+    "Ngũgĩ wa Thiong'o",
+    "Nadine Gordimer",
+    "J. M. Coetzee",
+    "Chimamanda Ngozi Adichie",
+    "Ben Okri",
+    "Buchi Emecheta",
+    "Nuruddin Farah",
+    "Alan Paton",
+    "Athol Fugard",
+    "Ama Ata Aidoo",
+    "Ayi Kwei Armah",
+    "Flora Nwapa",
+    "Tsitsi Dangarembga",
+    "Bessie Head",
+    "Amos Tutuola",
+    "Cyprian Ekwensi",
+    "Christopher Okigbo",
+    "Gabriel Okara",
+    "J. P. Clark",
+    "Okot p'Bitek",
+    "Léopold Sédar Senghor",
+    "Léopold Senghor",
+    "Camara Laye",
+    "Mongo Beti",
+    "Sembène Ousmane",
+    "Abdulrazak Gurnah",
+    "Damon Galgut",
+    "Zakes Mda",
+    "Dambudzo Marechera",
+    "Kwame Nkrumah",
+    "Nawal El Saadawi",
+    "Naguib Mahfouz",
+    "Tayeb Salih",
+    "Helon Habila",
+    "NoViolet Bulawayo",
+    "Yaa Gyasi"
+   ],
+   "alsoWriters": [
+    "Aimé Césaire",
+    "Doris Lessing"
+   ],
+   "tags": [
+    [
+     "African"
+    ],
+    [
+     "Nigerian"
+    ],
+    [
+     "South African"
+    ],
+    [
+     "Kenyan"
+    ],
+    [
+     "Somali"
+    ],
+    [
+     "Ghanaian"
+    ],
+    [
+     "Zimbabwean"
+    ],
+    [
+     "Negritude"
+    ]
+   ]
   },
   {
    "id": "wd-caribbean",
@@ -1041,7 +2762,54 @@
     "n2",
     "n3"
    ],
-   "guide": "world-caribbean"
+   "guide": "world-caribbean",
+   "writers": [
+    "Derek Walcott",
+    "V. S. Naipaul",
+    "Kamau Brathwaite",
+    "George Lamming",
+    "Jean Rhys",
+    "Jamaica Kincaid",
+    "Wilson Harris",
+    "Aimé Césaire",
+    "Edouard Glissant",
+    "Édouard Glissant",
+    "Caryl Phillips",
+    "Erna Brodber",
+    "Merle Hodge",
+    "Michelle Cliff",
+    "Edwidge Danticat",
+    "Earl Lovelace",
+    "Lorna Goodison",
+    "Grace Nichols",
+    "Olive Senior",
+    "Roger Mais",
+    "C. L. R. James",
+    "Linton Kwesi Johnson",
+    "Paule Marshall",
+    "Maryse Condé",
+    "Kei Miller",
+    "Marlon James",
+    "Andrea Levy"
+   ],
+   "alsoWriters": [
+    "Sam Selvon",
+    "Claude McKay"
+   ],
+   "tags": [
+    [
+     "Caribbean"
+    ],
+    [
+     "West Indian"
+    ],
+    [
+     "Jamaican"
+    ],
+    [
+     "Trinidadian"
+    ]
+   ]
   },
   {
    "id": "wd-commonwealth",
@@ -1054,7 +2822,91 @@
     "n2",
     "n3"
    ],
-   "guide": "world-commonwealth"
+   "guide": "world-commonwealth",
+   "writers": [
+    "Margaret Atwood",
+    "Patrick White",
+    "Peter Carey",
+    "Judith Wright",
+    "Oodgeroo Noonuccal",
+    "A. D. Hope",
+    "David Malouf",
+    "Alice Munro",
+    "Margaret Laurence",
+    "Sally Morgan",
+    "Jack Davis",
+    "Kevin Gilbert",
+    "Doris Pilkington",
+    "Alexis Wright",
+    "Kim Scott",
+    "Les Murray",
+    "Henry Lawson",
+    "Banjo Paterson",
+    "Miles Franklin",
+    "Thomas Keneally",
+    "Richard Flanagan",
+    "Tim Winton",
+    "Kate Grenville",
+    "Christina Stead",
+    "Janet Frame",
+    "Keri Hulme",
+    "Witi Ihimaera",
+    "Patricia Grace",
+    "Frank Sargeson",
+    "Robertson Davies",
+    "Mordecai Richler",
+    "Leonard Cohen",
+    "Carol Shields",
+    "Yann Martel",
+    "Thomas King",
+    "Tomson Highway",
+    "Archibald Lampman",
+    "Susanna Moodie",
+    "Catharine Parr Traill",
+    "Stephen Leacock",
+    "E. J. Pratt",
+    "Earle Birney",
+    "Al Purdy",
+    "P. K. Page",
+    "Anne Hébert",
+    "Madeleine Ryan",
+    "Lee Maracle",
+    "Joy Kogawa",
+    "Bob Hodge",
+    "Archie Weller",
+    "Mudrooroo",
+    "Helen Tiffin"
+   ],
+   "alsoWriters": [
+    "Michael Ondaatje",
+    "Katherine Mansfield",
+    "Rohinton Mistry",
+    "Northrop Frye",
+    "Bill Ashcroft"
+   ],
+   "tags": [
+    [
+     "Australian"
+    ],
+    [
+     "Canadian"
+    ],
+    [
+     "New Zealand"
+    ],
+    [
+     "Aboriginal writing"
+    ],
+    [
+     "Maori"
+    ],
+    [
+     "First Nations"
+    ],
+    [
+     "Commonwealth"
+    ]
+   ]
   },
   {
    "id": "wd-european",
@@ -1067,7 +2919,134 @@
     "n1",
     "n3"
    ],
-   "guide": "world-european"
+   "guide": "world-european",
+   "writers": [
+    "Leo Tolstoy",
+    "Fyodor Dostoevsky",
+    "Anton Chekhov",
+    "Ivan Turgenev",
+    "Nikolai Gogol",
+    "Alexander Pushkin",
+    "Maxim Gorky",
+    "Boris Pasternak",
+    "Aleksandr Solzhenitsyn",
+    "Mikhail Bulgakov",
+    "Thomas Mann",
+    "Franz Kafka",
+    "J. W. von Goethe",
+    "Johann Wolfgang von Goethe",
+    "Bertolt Brecht",
+    "Günter Grass",
+    "Hermann Hesse",
+    "Rainer Maria Rilke",
+    "Friedrich Schiller",
+    "Heinrich Heine",
+    "Henrik Ibsen",
+    "August Strindberg",
+    "Gustave Flaubert",
+    "Honoré de Balzac",
+    "Victor Hugo",
+    "Émile Zola",
+    "Marcel Proust",
+    "Charles Baudelaire",
+    "Arthur Rimbaud",
+    "Stéphane Mallarmé",
+    "Paul Verlaine",
+    "Molière",
+    "Jean Racine",
+    "Pierre Corneille",
+    "Voltaire",
+    "François Rabelais",
+    "Michel de Montaigne",
+    "Miguel de Cervantes",
+    "Federico García Lorca",
+    "Dante Alighieri",
+    "Petrarch",
+    "Giovanni Boccaccio",
+    "Luigi Pirandello",
+    "Italo Calvino",
+    "Umberto Eco",
+    "Primo Levi",
+    "Erasmus",
+    "Orhan Pamuk",
+    "Milan Kundera",
+    "Václav Havel",
+    "Eugène Ionesco",
+    "Jean Genet",
+    "Nikos Kazantzakis",
+    "Hans Christian Andersen",
+    "Elfriede Jelinek",
+    "Herta Müller",
+    "Olga Tokarczuk",
+    "Annie Ernaux",
+    "Jon Fosse",
+    "Jean-Jacques Rousseau",
+    "Max Brod",
+    "Alexandre Dumas",
+    "Stendhal",
+    "Guy de Maupassant",
+    "Marguerite Duras",
+    "Wisława Szymborska",
+    "Czesław Miłosz",
+    "Ivan Goncharov",
+    "Mikhail Lermontov",
+    "Anna Akhmatova",
+    "Vladimir Mayakovsky"
+   ],
+   "alsoWriters": [
+    "Albert Camus",
+    "Søren Kierkegaard",
+    "Samuel Beckett",
+    "Pablo Neruda"
+   ],
+   "tags": [
+    [
+     "Russian"
+    ],
+    [
+     "German"
+    ],
+    [
+     "French",
+     "!Literary theory",
+     "!Feminism"
+    ],
+    [
+     "Italian"
+    ],
+    [
+     "Spanish"
+    ],
+    [
+     "Norwegian"
+    ],
+    [
+     "Swedish"
+    ],
+    [
+     "European"
+    ],
+    [
+     "Czech"
+    ],
+    [
+     "Polish"
+    ],
+    [
+     "Turkish"
+    ],
+    [
+     "World literature",
+     "Novel"
+    ],
+    [
+     "World literature",
+     "Drama"
+    ],
+    [
+     "World literature"
+    ]
+   ]
   },
   {
    "id": "wd-south",
@@ -1079,7 +3058,76 @@
    "net": [
     "n3"
    ],
-   "q": "Latin American"
+   "writers": [
+    "Gabriel García Márquez",
+    "Pablo Neruda",
+    "Jorge Luis Borges",
+    "Julio Cortázar",
+    "Mario Vargas Llosa",
+    "Carlos Fuentes",
+    "Isabel Allende",
+    "Octavio Paz",
+    "Gabriela Mistral",
+    "Juan Rulfo",
+    "Alejo Carpentier",
+    "Paulo Coelho",
+    "Clarice Lispector",
+    "Roberto Bolaño",
+    "Haruki Murakami",
+    "Yukio Mishima",
+    "Yasunari Kawabata",
+    "Kenzaburō Ōe",
+    "Mo Yan",
+    "Lu Xun",
+    "Han Kang",
+    "Mahmoud Darwish",
+    "Ghassan Kanafani",
+    "Khaled Hosseini",
+    "Rumi",
+    "Hafiz",
+    "Omar Khayyam",
+    "Ferdowsi",
+    "Eduardo Galeano",
+    "José Martí",
+    "Rubén Darío",
+    "Laura Esquivel",
+    "Elena Poniatowska",
+    "Rigoberta Menchú"
+   ],
+   "alsoWriters": [
+    "Orhan Pamuk",
+    "Naguib Mahfouz",
+    "Mikhail Sholokhov"
+   ],
+   "tags": [
+    [
+     "Latin American"
+    ],
+    [
+     "Magic realism"
+    ],
+    [
+     "Japanese"
+    ],
+    [
+     "Chinese"
+    ],
+    [
+     "Persian"
+    ],
+    [
+     "Arabic"
+    ],
+    [
+     "Korean"
+    ],
+    [
+     "Palestinian"
+    ],
+    [
+     "Global South"
+    ]
+   ]
   },
   {
    "id": "wd-classical",
@@ -1093,7 +3141,67 @@
     "n1",
     "n2"
    ],
-   "guide": "world-classical"
+   "guide": "world-classical",
+   "writers": [
+    "Homer",
+    "Virgil",
+    "Sophocles",
+    "Aeschylus",
+    "Euripides",
+    "Aristophanes",
+    "Ovid",
+    "Seneca",
+    "Sappho",
+    "Pindar",
+    "Hesiod",
+    "Plautus",
+    "Terence",
+    "Catullus",
+    "Lucretius",
+    "Menander",
+    "Juvenal",
+    "Apuleius",
+    "Petronius",
+    "Theocritus",
+    "Aesop",
+    "Herodotus",
+    "Thucydides",
+    "Plutarch"
+   ],
+   "alsoWriters": [
+    "Cicero"
+   ],
+   "tags": [
+    [
+     "Greek",
+     "!Literary criticism",
+     "!Literary theory"
+    ],
+    [
+     "Classical",
+     "Epic"
+    ],
+    [
+     "Classical",
+     "Drama"
+    ],
+    [
+     "Latin",
+     "!Literary criticism"
+    ],
+    [
+     "Greek tragedy"
+    ],
+    [
+     "Myth",
+     "Classical"
+    ],
+    [
+     "Classical",
+     "!Literary criticism",
+     "!Literary theory"
+    ]
+   ]
   },
   {
    "id": "wd-comparative",
@@ -1105,7 +3213,45 @@
    "net": [
     "n7"
    ],
-   "q": "Adaptation"
+   "writers": [
+    "René Wellek",
+    "David Damrosch",
+    "Franco Moretti",
+    "Pascale Casanova",
+    "Emily Apter"
+   ],
+   "alsoWriters": [
+    "Susan Bassnett",
+    "Gayatri Chakravorty Spivak",
+    "Harold Bloom"
+   ],
+   "tags": [
+    [
+     "Comparative literature"
+    ],
+    [
+     "Intertextuality"
+    ],
+    [
+     "Adaptation"
+    ],
+    [
+     "Rewritings"
+    ],
+    [
+     "Sources and adaptations"
+    ],
+    [
+     "Cosmopolitanism"
+    ],
+    [
+     "Weltliteratur"
+    ],
+    [
+     "World literature",
+     "Theory"
+    ]
+   ]
   },
   {
    "id": "wd-translation",
@@ -1118,7 +3264,41 @@
     "n9",
     "n6"
    ],
-   "q": "Translation"
+   "writers": [
+    "Susan Bassnett",
+    "Lawrence Venuti",
+    "Eugene Nida",
+    "André Lefevere",
+    "Itamar Even-Zohar",
+    "Gideon Toury",
+    "J. C. Catford",
+    "Peter Newmark",
+    "George Steiner",
+    "Sujit Mukherjee",
+    "Tejaswini Niranjana",
+    "Friedrich Schleiermacher"
+   ],
+   "alsoWriters": [
+    "Roman Jakobson",
+    "Walter Benjamin",
+    "John Dryden",
+    "Edward FitzGerald"
+   ],
+   "tags": [
+    [
+     "Translation"
+    ],
+    [
+     "Translation studies"
+    ],
+    [
+     "Multilingualism"
+    ],
+    [
+     "Bible translation",
+     "Theory"
+    ]
+   ]
   },
   {
    "id": "fm-genres",
@@ -1133,7 +3313,129 @@
     "n3",
     "n4"
    ],
-   "guide": "abrams-genres"
+   "guide": "abrams-genres",
+   "tags": [
+    [
+     "Genre"
+    ],
+    [
+     "Epic",
+     "!Classical"
+    ],
+    [
+     "Ode",
+     "!Romantic Age"
+    ],
+    [
+     "Elegy"
+    ],
+    [
+     "Sonnet",
+     "Literary terms"
+    ],
+    [
+     "Ballad"
+    ],
+    [
+     "Pastoral"
+    ],
+    [
+     "Allegory"
+    ],
+    [
+     "Satire",
+     "Literary terms"
+    ],
+    [
+     "Tragedy",
+     "Literary terms"
+    ],
+    [
+     "Comedy",
+     "Literary terms"
+    ],
+    [
+     "Novella"
+    ],
+    [
+     "Drama theory"
+    ],
+    [
+     "Theatre history",
+     "!Elizabethan"
+    ],
+    [
+     "Short story",
+     "Literary terms"
+    ],
+    [
+     "Life writing"
+    ],
+    [
+     "Biography"
+    ],
+    [
+     "Autobiography"
+    ],
+    [
+     "Diary"
+    ],
+    [
+     "Letters"
+    ],
+    [
+     "Travel writing"
+    ],
+    [
+     "Graphic novel"
+    ],
+    [
+     "Bildungsroman"
+    ],
+    [
+     "Children's literature"
+    ],
+    [
+     "Essay",
+     "Literary terms"
+    ],
+    [
+     "Novel in verse"
+    ],
+    [
+     "Fable"
+    ],
+    [
+     "Parody"
+    ],
+    [
+     "Closet drama"
+    ],
+    [
+     "Epistolary"
+    ],
+    [
+     "Utopia"
+    ],
+    [
+     "Dystopian fiction"
+    ],
+    [
+     "Historical novel"
+    ],
+    [
+     "Detective fiction"
+    ],
+    [
+     "Science fiction"
+    ],
+    [
+     "Fantasy"
+    ],
+    [
+     "Creative non-fiction"
+    ]
+   ]
   },
   {
    "id": "fm-prosody",
@@ -1145,7 +3447,48 @@
    "net": [
     "n2"
    ],
-   "guide": "abrams-rhetoric"
+   "guide": "abrams-rhetoric",
+   "tags": [
+    [
+     "Prosody"
+    ],
+    [
+     "Figures of speech"
+    ],
+    [
+     "Metre"
+    ],
+    [
+     "Rhetorical devices"
+    ],
+    [
+     "Sound devices"
+    ],
+    [
+     "Free verse"
+    ],
+    [
+     "Metaphor"
+    ],
+    [
+     "Irony"
+    ],
+    [
+     "Imagery"
+    ],
+    [
+     "Allusion"
+    ],
+    [
+     "Rhetoric"
+    ],
+    [
+     "Stanza forms"
+    ],
+    [
+     "Rhyme"
+    ]
+   ]
   },
   {
    "id": "fm-narrative",
@@ -1157,7 +3500,44 @@
    "net": [
     "n3"
    ],
-   "guide": "abrams-narrative"
+   "guide": "abrams-narrative",
+   "writers": [
+    "Wayne C. Booth",
+    "Gérard Genette",
+    "Percy Lubbock",
+    "Seymour Chatman",
+    "Mieke Bal",
+    "Gerald Prince",
+    "Franz Stanzel",
+    "Dorrit Cohn"
+   ],
+   "alsoWriters": [
+    "E. M. Forster"
+   ],
+   "tags": [
+    [
+     "Narrative technique"
+    ],
+    [
+     "Narratology"
+    ],
+    [
+     "Point of view"
+    ],
+    [
+     "Stream of consciousness"
+    ],
+    [
+     "Metafiction"
+    ],
+    [
+     "Narrative voice",
+     "!sec:XH-B1"
+    ],
+    [
+     "Unreliable narrator"
+    ]
+   ]
   },
   {
    "id": "fm-abrams",
@@ -1171,7 +3551,25 @@
     "n8",
     "n9"
    ],
-   "guide": "abrams"
+   "guide": "abrams",
+   "writers": [
+    "M. H. Abrams"
+   ],
+   "tags": [
+    [
+     "Abrams"
+    ],
+    [
+     "Literary terms"
+    ],
+    [
+     "Key terms"
+    ],
+    [
+     "Key concepts",
+     "!Literary theory"
+    ]
+   ]
   },
   {
    "id": "th-classical",
@@ -1183,7 +3581,41 @@
    "net": [
     "n8"
    ],
-   "guide": "theory-classical"
+   "guide": "theory-classical",
+   "writers": [
+    "Plato",
+    "Aristotle",
+    "Horace",
+    "Longinus",
+    "Plotinus",
+    "Quintilian",
+    "Socrates",
+    "Cicero",
+    "Thomas Aquinas",
+    "Donatus"
+   ],
+   "alsoWriters": [
+    "Dante Alighieri"
+   ],
+   "tags": [
+    [
+     "Classical",
+     "Literary criticism"
+    ],
+    [
+     "Mimesis"
+    ],
+    [
+     "Catharsis"
+    ],
+    [
+     "Classical",
+     "Literary theory"
+    ],
+    [
+     "Poetics"
+    ]
+   ]
   },
   {
    "id": "th-sidney-johnson",
@@ -1196,36 +3628,60 @@
    "net": [
     "n8"
    ],
-   "q": "Literary criticism",
-   "onlyWriters": [
+   "writers": [
     "Philip Sidney",
-    "Stephen Gosson",
-    "George Puttenham",
-    "Roger Ascham",
-    "Thomas Wilson",
-    "William Webbe",
-    "Samuel Daniel",
-    "Thomas Campion",
-    "Ben Jonson",
-    "Francis Bacon",
     "John Dryden",
-    "Thomas Rymer",
-    "John Dennis",
     "Alexander Pope",
-    "Joseph Addison",
-    "Richard Steele",
     "Samuel Johnson",
+    "Ben Jonson",
+    "Stephen Gosson",
+    "Thomas Rymer",
+    "Thomas Wilson",
+    "George Puttenham",
+    "Joseph Addison",
     "Edward Young",
-    "Joseph Warton",
-    "Thomas Warton",
-    "Richard Hurd",
-    "Edmund Burke",
-    "Hugh Blair",
-    "Lord Kames",
-    "Henry Home",
-    "Thomas Sprat",
-    "William Davenant",
-    "Thomas Hobbes"
+    "Lewis Theobald",
+    "Joshua Reynolds",
+    "Samuel Daniel",
+    "William Webbe",
+    "Francis Meres",
+    "Jeremy Collier"
+   ],
+   "alsoWriters": [
+    "Thomas Campion"
+   ],
+   "tags": [
+    [
+     "Literary criticism",
+     "Renaissance"
+    ],
+    [
+     "Literary criticism",
+     "Elizabethan"
+    ],
+    [
+     "Literary criticism",
+     "Neoclassical"
+    ],
+    [
+     "Literary criticism",
+     "17th century"
+    ],
+    [
+     "Literary criticism",
+     "18th century"
+    ],
+    [
+     "Literary criticism",
+     "Restoration"
+    ],
+    [
+     "Defence of poetry"
+    ],
+    [
+     "Shakespeare criticism",
+     "18th century"
+    ]
    ]
   },
   {
@@ -1239,31 +3695,67 @@
    "net": [
     "n8"
    ],
-   "q": "criticism",
-   "onlyWriters": [
+   "writers": [
     "William Wordsworth",
     "S. T. Coleridge",
     "P. B. Shelley",
     "John Keats",
-    "William Hazlitt",
-    "Charles Lamb",
-    "Thomas De Quincey",
-    "Leigh Hunt",
-    "Thomas Love Peacock",
-    "Francis Jeffrey",
     "Matthew Arnold",
     "Walter Pater",
+    "William Hazlitt",
+    "Thomas De Quincey",
     "John Ruskin",
-    "A. C. Swinburne",
+    "Thomas Love Peacock",
+    "Francis Jeffrey",
+    "Charles Lamb",
+    "Leigh Hunt",
     "Oscar Wilde",
-    "John Henry Newman",
-    "Thomas Carlyle",
+    "A. C. Bradley",
+    "Immanuel Kant",
+    "Friedrich Schiller",
+    "A. W. Schlegel",
+    "Friedrich Schlegel",
     "John Stuart Mill",
-    "Arthur Hallam",
-    "Leslie Stephen",
-    "Robert Buchanan",
-    "George Henry Lewes",
-    "Walter Bagehot"
+    "J. S. Mill",
+    "Henry James"
+   ],
+   "tags": [
+    [
+     "Literary criticism",
+     "Romantic Age"
+    ],
+    [
+     "Literary criticism",
+     "Victorian"
+    ],
+    [
+     "Romantic theory"
+    ],
+    [
+     "Imagination"
+    ],
+    [
+     "Defence of poetry",
+     "Romantic Age"
+    ],
+    [
+     "Art criticism"
+    ],
+    [
+     "Literary criticism",
+     "19th century"
+    ],
+    [
+     "Criticism",
+     "Romantic Age"
+    ],
+    [
+     "Criticism",
+     "Victorian"
+    ],
+    [
+     "Fancy"
+    ]
    ]
   },
   {
@@ -1276,7 +3768,86 @@
    "net": [
     "n8"
    ],
-   "guide": "theory-formalism"
+   "guide": "theory-formalism",
+   "writers": [
+    "T. S. Eliot",
+    "I. A. Richards",
+    "F. R. Leavis",
+    "Q. D. Leavis",
+    "William Empson",
+    "Cleanth Brooks",
+    "John Crowe Ransom",
+    "Allen Tate",
+    "Robert Penn Warren",
+    "W. K. Wimsatt",
+    "Monroe Beardsley",
+    "Monroe C. Beardsley",
+    "R. P. Blackmur",
+    "Yvor Winters",
+    "T. E. Hulme",
+    "C. K. Ogden",
+    "L. C. Knights",
+    "Lionel Trilling",
+    "Edmund Wilson",
+    "G. Wilson Knight",
+    "E. M. W. Tillyard",
+    "Kenneth Burke",
+    "Northrop Frye",
+    "Maud Bodkin",
+    "Frank Kermode",
+    "Ian Watt",
+    "Arthur Quiller-Couch"
+   ],
+   "alsoWriters": [
+    "C. S. Lewis",
+    "Ezra Pound",
+    "Virginia Woolf",
+    "Wayne C. Booth",
+    "Raymond Williams",
+    "Christopher Caudwell",
+    "Walter Raleigh"
+   ],
+   "tags": [
+    [
+     "New Criticism"
+    ],
+    [
+     "Practical criticism"
+    ],
+    [
+     "Cambridge School"
+    ],
+    [
+     "Impersonality"
+    ],
+    [
+     "Tradition",
+     "Literary criticism"
+    ],
+    [
+     "Ambiguity"
+    ],
+    [
+     "Archetypal criticism"
+    ],
+    [
+     "Myth criticism"
+    ],
+    [
+     "Modernism",
+     "Literary criticism"
+    ],
+    [
+     "20th century",
+     "Literary criticism"
+    ],
+    [
+     "Objective correlative"
+    ],
+    [
+     "Literary criticism"
+    ]
+   ]
   },
   {
    "id": "th-formalism",
@@ -1288,7 +3859,44 @@
    "net": [
     "n9"
    ],
-   "q": "Russian Formalism"
+   "writers": [
+    "Viktor Shklovsky",
+    "Mikhail Bakhtin",
+    "Roman Jakobson",
+    "Boris Eichenbaum",
+    "Yuri Tynyanov",
+    "Vladimir Propp",
+    "Boris Tomashevsky",
+    "Jan Mukařovský",
+    "Valentin Voloshinov",
+    "Leon Trotsky"
+   ],
+   "tags": [
+    [
+     "Russian Formalism"
+    ],
+    [
+     "Bakhtin"
+    ],
+    [
+     "Dialogism"
+    ],
+    [
+     "Defamiliarization"
+    ],
+    [
+     "Prague School"
+    ],
+    [
+     "Carnivalesque"
+    ],
+    [
+     "Foregrounding"
+    ],
+    [
+     "Stylistics"
+    ]
+   ]
   },
   {
    "id": "th-structuralism",
@@ -1300,7 +3908,35 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-structuralism"
+   "guide": "theory-structuralism",
+   "writers": [
+    "Ferdinand de Saussure",
+    "Roland Barthes",
+    "Claude Lévi-Strauss",
+    "Charles Sanders Peirce",
+    "C. S. Peirce",
+    "A. J. Greimas",
+    "Tzvetan Todorov",
+    "Jonathan Culler",
+    "Yuri Lotman",
+    "Louis Hjelmslev"
+   ],
+   "alsoWriters": [
+    "Gérard Genette",
+    "Umberto Eco"
+   ],
+   "tags": [
+    [
+     "Structuralism"
+    ],
+    [
+     "Semiotics"
+    ],
+    [
+     "Structuralism",
+     "Linguistics"
+    ]
+   ]
   },
   {
    "id": "th-poststructuralism",
@@ -1312,7 +3948,39 @@
    "net": [
     "n9"
    ],
-   "q": "Post-structuralism"
+   "writers": [
+    "Jacques Derrida",
+    "Michel Foucault",
+    "Jacques Lacan",
+    "Gilles Deleuze",
+    "Félix Guattari",
+    "Paul de Man",
+    "J. Hillis Miller",
+    "Geoffrey Hartman",
+    "Harold Bloom",
+    "Barbara Johnson",
+    "Julia Kristeva",
+    "Giorgio Agamben",
+    "Emmanuel Levinas"
+   ],
+   "tags": [
+    [
+     "Post-structuralism"
+    ],
+    [
+     "Deconstruction"
+    ],
+    [
+     "Yale School"
+    ],
+    [
+     "Power"
+    ],
+    [
+     "Discourse",
+     "Literary theory"
+    ]
+   ]
   },
   {
    "id": "th-marxism",
@@ -1324,7 +3992,44 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-marxism"
+   "guide": "theory-marxism",
+   "writers": [
+    "Karl Marx",
+    "Friedrich Engels",
+    "Georg Lukács",
+    "Antonio Gramsci",
+    "Louis Althusser",
+    "Theodor Adorno",
+    "Max Horkheimer",
+    "Walter Benjamin",
+    "Herbert Marcuse",
+    "Jürgen Habermas",
+    "Terry Eagleton",
+    "Fredric Jameson",
+    "Pierre Macherey",
+    "Christopher Caudwell",
+    "Lucien Goldmann",
+    "Ernst Bloch",
+    "Aijaz Ahmad",
+    "Slavoj Žižek"
+   ],
+   "alsoWriters": [
+    "Leon Trotsky"
+   ],
+   "tags": [
+    [
+     "Marxism"
+    ],
+    [
+     "Frankfurt School"
+    ],
+    [
+     "Hegemony"
+    ],
+    [
+     "Ideology"
+    ]
+   ]
   },
   {
    "id": "th-feminism",
@@ -1336,7 +4041,74 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-feminism"
+   "guide": "theory-feminism",
+   "writers": [
+    "Elaine Showalter",
+    "Simone de Beauvoir",
+    "Kate Millett",
+    "Sandra Gilbert",
+    "Susan Gubar",
+    "Hélène Cixous",
+    "Luce Irigaray",
+    "Judith Butler",
+    "Betty Friedan",
+    "Germaine Greer",
+    "Mary Ellmann",
+    "Patricia Meyer Spacks",
+    "Ellen Moers",
+    "Toril Moi",
+    "Shulamith Firestone",
+    "Michèle Barrett",
+    "Eve Kosofsky Sedgwick",
+    "Chandra Talpade Mohanty",
+    "Laura Mulvey",
+    "Camille Paglia",
+    "Annette Kolodny",
+    "Nancy Chodorow",
+    "Monique Wittig",
+    "Gayle Rubin",
+    "Teresa de Lauretis",
+    "Barbara Smith",
+    "Françoise d'Eaubonne",
+    "Kimberlé Crenshaw",
+    "Sara Ahmed",
+    "Jack Halberstam"
+   ],
+   "alsoWriters": [
+    "Adrienne Rich",
+    "bell hooks",
+    "Donna Haraway",
+    "Alice Walker",
+    "Virginia Woolf",
+    "Mary Wollstonecraft"
+   ],
+   "tags": [
+    [
+     "Feminism"
+    ],
+    [
+     "Gynocriticism"
+    ],
+    [
+     "Queer theory"
+    ],
+    [
+     "French feminism"
+    ],
+    [
+     "Black feminism"
+    ],
+    [
+     "Gender"
+    ],
+    [
+     "Queer writing"
+    ],
+    [
+     "Women writers",
+     "Literary theory"
+    ]
+   ]
   },
   {
    "id": "th-psycho",
@@ -1348,7 +4120,34 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-psycho"
+   "guide": "theory-psycho",
+   "writers": [
+    "Sigmund Freud",
+    "Carl Jung",
+    "Melanie Klein",
+    "Ernest Jones",
+    "Norman Holland",
+    "D. W. Winnicott",
+    "Otto Rank",
+    "Alfred Adler",
+    "Erik Erikson"
+   ],
+   "alsoWriters": [
+    "Jacques Lacan",
+    "Julia Kristeva"
+   ],
+   "tags": [
+    [
+     "Psychoanalysis"
+    ],
+    [
+     "Psychoanalytic criticism"
+    ],
+    [
+     "Archetype",
+     "Jung"
+    ]
+   ]
   },
   {
    "id": "th-reader",
@@ -1360,7 +4159,43 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-reader"
+   "guide": "theory-reader",
+   "writers": [
+    "Wolfgang Iser",
+    "Stanley Fish",
+    "Hans Robert Jauss",
+    "Louise Rosenblatt",
+    "David Bleich",
+    "Roman Ingarden",
+    "Edmund Husserl",
+    "Martin Heidegger",
+    "Hans-Georg Gadamer",
+    "Paul Ricoeur",
+    "Georges Poulet",
+    "E. D. Hirsch",
+    "Wilhelm Dilthey"
+   ],
+   "alsoWriters": [
+    "Norman Holland",
+    "Friedrich Schleiermacher"
+   ],
+   "tags": [
+    [
+     "Reader-response criticism"
+    ],
+    [
+     "Reader-response"
+    ],
+    [
+     "Phenomenology"
+    ],
+    [
+     "Hermeneutics"
+    ],
+    [
+     "Reception theory"
+    ]
+   ]
   },
   {
    "id": "th-postcolonial",
@@ -1373,7 +4208,62 @@
     "n9",
     "n7"
    ],
-   "guide": "theory-postcolonial"
+   "guide": "theory-postcolonial",
+   "writers": [
+    "Edward Said",
+    "Edward W. Said",
+    "Homi K. Bhabha",
+    "Gayatri Chakravorty Spivak",
+    "Frantz Fanon",
+    "Bill Ashcroft",
+    "Gareth Griffiths",
+    "Helen Tiffin",
+    "Ranajit Guha",
+    "Dipesh Chakrabarty",
+    "Partha Chatterjee",
+    "Robert J. C. Young",
+    "Robert Young",
+    "Leela Gandhi",
+    "Ania Loomba",
+    "Albert Memmi",
+    "Ashis Nandy",
+    "Benedict Anderson",
+    "Achille Mbembe",
+    "Elleke Boehmer",
+    "Paul Gilroy"
+   ],
+   "alsoWriters": [
+    "Aimé Césaire",
+    "Aijaz Ahmad",
+    "Ngũgĩ wa Thiong’o",
+    "Ngũgĩ wa Thiong'o",
+    "Stuart Hall"
+   ],
+   "tags": [
+    [
+     "Postcolonialism"
+    ],
+    [
+     "Subaltern Studies"
+    ],
+    [
+     "Orientalism"
+    ],
+    [
+     "Colonialism",
+     "Literary theory"
+    ],
+    [
+     "Nationalism",
+     "Literary theory"
+    ],
+    [
+     "Hybridity"
+    ],
+    [
+     "Colonialism"
+    ]
+   ]
   },
   {
    "id": "th-newhistoricism",
@@ -1385,7 +4275,30 @@
    "net": [
     "n9"
    ],
-   "q": "New Historicism"
+   "writers": [
+    "Stephen Greenblatt",
+    "Louis Montrose",
+    "Jonathan Dollimore",
+    "Alan Sinfield",
+    "Catherine Gallagher",
+    "Hayden White",
+    "Jerome McGann",
+    "Stephen Orgel"
+   ],
+   "alsoWriters": [
+    "Clifford Geertz"
+   ],
+   "tags": [
+    [
+     "New Historicism"
+    ],
+    [
+     "Cultural materialism"
+    ],
+    [
+     "Cultural poetics"
+    ]
+   ]
   },
   {
    "id": "th-postmodern",
@@ -1398,7 +4311,52 @@
    "net": [
     "n9"
    ],
-   "q": "Postmodernism"
+   "writers": [
+    "Jean Baudrillard",
+    "Jean-François Lyotard",
+    "Linda Hutcheon",
+    "Ihab Hassan",
+    "Brian McHale",
+    "F. T. Marinetti",
+    "André Breton",
+    "Tristan Tzara",
+    "Guillaume Apollinaire"
+   ],
+   "alsoWriters": [
+    "Fredric Jameson"
+   ],
+   "tags": [
+    [
+     "Postmodernism"
+    ],
+    [
+     "Literary movements"
+    ],
+    [
+     "Modernism",
+     "Literary theory"
+    ],
+    [
+     "Avant-garde"
+    ],
+    [
+     "Futurism"
+    ],
+    [
+     "Surrealism"
+    ],
+    [
+     "Dadaism"
+    ],
+    [
+     "Realism",
+     "Literary theory"
+    ],
+    [
+     "Naturalism",
+     "Literary theory"
+    ]
+   ]
   },
   {
    "id": "th-existentialism",
@@ -1411,7 +4369,33 @@
     "n1",
     "n9"
    ],
-   "q": "Existentialism"
+   "writers": [
+    "Jean-Paul Sartre",
+    "Albert Camus",
+    "Søren Kierkegaard",
+    "Friedrich Nietzsche",
+    "Martin Esslin",
+    "Karl Jaspers",
+    "Gabriel Marcel"
+   ],
+   "alsoWriters": [
+    "Eugène Ionesco",
+    "Martin Heidegger"
+   ],
+   "tags": [
+    [
+     "Existentialism"
+    ],
+    [
+     "Theatre of the Absurd"
+    ],
+    [
+     "Absurd"
+    ],
+    [
+     "Philosophy"
+    ]
+   ]
   },
   {
    "id": "th-eco",
@@ -1424,7 +4408,46 @@
    "net": [
     "n9"
    ],
-   "guide": "theory-eco"
+   "guide": "theory-eco",
+   "writers": [
+    "Cheryll Glotfelty",
+    "Lawrence Buell",
+    "Greg Garrard",
+    "Jonathan Bate",
+    "Timothy Morton",
+    "Rob Nixon",
+    "Rachel Carson",
+    "Aldo Leopold",
+    "William Rueckert",
+    "Alfred W. Crosby",
+    "Alfred Crosby",
+    "Arne Næss",
+    "Vandana Shiva",
+    "Glen Love",
+    "Kate Rigby",
+    "Stacy Alaimo"
+   ],
+   "alsoWriters": [
+    "Amitav Ghosh",
+    "Ramachandra Guha"
+   ],
+   "tags": [
+    [
+     "Ecocriticism"
+    ],
+    [
+     "Ecofeminism"
+    ],
+    [
+     "Environmental humanities"
+    ],
+    [
+     "Anthropocene"
+    ],
+    [
+     "Nature writing"
+    ]
+   ]
   },
   {
    "id": "th-new-fields",
@@ -1435,6 +4458,62 @@
    ],
    "net": [
     "n9"
+   ],
+   "writers": [
+    "Donna Haraway",
+    "N. Katherine Hayles",
+    "Rosi Braidotti",
+    "Cary Wolfe",
+    "Cathy Caruth",
+    "Pierre Nora",
+    "Marianne Hirsch",
+    "Dominick LaCapra",
+    "Shoshana Felman",
+    "Bruno Latour",
+    "Rita Charon",
+    "Lennard J. Davis",
+    "Rosemarie Garland-Thomson",
+    "Matthew Kirschenbaum",
+    "Jan Assmann",
+    "Aleida Assmann",
+    "Maurice Halbwachs",
+    "Jane Bennett",
+    "Karen Barad"
+   ],
+   "alsoWriters": [
+    "Franco Moretti"
+   ],
+   "tags": [
+    [
+     "Posthumanism"
+    ],
+    [
+     "Trauma studies"
+    ],
+    [
+     "Memory studies"
+    ],
+    [
+     "Medical humanities"
+    ],
+    [
+     "Digital humanities"
+    ],
+    [
+     "Disability studies"
+    ],
+    [
+     "Animal studies"
+    ],
+    [
+     "New materialism"
+    ],
+    [
+     "Affect theory"
+    ],
+    [
+     "Cyborg"
+    ]
    ]
   },
   {
@@ -1447,7 +4526,64 @@
    "net": [
     "n7"
    ],
-   "guide": "cultural-theory"
+   "guide": "cultural-theory",
+   "writers": [
+    "Raymond Williams",
+    "Richard Hoggart",
+    "Stuart Hall",
+    "E. P. Thompson",
+    "Dick Hebdige",
+    "Angela McRobbie",
+    "John Fiske",
+    "John Storey",
+    "Pierre Bourdieu",
+    "Michel de Certeau",
+    "Henri Lefebvre",
+    "Edward Soja",
+    "Arjun Appadurai",
+    "Clifford Geertz",
+    "Paul Willis",
+    "Ien Ang",
+    "Tony Bennett",
+    "Marshall McLuhan",
+    "Guy Debord",
+    "Dwight Macdonald",
+    "Herbert Gans",
+    "Lawrence Grossberg",
+    "David Morley",
+    "Janice Radway"
+   ],
+   "alsoWriters": [
+    "Matthew Arnold",
+    "F. R. Leavis"
+   ],
+   "tags": [
+    [
+     "Cultural studies"
+    ],
+    [
+     "Birmingham School"
+    ],
+    [
+     "Popular culture"
+    ],
+    [
+     "Mass culture"
+    ],
+    [
+     "Subculture"
+    ],
+    [
+     "Cultural theory"
+    ],
+    [
+     "Globalisation"
+    ],
+    [
+     "Hegemony",
+     "Cultural studies"
+    ]
+   ]
   },
   {
    "id": "cs-film",
@@ -1460,7 +4596,53 @@
    "net": [
     "n7"
    ],
-   "guide": "cultural-film"
+   "guide": "cultural-film",
+   "writers": [
+    "André Bazin",
+    "Sergei Eisenstein",
+    "Christian Metz",
+    "Satyajit Ray",
+    "Laurence Olivier",
+    "Robert Stam",
+    "Brian McFarlane",
+    "Siegfried Kracauer",
+    "Rudolf Arnheim",
+    "David Bordwell",
+    "Kristin Thompson",
+    "Tom Gunning",
+    "Akira Kurosawa",
+    "Alfred Hitchcock",
+    "Ingmar Bergman",
+    "Jean-Luc Godard",
+    "François Truffaut"
+   ],
+   "alsoWriters": [
+    "Laura Mulvey",
+    "Linda Hutcheon",
+    "Gilles Deleuze"
+   ],
+   "tags": [
+    [
+     "Film"
+    ],
+    [
+     "Media studies"
+    ],
+    [
+     "Adaptation",
+     "Film"
+    ],
+    [
+     "Cinema"
+    ],
+    [
+     "Television"
+    ],
+    [
+     "Subtitles",
+     "!Translation"
+    ]
+   ]
   },
   {
    "id": "cs-race",
@@ -1472,7 +4654,61 @@
    "net": [
     "n7"
    ],
-   "guide": "cultural-race"
+   "guide": "cultural-race",
+   "writers": [
+    "Cornel West",
+    "Kwame Anthony Appiah",
+    "Hugo Gernsback",
+    "J. K. Rowling",
+    "Isaac Asimov",
+    "Ursula K. Le Guin"
+   ],
+   "alsoWriters": [
+    "Henry Louis Gates Jr.",
+    "W. E. B. Du Bois",
+    "Paul Gilroy",
+    "Toni Morrison",
+    "Agatha Christie",
+    "Arthur Conan Doyle",
+    "H. G. Wells",
+    "Philip K. Dick",
+    "Mary Shelley",
+    "Chetan Bhagat"
+   ],
+   "tags": [
+    [
+     "Race"
+    ],
+    [
+     "Identity"
+    ],
+    [
+     "Popular fiction"
+    ],
+    [
+     "Genre fiction"
+    ],
+    [
+     "Science fiction",
+     "Popular culture"
+    ],
+    [
+     "Detective fiction",
+     "Popular culture"
+    ],
+    [
+     "Critical race theory"
+    ],
+    [
+     "Whiteness"
+    ],
+    [
+     "Romance fiction"
+    ],
+    [
+     "Bestsellers"
+    ]
+   ]
   },
   {
    "id": "cs-movements",
@@ -1483,6 +4719,65 @@
    ],
    "net": [
     "n7"
+   ],
+   "alsoWriters": [
+    "Mary Wollstonecraft",
+    "Thomas Paine",
+    "Jeremy Bentham",
+    "William Morris",
+    "George Bernard Shaw",
+    "G. B. Shaw",
+    "B. R. Ambedkar",
+    "M. K. Gandhi"
+   ],
+   "tags": [
+    [
+     "French Revolution"
+    ],
+    [
+     "Fabian Society"
+    ],
+    [
+     "Utilitarianism"
+    ],
+    [
+     "Nationalism",
+     "!Literary theory"
+    ],
+    [
+     "Chartism"
+    ],
+    [
+     "Suffrage"
+    ],
+    [
+     "Civil rights"
+    ],
+    [
+     "Enlightenment"
+    ],
+    [
+     "Reformation"
+    ],
+    [
+     "Industrial Revolution"
+    ],
+    [
+     "Literary movements",
+     "History"
+    ],
+    [
+     "Political writing"
+    ],
+    [
+     "Religion"
+    ],
+    [
+     "Censorship"
+    ],
+    [
+     "Slavery"
+    ]
    ]
   },
   {
@@ -1494,6 +4789,81 @@
    ],
    "net": [
     "n7"
+   ],
+   "writers": [
+    "James George Frazer",
+    "Jessie Weston",
+    "Max Weber",
+    "Émile Durkheim",
+    "William James",
+    "B. F. Skinner",
+    "Ludwig Wittgenstein",
+    "Thomas Kuhn",
+    "Francis Fukuyama",
+    "Thomas Friedman",
+    "John Maynard Keynes",
+    "G. W. F. Hegel",
+    "Arthur Schopenhauer",
+    "René Descartes",
+    "Baruch Spinoza",
+    "Pico della Mirandola",
+    "Martin Luther",
+    "Niccolò Machiavelli"
+   ],
+   "alsoWriters": [
+    "Charles Darwin",
+    "Bronisław Malinowski",
+    "David Hume",
+    "Immanuel Kant",
+    "Friedrich Nietzsche",
+    "Erasmus",
+    "Carl Jung"
+   ],
+   "tags": [
+    [
+     "Sociology"
+    ],
+    [
+     "Psychology"
+    ],
+    [
+     "Anthropology"
+    ],
+    [
+     "Philosophy",
+     "History"
+    ],
+    [
+     "History",
+     "!Literary history"
+    ],
+    [
+     "Economics"
+    ],
+    [
+     "Science",
+     "Literature"
+    ],
+    [
+     "Science and literature"
+    ],
+    [
+     "Cultural history"
+    ],
+    [
+     "Culture",
+     "Literary theory"
+    ],
+    [
+     "Art history"
+    ],
+    [
+     "Music"
+    ],
+    [
+     "Myth",
+     "!Classical"
+    ]
    ]
   },
   {
@@ -1505,7 +4875,49 @@
     "n5",
     "n6"
    ],
-   "guide": "language-history"
+   "guide": "language-history",
+   "writers": [
+    "Otto Jespersen",
+    "Albert C. Baugh",
+    "Henry Sweet",
+    "Noah Webster",
+    "James Murray",
+    "Robert Cawdrey",
+    "Joseph Wright"
+   ],
+   "alsoWriters": [
+    "Samuel Johnson",
+    "William Caxton"
+   ],
+   "tags": [
+    [
+     "History of English"
+    ],
+    [
+     "Borrowings"
+    ],
+    [
+     "Etymology"
+    ],
+    [
+     "Old English",
+     "Linguistics"
+    ],
+    [
+     "Great Vowel Shift"
+    ],
+    [
+     "Lexicography"
+    ],
+    [
+     "Language",
+     "History"
+    ],
+    [
+     "Linguistics",
+     "History of English"
+    ]
+   ]
   },
   {
    "id": "lg-phonetics",
@@ -1515,7 +4927,39 @@
    "net": [
     "n5"
    ],
-   "guide": "language-phonetics"
+   "guide": "language-phonetics",
+   "writers": [
+    "Daniel Jones",
+    "A. C. Gimson",
+    "Peter Ladefoged",
+    "J. D. O'Connor"
+   ],
+   "tags": [
+    [
+     "Phonetics"
+    ],
+    [
+     "Phonology"
+    ],
+    [
+     "Consonants"
+    ],
+    [
+     "Vowels"
+    ],
+    [
+     "Stress"
+    ],
+    [
+     "Intonation"
+    ],
+    [
+     "Syllable"
+    ],
+    [
+     "IPA"
+    ]
+   ]
   },
   {
    "id": "lg-grammar",
@@ -1527,7 +4971,39 @@
    "net": [
     "n5"
    ],
-   "guide": "language-grammar"
+   "guide": "language-grammar",
+   "writers": [
+    "Randolph Quirk"
+   ],
+   "alsoWriters": [
+    "Leonard Bloomfield"
+   ],
+   "tags": [
+    [
+     "Grammar",
+     "!sec:GA",
+     "!sec:XH-B1",
+     "!sec:Paper 1"
+    ],
+    [
+     "Morphology"
+    ],
+    [
+     "Syntax"
+    ],
+    [
+     "Semantics"
+    ],
+    [
+     "Word formation"
+    ],
+    [
+     "Lexicology"
+    ],
+    [
+     "Parts of speech"
+    ]
+   ]
   },
   {
    "id": "lg-theory",
@@ -1537,7 +5013,69 @@
    "net": [
     "n5"
    ],
-   "q": "Linguistics"
+   "writers": [
+    "Noam Chomsky",
+    "J. L. Austin",
+    "John Searle",
+    "Edward Sapir",
+    "Benjamin Lee Whorf",
+    "Leonard Bloomfield",
+    "Dell Hymes",
+    "M. A. K. Halliday",
+    "J. R. Firth",
+    "H. P. Grice",
+    "William Labov",
+    "George Yule",
+    "Bronisław Malinowski",
+    "Basil Bernstein",
+    "Geoffrey Leech",
+    "Steven Pinker",
+    "Charles Hockett",
+    "David Crystal"
+   ],
+   "alsoWriters": [
+    "Roman Jakobson",
+    "Ferdinand de Saussure"
+   ],
+   "tags": [
+    [
+     "Linguistics"
+    ],
+    [
+     "Sociolinguistics"
+    ],
+    [
+     "Pragmatics"
+    ],
+    [
+     "Speech act theory"
+    ],
+    [
+     "Generative grammar"
+    ],
+    [
+     "Psycholinguistics"
+    ],
+    [
+     "Discourse analysis"
+    ],
+    [
+     "World Englishes"
+    ],
+    [
+     "Language acquisition",
+     "!Language teaching"
+    ],
+    [
+     "Origin of language"
+    ],
+    [
+     "Varieties of English"
+    ],
+    [
+     "Language"
+    ]
+   ]
   },
   {
    "id": "lg-elt",
@@ -1548,7 +5086,54 @@
     "n5",
     "n6"
    ],
-   "guide": "language-elt"
+   "guide": "language-elt",
+   "writers": [
+    "Stephen Krashen",
+    "Lev Vygotsky",
+    "Jean Piaget",
+    "Michael West",
+    "Harold Palmer",
+    "Jack C. Richards",
+    "Theodore Rodgers",
+    "N. S. Prabhu",
+    "Caleb Gattegno",
+    "Georgi Lozanov",
+    "Charles Curran",
+    "James Asher",
+    "David Wilkins",
+    "H. H. Stern",
+    "Larry Selinker",
+    "Pit Corder",
+    "Rod Ellis",
+    "Jim Cummins"
+   ],
+   "alsoWriters": [
+    "B. F. Skinner"
+   ],
+   "tags": [
+    [
+     "Language teaching"
+    ],
+    [
+     "Second language acquisition"
+    ],
+    [
+     "Teaching methods",
+     "!sec:Paper 1"
+    ],
+    [
+     "ELT"
+    ],
+    [
+     "Communicative language teaching"
+    ],
+    [
+     "Language testing"
+    ],
+    [
+     "Language acquisition"
+    ]
+   ]
   },
   {
    "id": "lg-use",
@@ -1559,6 +5144,57 @@
    ],
    "net": [
     "n5"
+   ],
+   "tags": [
+    [
+     "Vocabulary",
+     "!sec:GA",
+     "!sec:XH-B1",
+     "!sec:Paper 1"
+    ],
+    [
+     "Idioms"
+    ],
+    [
+     "Usage"
+    ],
+    [
+     "English in use"
+    ],
+    [
+     "Fill in the blanks",
+     "!sec:GA",
+     "!sec:XH-B1"
+    ],
+    [
+     "One-word substitution"
+    ],
+    [
+     "Synonyms"
+    ],
+    [
+     "Antonyms"
+    ],
+    [
+     "Abbreviations",
+     "!sec:Paper 1"
+    ],
+    [
+     "Pseudonyms"
+    ],
+    [
+     "Titles"
+    ],
+    [
+     "Epigraphs"
+    ],
+    [
+     "First works"
+    ],
+    [
+     "Opening lines",
+     "!Shakespeare"
+    ]
    ]
   },
   {
@@ -1571,7 +5207,88 @@
    "net": [
     "n10"
    ],
-   "guide": "research-methods"
+   "guide": "research-methods",
+   "writers": [
+    "Fredson Bowers",
+    "W. W. Greg",
+    "R. B. McKerrow",
+    "D. F. McKenzie"
+   ],
+   "alsoWriters": [
+    "Clifford Geertz",
+    "Jerome McGann"
+   ],
+   "tags": [
+    [
+     "Research methodology",
+     "!sec:Paper 1"
+    ],
+    [
+     "Research methods",
+     "!sec:Paper 1"
+    ],
+    [
+     "Textual criticism"
+    ],
+    [
+     "Bibliography",
+     "!MLA"
+    ],
+    [
+     "Literary research"
+    ],
+    [
+     "Archival research"
+    ],
+    [
+     "Ethnography"
+    ],
+    [
+     "Oral history"
+    ],
+    [
+     "Research",
+     "!sec:Paper 1"
+    ],
+    [
+     "Thesis writing",
+     "!sec:Paper 1"
+    ],
+    [
+     "Research process",
+     "!sec:Paper 1"
+    ],
+    [
+     "Literature review",
+     "!sec:Paper 1"
+    ],
+    [
+     "Publishing"
+    ],
+    [
+     "Book history"
+    ],
+    [
+     "Colonial publishing"
+    ],
+    [
+     "Journals",
+     "!sec:Paper 1"
+    ],
+    [
+     "English studies"
+    ],
+    [
+     "Literary institutions"
+    ],
+    [
+     "Institutions",
+     "!sec:Paper 1"
+    ],
+    [
+     "Literary history"
+    ]
+   ]
   },
   {
    "id": "rs-mla",
@@ -1583,7 +5300,32 @@
    "net": [
     "n10"
    ],
-   "guide": "research-docs"
+   "guide": "research-docs",
+   "tags": [
+    [
+     "MLA"
+    ],
+    [
+     "MLA style"
+    ],
+    [
+     "Citation styles"
+    ],
+    [
+     "Plagiarism",
+     "!sec:Paper 1"
+    ],
+    [
+     "Research ethics",
+     "!sec:Paper 1"
+    ],
+    [
+     "Academic integrity"
+    ],
+    [
+     "Documentation"
+    ]
+   ]
   },
   {
    "id": "rs-argument",
@@ -1594,6 +5336,25 @@
    ],
    "net": [
     "n10"
+   ],
+   "tags": [
+    [
+     "Research argument"
+    ],
+    [
+     "Thesis statement"
+    ],
+    [
+     "AI"
+    ],
+    [
+     "Multimodal"
+    ],
+    [
+     "Argumentation",
+     "!sec:Paper 1",
+     "!sec:XH-B1"
+    ]
    ]
   },
   {
@@ -1604,7 +5365,31 @@
     "g5"
    ],
    "net": [],
-   "guide": "awards"
+   "guide": "awards",
+   "tags": [
+    [
+     "Awards"
+    ],
+    [
+     "Booker Prize"
+    ],
+    [
+     "Nobel Prize"
+    ],
+    [
+     "Pulitzer Prize"
+    ],
+    [
+     "Sahitya Akademi"
+    ],
+    [
+     "Jnanpith"
+    ],
+    [
+     "Prizes"
+    ]
+   ],
+   "tagsFirst": true
   },
   {
    "id": "rs-festivals",
@@ -1613,7 +5398,26 @@
    "gate": [
     "g5"
    ],
-   "net": []
+   "net": [],
+   "tags": [
+    [
+     "Literary festivals"
+    ],
+    [
+     "Literary associations"
+    ],
+    [
+     "Literary groups",
+     "!18th century"
+    ],
+    [
+     "Literary societies"
+    ],
+    [
+     "Writers' lives"
+    ]
+   ],
+   "tagsFirst": true
   },
   {
    "id": "ap-verbal",
@@ -1623,7 +5427,22 @@
     "ga1"
    ],
    "net": [],
-   "guide": "apt-verbal"
+   "guide": "apt-verbal",
+   "tags": [
+    [
+     "sec:GA",
+     "Verbal"
+    ],
+    [
+     "sec:GA",
+     "Vocabulary"
+    ],
+    [
+     "sec:GA",
+     "Grammar"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-quant",
@@ -1635,7 +5454,30 @@
    "net": [
     "p1u5"
    ],
-   "guide": "apt-quant"
+   "guide": "apt-quant",
+   "tags": [
+    [
+     "sec:GA",
+     "Quantitative"
+    ],
+    [
+     "sec:GA",
+     "Mathematical reasoning"
+    ],
+    [
+     "sec:Paper 1",
+     "Mathematical reasoning"
+    ],
+    [
+     "sec:XH-B1",
+     "Quantitative"
+    ],
+    [
+     "sec:GA",
+     "Numerical"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-di",
@@ -1647,7 +5489,22 @@
    "net": [
     "p1u7"
    ],
-   "guide": "apt-di"
+   "guide": "apt-di",
+   "tags": [
+    [
+     "sec:GA",
+     "Data interpretation"
+    ],
+    [
+     "sec:Paper 1",
+     "Data interpretation"
+    ],
+    [
+     "sec:XH-B1",
+     "Data interpretation"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-analytical",
@@ -1659,7 +5516,26 @@
    "net": [
     "p1u6"
    ],
-   "guide": "apt-logic"
+   "guide": "apt-logic",
+   "tags": [
+    [
+     "sec:GA",
+     "Logical reasoning"
+    ],
+    [
+     "sec:Paper 1",
+     "Logical reasoning"
+    ],
+    [
+     "sec:GA",
+     "Analytical"
+    ],
+    [
+     "sec:GA",
+     "Reasoning"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-spatial",
@@ -1668,7 +5544,26 @@
    "gate": [
     "ga4"
    ],
-   "net": []
+   "net": [],
+   "tags": [
+    [
+     "sec:GA",
+     "Spatial"
+    ],
+    [
+     "sec:GA",
+     "Paper folding"
+    ],
+    [
+     "sec:GA",
+     "Patterns"
+    ],
+    [
+     "sec:GA",
+     "Mirror image"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-rc",
@@ -1681,7 +5576,32 @@
    "net": [
     "p1u3"
    ],
-   "guide": "apt-rc"
+   "guide": "apt-rc",
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Reading comprehension"
+    ],
+    [
+     "sec:XH-B1",
+     "Reading comprehension"
+    ],
+    [
+     "sec:GA",
+     "Reading comprehension"
+    ],
+    [
+     "sec:Paper 1",
+     "Comprehension"
+    ],
+    [
+     "Reading comprehension"
+    ],
+    [
+     "Comprehension"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-expression",
@@ -1691,7 +5611,22 @@
     "xh02"
    ],
    "net": [],
-   "guide": "apt-expression"
+   "guide": "apt-expression",
+   "tags": [
+    [
+     "sec:XH-B1",
+     "Verbal"
+    ],
+    [
+     "sec:XH-B1",
+     "Expression"
+    ],
+    [
+     "sec:XH-B1",
+     "Grammar"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-areasoning",
@@ -1703,7 +5638,24 @@
    "net": [
     "p1u6"
    ],
-   "guide": "apt-logic"
+   "guide": "apt-logic",
+   "tags": [
+    [
+     "sec:XH-B1",
+     "Logical reasoning"
+    ],
+    [
+     "sec:XH-B1",
+     "Analytical reasoning"
+    ],
+    [
+     "sec:XH-B1",
+     "Reasoning & Comprehension",
+     "Inference",
+     "!Reading comprehension"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "ap-logical",
@@ -1715,7 +5667,18 @@
    "net": [
     "p1u6"
    ],
-   "guide": "apt-logic"
+   "guide": "apt-logic",
+   "tags": [
+    [
+     "sec:XH-B1",
+     "Critical reasoning"
+    ],
+    [
+     "sec:XH-B1",
+     "Arguments"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-teaching",
@@ -1725,7 +5688,13 @@
    "net": [
     "p1u1"
    ],
-   "q": "paperone teaching aptitude"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Teaching aptitude"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-research",
@@ -1735,7 +5704,13 @@
    "net": [
     "p1u2"
    ],
-   "q": "paperone research aptitude"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Research aptitude"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-communication",
@@ -1745,7 +5720,13 @@
    "net": [
     "p1u4"
    ],
-   "q": "paperone communication"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Communication"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-ict",
@@ -1755,7 +5736,13 @@
    "net": [
     "p1u8"
    ],
-   "q": "paperone ict"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "ICT"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-environment",
@@ -1765,7 +5752,13 @@
    "net": [
     "p1u9"
    ],
-   "q": "paperone environment"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Environment"
+    ]
+   ],
+   "scope": "aptitude"
   },
   {
    "id": "p1-highered",
@@ -1775,7 +5768,13 @@
    "net": [
     "p1u10"
    ],
-   "q": "paperone higher education"
+   "tags": [
+    [
+     "sec:Paper 1",
+     "Higher education"
+    ]
+   ],
+   "scope": "aptitude"
   }
  ]
 }

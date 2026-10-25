@@ -1539,10 +1539,10 @@ const manualLearnt = t => !!(sylP().syl[t.id] && sylP().syl[t.id].l);
 // A topic also counts as done (without ticking Learnt) once every one of its questions has been attempted.
 let QDCACHE = { key: '', map: new Map() };
 function quizDone(t) {
-  const key = `${S.questions.length}:${Object.keys(S.prog.attempts).length}`;
+  const key = `${links().key}:${Object.keys(S.prog.attempts).length}`;
   if (QDCACHE.key !== key) QDCACHE = { key, map: new Map() };
   if (QDCACHE.map.has(t.id)) return QDCACHE.map.get(t.id);
-  const qs = topicQs(t);
+  const qs = topicHomeQs(t);
   let res = null;
   if (qs.length && qs.every(q => S.prog.attempts[q.id])) res = qs.reduce((m, q) => { const d = S.prog.attempts[q.id].last || ''; return d > m ? d : m; }, '') || todayStr();
   QDCACHE.map.set(t.id, res);
@@ -1558,10 +1558,10 @@ function scopeTopics(scope) {
   if (scope === 'gate' || scope === 'net') return examTopics(scope);
   return sylTopics().filter(t => (t.gate || []).length || (t.net || []).length);
 }
-// How much of a topic is covered: 100% once done, otherwise the share of its questions attempted.
+// How much of a topic is covered: 100% once done, otherwise the share of its own questions attempted.
 function topicFrac(t) {
   if (learnt(t)) return 1;
-  const qs = topicQs(t); if (!qs.length) return 0;
+  const qs = topicHomeQs(t); if (!qs.length) return 0;
   // A question counts in full once attempted; otherwise by the share of its writers (or works) you have covered.
   const C = covIndex(), W = topicWriters(t);
   const wOn = w => { const g = W.byVariant.get(norm(w)); return g ? g.names.some(n => C.writers.has(norm(n))) : C.writers.has(norm(w)); };
@@ -1586,18 +1586,16 @@ function covIndex() {
 }
 // The writers asked in a topic's PYQs, most asked first. The same person spelt with and
 // without initials ("Edward Said", "Edward W. Said") is listed once.
+// A writer is listed only under their own topic: the one(s) that name them in syllabus.json,
+// or, for anyone not named, where most of their questions sit. A writer merely mentioned in
+// another topic's question (a wrong option, a chronology across ages) is not listed there.
 let TWCACHE = { key: '', map: new Map() };
 function topicWriters(t) {
-  const key = `${S.questions.length}:${S.syllabus ? S.syllabus.updated : ''}`;
+  const key = links().key;
   if (TWCACHE.key !== key) TWCACHE = { key, map: new Map() };
   if (TWCACHE.map.has(t.id)) return TWCACHE.map.get(t.id);
-  const raw = new Map();
-  const H = writerHomes(), wk = n => words(n).filter(x => x.length > 1).join(' ');
-  const only = new Set((t.onlyWriters || []).map(wk)), except = new Set((t.exceptWriters || []).map(wk));
-  const okW = n => (!only.size || only.has(wk(n))) && !except.has(wk(n));
-  // Only writers whose home is this topic: a writer merely mentioned here (a wrong option,
-  // a chronology across ages) is listed under their own topic instead.
-  topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => { const n = String(w).trim(); if (n && (H.get(norm(n)) || new Set()).has(t.id) && okW(n)) raw.set(n, (raw.get(n) || 0) + 1); }));
+  const raw = new Map(), H = writerHomes();
+  topicHomeQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => { const n = String(w).trim(); if (n && (H.get(norm(n)) || new Set()).has(t.id)) raw.set(n, (raw.get(n) || 0) + 1); }));
   const groups = [];
   [...raw.entries()].sort((a, b) => b[1] - a[1]).forEach(([n, c]) => {
     const full = words(n), key2 = full.filter(x => x.length > 1).join(' ');
@@ -1610,50 +1608,18 @@ function topicWriters(t) {
   TWCACHE.map.set(t.id, res);
   return res;
 }
-// Each writer's home topic(s):
-// • a writer the syllabus names in a topic ("Romantic poetry: Wordsworth, Coleridge…", "Shakespeare: …")
-//   lives in the topic(s) that name them;
-// • anyone else lives where most of their PYQs sit, plus any topic with at least half as many.
-// A writer merely mentioned in another topic's question (a wrong option, a chronology) is not listed there.
+// Each writer's home topic(s), keyed by norm(name).
 let WHCACHE = { key: '', map: null };
 function writerHomes() {
-  const key = `${S.questions.length}:${S.syllabus ? S.syllabus.updated : ''}:${sylTopics().length}`;
-  if (WHCACHE.key === key) return WHCACHE.map;
-  const per = new Map(), total = new Map();
-  sylTopics().forEach(t => {
-    topicQs(t).filter(isPYQ).forEach(q => [...new Set(q.writers || [])].forEach(w => {
-      const k = norm(w); if (!per.has(k)) per.set(k, new Map());
-      const m = per.get(k); m.set(t.id, (m.get(t.id) || 0) + 1);
-    }));
-  });
-  S.questions.filter(isPYQ).forEach(q => (q.writers || []).forEach(w => { const k = norm(w); total.set(k, (total.get(k) || 0) + 1); }));
-  // For a surname listed alone ("Shelley", "Eliot"), the most-asked writer with that surname.
-  const bestBy = new Map();
-  [...total.entries()].sort((x, y) => y[1] - x[1]).forEach(([k]) => words(k).forEach(x => { if (x.length > 1 && !bestBy.has(x)) bestBy.set(x, k); }));
-  const fits = (ws, k) => {
-    const kw = words(k);
-    if (ws.length === 1) {
-      const x = ws[0];
-      if (kw.includes(x)) return bestBy.get(x) === k;
-      return x.length > 3 && x.endsWith('s') && kw.includes(x.slice(0, -1));     // "the Brontës" = all the Brontës
-    }
-    return ws.every(x => kw.includes(x));
-  };
-  const lists = sylTopics().map(t => ({ id: t.id, items: [shortName(t), topicDesc(t)].join(',').split(/,|&|\band\b|:/)
-    .map(x => words(x).filter(y => y.length > 1 && !STOP.has(y))).filter(x => x.length && x.length <= 3),
-    only: (t.onlyWriters || []).map(norm), except: new Set((t.exceptWriters || []).map(norm)) }));
-  const map = new Map();
-  per.forEach((m, k) => {
-    const named = lists.filter(L => m.has(L.id) && !L.except.has(k) && L.items.some(ws => fits(ws, k))).map(L => L.id);
-    let home;
-    if (named.length) home = new Set(named);
-    else {
-      const max = Math.max(...m.values());
-      home = new Set([...m.entries()].filter(([, c]) => c === max || (c >= 0.5 * max && c >= 3)).map(([id]) => id));
-    }
-    map.set(k, home);
-  });
-  WHCACHE = { key, map };
+  const L = links();
+  if (WHCACHE.key === L.key) return WHCACHE.map;
+  const byKey = L.homeW, map = new Map();
+  S.questions.forEach(q => (q.writers || []).forEach(w => {
+    const n = norm(w); if (map.has(n)) return;
+    const k = wkey(w);
+    map.set(n, byKey.get(k) || new Set(L.learnt.get(k) || []));
+  }));
+  WHCACHE = { key: L.key, map };
   return map;
 }
 const writerOn = g => { const C = covIndex(); return g.names.some(n => C.writers.has(norm(n))); };
@@ -1687,43 +1653,171 @@ function setQuizzed(id, on) {
   if (!r.l && !r.q) delete p.syl[id];
 }
 
-/* ---------- Questions behind each topic (for counts, weightage and quizzes) ---------- */
+/* ---------- Linking questions to syllabus topics ----------
+   Each topic in syllabus.json says which questions belong to it:
+   • writers       – the writers whose questions live here (this is also where the writer is listed);
+   • alsoWriters   – a writer's second topic (e.g. Coleridge's poems vs his criticism), used only to decide;
+   • works         – titles that settle a split (Shakespeare's comedies vs tragedies);
+   • tags          – rules on the question's topic tags: ["Victorian", "Novel"] needs both,
+                     "sec:Paper 1" needs that paper section, "w:Thomas Hardy" that writer, "!Tag" must not be there;
+   • guide         – the matching Guide topic, a light nudge only;
+   • tagsFirst     – the topic's tags outweigh the writers (an awards question belongs to Awards).
+   Every question gets ONE home topic, where it is counted (bars, weightage, "done").
+   It may also be listed in up to three other topics that clearly fit, so their quizzes include it.
+   Writers no topic names are placed where most of their questions already sit.
+   Paper 1, GATE GA and XH-B1 questions only go to the aptitude topics (scope "aptitude").
+   Questions that fit nowhere are listed as "Unsorted" on the key holder's device. */
+const APT_SECS = new Set(['paper 1', 'ga', 'xh-b1']);
+const isAptQ = q => APT_SECS.has(qSec(q));
+const wkey = n => words(n).filter(x => x.length > 1).join(' ');
+const GENRE_TAGS = new Set(['poetry', 'novel', 'drama', 'prose', 'essay', 'short story', 'fiction', 'literary criticism', 'criticism', 'literary theory']);
+function parseRule(r, freq) {
+  const pos = [], neg = [];
+  (Array.isArray(r) ? r : String(r).split('+')).forEach(c => {
+    c = String(c || '').trim(); if (!c) return;
+    const not = c[0] === '!'; if (not) c = c.slice(1).trim();
+    const cd = /^sec:/i.test(c) ? { k: 'sec', v: norm(c.slice(4)) } : /^w:/i.test(c) ? { k: 'w', v: wkey(c.slice(2)) } : { k: 'tag', v: norm(c) };
+    (not ? neg : pos).push(cd);
+  });
+  if (!pos.length) return null;
+  // One tag alone is a light hint (a rare tag like "MLA" a little stronger than a broad one like "Victorian");
+  // a combination ("Victorian" + "Novel") is a strong one, genre tags and named writers most of all.
+  const score = pos.length === 1 ? 2 + (pos[0].k === 'tag' ? Math.min(1, 20 / Math.max(1, freq.get(pos[0].v) || 1)) : 0)
+    : pos.reduce((n, c) => n + (c.k === 'w' || (c.k === 'tag' && GENRE_TAGS.has(c.v)) ? 4 : 2), 0);
+  return { pos, neg, score, key: pos.find(c => c.k === 'w') || pos.find(c => c.k === 'tag') || pos[0] };
+}
+const SECN = new WeakMap();
+const qSec = q => { let v = SECN.get(q); if (v === undefined) { v = norm(q.section); SECN.set(q, v); } return v; };
+const QWK = new WeakMap();
+const qWriterKeys = q => { let v = QWK.get(q); if (!v) { v = [...new Set((q.writers || []).map(wkey).filter(Boolean))]; QWK.set(q, v); } return v; };
+const condOK = (q, c) => c.k === 'sec' ? qSec(q) === c.v : c.k === 'w' ? qWriterKeys(q).includes(c.v) : qTagSet(q).has(c.v);
+let LINKS = { key: '' }, LINKVER = 0;
+function resetLinks() { LINKVER++; LINKS = { key: '' }; WTCACHE = {}; QDCACHE = { key: '', map: new Map() }; TWCACHE = { key: '', map: new Map() }; WHCACHE = { key: '', map: null }; QLIDX = null; }
+function links() {
+  const ts = sylTopics(), key = `${S.questions.length}:${S.syllabus ? S.syllabus.updated : ''}:${ts.length}:${LINKVER}`;
+  if (LINKS.key === key) return LINKS;
+  // 1) Read each topic's rules once, and index them so each question only looks at topics that could fit.
+  const freq = new Map(); S.questions.forEach(q => qTagSet(q).forEach(t => freq.set(t, (freq.get(t) || 0) + 1)));
+  // A name typed as a surname only ("Larkin") means every writer in the bank with that surname.
+  const bySurname = new Map();
+  S.questions.forEach(q => qWriterKeys(q).forEach(k => { const l = k.split(' ').pop(); if (!bySurname.has(l)) bySurname.set(l, new Set()); bySurname.get(l).add(k); }));
+  const keysOf = list => { const out = new Set(); (list || []).forEach(n => { const k = wkey(n); if (!k) return; out.add(k); if (!k.includes(' ')) (bySurname.get(k) || []).forEach(x => out.add(x)); }); return out; };
+  const P = ts.map((t, i) => {
+    const W = keysOf(t.writers), A = keysOf(t.alsoWriters);
+    const works = (t.works || t.onlyWorks || []).map(normTitle).filter(Boolean);
+    const g = t.guide ? gNode(t.guide) : null;
+    const qt = t.q && !(t.writers || []).length && !(t.tags || []).length ? queryTokens(t.q) : [];
+    return { t, i, W, A, works, rules: (t.tags || []).map(r => parseRule(r, freq)).filter(Boolean), guide: g ? g.qs : [], qt, apt: t.scope === 'aptitude', strong: !!t.tagsFirst };
+  }).filter(p => !p.t.custom);
+  const named = new Set(), byW = new Map(), byTag = new Map(), bySec = new Map(), byQ = new Map(), searchP = [], workP = [];
+  const push = (m, k, p) => { if (!m.has(k)) m.set(k, new Set()); m.get(k).add(p); };
+  P.forEach(p => {
+    p.W.forEach(k => { named.add(k); push(byW, k, p); });
+    p.A.forEach(k => { named.add(k); push(byW, k, p); });
+    p.rules.forEach(R => push(R.key.k === 'sec' ? bySec : R.key.k === 'w' ? byW : byTag, R.key.v, p));
+    p.guide.forEach(q => push(byQ, q.id, p));
+    if (p.qt.length) searchP.push(p);
+    if (p.works.length) workP.push(p);
+  });
+  const pById = new Map(P.map(p => [p.t.id, p]));
+  const fitsWork = (p, w) => { const k = normTitle(w); return p.works.some(x => k === x || k.startsWith(x + ' ') || x.startsWith(k + ' ') || k.endsWith(' ' + x)); };
+  const qw = new Map(S.questions.map(q => [q.id, qWriterKeys(q)]));
+  // Returns [score, writerScore, tagScore]; 0 when nothing but the Guide nudge fits.
+  function score(q, p, learnt) {
+    let w = 0;
+    qw.get(q.id).forEach((k, i) => {
+      if (p.W.has(k)) w += i ? 3 : 8;            // the question's main writer settles most cases
+      else if (p.A.has(k)) w += i ? 2 : 4;
+      else if (learnt && (learnt.get(k) || []).includes(p.t.id)) w += i ? 2 : 4;
+    });
+    if (p.works.length && (q.works || []).some(x => fitsWork(p, x))) w += 8;
+    let r = 0;
+    p.rules.forEach(R => { if (R.score > r && R.pos.every(c => condOK(q, c)) && !R.neg.some(c => condOK(q, c))) r = R.score; });
+    if (p.qt.length && matchesQuery(q, p.qt)) r = Math.max(r, 2);
+    if (r && p.strong) r += 8;                 // "tagsFirst" topics (e.g. awards): the tag beats the writers named
+    if (!w && !r) return null;
+    return [w + r + (byQ.has(q.id) && byQ.get(q.id).has(p) ? 1 : 0), w, r];
+  }
+  function candidates(q, learnt) {
+    const c = new Set();
+    qw.get(q.id).forEach(k => {
+      (byW.get(k) || []).forEach(p => c.add(p));
+      if (learnt) (learnt.get(k) || []).forEach(id => { const p = pById.get(id); if (p) c.add(p); });
+    });
+    qTagSet(q).forEach(t => (byTag.get(t) || []).forEach(p => c.add(p)));
+    (bySec.get(qSec(q)) || []).forEach(p => c.add(p));
+    if ((q.works || []).length) workP.forEach(p => c.add(p));
+    searchP.forEach(p => c.add(p));
+    return c;
+  }
+  function place(learnt) {
+    const home = new Map(), also = new Map();
+    S.questions.forEach(q => {
+      const aq = isAptQ(q), all = [...candidates(q, learnt)];
+      const rank = list => list.map(p => { const sc = score(q, p, learnt); return sc ? { p, s: sc[0], w: sc[1], r: sc[2] } : null; })
+        .filter(Boolean).sort((x, y) => y.s - x.s || y.r - x.r || x.p.i - y.p.i);
+      let r = rank(all.filter(p => p.apt === aq));
+      if (!r.length && !aq) r = rank(all.filter(p => p.apt));          // e.g. a Paper 2 reading passage with no writer
+      if (!r.length) return;
+      home.set(q.id, r[0].p.t.id);
+      // Also listed where it clearly fits too: the topic's tags match, plus its writer or a strong tag combination.
+      const more = r.slice(1).filter(x => x.s >= 5 && x.r > 0 && (x.w > 0 || x.r >= 4)).slice(0, 3).map(x => x.p.t.id);
+      if (more.length) also.set(q.id, more);
+    });
+    return { home, also };
+  }
+  // 2) First pass on the named writers and tags; then writers no topic names go where most of their questions landed.
+  let pass = place(null);
+  const tally = new Map();
+  S.questions.forEach(q => {
+    if (!isPYQ(q) || isAptQ(q)) return;
+    const h = pass.home.get(q.id); if (!h || pById.get(h).strong) return;      // an awards question says little about a writer's own topic
+    qw.get(q.id).forEach((k, i) => {
+      if (named.has(k)) return;
+      if (!tally.has(k)) tally.set(k, new Map());
+      const m = tally.get(k); m.set(h, (m.get(h) || 0) + (i ? 1 : 2));
+    });
+  });
+  const learnt = new Map();
+  tally.forEach((m, k) => { const max = Math.max(...m.values()); if (max >= 2) learnt.set(k, [...m.entries()].filter(([, c]) => c === max).map(([id]) => id)); });
+  if (learnt.size) pass = place(learnt);
+  // 3) Lists per topic, in bank order.
+  const byTopic = new Map(ts.map(t => [t.id, { home: [], also: [] }])), unsorted = [];
+  S.questions.forEach(q => {
+    const h = pass.home.get(q.id);
+    if (!h) { unsorted.push(q); return; }
+    byTopic.get(h).home.push(q);
+    (pass.also.get(q.id) || []).forEach(id => byTopic.get(id).also.push(q));
+  });
+  const homeW = new Map(); P.forEach(p => p.W.forEach(k => { if (!homeW.has(k)) homeW.set(k, new Set()); homeW.get(k).add(p.t.id); }));
+  LINKS = { key, home: pass.home, also: pass.also, byTopic, unsorted, learnt, named, homeW };
+  return LINKS;
+}
+// The questions counted for a topic (bars, weightage, "done"): only those whose home it is.
+const topicHomeQs = t => { const b = links().byTopic.get(t.id); return b ? b.home : []; };
+// The questions a topic's quiz uses: its own, plus those also listed here.
 let TQCACHE = { key: '', map: new Map() };
 function topicQs(t) {
-  const key = `${S.questions.length}`;
-  if (TQCACHE.key !== key) TQCACHE = { key, map: new Map() };
+  const L = links();
+  if (TQCACHE.key !== L.key) TQCACHE = { key: L.key, map: new Map() };
   if (TQCACHE.map.has(t.id)) return TQCACHE.map.get(t.id);
-  let qs = [];
-  if (t.guide) { const g = gNode(t.guide); if (g) qs = g.qs; }
-  if (!qs.length && t.q) { const toks = queryTokens(t.q); if (toks.length) qs = S.questions.filter(q => matchesQuery(q, toks)); }
-  // A topic with only a writer list takes every question on those writers.
-  if (!qs.length && !t.guide && !t.q && (t.onlyWriters || []).length) { const set = new Set(t.onlyWriters.map(n => words(n).filter(x => x.length > 1).join(' '))); qs = S.questions.filter(q => (q.writers || []).some(w => set.has(words(w).filter(x => x.length > 1).join(' ')))); }
-  // e.g. "Indian English novel after 1980" keeps only questions on post-1980 novelists,
-  // and "to 1980" drops questions that are only about them.
-  const wkey = n => words(n).filter(x => x.length > 1).join(' ');
-  const hasW = (q, set) => (q.writers || []).filter(w => set.has(wkey(w)));
-  if ((t.onlyWriters || []).length) { const set = new Set(t.onlyWriters.map(wkey)); qs = qs.filter(q => hasW(q, set).length); }
-  if ((t.exceptWriters || []).length) { const set = new Set(t.exceptWriters.map(wkey)); qs = qs.filter(q => !(q.writers || []).length || hasW(q, set).length < q.writers.length); }
-  // …and by work: a question tagged with works is kept only if one of them is on the topic's list.
-  if ((t.onlyWorks || []).length) {
-    const list = t.onlyWorks.map(normTitle).filter(Boolean);
-    const fits = w => { const k = normTitle(w); return list.some(x => k === x || k.startsWith(x + ' ') || x.startsWith(k + ' ') || k.endsWith(' ' + x)); };
-    qs = qs.filter(q => !(q.works || []).length || q.works.some(fits));
-  }
+  const b = L.byTopic.get(t.id); let qs = [];
+  if (b) { const ids = new Set(b.home.concat(b.also).map(q => q.id)); qs = S.questions.filter(q => ids.has(q.id)); }
   TQCACHE.map.set(t.id, qs);
   return qs;
 }
-const topicExamCount = (t, ex) => topicQs(t).filter(q => q.exam === EXAM_KEY[ex]).length;
+const topicAlsoCount = t => { const b = links().byTopic.get(t.id); return b ? b.also.length : 0; };
+const topicExamCount = (t, ex) => topicHomeQs(t).filter(q => q.exam === EXAM_KEY[ex]).length;
 // Estimated marks: each PYQ of the exam is shared equally among the sections its topics belong to,
 // then each part's official marks are split in proportion.
 let WTCACHE = {};
 function examWeights(ex) {
-  const key = `${ex}:${S.questions.length}:${sylP().sylCustom.length}`;
+  const key = `${ex}:${links().key}`;
   if (WTCACHE[key]) return WTCACHE[key];
   const E = sylExams()[ex], res = {}; let used = 0;
   (E ? E.parts : []).forEach(p => {
     const qSecs = new Map();
-    p.sections.forEach(s => topicsIn(s.id).forEach(t => topicQs(t).forEach(q => {
+    p.sections.forEach(s => topicsIn(s.id).forEach(t => topicHomeQs(t).forEach(q => {
       if (q.exam !== EXAM_KEY[ex]) return;
       if (!qSecs.has(q.id)) qSecs.set(q.id, new Set());
       qSecs.get(q.id).add(s.id);
@@ -1746,19 +1840,19 @@ function sectionIds(s) { const ids = new Set(); topicsIn(s.id).forEach(t => topi
 const segBar = (list, cls) => `<span class="sy-seg ${cls || ''}">${list.map(t => `<i style="--f:${Math.round(topicFrac(t) * 100)}%"></i>`).join('')}</span>`;
 function nodeHTML(t, ex) {
   const L = learnt(t), M = manualLearnt(t), QD = quizDone(t), Q = quizzed(t), r = sylP().syl[t.id] || {}, desc = topicDesc(t);
-  const cnt = topicExamCount(t, ex), qs = topicQs(t);
+  const cnt = topicExamCount(t, ex), qs = topicHomeQs(t), quizN = topicQs(t).length, shared = topicAlsoCount(t);
   let stat = null;
   if (qs.length) { let a = 0, c = 0, seen = 0; qs.forEach(q => { const x = S.prog.attempts[q.id]; if (x) { a += x.a; c += x.c; seen++; } }); if (a) stat = { acc: Math.round((c / a) * 100), seen, n: qs.length }; }
   const FR = topicFrac(t);
   const status = M ? (r.pre ? 'Learnt before today (Quick log)' : `Learnt ${esc(fmtDay(r.l, { day: 'numeric', month: 'short' }))}`) : QD ? `Done: every question attempted (${esc(fmtDay(QD, { day: 'numeric', month: 'short' }))})` : stat || FR > 0 ? `In progress · ${Math.round(FR * 100)}%` : 'Not started';
   return `<li class="sy-node ${L ? 'is-learnt' : ''}" id="t-${esc(t.id)}">
-    <div class="sy-node-name">${esc(shortName(t))} <span class="cnt" title="${EXAM_KEY[ex]} PYQs">(${cnt} ${EXAM_KEY[ex]})</span></div>
+    <div class="sy-node-name">${esc(shortName(t))} <span class="cnt" title="${EXAM_KEY[ex]} PYQs counted here">(${cnt} ${EXAM_KEY[ex]})</span>${shared ? ` <span class="cnt" title="Questions counted in another topic that also fit here; they are in this topic's quiz">+${shared} shared</span>` : ''}</div>
     ${desc ? `<div class="sy-node-desc clamp">${esc(desc)}</div>${desc.length > 46 ? '<button class="sy-more" data-act="sylMore">Show more</button>' : ''}` : ''}
     ${(() => { const TW = topicWriters(t), cv = ((sylP().covered || {})[t.id] || []).filter(x => x.k !== 'topic' && !(x.k === 'writer' && TW.byVariant.has(norm(x.n)))); return cv.length ? `<div class="sy-node-cov">✓ Covered: ${esc(cv.map(x => x.n).join(', '))}</div>` : ''; })()}
     <div class="sy-node-status">
       <span class="sy-mini"><i style="width:${Math.round(topicFrac(t) * 100)}%"></i></span>
       <span class="st">${status}${Q ? ' · quizzed' : ''}${stat && !QD ? ` · ${stat.seen} of ${stat.n} questions attempted, ${stat.acc}% right` : stat ? ` · ${stat.acc}% right` : ''}</span>
-      ${qs.length ? `<button class="sy-link-u" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz</button>` : ''}
+      ${quizN ? `<button class="sy-link-u" data-act="sylQuiz" data-id="${esc(t.id)}">Quiz</button>` : ''}
     </div>
     <div class="sy-node-ticks">
       <button class="sy-tick ${M ? 'on' : ''}" data-act="sylLearnt" data-id="${esc(t.id)}" aria-pressed="${M}"><span class="box">${M ? '✓' : ''}</span>Learnt</button>
@@ -1818,6 +1912,14 @@ function boardHTML(ex, ui) {
   }
   return `<div class="sy-pair">${cells}</div>`;
 }
+// Key holder only: questions no topic claims yet, so they can be filed (Edit syllabus → a topic → its writers or tags).
+function unsortedHTML() {
+  const list = links().unsorted.filter(isPYQ); if (!list.length) return '';
+  return `<section class="card"><h3>Unsorted questions · ${list.length}</h3>
+    <p class="small muted">These PYQs fit no topic yet, so they count nowhere. Add the writer or a tag to a topic in Edit syllabus. Only this device sees this.</p>
+    <details><summary class="field-label">Show them</summary><ul class="sy-unsorted">${list.slice(0, 80).map(q => `<li><b>${esc(q.id)}</b> · ${esc((q.writers || []).join(', ') || 'no writer')}<br><span class="small muted">Tags: ${esc((q.topics || []).join(', '))}</span></li>`).join('')}</ul>
+    ${list.length > 80 ? `<p class="small muted">…and ${list.length - 80} more.</p>` : ''}</details></section>`;
+}
 VIEWS.syllabus = () => {
   if (!S.syllabus) return `<section class="card center"><h3>Syllabus not loaded</h3><p class="muted">syllabus.json is missing from the app, or you're offline on the first visit.</p></section>`;
   const ui = sylP().sylUI, ex = S.sylExam || 'both';
@@ -1846,6 +1948,7 @@ VIEWS.syllabus = () => {
     <button class="btn ghost" data-act="sylAddCustom">＋ Add a topic</button>
   </section>
   ${isAdmin() ? `<section class="card"><h3>Keep the syllabus up to date</h3><p class="small muted">Change the exam year, dates, sections or topics for everyone. Only this device sees this, because it has your GitHub key.</p><button class="btn ghost" data-act="sylAdminOpen">✎ Edit syllabus</button></section>` : ''}
+  ${isAdmin() ? unsortedHTML() : ''}
   <p class="small muted center">Updated ${esc((S.syllabus && S.syllabus.updated) || '')} · Sources: ${esc(sylExams().gate ? sylExams().gate.source : '')} · ${esc(sylExams().net ? sylExams().net.source : '')}</p>`;
 };
 
@@ -2561,10 +2664,17 @@ function openTopicEditor(i) {
     <datalist id="sa-groups">${groups.map(g => `<option value="${esc(g)}">`).join('')}</datalist>
     <details open><summary class="field-label">GATE sections</summary>${box('gate')}</details>
     <details><summary class="field-label">NET units</summary>${box('net')}</details>
-    <label class="field-label" for="sa-guide">Questions come from this Guide topic</label>
+    <p class="small muted" style="margin-top:14px">How questions find this topic: by writer first, then by tags. Each question is counted in one topic only.</p>
+    <label class="field-label" for="sa-writers">Writers (their questions live here; comma between names)</label>
+    <textarea id="sa-writers" rows="3" placeholder="e.g. Philip Larkin, Ted Hughes, Kingsley Amis">${esc((t.writers || []).join(', '))}</textarea>
+    <label class="field-label" for="sa-also">Writers who mainly belong elsewhere but sometimes fit here (optional)</label>
+    <textarea id="sa-also" rows="2" placeholder="e.g. Thomas Hardy (for his poems)">${esc((t.alsoWriters || []).join(', '))}</textarea>
+    <label class="field-label" for="sa-tags">Tag rules (one per line; join tags with +)</label>
+    <textarea id="sa-tags" rows="4" placeholder="Victorian + Novel&#10;Condition of England&#10;w:Thomas Hardy + Poetry">${esc((t.tags || []).map(r => (Array.isArray(r) ? r : [r]).join(' + ')).join('\n'))}</textarea>
+    <p class="small muted">A line needs every tag on it. <b>sec:Paper 1</b> = that paper section, <b>w:Name</b> = that writer, <b>!Tag</b> = must not have the tag.</p>
+    <label class="field-label" for="sa-guide">Guide topic (a light nudge only)</label>
     <select id="sa-guide"><option value="">None</option>${guideOpts.map(([id, n]) => `<option value="${esc(id)}" ${t.guide === id ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select>
-    <label class="field-label" for="sa-q">…or from a search (used when no Guide topic is chosen)</label>
-    <input type="text" id="sa-q" value="${esc(t.q || '')}" placeholder="e.g. Partition">
+    <label class="check-row sy-check" style="margin-top:10px"><input type="checkbox" id="sa-first" ${t.tagsFirst ? 'checked' : ''}> Tags outweigh writers here (like Awards)</label>
     <div class="btn-row" style="margin-top:12px"><button class="btn" data-act="saTopicSave" data-i="${esc(String(i))}">Done</button><button class="btn ghost" data-act="closeModal">Cancel</button></div>
     ${isNew ? '' : `<button class="btn text danger" data-act="saTopicDel" data-i="${esc(String(i))}">Delete this topic</button>`}
   </div>`;
@@ -2594,9 +2704,16 @@ const SA_ACT = {
     const gIds = editSections(E, 'gate').map(s => s.id);
     const t = d.i === 'new' ? { id: `${slug(name.split(':')[0])}-${uid().slice(-4)}` } : E.topics[+d.i];
     Object.assign(t, { name, group, gate: secs.filter(s => gIds.includes(s)), net: secs.filter(s => !gIds.includes(s)) });
-    const guide = ($('#sa-guide') || {}).value, q = (($('#sa-q') || {}).value || '').trim();
+    const val = id => (($(id) || {}).value || '').trim();
+    const names = id => [...new Set(val(id).split(/[,;\n]/).map(x => x.trim()).filter(Boolean))];
+    const guide = val('#sa-guide'), ws = names('#sa-writers'), aw = names('#sa-also');
+    const rules = val('#sa-tags').split('\n').map(l => l.split('+').map(x => x.trim()).filter(Boolean)).filter(r => r.length);
     if (guide) t.guide = guide; else delete t.guide;
-    if (q) t.q = q; else delete t.q;
+    if (ws.length) t.writers = ws; else delete t.writers;
+    if (aw.length) t.alsoWriters = aw; else delete t.alsoWriters;
+    if (rules.length) t.tags = rules; else delete t.tags;
+    if (($('#sa-first') || {}).checked) t.tagsFirst = true; else delete t.tagsFirst;
+    delete t.q;
     if (d.i === 'new') E.topics.push(t);
     closeModal(); go('sylAdmin', true); toast('Topic updated — remember to Save to GitHub');
   },
@@ -2612,7 +2729,7 @@ const SA_ACT = {
     try {
       await ghSaveJSON('syllabus.json', cur => { if (cur && cur.settings) E.settings = cur.settings; return E; }, 'Update syllabus');
       S.syllabus = JSON.parse(JSON.stringify(E)); S.sylEdit = null;
-      TQCACHE = { key: '', map: new Map() }; WTCACHE = {}; QDCACHE = { key: '', map: new Map() };
+      resetLinks();
       toast('Syllabus saved ✿ Everyone sees it in 1–2 minutes', 4500);
       go('syllabus');
     } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = 'Save to GitHub'; } }
@@ -2675,7 +2792,7 @@ function qlFit(toks, W, strict) {
 
 let QLIDX = null;
 function qlIndex() {
-  const ts = sylTopics(), key = `${S.questions.length}:${ts.length}`;
+  const ts = sylTopics(), key = links().key;
   if (QLIDX && QLIDX.key === key) return QLIDX;
   const topics = ts.map(t => ({ t, all: qlTopical(shortName(t) + ' ' + t.group + ' ' + topicDesc(t)), head: qlTopical(shortName(t) + ' ' + t.group), short: qlTopical(shortName(t)) }));
   const names = new Map();
@@ -2688,11 +2805,10 @@ function qlIndex() {
     if (tid) e.topics.set(tid, (e.topics.get(tid) || 0) + w);
     return e;
   };
-  const qTopics = new Map();
-  ts.forEach(t => {
-    const g = t.guide && gNode(t.guide), wt = g && g.qs.length ? 1 : 0.25;     // topics found by a word search are a looser fit
-    topicQs(t).forEach(q => { if (!qTopics.has(q.id)) qTopics.set(q.id, []); qTopics.get(q.id).push([t.id, wt]); });
-  });
+  const qTopics = new Map(), LK = links();
+  // A question's home topic is a firm fit; a topic it is only also listed in, a looser one.
+  LK.home.forEach((tid, id) => qTopics.set(id, [[tid, 1]]));
+  LK.also.forEach((tids, id) => { if (!qTopics.has(id)) qTopics.set(id, []); tids.forEach(tid => qTopics.get(id).push([tid, 0.25])); });
   S.questions.forEach(q => {
     const tids = qTopics.get(q.id) || [];
     (q.writers || []).forEach(w => { const e = add('writer', w, null, 0); if (!e) return; e.qn++; tids.forEach(([id, wt]) => add('writer', w, id, wt)); });
@@ -2977,7 +3093,9 @@ Object.assign(SYL_ACT, QL_ACT); Object.assign(SYL_CH, QL_CH); Object.assign(SYL_
     .sy-w.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
     .sy-w.on span { color: var(--ok); }
     .sy-w-note { margin: 4px 0 0; }
-    .sy-node-cov { margin-top: 5px; font-size: 13px; line-height: 1.45; color: var(--ok); }`;
+    .sy-node-cov { margin-top: 5px; font-size: 13px; line-height: 1.45; color: var(--ok); }
+    .sy-unsorted { list-style: none; padding: 0; margin: 8px 0 0; }
+    .sy-unsorted li { padding: 8px 0; border-top: 1px solid var(--border); font-size: 14px; line-height: 1.4; }`;
   document.head.appendChild(s);
 })();
 
@@ -3186,7 +3304,7 @@ const EMAIL_ACT = {
         base.settings = Object.assign({}, base.settings, { reportEmail: v });
         return base;
       }, 'Change report email');
-      S.syllabus = saved; TQCACHE = { key: '', map: new Map() }; WTCACHE = {};
+      S.syllabus = saved; resetLinks();
       toast('Saved ✿ Reports now go to ' + v, 4000);
       render();
     } catch (e) { toast(e.message, 5000); if (btn) { btn.disabled = false; btn.textContent = 'Save'; } }
