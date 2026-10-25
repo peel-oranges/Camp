@@ -176002,5 +176002,3332 @@
   "infoBite": "France gave Germany only a portion of French Congo, and in 1904 France and Britain signed an agreement instead of going to war.",
   "verified": true,
   "note": "Official NTA paper (English candidate's response sheet, via prepp.in) and NTA final answer key (Subject 030 English, 01-03-2023, Second shift, Q-ID 22201050). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q01",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "In the following table, the total number of students in different courses of a college along with the percentage of males and females are given.\nCourse | Total students | Male (%) | Female (%)\nB.Sc. | 400 | 65 | 35\nB.A. | 650 | 54 | 46\nM.Sc. | 280 | 75 | 25\nM.A. | 340 | 55 | 45\nPhD | 180 | 65 | 35\n\nFind out the total number of male students in the college.",
+  "options": {
+   "A": "1120",
+   "B": "1125",
+   "C": "1130",
+   "D": "1135"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Males: 260 + 351 + 210 + 187 + 117 = 1125.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11019), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q02",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "In the following table, the total number of students in different courses of a college along with the percentage of males and females are given.\nCourse | Total students | Male (%) | Female (%)\nB.Sc. | 400 | 65 | 35\nB.A. | 650 | 54 | 46\nM.Sc. | 280 | 75 | 25\nM.A. | 340 | 55 | 45\nPhD | 180 | 65 | 35\n\nFind out the difference between the total number of male students and the total number of female students in the college.",
+  "options": {
+   "A": "380",
+   "B": "390",
+   "C": "400",
+   "D": "410"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Total 1850; males 1125, females 725; difference 400.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11020), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q03",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "In the following table, the total number of students in different courses of a college along with the percentage of males and females are given.\nCourse | Total students | Male (%) | Female (%)\nB.Sc. | 400 | 65 | 35\nB.A. | 650 | 54 | 46\nM.Sc. | 280 | 75 | 25\nM.A. | 340 | 55 | 45\nPhD | 180 | 65 | 35\n\nFind out the ratio of female students in graduation (B.Sc. + B.A.) to female students in post-graduation (M.Sc. + M.A.).",
+  "options": {
+   "A": "435/217",
+   "B": "438/219",
+   "C": "437/223",
+   "D": "439/223"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Females: B.Sc. 140 + B.A. 299 = 439; M.Sc. 70 + M.A. 153 = 223.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11021), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q04",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "In the following table, the total number of students in different courses of a college along with the percentage of males and females are given.\nCourse | Total students | Male (%) | Female (%)\nB.Sc. | 400 | 65 | 35\nB.A. | 650 | 54 | 46\nM.Sc. | 280 | 75 | 25\nM.A. | 340 | 55 | 45\nPhD | 180 | 65 | 35\n\nFind out the ratio of male students in post-graduation (M.Sc. + M.A.) to male students in the PhD programme.",
+  "options": {
+   "A": "397/117",
+   "B": "395/117",
+   "C": "396/117",
+   "D": "394/117"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Males: M.Sc. 210 + M.A. 187 = 397; PhD 117.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11022), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. NTA's final key marks this question '%' (marks awarded to all who appeared). The app stores option 1, which is the arithmetically correct answer."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q05",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "In the following table, the total number of students in different courses of a college along with the percentage of males and females are given.\nCourse | Total students | Male (%) | Female (%)\nB.Sc. | 400 | 65 | 35\nB.A. | 650 | 54 | 46\nM.Sc. | 280 | 75 | 25\nM.A. | 340 | 55 | 45\nPhD | 180 | 65 | 35\n\nFind out the difference between male students in graduation (B.Sc. + B.A.) and male students in post-graduation (M.A. + M.Sc.).",
+  "options": {
+   "A": "213",
+   "B": "214",
+   "C": "215",
+   "D": "216"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Difference"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Graduation males 260 + 351 = 611; post-graduation 397; difference 214.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11023), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q06",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "As students mature, the study of social issues at the community, state, national and international levels can be made available to them. Which model is designed for this purpose?",
+  "options": {
+   "A": "Role playing",
+   "B": "Jurisprudential inquiry",
+   "C": "Structured inquiry",
+   "D": "Group investigation"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Models of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Jurisprudential inquiry (Oliver & Shaver) belongs to Joyce and Weil's social family: students debate public-policy issues and value conflicts.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11024), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q07",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Arrange the phases for syntax of the Group Investigation Model in correct sequence:\nA. Students formulate study task and organise for study\nB. Students analyse progress and process\nC. Students encounter puzzling situation\nD. Independent and group study\nE. Students explore reactions to the situation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, C, B, E, D",
+   "B": "B, A, D, E, C",
+   "C": "C, E, A, D, B",
+   "D": "D, E, B, A, C"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Models of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Group investigation (Thelen; Joyce & Weil): puzzling situation → explore reactions → formulate task → study → analyse progress → recycle.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11025), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q08",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The core of the teaching process is the arrangement of environments within which students can interact and study how to learn.\nStatement II: A model of teaching is not a description of a learning environment.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Models of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Joyce and Weil define a model of teaching as a description of a learning environment — so Statement II is wrong.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11026), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q09",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The 4Rs approach to conflict resolution comprises:\nA. Reading\nB. Writing\nC. Respect\nD. Reprimand\nE. Resolution\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C and D only",
+   "B": "A, B, C and E only",
+   "C": "B, C, D and E only",
+   "D": "A, B, D and E only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Conflict resolution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The 4Rs programme (Reading, Writing, Respect & Resolution) blends literacy with social-emotional learning and conflict resolution.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11027), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q10",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Piaget's stages of cognitive development):\nA. Sensorimotor\nB. Preoperational\nC. Concrete operational\nD. Formal operational\nList II (Approximate age):\nI. Begins about the first grade to early adolescence, around 11 years old\nII. Adolescence to adulthood\nIII. 0–2 years\nIV. Begins about the time the child starts talking to about 7 years old\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-IV, B-I, C-II, D-III",
+   "B": "A-IV, B-I, C-II, D-III",
+   "C": "A-I, B-II, C-III, D-IV",
+   "D": "A-III, B-IV, C-I, D-II"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner development",
+   "Piaget"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Piaget: sensorimotor 0–2, preoperational 2–7, concrete operational 7–11, formal operational 11+.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11028), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Options 1 and 2 are printed identically in the source copy — kept as printed."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q11",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Discourse analysis in historical research is associated with:",
+  "options": {
+   "A": "Hobsbawm",
+   "B": "Carr",
+   "C": "Skinner",
+   "D": "Foucault"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Historical research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Foucault's archaeology and genealogy of discourse (The Archaeology of Knowledge, 1969). Quentin Skinner is linked with contextualism in the history of ideas.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11029), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q12",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are examples of violation of research ethics?\nA. Violating participant confidentiality\nB. Making recommendations beyond the scope of data collected\nC. Using an inappropriate research design\nD. Changing data to meet a desired outcome\nE. Using a quantitative method in place of a qualitative method\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C and D only",
+   "B": "B, C, D and E only",
+   "C": "A, B and D only",
+   "D": "B, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Breach of confidentiality, over-reaching claims and falsifying data are ethical lapses; a poor design is a methodological weakness.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11030), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q13",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Experimenter effects are errors introduced during the collection or analysis of experimental data due to the behaviour of the experimenter.\nStatement II: Due to the presence of certain cues in the experimental setting, the participants form an interpretation of the experiment's purpose and subconsciously change their behaviour to fit that interpretation.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Experimental research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Statement II describes demand characteristics (Martin Orne); Statement I describes experimenter bias (Rosenthal effect).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11031), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q14",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: The major deficiency of pre-experimental designs is that they fail to provide comparison groups.\nReason R: Equivalence can be achieved through matching and random assignment.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both A and R are true and R is the correct explanation of A",
+   "B": "Both A and R are true but R is NOT the correct explanation of A",
+   "C": "A is true but R is false",
+   "D": "A is false but R is true"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Experimental research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Pre-experimental designs (one-shot case study, one-group pre-test/post-test) lack equivalent control groups; randomisation and matching belong to true experiments.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11032), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q15",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: In the case study method, the researcher collects detailed information from a limited number of participants.\nReason R: Findings based on case study research can be used to develop research hypotheses/questions for subsequent studies.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both A and R are true and R is the correct explanation of A",
+   "B": "Both A and R are true but R is NOT the correct explanation of A",
+   "C": "A is true but R is false",
+   "D": "A is false but R is true"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Case study"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Case studies give depth on a few cases and often generate hypotheses for later research.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11033), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q16",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The Gandhian method of communication is known as:",
+  "options": {
+   "A": "Non-technological",
+   "B": "Massive",
+   "C": "Personal",
+   "D": "Massline"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Indian communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Gandhi reached the masses through padyatras, prayer meetings and his papers (Young India, Harijan) — a mass-line approach.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11034), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q17",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Modern mass communication has the characteristics of being:\nA. Sporadic\nB. Continuous\nC. Based on a schedule\nD. Not much dependent on technology\nE. Dependent on the use of media\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and E only",
+   "C": "C, D and E only",
+   "D": "A, D and E only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Mass communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mass communication is continuous, scheduled (news bulletins, editions) and technology/media dependent.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11035), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q18",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The primary act of communication begins when an individual decides to use a particular language symbol, susceptible to standardised interpretation, resulting in common meaning.\nStatement II: Meaning refers to inner, subjective reactions to images, interpretations, emotions and feelings as given out by the words used.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Meaning in communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Communication rests on shared symbols; meanings are in people, not in words (Berlo).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11036), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q19",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Find out the sequence of elements of effective communication as listed by Cutlip et al.\nA. Promise of reward\nB. Message clarity\nC. Consistency\nD. Climate of belief\nE. Participatory context\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, D, E, C",
+   "B": "C, D, E, A, B",
+   "C": "D, E, A, B, C",
+   "D": "E, A, C, D, B"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Effective communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Cutlip, Center & Broom (Effective Public Relations) — best known for the 7 Cs: credibility, context, content, clarity, continuity and consistency, channels, capability of the audience.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11037), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q20",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Communication function/issue):\nA. Gatekeeping\nB. Persuasion\nC. Entropy\nD. Memory\nList II (Area of operation):\nI. Time-binding capacity\nII. News\nIII. Advertising\nIV. Chaos in communication\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-III, C-IV, D-I",
+   "B": "A-III, B-IV, C-I, D-II",
+   "C": "A-IV, B-I, C-II, D-III",
+   "D": "A-I, B-II, C-III, D-IV"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Functions of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Gatekeeping (Kurt Lewin, David Manning White 1950) filters news; entropy (Shannon) = disorder/uncertainty; 'time-binding' is Korzybski's term.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11038), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q21",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The angle between the hour hand and the minute hand at 3:40 pm is:",
+  "options": {
+   "A": "130°",
+   "B": "150°",
+   "C": "120°",
+   "D": "125°"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Clocks"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Angle = |30H − 5.5M| = |90 − 220| = 130°.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11039), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q22",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A sum of money on simple interest doubles itself in 10 years. It will triple itself in:",
+  "options": {
+   "A": "15 years",
+   "B": "20 years",
+   "C": "30 years",
+   "D": "32 years"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Simple interest"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Doubling = 100% interest in 10 years → 10% a year; tripling needs 200% → 20 years.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11040), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q23",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Find the missing term in the following series:\n2, 9, 37, 149, ?",
+  "options": {
+   "A": "594",
+   "B": "298",
+   "C": "299",
+   "D": "597"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Each term × 4 + 1: 149 × 4 + 1 = 597.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11041), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q24",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The average of ten positive numbers is X. If each number is increased by 10%, then the new average increases by:",
+  "options": {
+   "A": "12%",
+   "B": "11%",
+   "C": "10%",
+   "D": "8%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Scaling every value by 1.1 scales the average by 1.1 — a 10% rise.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11042), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q25",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The average of the first twenty multiples of 9 is 92.5.\nStatement II: The average of the first ten multiples of 11 is 60.5.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Average of first n multiples of k = k(n + 1)/2: 9 × 10.5 = 94.5 (I false); 11 × 5.5 = 60.5 (II true).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11043), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q26",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements is/are true?\nA. The terms 'true' and 'false' apply to arguments.\nB. The terms 'true' and 'false' apply to statements.\nC. The terms 'valid' and 'invalid' apply to arguments.\nD. The terms 'cogent' and 'non-cogent' apply to statements.\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and C only",
+   "B": "B and C only",
+   "C": "C and D only",
+   "D": "A and D only"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Validity and truth"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Truth belongs to statements, validity to deductive arguments, strength/cogency to inductive arguments (Hurley).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11044), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q27",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Two contrary statements cannot both be false.\nStatement II: Two contrary statements cannot both be true.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Contraries (A and E) cannot both be true but can both be false; subcontraries (I and O) cannot both be false.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11045), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q28",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the fallacy committed in the argument:\nNo tragic actors are happy men.\nSome comedians are not happy men.\nTherefore, some comedians are not tragic actors.",
+  "options": {
+   "A": "Fallacy of undistributed middle",
+   "B": "Fallacy of illicit major",
+   "C": "Fallacy of exclusive premises",
+   "D": "Existential fallacy"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Fallacies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Both premises are negative (E and O), so the syllogism commits the fallacy of exclusive premises.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11046), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q29",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Identify the correct sequence of inference from beginning to end, according to the Nyāya system.\nA. Udāharaṇa\nB. Hetu\nC. Pratijñā\nD. Nigamana\nE. Upanaya\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "C, A, B, E, D",
+   "B": "B, A, D, C, E",
+   "C": "B, A, C, D, E",
+   "D": "C, B, A, E, D"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic",
+   "Nyāya"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Nyāya five-membered syllogism: pratijñā (thesis) → hetu (reason) → udāharaṇa (example) → upanaya (application) → nigamana (conclusion).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11047), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q30",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: In the Nyāya system, inference is made from the particular to the particular through the universal.\nStatement II: In the Nyāya system, inference is made from the universal to the universal through the particular.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic",
+   "Nyāya"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Nyāya inference moves from a particular (smoke on this hill) through the universal (vyāpti: wherever smoke, there fire) to a particular (fire on this hill).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11048), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q31",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A device driver is:",
+  "options": {
+   "A": "A port that connects a device and a system",
+   "B": "A software that performs disk compression",
+   "C": "A software that performs disk defragmentation",
+   "D": "A software that communicates with the operating system and translates data into a format understood by the device"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Software"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Drivers are system software that let the OS control hardware such as printers and graphics cards.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11049), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q32",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What is anti-spyware software?",
+  "options": {
+   "A": "Checks files before they are loaded on a computer",
+   "B": "Manages the data traffic",
+   "C": "It detects and removes programs installed illegally on a user's computer system",
+   "D": "Makes the files non-readable"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Cyber security"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Spyware secretly collects user data; anti-spyware detects and removes it. Managing traffic is a firewall's job; unreadable files = encryption.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11050), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q33",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements regarding the address bus in a computer system:\nStatement I: The address bus carries signals relating to addresses between the processor and memory.\nStatement II: It is bi-directional.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The address bus is uni-directional (CPU → memory/devices); the data bus is bi-directional.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11051), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q34",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements about anti-virus software are correct?\nA. Problem files/programs are quarantined and can be automatically removed\nB. Check all files before being loaded or run\nC. Use a database to identify potential risks\nD. Used for data authenticity\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "B, C and D only",
+   "B": "A, B and C only",
+   "C": "A, C and D only",
+   "D": "A, B and D only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Cyber security"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Anti-virus tools scan files, match virus signatures in a database and quarantine threats; authenticity is checked by digital signatures.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11052), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q35",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (ICT applications):\nA. Measurement applications\nB. Control applications\nC. Modelling applications\nD. Expert systems\nList II (Example):\nI. Simulating car crashes\nII. River pollution\nIII. Automatic oven\nIV. Medical diagnosis\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-IV, B-I, C-II, D-III",
+   "B": "A-I, B-II, C-IV, D-III",
+   "C": "A-II, B-III, C-IV, D-I",
+   "D": "A-II, B-III, C-I, D-IV"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT applications"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Sensors measure pollution; control systems run ovens; models simulate crashes; expert systems (e.g. MYCIN) aid diagnosis.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11053), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q36",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The Convention on Biological Diversity was signed during:",
+  "options": {
+   "A": "Montreal Protocol, 1987",
+   "B": "Earth Summit at Rio de Janeiro, 1992",
+   "C": "Kyoto Protocol, 1997",
+   "D": "Human Environment Conference, Stockholm, 1972"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Environmental agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rio 1992 also opened the UNFCCC and adopted Agenda 21; the CBD came into force in 1993.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11054), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q37",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Aerobic digestion of sewage sludge requires lots of energy.\nStatement II: Aerobic digestion of sewage sludge produces a huge amount of methane.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Waste management"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Aerobic digestion needs energy for aeration; methane (biogas) comes from anaerobic digestion.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11055), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q38",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: Ground-level concentration of ozone decreases at night.\nReason R: Ultraviolet radiation photolyzes ozone into other components.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both A and R are true and R is the correct explanation of A",
+   "B": "Both A and R are true but R is NOT the correct explanation of A",
+   "C": "A is true but R is false",
+   "D": "A is false but R is true"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ground-level ozone forms photochemically by day (NOx + VOCs + sunlight) and is destroyed at night mainly by reaction with NO.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11056), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q39",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Targets of Goal 7 of the Millennium Development Goals (MDG) are:\nA. Control global warming\nB. Universal access to modern energy\nC. Increase global percentage of renewable energy\nD. Mitigating air pollution\nE. Double the improvement in energy efficiency\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C and D only",
+   "B": "B, C and D only",
+   "C": "B, C and E only",
+   "D": "A, C, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Sustainable development",
+   "SDGs"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "These are the targets of SDG 7 (affordable and clean energy). MDG 7 was 'ensure environmental sustainability'.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11057), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. The paper says 'Millennium Development Goals', but the targets listed are those of Sustainable Development Goal 7 — kept as printed."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q40",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A 'solar water still' is a device to:",
+  "options": {
+   "A": "Pump water using solar energy",
+   "B": "Convert saline water to potable water using solar energy",
+   "C": "Heat water using solar energy",
+   "D": "Generate electricity using solar energy"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Renewable energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A solar still evaporates salty or dirty water with sunlight and condenses the clean vapour.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11058), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q41",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "As per NEP 2020, the responsibility to develop an Adult Educator Framework has been given to which one of the following organisations?",
+  "options": {
+   "A": "MHRD",
+   "B": "NCTE",
+   "C": "NEPA",
+   "D": "NCERT"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "NEP 2020"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NEP 2020 (para 21.5) asks a new constituent body of NCERT dedicated to adult education to build the adult-education curriculum framework.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11059), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q42",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following led to the formulation of the 10+2+3 system of education?",
+  "options": {
+   "A": "Macaulay's Minute",
+   "B": "Hunter Commission",
+   "C": "Elphinstone report",
+   "D": "Wood's Despatch"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Education commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The 10+2+3 pattern was recommended by the Kothari Commission (1964–66) and adopted in NPE 1968. Wood's Despatch (1854), the 'Magna Carta of English education in India', first set out a graded school-to-university system.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11060), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key. The Kothari Commission is not among the options; the key picks Wood's Despatch."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q43",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "ERIC is a unit in which one of the following organisations?",
+  "options": {
+   "A": "NCTE",
+   "B": "NCERT",
+   "C": "NEPA",
+   "D": "NRF"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Educational bodies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "ERIC = Educational Research and Innovations Committee of NCERT (set up 1974), which funds educational research.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11061), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q44",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: To make it easier for government as well as non-government philanthropic organisations to build schools, regulations on inputs should be limited to certain areas only.\nReason R: Government should provide effective, enabling and sufficient infrastructure so that all schools have access to safe and engaging school education.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both A and R are correct and R is the correct explanation of A",
+   "B": "Both A and R are correct but R is NOT the correct explanation of A",
+   "C": "A is correct but R is not correct",
+   "D": "A is not correct but R is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "NEP 2020"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NEP 2020 (Ch. 3) eases input-based rules so that both government and philanthropic bodies can build schools, aiming at universal access.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11062), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q45",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: It is obvious that if higher education is not radically improved, our administration and technical progress, our intellectual standards and social advance will be most seriously handicapped. This is a major recommendation of the University Education Commission.\nStatement II: The University Grants Commission was established in accordance with the recommendation of the National Education Commission.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Education commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The UGC was recommended by the University Education Commission (Radhakrishnan, 1948–49), set up in 1953 and made statutory in 1956.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11063), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key (both incorrect)."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q46",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: There is a question whether advertising induces demand for an individual company's product more or less elastic. The evidence indicates that the advertising of brands tends to make their demands relatively inelastic for varying periods of time. The data which support this condition are found in the relatively rigid prices of many advertised articles. That brand advertising would have this effect is natural, for an objective of brand advertising is to build consumer preferences. Some consumers will stick by a brand even though its price relationship with competing brands are disturbed. Clearly, the establishment of strong brand preference has led some manufacturers to act as though these preferences made the demand for their brands relatively inelastic. Rarely have they tested the inelasticity of their brands by raising and holding up their prices when competitors have failed to follow similar procedures. Yet, numerous examples were found in which manufacturers in periods of depression held their prices rigid while prices generally and the prices of some competitors were being lowered. In all such instances price competition was found to come into play sooner or later, and either demand shifted to sellers with lower prices or a reduction in price was forced. The quickness with which price competition comes into play varies in different product fields. In the fields of proprietary remedies, the highly individualised nature of the branded products and the tendency of consumers to build strong attachments to brands has given these brands an inelastic demand over relatively long periods of time. Even in these instances, however, price competition has eventually developed.\n\nThe demand inelasticity of articles in terms of non-varying prices is due to:",
+  "options": {
+   "A": "Consumer ignorance",
+   "B": "Varying time factor",
+   "C": "Differences in products",
+   "D": "Advertising of branded products"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage opens by linking brand advertising to relatively inelastic demand and rigid prices.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11064), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q47",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: There is a question whether advertising induces demand for an individual company's product more or less elastic. The evidence indicates that the advertising of brands tends to make their demands relatively inelastic for varying periods of time. The data which support this condition are found in the relatively rigid prices of many advertised articles. That brand advertising would have this effect is natural, for an objective of brand advertising is to build consumer preferences. Some consumers will stick by a brand even though its price relationship with competing brands are disturbed. Clearly, the establishment of strong brand preference has led some manufacturers to act as though these preferences made the demand for their brands relatively inelastic. Rarely have they tested the inelasticity of their brands by raising and holding up their prices when competitors have failed to follow similar procedures. Yet, numerous examples were found in which manufacturers in periods of depression held their prices rigid while prices generally and the prices of some competitors were being lowered. In all such instances price competition was found to come into play sooner or later, and either demand shifted to sellers with lower prices or a reduction in price was forced. The quickness with which price competition comes into play varies in different product fields. In the fields of proprietary remedies, the highly individualised nature of the branded products and the tendency of consumers to build strong attachments to brands has given these brands an inelastic demand over relatively long periods of time. Even in these instances, however, price competition has eventually developed.\n\nWhy do some manufacturers make their brands of products demand-inelastic? It is because of:",
+  "options": {
+   "A": "Holding price line",
+   "B": "Market trend",
+   "C": "Strong consumer preference",
+   "D": "Competitors increasing the price line"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Strong brand preference led manufacturers to treat demand for their brands as inelastic.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11065), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q48",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: There is a question whether advertising induces demand for an individual company's product more or less elastic. The evidence indicates that the advertising of brands tends to make their demands relatively inelastic for varying periods of time. The data which support this condition are found in the relatively rigid prices of many advertised articles. That brand advertising would have this effect is natural, for an objective of brand advertising is to build consumer preferences. Some consumers will stick by a brand even though its price relationship with competing brands are disturbed. Clearly, the establishment of strong brand preference has led some manufacturers to act as though these preferences made the demand for their brands relatively inelastic. Rarely have they tested the inelasticity of their brands by raising and holding up their prices when competitors have failed to follow similar procedures. Yet, numerous examples were found in which manufacturers in periods of depression held their prices rigid while prices generally and the prices of some competitors were being lowered. In all such instances price competition was found to come into play sooner or later, and either demand shifted to sellers with lower prices or a reduction in price was forced. The quickness with which price competition comes into play varies in different product fields. In the fields of proprietary remedies, the highly individualised nature of the branded products and the tendency of consumers to build strong attachments to brands has given these brands an inelastic demand over relatively long periods of time. Even in these instances, however, price competition has eventually developed.\n\nWhat was the post-depression development as regards product pricing?",
+  "options": {
+   "A": "Stabilisation of prices",
+   "B": "Price competition, resulting in reduction",
+   "C": "Shift in demand to consumers",
+   "D": "Increased market for branded products"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Price competition came into play sooner or later, forcing price cuts or shifting demand.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11066), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q49",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: There is a question whether advertising induces demand for an individual company's product more or less elastic. The evidence indicates that the advertising of brands tends to make their demands relatively inelastic for varying periods of time. The data which support this condition are found in the relatively rigid prices of many advertised articles. That brand advertising would have this effect is natural, for an objective of brand advertising is to build consumer preferences. Some consumers will stick by a brand even though its price relationship with competing brands are disturbed. Clearly, the establishment of strong brand preference has led some manufacturers to act as though these preferences made the demand for their brands relatively inelastic. Rarely have they tested the inelasticity of their brands by raising and holding up their prices when competitors have failed to follow similar procedures. Yet, numerous examples were found in which manufacturers in periods of depression held their prices rigid while prices generally and the prices of some competitors were being lowered. In all such instances price competition was found to come into play sooner or later, and either demand shifted to sellers with lower prices or a reduction in price was forced. The quickness with which price competition comes into play varies in different product fields. In the fields of proprietary remedies, the highly individualised nature of the branded products and the tendency of consumers to build strong attachments to brands has given these brands an inelastic demand over relatively long periods of time. Even in these instances, however, price competition has eventually developed.\n\nStrong consumer attachment for branded products eventually led to:",
+  "options": {
+   "A": "Lasting demand inelasticity",
+   "B": "Uniform pricing",
+   "C": "Cartelisation of manufacturers",
+   "D": "Branded products falling in line"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Even proprietary remedies with strong brand loyalty eventually faced price competition — they fell in line.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11067), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S1-P1-Q50",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 1",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: There is a question whether advertising induces demand for an individual company's product more or less elastic. The evidence indicates that the advertising of brands tends to make their demands relatively inelastic for varying periods of time. The data which support this condition are found in the relatively rigid prices of many advertised articles. That brand advertising would have this effect is natural, for an objective of brand advertising is to build consumer preferences. Some consumers will stick by a brand even though its price relationship with competing brands are disturbed. Clearly, the establishment of strong brand preference has led some manufacturers to act as though these preferences made the demand for their brands relatively inelastic. Rarely have they tested the inelasticity of their brands by raising and holding up their prices when competitors have failed to follow similar procedures. Yet, numerous examples were found in which manufacturers in periods of depression held their prices rigid while prices generally and the prices of some competitors were being lowered. In all such instances price competition was found to come into play sooner or later, and either demand shifted to sellers with lower prices or a reduction in price was forced. The quickness with which price competition comes into play varies in different product fields. In the fields of proprietary remedies, the highly individualised nature of the branded products and the tendency of consumers to build strong attachments to brands has given these brands an inelastic demand over relatively long periods of time. Even in these instances, however, price competition has eventually developed.\n\nThe passage focuses upon:",
+  "options": {
+   "A": "Price competition and branded products",
+   "B": "Impact of advertising on product pricing",
+   "C": "Proprietary remedies for branded articles",
+   "D": "Promotion of branded products in the sellers' market"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage traces how branded products' price rigidity eventually yields to price competition.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, First shift, Q-ID 11068), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q01",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the number of students enrolled in different courses in 5 years, by male (M) and female (F).\nYear | B.Sc. M | B.Sc. F | B.A. M | B.A. F | B.Com M | B.Com F\n2016 | 380 | 220 | 520 | 405 | 200 | 80\n2017 | 390 | 230 | 525 | 417 | 210 | 85\n2018 | 395 | 235 | 535 | 427 | 212 | 87\n2019 | 405 | 250 | 538 | 430 | 215 | 91\n2020 | 415 | 275 | 543 | 438 | 221 | 97\n\nFind out the total number of male students in the college during 2018–2020.",
+  "options": {
+   "A": "3479",
+   "B": "3480",
+   "C": "3481",
+   "D": "3482"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Totals"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Males: 2018 = 1142, 2019 = 1158, 2020 = 1179; total 3479.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11069), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q02",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the number of students enrolled in different courses in 5 years, by male (M) and female (F).\nYear | B.Sc. M | B.Sc. F | B.A. M | B.A. F | B.Com M | B.Com F\n2016 | 380 | 220 | 520 | 405 | 200 | 80\n2017 | 390 | 230 | 525 | 417 | 210 | 85\n2018 | 395 | 235 | 535 | 427 | 212 | 87\n2019 | 405 | 250 | 538 | 430 | 215 | 91\n2020 | 415 | 275 | 543 | 438 | 221 | 97\n\nFind out the ratio between female students of B.A. and B.Com during 2016–2020.",
+  "options": {
+   "A": "2115/442",
+   "B": "2115/440",
+   "C": "2117/442",
+   "D": "2117/440"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "B.A. females 405 + 417 + 427 + 430 + 438 = 2117; B.Com females 80 + 85 + 87 + 91 + 97 = 440.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11070), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q03",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the number of students enrolled in different courses in 5 years, by male (M) and female (F).\nYear | B.Sc. M | B.Sc. F | B.A. M | B.A. F | B.Com M | B.Com F\n2016 | 380 | 220 | 520 | 405 | 200 | 80\n2017 | 390 | 230 | 525 | 417 | 210 | 85\n2018 | 395 | 235 | 535 | 427 | 212 | 87\n2019 | 405 | 250 | 538 | 430 | 215 | 91\n2020 | 415 | 275 | 543 | 438 | 221 | 97\n\nFind out the ratio between the percentage increase of male students and the percentage increase of female students from 2016 to 2017.",
+  "options": {
+   "A": "2.5/3.6",
+   "B": "2.2/3.6",
+   "C": "2.5/3.8",
+   "D": "2.2/3.8"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Males 1100 → 1125 (+2.27%); females 705 → 732 (+3.83%).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11071), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q04",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the number of students enrolled in different courses in 5 years, by male (M) and female (F).\nYear | B.Sc. M | B.Sc. F | B.A. M | B.A. F | B.Com M | B.Com F\n2016 | 380 | 220 | 520 | 405 | 200 | 80\n2017 | 390 | 230 | 525 | 417 | 210 | 85\n2018 | 395 | 235 | 535 | 427 | 212 | 87\n2019 | 405 | 250 | 538 | 430 | 215 | 91\n2020 | 415 | 275 | 543 | 438 | 221 | 97\n\nFind out the average of the difference between male and female students for the B.A. course during 2016–2020.",
+  "options": {
+   "A": "105.3",
+   "B": "109.2",
+   "C": "108.8",
+   "D": "107.4"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences 115, 108, 108, 108, 105 = 544; 544 ÷ 5 = 108.8.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11072), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q05",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the number of students enrolled in different courses in 5 years, by male (M) and female (F).\nYear | B.Sc. M | B.Sc. F | B.A. M | B.A. F | B.Com M | B.Com F\n2016 | 380 | 220 | 520 | 405 | 200 | 80\n2017 | 390 | 230 | 525 | 417 | 210 | 85\n2018 | 395 | 235 | 535 | 427 | 212 | 87\n2019 | 405 | 250 | 538 | 430 | 215 | 91\n2020 | 415 | 275 | 543 | 438 | 221 | 97\n\nWhich year has the minimum percentage increase of male students in the college (including all courses)?",
+  "options": {
+   "A": "2017",
+   "B": "2018",
+   "C": "2019",
+   "D": "2020"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Male totals 1100, 1125, 1142, 1158, 1179: rises of 2.27%, 1.51%, 1.40%, 1.81% — lowest in 2019.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11073), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q06",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What is the name of the concept that describes the magnitude of gains from any given change in an educational practice, and thus predicts what we can hope to accomplish by using that practice?",
+  "options": {
+   "A": "Pluralism",
+   "B": "Argumentation",
+   "C": "Effect size",
+   "D": "Empathy"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Educational research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Effect size (e.g. Cohen's d) measures how big a difference a practice makes; Hattie's Visible Learning ranks practices by it.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11074), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q07",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Identify the correct sequence for phases of personal growth in the non-directive interview process.\nA. Develops insight\nB. Integration\nC. Release of feelings\nD. Action\nE. New orientation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C, D, E",
+   "B": "B, E, D, A, C",
+   "C": "C, A, D, B, E",
+   "D": "C, E, B, A, D"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Models of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Carl Rogers' non-directive model (Joyce & Weil): release of feelings → insight → action → integration → new orientation.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11075), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q08",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Behaviour theory does not concentrate on observable behaviour.\nStatement II: The behaviour theory approach involves continuous inquiry.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learning theories"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Behaviourism (Watson, Skinner) studies only observable, measurable behaviour.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11076), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q09",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are popular software (apps) used for conducting online conferences?\nA. BigBlueButton\nB. Zoom\nC. Koha\nD. Microsoft Teams\nE. Moodle\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "A, C and E only",
+   "C": "A, B and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT in education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Koha is open-source library management software; Moodle is a learning management system.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11077), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q10",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Erikson's stages of psychosocial development):\nA. Basic trust versus basic mistrust\nB. Industry versus inferiority\nC. Intimacy versus isolation\nD. Generativity versus stagnation\nList II (Relevant illustrations):\nI. Parenting/mentoring\nII. Love relationships\nIII. School\nIV. Feeding\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-I, B-II, C-III, D-IV",
+   "B": "A-II, B-I, C-IV, D-III",
+   "C": "A-IV, B-III, C-II, D-I",
+   "D": "A-III, B-IV, C-I, D-II"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner development",
+   "Erikson"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Erikson's 8 stages: trust (infancy, feeding), autonomy, initiative, industry (school age), identity, intimacy (young adult), generativity (middle age), integrity.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11078), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q11",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If research is to be conducted on very young children or inarticulate persons, which one of the following methods will be appropriate?",
+  "options": {
+   "A": "Experiment",
+   "B": "Survey",
+   "C": "Observation",
+   "D": "Case history"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Methods of data collection"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Observation needs no verbal response from subjects, so it suits infants and people who cannot report.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11079), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q12",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The objective of exploring the existing literature should be to identify which of the following issues?\nA. What is already known about this area?\nB. What concepts and theories are relevant to this area?\nC. How to get funding for the research?\nD. What are the significant controversies in this area?\nE. Are there any inconsistencies in the findings of this area?\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, C and D only",
+   "B": "B, C, D and E only",
+   "C": "A, B, D and E only",
+   "D": "A, B, C and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Literature review"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Bryman's list of aims for a literature review: what is known, relevant concepts and theories, methods, controversies, inconsistencies and unanswered questions.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11080), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q13",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: A proposition is a statement about observable phenomena (concepts) that may be judged as true or false.\nReason R: When a proposition is formulated for empirical testing, it is called a hypothesis.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both A and R are correct and R is the correct explanation of A",
+   "B": "Both A and R are correct but R is NOT the correct explanation of A",
+   "C": "A is correct but R is not correct",
+   "D": "A is not correct but R is correct"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Hypothesis"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Cooper & Schindler: a hypothesis is a proposition formulated for empirical testing.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11081), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q14",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The context of discovery involves non-rational, intuitive processes while the context of justification is based on logical processes.\nStatement II: The process of hypothesis generation doesn't strictly follow rigorous logical reasoning.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Hypothesis"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Hans Reichenbach (1938) distinguished the context of discovery from the context of justification.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11082), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q15",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Contexts):\nA. Context of discovery\nB. Inductive reasoning\nC. Abductive reasoning\nD. Context of justification\nList II (Examples):\nI. From the particular to a generalisation\nII. Testing or verifying the hypothesis\nIII. Hypothesis generation\nIV. Inference based on some observations\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-I, C-IV, D-III",
+   "B": "A-IV, B-III, C-I, D-II",
+   "C": "A-I, B-III, C-II, D-IV",
+   "D": "A-III, B-I, C-IV, D-II"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Reasoning in research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Abduction (C. S. Peirce) = inference to the best explanation from observations.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11083), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q16",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Colour, as a means of communication, has meanings that mostly emanate from one's own:",
+  "options": {
+   "A": "Choices",
+   "B": "Educational background",
+   "C": "Social status",
+   "D": "Culture"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Non-verbal communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Colour meanings are cultural: white means purity in the West but mourning in parts of Asia.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11084), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q17",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Human communication involves:\nA. Patterned social interactions\nB. Use of abstract meanings only\nC. Conflict-oriented actions only\nD. Neural activities of the brain\nE. Psychological activities\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, D and E only",
+   "D": "C, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Nature of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Watch the word 'only' — options B and C are too absolute.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11085), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q18",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: A two-way communication takes place when encoding and decoding are in operation with equal frequency by two or more individuals.\nStatement II: The communicator and the communicatee are related by the communication circuits, and the success of communication depends upon the level of reciprocity between them.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Two-way communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Two-way models (Osgood–Schramm circular model) make each participant both encoder and decoder.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11086), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q19",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Identify the correct sequence of the following types of visual communication.\nA. Objects\nB. Maps\nC. Graphs\nD. Photographs\nE. Models\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B, D, C, E",
+   "B": "A, E, C, B, D",
+   "C": "B, D, E, C, A",
+   "D": "C, A, D, B, E"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Visual communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Visual aids range from real objects and models (concrete) to more abstract symbols — compare Dale's Cone of Experience.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11087), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q20",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Communication components):\nA. Medium\nB. Channel\nC. Codes\nD. Content information\nList II (Description):\nI. Facts\nII. Verbal and non-verbal signs\nIII. Route by which the message travels\nIV. Physical means to transmit the message\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-I, B-II, C-III, D-IV",
+   "B": "A-II, B-III, C-IV, D-I",
+   "C": "A-III, B-IV, C-I, D-II",
+   "D": "A-IV, B-III, C-II, D-I"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Elements of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Medium = physical means (print, radio); channel = route; codes = verbal and non-verbal signs.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11088), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q21",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What comes next in the following sequence?\n1, 2, 3, 7, 16, 65, ?",
+  "options": {
+   "A": "225",
+   "B": "321",
+   "C": "228",
+   "D": "287"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Each term = previous term + (term before it)²: 3 = 2 + 1², 7 = 3 + 2², 16 = 7 + 3², 65 = 16 + 7², next = 65 + 16² = 321.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11089), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q22",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: A culture of bacteria quadruples every hour. If a bottle with these bacteria was half-full at 7 am, then at 6 am on the same day the bottle was one-eighth full.\nStatement II: The average of the first 31 natural numbers is 16.5.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "½ ÷ 4 = ⅛, so I is true. Average of 1 to n = (n + 1)/2 = 16, so II is false.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11090), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q23",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Two trains are moving in the same direction at 60 km/hr and 45 km/hr. The faster train passes a girl sitting in the slower train in 15 seconds. The length of the faster train is:",
+  "options": {
+   "A": "22.5 m",
+   "B": "225 m",
+   "C": "62.5 m",
+   "D": "165 m"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Trains"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Relative speed 15 km/h = 25/6 m/s; × 15 s = 62.5 m.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11091), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q24",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Six years ago, the ratio of the ages of Ravi and Laxmi was 6 : 5. Four years hence, the ratio will be 11 : 10. Ravi's age at present is:",
+  "options": {
+   "A": "10 years",
+   "B": "18 years",
+   "C": "12 years",
+   "D": "16 years"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ages"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(6x + 10)/(5x + 10) = 11/10 → x = 2; Ravi now = 12 + 6 = 18.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11092), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q25",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A vendor marks all his goods at 50% above the cost price and then offers a discount of 25% on the marked prices. What is his profit on the sales?",
+  "options": {
+   "A": "25%",
+   "B": "12.50%",
+   "C": "22.50%",
+   "D": "20.50%"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Profit and loss"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1.5 × 0.75 = 1.125 → 12.5% profit.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11093), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q26",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Analogies have been used for which of the following purposes?\nA. Inductive reasoning\nB. Deductive reasoning\nC. Description\nD. Explanation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, C and D only",
+   "D": "B, C and D only"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Analogy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Copi: analogies serve description and explanation, and as the basis of inductive (analogical) arguments — not deduction.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11094), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Options 2 and 4 are printed identically in the source copy — kept as printed."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q27",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: Naiyāyikas do not accept non-apprehension (anupalabdhi) as a distinct source of knowledge (pramāṇa).\nReason R: According to Naiyāyikas, non-apprehension can be covered under inference (anumāna).\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both A and R are true and R is the correct explanation of A",
+   "B": "Both A and R are true but R is NOT the correct explanation of A",
+   "C": "A is true but R is false",
+   "D": "A is false but R is true"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic",
+   "Nyāya"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Nyāya accepts four pramāṇas (perception, inference, comparison, testimony); Bhāṭṭa Mīmāṃsā and Advaita add anupalabdhi as a sixth.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11095), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q28",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Square of opposition):\nA. If 'Some flowers are pink' is false\nB. If 'No girls are birds' is true\nC. If 'Some boys are not tall' is false\nD. If 'All chocolates are sweet' is true\nList II (Resultant):\nI. 'I' is false; 'O' is true\nII. 'A' is false; 'E' is true\nIII. 'I' is true; 'O' is false\nIV. 'E' is false; 'I' is true\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-III, C-I, D-IV",
+   "B": "A-III, B-IV, C-II, D-I",
+   "C": "A-II, B-I, C-IV, D-III",
+   "D": "A-IV, B-II, C-I, D-III"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "I false → A false, E true. E true → I false, O true. O false → A true, E false, I true. A true → E false, I true, O false.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11096), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q29",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the fallacy committed in the argument below.\nSome good actors are not strong men.\nAll professional wrestlers are strong men.\nTherefore, all professional wrestlers are good actors.",
+  "options": {
+   "A": "Fallacy of undistributed middle",
+   "B": "Fallacy of illicit major",
+   "C": "Fallacy of illicit minor",
+   "D": "Fallacy of drawing an affirmative conclusion from a negative premise"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Fallacies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Syllogism rule: if a premise is negative, the conclusion must be negative.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11097), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q30",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Anumāna has been accepted as an independent source of valid knowledge by which of the following schools?\nA. Buddhists\nB. Naiyāyikas\nC. Cārvākas\nD. Mīmāṃsakas\nE. Advaitins\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A and B only",
+   "B": "A, B and C only",
+   "C": "B, C, D and E only",
+   "D": "A, B, D and E only"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic",
+   "Pramāṇa"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The Cārvākas accept only perception (pratyakṣa); the Buddhists accept perception and inference.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11098), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q31",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is a part of the processor?",
+  "options": {
+   "A": "Address bus",
+   "B": "Data bus",
+   "C": "Cache memory",
+   "D": "Control unit"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The CPU has the control unit, the ALU and registers; buses connect it to other parts.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11099), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q32",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What is a disk defragmenter?",
+  "options": {
+   "A": "Rearranges blocks of data to store files in contiguous sectors",
+   "B": "Checks disk drives for empty space",
+   "C": "Compresses data before writing it on the hard disk",
+   "D": "Carries out a backup procedure"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Software"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Defragmenting puts a file's scattered pieces together so the drive reads them faster.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11100), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q33",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements regarding the hard disk drive (HDD):\nStatement I: HDDs use circular platters coated in magnetic material.\nStatement II: Access to data is faster than with RAM.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Storage devices"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "RAM is far faster than an HDD; HDDs are slower because of mechanical seek and rotation.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11101), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q34",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements regarding modems are correct?\nA. It is used to convert digital data into analogue\nB. It also converts analogue data into digital data\nC. Sends the data packet to specific addresses\nD. Inspects data packets received over the internet\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "B and C only",
+   "D": "A and B only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Networking"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Modem = modulator-demodulator. Routing packets is a router's job; inspecting packets is a firewall's.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11102), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q35",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List I with List II.\nList I (Network addresses):\nA. IP address\nB. MAC address\nC. Socket address\nD. URL address\nList II (Respective layers):\nI. Application layer\nII. Network layer\nIII. Transport layer\nIV. Data link layer\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A-II, B-IV, C-III, D-I",
+   "B": "A-I, B-II, C-III, D-IV",
+   "C": "A-I, B-IV, C-II, D-III",
+   "D": "A-III, B-I, C-II, D-IV"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Networking"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Addressing by layer: physical/MAC (data link), logical/IP (network), port/socket (transport), URL (application).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11103), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q36",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Eutrophication in a water body leads to which of the following?\nA. Bloom of algae\nB. Increase in the level of dissolved oxygen (DO)\nC. Increase in turbidity and odour of the water body\nD. Difficulty in sustaining normal aquatic life\nE. Deficiency of nutrients\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "A, B and C only",
+   "B": "B, C and D only",
+   "C": "A, C and D only",
+   "D": "C, D and E only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Excess nitrogen and phosphorus cause algal blooms; their decay lowers dissolved oxygen.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11104), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q37",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following has positive radiative forcing or a warming effect on the global climate?",
+  "options": {
+   "A": "Tropospheric ozone",
+   "B": "Stratospheric ozone",
+   "C": "Sulphate aerosol",
+   "D": "Sulphur dioxide"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Tropospheric ozone is a greenhouse gas; sulphate aerosols (from SO₂) reflect sunlight and cool.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11105), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q38",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: Methanol (CH₃OH), also known as wood alcohol, has a much higher octane rating than gasoline.\nStatement II: Methanol burns with a higher flame temperature than gasoline or diesel. Thus, it produces a higher amount of NOx.\nIn light of the above statements, choose the correct answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are true",
+   "B": "Both Statement I and Statement II are false",
+   "C": "Statement I is true but Statement II is false",
+   "D": "Statement I is false but Statement II is true"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Alternative fuels"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Methanol (octane ~108) burns cooler than petrol, so it produces less NOx.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11106), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q39",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Who is the executive head of the National Disaster Management Authority (NDMA)?",
+  "options": {
+   "A": "President of India",
+   "B": "Prime Minister of India",
+   "C": "Chief of the Army Staff",
+   "D": "A member of Parliament appointed by the President"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Disaster management"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NDMA was set up under the Disaster Management Act, 2005, with the Prime Minister as chairperson.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11107), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q40",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The primary treatment of wastewater involves removal of:",
+  "options": {
+   "A": "Solids",
+   "B": "Colloids",
+   "C": "Organic water",
+   "D": "Microorganisms"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Wastewater treatment"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Primary treatment = screening and sedimentation of solids; secondary = biological removal of organic matter.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11108), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q41",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "NSQF organises qualifications according to a series of levels of:",
+  "options": {
+   "A": "Knowledge, skills, experience",
+   "B": "Skills, experience, aptitude",
+   "C": "Knowledge, skills, aptitude",
+   "D": "Skills, achievement, aptitude"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Skill education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The National Skills Qualifications Framework (2013) has 10 levels defined by learning outcomes.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11109), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Paper prints 'NSFQ'; corrected to NSQF."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q42",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is not an objective of higher education?",
+  "options": {
+   "A": "Teaching",
+   "B": "Research",
+   "C": "Improving literacy levels",
+   "D": "Career development"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Aims of higher education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Literacy is the aim of elementary and adult education.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11110), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q43",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "'The destiny of India is now being shaped in her classrooms.' This is stated in:",
+  "options": {
+   "A": "NPE 1986",
+   "B": "NKC report",
+   "C": "Education Commission",
+   "D": "University Education Commission"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Education commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The opening line of the Kothari Commission report (Education Commission, 1964–66).",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11111), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q44",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements, one labelled Assertion A and the other Reason R.\nAssertion A: Environmental education makes individuals aware of environmental issues, helps them explore and analyse causes and effectiveness of the issues, and promotes environmental sustainability.\nReason R: It is very essential to think and act creatively to become technically capable and trained to approach environmental issues in a proactive manner.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both A and R are correct and R is the correct explanation of A",
+   "B": "Both A and R are correct but R is NOT the correct explanation of A",
+   "C": "A is correct but R is not correct",
+   "D": "A is not correct but R is correct"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Environmental education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Tbilisi Declaration (1977): environmental education builds awareness, knowledge, attitudes, skills and participation.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11112), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q45",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two statements:\nStatement I: The Hansa Mehta Committee recommended that there is a need to make differentiation in the curriculum on the basis of sex.\nStatement II: The Bhaktavatsalam Committee recommended that the government and the public should act jointly, realise their responsibilities and proceed in a planned manner with regard to the education of girls in future.\nIn light of the above statements, choose the most appropriate answer from the options given below:",
+  "options": {
+   "A": "Both Statement I and Statement II are correct",
+   "B": "Both Statement I and Statement II are incorrect",
+   "C": "Statement I is correct but Statement II is incorrect",
+   "D": "Statement I is incorrect but Statement II is correct"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Women's education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Hansa Mehta Committee (1962) opposed sex-based differentiation of curricula; Bhaktavatsalam Committee (1963) dealt with public support for girls' education.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11113), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q46",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Besides being hailed as a technology which can deliver the 'global village', the Internet is also promoted as a singular medium which allows for democratised processes which were not previously possible in the era of broadcast. But what kinds of democracy are being postulated here? Traditionally, and more than ever now, democracy is heavily aligned with the nation-state. Because of this, no sense is made of the claim that the Internet enables universal participation in the democratic process. The point here is the practices of communication afforded by computer-mediated communication may be able to substitute some of the functions of the mass media — for example, in the formation of pre-institutional public opinion. But these practices do not necessarily exert pressure on the institutional apparatuses of politics. Of course, the mass media themselves, as a means of electronically mediated communication, can never replace the institutional apparatuses of politics, and as found out by numerous studies, have been just as much used by politicians as they have influenced them. The Internet can be classified as a global technology, which enables connections with individuals and institutions overseas just as easily as it does nationally, regionally or locally. If there is an imagined community on the Internet, it is definitely not the nation-state. State-bounded kinds of citizenship cannot be considered coterminous with the kinds of citizenship which are achieved on the Internet. However, this is not to argue that a global sense of citizenship, even if it too is an 'imagined one', cannot exist. Recent protests against international financial institutions such as the World Bank were organised almost entirely through Internet media — a case of not-so-visible electronic assemblies producing very visible embodied assemblies. But even though the experience of community on the Internet is not limited to national boundaries, it is also important to consider the shape and structure of virtual communities.\n\nThe Internet is considered a prime medium for its:",
+  "options": {
+   "A": "Far-reaching accessibility",
+   "B": "Promotion of a new type of democratisation",
+   "C": "Position as a technological medium",
+   "D": "Better than the broadcast medium"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage says the Internet is promoted as a medium allowing democratised processes not possible in the broadcast era.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11114), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Source copy prints option 2 as a duplicate of option 1; option 2 restored from Testbook's copy of this question (same paper), which matches the NTA key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q47",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Besides being hailed as a technology which can deliver the 'global village', the Internet is also promoted as a singular medium which allows for democratised processes which were not previously possible in the era of broadcast. But what kinds of democracy are being postulated here? Traditionally, and more than ever now, democracy is heavily aligned with the nation-state. Because of this, no sense is made of the claim that the Internet enables universal participation in the democratic process. The point here is the practices of communication afforded by computer-mediated communication may be able to substitute some of the functions of the mass media — for example, in the formation of pre-institutional public opinion. But these practices do not necessarily exert pressure on the institutional apparatuses of politics. Of course, the mass media themselves, as a means of electronically mediated communication, can never replace the institutional apparatuses of politics, and as found out by numerous studies, have been just as much used by politicians as they have influenced them. The Internet can be classified as a global technology, which enables connections with individuals and institutions overseas just as easily as it does nationally, regionally or locally. If there is an imagined community on the Internet, it is definitely not the nation-state. State-bounded kinds of citizenship cannot be considered coterminous with the kinds of citizenship which are achieved on the Internet. However, this is not to argue that a global sense of citizenship, even if it too is an 'imagined one', cannot exist. Recent protests against international financial institutions such as the World Bank were organised almost entirely through Internet media — a case of not-so-visible electronic assemblies producing very visible embodied assemblies. But even though the experience of community on the Internet is not limited to national boundaries, it is also important to consider the shape and structure of virtual communities.\n\nEven now the nation-state influences:",
+  "options": {
+   "A": "Its citizens",
+   "B": "Its imagined communities",
+   "C": "The democratic process",
+   "D": "The globalisation concept"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Democracy is heavily aligned with the nation-state.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11115), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q48",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Besides being hailed as a technology which can deliver the 'global village', the Internet is also promoted as a singular medium which allows for democratised processes which were not previously possible in the era of broadcast. But what kinds of democracy are being postulated here? Traditionally, and more than ever now, democracy is heavily aligned with the nation-state. Because of this, no sense is made of the claim that the Internet enables universal participation in the democratic process. The point here is the practices of communication afforded by computer-mediated communication may be able to substitute some of the functions of the mass media — for example, in the formation of pre-institutional public opinion. But these practices do not necessarily exert pressure on the institutional apparatuses of politics. Of course, the mass media themselves, as a means of electronically mediated communication, can never replace the institutional apparatuses of politics, and as found out by numerous studies, have been just as much used by politicians as they have influenced them. The Internet can be classified as a global technology, which enables connections with individuals and institutions overseas just as easily as it does nationally, regionally or locally. If there is an imagined community on the Internet, it is definitely not the nation-state. State-bounded kinds of citizenship cannot be considered coterminous with the kinds of citizenship which are achieved on the Internet. However, this is not to argue that a global sense of citizenship, even if it too is an 'imagined one', cannot exist. Recent protests against international financial institutions such as the World Bank were organised almost entirely through Internet media — a case of not-so-visible electronic assemblies producing very visible embodied assemblies. But even though the experience of community on the Internet is not limited to national boundaries, it is also important to consider the shape and structure of virtual communities.\n\nIn what way can the Internet play a role in modern society?",
+  "options": {
+   "A": "By shaping institutional public opinion",
+   "B": "Being a substitute for traditional broadcast media",
+   "C": "By taking an active part as a political institution",
+   "D": "By playing a supportive role to conventional media"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Computer-mediated communication can help form (pre-institutional) public opinion.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11116), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q49",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Besides being hailed as a technology which can deliver the 'global village', the Internet is also promoted as a singular medium which allows for democratised processes which were not previously possible in the era of broadcast. But what kinds of democracy are being postulated here? Traditionally, and more than ever now, democracy is heavily aligned with the nation-state. Because of this, no sense is made of the claim that the Internet enables universal participation in the democratic process. The point here is the practices of communication afforded by computer-mediated communication may be able to substitute some of the functions of the mass media — for example, in the formation of pre-institutional public opinion. But these practices do not necessarily exert pressure on the institutional apparatuses of politics. Of course, the mass media themselves, as a means of electronically mediated communication, can never replace the institutional apparatuses of politics, and as found out by numerous studies, have been just as much used by politicians as they have influenced them. The Internet can be classified as a global technology, which enables connections with individuals and institutions overseas just as easily as it does nationally, regionally or locally. If there is an imagined community on the Internet, it is definitely not the nation-state. State-bounded kinds of citizenship cannot be considered coterminous with the kinds of citizenship which are achieved on the Internet. However, this is not to argue that a global sense of citizenship, even if it too is an 'imagined one', cannot exist. Recent protests against international financial institutions such as the World Bank were organised almost entirely through Internet media — a case of not-so-visible electronic assemblies producing very visible embodied assemblies. But even though the experience of community on the Internet is not limited to national boundaries, it is also important to consider the shape and structure of virtual communities.\n\nWhat is the main weakness of the Internet?",
+  "options": {
+   "A": "It cannot produce a global sense of citizenship",
+   "B": "Virtual citizenship is coterminous with national citizenship",
+   "C": "Electronic media is more powerful than the Internet",
+   "D": "It cannot substitute political institutions"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "It does not exert pressure on — or replace — the institutional apparatuses of politics.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11117), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2021-JUN-S2-P1-Q50",
+  "exam": "NET",
+  "year": 2021,
+  "session": "June",
+  "shift": "1 Dec 2021, Shift 2",
+  "source": "UGC NET June 2021 (Dec 2020 & June 2021 merged cycle) · 1 Dec 2021 · Shift 2 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Besides being hailed as a technology which can deliver the 'global village', the Internet is also promoted as a singular medium which allows for democratised processes which were not previously possible in the era of broadcast. But what kinds of democracy are being postulated here? Traditionally, and more than ever now, democracy is heavily aligned with the nation-state. Because of this, no sense is made of the claim that the Internet enables universal participation in the democratic process. The point here is the practices of communication afforded by computer-mediated communication may be able to substitute some of the functions of the mass media — for example, in the formation of pre-institutional public opinion. But these practices do not necessarily exert pressure on the institutional apparatuses of politics. Of course, the mass media themselves, as a means of electronically mediated communication, can never replace the institutional apparatuses of politics, and as found out by numerous studies, have been just as much used by politicians as they have influenced them. The Internet can be classified as a global technology, which enables connections with individuals and institutions overseas just as easily as it does nationally, regionally or locally. If there is an imagined community on the Internet, it is definitely not the nation-state. State-bounded kinds of citizenship cannot be considered coterminous with the kinds of citizenship which are achieved on the Internet. However, this is not to argue that a global sense of citizenship, even if it too is an 'imagined one', cannot exist. Recent protests against international financial institutions such as the World Bank were organised almost entirely through Internet media — a case of not-so-visible electronic assemblies producing very visible embodied assemblies. But even though the experience of community on the Internet is not limited to national boundaries, it is also important to consider the shape and structure of virtual communities.\n\nThe crux of the passage is that the Internet:",
+  "options": {
+   "A": "is an all-powerful medium",
+   "B": "can provide a segmented experience of the world",
+   "C": "has limited use in politics",
+   "D": "can help organise people's assemblies"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Protests against the World Bank were organised through Internet media — virtual assemblies producing real ones.",
+  "verified": true,
+  "note": "Official NTA final answer key (Subject 030 English, 01.12.2021, Second shift, Q-ID 11118), matched to the question by NTA's option IDs. Question text from prepp.in's typed copy of this shift's Paper 1, whose order and answers match the NTA key. Answer re-checked by Claude. Answer as per the NTA final key."
  }
 ]
