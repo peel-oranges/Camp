@@ -262,6 +262,59 @@ function poolForMode(mode) {
     default: return Q.slice();
   }
 }
+/* ---------- Year search ----------
+   "2019 indian", "2019-2025 indian", "2019–25", "2019 to 2025", "between 2019 and 2025",
+   "since 2019", "after 2019", "before 2015", "till 2018", or two years like "2019 2022".
+   A year only counts as an exam year when the bank has PYQs from it, so "1857" or
+   "1984" (Orwell) are still searched as words. Probable and Abrams questions have no
+   year: they still come in when they match the topic typed with the year.          */
+let YCACHE = null;
+function pyqYears() {
+  if (!YCACHE) {
+    const s = new Set();
+    S.questions.forEach(q => { if (isPYQ(q)) { const y = qYear(q); if (y) s.add(y); } });
+    const a = [...s];
+    YCACHE = { set: s, min: a.length ? Math.min(...a) : 0, max: a.length ? Math.max(...a) : 0 };
+  }
+  return YCACHE;
+}
+function parseYears(raw) {
+  const Y = pyqYears();
+  if (!Y.set.size) return null;
+  let s = ` ${raw.toLowerCase().replace(/[–—−]/g, '-')} `;
+  const ranges = [], singles = [], labels = [];
+  const YR = '((?:19|20)\\d{2})';
+  const endYear = (a, b) => (b.length === 2 ? Math.floor(+a / 100) * 100 + +b : +b);   // "2019-25" → 2025
+  const fits = (f, t) => f <= Y.max && t >= Y.min;
+  const addRange = (f, t, label, m) => {
+    if (f > t) [f, t] = [t, f];
+    if (!fits(f, t)) return m;                 // no PYQs in that span: keep it as words
+    ranges.push([f, t]); labels.push(label || `${f}–${t}`);
+    return ' ';
+  };
+  s = s.replace(new RegExp(`\\bbetween\\s+${YR}\\s+and\\s+${YR}\\b`, 'g'), (m, a, b) => addRange(+a, +b, '', m));
+  s = s.replace(new RegExp(`(?:\\bfrom\\s+)?\\b${YR}\\s*(?:-|to|till|until)\\s*((?:19|20)\\d{2}|\\d{2})\\b`, 'g'),
+    (m, a, b) => addRange(+a, endYear(a, b), '', m));
+  s = s.replace(new RegExp(`\\b(since|from|after|before|till|until|upto|up to)\\s+${YR}\\b`, 'g'), (m, w, a) => {
+    const y = +a;
+    if (w === 'after') return addRange(y + 1, 9999, `after ${y}`, m);
+    if (w === 'before') return addRange(0, y - 1, `before ${y}`, m);
+    if (w === 'since' || w === 'from') return addRange(y, 9999, `${y} onwards`, m);
+    return addRange(0, y, `up to ${y}`, m);
+  });
+  s = s.replace(new RegExp(`\\b${YR}\\b`, 'g'), (m, a) => {
+    if (!Y.set.has(+a)) return m;
+    singles.push(+a); labels.push(a);
+    return ' ';
+  });
+  if (!ranges.length && !singles.length) return null;
+  return {
+    test: y => singles.includes(y) || ranges.some(([f, t]) => y >= f && y <= t),
+    rest: s.replace(/\s+/g, ' ').trim(),
+    label: labels.join(', ')
+  };
+}
+
 function filtered() {
   const f = S.filters;
   let list = poolForMode(f.mode);
@@ -270,9 +323,27 @@ function filtered() {
   if (f.work) { const ids = new Set(f.work.ids); list = list.filter(q => ids.has(q.id)); }
   const raw = f.query.trim();
   S.searchInfo = null;
-  if (raw) {
-    const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
-    if (exact.length) return exact;
+  if (!raw) return list;
+  const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
+  if (exact.length) return exact;
+  const yr = parseYears(raw);
+  if (yr) {
+    const inYears = q => { const y = qYear(q); return y ? yr.test(y) : false; };
+    let res;
+    if (queryTokens(yr.rest).length) {
+      // topic typed with the year: PYQs from those years, plus year-less (Probable / Abrams) on that topic
+      res = searchList(list, yr.rest).filter(q => (qYear(q) ? yr.test(qYear(q)) : true));
+    } else {
+      res = list.filter(inYears);         // only a year typed: every PYQ from those years
+    }
+    if (res.length) { S.searchInfo = Object.assign(S.searchInfo || {}, { years: yr.label }); return res; }
+    // nothing for those years: fall back to searching the numbers as ordinary words
+  }
+  return searchList(list, raw);
+}
+function searchList(list, raw) {
+  S.searchInfo = null;
+  {
     const toks = queryTokens(raw);
     if (toks.length) {
       const groups = resolveTokens(toks);
@@ -388,7 +459,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -406,6 +477,7 @@ function matchText(n) {
   const fresh = filtered().filter(q => !seenQ(q)).length;
   const info = S.searchInfo || {};
   const notes = [];
+  if (info.years) notes.push(`PYQ years: ${info.years}`);
   if (info.fix) notes.push(`Showing results for “${info.fix}”`);
   if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
   return `${notes.length ? notes.join(' · ') + '. ' : ''}${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
@@ -425,7 +497,7 @@ VIEWS.home = () => {
 
   <section class="card">
     <h2>Build a quiz</h2>
-    <label class="field-label" for="q-search">Topic, writer, work or keyword</label>
+    <label class="field-label" for="q-search">Topic, writer, work, keyword or year</label>
     <div class="search">
       <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. 19th century Indian dramatists" autocomplete="off" enterkeyhint="search">
       <button class="icon-btn" id="clear-q" data-act="clearQuery" aria-label="Clear search" ${f.query ? '' : 'hidden'}>✕</button>
@@ -3698,7 +3770,7 @@ async function loadData() {
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
     S.syllabus = syllabus && syllabus.exams && syllabus.topics ? syllabus : null;
-    GCACHE = null; WCACHE = null; ECACHE = null; NCACHE = null;
+    GCACHE = null; WCACHE = null; YCACHE = null; ECACHE = null; NCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();
