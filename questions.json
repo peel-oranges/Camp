@@ -86570,6 +86570,1666 @@
   "note": "Answer from the literariness.org key, checked by Claude. NTA's final key lists answers only by question ID, so it couldn't be matched to this question. Question numbers follow the learningskillsindia copy of the paper, which matches the literariness key. The paper doesn't name the poet, so no writer is tagged."
  },
  {
+  "id": "NET-2019-JUN-S1-P1-Q01",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the learner characteristics will influence his/her perspective in a course of study?\n(i) Learner's commitment\n(ii) Parents interest in the learner\n(iii) Prior knowledge of the learner\n(iv) Skill of the learner in the concerned area\n(v) Family size of the learner\n(vi) Socio-economic background of the family to which the learner belongs\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "(i), (iii) and (iv)",
+   "B": "(i), (ii) and (iii)",
+   "C": "(iii), (iv) and (v)",
+   "D": "(iv), (v) and (vi)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Commitment, prior knowledge and skill are the learner's own characteristics; parents' interest, family size and SES are background factors.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027244, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q02",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the strategies in the list given below will be associated with direct teaching?\n(i) Providing examples and explanation\n(ii) Promoting inquiry\n(iii) Focussing on concepts\n(iv) Giving review and recapitulation\n(v) Offering practice and feedback\n(vi) Problem raising and problem-solving\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(ii), (iii) and (iv)",
+   "C": "(i), (iv) and (v)",
+   "D": "(iv), (v) and (vi)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Direct (explicit) teaching: explain with examples, review, guided practice with feedback. Inquiry, concepts and problem-solving are indirect strategies.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027245, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q03",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The performance of a student is compared with another student in which type of testing?",
+  "options": {
+   "A": "Criterion referenced testing",
+   "B": "Diagnostic testing",
+   "C": "Summative testing",
+   "D": "Norm-referenced testing"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Norm-referenced = compared with other learners (percentiles, ranks); criterion-referenced = compared with a fixed standard.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027246, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q04",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is an example of a maximum performance test?",
+  "options": {
+   "A": "Personality tests",
+   "B": "Projective personality tests",
+   "C": "Aptitude tests",
+   "D": "Interest and attitude scales"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Cronbach: maximum-performance tests (aptitude, achievement, intelligence) ask for one's best; typical-performance tests (personality, interest, attitude) ask what one usually does.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027247, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q05",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the list given below identify those questions which are called process rather than content based questions?\n(i) Convergent questions\n(ii) Divergent questions\n(iii) Fact based questions\n(iv) Concept based questions\n(v) Open questions\n(vi) Closed questions\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(ii), (iii) and (iv)",
+   "C": "(iv), (v) and (vi)",
+   "D": "(ii), (iv) and (v)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Questioning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Process questions invite thinking (divergent, open, concept-based); content questions check recall (convergent, closed, fact-based).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027248, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q06",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The conceptual framework in which a research is conducted is called a",
+  "options": {
+   "A": "Synopsis of research",
+   "B": "Research design",
+   "C": "Research hypothesis",
+   "D": "Research paradigm"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research design"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A research design is the overall plan or blueprint of a study; a paradigm (Kuhn) is a wider worldview of how research should be done.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027249, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q07",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A shift in attitude in respondents between two points during data collection is called",
+  "options": {
+   "A": "Reactive effect",
+   "B": "Maturation effect",
+   "C": "Regression effect",
+   "D": "Conditioning effect"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Validity threats"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Threats to internal validity (Campbell & Stanley): history, maturation, testing, instrumentation, statistical regression, selection, mortality.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027250, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q08",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the list given below identify those which are called 'Non-probability sampling procedures':\n(i) Simple random sampling\n(ii) Dimensional sampling\n(iii) Snowball sampling\n(iv) Cluster sampling\n(v) Quota sampling\n(vi) Stratified sampling\n\nChoose the correct option",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(ii), (iv) and (v)",
+   "C": "(i), (iii) and (iv)",
+   "D": "(ii), (iii) and (v)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Sampling"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Non-probability: dimensional, snowball, quota, purposive, convenience. Probability: simple random, stratified, cluster, systematic.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027251, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q09",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The major characteristic of correlation analysis is to seek out",
+  "options": {
+   "A": "Differences among variables",
+   "B": "Variations among variables",
+   "C": "Association among variables",
+   "D": "Regression among variables"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Statistics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Correlation measures the strength and direction of association (r from −1 to +1); it does not prove cause.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027252, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q10",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The time-frame in which a study explores a situation or problem is also called the",
+  "options": {
+   "A": "reference period",
+   "B": "age",
+   "C": "longitudinal",
+   "D": "retrospective time"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research design"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ranjit Kumar classifies designs by reference period: retrospective, prospective and retrospective-prospective.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027253, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q11",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Geography seeks to understand the physical and human organization of the surface of the Earth. In the field of geography, inter-related themes are frequently seen. These are scale, pattern and process. Scale is defined as the level of structure on organisation at which a phenomenon is studied. Pattern is defined as the variation observed in a phenomenon studied at a particular scale. The third theme, process, further connects the first two. Process is defined as the description of how the factors that affect a phenomenon act to product a pattern at a particular scale. For instance, when a passenger on an aircraft looks out of the window, the view changes according to the scale. At the global scale when the aircraft maintains its height, he can see the chunks of clouds in all their pattern, the sun or the moon, as per the time. When the aircraft loses a little height, passengers can see the land and water masses in their different colours and the shape of land masses. At the continental scale, the passengers can see the shapes of the land features and how they are distributed. The pattern emerges as the variation of land and water and the proportion of each. Looking carefully, passengers can note how each land mass aligns with the others and how each mountain bears the signs of the process through which it emerged.\nThe processes in a geography change in a regular and repetitive manner. One instance of this is the annual solar cycle of the sun and the earth. Most systems in nature display time cycles that are organised in a rhythm of their own. As these time cycles and natural processes are always active, the environment of the earth is always in a state of dynamism. This environmental change is not only the result of natural process but also the result of human activity. Physical geography works towards understanding the interaction between man and nature and also the results of this interaction in order to manage global climate change better.\n\nIn geography, pattern studies the variation observed in a phenomenon at",
+  "options": {
+   "A": "a particular scale",
+   "B": "any scale",
+   "C": "every scale",
+   "D": "most scales"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Pattern is defined as the variation observed in a phenomenon studied at a particular scale.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027255, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q12",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Geography seeks to understand the physical and human organization of the surface of the Earth. In the field of geography, inter-related themes are frequently seen. These are scale, pattern and process. Scale is defined as the level of structure on organisation at which a phenomenon is studied. Pattern is defined as the variation observed in a phenomenon studied at a particular scale. The third theme, process, further connects the first two. Process is defined as the description of how the factors that affect a phenomenon act to product a pattern at a particular scale. For instance, when a passenger on an aircraft looks out of the window, the view changes according to the scale. At the global scale when the aircraft maintains its height, he can see the chunks of clouds in all their pattern, the sun or the moon, as per the time. When the aircraft loses a little height, passengers can see the land and water masses in their different colours and the shape of land masses. At the continental scale, the passengers can see the shapes of the land features and how they are distributed. The pattern emerges as the variation of land and water and the proportion of each. Looking carefully, passengers can note how each land mass aligns with the others and how each mountain bears the signs of the process through which it emerged.\nThe processes in a geography change in a regular and repetitive manner. One instance of this is the annual solar cycle of the sun and the earth. Most systems in nature display time cycles that are organised in a rhythm of their own. As these time cycles and natural processes are always active, the environment of the earth is always in a state of dynamism. This environmental change is not only the result of natural process but also the result of human activity. Physical geography works towards understanding the interaction between man and nature and also the results of this interaction in order to manage global climate change better.\n\nThe view seen by a passenger looking out of the window of an aircraft will be affected by the",
+  "options": {
+   "A": "Process",
+   "B": "Pattern",
+   "C": "Scale",
+   "D": "Rhythm"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage says the view changes according to the scale.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027256, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q13",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Geography seeks to understand the physical and human organization of the surface of the Earth. In the field of geography, inter-related themes are frequently seen. These are scale, pattern and process. Scale is defined as the level of structure on organisation at which a phenomenon is studied. Pattern is defined as the variation observed in a phenomenon studied at a particular scale. The third theme, process, further connects the first two. Process is defined as the description of how the factors that affect a phenomenon act to product a pattern at a particular scale. For instance, when a passenger on an aircraft looks out of the window, the view changes according to the scale. At the global scale when the aircraft maintains its height, he can see the chunks of clouds in all their pattern, the sun or the moon, as per the time. When the aircraft loses a little height, passengers can see the land and water masses in their different colours and the shape of land masses. At the continental scale, the passengers can see the shapes of the land features and how they are distributed. The pattern emerges as the variation of land and water and the proportion of each. Looking carefully, passengers can note how each land mass aligns with the others and how each mountain bears the signs of the process through which it emerged.\nThe processes in a geography change in a regular and repetitive manner. One instance of this is the annual solar cycle of the sun and the earth. Most systems in nature display time cycles that are organised in a rhythm of their own. As these time cycles and natural processes are always active, the environment of the earth is always in a state of dynamism. This environmental change is not only the result of natural process but also the result of human activity. Physical geography works towards understanding the interaction between man and nature and also the results of this interaction in order to manage global climate change better.\n\nThe time cycles of the system of nature follow their own",
+  "options": {
+   "A": "Path",
+   "B": "Rhythm",
+   "C": "Process",
+   "D": "Cycle"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Natural time cycles are organised in a rhythm of their own.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027257, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q14",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Geography seeks to understand the physical and human organization of the surface of the Earth. In the field of geography, inter-related themes are frequently seen. These are scale, pattern and process. Scale is defined as the level of structure on organisation at which a phenomenon is studied. Pattern is defined as the variation observed in a phenomenon studied at a particular scale. The third theme, process, further connects the first two. Process is defined as the description of how the factors that affect a phenomenon act to product a pattern at a particular scale. For instance, when a passenger on an aircraft looks out of the window, the view changes according to the scale. At the global scale when the aircraft maintains its height, he can see the chunks of clouds in all their pattern, the sun or the moon, as per the time. When the aircraft loses a little height, passengers can see the land and water masses in their different colours and the shape of land masses. At the continental scale, the passengers can see the shapes of the land features and how they are distributed. The pattern emerges as the variation of land and water and the proportion of each. Looking carefully, passengers can note how each land mass aligns with the others and how each mountain bears the signs of the process through which it emerged.\nThe processes in a geography change in a regular and repetitive manner. One instance of this is the annual solar cycle of the sun and the earth. Most systems in nature display time cycles that are organised in a rhythm of their own. As these time cycles and natural processes are always active, the environment of the earth is always in a state of dynamism. This environmental change is not only the result of natural process but also the result of human activity. Physical geography works towards understanding the interaction between man and nature and also the results of this interaction in order to manage global climate change better.\n\nPhysical geography studies the results of the interaction between man and nature in order to",
+  "options": {
+   "A": "understand global climate change",
+   "B": "study the impact of man's activities on nature",
+   "C": "address the issue of global climate change",
+   "D": "reduce man-animal conflict"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The aim given is to manage global climate change better.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027258, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q15",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Geography seeks to understand the physical and human organization of the surface of the Earth. In the field of geography, inter-related themes are frequently seen. These are scale, pattern and process. Scale is defined as the level of structure on organisation at which a phenomenon is studied. Pattern is defined as the variation observed in a phenomenon studied at a particular scale. The third theme, process, further connects the first two. Process is defined as the description of how the factors that affect a phenomenon act to product a pattern at a particular scale. For instance, when a passenger on an aircraft looks out of the window, the view changes according to the scale. At the global scale when the aircraft maintains its height, he can see the chunks of clouds in all their pattern, the sun or the moon, as per the time. When the aircraft loses a little height, passengers can see the land and water masses in their different colours and the shape of land masses. At the continental scale, the passengers can see the shapes of the land features and how they are distributed. The pattern emerges as the variation of land and water and the proportion of each. Looking carefully, passengers can note how each land mass aligns with the others and how each mountain bears the signs of the process through which it emerged.\nThe processes in a geography change in a regular and repetitive manner. One instance of this is the annual solar cycle of the sun and the earth. Most systems in nature display time cycles that are organised in a rhythm of their own. As these time cycles and natural processes are always active, the environment of the earth is always in a state of dynamism. This environmental change is not only the result of natural process but also the result of human activity. Physical geography works towards understanding the interaction between man and nature and also the results of this interaction in order to manage global climate change better.\n\nThe alignment of landmass with other elements can be seen by a passenger on a flight on a",
+  "options": {
+   "A": "Global scale",
+   "B": "Continental scale",
+   "C": "Local scale",
+   "D": "Time scale"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "At the continental scale passengers see how each land mass aligns with the others.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027259, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q16",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Mass media do not have pre-determined functions for everyone and people use them the way they like. This is suggestive of the fact that,",
+  "options": {
+   "A": "Audiences are active",
+   "B": "Content is of little significance",
+   "C": "Content lacks plurality",
+   "D": "Audiences are homogeneous"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Media theory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Uses and gratifications theory (Blumler and Katz, 1974): an active audience chooses media to meet its own needs.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027260, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q17",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "In the context of communication, usual sequence is",
+  "options": {
+   "A": "Language → Communication → Society → Civilization",
+   "B": "Communication → Society → Language → Civilization",
+   "C": "Communication → Language → Society → Civilization",
+   "D": "Language → Society → Communication → Civilization"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication and society"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Communication comes first; language grows out of it, and societies and then civilizations grow on language.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027261, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q18",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match Set 'A' with Set 'B'.\nSet A (Media): (a) Audio (b) Advertising (c) Internet (d) Newspaper\nSet B (Transmission/Communication): (i) Bandwidth (ii) Linear communication (iii) Non personal communication (iv) Frequency modulation\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)",
+   "B": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "C": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)",
+   "D": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Media"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "FM radio carries audio; advertising is paid, non-personal communication; internet speed = bandwidth; print is one-way, linear.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027262, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q19",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A communication process can be considered complete when",
+  "options": {
+   "A": "The sender transmits the message",
+   "B": "The message enters the channel",
+   "C": "The message leaves the channel",
+   "D": "The receiver understands the message"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Communication is complete only when the receiver decodes and understands the message (and ideally gives feedback).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027263, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q20",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A customer writes to a bank, 'Kindly send me a statement of my transactions in my savings bank account 'A' during the last three months'. In terms of communication it will be called",
+  "options": {
+   "A": "Input",
+   "B": "Message",
+   "C": "Output",
+   "D": "Feedback"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The customer is the sender, the letter's request is the message, and the bank is the receiver.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027264, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q21",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If REASON is coded as 5 and GOVERNMENT as 9, than what is the code for ACCIDENT?",
+  "options": {
+   "A": "6",
+   "B": "7",
+   "C": "8",
+   "D": "9"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Code = number of letters − 1: REASON 6−1 = 5, GOVERNMENT 10−1 = 9, ACCIDENT 8−1 = 7.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027265, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q22",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following fractions is the result of the sum of an integer and its reciprocal?",
+  "options": {
+   "A": "15/8",
+   "B": "26/5",
+   "C": "36/7",
+   "D": "37/5"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Fractions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "5 + 1/5 = 26/5. The form is (n² + 1)/n.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027266, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q23",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The average of 35 raw scores is 18. The average of first seventeen of them is 14 and that of last seventeen is 20. Find the eighteenth raw score.",
+  "options": {
+   "A": "42",
+   "B": "46",
+   "C": "52",
+   "D": "56"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "35 × 18 = 630; 17 × 14 = 238; 17 × 20 = 340; 630 − 578 = 52.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027267, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q24",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A train leaves Agra at 5 a.m and reaches Delhi at 9 a.m. Another train leaves Delhi at 7 a.m and reaches Agra at 10:30 a.m. At what time do the two trains cross each other?",
+  "options": {
+   "A": "6:36 a.m",
+   "B": "6:56 a.m",
+   "C": "7 a.m",
+   "D": "7:56 a.m"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Time and distance"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "By 7 a.m. the first train has covered half the way; the gap closes at 1/4 + 2/7 = 15/28 per hour, so ½ ÷ 15/28 = 56 min → 7:56 a.m.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027268, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q25",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Sanjay sold an article at a loss of 25%. If the selling price had been increased by Rs. 175, there would have been a gain of 10%. What was the cost price of the article?",
+  "options": {
+   "A": "Rs. 350",
+   "B": "Rs. 400",
+   "C": "Rs. 500",
+   "D": "Rs. 750"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Profit and loss"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "From −25% to +10% is 35% of cost = Rs 175, so cost = Rs 500.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027269, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q26",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If proposition 'All republics are grateful' is taken to be true then which of the following propositions can be false?\n(i) Republics are not grateful\n(ii) Some republics are not grateful\n(iii) No republics are grateful\n(iv) Some republics are grateful\n\nSelect the correct answer from the options given below:",
+  "options": {
+   "A": "(i) only",
+   "B": "(ii) only",
+   "C": "(i), (ii) and (iii)",
+   "D": "(ii) and (iii)"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "If A is true: E is false, O is false, I is true. So (i), (ii) and (iii) can (indeed must) be false.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027270, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q27",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises with four conclusions drawn from them. Which of the following conclusions could be validly drawn from the premises?\nPremises: (i) Some bags are tables (ii) All bags are chairs.\nConclusions: (a) Some tables are chairs. (b) No chair is table. (c) Some chairs are bags. (d) Some bags are not tables.\n\nSelect the correct answer from the options given below:",
+  "options": {
+   "A": "(a) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(a) and (d)",
+   "D": "(b) only"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The bags that are tables are also chairs → some tables are chairs; converting 'All bags are chairs' gives some chairs are bags.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027271, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q28",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "When subject and predicate of both the premises are the same but they differ in quality only, it is known as",
+  "options": {
+   "A": "Contradictories",
+   "B": "Contraries",
+   "C": "Subaltern",
+   "D": "Super altern"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Contraries (A–E) differ only in quality; contradictories (A–O, E–I) differ in both quality and quantity.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027272, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q29",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the reasoning in the following argument:\n'Pre-active stage of classroom teaching is important just as pre-learning preparation stage of communication'",
+  "options": {
+   "A": "Hypothetical",
+   "B": "Deductive",
+   "C": "Inductive",
+   "D": "Analogical"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Just as' compares two similar cases — reasoning by analogy (upamāna).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027273, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q30",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The proposition 'No red is black' is equivalent to which of the following propositions?\n(i) No black is red\n(ii) All red are black\n(iii) Some red are not black\n(iv) Red is not black\n\nSelect the correct answer from the options given below:",
+  "options": {
+   "A": "(i), (ii), (iii) and (iv)",
+   "B": "(iii) only",
+   "C": "(i) and (iv)",
+   "D": "(iv) only"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Immediate inference"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An E proposition converts simply (No black is red); 'Red is not black' restates it.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027274, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q31",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows expenditures of a company (in lakh rupees) per annum over the given years.\nYear | Salary | Transport | Bonus | Interest on Loans | Taxes\n2008 | 150 | 90 | 2.00 | 20.0 | 80\n2009 | 180 | 100 | 2.50 | 30.5 | 95\n2010 | 200 | 110 | 2.75 | 35.5 | 105\n2011 | 240 | 115 | 3.00 | 40.0 | 85\n2012 | 250 | 125 | 3.25 | 42.5 | 100\n\nWhat is the average amount of interest per year which the company had to pay (in Rupees) during this period?",
+  "options": {
+   "A": "30.5 Lakh",
+   "B": "32.7 Lakh",
+   "C": "33.7 Lakh",
+   "D": "35.5 Lakh"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Interest total 168.5 ÷ 5 = 33.7 lakh.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027276, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q32",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows expenditures of a company (in lakh rupees) per annum over the given years.\nYear | Salary | Transport | Bonus | Interest on Loans | Taxes\n2008 | 150 | 90 | 2.00 | 20.0 | 80\n2009 | 180 | 100 | 2.50 | 30.5 | 95\n2010 | 200 | 110 | 2.75 | 35.5 | 105\n2011 | 240 | 115 | 3.00 | 40.0 | 85\n2012 | 250 | 125 | 3.25 | 42.5 | 100\n\nThe total amount of bonus paid by the company during the given period is approximately what percent of the total amount of salary paid during this period?",
+  "options": {
+   "A": "0.9%",
+   "B": "1.3%",
+   "C": "1.6%",
+   "D": "2.0%"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Bonus 13.5 ÷ salary 1020 ≈ 1.3%.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027277, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q33",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows expenditures of a company (in lakh rupees) per annum over the given years.\nYear | Salary | Transport | Bonus | Interest on Loans | Taxes\n2008 | 150 | 90 | 2.00 | 20.0 | 80\n2009 | 180 | 100 | 2.50 | 30.5 | 95\n2010 | 200 | 110 | 2.75 | 35.5 | 105\n2011 | 240 | 115 | 3.00 | 40.0 | 85\n2012 | 250 | 125 | 3.25 | 42.5 | 100\n\nTotal expenditure of all the items in 2008 was approximately what percent of the total expenditure in 2012?",
+  "options": {
+   "A": "66%",
+   "B": "69%",
+   "C": "72%",
+   "D": "75%"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2008 total 342 ÷ 2012 total 520.75 ≈ 66%.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027278, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q34",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows expenditures of a company (in lakh rupees) per annum over the given years.\nYear | Salary | Transport | Bonus | Interest on Loans | Taxes\n2008 | 150 | 90 | 2.00 | 20.0 | 80\n2009 | 180 | 100 | 2.50 | 30.5 | 95\n2010 | 200 | 110 | 2.75 | 35.5 | 105\n2011 | 240 | 115 | 3.00 | 40.0 | 85\n2012 | 250 | 125 | 3.25 | 42.5 | 100\n\nThe approximate ratio between the total expenditure on taxes for all the years and the total expenditure on transport for all the years is",
+  "options": {
+   "A": "31 : 40",
+   "B": "25 : 36",
+   "C": "27 : 30",
+   "D": "31 : 36"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Taxes 465 : transport 540 = 31 : 36.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027279, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q35",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows expenditures of a company (in lakh rupees) per annum over the given years.\nYear | Salary | Transport | Bonus | Interest on Loans | Taxes\n2008 | 150 | 90 | 2.00 | 20.0 | 80\n2009 | 180 | 100 | 2.50 | 30.5 | 95\n2010 | 200 | 110 | 2.75 | 35.5 | 105\n2011 | 240 | 115 | 3.00 | 40.0 | 85\n2012 | 250 | 125 | 3.25 | 42.5 | 100\n\nThe approximate ratio between the total expenditure of the company in the year 2008 and the total expenditure of the company in the year 2009 is",
+  "options": {
+   "A": "57 : 75",
+   "B": "52 : 68",
+   "C": "57 : 68",
+   "D": "68 : 57"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "342 : 408 = 57 : 68.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027280, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q36",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A computer has main memory of 960 KBytes. What is the exact number of bytes contained in this memory?",
+  "options": {
+   "A": "960 × 8",
+   "B": "960 × 1000",
+   "C": "960 × 1024",
+   "D": "960 × 1024 × 1024"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory units"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1 KB = 1024 bytes, so 960 KB = 960 × 1024 bytes.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027281, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q37",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The convenient place to store contact information for quick retrieval in e-mail is",
+  "options": {
+   "A": "Address box",
+   "B": "Message box",
+   "C": "Address book",
+   "D": "Message book"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "E-mail"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The address book (contacts) stores e-mail addresses for quick retrieval.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027282, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q38",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "SMTP is an acronym for",
+  "options": {
+   "A": "Simple Mail Transport Protocol",
+   "B": "Simple Mail Terminal Protocol",
+   "C": "Simple Mail Transfer Protocol",
+   "D": "Simple Mail Transition Protocol"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SMTP sends mail; POP3 and IMAP receive it.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027283, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q39",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following file format is not a video file format?",
+  "options": {
+   "A": ".AVI",
+   "B": ".MOV",
+   "C": ".MP4",
+   "D": ".JPEG"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "File formats"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "JPEG is a still-image format (Joint Photographic Experts Group).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027284, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q40",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is an online store house of all academic awards like certificates, diplomas, degrees, marksheets etc.?",
+  "options": {
+   "A": "SWAYAM",
+   "B": "National Digital Library",
+   "C": "National Academic Library",
+   "D": "National Academic Depository"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Digital initiatives"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "National Academic Depository (NAD, launched 2017) stores academic awards online; it is now part of DigiLocker.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027285, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q41",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Montreal protocol aims at",
+  "options": {
+   "A": "Reduction in emissions of green house gases",
+   "B": "Phasing out ozone depleting substances",
+   "C": "Prohibiting transboundary movement of hazardous waste",
+   "D": "Enhancing cooperation among UN member states for peaceful uses of nuclear energy"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Environmental agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Montreal Protocol (1987) — ozone-depleting substances; Basel Convention (1989) — hazardous waste; Kyoto (1997) — greenhouse gases.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027286, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q42",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Efficiency of electrical power generation is least amongst the following sources of energy in case of",
+  "options": {
+   "A": "Solar",
+   "B": "Wind",
+   "C": "Geothermal",
+   "D": "Nuclear"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Geothermal plants convert only about 10–20% of heat into electricity because the steam is relatively low-temperature.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027287, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q43",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Taj Mahal is mainly threatened by the deleterious effects of",
+  "options": {
+   "A": "Sulphur dioxide",
+   "B": "Chlorine",
+   "C": "Oxygen",
+   "D": "Hydrogen"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SO2 from the Mathura refinery and industry causes acid rain and 'marble cancer'; the Taj Trapezium Zone was set up to protect it.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027288, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q44",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Statement I: Earthquake 'A' is 5 on Richter scale and Earthquake 'B' is 8 on the same scale. Earthquake 'B' has 1000 times the wave amplitude compared to 'A'.\nStatement II: The energy released in 'B' is three times that of 'A'.\n\nChoose the correct option:",
+  "options": {
+   "A": "Statement I is correct and Statement II is incorrect",
+   "B": "Statement I and II are correct",
+   "C": "Statement II is correct and I is incorrect",
+   "D": "Statement I and II are incorrect"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Each Richter step = 10× amplitude and about 31.6× energy, so 3 steps = 1000× amplitude but about 31,600× energy.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027289, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q45",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In large parts of Eastern India, the ground water is contaminated by",
+  "options": {
+   "A": "Arsenic",
+   "B": "Lead",
+   "C": "Mercury",
+   "D": "Nickel"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Arsenic contamination is worst in West Bengal, Bihar and the Ganga–Brahmaputra delta; fluoride affects Rajasthan and other western states.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027290, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q46",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is a non-conventional learning programme in higher education?",
+  "options": {
+   "A": "Swayam",
+   "B": "Face-to-face teaching-learning",
+   "C": "Tutorial class",
+   "D": "Seminar"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Digital initiatives"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SWAYAM (2017) offers free MOOCs; up to 40% of a programme's credits can come from SWAYAM courses.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027291, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q47",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "For the day to day administration of University, which of the following bodies is responsible?",
+  "options": {
+   "A": "Senate",
+   "B": "Syndicate/Executive council",
+   "C": "Student council",
+   "D": "Academic council"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "University governance"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Executive Council/Syndicate = administration; Academic Council = academic matters; Senate/Court = supreme policy body.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027292, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q48",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements represent the main functions of UGC?\n(i) Recognition of institutions\n(ii) Maintenance of quality and standards\n(iii) Appointment of Vice Chancellor\n(iv) Giving grants to institutions\n(v) Making state governments responsible for educational development\n\nChoose the correct answer from the options given below:",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(i), (iii) and (iv)",
+   "C": "(i), (ii) and (iv)",
+   "D": "(ii), (iii) and (v)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "UGC"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UGC (statutory body, UGC Act 1956) recognises universities, maintains standards and disburses grants; it does not appoint VCs.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027293, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q49",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The main aim of the faculty recharge scheme of UGC was to",
+  "options": {
+   "A": "Address the shortage of faculty in higher education institution",
+   "B": "Upgrade the teaching skills of the faculty",
+   "C": "Upgrade the research infrastructure for the faculty in colleges and universities",
+   "D": "Strengthen the academia – industry linkage"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UGC Faculty Recharge Programme (2014) recruited young faculty to address the faculty shortage in universities.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027294, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-JUN-S1-P1-Q50",
+  "exam": "NET",
+  "year": 2019,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET June 2019 (26 June 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Name the scheme which facilitates academic and research collaboration between Indian Institution and the best institution in the world",
+  "options": {
+   "A": "ICSSR – IMPRESS",
+   "B": "Staff Development Scheme",
+   "C": "SPARC",
+   "D": "Institutional Development Scheme"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SPARC = Scheme for Promotion of Academic and Research Collaboration (MHRD 2018, coordinated by IIT Kharagpur).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 26 June 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 26.06.2019, First shift, Q-ID 64635027295, matched by option ID). Answer re-checked by Claude."
+ },
+ {
   "id": "NET-2019-DEC-S1-Q1",
   "exam": "NET",
   "year": 2019,
@@ -90183,6 +91843,1666 @@
   "verified": false,
   "keySource": "site-key",
   "note": "Answer from the vishwanathbite.com solved paper, checked by Claude. NTA's final key lists answers only by question ID, so it couldn't be matched to this question. Question numbers follow that solved paper (the same order as the learningskillsindia copy)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q01",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The emphasis in memory level teaching is on which of the following?\n(a) Organisation of thoughts and ideas\n(b) Seeing of relationships among facts\n(c) Systematic presentations to enable quick reproduction\n(d) Critical thinking\n(e) Mastery of correct sequencing of facts\n(f) Segregating one feature from another\n\nChoose the answer from the following options:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(a), (c) and (e)",
+   "C": "(b), (c) and (d)",
+   "D": "(d), (e) and (f)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Levels of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Memory level (Herbart): organised, systematic presentation for quick recall and correct sequencing; relationships = understanding level; critical thinking = reflective level.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512441, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q02",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Below are given two sets in which set I specifies the four behaviour modification techniques while set II indicates their exemplification. Match the two sets:\nSet I: (a) Positive reinforcement (b) Negative reinforcement (c) Punishment (d) Extinction\nSet II: (i) Withdrawal of a pleasant stimulus or application of an aversive stimulus to stop the behaviour (ii) Painful or aversive stimulus is presented to stop the occurrence of behaviour (iii) The behaviour increases in frequency after the removal of the stimulus (iv) The behaviour increases in frequency after the presentation of a stimulus\n\nChoose your answer from the following options:",
+  "options": {
+   "A": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "B": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)",
+   "C": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)",
+   "D": "(a)-(iii), (b)-(i), (c)-(ii), (d)-(iv)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learning theories"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Skinner: positive reinforcement adds a stimulus, negative reinforcement removes one — both increase behaviour; punishment and extinction reduce it.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512442, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q03",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The most characteristic feature of an adolescent learner which determines his/her social and moral development is the",
+  "options": {
+   "A": "Tendency to be away from parents",
+   "B": "Concern for hero worshipping for emulating values and standards",
+   "C": "Mixing up with peers in the neighbourhood",
+   "D": "Identity crisis"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Erikson's stage 5 (adolescence) is identity vs role confusion; adolescents often model themselves on admired heroes.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512443, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q04",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following teaching method (s) is/are contributive to direct learning?\n(a) Team teaching and lecturing\n(b) Simulation and role playing\n(c) Lecture with or without use of audio-visuals\n(d) Participation in workshop and assignments\n(e) MOOCs and heuristics\n(f) Interactive presentations\n\nChoose your answer from the following options:",
+  "options": {
+   "A": "(b), (d) and (e)",
+   "B": "(a), (b) and (c)",
+   "C": "(c), (d) and (f)",
+   "D": "(d), (e) and (f)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Direct learning = learning by doing and first-hand experience: simulation, role play, workshops, assignments, heuristic discovery.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512444, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q05",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is an example of maximum performance test?",
+  "options": {
+   "A": "Projective personality test",
+   "B": "Interest inventory",
+   "C": "Aptitude test",
+   "D": "Attitude scales"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Maximum performance: aptitude, achievement, intelligence. Typical performance: personality, interest, attitude. (Also asked in June 2019.)",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512445, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q06",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A college teacher does research with a view to depict the reality situations relating to home conditions of students and hostels provided for. Which of the following research format will be helpful to do so?",
+  "options": {
+   "A": "Experimental research",
+   "B": "Descriptive research",
+   "C": "Participant observation based research",
+   "D": "Ethnographic research"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Types of research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In participant observation the researcher takes part in the setting being studied to record its reality from inside.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512446, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q07",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which of the following steps of research, the scope for creativity and imagination is utmost?",
+  "options": {
+   "A": "Identifying the research problem and defining it",
+   "B": "Figuring out the related studies and the techniques used by other researchers",
+   "C": "Identifying variables and hypothesizing",
+   "D": "Data analysis and presentation of results"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A hypothesis is a tentative, imaginative guess about relations between variables, to be tested later.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512447, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q08",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A research scholar while finally reporting the research results in the form of a thesis acknowledges the support of his/her supervisor in the preface. This will be treated as a",
+  "options": {
+   "A": "Sheer formality",
+   "B": "Needed formality",
+   "C": "Superfluous act",
+   "D": "Part of ethicality"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Acknowledging help, citing sources and avoiding plagiarism are parts of research ethics.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512448, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q09",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In case the population of research is heterogeneous in nature which of the following sampling techniques will ensure optimum representativeness of sample units?",
+  "options": {
+   "A": "Simple random sampling",
+   "B": "Stratified random sampling",
+   "C": "Cluster sampling",
+   "D": "Systematic sampling"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Sampling"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Stratified sampling divides a heterogeneous population into homogeneous strata and samples from each.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512449, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q10",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statistical technique will be appropriate for data analysis when the observations are available in the form of frequencies?",
+  "options": {
+   "A": "Parametric 't' test",
+   "B": "Non-parametric 'u' test",
+   "C": "Non-parametric 'chi-square' test",
+   "D": "Parametric correlated 't' test"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Statistics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Chi-square (Karl Pearson, 1900) compares observed and expected frequencies; it is non-parametric.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512450, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q11",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Classroom communication is\n(a) Like a computer - program\n(b) Dictatorial\n(c) Purposeful\n(d) Pragmatic\n\nChoose the correct option from those given below",
+  "options": {
+   "A": "(a) and (c)",
+   "B": "(b) and (c)",
+   "C": "(b) and (d)",
+   "D": "(c) and (d)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Classroom communication is goal-directed (purposeful) and practical (pragmatic), not mechanical or authoritarian.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512451, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q12",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Swapping of encoder - decoder roles in communication happens due to",
+  "options": {
+   "A": "Cognitive disruptions",
+   "B": "Semantic noise",
+   "C": "Feedback analysis",
+   "D": "Weak channelisation"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In feedback the receiver becomes the sender (encoder) — Schramm's circular model.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512452, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q13",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Classroom Interactions are influenced largely by",
+  "options": {
+   "A": "Students' commitment",
+   "B": "Teacher centric environment",
+   "C": "Organisational oversight",
+   "D": "Unsolicited interventions"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Flanders' Interaction Analysis (FIAC) codes teacher talk, student talk and silence in classroom interaction.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512453, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q14",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "When a large number of students with different performance levels are there in the class, for uniform imparting of educative interactions, a teacher should opt for a communication which is:",
+  "options": {
+   "A": "Top-down and linear",
+   "B": "Technology - enabled",
+   "C": "Individual - centric",
+   "D": "Self - projected"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Technology-enabled tools (ICT, adaptive platforms) let one teacher reach mixed-ability learners uniformly.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512454, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q15",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Given below are two statements one is labelled as Assertion (A) and the other is labelled as Reason (R)\nAssertion (A): Classroom communication is pre-decided by social and institutional demands.\nReason (R): Positive educative actions should guide learners to acquire knowledge of social significance\n\nIn the light of the above two statements, choose the correct option:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+   "B": "Both (A) and (R) are true and (R) is not the correct explanation of (A)",
+   "C": "(A) is true, but (R) is false",
+   "D": "(A) is false, but (R) is true"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Curriculum and classroom talk are shaped by what society and institutions expect learners to know.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512455, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q16",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The length of the side of a square (5.0 cm × 5.0 cm) is increased by 1%. By what percentage (%), the area of the square increases?",
+  "options": {
+   "A": "1 %",
+   "B": "2 %",
+   "C": "2.5 %",
+   "D": "4 %"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Area grows by 1 + 1 + (1×1)/100 = 2.01% ≈ 2%.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512456, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q17",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the term 'X' in the following series\n3, 2, 11, 14, 27, 34, 51, X",
+  "options": {
+   "A": "62",
+   "B": "69",
+   "C": "60",
+   "D": "71"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Two series: 3, 11, 27, 51 (+8, +16, +24) and 2, 14, 34, X (+12, +20, +28) → X = 62.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512457, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q18",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A person buys 3 items of Rs. 1500 each and 2 items of Rs. 1800 each from a shopping mall. On the total bill a discount of 10% is given. What is the average cost of the items?",
+  "options": {
+   "A": "1650",
+   "B": "1458",
+   "C": "1658",
+   "D": "1550"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "8100 − 10% = 7290; 7290 ÷ 5 = 1458.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512458, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q19",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A 50 year old man has a son whose age is 2/5 of his age. After how many years, the ratio of the age of the man to his son will be 5/3?",
+  "options": {
+   "A": "10 years",
+   "B": "15 years",
+   "C": "20 years",
+   "D": "25 years"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ages"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Son = 20. (50 + x)/(20 + x) = 5/3 → x = 25.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512459, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q20",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The smallest integer greater than 1 which is simultaneously a square and a cube of certain integers is",
+  "options": {
+   "A": "8",
+   "B": "9",
+   "C": "36",
+   "D": "64"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number system"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A square and a cube must be a sixth power: 2⁶ = 64 = 8² = 4³.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512460, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q21",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Consider the following statements and choose the right option\n(a) Middle term should be distributed in atleast one premise\n(b) Middle term should be present in the conclusion\n(c) Both premises can be particular in a valid argument\n(d) Both premises can be negative in a valid argument",
+  "options": {
+   "A": "(c) and (d)",
+   "B": "Only (c)",
+   "C": "Only (a)",
+   "D": "(b) and (c)"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rules of the syllogism: the middle term is distributed at least once and never appears in the conclusion; two particular or two negative premises give no valid conclusion.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512461, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q22",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is true with reference to anupalabdhi as a means of knowledge?",
+  "options": {
+   "A": "I do not cognize the pot on the table, therefore it is absent there",
+   "B": "I directly perceive the absence of pot on the table",
+   "C": "I infer the absence of pot on the table since I do not find it to be there",
+   "D": "I know the absence of the pot on the table because I know its similarity with other absences"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Indian logic"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Anupalabdhi (non-apprehension), accepted by Bhāṭṭa Mīmāṃsā and Advaita, knows absence directly from non-cognition — not by perception or inference.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512462, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q23",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "\"If it rains, then the drought will end. The drought has ended. Therefore, it rained\". Which kind of fallacy does this commit?",
+  "options": {
+   "A": "Deductive fallacy",
+   "B": "Inductive fallacy",
+   "C": "Abductive fallacy",
+   "D": "Informal fallacy"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Fallacies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "This is affirming the consequent — a formal (deductive) fallacy.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512463, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q24",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is the characteristic feature of an argument?",
+  "options": {
+   "A": "It is either valid or invalid",
+   "B": "It is neither valid nor invalid",
+   "C": "It is either true or false",
+   "D": "It is neither true nor false"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Arguments"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Arguments are valid or invalid; propositions (premises, conclusions) are true or false.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512464, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q25",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "\"In this hospital, some nurses don't wear white dress, some doctors have private practice and medicines prescribed are of high cost. Therefore, treatment in this hospital is of poor quality\". What fallacy does this argument make?",
+  "options": {
+   "A": "Fallacy of composition",
+   "B": "Slippery slope",
+   "C": "Fallacy of accident",
+   "D": "Fallacy of division"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Fallacies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Composition reasons from parts to the whole; division from the whole to its parts; slippery slope predicts a chain of bad consequences.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512465, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q26",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the amount of exports (in crore ₹) from three different companies A, B and C over the years 2012–2018.\nYear | A | B | C\n2012 | 40 | 90 | 70\n2013 | 70 | 50 | 100\n2014 | 50 | 70 | 130\n2015 | 80 | 70 | 100\n2016 | 110 | 90 | 70\n2017 | 60 | 110 | 90\n2018 | 130 | 150 | 110\n\nAverage annual amount of exports during the given period for company B is approximately what percent (%) of the average annual amount of exports for company C?",
+  "options": {
+   "A": "89.64%",
+   "B": "91.21%",
+   "C": "94.03%",
+   "D": "93.33%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "B total 630 ÷ C total 670 ≈ 94.03%.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512467, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q27",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the amount of exports (in crore ₹) from three different companies A, B and C over the years 2012–2018.\nYear | A | B | C\n2012 | 40 | 90 | 70\n2013 | 70 | 50 | 100\n2014 | 50 | 70 | 130\n2015 | 80 | 70 | 100\n2016 | 110 | 90 | 70\n2017 | 60 | 110 | 90\n2018 | 130 | 150 | 110\n\nIn how many of the given years, were the exports from company A more than its average annual exports over the given years?",
+  "options": {
+   "A": "2",
+   "B": "3",
+   "C": "4",
+   "D": "5"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A's average = 540 ÷ 7 ≈ 77.1; above it in 2015, 2016 and 2018.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512468, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q28",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the amount of exports (in crore ₹) from three different companies A, B and C over the years 2012–2018.\nYear | A | B | C\n2012 | 40 | 90 | 70\n2013 | 70 | 50 | 100\n2014 | 50 | 70 | 130\n2015 | 80 | 70 | 100\n2016 | 110 | 90 | 70\n2017 | 60 | 110 | 90\n2018 | 130 | 150 | 110\n\nWhat was the difference between the average exports of three companies in 2017 and the average exports of three companies in 2012?",
+  "options": {
+   "A": "₹ 15.33 crores",
+   "B": "₹ 18.67 crores",
+   "C": "₹ 25 crores",
+   "D": "₹ 20 crores"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2017: 260 ÷ 3 = 86.67; 2012: 200 ÷ 3 = 66.67; difference = 20.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512469, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q29",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the amount of exports (in crore ₹) from three different companies A, B and C over the years 2012–2018.\nYear | A | B | C\n2012 | 40 | 90 | 70\n2013 | 70 | 50 | 100\n2014 | 50 | 70 | 130\n2015 | 80 | 70 | 100\n2016 | 110 | 90 | 70\n2017 | 60 | 110 | 90\n2018 | 130 | 150 | 110\n\nIn which year, the absolute difference between the exports from companies A and B was the minimum?",
+  "options": {
+   "A": "2013",
+   "B": "2014",
+   "C": "2015",
+   "D": "2016"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Difference"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A − B in 2015 = 80 − 70 = 10, the smallest gap.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512470, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q30",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table shows the amount of exports (in crore ₹) from three different companies A, B and C over the years 2012–2018.\nYear | A | B | C\n2012 | 40 | 90 | 70\n2013 | 70 | 50 | 100\n2014 | 50 | 70 | 130\n2015 | 80 | 70 | 100\n2016 | 110 | 90 | 70\n2017 | 60 | 110 | 90\n2018 | 130 | 150 | 110\n\nFor which of the following pairs of years, the total exports from the three companies put together are equal?",
+  "options": {
+   "A": "2014 and 2017",
+   "B": "2015 and 2017",
+   "C": "2016 and 2017",
+   "D": "2014 and 2015"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Totals"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2014: 50 + 70 + 130 = 250; 2015: 80 + 70 + 100 = 250.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512471, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q31",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is/are major issues arising out of the growing reliance on information technology?\n(a) Profitability\n(b) Security threats\n(c) Privacy concerns\n\nChoose the correct option:",
+  "options": {
+   "A": "(a) and (b) only",
+   "B": "(a) and (c) only",
+   "C": "(b) and (c) only",
+   "D": "(a), (b) and (c)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Cyber security"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "India's Digital Personal Data Protection Act, 2023 addresses privacy; the IT Act, 2000 covers cyber crime.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512472, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q32",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following communication technologies employ only asynchronous communication?\n(a) Video conferencing\n(b) Email\n(c) Forums\n(d) Instant messaging\n\nChoose the correct option:",
+  "options": {
+   "A": "(a) and (c) only",
+   "B": "(b) and (d) only",
+   "C": "(b) and (c) only",
+   "D": "(a) and (d) only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "E-learning tools"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Asynchronous = not in real time (email, forums, blogs); synchronous = live (video conferencing, chat).",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512473, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q33",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements is/are correct?\n(a) For the sequence of integers represented in binary as 00111, 01001, 01011, P,..., the next integer P would be represented as 01101\n(b) A byte is a binary number consisting of exactly 8 bits\n\nChoose the correct option:",
+  "options": {
+   "A": "(a) only",
+   "B": "(b) only",
+   "C": "Both (a) and (b)",
+   "D": "Neither (a) nor (b)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Number systems"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "00111 = 7, 01001 = 9, 01011 = 11, so P = 13 = 01101; 1 byte = 8 bits, 4 bits = 1 nibble.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512474, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q34",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match List-I with List-II in the context of computer networking:\nList-I: (a) VOIP (b) Fibre-optic cable (c) URL (d) UTP cable\nList-II: (i) Makes use of light pulses to transmit data (ii) Use of internet to make phone calls (iii) Most appropriate to connect computers in a small building (iv) Text used by web browsers to locate a web address on the Internet\n\nChoose the correct option:",
+  "options": {
+   "A": "(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)",
+   "B": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)",
+   "C": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)",
+   "D": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Networking"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UTP = unshielded twisted pair, the usual LAN cable; optical fibre sends light by total internal reflection.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512475, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q35",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the option that includes file formats suitable for distributing sound files across the Internet.",
+  "options": {
+   "A": "wmv, mp4, wma, mp3",
+   "B": "avi, midi, wav, mp3",
+   "C": "avi, mov, wmv, mp3",
+   "D": "midi, wav, wma, mp3"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "File formats"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Audio: mp3, wav, wma, midi, aac. Video: avi, mov, wmv, mp4.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512476, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q36",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Biomass fuels have the potential to form a sustainable carbon-neutral energy source because they",
+  "options": {
+   "A": "Produce carbon dioxide on combustion as much as they consume when they grow",
+   "B": "Produce less amount of carbon dioxide on combustion compared to the amount they use during their growth",
+   "C": "Have carbon content same as fossil fuels",
+   "D": "Do not produce hazardous emissions on combustion"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Plants absorb CO2 while growing and release about the same amount when burnt — a closed carbon cycle.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512477, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q37",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Major sources of oxygen demanding waste in fresh water systems are\n(a) Agricultural run-off\n(b) Food processing\n(c) Ore mining\n(d) Sewage effluent\n(e) Landfill sites\n\nChoose the correct option from those given below:",
+  "options": {
+   "A": "(a), (d) and (e)",
+   "B": "(b), (d) and (e)",
+   "C": "(a), (b) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Oxygen-demanding (organic) wastes raise BOD; sewage is the biggest source. Ore mining adds mainly metals and sediment.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512478, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q38",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is a renewable natural resource?",
+  "options": {
+   "A": "Biological diversity",
+   "B": "Tin",
+   "C": "Natural gas",
+   "D": "Salt"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural resources"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Living resources (forests, fish, biodiversity) renew if used sustainably; minerals and fossil fuels do not.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512479, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q39",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which among the following natural hazards has relatively slow onset?",
+  "options": {
+   "A": "Volcanic eruptions",
+   "B": "Droughts",
+   "C": "Wild fires",
+   "D": "Land and slides"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Slow-onset hazards: drought, desertification, sea-level rise. Sudden: earthquakes, landslides, eruptions.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512480, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q40",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Under Kyoto protocol, the parties, in the second commitment period, have to reduce their greenhouse gas emissions with reference to 1990 levels by atleast",
+  "options": {
+   "A": "10%",
+   "B": "12%",
+   "C": "15%",
+   "D": "18%"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Doha Amendment (2012): second period 2013–2020, at least 18% below 1990; first period 2008–2012, at least 5%.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512481, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q41",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match the following study skills with their effective learning techniques:\nStudy skills: (a) Elaborative interrogation (b) Practice testing (c) Self-Explanation (d) Interleaved practice\nLearning techniques: (i) Mixing different kinds of problems together when studying (ii) Explaining what a section of text or an example problem means to you (iii) Testing yourself on the material you are trying to learn (iv) Answering why a fact is true\n\nChoose the correct option:",
+  "options": {
+   "A": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)",
+   "B": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+   "C": "(a)-(ii), (b)-(iv), (c)-(i), (d)-(iii)",
+   "D": "(a)-(iii), (b)-(i), (c)-(ii), (d)-(iv)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Study skills"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Dunlosky et al. (2013) rated practice testing and distributed practice the most effective learning techniques.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512482, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q42",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which one of the following represents the correct order of sequence for reading skills in the context of research?",
+  "options": {
+   "A": "Read, question, recall, review, survey",
+   "B": "Questions, survey, read, recall, review",
+   "C": "Recall, review, survey, question, read",
+   "D": "Survey, question, read, recall, review"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Reading skills"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "SQ3R (Francis P. Robinson, 1946): Survey, Question, Read, Recite/Recall, Review.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512483, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q43",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In order to meet the demands of market economy and produce competent graduates, who can compete with their counterparts in international markets, the first and foremost change that needs to be introduced in the prevailing system of Indian higher education is related to:",
+  "options": {
+   "A": "Admission process",
+   "B": "Curriculum",
+   "C": "Educational technology",
+   "D": "Appointment of teachers"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Higher education reform"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UGC's Learning Outcomes-based Curriculum Framework (LOCF, 2018) revised UG curricula around employability.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512484, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q44",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which among the following is the flagship scheme of the Ministry of Skill Development and Entrepreneurship implemented by National Skills Development Corporation?",
+  "options": {
+   "A": "Robotics India",
+   "B": "Artificial Intelligence @ schools",
+   "C": "Make in India",
+   "D": "Pradhan Mantri Kaushal Vikas Yojna"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "PMKVY was launched in 2015; MSDE was created in 2014.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512485, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q45",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the age of four Vedas, students were admitted to the Vedic schools after performance of which ceremony, among the following:",
+  "options": {
+   "A": "Upanayana ceremony",
+   "B": "Utsarjana ceremony",
+   "C": "Satapatha brahmana",
+   "D": "Dhanurvidya ceremony"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Ancient Indian education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Upanayana began study; Utsarjana closed the annual session; Samavartana marked completion.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512486, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q46",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Anyone who has ever been in a classroom where the teacher's presentation was lifeless, static, and without vocal variety can appreciate the commonsense value of the affective side of teaching. However, unlike the other behaviours, affect cannot be captured in transcripts of teaching or by classroom interaction instruments. Narrowly focussed research instruments often miss a teacher's affective nature, which emerges from a more holistic view of the classroom. This affective nature is the foundation on which one can build a warm and nurturing relationship with his or her learners. What the instruments miss, the students see clearly. Students are good perceivers of the emotions and intentions underlying a teacher's actions, and they often respond accordingly. A teacher who is excited about the subject being taught and shows it by facial expressions, voice inflection, gesture and movement – thus communicating respect and caring for the learner – is more likely to hold the attention of students and motivate them to higher levels of achievement than one who does not exhibit these behaviours. Students take their cues from these affective signs and lower or heighten their engagement with the lesson accordingly. Enthusiasm is an important aspect of a teacher's affect. Enthusiasm is the teacher's vigour, power, involvement, excitement, and interest during a classroom presentation and willingness to share this emotion with learners, who will want to respond in kind.\n\nWhen does one feel the need for the value of affective aspects of teaching?",
+  "options": {
+   "A": "When a teacher has a vocal variety",
+   "B": "When a teacher makes a dynamic presentation",
+   "C": "When a teacher's presentation is monotonous",
+   "D": "When a teacher's lecture is beyond expectation"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A lifeless, static presentation without vocal variety makes the value of affect plain.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512488, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q47",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Anyone who has ever been in a classroom where the teacher's presentation was lifeless, static, and without vocal variety can appreciate the commonsense value of the affective side of teaching. However, unlike the other behaviours, affect cannot be captured in transcripts of teaching or by classroom interaction instruments. Narrowly focussed research instruments often miss a teacher's affective nature, which emerges from a more holistic view of the classroom. This affective nature is the foundation on which one can build a warm and nurturing relationship with his or her learners. What the instruments miss, the students see clearly. Students are good perceivers of the emotions and intentions underlying a teacher's actions, and they often respond accordingly. A teacher who is excited about the subject being taught and shows it by facial expressions, voice inflection, gesture and movement – thus communicating respect and caring for the learner – is more likely to hold the attention of students and motivate them to higher levels of achievement than one who does not exhibit these behaviours. Students take their cues from these affective signs and lower or heighten their engagement with the lesson accordingly. Enthusiasm is an important aspect of a teacher's affect. Enthusiasm is the teacher's vigour, power, involvement, excitement, and interest during a classroom presentation and willingness to share this emotion with learners, who will want to respond in kind.\n\nThe affective nature of teaching is reflected in",
+  "options": {
+   "A": "Deeper understanding of the classroom environment",
+   "B": "Other behaviours of the teacher",
+   "C": "The recording of classroom interaction",
+   "D": "The limited reliance on research instruments"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Affect emerges from a more holistic view of the classroom; instruments miss it.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512489, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q48",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Anyone who has ever been in a classroom where the teacher's presentation was lifeless, static, and without vocal variety can appreciate the commonsense value of the affective side of teaching. However, unlike the other behaviours, affect cannot be captured in transcripts of teaching or by classroom interaction instruments. Narrowly focussed research instruments often miss a teacher's affective nature, which emerges from a more holistic view of the classroom. This affective nature is the foundation on which one can build a warm and nurturing relationship with his or her learners. What the instruments miss, the students see clearly. Students are good perceivers of the emotions and intentions underlying a teacher's actions, and they often respond accordingly. A teacher who is excited about the subject being taught and shows it by facial expressions, voice inflection, gesture and movement – thus communicating respect and caring for the learner – is more likely to hold the attention of students and motivate them to higher levels of achievement than one who does not exhibit these behaviours. Students take their cues from these affective signs and lower or heighten their engagement with the lesson accordingly. Enthusiasm is an important aspect of a teacher's affect. Enthusiasm is the teacher's vigour, power, involvement, excitement, and interest during a classroom presentation and willingness to share this emotion with learners, who will want to respond in kind.\n\nStudents respect a teacher who",
+  "options": {
+   "A": "is emotional",
+   "B": "displays concern for students",
+   "C": "has a powerful voice",
+   "D": "has narcissistic attitude"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The teacher who communicates respect and caring holds students' attention.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512490, matched by option ID). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q49",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Anyone who has ever been in a classroom where the teacher's presentation was lifeless, static, and without vocal variety can appreciate the commonsense value of the affective side of teaching. However, unlike the other behaviours, affect cannot be captured in transcripts of teaching or by classroom interaction instruments. Narrowly focussed research instruments often miss a teacher's affective nature, which emerges from a more holistic view of the classroom. This affective nature is the foundation on which one can build a warm and nurturing relationship with his or her learners. What the instruments miss, the students see clearly. Students are good perceivers of the emotions and intentions underlying a teacher's actions, and they often respond accordingly. A teacher who is excited about the subject being taught and shows it by facial expressions, voice inflection, gesture and movement – thus communicating respect and caring for the learner – is more likely to hold the attention of students and motivate them to higher levels of achievement than one who does not exhibit these behaviours. Students take their cues from these affective signs and lower or heighten their engagement with the lesson accordingly. Enthusiasm is an important aspect of a teacher's affect. Enthusiasm is the teacher's vigour, power, involvement, excitement, and interest during a classroom presentation and willingness to share this emotion with learners, who will want to respond in kind.\n\nThe affective signs will provide students",
+  "options": {
+   "A": "The basis for understanding contents",
+   "B": "Exhibitional behaviours",
+   "C": "Cues to hold attention",
+   "D": "A basis which triggers further enthusiasm"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Students take cues from affective signs and want to respond in kind to a teacher's enthusiasm.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512491, matched by option ID). Answer re-checked by Claude. Answer as per the NTA final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2019-DEC-S1-P1-Q50",
+  "exam": "NET",
+  "year": 2019,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2019 (6 Dec 2019) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Anyone who has ever been in a classroom where the teacher's presentation was lifeless, static, and without vocal variety can appreciate the commonsense value of the affective side of teaching. However, unlike the other behaviours, affect cannot be captured in transcripts of teaching or by classroom interaction instruments. Narrowly focussed research instruments often miss a teacher's affective nature, which emerges from a more holistic view of the classroom. This affective nature is the foundation on which one can build a warm and nurturing relationship with his or her learners. What the instruments miss, the students see clearly. Students are good perceivers of the emotions and intentions underlying a teacher's actions, and they often respond accordingly. A teacher who is excited about the subject being taught and shows it by facial expressions, voice inflection, gesture and movement – thus communicating respect and caring for the learner – is more likely to hold the attention of students and motivate them to higher levels of achievement than one who does not exhibit these behaviours. Students take their cues from these affective signs and lower or heighten their engagement with the lesson accordingly. Enthusiasm is an important aspect of a teacher's affect. Enthusiasm is the teacher's vigour, power, involvement, excitement, and interest during a classroom presentation and willingness to share this emotion with learners, who will want to respond in kind.\n\nThe passage focusses attention on",
+  "options": {
+   "A": "Lifeless classroom presentation",
+   "B": "Affective factors of teaching",
+   "C": "Students as emotional learners",
+   "D": "Measuring teacher's affective nature"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The whole passage is about the affective side of teaching.",
+  "verified": true,
+  "note": "Official NTA master question paper (English (30), 6 Dec 2019, Shift 1, via prepp.in) and NTA final answer key (Subject 030 English, 06.12.2019, First shift, Q-ID 61547512492, matched by option ID). Answer re-checked by Claude."
  },
  {
   "id": "NET-2018-JUL-Q1",
