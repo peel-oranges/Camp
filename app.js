@@ -321,11 +321,24 @@ function filtered() {
   if (f.tags && f.tags.length) list = list.filter(q => hasTags(q, f.tags));
   if (f.group) { const g = gNode(f.group.id); const ids = new Set(g ? g.qs.map(q => q.id) : []); list = list.filter(q => ids.has(q.id)); }
   if (f.work) { const ids = new Set(f.work.ids); list = list.filter(q => ids.has(q.id)); }
-  const raw = f.query.trim();
+  let raw = f.query.trim();
   S.searchInfo = null;
   if (!raw) return list;
   const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
   if (exact.length) return exact;
+  // Exam, paper and section words ("gate", "net", "paper 1", "general aptitude", "shift 2") filter the list;
+  // whatever is left is searched as usual.
+  const P = parseScope(raw);
+  if (P.any) {
+    list = applyScope(list, P);
+    raw = P.rest;
+    if (!raw) { S.searchInfo = { scope: P.label }; return list; }
+  }
+  const res = searchWithYears(list, raw);
+  if (P.any) S.searchInfo = Object.assign(S.searchInfo || {}, { scope: P.label });
+  return res;
+}
+function searchWithYears(list, raw) {
   const yr = parseYears(raw);
   if (yr) {
     const inYears = q => { const y = qYear(q); return y ? yr.test(y) : false; };
@@ -369,24 +382,34 @@ function dueList() {
   const t = todayStr();
   return S.questions.filter(q => { const r = S.prog.revision[q.id]; return r && r.due <= t; });
 }
-function recordAnswer(q, correct) {
+function recordAnswer(q, correct, guessed, noSave) {
   const p = S.prog, id = q.id, t = todayStr();
   const a = p.attempts[id] || (p.attempts[id] = { a: 0, c: 0 });
   a.a++; if (correct) a.c++; a.last = t;
+  updateRevision(q, correct, guessed);
+  if (!noSave) saveProg();
+}
+/* Revision schedule for one answer.
+   Wrong → saved in My mistakes and back tomorrow (stage reset).
+   Right but "I guessed" was on → back tomorrow too (not a mistake), and it doesn't move forward.
+   Right and sure → moves forward only when it was due today; after the final check it leaves revision. */
+function updateRevision(q, correct, guessed) {
+  const p = S.prog, id = q.id, t = todayStr();
   if (!correct) {
     if (!p.mistakes[id]) p.mistakes[id] = Date.now();
     p.revision[id] = { stage: 0, due: addDays(REVISION_DAYS[0]) };   // wrong = reset
+  } else if (guessed) {
+    p.revision[id] = { stage: 0, due: addDays(REVISION_DAYS[0]), g: 1 };
   } else {
     const r = p.revision[id];
     if (r && r.due <= t) {                                           // only counts when it is due
       r.stage++;
       if (r.stage >= REVISION_DAYS.length) {                         // passed the final check
         delete p.revision[id]; delete p.mistakes[id];
-        if (S.quiz) S.quiz.mastered = (S.quiz.mastered || 0) + 1;
+        if (S.quiz) { S.quiz.mastered = (S.quiz.mastered || 0) + 1; (S.quiz.masteredIds || (S.quiz.masteredIds = new Set())).add(id); }
       } else r.due = addDays(REVISION_DAYS[r.stage]);
     }
   }
-  saveProg();
 }
 
 /* ---------- Theme ---------- */
@@ -459,7 +482,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; ETCACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -477,6 +500,7 @@ function matchText(n) {
   const fresh = filtered().filter(q => !seenQ(q)).length;
   const info = S.searchInfo || {};
   const notes = [];
+  if (info.scope) notes.push(info.scope);
   if (info.years) notes.push(`PYQ years: ${info.years}`);
   if (info.fix) notes.push(`Showing results for “${info.fix}”`);
   if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
@@ -486,18 +510,19 @@ VIEWS.home = () => {
   const f = S.filters, due = dueList().length, n = filtered().length;
   const browse = buildGuide().cats.filter(c => c.qs.length);
   return `
+  ${mockResumeCard()}
   <section class="card revise ${due ? 'has-due' : ''}">
     <div>
       <span class="label">Due for revision today</span>
       <div class="big">${due}</div>
-      <div class="muted small">${due ? 'Questions you missed, back on schedule.' : 'All caught up ✿'}</div>
+      <div class="muted small">${due ? 'Questions you missed or guessed, back on schedule.' : 'All caught up ✿'}</div>
     </div>
     ${due ? '<button class="btn" data-act="revise">Revise now</button>' : ''}
   </section>
 
   <section class="card">
     <h2>Build a quiz</h2>
-    <label class="field-label" for="q-search">Topic, writer, work, keyword or year</label>
+    <label class="field-label" for="q-search">Topic, writer, work, keyword, year or paper</label>
     <div class="search">
       <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. 19th century Indian dramatists" autocomplete="off" enterkeyhint="search">
       <button class="icon-btn" id="clear-q" data-act="clearQuery" aria-label="Clear search" ${f.query ? '' : 'hidden'}>✕</button>
@@ -515,6 +540,7 @@ VIEWS.home = () => {
 
     <p class="match muted" id="match-count">${matchText(n)}</p>
     <button class="btn" id="start-btn" data-act="start" ${n ? '' : 'disabled'}>Start quiz</button>
+    <div id="paper-box">${paperBoxHTML()}</div>
   </section>
 
   ${browse.length ? `<section class="card"><h3>Browse by section</h3><div class="chips">${browse.map(c => `<button class="chip soft ${f.group && f.group.id === c.id ? 'on' : ''}" data-act="pickSection" data-id="${esc(c.id)}">${esc(c.name)} <span class="count">${c.qs.length}</span></button>`).join('')}</div>
@@ -526,8 +552,10 @@ VIEWS.home = () => {
 VIEWS.quiz = () => {
   const z = S.quiz;
   if (!z) return VIEWS.home();
+  if (z.mock) return mockView();
   const q = z.list[z.i], picked = z.answers[q.id], n = z.list.length;
   const bm = !!S.prog.bookmarks[q.id];
+  const gs = !!(z.guess && z.guess[q.id]);
   const nat = isNAT(q), multi = isMSQ(q);
   const right = ansList(q), chosen = picked ? letterList(picked) : [];
   const sel = (z.sel && z.sel[q.id]) || [];
@@ -567,11 +595,13 @@ VIEWS.quiz = () => {
     ${natBox}
     ${picked ? `
       <div class="verdict ${ok ? 'ok' : 'bad'}" id="verdict">${ok ? 'Correct ✿' : `Not quite — the answer is ${esc(answerLetters(q))}`}</div>
+      ${ok && gs ? '<p class="small guess-note">🤔 Marked as a guess, so it comes back for revision tomorrow.</p>' : ''}
       ${q.infoBite ? `<div class="bite"><div class="bite-h">✦ Info bite</div><p>${esc(q.infoBite)}</p></div>` : ''}
       ${q.studyNote ? `<div class="bite study"><div class="bite-h">Study note</div><p>${esc(q.studyNote)}</p></div>` : ''}
       ${q.note ? `<p class="small ${q.verified === false ? 'warn-text' : 'muted'}">Note: ${esc(q.note)}</p>` : ''}
       ${(q.topics || []).length ? `<p class="small muted path">${esc(q.topics.join(' › '))}</p>` : ''}` : ''}
     <div class="qactions">
+      <button class="chip guess ${gs ? 'on' : ''}" data-act="guessToggle" aria-pressed="${gs}">${gs ? '🤔 I guessed ✓' : '🤔 I guessed'}</button>
       <button class="chip ${bm ? 'on' : ''}" data-act="bookmark" data-id="${esc(q.id)}">${bm ? '★ Bookmarked' : '☆ Bookmark'}</button>
       <button class="chip" data-act="report" data-id="${esc(q.id)}">⚑ Report a mistake</button>
       ${isAdmin() ? `<button class="chip" data-act="editQ" data-id="${esc(q.id)}">✎ Edit</button>` : ''}
@@ -586,26 +616,32 @@ VIEWS.quiz = () => {
 
 function startQuiz(list, title) {
   if (!list.length) { toast('No questions match yet'); return; }
-  S.quiz = { list, i: 0, answers: {}, sel: {}, start: Date.now(), title, mastered: 0 };
+  S.quiz = { list, i: 0, answers: {}, sel: {}, guess: {}, pre: {}, start: Date.now(), title, mastered: 0 };
   go('quiz');
 }
 function submitAnswer(q, given) {
   const z = S.quiz;
   z.answers[q.id] = given;
-  recordAnswer(q, isCorrect(q, given));
+  // Remember the revision state before this answer, so "I guessed" can still be switched afterwards.
+  const r = S.prog.revision[q.id];
+  z.pre[q.id] = { rev: r ? Object.assign({}, r) : null, mis: S.prog.mistakes[q.id] };
+  recordAnswer(q, isCorrect(q, given), !!z.guess[q.id]);
   go('quiz', true);
   const vd = $('#verdict'); if (vd) vd.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 function finishQuiz() {
   const z = S.quiz;
-  z.ms = Date.now() - z.start;
+  z.ms = z.mock ? z.usedMs : Date.now() - z.start;
   z.done = z.list.filter(q => z.answers[q.id]);
   // Skipped = every question in this quiz that was not answered (skipped, or not reached if ended early).
   z.skippedList = z.list.filter(q => !z.answers[q.id]);
   if (!z.done.length) { S.quiz = null; go('home'); toast('No questions answered, so there is no score'); return; }
   z.wrong = z.done.filter(q => !isCorrect(q, z.answers[q.id]));
   z.score = z.done.length - z.wrong.length;
-  S.prog.history.unshift({ date: new Date().toISOString(), title: z.title, score: z.score, total: z.done.length, ms: z.ms });
+  z.guessed = z.done.filter(q => z.guess && z.guess[q.id] && isCorrect(q, z.answers[q.id])).length;
+  const h = { date: new Date().toISOString(), title: z.title, score: z.score, total: z.done.length, ms: z.ms };
+  if (z.marks) h.marks = `${fmtMarksN(z.marks.got)}/${fmtMarksN(z.marks.max)}`;
+  S.prog.history.unshift(h);
   S.prog.history = S.prog.history.slice(0, 60);
   saveProg();
   go('results');
@@ -615,7 +651,7 @@ function finishQuiz() {
 VIEWS.results = () => {
   const z = S.quiz;
   if (!z || !z.done) return VIEWS.home();
-  const total = z.done.length, pct = Math.round((z.score / total) * 100);
+  const total = z.mock ? z.list.length : z.done.length, pct = Math.round((z.score / total) * 100);   // a mock counts every question in the paper
   const skipped = (z.skippedList || []).length;
   const missed = new Map();
   z.wrong.forEach(q => { const k = (q.topics || []).join(' › ') || 'Untagged'; missed.set(k, (missed.get(k) || 0) + 1); });
@@ -624,11 +660,13 @@ VIEWS.results = () => {
   <section class="card score">
     <span class="label">${esc(z.title || 'Quiz')} · results</span>
     <div class="big">${z.score} / ${total}</div>
-    <div class="meta"><span>${pct}%</span><span>⏱ ${fmtTime(z.ms)}</span>${skipped ? `<span>${skipped} skipped</span>` : ''}</div>
+    <div class="meta"><span>${pct}%</span><span>⏱ ${fmtTime(z.ms)}</span>${skipped ? `<span>${skipped} ${z.mock ? 'unanswered' : 'skipped'}</span>` : ''}</div>
     ${z.mastered ? `<p class="small" style="margin-top:10px">✿ ${plural(z.mastered, 'question')} passed the final revision check</p>` : ''}
+    ${z.guessed ? `<p class="small" style="margin-top:10px">🤔 ${plural(z.guessed, 'guessed answer')} ${z.guessed === 1 ? 'comes' : 'come'} back for revision tomorrow</p>` : ''}
   </section>
+  ${z.mock ? mockResultsHTML(z) : ''}
 
-  ${skipped ? `<button class="btn ghost" data-act="retrySkipped" style="margin-bottom:16px">Answer the ${plural(skipped, 'skipped question')}</button>` : ''}
+  ${skipped ? `<button class="btn ghost" data-act="retrySkipped" style="margin-bottom:16px">Answer the ${plural(skipped, z.mock ? 'unanswered question' : 'skipped question')}</button>` : ''}
 
   ${z.wrong.length ? `
   <div class="btn-row" style="margin-bottom:16px">
@@ -3384,6 +3422,459 @@ const EMAIL_ACT = {
 };
 
 /* =========================================================
+   EXAM, PAPER & SECTION WORDS IN THE QUIZ SEARCH
+   • "gate" / "net" (or "ugc net")   → only that exam
+   • "general aptitude", "aptitude", "ga" → GATE General Aptitude + Reasoning & Comprehension (XH-B1)
+     ("research aptitude" and "teaching aptitude" stay ordinary Paper 1 topics)
+   • "paper 1" / "paper1" / "p1" (also 2 and 3) → that NET paper
+   • "xh-b1", "reasoning and comprehension", "xh-c2" → that GATE section
+   • "shift 2" → that NET shift
+   Years can be joined to words: "2021gate", "2019net".
+   A work whose title holds one of these words ("The Golden Gate", "Under the Net")
+   is still found by its title.
+   ========================================================= */
+const SEC_ORDER = ['paper 1', 'paper 2', 'paper 3', 'ga', 'xh-b1', 'xh-c2'];
+const SEC_NAME = { 'paper 1': 'Paper 1', 'paper 2': 'Paper 2', 'paper 3': 'Paper 3', ga: 'General Aptitude', 'xh-b1': 'Reasoning & Comprehension', 'xh-c2': 'English (XH-C2)' };
+const SEC_SHORT = { ga: 'GA', 'xh-b1': 'XH-B1', 'xh-c2': 'XH-C2' };
+const secName = s => SEC_NAME[s] || s;
+const secShort = q => SEC_SHORT[qSec(q)] || q.section || q.exam;
+const MONTHS = [['january', 'jan'], ['february', 'feb'], ['march', 'mar'], ['april', 'apr'], ['may', 'may'], ['june', 'jun'], ['july', 'jul'], ['august', 'aug'], ['september', 'sep', 'sept'], ['october', 'oct'], ['november', 'nov'], ['december', 'dec']];
+const MONTH_WORDS = new Set(MONTHS.flat());
+const PAPER_FILLER = new Set('full mock mocks test tests whole complete entire paper papers exam question questions'.split(' '));
+const shiftNum = q => { const s = String(q.shift == null ? '' : q.shift); const m = s.match(/shift\s*(\d+)/i) || s.match(/^\s*(\d+)\s*$/); return m ? +m[1] : 0; };
+let ETCACHE = null;            // work titles that contain "gate" or "net"
+function examWordTitles() {
+  if (!ETCACHE) {
+    const seen = new Set(); ETCACHE = [];
+    S.questions.forEach(q => (q.works || []).forEach(w => {
+      const t = queryTokens(w);
+      if (t.length > 1 && (t.includes('gate') || t.includes('net')) && !seen.has(t.join(' '))) { seen.add(t.join(' ')); ETCACHE.push(t); }
+    }));
+  }
+  return ETCACHE;
+}
+function parseScope(raw) {
+  let s = ` ${String(raw).toLowerCase().replace(/[–—−]/g, '-')} `;
+  s = s.replace(/((?:19|20)\d{2})(?=[a-z])/g, '$1 ').replace(/([a-z])((?:19|20)\d{2})\b/g, '$1 $2');
+  const secs = new Set(), exams = new Set();
+  let shift = 0;
+  const cut = (re, fn) => { s = s.replace(re, (...m) => { const r = fn(...m); return r == null ? ' ' : r; }); };
+  cut(/\bpaper\s*-?\s*(1|i|one|2|ii|two|3|iii|three)\b/g, (m, n) => { secs.add('paper ' + ({ i: 1, one: 1, ii: 2, two: 2, iii: 3, three: 3 }[n] || n)); });
+  cut(/\bp([123])\b/g, (m, n) => { secs.add('paper ' + n); });
+  cut(/\b(?:reasoning\s*(?:&|and)?\s*comprehension|xh\s*-?\s*b1)\b/g, () => { secs.add('xh-b1'); });
+  cut(/\bxh\s*-?\s*c2\b/g, () => { secs.add('xh-c2'); });
+  if (!secs.has('paper 1')) {
+    // with "paper 1", "general aptitude" stays as words, so it finds the Paper 1 questions tagged General Aptitude
+    cut(/\b([a-z]+\s+)?aptitude\b/g, (m, w) => {
+      w = (w || '').trim();
+      if (w === 'research' || w === 'teaching') return m;
+      secs.add('ga'); secs.add('xh-b1');
+      return w === 'general' || w === 'gen' || !w ? ' ' : ` ${w} `;
+    });
+    cut(/\bga\b/g, () => { secs.add('ga'); secs.add('xh-b1'); });
+  }
+  const typed = queryTokens(raw);
+  const keep = w => examWordTitles().some(t => t.includes(w) && t.every(x => typed.includes(x)));
+  if (!keep('net')) { cut(/\bugc\s*-?\s*net\b/g, () => { exams.add('NET'); }); cut(/\b(?:ugc|net)\b/g, () => { exams.add('NET'); }); }
+  if (!keep('gate')) cut(/\bgate\b/g, () => { exams.add('GATE'); });
+  cut(/\bshift\s*-?\s*(\d)\b/g, (m, n) => { shift = +n; });
+  const any = !!(secs.size || exams.size || shift);
+  if (any && /\b(?:19|20)\d{2}\b/.test(s)) cut(/\b(?:full|mock|mocks|whole|complete|entire)\b/g, () => null);
+  const parts = [];
+  if (secs.has('ga') && secs.has('xh-b1')) parts.push('GATE General Aptitude + Reasoning & Comprehension');
+  else secs.forEach(x => parts.push((x.startsWith('paper') ? 'NET ' : 'GATE ') + secName(x)));
+  if (!secs.size && exams.size) parts.push([...exams].join(' + ') + ' only');
+  if (shift) parts.push(`Shift ${shift}`);
+  return { secs, exams, shift, any, rest: s.replace(/\s+/g, ' ').trim(), label: parts.join(' · ') };
+}
+function inScope(q, P) {
+  if (P.exams.size && !P.exams.has(q.exam)) return false;
+  if (P.secs.size && !P.secs.has(qSec(q))) return false;
+  if (P.shift && q.exam === 'NET' && shiftNum(q) !== P.shift) return false;
+  return true;
+}
+const applyScope = (list, P) => list.filter(q => inScope(q, P));
+
+/* =========================================================
+   FULL PAPERS FOR A MOCK TEST
+   Typing only an exam and a year ("2019 net", "2021gate", "net june 2023 shift 2",
+   "2024 gate general aptitude") lists the whole papers found, with a "Start full mock"
+   button. Papers are grouped by their source label; a NET Paper 1 stored under its own
+   label joins the Paper 2 of the same session and shift.
+   ========================================================= */
+const paperBase = q => String(q.source || sourceTag(q)).replace(/\s*·\s*Paper\s+(?:[123]|I{1,3})\s*$/i, '').trim();
+const secIdx = q => { const i = SEC_ORDER.indexOf(qSec(q)); return i < 0 ? 9 : i; };
+const paperOrder = (a, b) => secIdx(a) - secIdx(b) || (+a.qno || 0) - (+b.qno || 0);
+function expectedCount(exam, year, sec) {
+  if (sec === 'ga') return 10;
+  if (sec === 'xh-b1') return year <= 2021 ? 15 : 16;
+  if (sec === 'xh-c2') return year <= 2021 ? 40 : 39;
+  if (sec === 'paper 1') return 50;
+  if (sec === 'paper 2') return year >= 2018 ? 100 : 50;
+  if (sec === 'paper 3') return 75;
+  return 0;
+}
+function paperGroups(P, yr, months) {
+  const qs = S.questions.filter(q => isPYQ(q) && yr.test(qYear(q)) && inScope(q, P) && (!months.length ||
+    months.some(m => new RegExp(`\\b(?:${m.join('|')})\\b`).test(`${q.session || ''} ${q.source || sourceTag(q)}`.toLowerCase()))));
+  const G = new Map();
+  qs.forEach(q => {
+    const k = `${q.exam}|${paperBase(q)}`;
+    if (!G.has(k)) G.set(k, { key: k, title: paperBase(q), exam: q.exam, year: qYear(q), session: q.session, qs: [] });
+    G.get(k).qs.push(q);
+  });
+  let list = [...G.values()];
+  const secsOf = g => new Set(g.qs.map(qSec));
+  // NET Paper 1 kept under its own label → join the Paper 2 of the same session and shift (only when the match is clear)
+  const onlyP1 = list.filter(g => g.exam === 'NET' && [...secsOf(g)].every(s => s === 'paper 1'));
+  const target = new Map();
+  onlyP1.forEach(g1 => {
+    const sh = shiftNum(g1.qs[0]);
+    const c = list.filter(g => g !== g1 && g.exam === 'NET' && g.year === g1.year && g.session === g1.session && !secsOf(g).has('paper 1') && secsOf(g).has('paper 2') && shiftNum(g.qs[0]) === sh);
+    if (c.length === 1) target.set(g1, c[0]);
+  });
+  const hits = new Map(); target.forEach(g2 => hits.set(g2, (hits.get(g2) || 0) + 1));
+  target.forEach((g2, g1) => { if (hits.get(g2) === 1) { g2.qs = g1.qs.concat(g2.qs); list = list.filter(g => g !== g1); } });
+  list.forEach(g => {
+    g.qs.sort(paperOrder);
+    g.secList = SEC_ORDER.filter(s => g.qs.some(q => qSec(q) === s));
+    g.expected = g.secList.reduce((n, s) => n + expectedCount(g.exam, g.year, s), 0);
+  });
+  return list.sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+}
+function mockMinutes(qs) {
+  if (!qs.length) return 0;
+  if (qs[0].exam === 'GATE') return new Set(qs.map(qSec)).size === 3 ? 180 : Math.max(5, Math.round(qs.length * 180 / 65));
+  const m = qs.reduce((t, q) => { const s = qSec(q); return t + (s === 'paper 3' ? 2 : s === 'paper 2' && qYear(q) < 2018 ? 1.5 : 1.2); }, 0);
+  return Math.max(5, Math.round(m));
+}
+const fmtMins = m => m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60} min` : ''}`;
+function paperBoxHTML() {
+  const f = S.filters;
+  S.paperGroups = null;
+  if (f.tags || f.group || f.work) return '';
+  const raw = f.query.trim(); if (!raw) return '';
+  const P = parseScope(raw), yr = parseYears(P.rest);
+  if (!yr) return '';
+  const toks = queryTokens(yr.rest);
+  if (toks.some(t => !MONTH_WORDS.has(t) && !PAPER_FILLER.has(t))) return '';     // a topic was typed too: no paper list
+  const months = MONTHS.filter(m => m.some(w => toks.includes(w)));
+  const gs = paperGroups(P, yr, months);
+  if (!gs.length) return '';
+  S.paperGroups = new Map(gs.map(g => [g.key, g]));
+  const shown = gs.slice(0, 8);
+  return `<div class="pp-box">
+    <div class="pp-head">📝 ${gs.length === 1 ? 'Full paper' : `${gs.length} full papers`} for a mock test</div>
+    ${shown.map(g => {
+      const n = g.qs.length, parts = g.secList.map(s => `${secName(s)} · ${g.qs.filter(q => qSec(q) === s).length}`).join(' + ');
+      return `<div class="pp-card">
+        <div class="pp-title">${esc(g.title)}</div>
+        <span class="sub">${esc(parts)} · ⏱ ${fmtMins(mockMinutes(g.qs))}${g.expected && n < g.expected ? ` · ${n} of the paper's ${g.expected} questions are in the bank` : ''}</span>
+        <button class="btn" data-act="mockStart" data-k="${esc(g.key)}">Start full mock</button>
+        ${g.secList.length > 1 ? `<div class="chips">${g.secList.map(s => `<button class="chip" data-act="mockStart" data-k="${esc(g.key)}" data-s="${esc(s)}">${esc(secName(s))} only</button>`).join('')}</div>` : ''}
+      </div>`;
+    }).join('')}
+    ${gs.length > shown.length ? `<p class="small muted">${gs.length - shown.length} more. Add a month or shift to narrow it, e.g. “2023 june net shift 2”.</p>` : ''}
+    <p class="small muted">A mock runs in paper order with the real time limit and marking. Answers show only after you submit.</p>
+  </div>`;
+}
+
+/* =========================================================
+   MOCK TEST
+   Answers stay hidden until you submit. You can go back, change or clear answers,
+   jump to any question, and tap "I guessed". The timer pauses when the app is closed
+   or in the background, and a mock in progress is saved on this device, so it can be
+   resumed from the Quiz screen.
+   Marking — NET: 2 marks each, no negative marking.
+   GATE XH: GA Q1–5 and the first 7 of XH-B1 and 18 of XH-C2 carry 1 mark, the rest 2
+   (2021: 5 and 20 one-mark questions). A wrong MCQ loses 1/3 of its marks;
+   MSQ and number answers have no negative marking and no part marks.
+   ========================================================= */
+const MOCK_KEY = 'camp-mock-v1';
+let MOCK_TIMER = null;
+function qMarks(q) {
+  if (q.marks) return +q.marks;
+  if (q.exam !== 'GATE') return 2;
+  const s = qSec(q), n = +q.qno || 0, old = qYear(q) <= 2021;
+  if (s === 'ga') return n <= 5 ? 1 : 2;
+  if (s === 'xh-b1') return n <= (old ? 15 : 17) ? 1 : 2;
+  if (s === 'xh-c2') return n <= (old ? 45 : 44) ? 1 : 2;
+  return 1;
+}
+const qPenalty = q => (q.exam === 'GATE' && !isMSQ(q) && !isNAT(q) ? qMarks(q) / 3 : 0);
+const fmtMarksN = x => String(Math.round(x * 100) / 100);
+function fmtClock(ms) {
+  const t = Math.max(0, Math.ceil(ms / 1000)), h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+  return h ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`;
+}
+function mockHasAns(q) {
+  const v = S.quiz && S.quiz.sel[q.id];
+  if (isNAT(q)) return v != null && String(v).trim() !== '' && !isNaN(toNum(v));
+  return !!(v && v.length);
+}
+function mockLeft() { const z = S.quiz; return z.remain - (z.tickStart ? Date.now() - z.tickStart : 0); }
+function saveMock() {
+  const z = S.quiz; if (!z || !z.mock || z.submitted) return;
+  try {
+    localStorage.setItem(MOCK_KEY, JSON.stringify({ ids: z.list.map(q => q.id), i: z.i, sel: z.sel, guess: z.guess, remain: Math.max(0, mockLeft()), limit: z.limit, title: z.title, expected: z.expected || 0, start: z.start }));
+  } catch (e) { /* ignore */ }
+}
+function savedMock() { try { const m = JSON.parse(localStorage.getItem(MOCK_KEY)); return m && m.ids && m.ids.length ? m : null; } catch (e) { return null; } }
+function clearMock() { try { localStorage.removeItem(MOCK_KEY); } catch (e) { /* ignore */ } }
+function stopMockTimer() { clearInterval(MOCK_TIMER); MOCK_TIMER = null; }
+function startMockTimer() {
+  stopMockTimer();
+  const z = S.quiz; if (!z || !z.mock) return;
+  z.tickStart = Date.now();
+  let n = 0;
+  MOCK_TIMER = setInterval(() => {
+    const zz = S.quiz;
+    if (!zz || !zz.mock || zz.submitted) { stopMockTimer(); return; }
+    const left = mockLeft(), el = $('#mock-timer');
+    if (el) { el.textContent = fmtClock(left); el.classList.toggle('low', left < 5 * 60000); }
+    if (left <= 0) { submitMock('time'); return; }
+    if (++n % 15 === 0) saveMock();
+  }, 1000);
+}
+function pauseMock() { const z = S.quiz; if (z && z.mock && !z.submitted && z.tickStart) { z.remain = mockLeft(); z.tickStart = 0; saveMock(); } stopMockTimer(); }
+document.addEventListener('visibilitychange', () => {
+  const z = S.quiz; if (!z || !z.mock || z.submitted) return;
+  if (document.hidden) pauseMock();
+  else if (S.screen === 'quiz') startMockTimer();
+});
+function startMock(qs, title, expected) {
+  if (!qs.length) return toast('No questions in this paper yet');
+  if (savedMock() && !confirm('You have another mock in progress. Start this one instead? The other one will be discarded.')) return;
+  const limit = mockMinutes(qs) * 60000;
+  S.quiz = { mock: true, list: qs, i: 0, answers: {}, sel: {}, guess: {}, pre: {}, start: Date.now(), title, expected: expected || 0, mastered: 0, limit, remain: limit, tickStart: 0 };
+  saveMock();
+  go('quiz');
+  startMockTimer();
+  toast(`Timer started: ${fmtMins(mockMinutes(qs))}. It pauses if you leave the app.`, 3500);
+}
+function resumeMock() {
+  const m = savedMock(); if (!m) return;
+  const list = m.ids.map(byId).filter(Boolean);
+  if (!list.length) { clearMock(); render(); return toast('Those questions are no longer in the bank'); }
+  S.quiz = { mock: true, list, i: Math.min(m.i || 0, list.length - 1), answers: {}, sel: m.sel || {}, guess: m.guess || {}, pre: {}, start: m.start || Date.now(), title: m.title, expected: m.expected || 0, mastered: 0, limit: m.limit, remain: m.remain, tickStart: 0 };
+  go('quiz');
+  startMockTimer();
+}
+function mockResumeCard() {
+  if (S.quiz && S.quiz.mock) return '';
+  const m = savedMock(); if (!m) return '';
+  const done = Object.keys(m.sel || {}).filter(id => { const v = m.sel[id]; return Array.isArray(v) ? v.length : String(v || '').trim() !== ''; }).length;
+  return `<section class="card resume-card">
+    <span class="label">Mock test in progress</span>
+    <h3 style="margin:6px 0">${esc(m.title || 'Mock test')}</h3>
+    <p class="small muted">${done} of ${m.ids.length} answered · ${fmtClock(m.remain)} left</p>
+    <div class="btn-row"><button class="btn" data-act="mockResume">Resume</button><button class="btn ghost" data-act="mockDiscard">Discard</button></div>
+  </section>`;
+}
+function mockView() {
+  const z = S.quiz, q = z.list[z.i], n = z.list.length;
+  const nat = isNAT(q), multi = isMSQ(q), v = z.sel[q.id];
+  const chosen = nat ? [] : (v || []);
+  const answered = z.list.filter(mockHasAns).length;
+  const gs = !!z.guess[q.id], bm = !!S.prog.bookmarks[q.id], has = mockHasAns(q);
+  const m = qMarks(q), pen = qPenalty(q), last = z.i >= n - 1;
+  const opts = nat ? '' : LETTERS.filter(L => q.options[L] != null && q.options[L] !== '').map(L => {
+    const on = chosen.includes(L);
+    return `<button class="opt ${on ? 'selected' : ''}" data-act="mockPick" data-v="${L}" aria-pressed="${on}"><span class="letter">${L}</span><span class="otext">${esc(q.options[L])}</span>${on ? '<span class="mark">●</span>' : ''}</button>`;
+  }).join('');
+  const natBox = nat ? `<label class="field-label" for="mock-nat">Type your answer (a number)</label>
+    <input type="text" id="mock-nat" data-in="mockNat" inputmode="decimal" enterkeyhint="done" autocomplete="off" placeholder="e.g. 25" value="${esc(v == null ? '' : v)}">` : '';
+  return `
+  <div class="quiz-top">
+    <button class="icon-btn" data-act="endQuiz" aria-label="Submit or leave the mock">✕</button>
+    <div class="progress"><div style="width:${(answered / n) * 100}%"></div></div>
+    <span class="mock-timer ${mockLeft() < 5 * 60000 ? 'low' : ''}" id="mock-timer" aria-label="Time left">${fmtClock(mockLeft())}</span>
+  </div>
+  <p class="small muted mock-sub">Question <b>${z.i + 1}</b> of ${n} · ${answered} answered</p>
+  <article class="card">
+    <div class="tags">
+      <span class="tag src">${esc(secShort(q))} · Q${esc(q.qno || z.i + 1)}</span>
+      <span class="tag">${m} mark${m === 1 ? '' : 's'}${pen ? ` · −${fmtMarksN(pen)} if wrong` : ''}</span>
+      ${multi ? '<span class="tag">One or more answers</span>' : ''}
+      ${nat ? '<span class="tag">Number answer</span>' : ''}
+    </div>
+    <div class="qtext">${esc(q.question)}</div>
+    ${multi ? '<p class="small muted">Select all that apply.</p>' : ''}
+    <div class="opts">${opts}</div>
+    ${natBox}
+    <div class="qactions">
+      <button class="chip guess ${gs ? 'on' : ''}" data-act="guessToggle" aria-pressed="${gs}">${gs ? '🤔 I guessed ✓' : '🤔 I guessed'}</button>
+      ${has ? '<button class="chip" data-act="mockClear">Clear answer</button>' : ''}
+      <button class="chip ${bm ? 'on' : ''}" data-act="bookmark" data-id="${esc(q.id)}">${bm ? '★ Bookmarked' : '☆ Bookmark'}</button>
+    </div>
+  </article>
+  <div class="btn-row">
+    <button class="btn ghost" data-act="mockGo" data-v="-1" ${z.i ? '' : 'disabled'}>‹ Previous</button>
+    ${last ? '<button class="btn" data-act="mockSubmit">Submit test</button>' : `<button class="btn" data-act="mockGo" data-v="1">${has ? 'Next ›' : 'Skip ›'}</button>`}
+  </div>
+  <button class="btn ghost" data-act="mockPalette" style="margin-top:10px">All questions · jump or submit</button>
+  <p class="center small muted" style="margin-top:14px">${esc(z.title)}<br>Answers show after you submit.</p>`;
+}
+function openPalette() {
+  const z = S.quiz, m = $('#modal');
+  let lastSec = '';
+  const cells = z.list.map((q, i) => {
+    const s = qSec(q), head = s !== lastSec ? `<div class="pal-sec">${esc(q.exam === 'GATE' ? secName(s) : q.section || '')}</div>` : '';
+    lastSec = s;
+    return `${head}<button class="pal-q ${mockHasAns(q) ? 'done' : ''} ${z.guess[q.id] ? 'guess' : ''} ${i === z.i ? 'cur' : ''}" data-act="mockJump" data-i="${i}" aria-label="Question ${i + 1}">${esc(q.qno || i + 1)}</button>`;
+  }).join('');
+  const left = z.list.filter(q => !mockHasAns(q)).length;
+  m.innerHTML = `<div class="sheet sy-sheet" role="dialog" aria-modal="true" aria-label="All questions">
+    <h3>All questions</h3>
+    <p class="small muted">${z.list.length - left} answered · ${left} not answered · ${fmtClock(mockLeft())} left</p>
+    <p class="small"><span class="pal-key done"></span> answered <span class="pal-key guess"></span> I guessed <span class="pal-key cur"></span> you are here</p>
+    <div class="pal-grid">${cells}</div>
+    <div class="btn-row"><button class="btn" data-act="mockSubmit">Submit test</button><button class="btn ghost" data-act="closeModal">Back to the test</button></div>
+  </div>`;
+  m.hidden = false;
+}
+function mockMarks(z) {
+  const secs = new Map();
+  let got = 0, max = 0, neg = 0, unver = 0;
+  z.list.forEach(q => {
+    const k = qSec(q), mk = qMarks(q), a = z.answers[q.id];
+    if (!secs.has(k)) secs.set(k, { name: q.exam === 'GATE' ? secName(k) : q.section || secName(k), got: 0, max: 0, c: 0, w: 0, u: 0 });
+    const r = secs.get(k);
+    r.max += mk; max += mk;
+    if (q.verified === false) unver++;
+    if (!a) { r.u++; return; }
+    if (isCorrect(q, a)) { r.c++; r.got += mk; got += mk; }
+    else { const p = qPenalty(q); r.w++; r.got -= p; got -= p; neg += p; }
+  });
+  return { got, max, neg, unver, n: z.list.length, secs: [...secs.entries()].sort((a, b) => SEC_ORDER.indexOf(a[0]) - SEC_ORDER.indexOf(b[0])).map(e => e[1]) };
+}
+function submitMock(how) {          // how: 'time' (time up), 'ok' (already confirmed), or nothing (ask first)
+  const z = S.quiz; if (!z || !z.mock || z.submitted) return;
+  if (!how) {
+    const left = z.list.filter(q => !mockHasAns(q)).length;
+    if (!confirm(left ? `Submit now? ${plural(left, 'question')} ${left === 1 ? 'is' : 'are'} not answered.` : 'Submit the test and see your marks?')) return;
+  }
+  closeModal();
+  const left = mockLeft();
+  stopMockTimer();
+  z.submitted = true;
+  z.usedMs = Math.max(0, Math.min(z.limit, z.limit - Math.max(0, left)));
+  z.list.forEach(q => {
+    if (!mockHasAns(q)) return;
+    const v = z.sel[q.id], given = isNAT(q) ? String(v).trim() : letterList(v.join(';')).join(';');
+    z.answers[q.id] = given;
+    recordAnswer(q, isCorrect(q, given), !!z.guess[q.id], true);
+  });
+  saveProg();
+  z.marks = mockMarks(z);
+  clearMock();
+  if (how === 'time') toast('Time is up, so the test was submitted', 4500);
+  finishQuiz();
+}
+function mockResultsHTML(z) {
+  const M = z.marks; if (!M) return '';
+  const net = z.list[0] && z.list[0].exam === 'NET';
+  return `<section class="card">
+    <h3>Marks</h3>
+    <div class="mock-marks">${fmtMarksN(M.got)} <span class="muted">/ ${fmtMarksN(M.max)}</span></div>
+    <p class="small muted">${M.neg ? `Includes −${fmtMarksN(M.neg)} for wrong MCQs (GATE negative marking).` : net ? 'NET has no negative marking.' : 'No marks lost to negative marking.'}</p>
+    <table class="kx-table">
+      <tr><th style="text-align:left">Section</th><th>✓</th><th>✕</th><th>—</th><th>Marks</th></tr>
+      ${M.secs.map(s => `<tr><td>${esc(s.name)}</td><td>${s.c}</td><td>${s.w}</td><td>${s.u}</td><td>${fmtMarksN(s.got)}/${fmtMarksN(s.max)}</td></tr>`).join('')}
+    </table>
+    <p class="small muted" style="margin-top:8px">✓ right · ✕ wrong · — not answered.${z.expected && M.n < z.expected ? ` The bank has ${M.n} of this paper's ${z.expected} questions, so marks are out of ${fmtMarksN(M.max)}.` : ''}${M.unver ? ` ${plural(M.unver, 'answer')} in this paper ${M.unver === 1 ? 'is' : 'are'} not yet checked against the final official key, so treat the marks as a close estimate.` : ''}</p>
+  </section>
+  <section class="card">
+    <details><summary class="field-label">Review every question (${z.list.length})</summary>
+    ${z.list.map((q, i) => {
+      const a = z.answers[q.id], ok = a && isCorrect(q, a);
+      return `<div class="wrong-item ${a ? (ok ? 'rv-ok' : 'rv-bad') : ''}">
+        <div class="tags"><span class="tag src">${esc(secShort(q))} · Q${esc(q.qno || i + 1)}</span>${z.guess[q.id] ? '<span class="tag">🤔 guessed</span>' : ''}${q.verified === false ? '<span class="tag warn">Unverified</span>' : ''}</div>
+        <div class="q">${esc(q.question)}</div>
+        <div class="ans">${a ? `You chose ${ok ? `<b>${esc(givenText(q, a))}</b> ✓` : `<s>${esc(givenText(q, a))}</s>`} · ` : 'Not answered · '}Correct: <b>${esc(answerText(q))}</b></div>
+        ${q.infoBite ? `<p class="small muted" style="margin:6px 0 0">${esc(q.infoBite)}</p>` : ''}
+      </div>`;
+    }).join('')}
+    </details>
+  </section>`;
+}
+const MOCK_ACT = {
+  mockStart: d => {
+    const g = S.paperGroups && S.paperGroups.get(d.k); if (!g) return;
+    const qs = d.s ? g.qs.filter(q => qSec(q) === d.s) : g.qs.slice();
+    const exp = d.s ? expectedCount(g.exam, g.year, d.s) : g.expected;
+    startMock(qs, `Mock · ${g.title}${d.s ? ` · ${secName(d.s)}` : ''}`, exp);
+  },
+  mockResume: () => resumeMock(),
+  mockDiscard: () => { if (!confirm('Discard this mock? Its answers will be lost.')) return; clearMock(); render(); },
+  mockPick: d => {
+    const z = S.quiz, q = z.list[z.i], cur = z.sel[q.id] || [];
+    if (isMSQ(q)) z.sel[q.id] = cur.includes(d.v) ? cur.filter(x => x !== d.v) : cur.concat(d.v).sort();
+    else z.sel[q.id] = cur[0] === d.v ? [] : [d.v];
+    saveMock(); go('quiz', true);
+  },
+  mockClear: () => { const z = S.quiz; delete z.sel[z.list[z.i].id]; saveMock(); go('quiz', true); },
+  mockGo: d => { const z = S.quiz; z.i = Math.max(0, Math.min(z.list.length - 1, z.i + (+d.v))); saveMock(); go('quiz'); },
+  mockPalette: () => openPalette(),
+  mockJump: d => { const z = S.quiz; z.i = +d.i; closeModal(); saveMock(); go('quiz'); },
+  mockSubmit: () => submitMock(false),
+  // "I guessed": in a normal quiz it works before or after answering; a right answer marked as a guess
+  // comes back for revision tomorrow. In a mock it is applied when you submit.
+  guessToggle: () => {
+    const z = S.quiz; if (!z) return;
+    const q = z.list[z.i]; z.guess = z.guess || {};
+    z.guess[q.id] = !z.guess[q.id];
+    const on = z.guess[q.id], answered = !z.mock && z.answers[q.id];
+    if (answered && isCorrect(q, z.answers[q.id]) && z.pre && z.pre[q.id]) {
+      const p = S.prog, pre = z.pre[q.id];
+      if (pre.rev) p.revision[q.id] = Object.assign({}, pre.rev); else delete p.revision[q.id];
+      if (pre.mis) p.mistakes[q.id] = pre.mis; else delete p.mistakes[q.id];
+      if (z.masteredIds && z.masteredIds.has(q.id)) { z.masteredIds.delete(q.id); z.mastered = Math.max(0, (z.mastered || 0) - 1); }
+      updateRevision(q, true, on);
+      saveProg();
+      toast(on ? 'It comes back for revision tomorrow' : 'Guess mark removed');
+    } else if (answered) toast(on ? 'Wrong answers already come back for revision' : 'Guess mark removed');
+    else toast(on ? (z.mock ? 'Marked as a guess. It goes to revision after you submit, even if right.' : 'Marked as a guess. If you get it right, it still comes back for revision.') : 'Guess mark removed', 3000);
+    if (z.mock) saveMock();
+    go('quiz', true);
+  }
+};
+const MOCK_IN = { mockNat: v => { const z = S.quiz; if (!z || !z.mock) return; z.sel[z.list[z.i].id] = v; saveMock(); } };
+
+(function addMockStyles() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .mock-timer { flex: none; font-variant-numeric: tabular-nums; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; background: var(--lilac-soft); color: var(--accent-ink); white-space: nowrap; }
+    .mock-timer.low { background: var(--bad-bg); color: var(--bad); }
+    .mock-sub { text-align: center; margin: -4px 0 12px; }
+    .chip.guess.on { background: var(--warn-bg); border-color: var(--warn); color: var(--warn); }
+    .guess-note { margin: 8px 0 0; color: var(--warn); font-weight: 700; }
+    .pp-box { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .pp-head { font-weight: 800; margin-bottom: 10px; }
+    .pp-card { padding: 14px; border-radius: 18px; background: var(--card-2); border: 1px solid var(--border); margin-bottom: 12px; }
+    .pp-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.25rem; font-weight: 700; line-height: 1.25; }
+    .pp-card .sub { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin: 4px 0 12px; }
+    .pp-card .chips { margin-top: 10px; }
+    .resume-card { border: 2px solid var(--lilac); }
+    .pal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 6px; max-height: 48vh; overflow-y: auto; margin: 8px 0 14px; padding: 2px; }
+    .pal-sec { grid-column: 1 / -1; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+    .pal-q { min-height: 44px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--chip); font: inherit; font-size: 14px; font-weight: 800; color: var(--ink); cursor: pointer; padding: 0; }
+    .pal-q.done { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+    .pal-q.guess { box-shadow: inset 0 -4px 0 var(--warn); }
+    .pal-q.cur { outline: 2px solid var(--purple); outline-offset: 1px; }
+    .pal-key { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin: 0 2px 0 8px; border: 1.5px solid var(--border); background: var(--chip); }
+    .pal-key:first-child { margin-left: 0; }
+    .pal-key.done { background: var(--ok-bg); border-color: var(--ok); }
+    .pal-key.guess { box-shadow: inset 0 -4px 0 var(--warn); }
+    .pal-key.cur { outline: 2px solid var(--purple); }
+    .mock-marks { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.6rem; font-weight: 700; line-height: 1.1; margin: 4px 0 6px; }
+    .mock-marks .muted { font-size: 1.5rem; }
+    .wrong-item.rv-ok { border-left: 4px solid var(--ok); padding-left: 10px; }
+    .wrong-item.rv-bad { border-left: 4px solid var(--bad); padding-left: 10px; }`;
+  document.head.appendChild(s);
+})();
+
+/* =========================================================
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
@@ -3411,6 +3902,7 @@ function refreshMatch() {
   if (mc) mc.textContent = matchText(n);
   if (sb) sb.disabled = !n;
   if (cq) cq.hidden = !S.filters.query;
+  const pb = $('#paper-box'); if (pb) pb.innerHTML = paperBoxHTML();
 }
 
 const ACT = {
@@ -3484,7 +3976,13 @@ const ACT = {
     else finishQuiz();
   },
   endQuiz: () => {
-    const z = S.quiz, answered = Object.keys(z.answers).length;
+    const z = S.quiz;
+    if (z.mock) {
+      if (confirm('Submit the test now and see your marks?\n\n(Cancel = keep it for later)')) { submitMock('ok'); return; }
+      if (confirm('Leave and finish this mock later? Your answers are saved and the timer pauses.')) { pauseMock(); S.quiz = null; go('home'); }
+      return;
+    }
+    const answered = Object.keys(z.answers).length;
     if (!answered) { if (confirm('Leave this quiz?')) { S.quiz = null; go('home'); } return; }
     if (confirm('End the quiz now and see your results?')) finishQuiz();
   },
@@ -3647,7 +4145,7 @@ const ACT = {
   }
 };
 
-Object.assign(ACT, SYL_ACT, BULK_ACT, EMAIL_ACT);
+Object.assign(ACT, SYL_ACT, BULK_ACT, EMAIL_ACT, MOCK_ACT);
 
 const IN = {
   query: v => { S.filters.query = v; refreshMatch(); },
@@ -3655,7 +4153,7 @@ const IN = {
   guideQuery: v => { S.guideQuery = v; const el = $('#guide-list'); if (el) el.innerHTML = guideListHTML(); },
   adminQuery: v => { S.adminQuery = v; S.adminShow = ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
 };
-Object.assign(IN, SYL_IN);
+Object.assign(IN, SYL_IN, MOCK_IN);
 const CH = {
   shuffle: el => { S.filters.shuffle = el.checked; },
   fresh: el => { S.filters.fresh = el.checked; },
@@ -3690,6 +4188,7 @@ document.addEventListener('change', e => { const el = e.target.closest('[data-ch
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.id === 'q-search') { e.target.blur(); }
   if (e.key === 'Enter' && e.target.id === 'nat-input') { e.preventDefault(); ACT.check(); }
+  if (e.key === 'Enter' && e.target.id === 'mock-nat') { e.preventDefault(); e.target.blur(); }
   if (e.key === 'Escape' && !$('#modal').hidden) closeModal();
 });
 

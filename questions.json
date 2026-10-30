@@ -189333,5 +189333,3767 @@
   "verified": false,
   "keySource": "site-key",
   "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q01",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The principal of a school conducts an interview session of teachers and students with a view to explore the possibility of their enhanced participation in school programmes. This endeavour may be related to which type of research?",
+  "options": {
+   "A": "Evaluation Research",
+   "B": "Fundamental Research",
+   "C": "Action Research",
+   "D": "Applied Research"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Types of research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Action research solves an immediate, local problem in one's own institution (Stephen Corey brought it into education, 1953).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q02",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "In doing action research what is the usual sequence of steps?",
+  "options": {
+   "A": "Reflect, observe, plan, act",
+   "B": "Plan, act, observe, reflect",
+   "C": "Plan, reflect, observe, act",
+   "D": "Act, observe, plan, reflect"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Action research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kemmis and McTaggart's spiral: plan → act → observe → reflect. Asked again in July 2018.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q03",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which sequence of research steps is logical in the list given below?",
+  "options": {
+   "A": "Problem formulation, Analysis, Development of Research design, Hypothesis making, Collection of data, Arriving at generalizations and conclusions.",
+   "B": "Development of Research design, Hypothesis making, Problem formulation, Data analysis, Arriving at conclusions and data collection.",
+   "C": "Problem formulation, Hypothesis making, Development of a Research design, Collection of data, Data analysis and formulation of generalizations and conclusions.",
+   "D": "Problem formulation, Deciding about the sample and data collection tools, Formulation of hypothesis, Collection and interpretation of research evidence."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Problem → hypothesis → design → data collection → analysis → generalisation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q04",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match Set I (research methods) with Set II (data collection tools).\nSet I: (a) Experimental method (b) Ex post-facto method (c) Descriptive survey method (d) Historical method\nSet II: (i) Using primary and secondary sources (ii) Questionnaire (iii) Standardized tests (iv) Typical characteristic tests\n\nCode:",
+  "options": {
+   "A": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)",
+   "B": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)",
+   "C": "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)",
+   "D": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research methods and tools"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Historical research relies on primary and secondary sources; surveys typically use questionnaires.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q05",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The issue of 'research ethics' may be considered pertinent at which stage of research?",
+  "options": {
+   "A": "At the stage of problem formulation and its definition",
+   "B": "At the stage of defining the population of research",
+   "C": "At the stage of data collection and interpretation",
+   "D": "At the stage of reporting the findings"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ethics bite hardest when handling participants and data: consent, confidentiality, no fabrication or falsification.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q06",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which of the following, reporting format is formally prescribed?",
+  "options": {
+   "A": "Doctoral level thesis",
+   "B": "Conference of researchers",
+   "C": "Workshops and seminars",
+   "D": "Symposia"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Thesis writing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A PhD thesis follows a fixed format (preliminary pages, chapters, bibliography, appendices) laid down by the university.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q07",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nWhat was the impact of the last great war on Indian literature?",
+  "options": {
+   "A": "It had no impact.",
+   "B": "It aggravated popular revulsion against violence.",
+   "C": "It shook the foundations of literature.",
+   "D": "It offered eloquent support to the Western World."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage: the war had little impact except to aggravate popular revulsion against violence.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. ANSWER CHANGED FROM SITE KEY: the Oswaal key marks (d) 'eloquent support to the Western World', which the passage contradicts; its own explanation even talks about revulsion against violence. Bank gives (B), the passage's own words. Official CBSE final key not found."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q08",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nWhat did Tagore articulate in his last testament?",
+  "options": {
+   "A": "Offered support to Subhas Bose.",
+   "B": "Exposed the humane pretensions of the Western World.",
+   "C": "Expressed loyalty to England.",
+   "D": "Encouraged the liberation of countries."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Tagore's last testament was 'Crisis in Civilisation' (1941), read on his 80th birthday.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q09",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nWhat was the stance of Indian intellectuals during the war?",
+  "options": {
+   "A": "Indifference to Russia's plight.",
+   "B": "Support for Japanese militarism.",
+   "C": "They prompted creativity out of confused loyalties.",
+   "D": "Sympathy for England's dogged courage."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage: 'no creative impulse could issue from such confusion of loyalties' — their sympathy lay with England's dogged courage.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. ANSWER CHANGED FROM SITE KEY: the Oswaal key marks (c), but the passage says confused loyalties stifled creativity. Bank gives (D). Official CBSE final key not found."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q10",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nWhich was the main factor responsible for submerging the creative energy in Indian literature after independence?",
+  "options": {
+   "A": "Military occupation of one's own soil",
+   "B": "Resistance to colonial occupation",
+   "C": "The great agony of partition",
+   "D": "Victory of the Allies"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Partition's violence and displacement (and Gandhi's assassination) overshadowed the creative release expected in 1947.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q11",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nWhat was the aftermath that survived the tragedies of Kashmir and Bangladesh?",
+  "options": {
+   "A": "Suspicion of other countries",
+   "B": "Continuance of rivalry",
+   "C": "Menace of war",
+   "D": "National reconstruction"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "What enthusiasm survived went into national reconstruction and economic development.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q12",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The last great war had relatively little impact on Indian literature beyond aggravating popular revulsion against violence and adding to disillusionment with the 'humane' pretensions of the Western world — something Tagore voiced in his last testament, Crisis in Civilisation. Indian intellectuals were in a moral dilemma: their sympathy was with England's dogged courage and with the Allies, yet their own soil was under military occupation and an Indian army was fighting on the other side; no creative impulse could issue from such confusion of loyalties. Independence in 1947 should have released a flood of creative energy, but it was submerged by the agony of Partition — mass violence, the uprooting of millions — and by Gandhi's assassination. Later tragedies (Kashmir, Bangladesh) stirred emotional writing in several languages, but emotion alone does not make great literature; what enthusiasm survived went into national reconstruction and economic development. Even so, Indian literature today is richer in volume, range and variety, and great literature has often emerged out of chains of convulsions.\n\nThe passage has the message that:",
+  "options": {
+   "A": "Disasters are inevitable.",
+   "B": "Great literature emerges out of chains of convulsions.",
+   "C": "Indian literature does not have a marked landscape.",
+   "D": "Literature has no relation with war and independence."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Central idea questions: pick the option the closing lines state, not a side detail.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q13",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Effective communication pre-supposes:",
+  "options": {
+   "A": "Non-alignment",
+   "B": "Domination",
+   "C": "Passivity",
+   "D": "Understanding"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication basics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Communication is effective only when the receiver understands the message as intended (shared meaning).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q14",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "When verbal and non-verbal messages are contradictory, it is said that most people believe in:",
+  "options": {
+   "A": "indeterminate messages",
+   "B": "verbal messages",
+   "C": "non-verbal messages",
+   "D": "aggressive messages"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Non-verbal communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mehrabian's studies (1967–71): when words and tone/body clash, people trust the non-verbal cues.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q15",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The typical feature of an information-rich classroom lecture is in the nature of being:",
+  "options": {
+   "A": "Sedentary",
+   "B": "Staggered",
+   "C": "Factual",
+   "D": "Sectoral"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An information-rich lecture is fact-based.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q16",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Expressive communication is driven by:",
+  "options": {
+   "A": "Passive aggression",
+   "B": "Encoder's personality characteristics",
+   "C": "External clues",
+   "D": "Encoder-decoder contract"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Expressive communication voices the sender's feelings, so it is shaped by the encoder's personality.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q17",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Positive classroom communication leads to:",
+  "options": {
+   "A": "Coercion",
+   "B": "Submission",
+   "C": "Confrontation",
+   "D": "Persuasion"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Positive communication wins students over by persuasion, not force.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q18",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Classroom communication is the basis of:",
+  "options": {
+   "A": "Social identity",
+   "B": "External inanities",
+   "C": "Biased passivity",
+   "D": "Group aggression"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Interaction with teachers and peers helps learners build their social identity.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q19",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The missing term in the series 1, 4, 27, 16, ?, 36, 343, ... is:",
+  "options": {
+   "A": "30",
+   "B": "49",
+   "C": "125",
+   "D": "81"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Odd places are cubes (1³, 3³, 5³, 7³), even places squares (2², 4², 6²): 5³ = 125.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q20",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the series YEB, WFD, UHG, SKI, ? will be:",
+  "options": {
+   "A": "TLO",
+   "B": "QOL",
+   "C": "QLO",
+   "D": "GQP"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1st letters −2 (Y W U S Q); 2nd +1, +2, +3, +4 (E F H K O); 3rd +2, +3, +2, +3 (B D G I L).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q21",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If A is coded as C, M as I, N as P, S as O, I as A, P as N, E as M, O as E and C as S, then the code of COMPANIES will be:",
+  "options": {
+   "A": "SPEINMOAC",
+   "B": "NCPSEIOMA",
+   "C": "SMOPIEACN",
+   "D": "SEINCPAMO"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Substitute letter by letter: C→S, O→E, M→I, P→N, A→C, N→P, I→A, E→M, S→O.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q22",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is an example of continuous series?",
+  "options": {
+   "A": "Number of languages a person speaks",
+   "B": "Number of children in a household",
+   "C": "Population of cities",
+   "D": "Weight of students in a class"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Statistics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Continuous data can take any value in a range (weight, height); counts (children, languages, population) are discrete.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. ANSWER CHANGED FROM SITE KEY: the Oswaal key marks (b) 'number of children', a count (discrete); its own explanation defines continuous data as weight/height. Bank gives (D). Official CBSE final key not found. Stem lightly reworded by the source."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q23",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Ali buys a glass, a pencil box and a cup and pays ₹21 to the shopkeeper. Rakesh buys a cup, two pencil boxes and a glass and pays ₹28. Preeti buys two glasses, a cup and two pencil boxes and pays ₹35. The cost of 10 cups will be:",
+  "options": {
+   "A": "₹40",
+   "B": "₹60",
+   "C": "₹80",
+   "D": "₹70"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Linear equations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "G+B+C = 21 and G+2B+C = 28 give B = 7; then 2G+C = 21 and G+C = 14 give G = 7, C = 7 → 10 cups = ₹70.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q24",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Out of four cities given below three are alike in some manner while the fourth one is different. Identify the odd one.",
+  "options": {
+   "A": "Lucknow",
+   "B": "Rishikesh",
+   "C": "Allahabad",
+   "D": "Patna"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Classification"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rishikesh, Allahabad (Prayagraj) and Patna are on the Ganga; Lucknow is on the Gomti.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q25",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are some characteristics of reasoning. Select the code that states a characteristic which is not of deductive reasoning:",
+  "options": {
+   "A": "The conclusion must be based on observation and experiment.",
+   "B": "The conclusion should be supported by the premise/premises.",
+   "C": "The conclusion must follow from the premise/premises necessarily.",
+   "D": "The argument may be valid or invalid."
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Deduction and induction"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Basing conclusions on observation and experiment is the mark of induction.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q26",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If two standard form categorical propositions with the same subject and predicate are related in such a manner that if one is undetermined the other must be undetermined, what is their relation?",
+  "options": {
+   "A": "Contrary",
+   "B": "Subcontrary",
+   "C": "Contradictory",
+   "D": "Sub-altern"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Contradictories (A–O, E–I) always take opposite values, so knowing nothing of one means knowing nothing of the other.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q27",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "\"Men and women may have different reproductive strategies but neither can be considered inferior or superior to the other, any more than a bird's wings can be considered superior or inferior to a fish's fins.\" What type of argument is it?",
+  "options": {
+   "A": "Biological",
+   "B": "Physiological",
+   "C": "Analogical",
+   "D": "Hypothetical"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Any more than' sets up a comparison of unlike cases — analogy. Analogy questions recur (July 2018, Nov 2017).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q28",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following propositions two are related in such a way that they cannot both be true but can both be false. Select the code that states those two propositions.\n(a) Every student is attentive.\n(b) Some students are attentive.\n(c) Students are never attentive.\n(d) Some students are not attentive.",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) and (c)",
+   "C": "(b) and (c)",
+   "D": "(c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A ('every') and E ('never') are contraries: never both true, may both be false.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q29",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises (A and B). From those two premises four conclusions (i), (ii), (iii) and (iv) are drawn. Select the code that states the conclusion(s) validly drawn (taking the premises singularly or jointly).\nPremises: (A) Untouchability is a curse. (B) All hot pans are untouchable.\nConclusions: (i) All hot pans are curse. (ii) Some untouchable things are hot pans. (iii) All curses are untouchability. (iv) Some curses are untouchability.",
+  "options": {
+   "A": "(i) and (ii)",
+   "B": "(ii) and (iii)",
+   "C": "(iii) and (iv)",
+   "D": "(ii) and (iv)"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(ii) and (iv) are conversions by limitation of the premises; (i) commits four terms ('untouchable' ≠ 'untouchability').",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Answer as per the solved copy's key; trick item on equivocation."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q30",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If the statement 'None but the brave wins the race' is false, which of the following statements can be claimed to be true? Select the correct code:",
+  "options": {
+   "A": "All brave persons win the race.",
+   "B": "Some persons who win the race are not brave.",
+   "C": "Some persons who win the race are brave.",
+   "D": "No person who wins the race is brave."
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'None but the brave win' = 'All winners are brave' (A); if A is false its contradictory O is true.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q31",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Sales revenue of a publishing house (₹ in lakh), 2012–2015:\nItem | 2012 | 2013 | 2014 | 2015\nJournals | 46 | 47 | 45 | 44\nMagazines | 31 | 39 | 46 | 51\nBooks | 73 | 77 | 78 | 78\nTotal | 150 | 163 | 169 | 173\n\nIn 2015, approximately what percent of total revenue came from books?",
+  "options": {
+   "A": "45%",
+   "B": "55%",
+   "C": "35%",
+   "D": "25%"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "78 ÷ 173 ≈ 45%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q32",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Sales revenue of a publishing house (₹ in lakh), 2012–2015:\nItem | 2012 | 2013 | 2014 | 2015\nJournals | 46 | 47 | 45 | 44\nMagazines | 31 | 39 | 46 | 51\nBooks | 73 | 77 | 78 | 78\nTotal | 150 | 163 | 169 | 173\n\nThe number of years in which there was an increase in revenue from at least two categories is:",
+  "options": {
+   "A": "0",
+   "B": "1",
+   "C": "2",
+   "D": "3"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Trend"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2013 (all three up) and 2014 (magazines, books) qualify; 2015 only magazines rose.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q33",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Sales revenue of a publishing house (₹ in lakh), 2012–2015:\nItem | 2012 | 2013 | 2014 | 2015\nJournals | 46 | 47 | 45 | 44\nMagazines | 31 | 39 | 46 | 51\nBooks | 73 | 77 | 78 | 78\nTotal | 150 | 163 | 169 | 173\n\nIf the year 2016 were to show the same growth in terms of total revenue as the year 2015 over 2014, then the revenue in 2016 must be approximately:",
+  "options": {
+   "A": "₹194 lakh",
+   "B": "₹187 lakh",
+   "C": "₹172 lakh",
+   "D": "₹177 lakh"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Growth rate"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "169 → 173 is about 2.4% growth; 173 × 1.024 ≈ 177.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q34",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Performance of students by gender (Average / Good / Excellent). Given cells: Male–Excellent = 10; Female–Total = 32; Total–Good = 30. Also given: (a) Half the students were either excellent or good. (b) 40% of the students were females. (c) One-third of the male students were average.\n\nHow many female students are excellent?",
+  "options": {
+   "A": "0",
+   "B": "8",
+   "C": "16",
+   "D": "32"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Total = 32 ÷ 0.4 = 80; good+excellent = 40, so excellent = 10, all male; female excellent = 0.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q35",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Performance of students by gender (Average / Good / Excellent). Given cells: Male–Excellent = 10; Female–Total = 32; Total–Good = 30. Also given: (a) Half the students were either excellent or good. (b) 40% of the students were females. (c) One-third of the male students were average.\n\nWhat proportion of female students are good?",
+  "options": {
+   "A": "0",
+   "B": "0.25",
+   "C": "0.50",
+   "D": "0.75"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Males 48, male average 16 → average total 40 → female average 24; female good = 32 − 24 = 8 → 8/32 = 0.25.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q36",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Performance of students by gender (Average / Good / Excellent). Given cells: Male–Excellent = 10; Female–Total = 32; Total–Good = 30. Also given: (a) Half the students were either excellent or good. (b) 40% of the students were females. (c) One-third of the male students were average.\n\nApproximately what proportion of good students are male?",
+  "options": {
+   "A": "0",
+   "B": "0.73",
+   "C": "0.43",
+   "D": "0.27"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Male good = 30 − 8 = 22 → 22/30 ≈ 0.73.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q37",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements regarding the features of number systems is/are true?\nS1: The decimal number 11 is larger than the hexadecimal number 11.\nS2: In the binary number 1110.101, the fractional part has the decimal value 0.625.",
+  "options": {
+   "A": "S1 only",
+   "B": "S2 only",
+   "C": "Both S1 and S2",
+   "D": "Neither S1 nor S2"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Number systems"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Hex 11 = 16 + 1 = 17 (decimal); binary .101 = 1/2 + 1/8 = 0.625.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q38",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Read the following two statements:\nI: Information and Communication Technology (ICT) is considered a subset of Information Technology (IT).\nII: The 'right to use' a piece of software is termed as copyright.\nWhich of the above statement(s) is/are CORRECT?",
+  "options": {
+   "A": "Both I and II",
+   "B": "Neither I nor II",
+   "C": "II only",
+   "D": "I only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT basics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "IT is part of ICT, not the reverse; the right to use software is a licence — copyright is the owner's exclusive right to copy and distribute.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q39",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which of the following correctly lists computer memory types from highest to lowest speed?",
+  "options": {
+   "A": "Secondary Storage; Main Memory (Primary Storage); Cache Memory; CPU Registers",
+   "B": "CPU Registers; Cache Memory; Secondary Storage; Main Memory (Primary Storage)",
+   "C": "CPU Registers; Cache Memory; Main Memory (Primary Storage); Secondary Storage",
+   "D": "Cache Memory; CPU Registers; Main Memory (Primary Storage); Secondary Storage"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Speed falls (and capacity rises) from registers → cache → RAM → disk.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q40",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is a characteristic of Web 2.0 applications?",
+  "options": {
+   "A": "Multiple users schedule their time to use Web 2.0 applications one by one.",
+   "B": "Web 2.0 applications are focused on the ability for people to collaborate and share information online.",
+   "C": "Web 2.0 applications provide users with content rather than facilitating users to create it.",
+   "D": "Web 2.0 applications use only static pages."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Web 2.0 (term popularised by Tim O'Reilly, 2004) = user-generated content: blogs, wikis, social media.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q41",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "With regard to a word processing software, the process of combining static information in a publication together with variable information in a data source to create one merged publication is called:",
+  "options": {
+   "A": "Electronic mail",
+   "B": "Data sourcing",
+   "C": "Mail merge",
+   "D": "Spam mail"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Software"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mail merge joins a main document with a data source (names, addresses) to make personalised copies.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q42",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "DVD technology uses an optical media to store the digital data. DVD is an acronym for:",
+  "options": {
+   "A": "Digital Vector Disc",
+   "B": "Digital Volume Disc",
+   "C": "Digital Versatile Disc",
+   "D": "Digital Visualization Disc"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "DVD = Digital Versatile Disc (originally 'Digital Video Disc').",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q43",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Sustainable development is critical to well-being of human society.\nReason (R): Environmentally sound policies do not harm the environment or deplete the natural resources.\n\nChoose the correct code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Sustainable development"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Brundtland Report (1987): development that meets present needs without compromising future generations.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q44",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The dominant source of pollution due to oxides of nitrogen (NOx) in urban areas is:",
+  "options": {
+   "A": "road transport",
+   "B": "commercial sector",
+   "C": "energy use in industry",
+   "D": "power plants"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Vehicle exhaust is the main urban NOx source; NOx plus sunlight forms photochemical smog.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q45",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is not a water-borne disease?",
+  "options": {
+   "A": "Typhoid",
+   "B": "Hepatitis",
+   "C": "Cholera",
+   "D": "Dengue"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Health"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Dengue is spread by the Aedes aegypti mosquito; typhoid, cholera and hepatitis A/E spread through water.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q46",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Indian government's target for power production from small hydro projects by the year 2022 is:",
+  "options": {
+   "A": "1 Giga-Watt",
+   "B": "5 Giga-Watt",
+   "C": "10 Giga-Watt",
+   "D": "15 Giga-Watt"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "India's 175 GW renewables target for 2022: solar 100, wind 60, biomass 10, small hydro 5 GW.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q47",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which country, the recent international agreement on phasing out Hydro Fluoro Carbons (HFCs) was signed?",
+  "options": {
+   "A": "Rwanda",
+   "B": "Morocco",
+   "C": "South Africa",
+   "D": "Algeria"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "International agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kigali Amendment (Oct 2016) to the Montreal Protocol phases down HFCs.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q48",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following natural hazards is not hydro-meteorological?",
+  "options": {
+   "A": "Snow avalanche",
+   "B": "Sea erosion",
+   "C": "Tropical cyclone",
+   "D": "Tsunami"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Tsunamis are geological (undersea earthquakes, landslides, volcanoes).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q49",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the demerits of globalization of higher education?\n(a) Exposure to global curriculum\n(b) Promotion of elitism in education\n(c) Commodification of higher education\n(d) Increase in the cost of education\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a) and (d)",
+   "B": "(a), (c) and (d)",
+   "C": "(b), (c) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Globalisation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Exposure to a global curriculum is a merit; elitism, commodification and rising cost are demerits.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q50",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct about deemed universities?\n(a) The Governor of the State is the chancellor of deemed universities.\n(b) They can design their own syllabus and course work.\n(c) They can frame their own guidelines regarding admission and fees.\n(d) They can grant degrees.\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(a), (c) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Deemed universities"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Deemed universities (Section 3, UGC Act 1956) set their own courses, admissions and fees and award degrees; the Governor is chancellor only of state universities.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. OPTIONS RECONSTRUCTED: the Oswaal copy misprints options (b) and (c) as identical ('1, 3 and 4') and marks (b). The intended set is (b), (c), (d), placed here as option B. Check against the official booklet when available."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q51",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 51,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The purpose of value education is best served by focussing on:",
+  "options": {
+   "A": "Cultural practices prevailing in the society.",
+   "B": "Norms of conduct laid down by a social group.",
+   "C": "Concern for human values.",
+   "D": "Religious and moral practices and instructions."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Value education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Value education aims at universal human values, not the norms of one group or religion.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q52",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 52,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct?\n(a) Rajya Sabha is a permanent House which can be dissolved only during national emergency.\n(b) Rajya Sabha does not represent the local interests of the States.\n(c) Members of the Rajya Sabha are not bound to vote at the dictates of the states they represent.\n(d) No Union territory has a representative in the Rajya Sabha.\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a) and (d)",
+   "B": "(b) and (c)",
+   "C": "(b), (c) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rajya Sabha can never be dissolved (one-third retire every 2 years); Delhi, Puducherry and J&K send members.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q53",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 53,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are not necessarily the immediate consequences of the proclamation of the President's Rule in a State?\n(a) Dissolution of the State Assembly.\n(b) Removal of the Council of Ministers in the State.\n(c) Takeover of the State administration by the Union Government.\n(d) Appointment of a new Chief Secretary.\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a) and (d)",
+   "B": "(a), (b) and (c)",
+   "C": "(a), (b), (c) and (d)",
+   "D": "(b) and (c)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Under Article 356 the Assembly may be dissolved or only suspended; the ministry goes and the Centre takes over at once.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q54",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 54,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Instead of holding office during the pleasure of the President, who among the following hold(s) office during good behaviour?\n(a) Governor of a State\n(b) Attorney General of India\n(c) Judges of the High Court\n(d) Administrator of a Union Territory\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a) only",
+   "B": "(c) only",
+   "C": "(a) and (c)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "High Court judges can be removed only by Parliament's address for proved misbehaviour or incapacity; the others serve at the President's pleasure.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q55",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 55,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following sets of statements represents acceptable propositions in respect of teaching-learning relationships? Choose the correct code to indicate your answer.\n(i) When students fail, it is the teacher who fails.\n(ii) Every teaching must aim at ensuring learning.\n(iii) There can be teaching without learning taking place.\n(iv) There can be no learning without teaching.\n(v) A teacher teaches but learns also.\n(vi) Real learning implies rote learning.",
+  "options": {
+   "A": "(ii), (iii), (iv) and (v)",
+   "B": "(i), (ii), (iii) and (v)",
+   "C": "(iii), (iv), (v) and (vi)",
+   "D": "(i), (ii), (v) and (vi)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching and learning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Learning can happen without teaching, and real learning is not rote — so (iv) and (vi) go.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q56",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 56,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Learning is a life long process.\nReason (R): Learning to be useful must be linked with life processes.\n\nChoose the correct answer from the following code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of learning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Lifelong learning (Delors Report 'Learning: The Treasure Within', 1996 — four pillars).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q57",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 57,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The effectiveness of teaching has to be judged in terms of:",
+  "options": {
+   "A": "Course coverage",
+   "B": "Students' interest",
+   "C": "Learning outcomes of students",
+   "D": "Use of teaching aids in the classroom"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Effective teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Learning outcomes, not syllabus coverage, are the test of effective teaching.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q58",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 58,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which teaching method learner's participation is made optimal and proactive?",
+  "options": {
+   "A": "Discussion method",
+   "B": "Buzz session method",
+   "C": "Brainstorming session method",
+   "D": "Project method"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The project method (W. H. Kilpatrick, 1918, after Dewey) has learners plan and carry out purposeful work.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q59",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 59,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "One of the most powerful factors affecting teaching effectiveness is related to the:",
+  "options": {
+   "A": "Social system of the country",
+   "B": "Economic status of the society",
+   "C": "Prevailing political system",
+   "D": "Educational system"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching factors"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Policies, curriculum and institutional set-up of the education system shape teaching most directly.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-JAN-P1-Q60",
+  "exam": "NET",
+  "year": 2017,
+  "session": "January",
+  "shift": 1,
+  "source": "UGC NET January 2017 (22 Jan 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 60,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Formative evaluation tends to accelerate the pace of learning.\nReason (R): As against summative evaluation, formative evaluation is highly reliable.\n\nChoose the correct answer from the following code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formative feedback speeds learning, but it is not more reliable than summative evaluation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set W order (60 questions, attempt any 50). Text and answer from Oswaal's solved copy, re-worked by Claude; official CBSE final key for Jan 2017 not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q01",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following set of statements best represents the nature and objective of teaching and learning?\n(a) Teaching is like selling and learning is like buying.\n(b) Teaching is a social act while learning is a personal act.\n(c) Teaching implies learning whereas learning does not imply teaching.\n(d) Teaching is a kind of delivery of knowledge while learning is like receiving it.\n(e) Teaching is an interaction and is triadic in nature whereas learning is an active engagement in a subject domain.\n\nCode:",
+  "options": {
+   "A": "(a), (d) and (e)",
+   "B": "(b), (c) and (e)",
+   "C": "(a), (b) and (c)",
+   "D": "(a), (b) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Teaching is triadic (teacher, learner, subject); learning is personal and can happen without teaching. A near-identical item came in July 2018.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q02",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the list given below identify the learner characteristics which would facilitate teaching-learning system to become effective.\n(a) Prior experience of learner\n(b) Learner's family lineage\n(c) Aptitude of the learner\n(d) Learner's stage of development\n(e) Learner's food habits and hobbies\n(f) Learner's religious affiliation\n\nCode:",
+  "options": {
+   "A": "(a), (c) and (d)",
+   "B": "(d), (e) and (f)",
+   "C": "(a), (d) and (e)",
+   "D": "(b), (c) and (f)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Prior experience, aptitude and developmental stage (Piaget) shape learning. July 2018 asked the same idea (prior experience).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q03",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): All teaching implies learning.\nReason (R): Learning to be useful must be derived from teaching.\n\nChoose the correct answer from the code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Much useful learning comes from experience and self-study, so R is false.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q04",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "On the basis of summative tests, a teacher is interpreting his/her students' performance in terms of their wellness life style evident in behaviour. This will be called:",
+  "options": {
+   "A": "Formative testing",
+   "B": "Continuous and comprehensive evaluation",
+   "C": "Norm-referenced testing",
+   "D": "Criterion-referenced testing"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Criterion-referenced tests judge performance against a set standard; norm-referenced tests compare students with each other (Robert Glaser, 1963).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q05",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following is a key behaviour in effective teaching?",
+  "options": {
+   "A": "Using student ideas and contribution",
+   "B": "Structuring",
+   "C": "Instructional variety",
+   "D": "Questioning"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Effective teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Borich's five key behaviours: lesson clarity, instructional variety, task orientation, engagement, success rate; the other options are 'helping' behaviours.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q06",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following research types focuses on ameliorating the prevailing situations?",
+  "options": {
+   "A": "Fundamental Research",
+   "B": "Applied Research",
+   "C": "Action Research",
+   "D": "Experimental Research"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Types of research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Action research improves a current situation in one's own setting.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q07",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A researcher attempts to evaluate the effect of method of feeding on anxiety-proneness of children. Which method of research would be appropriate for this?",
+  "options": {
+   "A": "Case study method",
+   "B": "Experimental method",
+   "C": "Ex-post-facto method",
+   "D": "Survey method"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ex post facto ('after the fact') studies causes of effects that have already occurred, where the variable cannot be manipulated.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q08",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which of the following arrangements a wider spectrum of ideas and issues may be made possible?",
+  "options": {
+   "A": "Research Article",
+   "B": "Workshop mode",
+   "C": "Conference",
+   "D": "Symposium"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Conferences gather many researchers and papers across a field. July 2018 also chose 'conference' for creative and critical thinking.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q09",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In finalizing a thesis writing format which of the following would form part of supplementary pages?",
+  "options": {
+   "A": "List of tables and figures",
+   "B": "Table of contents",
+   "C": "Conclusions of the study",
+   "D": "Bibliography and Appendices"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Thesis writing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Preliminary pages: title, certificate, contents, lists of tables/figures. Supplementary (end) pages: bibliography, appendices, index.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q10",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is susceptible to the issue of research ethics?",
+  "options": {
+   "A": "Inaccurate application of statistical techniques",
+   "B": "Faulty research design",
+   "C": "Choice of sampling techniques",
+   "D": "Reporting of research findings"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ethics concerns honest reporting — no fabrication, falsification or plagiarism; the others are technical errors.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q11",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): Climate change threatens sustainable development by harming the environment, health, food security, economic activity, natural resources and infrastructure. Vulnerability depends on social, economic and political factors as well as geographical attributes and dependence on natural resources; poor people often lack the financial resources (such as insurance) to recover from disasters. Adaptation is the process by which societies make themselves better able to cope with an uncertain future — adjustments and changes that reduce the negative effects of climate change or exploit its positive ones. Developing countries urgently need to reduce vulnerability, build adaptive capacity and implement national adaptation policies at their level, with adjustments at community, national and international levels. Communities should build resilience by using traditional knowledge and local coping strategies in synergy with government and local interventions, adopting suitable technologies and diversifying livelihoods.\n\nThe factors of vulnerability of poor people to climate change are:\n(a) Their dependence on natural resources\n(b) Geographical attributes\n(c) Lack of financial resources\n(d) Lack of traditional knowledge\n\nCode:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(a), (b), (c) and (d)",
+   "D": "(c) only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage praises traditional knowledge as a strength, so (d) is not a factor.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q12",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): Climate change threatens sustainable development by harming the environment, health, food security, economic activity, natural resources and infrastructure. Vulnerability depends on social, economic and political factors as well as geographical attributes and dependence on natural resources; poor people often lack the financial resources (such as insurance) to recover from disasters. Adaptation is the process by which societies make themselves better able to cope with an uncertain future — adjustments and changes that reduce the negative effects of climate change or exploit its positive ones. Developing countries urgently need to reduce vulnerability, build adaptive capacity and implement national adaptation policies at their level, with adjustments at community, national and international levels. Communities should build resilience by using traditional knowledge and local coping strategies in synergy with government and local interventions, adopting suitable technologies and diversifying livelihoods.\n\nAdaptation as a process enables societies to cope with:\n(a) An uncertain future\n(b) Adjustments and changes\n(c) Negative impact of climate change\n(d) Positive impact of climate change\n\nCode:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a) and (c)",
+   "C": "(b), (c) and (d)",
+   "D": "(c) only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage's definition of adaptation covers all four.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q13",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): Climate change threatens sustainable development by harming the environment, health, food security, economic activity, natural resources and infrastructure. Vulnerability depends on social, economic and political factors as well as geographical attributes and dependence on natural resources; poor people often lack the financial resources (such as insurance) to recover from disasters. Adaptation is the process by which societies make themselves better able to cope with an uncertain future — adjustments and changes that reduce the negative effects of climate change or exploit its positive ones. Developing countries urgently need to reduce vulnerability, build adaptive capacity and implement national adaptation policies at their level, with adjustments at community, national and international levels. Communities should build resilience by using traditional knowledge and local coping strategies in synergy with government and local interventions, adopting suitable technologies and diversifying livelihoods.\n\nTo address the challenge of climate change, developing countries urgently require:",
+  "options": {
+   "A": "Imposition of climate change tax",
+   "B": "Implementation of national adaptation policy at their level",
+   "C": "Adoption of short-term plans",
+   "D": "Adoption of technological solutions"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage calls for national adaptation policies in developing countries.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q14",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): Climate change threatens sustainable development by harming the environment, health, food security, economic activity, natural resources and infrastructure. Vulnerability depends on social, economic and political factors as well as geographical attributes and dependence on natural resources; poor people often lack the financial resources (such as insurance) to recover from disasters. Adaptation is the process by which societies make themselves better able to cope with an uncertain future — adjustments and changes that reduce the negative effects of climate change or exploit its positive ones. Developing countries urgently need to reduce vulnerability, build adaptive capacity and implement national adaptation policies at their level, with adjustments at community, national and international levels. Communities should build resilience by using traditional knowledge and local coping strategies in synergy with government and local interventions, adopting suitable technologies and diversifying livelihoods.\n\nThe traditional knowledge should be used through:",
+  "options": {
+   "A": "Its dissemination",
+   "B": "Improvement in national circumstances",
+   "C": "Synergy between government and local interventions",
+   "D": "Modern technology"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Local knowledge works best in synergy with government and local interventions.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q15",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): Climate change threatens sustainable development by harming the environment, health, food security, economic activity, natural resources and infrastructure. Vulnerability depends on social, economic and political factors as well as geographical attributes and dependence on natural resources; poor people often lack the financial resources (such as insurance) to recover from disasters. Adaptation is the process by which societies make themselves better able to cope with an uncertain future — adjustments and changes that reduce the negative effects of climate change or exploit its positive ones. Developing countries urgently need to reduce vulnerability, build adaptive capacity and implement national adaptation policies at their level, with adjustments at community, national and international levels. Communities should build resilience by using traditional knowledge and local coping strategies in synergy with government and local interventions, adopting suitable technologies and diversifying livelihoods.\n\nThe main focus of the passage is on:",
+  "options": {
+   "A": "Combining traditional knowledge with appropriate technology",
+   "B": "Coordination between regional and national efforts",
+   "C": "Adaptation to climate change",
+   "D": "Social dimensions of climate change"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Main-focus questions: choose the theme that runs through every paragraph.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q16",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The interaction between a teacher and students creates a zone of proximal:",
+  "options": {
+   "A": "Difference",
+   "B": "Confusion",
+   "C": "Development",
+   "D": "Distortion"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Vygotsky's Zone of Proximal Development: what a learner can do with help but not yet alone; support given there is 'scaffolding' (Bruner).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q17",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The spatial audio reproduction in a classroom can reduce the students':",
+  "options": {
+   "A": "Cognitive load in understanding",
+   "B": "Respect for the teacher",
+   "C": "Motivation for excellence",
+   "D": "Interest in technology-orientation"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Spatial (3-D) audio makes sources easier to tell apart, lowering cognitive load (Sweller's cognitive load theory).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q18",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The classroom communication should essentially be:",
+  "options": {
+   "A": "Contrived",
+   "B": "Empathetic",
+   "C": "Abstract",
+   "D": "Non-descriptive"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Empathetic communication starts from the learner's point of view.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q19",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A good communicator begins his/her presentation with a:",
+  "options": {
+   "A": "Complex question",
+   "B": "Non-sequitur",
+   "C": "Repetitive phrase",
+   "D": "Ice-breaker"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Presentation skills"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An ice-breaker relaxes and engages the audience; a non-sequitur is a remark that does not follow logically.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q20",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In a classroom, the probability of message reception can be enhanced by:",
+  "options": {
+   "A": "Establishing a viewpoint",
+   "B": "Exposing the ignorance of students",
+   "C": "Increasing the information load",
+   "D": "Using high decibel audio tools"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A clear viewpoint focuses the message; overload and noise reduce reception.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q21",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the series 1, 6, 15, 28, 45, ... the next term will be:",
+  "options": {
+   "A": "66",
+   "B": "76",
+   "C": "56",
+   "D": "84"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences 5, 9, 13, 17 (+4 each) → next +21: 45 + 21 = 66.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q22",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the series ABD, DGK, HMS, MTB, ? is:",
+  "options": {
+   "A": "NSA",
+   "B": "SBL",
+   "C": "PSK",
+   "D": "RUH"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1st letters +3, +4, +5, +6 → S; 2nd +5, +6, +7, +8 → B; 3rd +7, +8, +9, +10 → L. July 2018 continued this same series to ZKW.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q23",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In certain code \"COVALENT\" is coded as BWPDUOFM. The code of \"ELEPHANT\" will be:",
+  "options": {
+   "A": "MFUIQRTW",
+   "B": "QMUBIADH",
+   "C": "QFMFUOBI",
+   "D": "EPHNTEAS"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Reverse each half and shift +1: COVA → AVOC → BWPD; LENT → TNEL → UOFM. So ELEP → PELE → QFMF; HANT → TNAH → UOBI.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q24",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Ajay is a friend of Rakesh. Pointing to an old man Ajay asked Rakesh who is he? Rakesh said \"His son is my son's uncle\". The old man is related to Rakesh as:",
+  "options": {
+   "A": "Grandfather",
+   "B": "Father-in-law",
+   "C": "Father",
+   "D": "Uncle"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Blood relations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "My son's uncle = my brother; the old man's son is my brother, so he is my father.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q25",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A postman walked 20 m straight from his office, turned right and walked 10 m. After turning left he walked 10 m and after turning right walked 20 m. He again turned right and walked 70 m. How far he is from his office?",
+  "options": {
+   "A": "50 m",
+   "B": "40 m",
+   "C": "60 m",
+   "D": "20 m"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Direction sense"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "North 20 + 10 − 70 = 40 m south; east 10 + 20 = 30 m. √(40² + 30²) = 50 m.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q26",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "\"It is truism to say that no one was there when life first appeared on earth. Any assertion about life's origin, thus, should be treated as a theory.\" The above two statements constitute:",
+  "options": {
+   "A": "A historical explanation",
+   "B": "A narrative",
+   "C": "An argument",
+   "D": "A conjecture"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Arguments"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A premise plus a conclusion marked by 'thus' makes an argument.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q27",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are four statements. Among them two are related in such a way that they can both be true but they cannot both be false. Select the code that indicates those two statements.\n(a) Honest people never suffer.\n(b) Almost all honest people do suffer.\n(c) Honest people hardly suffer.\n(d) Each and every honest person suffers.",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) and (c)",
+   "C": "(a) and (d)",
+   "D": "(b) and (c)"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Sub-contraries (I and O) can both be true but not both false: 'almost all … do suffer' (I) and 'hardly suffer' (read as O). Compare 'hardly ferocious' in July 2018.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q28",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A deductive argument is invalid if:",
+  "options": {
+   "A": "Its premises and conclusion are all true.",
+   "B": "Its premises and conclusion are all false.",
+   "C": "Its premises are all false but its conclusion is true.",
+   "D": "Its premises are all true but its conclusion is false."
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Validity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Validity rules out only one combination: true premises with a false conclusion.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q29",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises (a and b). From those two premises four conclusions (i), (ii), (iii) and (iv) are drawn. Select the code that states the conclusion(s) validly drawn from the premise(s) (taking singly or jointly).\nPremises: (a) All bats are mammals. (b) No birds are bats.\nConclusions: (i) No birds are mammals. (ii) Some birds are not mammals. (iii) No bats are birds. (iv) All mammals are bats.",
+  "options": {
+   "A": "(i) only",
+   "B": "(i) and (ii) only",
+   "C": "(iii) only",
+   "D": "(iii) and (iv) only"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "E-propositions convert simply: 'No birds are bats' → 'No bats are birds'. (i) commits illicit major.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q30",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "\"Just as melting ice-cubes do not cause a glass of water to overflow, melting sea-ice does not increase oceanic volume.\" What type of argument is it?",
+  "options": {
+   "A": "Analogical",
+   "B": "Hypothetical",
+   "C": "Psychological",
+   "D": "Statistical"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Just as … so' signals analogy.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q31",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of registered vehicles in India (lakh) and India's population (million):\nYear | Total vehicles | Two wheelers | Cars, Jeeps, Taxis | Buses | Goods vehicles | Others | Population\n1961 | 6.65 | 0.88 | 3.1 | 0.57 | 1.68 | 0.42 | 439.23\n1971 | 18.65 | 5.76 | 6.82 | 0.94 | 3.43 | 1.70 | 548.15\n1981 | 53.91 | 26.18 | 11.60 | 1.62 | 5.54 | 8.97 | 683.32\n1991 | 213.74 | 142.00 | 29.54 | 3.31 | 13.56 | 25.33 | 846.42\n2001 | 549.91 | 385.56 | 70.58 | 6.34 | 29.48 | 57.95 | 1028.73\n2011 | 1417.58 | 1018.65 | 191.23 | 16.04 | 70.64 | 121.02 | 1210.19\n\nThe maximum decadal growth in population of India is registered in the period:",
+  "options": {
+   "A": "1961-1971",
+   "B": "1991-2001",
+   "C": "2001-2011",
+   "D": "1981-1991"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Growth rate"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Percentage growth: 1961–71 ≈ 24.8%, 1981–91 ≈ 23.9%, 1991–2001 ≈ 21.5%, 2001–11 ≈ 17.6%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q32",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of registered vehicles in India (lakh) and India's population (million):\nYear | Total vehicles | Two wheelers | Cars, Jeeps, Taxis | Buses | Goods vehicles | Others | Population\n1961 | 6.65 | 0.88 | 3.1 | 0.57 | 1.68 | 0.42 | 439.23\n1971 | 18.65 | 5.76 | 6.82 | 0.94 | 3.43 | 1.70 | 548.15\n1981 | 53.91 | 26.18 | 11.60 | 1.62 | 5.54 | 8.97 | 683.32\n1991 | 213.74 | 142.00 | 29.54 | 3.31 | 13.56 | 25.33 | 846.42\n2001 | 549.91 | 385.56 | 70.58 | 6.34 | 29.48 | 57.95 | 1028.73\n2011 | 1417.58 | 1018.65 | 191.23 | 16.04 | 70.64 | 121.02 | 1210.19\n\nIn which year the decadal growth (%) in number of cars surpassed that of the two wheelers?",
+  "options": {
+   "A": "1991",
+   "B": "2001",
+   "C": "1981",
+   "D": "2011"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Growth rate"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2011: cars +171% (70.58 → 191.23) vs two wheelers +164% (385.56 → 1018.65).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q33",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of registered vehicles in India (lakh) and India's population (million):\nYear | Total vehicles | Two wheelers | Cars, Jeeps, Taxis | Buses | Goods vehicles | Others | Population\n1961 | 6.65 | 0.88 | 3.1 | 0.57 | 1.68 | 0.42 | 439.23\n1971 | 18.65 | 5.76 | 6.82 | 0.94 | 3.43 | 1.70 | 548.15\n1981 | 53.91 | 26.18 | 11.60 | 1.62 | 5.54 | 8.97 | 683.32\n1991 | 213.74 | 142.00 | 29.54 | 3.31 | 13.56 | 25.33 | 846.42\n2001 | 549.91 | 385.56 | 70.58 | 6.34 | 29.48 | 57.95 | 1028.73\n2011 | 1417.58 | 1018.65 | 191.23 | 16.04 | 70.64 | 121.02 | 1210.19\n\nWhat was the average decadal growth in the number of cars during 1961-2011?",
+  "options": {
+   "A": "~131%",
+   "B": "~68%",
+   "C": "~217%",
+   "D": "~157%"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Car growth per decade: 120, 70, 155, 139, 171% → average ≈ 131%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q34",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of registered vehicles in India (lakh) and India's population (million):\nYear | Total vehicles | Two wheelers | Cars, Jeeps, Taxis | Buses | Goods vehicles | Others | Population\n1961 | 6.65 | 0.88 | 3.1 | 0.57 | 1.68 | 0.42 | 439.23\n1971 | 18.65 | 5.76 | 6.82 | 0.94 | 3.43 | 1.70 | 548.15\n1981 | 53.91 | 26.18 | 11.60 | 1.62 | 5.54 | 8.97 | 683.32\n1991 | 213.74 | 142.00 | 29.54 | 3.31 | 13.56 | 25.33 | 846.42\n2001 | 549.91 | 385.56 | 70.58 | 6.34 | 29.48 | 57.95 | 1028.73\n2011 | 1417.58 | 1018.65 | 191.23 | 16.04 | 70.64 | 121.02 | 1210.19\n\nIn the year 2001, out of total number of vehicles, the number of passenger vehicles (4 wheelers) accounted for:",
+  "options": {
+   "A": "~14%",
+   "B": "~24%",
+   "C": "~31%",
+   "D": "~43%"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(70.58 cars + 6.34 buses) ÷ 549.91 ≈ 14%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q35",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of registered vehicles in India (lakh) and India's population (million):\nYear | Total vehicles | Two wheelers | Cars, Jeeps, Taxis | Buses | Goods vehicles | Others | Population\n1961 | 6.65 | 0.88 | 3.1 | 0.57 | 1.68 | 0.42 | 439.23\n1971 | 18.65 | 5.76 | 6.82 | 0.94 | 3.43 | 1.70 | 548.15\n1981 | 53.91 | 26.18 | 11.60 | 1.62 | 5.54 | 8.97 | 683.32\n1991 | 213.74 | 142.00 | 29.54 | 3.31 | 13.56 | 25.33 | 846.42\n2001 | 549.91 | 385.56 | 70.58 | 6.34 | 29.48 | 57.95 | 1028.73\n2011 | 1417.58 | 1018.65 | 191.23 | 16.04 | 70.64 | 121.02 | 1210.19\n\nWhat was the per capita ownership of two wheelers in India in the year 2011?",
+  "options": {
+   "A": "~0.084%",
+   "B": "~0.0084%",
+   "C": "~0.84%",
+   "D": "~0.068%"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Per capita"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1018.65 lakh ÷ 12,101.9 lakh people ≈ 0.084 two wheelers per person (≈ 8.4%).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. FLAWED QUESTION: the true per capita figure is 0.084 (8.4%), so no option is strictly right; the solved copy marks ~0.084% and another solved copy calls it a wrong question. Official CBSE final key not found."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q36",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What is the name for a webpage address?",
+  "options": {
+   "A": "Domain",
+   "B": "Directory",
+   "C": "Protocol",
+   "D": "URL"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "URL = Uniform Resource Locator (Tim Berners-Lee, 1994).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q37",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "The data storage hierarchy consists of:",
+  "options": {
+   "A": "Bytes, bits, fields, records, files and databases",
+   "B": "Bits, bytes, fields, records, files and databases",
+   "C": "Bits, bytes, records, fields, files and databases",
+   "D": "Bits, bytes, fields, files, records and databases"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Data hierarchy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Bit → byte → field → record → file → database.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q38",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following domains is used for profit businesses?",
+  "options": {
+   "A": ".org",
+   "B": ".net",
+   "C": ".edu",
+   "D": ".com"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": ".com = commercial; .org non-profits; .edu education; .net network providers.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q39",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What is the full form of USB as used in computer related activities?",
+  "options": {
+   "A": "Ultra Security Block",
+   "B": "Universal Security Block",
+   "C": "Universal Serial Bus",
+   "D": "United Serial Bus"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "USB = Universal Serial Bus (1996).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q40",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following represents billion characters?",
+  "options": {
+   "A": "Terabytes",
+   "B": "Megabytes",
+   "C": "Kilobytes",
+   "D": "Gigabytes"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory units"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1 character ≈ 1 byte; a billion (10⁹) bytes ≈ 1 GB.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q41",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following pollutants is the major cause of respiratory diseases?",
+  "options": {
+   "A": "Suspended fine particles",
+   "B": "Nitrogen oxides",
+   "C": "Carbon monoxide",
+   "D": "Volatile organic compounds"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Fine particulates (PM2.5, PM10) lodge deep in the lungs.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q42",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): In urban areas, smog episodes occur frequently in winters.\nReason (R): In winters, a lot of biomass is burnt by people for heating purposes or to keep themselves warm.\n\nChoose the correct answer from the code given below:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true but (R) is not the correct explanation of (A).",
+   "C": "(A) is true and (R) is false.",
+   "D": "Both (A) and (R) are false."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Winter smog is mainly due to temperature inversion and calm air trapping pollutants, not just biomass burning.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q43",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Occurrence of natural hazards is affected by:\n(a) Land use changes\n(b) Drainage and construction\n(c) Ozone depletion\n(d) Climate change\n\nChoose the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (c) and (d)",
+   "B": "(a), (b) and (c)",
+   "C": "(a), (b) and (d)",
+   "D": "(b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ozone depletion raises UV exposure but does not trigger floods, landslides or storms.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q44",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following pollutant gases is not produced both naturally and as a result of industrial activity?",
+  "options": {
+   "A": "Chlorofluoro carbons",
+   "B": "Nitrous oxide",
+   "C": "Methane",
+   "D": "Carbon dioxide"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Greenhouse gases"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "CFCs are wholly man-made (Thomas Midgley, 1928); CO2, CH4 and N2O also have natural sources.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q45",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following fuels of energy, which is the most environment friendly?",
+  "options": {
+   "A": "Ethanol",
+   "B": "Biogas",
+   "C": "CNG",
+   "D": "Hydrogen"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Burning hydrogen gives only water.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q46",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the goals of higher education in India?\n(a) Access\n(b) Equity\n(c) Quality and Excellence\n(d) Relevance\n(e) Value based education\n(f) Compulsory and free education\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b) and (e) only",
+   "B": "(a), (b), (e) and (f)",
+   "C": "(a), (b), (c), (d) and (e)",
+   "D": "(a), (b), (c), (d), (e) and (f)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Higher education system"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Free and compulsory education (RTE Act 2009, ages 6–14) is a school-level goal, not higher education.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q47",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following has been ranked the best college in the country (2017) as per the National Institutional Ranking Framework (NIRF)?",
+  "options": {
+   "A": "Miranda House, Delhi",
+   "B": "St. Stephen's College, Delhi",
+   "C": "Fergusson College, Pune",
+   "D": "Maharaja's College, Mysore"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Rankings and awards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NIRF (launched 2015) — Miranda House topped the college list in 2017.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q48",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following universities has received the Visitor's Award for the best Central University in India in Feb. 2017?",
+  "options": {
+   "A": "Jawaharlal Nehru University",
+   "B": "Banaras Hindu University",
+   "C": "Tezpur University",
+   "D": "University of Hyderabad"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Rankings and awards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The Visitor is the President of India; JNU won the best-university award in 2017.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q49",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Who among the following can be removed by the President without Parliament's resolution?",
+  "options": {
+   "A": "Judge of a High Court",
+   "B": "Governor of a State",
+   "C": "Chief Election Commissioner",
+   "D": "Comptroller and Auditor-General"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Governors hold office during the President's pleasure (Article 156); the others need Parliament's special-majority address.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2017-NOV-P1-Q50",
+  "exam": "NET",
+  "year": 2017,
+  "session": "November",
+  "shift": 1,
+  "source": "UGC NET November 2017 (5 Nov 2017, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following come(s) within the ambit of the term 'corruption'?\n(a) Misuse of official position\n(b) Deviation from rules, laws and norms\n(c) Non-action when action is required\n(d) Harm to public good\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a) only",
+   "B": "(a) and (b) only",
+   "C": "(a), (b) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Corruption covers abuse of office, rule-breaking, deliberate inaction and harm to the public good.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
  }
 ]
