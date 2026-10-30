@@ -185913,5 +185913,3425 @@
   "infoBite": "Empathy means 'emotionally reading' others and relating to them accurately, not in an imagined way.",
   "verified": true,
   "note": "Official NTA master question paper (30 English, 1st Oct 2020 Shift 2, via prepp.in) and NTA final answer key (Subject 030 English, 01.10.2020, Second shift, Q-ID 2105299275). Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q01",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following set of statements best describes the nature and objectives of teaching?\n(a) Teaching and learning are integrally related.\n(b) There is no difference between teaching and training.\n(c) Concern of all teaching is to ensure some kind of transformation in students.\n(d) All good teaching is formal in nature.\n(e) A teacher is a senior person.\n(f) Teaching is a social act whereas learning is a personal act.\n\nIndicate your answer by selecting from the code:",
+  "options": {
+   "A": "(a), (b) and (d)",
+   "B": "(b), (c) and (e)",
+   "C": "(a), (c) and (f)",
+   "D": "(d), (e) and (f)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Teaching aims at learning and change in the learner; it is a social act, while learning is personal. Training is narrower than teaching.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q02",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following learner characteristics is highly related to effectiveness of teaching?",
+  "options": {
+   "A": "Prior experience of the learner",
+   "B": "Educational status of the parents of the learner",
+   "C": "Peer groups of the learner",
+   "D": "Family size from which the learner comes"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Prior knowledge/experience is the learner factor most tied to learning; Ausubel: 'the most important single factor influencing learning is what the learner already knows.'",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q03",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match Set I (methods of teaching) with Set II (basic requirements for success/effectiveness).\nSet I: (a) Lecturing (b) Discussion in groups (c) Brainstorming (d) Programmed instructional procedure\nSet II: (i) Small step presentation with feedback provided (ii) Production of large number of ideas (iii) Content delivery in a lucid language (iv) Use of teaching-aids (v) Theme based interaction among participants\n\nCode:",
+  "options": {
+   "A": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "B": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(v)",
+   "C": "(a)-(iii), (b)-(v), (c)-(ii), (d)-(i)",
+   "D": "(a)-(iv), (b)-(ii), (c)-(i), (d)-(iii)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Programmed instruction (B. F. Skinner) presents material in small steps with immediate feedback; brainstorming (Alex Osborn) aims at a large number of ideas.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q04",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the list of evaluation procedures given below identify those which will be called 'formative evaluation'.\n(a) A teacher awards grades to students after having transacted the course work.\n(b) During interaction with students in the classroom, the teacher provides corrective feedback.\n(c) The teacher gives marks to students on a unit test.\n(d) The teacher clarifies the doubts of students in the class itself.\n(e) The overall performance of a student is reported to parents at every three months interval.\n(f) The learner's motivation is raised by the teacher through a question-answer session.\n\nIndicate your answer by choosing from the code:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(a), (c) and (e)",
+   "D": "(b), (d) and (f)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formative evaluation happens during teaching to improve learning (Michael Scriven coined formative/summative, 1967); grading at the end is summative.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q05",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): All teaching should aim at ensuring learning.\nReason (R): All learning results from teaching.\n\nChoose the correct answer from the following code:",
+  "options": {
+   "A": "Both (A) and (R) are true, and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Much learning happens without teaching (experience, self-study), so R is false.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q06",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match Set I (research types) with Set II (characteristics).\nSet I: (a) Fundamental research (b) Applied research (c) Action research (d) Evaluative research\nSet II: (i) Finding out the extent of perceived impact of an intervention (ii) Developing an effective explanation through theory building (iii) Improving an existing situation through use of interventions (iv) Exploring the possibility of a theory for use in various situations (v) Enriching technological resources\n\nCode:",
+  "options": {
+   "A": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)",
+   "B": "(a)-(v), (b)-(iv), (c)-(iii), (d)-(ii)",
+   "C": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "D": "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(v)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Types of research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Fundamental = theory building; applied = using theory in situations; action = solving a local problem (Stephen Corey brought it to education); evaluative = judging an intervention's impact.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q07",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which of the sets of activities best indicate the cyclic nature of action research strategy?",
+  "options": {
+   "A": "Reflect, Observe, Plan, Act",
+   "B": "Observe, Act, Reflect, Plan",
+   "C": "Act, Plan, Observe, Reflect",
+   "D": "Plan, Act, Observe, Reflect"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Action research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kemmis and McTaggart's action-research spiral: plan → act → observe → reflect, then re-plan.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q08",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which of the following sequences of research steps is nearer to scientific method?",
+  "options": {
+   "A": "Suggested solution of the problem, Deducing the consequences of the solution, Perceiving the problem situation, Location of the difficulty and testing the solutions.",
+   "B": "Perceiving the problem situation, Locating the actual problem and its definition, Hypothesizing, Deducing the consequences of the suggested solution and Testing the hypothesis in action.",
+   "C": "Defining a problem, Identifying the causes of the problem, Defining a population, Drawing a sample, Collecting data and Analysing results.",
+   "D": "Identifying the causal factors, Defining the problem, Developing a hypothesis, Selecting a sample, Collecting data and arriving at generalizations and Conclusions."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Scientific method"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "These are John Dewey's steps of reflective thinking (How We Think, 1910): felt difficulty → definition → suggested solution (hypothesis) → reasoning out consequences → testing.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q09",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The problem of 'research ethics' is concerned with which aspect of research activities?",
+  "options": {
+   "A": "Following the prescribed format of a thesis",
+   "B": "Data analysis through qualitative or quantitative techniques",
+   "C": "Defining the population of research",
+   "D": "Evidence based research reporting"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Research ethics covers honest, evidence-based reporting — no fabrication, falsification or plagiarism (FFP).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q10",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which of the following activities, potential for nurturing creative and critical thinking is relatively greater?",
+  "options": {
+   "A": "Preparing research summary",
+   "B": "Presenting a seminar paper",
+   "C": "Participation in research conference",
+   "D": "Participation in a workshop"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Conferences expose researchers to many new studies and debates; seminars are smaller, workshops are hands-on training.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q11",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: If India has to develop her internal strengths, the nation has to focus on the technological imperatives, keeping in mind three dynamic dimensions : the people, the overall economy and the strategic interests. These technological imperatives also take into account a 'fourth' dimension, time, an offshoot of modern day dynamism in business, trade, and technology that leads to continually shifting targets. We believe that technological strengths are especially crucial in dealing with this fourth dimension underlying continuous change in the aspirations of the people, the economy in the global context, and the strategic interests. The progress of technology lies at the heart of human history. Technological strengths are the key to creating more productive employment in an increasingly competitive market place and to continually upgrade human skills. Without a pervasive use of technologies, we cannot achieve overall development of our people in the years to come. The direct linkages of technology to the nation's strategic strengths are becoming more and more clear, especially since 1990s. India's own strength in a number of core areas still puts it in a position of reasonable strength in geo-political context. Any nation aspiring to become a developed one needs to have strengths in various strategic technologies and also the ability to continually upgrade them through its own creative strengths. For people-oriented actions as well, whether for the creation of large scale productive employment or for ensuring nutritional and health security for people, or for better living conditions, technology is the only vital input. The absence of greater technological impetus could lead to lower productivity and wastage of precious natural resources. Activities with low productivity or low value addition, in the final analysis hurt the poorest most. The technological imperatives to lift our people to a new life, and to a life they are entitled to is important. India, aspiring to become a major economic power in terms of trade and increase in GDP, cannot succeed on the strength of turnkey projects designed and built abroad or only through large-scale imports of plant machinery, equipment and know how. Even while being alive to the short-term realities, medium and long-term strategies to develop core technological strengths within our industry are vital for envisioning a developed India.\n\nAccording to the above passage, which of the following are indicative of the fourth dimension?\n(a) Aspirations of people (b) Modern day dynamism (c) Economy in the global context (d) Strategic interests\n\nCode:",
+  "options": {
+   "A": "(a), (b) and (c) only",
+   "B": "(b), (c) and (d) only",
+   "C": "(a), (c) and (d) only",
+   "D": "(a), (b) and (d) only"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The fourth dimension (time) underlies continuous change in people's aspirations, the global economy and strategic interests.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q12",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: If India has to develop her internal strengths, the nation has to focus on the technological imperatives, keeping in mind three dynamic dimensions : the people, the overall economy and the strategic interests. These technological imperatives also take into account a 'fourth' dimension, time, an offshoot of modern day dynamism in business, trade, and technology that leads to continually shifting targets. We believe that technological strengths are especially crucial in dealing with this fourth dimension underlying continuous change in the aspirations of the people, the economy in the global context, and the strategic interests. The progress of technology lies at the heart of human history. Technological strengths are the key to creating more productive employment in an increasingly competitive market place and to continually upgrade human skills. Without a pervasive use of technologies, we cannot achieve overall development of our people in the years to come. The direct linkages of technology to the nation's strategic strengths are becoming more and more clear, especially since 1990s. India's own strength in a number of core areas still puts it in a position of reasonable strength in geo-political context. Any nation aspiring to become a developed one needs to have strengths in various strategic technologies and also the ability to continually upgrade them through its own creative strengths. For people-oriented actions as well, whether for the creation of large scale productive employment or for ensuring nutritional and health security for people, or for better living conditions, technology is the only vital input. The absence of greater technological impetus could lead to lower productivity and wastage of precious natural resources. Activities with low productivity or low value addition, in the final analysis hurt the poorest most. The technological imperatives to lift our people to a new life, and to a life they are entitled to is important. India, aspiring to become a major economic power in terms of trade and increase in GDP, cannot succeed on the strength of turnkey projects designed and built abroad or only through large-scale imports of plant machinery, equipment and know how. Even while being alive to the short-term realities, medium and long-term strategies to develop core technological strengths within our industry are vital for envisioning a developed India.\n\nMore productive employment demands:",
+  "options": {
+   "A": "Pervasive use of technology",
+   "B": "Limiting competitive market place",
+   "C": "Geo-political considerations",
+   "D": "Large industries"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Without a pervasive use of technologies, we cannot achieve overall development.'",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q13",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: If India has to develop her internal strengths, the nation has to focus on the technological imperatives, keeping in mind three dynamic dimensions : the people, the overall economy and the strategic interests. These technological imperatives also take into account a 'fourth' dimension, time, an offshoot of modern day dynamism in business, trade, and technology that leads to continually shifting targets. We believe that technological strengths are especially crucial in dealing with this fourth dimension underlying continuous change in the aspirations of the people, the economy in the global context, and the strategic interests. The progress of technology lies at the heart of human history. Technological strengths are the key to creating more productive employment in an increasingly competitive market place and to continually upgrade human skills. Without a pervasive use of technologies, we cannot achieve overall development of our people in the years to come. The direct linkages of technology to the nation's strategic strengths are becoming more and more clear, especially since 1990s. India's own strength in a number of core areas still puts it in a position of reasonable strength in geo-political context. Any nation aspiring to become a developed one needs to have strengths in various strategic technologies and also the ability to continually upgrade them through its own creative strengths. For people-oriented actions as well, whether for the creation of large scale productive employment or for ensuring nutritional and health security for people, or for better living conditions, technology is the only vital input. The absence of greater technological impetus could lead to lower productivity and wastage of precious natural resources. Activities with low productivity or low value addition, in the final analysis hurt the poorest most. The technological imperatives to lift our people to a new life, and to a life they are entitled to is important. India, aspiring to become a major economic power in terms of trade and increase in GDP, cannot succeed on the strength of turnkey projects designed and built abroad or only through large-scale imports of plant machinery, equipment and know how. Even while being alive to the short-term realities, medium and long-term strategies to develop core technological strengths within our industry are vital for envisioning a developed India.\n\nAbsence of technology would lead to:\n(a) Less pollution (b) Wastage of precious natural resources (c) Low value addition (d) Hurting the poorest most\n\nCode:",
+  "options": {
+   "A": "(a), (b) and (c) only",
+   "B": "(b), (c) and (d) only",
+   "C": "(a), (b) and (d) only",
+   "D": "(a), (c) and (d) only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage links low technology to wasted resources and low value addition, which hurt the poorest most.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q14",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: If India has to develop her internal strengths, the nation has to focus on the technological imperatives, keeping in mind three dynamic dimensions : the people, the overall economy and the strategic interests. These technological imperatives also take into account a 'fourth' dimension, time, an offshoot of modern day dynamism in business, trade, and technology that leads to continually shifting targets. We believe that technological strengths are especially crucial in dealing with this fourth dimension underlying continuous change in the aspirations of the people, the economy in the global context, and the strategic interests. The progress of technology lies at the heart of human history. Technological strengths are the key to creating more productive employment in an increasingly competitive market place and to continually upgrade human skills. Without a pervasive use of technologies, we cannot achieve overall development of our people in the years to come. The direct linkages of technology to the nation's strategic strengths are becoming more and more clear, especially since 1990s. India's own strength in a number of core areas still puts it in a position of reasonable strength in geo-political context. Any nation aspiring to become a developed one needs to have strengths in various strategic technologies and also the ability to continually upgrade them through its own creative strengths. For people-oriented actions as well, whether for the creation of large scale productive employment or for ensuring nutritional and health security for people, or for better living conditions, technology is the only vital input. The absence of greater technological impetus could lead to lower productivity and wastage of precious natural resources. Activities with low productivity or low value addition, in the final analysis hurt the poorest most. The technological imperatives to lift our people to a new life, and to a life they are entitled to is important. India, aspiring to become a major economic power in terms of trade and increase in GDP, cannot succeed on the strength of turnkey projects designed and built abroad or only through large-scale imports of plant machinery, equipment and know how. Even while being alive to the short-term realities, medium and long-term strategies to develop core technological strengths within our industry are vital for envisioning a developed India.\n\nThe advantage of technological inputs would result in:",
+  "options": {
+   "A": "Unbridled technological growth",
+   "B": "Importing plant machinery",
+   "C": "Sidelining environmental issues",
+   "D": "Lifting our people to a life of dignity"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'The technological imperatives to lift our people to a new life … they are entitled to.'",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q15",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: If India has to develop her internal strengths, the nation has to focus on the technological imperatives, keeping in mind three dynamic dimensions : the people, the overall economy and the strategic interests. These technological imperatives also take into account a 'fourth' dimension, time, an offshoot of modern day dynamism in business, trade, and technology that leads to continually shifting targets. We believe that technological strengths are especially crucial in dealing with this fourth dimension underlying continuous change in the aspirations of the people, the economy in the global context, and the strategic interests. The progress of technology lies at the heart of human history. Technological strengths are the key to creating more productive employment in an increasingly competitive market place and to continually upgrade human skills. Without a pervasive use of technologies, we cannot achieve overall development of our people in the years to come. The direct linkages of technology to the nation's strategic strengths are becoming more and more clear, especially since 1990s. India's own strength in a number of core areas still puts it in a position of reasonable strength in geo-political context. Any nation aspiring to become a developed one needs to have strengths in various strategic technologies and also the ability to continually upgrade them through its own creative strengths. For people-oriented actions as well, whether for the creation of large scale productive employment or for ensuring nutritional and health security for people, or for better living conditions, technology is the only vital input. The absence of greater technological impetus could lead to lower productivity and wastage of precious natural resources. Activities with low productivity or low value addition, in the final analysis hurt the poorest most. The technological imperatives to lift our people to a new life, and to a life they are entitled to is important. India, aspiring to become a major economic power in terms of trade and increase in GDP, cannot succeed on the strength of turnkey projects designed and built abroad or only through large-scale imports of plant machinery, equipment and know how. Even while being alive to the short-term realities, medium and long-term strategies to develop core technological strengths within our industry are vital for envisioning a developed India.\n\nEnvisioning a developed India requires:",
+  "options": {
+   "A": "Aspiration to become a major economic player",
+   "B": "Dependence upon projects designed abroad",
+   "C": "Focus on short-term projects",
+   "D": "Development of core technological strengths"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The last line: strategies to develop core technological strengths are vital for a developed India.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q16",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Differentiation between acceptance and non-acceptance of certain stimuli in classroom communication is the basis of:",
+  "options": {
+   "A": "selective expectation of performance",
+   "B": "selective affiliation to peer groups",
+   "C": "selective attention",
+   "D": "selective morality"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Selective attention, exposure, perception and retention are the filters by which receivers accept some messages and ignore others.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q17",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): The initial messages to students in the classroom by a teacher need not be critical to establish interactions later.\nReason (R): More control over the communication process means more control over what the students are learning.\n\nCode:",
+  "options": {
+   "A": "Both (A) and (R) are true, and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "First messages set the tone of classroom interaction, so A is false; teacher control of communication shapes learning, so R is true.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q18",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): To communicate well in the classroom is a natural ability.\nReason (R): Effective teaching in the classroom demands knowledge of the communication process.\n\nCode:",
+  "options": {
+   "A": "Both (A) and (R) are true, and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Communication is a learnt skill, not merely natural — so A is false and R is true.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q19",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Classroom communication is a transactional process.\nReason (R): A teacher does not operate under the assumption that students' responses are purposive.\n\nSelect the correct code for your answer:",
+  "options": {
+   "A": "Both (A) and (R) are true, and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In the transactional model (Barnlund, 1970) both sides send and receive at once; teachers treat student responses as purposive.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q20",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following set of statements is correct for describing the human communication process?\n(a) Non-verbal communication can stimulate ideas.\n(b) Communication is a learnt ability.\n(c) Communication is not a universal panacea.\n(d) Communication cannot break-down.\n(e) More communication means more effective learning by students.\n(f) Value of what is learnt through classroom communication is not an issue for students.\n\nCode:",
+  "options": {
+   "A": "(a), (c), (e) and (f)",
+   "B": "(b), (d), (e) and (f)",
+   "C": "(a), (b), (c) and (d)",
+   "D": "(a), (d), (e) and (f)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Common myths: more communication is always better, and communication can solve every problem.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude. Answer as per the official final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q21",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the series −1, 5, 15, 29, ?, ... is:",
+  "options": {
+   "A": "36",
+   "B": "47",
+   "C": "59",
+   "D": "63"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences 6, 10, 14, 18 (+4 each): 29 + 18 = 47.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q22",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the series ABD, DGK, HMS, MTB, SBL, ?, ... is:",
+  "options": {
+   "A": "ZKU",
+   "B": "ZCA",
+   "C": "ZKW",
+   "D": "KZU"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1st letters +3, +4, +5, +6, +7 → Z; 2nd letters +5 … +9 → K; 3rd letters +7 … +11 → W.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q23",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If VARANASI is coded as WCUESGZQ, then the code of KOLKATA will be:",
+  "options": {
+   "A": "LOQOZEH",
+   "B": "HLZEOOQ",
+   "C": "ZELHOQO",
+   "D": "LQOOFZH"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Letters move forward by +1, +2, +3 … : K+1 = L, O+2 = Q, L+3 = O, K+4 = O, A+5 = F, T+6 = Z, A+7 = H.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q24",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Introducing Rakesh to her husband a woman said, \"His brother's father is the only son of my grandfather\". The woman is related to Rakesh as:",
+  "options": {
+   "A": "Aunt",
+   "B": "Mother",
+   "C": "Sister",
+   "D": "Daughter"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Blood relations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The only son of her grandfather is her father; Rakesh's father is the same man, so she is his sister.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q25",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Two numbers are in the ratio 2 : 5. If 16 is added to both the numbers, their ratio becomes 1 : 2. The numbers are:",
+  "options": {
+   "A": "16, 40",
+   "B": "20, 50",
+   "C": "28, 70",
+   "D": "32, 80"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(2x + 16)/(5x + 16) = 1/2 → x = 16 → 32 and 80.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q26",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Superiority of intellect depends upon its power of concentration on one theme in the same way as a concave mirror collects all the rays that strike upon it into one point.\nWhat type of reasoning is entailed in the above statement?",
+  "options": {
+   "A": "Mathematical",
+   "B": "Psychological",
+   "C": "Analogical",
+   "D": "Deductive"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'In the same way as' compares two unlike things — analogy (upamāna).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q27",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises (A and B). Four conclusions are drawn from them. Select the code that states validly drawn conclusion(s) (taking the premises individually or jointly).\nPremises: (A) Most of the dancers are physically fit. (B) Most of the singers are dancers.\nConclusions: (a) Most of the singers are physically fit. (b) Most of the dancers are singers. (c) Most of the physically fit persons are dancers. (d) Most of the physically fit persons are singers.\n\nCode:",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(b) and (c)",
+   "C": "(c) and (d)",
+   "D": "(d) and (a)"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "With 'most' premises, strict logic gives no certain conclusion; this answer follows the official key.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude. Answer as per the official final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q28",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one among the following is a presupposition in inductive reasoning?",
+  "options": {
+   "A": "Law of identity",
+   "B": "Unchangeability in nature",
+   "C": "Harmony in nature",
+   "D": "Uniformity of nature"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Induction rests on the uniformity of nature (J. S. Mill) — the future will resemble the past.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q29",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If the proposition 'domestic animals are hardly ferocious' is taken to be false, which of the following proposition/propositions can be claimed to be certainly true?\n(a) All domestic animals are ferocious.\n(b) Most of the domestic animals are ferocious.\n(c) No domestic animal is ferocious.\n(d) Some domestic animals are non-ferocious.\n\nSelect the correct code:",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) only",
+   "C": "(c) and (d)",
+   "D": "(b) only"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Hardly' reads as a near-universal negative; the official key takes its denial to support (a) and (b).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude. Answer as per the official final key (another option is arguable)."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q30",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following statements is not correct in the context of Venn diagram method?",
+  "options": {
+   "A": "It is a method of testing the validity of arguments.",
+   "B": "It represents both the premises of a syllogism in one diagram.",
+   "C": "It requires two overlapping circles for the two premises of a standard-form categorical syllogism.",
+   "D": "It can be used to represent classes as well as propositions."
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Venn diagrams"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A categorical syllogism has three terms, so its Venn test needs three overlapping circles (John Venn, 1880).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q31",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the production, exports and per capita consumption of rice in country P for 2012–2016.\nYear | Production (million kg) | Exports (million kg) | Per capita consumption (kg)\n2012 | 186.5 | 114 | 36.25\n2013 | 202 | 114 | 35.2\n2014 | 238 | 130 | 38.7\n2015 | 221 | 116 | 40.5\n2016 | 215 | 88 | 42\nPer capita consumption = consumption (million kg) ÷ population (million); consumption = production − exports.\n\nThe percentage increase in the consumption of rice over the previous year was the highest in which year?",
+  "options": {
+   "A": "2013",
+   "B": "2014",
+   "C": "2015",
+   "D": "2016"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Consumption: 72.5, 88, 108, 105, 127. 2014 rose 22.7% (88 → 108); 2016 rose 21%.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q32",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the production, exports and per capita consumption of rice in country P for 2012–2016.\nYear | Production (million kg) | Exports (million kg) | Per capita consumption (kg)\n2012 | 186.5 | 114 | 36.25\n2013 | 202 | 114 | 35.2\n2014 | 238 | 130 | 38.7\n2015 | 221 | 116 | 40.5\n2016 | 215 | 88 | 42\nPer capita consumption = consumption (million kg) ÷ population (million); consumption = production − exports.\n\nWhat is the population of the country in the year 2014 (in million)?",
+  "options": {
+   "A": "2.64",
+   "B": "2.72",
+   "C": "2.79",
+   "D": "2.85"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Per capita"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Consumption 238 − 130 = 108; 108 ÷ 38.7 ≈ 2.79 million.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q33",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the production, exports and per capita consumption of rice in country P for 2012–2016.\nYear | Production (million kg) | Exports (million kg) | Per capita consumption (kg)\n2012 | 186.5 | 114 | 36.25\n2013 | 202 | 114 | 35.2\n2014 | 238 | 130 | 38.7\n2015 | 221 | 116 | 40.5\n2016 | 215 | 88 | 42\nPer capita consumption = consumption (million kg) ÷ population (million); consumption = production − exports.\n\nThe ratio of exports to consumption in the given period was the highest in the year:",
+  "options": {
+   "A": "2012",
+   "B": "2013",
+   "C": "2014",
+   "D": "2015"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Ratio"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "2012: 114 ÷ 72.5 ≈ 1.57, the highest.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q34",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the production, exports and per capita consumption of rice in country P for 2012–2016.\nYear | Production (million kg) | Exports (million kg) | Per capita consumption (kg)\n2012 | 186.5 | 114 | 36.25\n2013 | 202 | 114 | 35.2\n2014 | 238 | 130 | 38.7\n2015 | 221 | 116 | 40.5\n2016 | 215 | 88 | 42\nPer capita consumption = consumption (million kg) ÷ population (million); consumption = production − exports.\n\nIn which year, the population of country was the highest?",
+  "options": {
+   "A": "2013",
+   "B": "2014",
+   "C": "2015",
+   "D": "2016"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Per capita"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Population = consumption ÷ per capita: 2016 = 127 ÷ 42 ≈ 3.02 million, the highest.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q35",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "The table gives the production, exports and per capita consumption of rice in country P for 2012–2016.\nYear | Production (million kg) | Exports (million kg) | Per capita consumption (kg)\n2012 | 186.5 | 114 | 36.25\n2013 | 202 | 114 | 35.2\n2014 | 238 | 130 | 38.7\n2015 | 221 | 116 | 40.5\n2016 | 215 | 88 | 42\nPer capita consumption = consumption (million kg) ÷ population (million); consumption = production − exports.\n\nWhat is the average consumption of rice (in million kg) over the years 2012–2016?",
+  "options": {
+   "A": "104",
+   "B": "102.1",
+   "C": "108",
+   "D": "100.1"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "72.5 + 88 + 108 + 105 + 127 = 500.5; ÷ 5 = 100.1.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q36",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements, regarding the term ICT is/are TRUE?\nP: ICT is an acronym that stands for Indian Classical Technology.\nQ: Converging technologies that exemplify ICT include the merging of audio-visual, telephone and computer networks through a common cabling system.",
+  "options": {
+   "A": "P only",
+   "B": "Q only",
+   "C": "P and Q",
+   "D": "Neither P nor Q"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT basics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "ICT = Information and Communication Technology.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q37",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A new Laptop has been produced that weighs less, is smaller and uses less power than previous Laptop models. Which of the following technologies has been used to accomplish this?",
+  "options": {
+   "A": "Universal Serial Bus Mouse",
+   "B": "Faster Random Access Memory",
+   "C": "Blu Ray Drive",
+   "D": "Solid State Hard Drive"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An SSD stores data on flash chips with no moving parts — lighter, smaller and more power-efficient than a spinning hard disk.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q38",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given the following email fields, which of the email addresses will 'swami' be able to see when he receives the message?\nTo… ram@test.com\nCc… raj@test.com; ravi@test.com\nBcc… swami@test.com; rama@test.com",
+  "options": {
+   "A": "ram@test.com",
+   "B": "ram@test.com; raj@test.com; ravi@test.com",
+   "C": "ram@test.com; rama@test.com",
+   "D": "ram@test.com; rama@test.com; raj@test.com; ravi@test.com"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "E-mail"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Everyone sees To and Cc; Bcc (blind carbon copy) addresses are hidden from all recipients, including other Bcc recipients.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q39",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Put the following units of storage into the correct order, starting with the smallest unit first and going down to the largest unit:\n(a) Kilobyte (b) Byte (c) Megabyte (d) Terabyte (e) Gigabyte (f) Bit\n\nGive your answer from the following code:",
+  "options": {
+   "A": "(f), (b), (a), (c), (d), (e)",
+   "B": "(f), (b), (a), (d), (e), (c)",
+   "C": "(f), (b), (a), (c), (e), (d)",
+   "D": "(f), (b), (a), (d), (c), (e)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory units"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Bit < Byte < KB < MB < GB < TB < PB; each step is ×1024 (byte = 8 bits).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q40",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "With regard to computer memory, which of the following statement(s) is/are TRUE?\nP: Read Only Memory (ROM) is 'volatile' memory.\nQ: Random Access Memory (RAM) is 'volatile' memory.\nR: Secondary Memory is 'volatile' memory.",
+  "options": {
+   "A": "P only",
+   "B": "Q only",
+   "C": "P and Q only",
+   "D": "P and R only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Volatile memory loses data when power is off: RAM (and cache). ROM and secondary storage are non-volatile.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q41",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "'Fly ash' produced in thermal power plants is an eco-friendly resource for use in:\n(a) agriculture as micro-nutrient\n(b) wasteland development\n(c) dam and water holding structures\n(d) brick industry\n\nChoose the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b) and (d) only",
+   "B": "(b), (c) and (d) only",
+   "C": "(a), (c) and (d) only",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Waste management"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Fly ash from coal plants is used in bricks, cement, road and dam embankments, land reclamation and as a soil amendment.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q42",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following types of natural disasters has no definite beginning and end?",
+  "options": {
+   "A": "Earthquakes",
+   "B": "Landslides",
+   "C": "Hurricanes",
+   "D": "Droughts"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Drought is a slow-onset 'creeping' disaster with no clear start or end.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q43",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Indoor air pollution is a serious health hazard.\nReason (R): The dispersal of air pollutants is rather limited in indoor environment.\n\nChoose the correct answer from the code given below:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true but (R) is not the correct explanation of (A).",
+   "C": "(A) is true and (R) is false.",
+   "D": "Both (A) and (R) are false."
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Indoor smoke from solid cooking fuels is a leading health risk in India; pollutants build up because they cannot disperse.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q44",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "In terms of their contribution to the total power generation in India, identify the correct sequence of energy sources — Thermal Power Plants (TPP), Large Hydropower Projects (LHP), Nuclear Energy (NE) and Renewable Energy (RE) which includes solar energy, wind energy, biomass and small hydropower projects.",
+  "options": {
+   "A": "TPP > RE > LHP > NE",
+   "B": "TPP > LHP > RE > NE",
+   "C": "LHP > TPP > RE > NE",
+   "D": "LHP > TPP > NE > RE"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "By 2018 renewables (solar, wind, biomass, small hydro) had overtaken large hydro in India; thermal stays far ahead and nuclear is smallest.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q45",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is considered as major source of pollution in rivers of India?",
+  "options": {
+   "A": "Unregulated small scale industry",
+   "B": "Untreated sewage",
+   "C": "Agricultural run-off",
+   "D": "Thermal power plants"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Untreated domestic sewage is the biggest source of river pollution in India (CPCB).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q46",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "India has the largest Higher Education System in the World after:\n(a) The United States of America (b) Australia (c) China (d) United Kingdom (U.K.)\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a), (b) and (c) only",
+   "C": "(a), (c) and (d) only",
+   "D": "(a) and (c) only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Higher education system"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In 2018 India's higher education system was third largest, after China and the USA (by enrolment, India is second).",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q47",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Prime Minister Research Fellowship is for students pursuing Ph.D programme in:",
+  "options": {
+   "A": "State and Central Universities",
+   "B": "Central Universities, IISc, IITs, NITs, IISERs and IIITs",
+   "C": "IISc, IITs, NITs, IISERs, IIITs, State and Central Universities",
+   "D": "IITs and IISc"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "PMRF (2018) began for PhDs at IITs and IISc; it was later widened to other top institutions.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q48",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Leader of the Opposition is a member of committees which select:\n(a) the Central Information Commissioner\n(b) the Central Vigilance Commissioner\n(c) the Chairperson of National Human Rights Commission\n(d) the Chairperson of National Commission for Women\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a), (b) and (c) only",
+   "C": "(a), (c) and (d) only",
+   "D": "(a), (b) and (d) only"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The Leader of the Opposition sits on panels choosing the CIC, CVC, NHRC chair, Lokpal and CBI Director; the NCW chair is nominated by the Centre.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q49",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct about gender budgeting?\n(a) It is a separate budget addressing the specific needs of women.\n(b) It assesses the impact of government budget on women.\n(c) It is an accounting exercise.\n(d) It is another budgeting innovation.\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(b) and (d) only",
+   "B": "(a) and (d) only",
+   "C": "(a), (c) and (d) only",
+   "D": "(b), (c) and (d) only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "India began gender budgeting in 2005–06; it is a way of looking at the whole budget for its impact on women, not a separate budget.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-JUL-P1-Q50",
+  "exam": "NET",
+  "year": 2018,
+  "session": "June",
+  "shift": 1,
+  "source": "UGC NET July 2018 (8 July 2018, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the barriers to citizen-centric administration in India?\n(a) Wooden and inflexible attitude of the civil servants\n(b) Ineffective implementation of laws and rules\n(c) Awareness of rights and duties of citizens\n(d) Lack of job opportunities for the youth\n\nSelect the correct answer from the code given below:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a), (b) and (c) only",
+   "C": "(a), (b) and (d) only",
+   "D": "(a) and (b) only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The 2nd Administrative Reforms Commission's 12th report (2009) was on citizen-centric administration.",
+  "verified": true,
+  "keySource": "official",
+  "note": "Official CBSE question paper (UGC NET July 2018, Paper I, Set P, held 8 July 2018) and the CBSE final answer key for Paper I Set P (dated 31/07/2018); no question was dropped. Answer re-checked by Claude."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q01",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which among the following is the best field of study to improve the ability of students to experiment and analyse?",
+  "options": {
+   "A": "History",
+   "B": "Science",
+   "C": "Languages",
+   "D": "Economics"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching objectives"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Science teaching builds the process skills of observing, experimenting, hypothesising and analysing.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q02",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A variable that is manipulated is known as:",
+  "options": {
+   "A": "Dependent variable",
+   "B": "Control variable",
+   "C": "Independent variable",
+   "D": "Confounding variable"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Variables"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The researcher manipulates the independent variable and measures its effect on the dependent variable.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q03",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Formulation of a research problem depends upon:\n(a) What is the object behind the researcher's choice?\n(b) What are the specific questions?\n(c) What is the conceptual model?\n(d) What negative factors to research upon?\n(e) Reasons for unlimiting the study.\n(f) Construction of hypotheses.\n\nOptions:",
+  "options": {
+   "A": "(c), (d), (e) and (f)",
+   "B": "(a), (b), (c) and (f)",
+   "C": "(b), (c), (d) and (e)",
+   "D": "(a), (c), (e) and (f)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research problem"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formulating a problem means stating its purpose, the specific questions, the conceptual model and the hypotheses — and delimiting (not 'unlimiting') the study.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q04",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Suppose as a teacher you are training your students in public speaking and debate. Which among the following is most difficult to develop among the students?",
+  "options": {
+   "A": "Voice modulation",
+   "B": "Concept formulation",
+   "C": "Using/Selecting appropriate language",
+   "D": "Control over emotions"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching skills"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Emotional control belongs to the affective domain (Krathwohl), which is slower to develop than cognitive or speech skills.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy. Answer is the commonly accepted one; another option is arguable."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q05",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following which one is not an instructional material?",
+  "options": {
+   "A": "Overhead projector",
+   "B": "Printed study guide",
+   "C": "Audio podcast",
+   "D": "YouTube video"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching aids"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An overhead projector is equipment (hardware); guides, podcasts and videos are the material (software) it may carry.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q06",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Artifacts that arise and affect the internal validity in research are:\n(a) History (b) Randomisation (c) Maturity (d) Instrumentation (e) Experimental Mortality (f) Matching\n\nOptions:",
+  "options": {
+   "A": "(a), (c), (d) and (e)",
+   "B": "(d), (e), (f) and (b)",
+   "C": "(b), (c), (d) and (f)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Validity threats"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Campbell & Stanley's threats to internal validity: history, maturation, testing, instrumentation, regression, selection, mortality. Randomisation and matching are controls.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q07",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The components of a research design are:\n(a) Comparison (b) Control (c) Reactivity (d) Manipulation (e) Non-representativeness (f) Generalisation\n\nOptions:",
+  "options": {
+   "A": "(a), (b), (d) and (f)",
+   "B": "(a), (c), (e) and (f)",
+   "C": "(c), (d), (e) and (f)",
+   "D": "(b), (c), (d) and (e)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research design"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Design components: comparison, control, manipulation and generalisation. Reactivity and non-representativeness are flaws.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q08",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The four major operations in scientific research are:\n(a) Demonstration of co-variance (b) Elimination of spurious relations (c) Sequencing in terms of time-order (d) Self-education (e) Operationalisation of personal choice (f) Theorisation\n\nOptions:",
+  "options": {
+   "A": "(b), (c), (d) and (e)",
+   "B": "(a), (b), (c) and (f)",
+   "C": "(a), (b), (c) and (d)",
+   "D": "(c), (d), (e) and (f)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Scientific method"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Causal claims need co-variation, correct time order and no spurious third factor, tied together by theory.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q09",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which among the following reflects best the quality of teaching in a classroom?",
+  "options": {
+   "A": "Through the quality of questions asked by students in classroom",
+   "B": "Through observation of silence by the students in classroom",
+   "C": "Through full attendance in the classroom",
+   "D": "Through the use of many teaching aids in the classroom"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Effective teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Thoughtful student questions show real engagement and understanding — a better sign than silence or attendance.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q10",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which among the following is best advantage of Choice Based Credit System?",
+  "options": {
+   "A": "Helping teacher to complete syllabus on time",
+   "B": "Shift in focus from teacher-centric to student-centric education",
+   "C": "Improving classroom attendance",
+   "D": "Reducing examination anxiety among students"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "CBCS"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UGC brought in CBCS in 2015: students choose core, elective and skill courses, making learning student-centric.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q11",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Singapore has long advocated for India to take up its role as an integral part of the region. It is gratifying to see how ASEAN-India relations have grown during the past 25 years. In 1991, when the cold war ended and India began its economic liberalization, Singapore saw an opportunity to deepen ties and build on its historical and cultural links with the Asian region. Singapore pushed for India to become a full ASEAN dialogue partner in 1995 and join the EAS in 1995 and since then, ASEAN-India ties have strengthened. All in all, around 30 platforms for co-operation exist, including seven ministerial dialogues and the Annual leader summit. However, there is scope for more and it is a must. For instance, there are tremendous opportunities in enhancing physical and digital connectivity between India and ASEAN. ASEAN is committed to strengthening land, air and sea linkages with India. These linkages will enhance people-to-people flows, as well as boost business, investment and tourism. The India-Myanmar-Thailand trilateral highway will connect India's Northeast to mainland Southeast Asia. While one can fly directly between India and several ASEAN countries, there is still much room to expand air links to support growing business and tourism. Beyond physical linkages, digital connectivity is the new frontier in the fourth industrial revolution. India has made great progress in innovation, startups and digital inclusion. There are opportunities to apply initiative such as Aadhaar in our region. E-commerce and FinTech are two other areas of potential collaboration. As an economic hub, Singapore can serve as a springboard to launch these ideas to Southeast Asia and beyond. India's role in ASEAN should be anchored by growing economic ties with Singapore. The economic integration involving 16 countries with one-third of global GDP and trade will create an integrated Asian market.\n\nWho can be India's launchpad for an integrated Asian market as per the passage?",
+  "options": {
+   "A": "Southeast Asia",
+   "B": "Myanmar",
+   "C": "Singapore",
+   "D": "Thailand"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'As an economic hub, Singapore can serve as a springboard.'",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q12",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Singapore has long advocated for India to take up its role as an integral part of the region. It is gratifying to see how ASEAN-India relations have grown during the past 25 years. In 1991, when the cold war ended and India began its economic liberalization, Singapore saw an opportunity to deepen ties and build on its historical and cultural links with the Asian region. Singapore pushed for India to become a full ASEAN dialogue partner in 1995 and join the EAS in 1995 and since then, ASEAN-India ties have strengthened. All in all, around 30 platforms for co-operation exist, including seven ministerial dialogues and the Annual leader summit. However, there is scope for more and it is a must. For instance, there are tremendous opportunities in enhancing physical and digital connectivity between India and ASEAN. ASEAN is committed to strengthening land, air and sea linkages with India. These linkages will enhance people-to-people flows, as well as boost business, investment and tourism. The India-Myanmar-Thailand trilateral highway will connect India's Northeast to mainland Southeast Asia. While one can fly directly between India and several ASEAN countries, there is still much room to expand air links to support growing business and tourism. Beyond physical linkages, digital connectivity is the new frontier in the fourth industrial revolution. India has made great progress in innovation, startups and digital inclusion. There are opportunities to apply initiative such as Aadhaar in our region. E-commerce and FinTech are two other areas of potential collaboration. As an economic hub, Singapore can serve as a springboard to launch these ideas to Southeast Asia and beyond. India's role in ASEAN should be anchored by growing economic ties with Singapore. The economic integration involving 16 countries with one-third of global GDP and trade will create an integrated Asian market.\n\nWhat prompted Singapore to opt for stronger ties with India?",
+  "options": {
+   "A": "Economic liberalization in India",
+   "B": "End of Cold War",
+   "C": "Geo-political equations",
+   "D": "Historical past"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In 1991, with India's economic liberalization, Singapore saw an opportunity to deepen ties.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q13",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Singapore has long advocated for India to take up its role as an integral part of the region. It is gratifying to see how ASEAN-India relations have grown during the past 25 years. In 1991, when the cold war ended and India began its economic liberalization, Singapore saw an opportunity to deepen ties and build on its historical and cultural links with the Asian region. Singapore pushed for India to become a full ASEAN dialogue partner in 1995 and join the EAS in 1995 and since then, ASEAN-India ties have strengthened. All in all, around 30 platforms for co-operation exist, including seven ministerial dialogues and the Annual leader summit. However, there is scope for more and it is a must. For instance, there are tremendous opportunities in enhancing physical and digital connectivity between India and ASEAN. ASEAN is committed to strengthening land, air and sea linkages with India. These linkages will enhance people-to-people flows, as well as boost business, investment and tourism. The India-Myanmar-Thailand trilateral highway will connect India's Northeast to mainland Southeast Asia. While one can fly directly between India and several ASEAN countries, there is still much room to expand air links to support growing business and tourism. Beyond physical linkages, digital connectivity is the new frontier in the fourth industrial revolution. India has made great progress in innovation, startups and digital inclusion. There are opportunities to apply initiative such as Aadhaar in our region. E-commerce and FinTech are two other areas of potential collaboration. As an economic hub, Singapore can serve as a springboard to launch these ideas to Southeast Asia and beyond. India's role in ASEAN should be anchored by growing economic ties with Singapore. The economic integration involving 16 countries with one-third of global GDP and trade will create an integrated Asian market.\n\nThe areas of collaboration between India and ASEAN are:\n(a) FinTech (b) Aadhaar (c) E-commerce (d) Digital backwardness (e) Trilateral highways (f) Fourth Industrial Revolution\n\nOptions:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a), (c), (e) and (f)",
+   "C": "(c), (d), (e) and (f)",
+   "D": "(b), (c), (d) and (e)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage names Aadhaar-type initiatives, e-commerce and FinTech as areas of collaboration; only option A has all three.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q14",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Singapore has long advocated for India to take up its role as an integral part of the region. It is gratifying to see how ASEAN-India relations have grown during the past 25 years. In 1991, when the cold war ended and India began its economic liberalization, Singapore saw an opportunity to deepen ties and build on its historical and cultural links with the Asian region. Singapore pushed for India to become a full ASEAN dialogue partner in 1995 and join the EAS in 1995 and since then, ASEAN-India ties have strengthened. All in all, around 30 platforms for co-operation exist, including seven ministerial dialogues and the Annual leader summit. However, there is scope for more and it is a must. For instance, there are tremendous opportunities in enhancing physical and digital connectivity between India and ASEAN. ASEAN is committed to strengthening land, air and sea linkages with India. These linkages will enhance people-to-people flows, as well as boost business, investment and tourism. The India-Myanmar-Thailand trilateral highway will connect India's Northeast to mainland Southeast Asia. While one can fly directly between India and several ASEAN countries, there is still much room to expand air links to support growing business and tourism. Beyond physical linkages, digital connectivity is the new frontier in the fourth industrial revolution. India has made great progress in innovation, startups and digital inclusion. There are opportunities to apply initiative such as Aadhaar in our region. E-commerce and FinTech are two other areas of potential collaboration. As an economic hub, Singapore can serve as a springboard to launch these ideas to Southeast Asia and beyond. India's role in ASEAN should be anchored by growing economic ties with Singapore. The economic integration involving 16 countries with one-third of global GDP and trade will create an integrated Asian market.\n\nWhat is needed to encourage tourism between India and ASEAN?",
+  "options": {
+   "A": "Innovation",
+   "B": "Air links",
+   "C": "Start-ups",
+   "D": "Waterways"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Much room to expand air links to support growing business and tourism.'",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q15",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage: Singapore has long advocated for India to take up its role as an integral part of the region. It is gratifying to see how ASEAN-India relations have grown during the past 25 years. In 1991, when the cold war ended and India began its economic liberalization, Singapore saw an opportunity to deepen ties and build on its historical and cultural links with the Asian region. Singapore pushed for India to become a full ASEAN dialogue partner in 1995 and join the EAS in 1995 and since then, ASEAN-India ties have strengthened. All in all, around 30 platforms for co-operation exist, including seven ministerial dialogues and the Annual leader summit. However, there is scope for more and it is a must. For instance, there are tremendous opportunities in enhancing physical and digital connectivity between India and ASEAN. ASEAN is committed to strengthening land, air and sea linkages with India. These linkages will enhance people-to-people flows, as well as boost business, investment and tourism. The India-Myanmar-Thailand trilateral highway will connect India's Northeast to mainland Southeast Asia. While one can fly directly between India and several ASEAN countries, there is still much room to expand air links to support growing business and tourism. Beyond physical linkages, digital connectivity is the new frontier in the fourth industrial revolution. India has made great progress in innovation, startups and digital inclusion. There are opportunities to apply initiative such as Aadhaar in our region. E-commerce and FinTech are two other areas of potential collaboration. As an economic hub, Singapore can serve as a springboard to launch these ideas to Southeast Asia and beyond. India's role in ASEAN should be anchored by growing economic ties with Singapore. The economic integration involving 16 countries with one-third of global GDP and trade will create an integrated Asian market.\n\nThe commitments of ASEAN with India is:",
+  "options": {
+   "A": "More and more dialogues",
+   "B": "Offer political platforms",
+   "C": "Hold leadership summits",
+   "D": "Improving transport links"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'ASEAN is committed to strengthening land, air and sea linkages with India.'",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q16",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Jenifer's father-in-law is my brother. Helen is a grand-daughter of my mother. How is Helen related to Jenifer?",
+  "options": {
+   "A": "Daughter-in-law",
+   "B": "Mother",
+   "C": "Sister-in-law",
+   "D": "Sister"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Blood relations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Jenifer is married to my brother's son; Helen (my mother's granddaughter) is taken as my brother's daughter — her husband's sister.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q17",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following there are two statements which can't be true together, but can be false together. Select the code that represents them.\n(a) All poets are dreamers.\n(b) No poets are dreamers.\n(c) Some poets are dreamers.\n(d) Some poets are not dreamers.",
+  "options": {
+   "A": "(b) and (d)",
+   "B": "(a) and (d)",
+   "C": "(c) and (d)",
+   "D": "(a) and (b)"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Contraries (A and E) cannot both be true but can both be false; contradictories can be neither; subcontraries (I and O) cannot both be false.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q18",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Truth and falsity are attributes of:",
+  "options": {
+   "A": "Debates",
+   "B": "Arguments",
+   "C": "Propositions",
+   "D": "Opinions"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Arguments"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Propositions are true or false; arguments are valid or invalid.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q19",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If ABODE is coded as ADRHJ, then the code for AGRO will be:",
+  "options": {
+   "A": "AVCD",
+   "B": "AIUS",
+   "C": "AIST",
+   "D": "AIVX"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Letters shift +0, +2, +3, +4, +5: A, G+2 = I, R+3 = U, O+4 = S → AIUS.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q20",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one of the following can be validly inferred from the proposition \"All animals are wild\"?",
+  "options": {
+   "A": "Some animals are not wild.",
+   "B": "No non-animals are wild.",
+   "C": "Some animals are wild.",
+   "D": "No animals are wild."
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Immediate inference"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "By subalternation, a true A (All S is P) makes the I (Some S is P) true.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q21",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the letter series DEF, HIJ, LMN, PQR, TUV, ___ is:",
+  "options": {
+   "A": "YZA",
+   "B": "WXY",
+   "C": "WYZ",
+   "D": "XYZ"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Each group starts 4 letters after the last start: D, H, L, P, T, X → XYZ.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q22",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the digital era, there is a fear that classroom communication may result in:",
+  "options": {
+   "A": "Quick adaptation",
+   "B": "Stimulation",
+   "C": "Over-stimulation",
+   "D": "Passive adaptation"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Too many screens and messages can overload learners — information overload or over-stimulation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q23",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The next term in the series 0, 1, 9, 36, 100, ___ is:",
+  "options": {
+   "A": "225",
+   "B": "196",
+   "C": "216",
+   "D": "164"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Add cubes: 0 + 1³ = 1, + 2³ = 9, + 3³ = 36, + 4³ = 100, + 5³ = 225.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q24",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Under which of the conditions, an argument may be valid? Select the correct answer from the code given below:\n(a) When its conclusion and premises are true.\n(b) Even when its conclusion and one or more of its premises are false.\n(c) Only when its conclusion is true.",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) alone",
+   "C": "(c) alone",
+   "D": "(a) and (c)"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Validity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Validity depends on form: a valid argument can have false premises and a false conclusion, but never true premises with a false conclusion.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q25",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Non-verbal communication is considered:",
+  "options": {
+   "A": "Informal",
+   "B": "Precise",
+   "C": "Culture-free",
+   "D": "Formal"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Non-verbal communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Non-verbal cues (kinesics, proxemics, paralanguage) are informal and culture-bound, not precise.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q26",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The rhetorical approach in classroom communication considers teachers as ___ agents of students.",
+  "options": {
+   "A": "Official",
+   "B": "Academic",
+   "C": "Non-official",
+   "D": "Influencing"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Mottet and Beebe: the rhetorical approach treats the teacher as a source who influences (persuades) students; the relational approach stresses mutual relationships.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q27",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises (a) and (b). Four conclusions are drawn from them. Select the code that states validly drawn conclusion(s) [taking the premises individually or jointly].\nPremises: (a) All judges are lawyers. (b) No doctors are lawyers.\nConclusions: (i) No lawyers are doctors. (ii) No doctors are judges. (iii) All lawyers are judges. (iv) Some doctors are judges.",
+  "options": {
+   "A": "(i) and (iii)",
+   "B": "(i) and (iv)",
+   "C": "(i) and (ii)",
+   "D": "(ii) and (iii)"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(i) is the converse of premise (b); combining both premises gives (ii) No doctors are judges (Celarent).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q28",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Negative criticism as an element of classroom communication will lead to:\n(a) External sympathy (b) Justification (c) Defensiveness (d) De-motivation (e) Supportive listening (f) Confrontational empathy\n\nOptions:",
+  "options": {
+   "A": "(c), (d) and (e)",
+   "B": "(b), (c) and (d)",
+   "C": "(a), (b) and (c)",
+   "D": "(d), (e) and (f)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Jack Gibb's defensive vs supportive climates: evaluation and criticism breed defensiveness and self-justification.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q29",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Choose the word which is different from the rest:",
+  "options": {
+   "A": "Aravali Hills",
+   "B": "Nilgiri Hills",
+   "C": "Shivalik Hills",
+   "D": "Mount Kilimanjaro"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Classification"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kilimanjaro (Tanzania, Africa's highest peak) is outside India; the others are Indian hill ranges.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q30",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion \"A\": Teacher communication is central to classroom management.\nReason \"R\": Teacher communication behaviours should not be used to regulate the classroom behaviour of students.",
+  "options": {
+   "A": "\"A\" is false, but \"R\" is true.",
+   "B": "Both \"A\" and \"R\" are true.",
+   "C": "Both \"A\" and \"R\" are true, but \"R\" is not the correct explanation of \"A\".",
+   "D": "\"A\" is true, but \"R\" is false."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Teachers manage the classroom largely through communication, so using it to regulate behaviour is expected — R is false.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q31",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Data on % of villages not electrified in 6 states (in the year 2000):\nState | % of villages not electrified\nA | 25%\nB | 45%\nC | 20%\nD | 60%\nE | 55%\nF | 30%\n\nHow many States have at least 50% or more electrified villages?",
+  "options": {
+   "A": "2",
+   "B": "4",
+   "C": "1",
+   "D": "3"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "At least 50% electrified = at most 50% not electrified: A, B, C, F → 4.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q32",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Data on % of villages not electrified in 6 states (in the year 2000):\nState | % of villages not electrified\nA | 25%\nB | 45%\nC | 20%\nD | 60%\nE | 55%\nF | 30%\n\nIn the year 2000, the total number of villages in State D was 15,000. In the year 2010, the total number of villages had increased to 20,000 out of which 10,000 villages were yet to be electrified. The % of villages not electrified in 2010 in State D has thus ___.",
+  "options": {
+   "A": "Come down",
+   "B": "Cannot be computed",
+   "C": "Gone up",
+   "D": "Not enough data"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "State D fell from 60% not electrified (2000) to 10,000 ÷ 20,000 = 50% (2010).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q33",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Data on % of villages not electrified in 6 states (in the year 2000):\nState | % of villages not electrified\nA | 25%\nB | 45%\nC | 20%\nD | 60%\nE | 55%\nF | 30%\n\nWhich State has twice the percentage of electrified villages in comparison to State D?",
+  "options": {
+   "A": "State C",
+   "B": "State D",
+   "C": "State A",
+   "D": "State B"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "D is 40% electrified; twice is 80%, i.e. 20% not electrified → State C.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q34",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Data on education index in a few States (% of population below education index):\nState | %\nA | 20%\nB | 25%\nC | 23%\nD | 17%\nE | 16%\nF | 21%\nG | 15%\n\nIf the population for state F is 2.6 lakhs, what is the population below education index?",
+  "options": {
+   "A": "0.546 lakhs",
+   "B": "0.390 lakhs",
+   "C": "51000",
+   "D": "49000"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "21% of 2.6 lakh = 0.546 lakh.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q35",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Data on education index in a few States (% of population below education index):\nState | %\nA | 20%\nB | 25%\nC | 23%\nD | 17%\nE | 16%\nF | 21%\nG | 15%\n\nIf the total population of State A was 5 lakhs while the population in State B was 2 lakhs, the number of people below education index will be:",
+  "options": {
+   "A": "Equal in State A and B",
+   "B": "Cannot be calculated",
+   "C": "Higher in State B",
+   "D": "Higher in State A"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "With the figures shown: A = 20% of 5 lakh = 1 lakh; B = 25% of 2 lakh = 0.5 lakh → higher in A.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy. CAUTION: the coaching key says 'Equal in State A and B', which does not fit the table as transcribed (A = 1 lakh, B = 0.5 lakh). The transcription's State A figure is probably wrong (at 10% the answer would be 'Equal'). Answer given follows the table shown. The transcription also headed this table '% of villages not electrified' — a copying slip."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q36",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A small text file stored on user's computer by some websites in order to recognize and keep track of user's preferences is called:",
+  "options": {
+   "A": "History",
+   "B": "Report",
+   "C": "Log",
+   "D": "Cookie"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Cookies (Lou Montulli, Netscape, 1994) store small pieces of site data in the browser.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q37",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which year Education Commission under the chairmanship of Dr. D.S. Kothari was set up?",
+  "options": {
+   "A": "1960",
+   "B": "1964",
+   "C": "1955",
+   "D": "1952"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Education commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kothari Commission 1964–66 ('the destiny of India is now being shaped in her classrooms'); Radhakrishnan 1948–49; Mudaliar 1952–53.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q38",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In a computer, if 8 bits are used to specify address in memory, the total number of addresses will be:",
+  "options": {
+   "A": "512",
+   "B": "256",
+   "C": "8",
+   "D": "216"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "n address bits give 2ⁿ addresses: 2⁸ = 256.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q39",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following was launched in 2013 with the purpose to provide strategic funding to eligible state higher educational institutions?",
+  "options": {
+   "A": "All India Council for Technical Education",
+   "B": "Sarva Shiksha Abhiyan",
+   "C": "Rashtriya Madhyamik Shiksha Abhiyan",
+   "D": "Rashtriya Uchchatar Shiksha Abhiyan"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Government schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "RUSA (2013) funds state universities and colleges; SSA (2001) is for elementary and RMSA (2009) for secondary schooling.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q40",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A source of renewable power which can be developed with minimum cost is:",
+  "options": {
+   "A": "Geothermal energy",
+   "B": "Tidal power",
+   "C": "Wind mills",
+   "D": "Biomass power"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Biomass uses cheap local residues and simple technology; tidal and geothermal plants need costly sites and engineering.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy. Answer is the commonly accepted one; another option is arguable."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q41",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Natural vegetation of an area needs to be preserved for the future, mainly for the purpose of:",
+  "options": {
+   "A": "Providing material for breeding new species",
+   "B": "Study by scientists",
+   "C": "Preventing soil erosion",
+   "D": "Providing habitat for birds"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Biodiversity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Wild vegetation is a gene pool for breeding new crop varieties — a key reason for in-situ conservation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy. Answer is the commonly accepted one; another option is arguable."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q42",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "How much carbon is being added to the atmosphere by burning of fossil fuels?",
+  "options": {
+   "A": "6–9 billion tons",
+   "B": "2–6 billion tons",
+   "C": "9–12 billion tons",
+   "D": "4–6 billion tons"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate change"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Fossil fuels add roughly 9–10 billion tonnes of carbon (about 35 billion tonnes of CO2) a year; older textbooks give 6–9.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy. Answer is the commonly accepted one; another option is arguable."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q43",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "___ denotes an error in a computer program.",
+  "options": {
+   "A": "Virus",
+   "B": "Bug",
+   "C": "Spam",
+   "D": "Bit"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Software"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A bug is a program error; debugging removes it. Grace Hopper's team found a moth in the Harvard Mark II in 1947.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q44",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The National Knowledge Commission (NKC) was established in which year?",
+  "options": {
+   "A": "2007",
+   "B": "2005",
+   "C": "1998",
+   "D": "2000"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Education commissions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NKC (13 June 2005, chair Sam Pitroda) reported to PM Manmohan Singh until 2009.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q45",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The output quality of a printer is measured by:",
+  "options": {
+   "A": "Digits per inch",
+   "B": "Dots per inch",
+   "C": "Dots per cm",
+   "D": "Dots per mm"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Hardware"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Printer resolution is in dots per inch (dpi); printer speed is in pages per minute (ppm).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q46",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The annual range of temperature in the interior of the continents is high compared to coastal areas. What is/are the reason(s)?\n(a) Thermal difference between land and water.\n(b) Variations in altitude between continents and oceans.\n(c) Presence of strong winds in the interior.\n(d) Heavy rains in the interior as compared to coastal region.\n\nOptions:",
+  "options": {
+   "A": "(a) only",
+   "B": "(a), (b), (c) and (d)",
+   "C": "(b) and (c) only",
+   "D": "(a) and (b) only"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Climate"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Land heats and cools faster than water, so interiors are 'continental' (extreme) and coasts 'maritime' (moderate).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q47",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The University Grants Commission (UGC) was formally inaugurated on 28 December 1953 by whom among the following?",
+  "options": {
+   "A": "Sh. Maulana Abul Kalam Azad",
+   "B": "Dr. S. Radhakrishnan",
+   "C": "Mrs. Indira Gandhi",
+   "D": "Dr. Rajendra Prasad"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "UGC"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Education Minister Maulana Azad inaugurated UGC in 1953; it became a statutory body under the UGC Act, 1956.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q48",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are audio file formats?\n(a) .wav (b) .aac (c) .wmv (d) .flv\n\nOptions:",
+  "options": {
+   "A": "(b) and (c)",
+   "B": "(a) and (d)",
+   "C": "(c) and (d)",
+   "D": "(a) and (b)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "File formats"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Audio: wav, aac, mp3, wma, midi. Video: wmv, flv, avi, mov, mp4.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q49",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which part of India, the tropical western Ghats are situated?",
+  "options": {
+   "A": "Punjab",
+   "B": "Kerala",
+   "C": "Rajasthan",
+   "D": "Assam"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Biodiversity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The Western Ghats (Sahyadri) run from Gujarat to Kerala; a UNESCO World Heritage Site (2012) and biodiversity hotspot.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
+ },
+ {
+  "id": "NET-2018-DEC-S1-P1-Q50",
+  "exam": "NET",
+  "year": 2018,
+  "session": "December",
+  "shift": 1,
+  "source": "UGC NET December 2018 (22 Dec 2018) · Shift 1 · Paper 1",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The University Grants Commission has a Scheme for \"Human Rights and Values in Education\". Under this Scheme, which statement is incorrect among the following for 'Human Rights and Duties Education' component?",
+  "options": {
+   "A": "To establish value and wellness centres in schools.",
+   "B": "To encourage research activities.",
+   "C": "To sensitize the citizens so that the norms and values of human rights are realized.",
+   "D": "To develop interaction between society and educational institutions."
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "UGC schemes"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The UGC scheme works through universities and colleges, not schools.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "Paper text from a coaching transcription of the 22 Dec 2018 morning (English) shift, cross-checked with prepp.in's copy of the same shift; answer from the coaching answer key for that shift, re-worked by Claude. NTA's final key lists answers only by question ID, so it could not be matched. NTA shuffled question order, so numbers follow the coaching copy."
  }
 ]
