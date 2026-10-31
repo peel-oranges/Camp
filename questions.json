@@ -193095,5 +193095,4109 @@
   "verified": false,
   "keySource": "site-key",
   "note": "CBSE pen-and-paper paper, Set A order (50 questions). Text and answer from Oswaal's solved copy, cross-checked against a second solved copy (librarianshipstudies.com, all answers agree) and re-worked by Claude; official CBSE final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q01",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the alternative which consists of positive factors contributing to effectiveness of teaching:\n(a) Teacher's knowledge of the subject.\n(b) Teacher's socio-economic background.\n(c) Communication skill of the teacher.\n(d) Teacher's ability to please the students.\n(e) Teacher's personal contact with students.\n(f) Teacher's competence in managing and monitoring the classroom transactions.\n\nCodes:",
+  "options": {
+   "A": "(b), (c) and (d)",
+   "B": "(c), (d) and (f)",
+   "C": "(b), (d) and (e)",
+   "D": "(a), (c) and (f)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Effective teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Subject knowledge, communication skill and classroom management are the teacher factors examiners count as 'positive'; pleasing students or background are not.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q02",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The use of teaching aids is justified on the grounds of",
+  "options": {
+   "A": "attracting students' attention in the class room.",
+   "B": "minimising indiscipline problems in the classroom.",
+   "C": "optimising learning outcomes of students.",
+   "D": "effective engagement of students in learning tasks."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching aids"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In Paper 1 the 'best' purpose of any teaching device is always the learning outcome, not attention or discipline.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q03",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): The purpose of higher education is to promote critical and creative thinking abilities among students.\nReason (R): These abilities ensure job placements.\n\nChoose the correct answer from the following code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true but (R) is not the correct explanation of (A).",
+   "C": "(A) is true but (R) is false.",
+   "D": "(A) is false but (R) is true."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Higher education objectives"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Critical and creative thinking is the stated aim of higher education; employability is a by-product, not the explanation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary. Key debated: some solved copies give (3), treating R as false. Bank follows the published key (2)."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q04",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Match the items of the first set with that of the second set in respect of evaluation system.\nSet I: (a) Formative evaluation (b) Summative evaluation (c) Continuous and comprehensive evaluation (d) Norm and criterion referenced tests\nSet II: (i) Evaluating cognitive and co-cognitive aspects with regularity (ii) Tests and their interpretations based on a group and certain yardsticks (iii) Grading the final learning outcomes (iv) Quizzes and discussions\n\nCodes:",
+  "options": {
+   "A": "(a)-(iv), (b)-(iii), (c)-(i), (d)-(ii)",
+   "B": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "C": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)",
+   "D": "(a)-(i), (b)-(iii), (c)-(iv), (d)-(ii)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formative = during teaching (quizzes); summative = final grading; CCE = regular cognitive + co-scholastic; norm-referenced = against a group, criterion-referenced = against a yardstick.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q05",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A researcher intends to explore the effect of possible factors for the organization of effective mid-day meal interventions. Which research method will be most appropriate for this study?",
+  "options": {
+   "A": "Historical method",
+   "B": "Descriptive survey method",
+   "C": "Experimental method",
+   "D": "Ex-post-facto method"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ex post facto: studying the possible causes of an effect that has already happened, without manipulating variables.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q06",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is an initial mandatory requirement for pursuing research?",
+  "options": {
+   "A": "Developing a research design",
+   "B": "Formulating a research question",
+   "C": "Deciding about the data analysis procedure",
+   "D": "Formulating a research hypothesis"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Every study starts from a research question; hypotheses are not mandatory (exploratory and qualitative studies may have none).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q07",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The format of thesis writing is the same as in",
+  "options": {
+   "A": "preparation of a research paper/article",
+   "B": "writing of seminar presentation",
+   "C": "a research dissertation",
+   "D": "presenting a workshop / conference paper"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Thesis writing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Thesis and dissertation share the same formal structure; a detailed methodology chapter is required in both.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q08",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In qualitative research paradigm, which of the following features may be considered critical?",
+  "options": {
+   "A": "Data collection with standardised research tools.",
+   "B": "Sampling design with probability sample techniques.",
+   "C": "Data collection with bottom-up empirical evidences.",
+   "D": "Data gathering to take place with top-down systematic evidences."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Qualitative research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Qualitative research is inductive (bottom-up): theory grows from field evidence; standard tools and probability samples belong to quantitative research.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q09",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "From the following list of statements identify the set which has negative implications for [research]:\n(i) A researcher critically looks at the findings of another research.\n(ii) Related studies are cited without proper references.\n(iii) Research findings are made the basis for policy making.\n(iv) Conduct of practitioner is screened in terms of reported research evidences.\n(v) A research study is replicated with a view to verify the evidences from other researches.\n(vi) Both policy making and policy implementing processes are regulated in terms of preliminary studies.\n\nCodes:",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(ii), (iii) and (iv)",
+   "C": "(ii), (iv) and (vi)",
+   "D": "(i), (iii) and (v)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Citing without references is plagiarism; judging practitioners or regulating policy on preliminary evidence misuses research.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary. The word 'research' at the end of the stem is missing in the printed booklet."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q10",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In a research on the effect of child-rearing practices on stress-proneness of children in completing school projects, the hypothesis formulated is that 'child rearing practices do influence stress-proneness'. At the data-analysis stage a null hypothesis is advanced to find out the tenability of research hypothesis. On the basis of the evidence available, the null hypothesis is rejected at 0.01 level of significance. What decision may be warranted in respect of the research hypothesis?",
+  "options": {
+   "A": "The research hypothesis will also be rejected.",
+   "B": "The research hypothesis will be accepted.",
+   "C": "Both the research hypothesis and the null hypothesis will be rejected.",
+   "D": "No decision can be taken in respect of the research hypothesis."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Hypothesis testing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rejecting the null hypothesis (here at the 1% level) supports the research (alternative) hypothesis.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q11",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nWhich country enjoyed competitive advantages in automobile industry for decades?",
+  "options": {
+   "A": "South Korea",
+   "B": "Japan",
+   "C": "Mexico",
+   "D": "Malaysia"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage opens with Japan's decades of labour-based advantage in machinery, automobiles, TVs and radios.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q12",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nWhy labour-based competitive advantages of India and Singapore cannot be sustained in IT and service sectors?",
+  "options": {
+   "A": "Due to diminishing levels of skill.",
+   "B": "Due to capital-intensive technology making inroads.",
+   "C": "Because of new competitors.",
+   "D": "Because of shifting of labour-based advantage in manufacturing industries."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rising skills elsewhere bring new competitors.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q13",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nHow can an organisation enjoy competitive advantage sustainable overtime?",
+  "options": {
+   "A": "Through regional capital flows.",
+   "B": "Through regional interactions among business players.",
+   "C": "By making large banks, industries and markets coalesced.",
+   "D": "By effective use of various instrumentalities."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Combining and applying resources in a way rivals cannot imitate = effective use of various instrumentalities.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q14",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nWhat is required to ensure competitive advantages in specific markets?",
+  "options": {
+   "A": "Access to capital",
+   "B": "Common office buildings",
+   "C": "Superior knowledge",
+   "D": "Common metals"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Knowledge-based theory of the firm: superior knowledge wins in knowledge-intensive markets.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q15",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nThe passage also mentions about the trend of",
+  "options": {
+   "A": "Global financial flow",
+   "B": "Absence of competition in manufacturing industry",
+   "C": "Regionalisation of capitalists",
+   "D": "Organizational incompatibility"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Capital now flows internationally at rapid speed.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q16",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): For decades the low cost and high quality of Japanese workers gave Japan a competitive advantage in durable goods and consumer electronics (machinery, automobiles, televisions, radios). Labour-based advantage then shifted to South Korea, Malaysia, Mexico and others; today China capitalises best on labour. The same shift is happening in services: many IT and service jobs are moving from Europe and North America to India, Singapore and similar countries with well-educated, low-cost workforces — but as skills rise elsewhere, new competitors will emerge and that advantage cannot be sustained. Capital, once restricted by gold coins and paper money and concentrated in regional centres (New York, London, Tokyo), now flows internationally at great speed, so it too no longer gives sufficient advantage. Only an organisation that combines, integrates and applies its resources (land, labour, capital, IT) in a way competitors cannot readily imitate enjoys advantage sustainable over time. A knowledge-based theory of the firm treats organisational knowledge as a resource at least as powerful as the traditional inputs: superior knowledge wins in knowledge-intensive arenas such as semiconductors, genetic engineering, pharmaceuticals, software and military warfare. Semiconductors are made of sand and common metals, designed in ordinary offices with commercial tools — so land is not the key resource there.\n\nWhat does the author lay stress on in the passage?",
+  "options": {
+   "A": "International commerce",
+   "B": "Labour-Intensive industries",
+   "C": "Capital resource management",
+   "D": "Knowledge-driven competitive advantage"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Main-idea questions: the closing argument (knowledge as the key resource) carries the stress.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q17",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Imagine you are working in an educational institution where people are of equal status. Which method of communication is best suited and normally employed in such a context?",
+  "options": {
+   "A": "Horizontal communication",
+   "B": "Vertical communication",
+   "C": "Corporate communication",
+   "D": "Cross communication"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Types of communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Horizontal (lateral) communication flows between equals; vertical runs up or down a hierarchy; diagonal/cross runs across levels and departments.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q18",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the important element a teacher has to take cognizance of while addressing students in a classroom.",
+  "options": {
+   "A": "Avoidance of proximity",
+   "B": "Voice modulation",
+   "C": "Repetitive pause",
+   "D": "Fixed posture"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Voice modulation (pitch, pace, volume) keeps attention; fixed posture and repetitive pauses dull it.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q19",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What are the barriers to effective communication?",
+  "options": {
+   "A": "Moralising, being judgemental and comments of consolation.",
+   "B": "Dialogue, summary and self-review.",
+   "C": "Use of simple words, cool reaction and defensive attitude.",
+   "D": "Personal statements, eye contact and simple narration."
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Barriers to communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Moralising, judging and offering easy consolation are classic 'roadblocks' that shut the other person down.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q20",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The choice of communication partners is influenced by factors of",
+  "options": {
+   "A": "Proximity, utility, loneliness",
+   "B": "Utility, secrecy, dissonance",
+   "C": "Secrecy, dissonance, deception",
+   "D": "Dissimilarity, dissonance, deviance"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Interpersonal communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "We talk most with people who are near, useful to us, or who relieve loneliness.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q21",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "As a teacher, select the best option to ensure your effective presence in the classroom.",
+  "options": {
+   "A": "Use of peer command",
+   "B": "Making aggressive statements",
+   "C": "Adoption of well-established posture",
+   "D": "Being authoritarian"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A confident, well-established posture signals presence without aggression.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q22",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Every communicator has to experience",
+  "options": {
+   "A": "Manipulated emotions",
+   "B": "Anticipatory excitement",
+   "C": "The issue of homophiles",
+   "D": "Status dislocation"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Communication process"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Anticipatory excitement (mild nervousness before speaking) is common to every communicator.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q23",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In certain code, SELECTION is coded as QCJCARGML. The code of AMERICANS will be",
+  "options": {
+   "A": "YKCPGAYLQ",
+   "B": "BNFSJDBMR",
+   "C": "QLYAGPCKY",
+   "D": "YQKLCYPAG"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Each letter moves back 2: S→Q, E→C … so A→Y, M→K, E→C, R→P, I→G, C→A, A→Y, N→L, S→Q.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q24",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the series 3, 11, 23, 39, 59, .......... The next term will be",
+  "options": {
+   "A": "63",
+   "B": "73",
+   "C": "83",
+   "D": "93"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences 8, 12, 16, 20 (+4) → next +24: 59 + 24 = 83.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q25",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Two railway tickets from city A to B and three tickets from city A to C cost ₹177. Three tickets from city A to B and two tickets from city A to C cost ₹173. The fare for city B from city A will be ₹",
+  "options": {
+   "A": "25",
+   "B": "27",
+   "C": "30",
+   "D": "33"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Linear equations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Add: 5(B + C) = 350 → B + C = 70; subtract: C − B = 4 → B = 33.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q26",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A person walks 10 m infront and 10 m to the right. Then every time turning to his left, he walks 5, 15 and 15 m respectively. How far is he now from his starting point?",
+  "options": {
+   "A": "20 m",
+   "B": "15 m",
+   "C": "10 m",
+   "D": "5 m"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Direction sense"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "North 10 + 5 − 15 = 0; east 10 − 15 = −5 → 5 m from start.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q27",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A is sister of B. F is daughter of G. C is mother of B. D is father of C. E is mother of D. A is related to D as",
+  "options": {
+   "A": "Grand daughter",
+   "B": "Daughter",
+   "C": "Daughter-in-law",
+   "D": "Sister"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Blood relations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "C is mother of A and B; D is C's father → A is D's granddaughter (F, G, E are distractors).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q28",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the series AB, EDC, FGHI, ....?...., OPQRST, the missing term is",
+  "options": {
+   "A": "JKLMN",
+   "B": "JMKNL",
+   "C": "NMLKJ",
+   "D": "NMKLJ"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Groups of 2, 3, 4, 5, 6 letters in alphabetical run, alternate groups reversed: AB, (CDE)↔EDC, FGHI, (JKLMN)↔NMLKJ, OPQRST.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q29",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following propositions two are related in such a way that one is the denial of the other. Which are those propositions? Select the correct code:\n(a) All women are equal to men\n(b) Some women are equal to men\n(c) Some women are not equal to men\n(d) No women are equal to men",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) and (d)",
+   "C": "(c) and (d)",
+   "D": "(a) and (c)"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'Denial' = contradictory: A–O ('All' vs 'Some … not') or E–I.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q30",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If the proposition 'All thieves are poor' is false, which of the following propositions can be claimed certainly to be true?",
+  "options": {
+   "A": "Some thieves are poor.",
+   "B": "Some thieves are not poor.",
+   "C": "No thief is poor.",
+   "D": "No poor person is a thief."
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "If A is false, its contradictory O ('Some … are not') is certainly true; I and E stay undetermined.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q31",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Consider the following statement and select the correct code stating the nature of the argument involved in it:\nTo suppose that the earth is the only populated world in the infinite space is as absurd as to assert that in an entire field of millet only one grain will grow.",
+  "options": {
+   "A": "Astronomical",
+   "B": "Anthropological",
+   "C": "Deductive",
+   "D": "Analogical"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Types of reasoning"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "'As absurd as' compares two unlike cases → analogy. (Saying attributed to Metrodorus of Chios.)",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q32",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the code which is not correct about Venn diagram:",
+  "options": {
+   "A": "Venn diagram represents propositions as well as classes.",
+   "B": "It can provide clear method of notation.",
+   "C": "It can be either valid or invalid.",
+   "D": "It can provide the direct method of testing the validity."
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Venn diagrams"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Arguments are valid or invalid; a diagram is only a tool to test them (John Venn, 1880).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q33",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the code which is not correct in the context of deductive argument with two premises:",
+  "options": {
+   "A": "An argument with one true premise, one false premise and a false conclusion may be valid.",
+   "B": "An argument with two true premises and a false conclusion may be valid.",
+   "C": "An argument with one true premise, one false premise and a true conclusion may be valid.",
+   "D": "An argument with two false premises and a false conclusion may be valid."
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Validity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A valid argument can never have all-true premises and a false conclusion; every other mix is possible.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q34",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises and four conclusions are drawn from them (taking singly or together). Select the code that states the conclusions validly drawn.\nPremises: (i) All religious persons are emotional. (ii) Ram is a religious person.\nConclusions: (a) Ram is emotional. (b) All emotional persons are religious. (c) Ram is not a non-religious person. (d) Some religious persons are not emotional.",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a) only",
+   "C": "(a) and (c) only",
+   "D": "(b) and (c) only"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(a) follows from both premises; (c) is the obverse of (ii). (b) is illicit conversion; (d) contradicts (i).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q35",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Percentage profit earned by companies A and B, 2011–2015 (% profit = (Income − Expenditure) ÷ Expenditure × 100):\nYear | A | B\n2011 | 20 | 30\n2012 | 35 | 40\n2013 | 45 | 35\n2014 | 40 | 50\n2015 | 25 | 35\n\nIf the total expenditure of the two companies was ₹9 lakh in the year 2012 and the expenditure of A and B were in the ratio 2 : 1, then what was the income of the company A in that year?",
+  "options": {
+   "A": "₹9.2 lakh",
+   "B": "₹8.1 lakh",
+   "C": "₹7.2 lakh",
+   "D": "₹6.0 lakh"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A's expenditure = 6 lakh; 35% profit → income = 6 × 1.35 = 8.1 lakh.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q36",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Percentage profit earned by companies A and B, 2011–2015 (% profit = (Income − Expenditure) ÷ Expenditure × 100):\nYear | A | B\n2011 | 20 | 30\n2012 | 35 | 40\n2013 | 45 | 35\n2014 | 40 | 50\n2015 | 25 | 35\n\nWhat is the average percentage profit earned by the company B?",
+  "options": {
+   "A": "35%",
+   "B": "42%",
+   "C": "38%",
+   "D": "40%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(30 + 40 + 35 + 50 + 35) ÷ 5 = 38%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q37",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Percentage profit earned by companies A and B, 2011–2015 (% profit = (Income − Expenditure) ÷ Expenditure × 100):\nYear | A | B\n2011 | 20 | 30\n2012 | 35 | 40\n2013 | 45 | 35\n2014 | 40 | 50\n2015 | 25 | 35\n\nIn which year, the percentage profit earned by the company B is less than that of company A?",
+  "options": {
+   "A": "2012",
+   "B": "2013",
+   "C": "2014",
+   "D": "2015"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Comparison"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Only 2013: B 35% < A 45%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q38",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of people in each age group naming their favourite style of music (answer to the nearest whole percentage):\nStyle | 15-20 | 21-30 | 31+\nClassical | 6 | 4 | 17\nPop | 7 | 5 | 5\nRock | 6 | 12 | 14\nJazz | 1 | 4 | 11\nBlues | 2 | 3 | 15\nHip-Hop | 9 | 3 | 4\nAmbient | 2 | 2 | 2\n\nApproximately what percentage of the total sample were aged 21-30?",
+  "options": {
+   "A": "31%",
+   "B": "23%",
+   "C": "25%",
+   "D": "14%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Total = 134; aged 21-30 = 33 → 33/134 ≈ 25%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q39",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of people in each age group naming their favourite style of music (answer to the nearest whole percentage):\nStyle | 15-20 | 21-30 | 31+\nClassical | 6 | 4 | 17\nPop | 7 | 5 | 5\nRock | 6 | 12 | 14\nJazz | 1 | 4 | 11\nBlues | 2 | 3 | 15\nHip-Hop | 9 | 3 | 4\nAmbient | 2 | 2 | 2\n\nApproximately what percentage of the total sample indicates that Hip-Hop is their favourite style of music?",
+  "options": {
+   "A": "6%",
+   "B": "8%",
+   "C": "14%",
+   "D": "12%"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Hip-Hop = 16 → 16/134 ≈ 12%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q40",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Number of people in each age group naming their favourite style of music (answer to the nearest whole percentage):\nStyle | 15-20 | 21-30 | 31+\nClassical | 6 | 4 | 17\nPop | 7 | 5 | 5\nRock | 6 | 12 | 14\nJazz | 1 | 4 | 11\nBlues | 2 | 3 | 15\nHip-Hop | 9 | 3 | 4\nAmbient | 2 | 2 | 2\n\nWhat percentage of respondents aged 31+ indicated a favourite style other than classical music?",
+  "options": {
+   "A": "64%",
+   "B": "60%",
+   "C": "75%",
+   "D": "50%"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Aged 31+ = 68, classical 17 → 51/68 = 75%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q41",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The statement \"the study, design, development, implementation, support or management of computer-based information systems, particularly software applications and computer hardware\" refers to",
+  "options": {
+   "A": "Information Technology (IT)",
+   "B": "Information and Collaborative Technology (ICT)",
+   "C": "Information and Data Technology (IDT)",
+   "D": "Artificial Intelligence (AI)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT basics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "This is the ITAA's classic definition of IT. ICT means Information and Communication Technology, not 'Collaborative'.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q42",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If the binary equivalent of the decimal number 48 is 110000, then the binary equivalent of the decimal number 51 is given by",
+  "options": {
+   "A": "110011",
+   "B": "110010",
+   "C": "110001",
+   "D": "110100"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Number systems"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "51 = 48 + 3 = 110000 + 11 = 110011.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q43",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The process of copying files to a CD-ROM is known as",
+  "options": {
+   "A": "Burning",
+   "B": "Zipping",
+   "C": "Digitizing",
+   "D": "Ripping"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Storage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Burning writes to a CD/DVD; ripping copies from a disc to the computer; zipping compresses.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q44",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "An unsolicited e-mail message sent to many recipients at once is a",
+  "options": {
+   "A": "Worm",
+   "B": "Virus",
+   "C": "Threat",
+   "D": "Spam"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Spam = unsolicited bulk e-mail.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q45",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "_________ is a type of memory circuitry that holds the computer's start-up routine.",
+  "options": {
+   "A": "RIM (Read Initial Memory)",
+   "B": "RAM (Random Access Memory)",
+   "C": "ROM (Read Only Memory)",
+   "D": "Cache Memory"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "ROM holds the BIOS/boot routine and keeps it without power (non-volatile).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q46",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "An ASCII is a character-encoding scheme that is employed by personal computers in order to represent various characters, numbers and control keys that the computer user selects on the keyboard. ASCII is an acronym for",
+  "options": {
+   "A": "American Standard Code for Information Interchange",
+   "B": "American Standard Code for Intelligent Information",
+   "C": "American Standard Code for Information Integrity",
+   "D": "American Standard Code for Isolated Information"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "ASCII (1963) is a 7-bit code with 128 characters.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q47",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Identify the air pollutant in urban areas which irritates eyes and also respiratory tract of human beings.",
+  "options": {
+   "A": "Particulate matter",
+   "B": "Oxides of nitrogen",
+   "C": "Surface ozone",
+   "D": "Carbon monoxide"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ground-level ozone, a secondary pollutant of photochemical smog (NOx + VOCs + sunlight), stings the eyes and airways.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q48",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is the largest source of water pollution in major rivers of India?",
+  "options": {
+   "A": "Untreated sewage",
+   "B": "Agriculture run-off",
+   "C": "Unregulated small scale industries",
+   "D": "Religious practices"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Untreated municipal sewage is the biggest polluter of Indian rivers (CPCB).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q49",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Sustainable development goals have specific targets to be achieved by",
+  "options": {
+   "A": "2022",
+   "B": "2030",
+   "C": "2040",
+   "D": "2050"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Sustainable development"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The 17 SDGs (Agenda 2030) were adopted by the UN in September 2015.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q50",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Indian government's target of producing power from biomass by the year 2022, is",
+  "options": {
+   "A": "50 MW",
+   "B": "25 MW",
+   "C": "15 MW",
+   "D": "10 MW"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "India's 175 GW renewables target for 2022: solar 100, wind 60, biomass 10, small hydro 5 GW.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary. FLAWED UNITS: the real target is 10 GW (10,000 MW), but all options are printed in MW; the key marks 10 MW. The Jan 2017 paper asked the small-hydro figure (5 GW)."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q51",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 51,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Conserving our soil resources is critical to human survival.\nReason (R): Soil is home to many micro-organisms and contains minerals.\n\nChoose the correct code:",
+  "options": {
+   "A": "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are correct but (R) is not the correct explanation of (A).",
+   "C": "(A) is true and (R) is false.",
+   "D": "(A) is false and (R) is true."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Soil conservation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Soil matters to survival because it grows our food; its microbes and minerals are true but do not explain that.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary. Some solved copies give (1). Bank follows the published key (2)."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q52",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 52,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "World Meteorological Organisation's (WMO) objective has been to reduce the number of deaths due to hydrometeorological disasters over the decade 2010-2019 by (with reference to the decade 1994-2003)",
+  "options": {
+   "A": "25%",
+   "B": "50%",
+   "C": "75%",
+   "D": "80%"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The WMO aimed to halve deaths from weather, climate and water hazards versus 1994–2003.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q53",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 53,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following core values among the institutions of higher education are promoted by the NAAC (National Assessment and Accreditation Council)?\n(a) Contributing to national development.\n(b) Fostering global competencies among the students.\n(c) Inculcating a value system among students and teachers.\n(d) Promoting the optimum utilization of the infrastructure.\n\nCodes:",
+  "options": {
+   "A": "(b), (c) and (d)",
+   "B": "(a), (b) and (c)",
+   "C": "(a), (c) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "NAAC"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NAAC's five core values: national development, global competencies, value system, use of technology, quest for excellence. NAAC was set up in 1994 at Bengaluru.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q54",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 54,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The best way for providing value education is through",
+  "options": {
+   "A": "discussions on scriptural texts",
+   "B": "lectures / discourses on values",
+   "C": "seminars / symposia on values",
+   "D": "mentoring / reflective sessions on values"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Value education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Values are absorbed through mentoring and reflection, not preached in lectures.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q55",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 55,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The National Judicial Appointments Commission (NJAC) has been declared unconstitutional by",
+  "options": {
+   "A": "The Supreme Court of India",
+   "B": "The High Court",
+   "C": "The High Court and the Supreme Court both",
+   "D": "The President of India"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In October 2015 a five-judge Supreme Court bench struck down the NJAC (99th Amendment), restoring the collegium.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q56",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 56,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements about the Indian political system is/are correct?\n(a) The President is both Head of the State and Head of the Government.\n(b) Parliament is Supreme.\n(c) The Supreme Court is the guardian of the Constitution.\n(d) The Directive Principles of State Policy are justiciable.\n\nSelect the correct answer from the codes given below:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(b), (c) and (d)",
+   "C": "(b) and (c)",
+   "D": "(c) only"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "In India the Constitution, not Parliament, is supreme; the PM heads the government; DPSPs are non-justiciable (Article 37).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q57",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 57,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the fundamental duties?\n(a) To respect the National Flag.\n(b) To protect and improve the natural environment.\n(c) For a parent to provide opportunities for education to his/her child.\n(d) To protect monuments and places of national importance.\n\nCodes:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(a), (b) and (d)",
+   "C": "(a), (c) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Protecting monuments is a Directive Principle (Article 49); the parent's duty (Article 51A(k)) was added by the 86th Amendment, 2002.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q58",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 58,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct in respect of Niti Aayog?\n(a) It is a constitutional body.\n(b) It is a statutory body.\n(c) It is neither a constitutional body nor a statutory body.\n(d) It is a think-tank.\n\nSelect the correct answer from the codes given below:",
+  "options": {
+   "A": "(a) and (d)",
+   "B": "(b) and (d)",
+   "C": "(c) and (d)",
+   "D": "(b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NITI Aayog (1 January 2015) was created by a Cabinet resolution, replacing the Planning Commission; the PM is its chairperson.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q59",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 59,
+  "format": "MCQ",
+  "type": "match",
+  "question": "A college level assistant professor has planned his/her lectures with an intent to develop cognitive dimensions of students centered on skills of analysis and synthesis. Set I consists of levels of cognitive interchange and Set II comprises basic requirements for promoting them. Match the two sets:\nSet I: (a) Memory level (b) Understanding level (c) Reflective level\nSet II: (i) Giving opportunity for discriminating examples and non-examples of a point. (ii) Recording the important points made during the presentations. (iii) Asking the students to discuss various items of information. (iv) Critically analyzing the points to be made and discussed.\n\nCodes:",
+  "options": {
+   "A": "(a)-(ii), (b)-(iv), (c)-(i)",
+   "B": "(a)-(iii), (b)-(iv), (c)-(ii)",
+   "C": "(a)-(ii), (b)-(i), (c)-(iv)",
+   "D": "(a)-(i), (b)-(ii), (c)-(iii)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Levels of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Herbart (memory), Morrison (understanding), Hunt (reflective) — the three levels of teaching.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-JUL-P1-Q60",
+  "exam": "NET",
+  "year": 2016,
+  "session": "July",
+  "shift": 1,
+  "source": "UGC NET July 2016 (10 Jul 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 60,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which set of learner characteristics may be considered helpful in designing effective teaching-learning systems? Select the correct alternative from the codes given below:\n(i) Prior experience of learners in respect of the subject.\n(ii) Interpersonal relationships of learner's family friends.\n(iii) Ability of the learners in respect of the subject.\n(iv) Student's language background.\n(v) Interest of students in following the prescribed dress code.\n(vi) Motivational-orientation of the students.",
+  "options": {
+   "A": "(i), (ii), (iii) and (iv)",
+   "B": "(i), (iii), (iv) and (vi)",
+   "C": "(ii), (iii), (iv) and (v)",
+   "D": "(iii), (iv), (v) and (vi)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Prior experience, ability, language and motivation matter; family friends and dress code do not. Asked again in Nov 2017 and July 2018.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper paper, Set A (60 questions, attempt any 50). Question text from the official CBSE booklet (J-00-16, Set A); answer from prepp.in's published key, re-worked by Claude (all 60 agree). Official CBSE final key not found online, so not verified. The RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q01",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 1,
+  "format": "MCQ",
+  "type": "chronology",
+  "question": "Which of the following sequences of chapterisation is correct for a Ph.D. thesis?",
+  "options": {
+   "A": "Survey of related literature, Introduction, Design of study, Data presentation and analysis, Conclusions, Suggestions for further research, References, Appendix",
+   "B": "Introduction, Design of study, Data presentation and analysis, Generalisations, Conclusions with survey of related literature, Suggestions, References, Appendix",
+   "C": "Introduction, Survey of related literature, Design of study, Data presentation and analysis, Generalisations and conclusions, Suggestions for further research, References and Appendix",
+   "D": "Survey of related literature, References, Introduction, Design of study, Data presentation and analysis, Conclusions, Suggestions, Appendix"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Thesis writing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Introduction → literature review → design → data analysis → findings/conclusions → suggestions → references → appendices.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Options condensed from the solved copy."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q02",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 2,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is not the critical feature of qualitative research?",
+  "options": {
+   "A": "Actual settings are the direct source of data.",
+   "B": "Data take the forms of words or pictures.",
+   "C": "Seeking to establish relationships among measured social facts.",
+   "D": "Researcher becomes immersed in the situation, present or past related to the phenomena."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Qualitative research"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Measuring social facts and relating them statistically is the quantitative approach. July 2016 Q8 asked the flip side (bottom-up evidence).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q03",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 3,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A detailed description of methodology of research is required in",
+  "options": {
+   "A": "Thesis/Dissertation",
+   "B": "Symposium/Workshop",
+   "C": "Seminar paper/Articles",
+   "D": "Conference and Seminar Papers"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Thesis writing"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Only a thesis or dissertation carries a full methodology chapter; papers give it briefly. July 2016 Q7 asked thesis = dissertation format.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q04",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 4,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Research ethics has a direct connection more often with which stages of research?",
+  "options": {
+   "A": "Defining and delimiting the scope of research.",
+   "B": "Problem formulation and reporting of research findings.",
+   "C": "Defining the population and deciding the sampling technique for research.",
+   "D": "Deciding about statistical techniques and data analysis."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research ethics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Ethics questions recur almost every cycle; this key ties it to problem choice and honest reporting (Nov 2017 chose reporting).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q05",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 5,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nWhat is not a consistent concern across the two organisational contexts?",
+  "options": {
+   "A": "Dissimilarity",
+   "B": "Product package",
+   "C": "Financial return",
+   "D": "Company longevity"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The passage says company longevity is not a shared concern.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q06",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 6,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nWhat will be sufficient for an independent production company to be successful?",
+  "options": {
+   "A": "New product innovations",
+   "B": "Financial returns from each new film",
+   "C": "Active role by firm's participants",
+   "D": "Organisational context"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "An independent producer can succeed on the return from a single film.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q07",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 7,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nWhat does an advanced-technology company expect from the learning experience of its participants?",
+  "options": {
+   "A": "Benefit for the next project",
+   "B": "Opportunity for more learning",
+   "C": "Little expectation of retaining them",
+   "D": "Help in marketing the previous product"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The tech firm retains people so their learning benefits the next project.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q08",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 8,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nWhat is not the expectation of an independent production company in the case of its participants?",
+  "options": {
+   "A": "Absence from the next project.",
+   "B": "Retention for the next project.",
+   "C": "Participation in the current project.",
+   "D": "Use of opportunity to acquire experience."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Film companies do not expect to retain people for the next project.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q09",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 9,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nWhy do film production houses value experience highly?",
+  "options": {
+   "A": "Because of the importance of trial and error methods.",
+   "B": "Because of the margin for learning.",
+   "C": "Because of short time horizons.",
+   "D": "Because it allows easy entry to everyone into the film world."
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Short time horizons leave no room for trial and error.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q10",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 10,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Passage (summary of the passage printed in the paper): The motion-picture industry differs from advanced-technology industries. Company longevity is not a shared concern: a high-technology firm needs a continuing stream of innovations to earn financial returns, while an independent production company can succeed on the financial return from a single film, and the next project usually goes to a different company. Both kinds of firm let their participants gain experience, but only the high-technology firm expects to retain them and benefit from that learning in its next project. Because film budgets and schedules are tight (short time horizons), hiring depends heavily on experience: people must perform at once, with little margin for trial and error, so entry into the industry is hard and formal education counts for little — skills come from direct experience and mentoring. The film business has therefore focused on exploitation rather than exploration, though its long-run success depends on learning and exploration too.\n\nAccording to the author, what has been the focus of film business?",
+  "options": {
+   "A": "Formal education",
+   "B": "Mentoring",
+   "C": "Exploitation",
+   "D": "Indirect experience"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Reading comprehension"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Exploitation (using existing skills) over exploration (learning new ones) — March and Levinthal's terms.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q11",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 11,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Internal and external factors that affect message reception by the students in the classroom are referred to as",
+  "options": {
+   "A": "feedback",
+   "B": "fragmentation",
+   "C": "channelization",
+   "D": "noise"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Barriers to communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Noise = anything (physical, psychological, semantic) that distorts reception — Shannon–Weaver model.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q12",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 12,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "A teacher in a classroom has immediate control over",
+  "options": {
+   "A": "the self, selected methods of communication and the message.",
+   "B": "the audience, the noise and the reception.",
+   "C": "the feedback, the technology and the audience experience.",
+   "D": "the communication channel, other communicators, and external factors."
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A teacher fully controls only themselves, their chosen methods and their message.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q13",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 13,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "What do communicated words carry in a classroom situation?",
+  "options": {
+   "A": "Inspiration, controversy and introspection",
+   "B": "Diversion, criticism and irrationality",
+   "C": "Insipidity, irrationality, and non-acceptance",
+   "D": "Power, structure and tradition"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Classroom words carry power (authority), structure (organisation) and tradition (shared meaning).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q14",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 14,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "As a good classroom communicator, you are supposed to know your",
+  "options": {
+   "A": "audience emotions",
+   "B": "silent cues",
+   "C": "artful pauses",
+   "D": "counter arguments"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Classroom communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Artful pauses give emphasis and time to think; this follows the published key.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q15",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 15,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Figure out the components of non-verbal communication in a classroom from the following:",
+  "options": {
+   "A": "Facial expression, cultural space and seating arrangement",
+   "B": "Speed of utterance, feel good factor and acoustics",
+   "C": "High sound, physical ambience and teacher-learner distance",
+   "D": "Facial expression, kinesics and personal space"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Non-verbal communication"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Kinesics = body movement and gesture (Ray Birdwhistell); proxemics = personal space (Edward T. Hall).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q16",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 16,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are the basic factors of effective listening?",
+  "options": {
+   "A": "Opinionation, stare and glare and interruptions",
+   "B": "Aggressive questioning, continuous cues and frequent movement",
+   "C": "Me-too-ism, glancing sideways, and offering advice",
+   "D": "Acknowledgement of thoughts, reflection, and asking open-ended questions"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Communication",
+   "Listening"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Active listening (Carl Rogers): acknowledge, reflect back, ask open questions.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q17",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 17,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In a particular code, HOSPITALS is coded as HSOLSAPTI. The code of BIOLOGICALS will be",
+  "options": {
+   "A": "BLICOALIOSG",
+   "B": "BOLGICAILOS",
+   "C": "SBLAOILOBCG",
+   "D": "BSILOALCOIG"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Coding-decoding"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Take letters alternately from the front and the back: 1st, last, 2nd, 2nd-last … B-S-I-L-O-A-L-C-O-I-G.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q18",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 18,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the series 1, 5, 13, 25, 41, ……. the next term is",
+  "options": {
+   "A": "59",
+   "B": "63",
+   "C": "61",
+   "D": "68"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Number series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Differences 4, 8, 12, 16 (+4) → next +20: 41 + 20 = 61.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q19",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 19,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "At present a mother is 3 times older than her son. After 5 years, the sum of their ages will be 70 years. The age of the mother after 10 years will be",
+  "options": {
+   "A": "40",
+   "B": "55",
+   "C": "45",
+   "D": "60"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Ages"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Son S, mother 3S: 4S + 10 = 70 → S = 15, mother 45 now → 55 after 10 years.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q20",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 20,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In the series AYD, BVF, DRH, GMJ, ? the next term is",
+  "options": {
+   "A": "GLK",
+   "B": "HLM",
+   "C": "LHM",
+   "D": "KGL"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Letter series"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1st letters +1, +2, +3, +4 → K; 2nd −3, −4, −5, −6 → G; 3rd +2 → L.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q21",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 21,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "C and D are sisters and A and B are brothers. E is the son of A and brother of D. B is related to C as",
+  "options": {
+   "A": "Brother",
+   "B": "Son",
+   "C": "Uncle",
+   "D": "Father-in-law"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Blood relations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "E is A's son and D's brother, so C and D are also A's children; A's brother B is their uncle.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q22",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 22,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Anil played 8 matches of cricket with a mean score of 80 runs. After four more matches, the mean of all 12 matches became 70. The total runs scored in the last four matches is",
+  "options": {
+   "A": "400",
+   "B": "300",
+   "C": "200",
+   "D": "100"
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Mathematical reasoning",
+   "Average"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "12 × 70 − 8 × 80 = 840 − 640 = 200.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q23",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 23,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Two propositions are so related that they cannot both be false, although they may both be true. Their relationship is called",
+  "options": {
+   "A": "Contrary",
+   "B": "Subcontrary",
+   "C": "Contradictory",
+   "D": "Subalternation"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Square of opposition"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Subcontraries (I and O) can both be true but never both false; contraries (A and E) the reverse.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q24",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 24,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which one among the following is not a characteristic of a deductive type of argument?",
+  "options": {
+   "A": "The conclusion follows from the premise/premises necessarily.",
+   "B": "The argument admits degree of complexity.",
+   "C": "The argument provides us knowledge about matters of fact.",
+   "D": "The argument must be either valid or invalid."
+  },
+  "answer": "C",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Deduction and induction"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Deduction only unpacks what the premises contain; new factual knowledge comes from induction.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q25",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 25,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the code which states the condition of an invalid deductive argument:",
+  "options": {
+   "A": "All the premises are true but the conclusion is false.",
+   "B": "Some of the premises are true but the conclusion is false.",
+   "C": "All the premises are false and the conclusion is also false.",
+   "D": "All the premises are true and the conclusion is also true."
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Validity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "True premises + false conclusion is the one combination a valid argument can never have (July 2016 Q33, Nov 2017 Q28).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q26",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 26,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Given below are two premises and four conclusions drawn from them (taking singly or together). Select the code that states the conclusions validly drawn.\nPremises: (i) All bats are mammals. (ii) Birds are not bats.\nConclusions: (a) Birds are not mammals. (b) Bats are not birds. (c) All mammals are bats. (d) Some mammals are bats.",
+  "options": {
+   "A": "(a), (b) and (d)",
+   "B": "(b) and (d)",
+   "C": "(a) and (c)",
+   "D": "(b), (c) and (d)"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Syllogism"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "(b) converts the E premise; (d) converts the A premise by limitation. (a) is illicit major. Same premises came back in Nov 2017.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q27",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 27,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "When a definition implies a proposal to use the definiendum to mean what is meant by the definiens it is called",
+  "options": {
+   "A": "Lexical definition",
+   "B": "Stipulative definition",
+   "C": "Precising definition",
+   "D": "Persuasive definition"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Definitions"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Stipulative = proposing a new meaning; lexical = reporting usage; precising = sharpening a vague term; persuasive = swaying attitudes (Copi).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q28",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 28,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Select the code which is not correct: An analogical argument is strengthened by",
+  "options": {
+   "A": "Increasing the number of entities.",
+   "B": "Increasing the number of similar respects.",
+   "C": "Reducing the claim made earlier stronger.",
+   "D": "Making the conclusion stronger when premises remain unchanged."
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Logical reasoning",
+   "Analogy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A stronger conclusion on the same premises weakens an analogy; more instances and more similarities strengthen it.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q29",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 29,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Table I — percentage of students in each faculty of a university (rounded): Computing 22, Business 14, Science 23, Engineering 9, Arts 21, Medicine 5, Law 6.\nTable II — foreign students in the Science faculty: American 79, Australian 4, African 2, Chinese 6, European 21 (total 112). The Science faculty has 1049 students in all.\n\nApproximately, what percentage of students in the Science faculty are foreign students?",
+  "options": {
+   "A": "14%",
+   "B": "9%",
+   "C": "30%",
+   "D": "11%"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "112 ÷ 1049 ≈ 10.7% ≈ 11%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q30",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 30,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Table I — percentage of students in each faculty of a university (rounded): Computing 22, Business 14, Science 23, Engineering 9, Arts 21, Medicine 5, Law 6.\nTable II — foreign students in the Science faculty: American 79, Australian 4, African 2, Chinese 6, European 21 (total 112). The Science faculty has 1049 students in all.\n\nApproximately, how many students belong to the Engineering faculty?",
+  "options": {
+   "A": "420",
+   "B": "410",
+   "C": "390",
+   "D": "400"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Total ≈ 1049 ÷ 0.23 ≈ 4561; 9% ≈ 410.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q31",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 31,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "Table I — percentage of students in each faculty of a university (rounded): Computing 22, Business 14, Science 23, Engineering 9, Arts 21, Medicine 5, Law 6.\nTable II — foreign students in the Science faculty: American 79, Australian 4, African 2, Chinese 6, European 21 (total 112). The Science faculty has 1049 students in all.\n\nIn case there are 34 European medical students, then approximately, what is their percentage in the medicine faculty?",
+  "options": {
+   "A": "13%",
+   "B": "18%",
+   "C": "12%",
+   "D": "15%"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Percentage"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Medicine ≈ 5% of 4561 ≈ 228; 34 ÷ 228 ≈ 15%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q32",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 32,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "There are 800 MCA students in all: 80% are in MCA-III and the rest are equally divided between MCA-I and MCA-II. Proportions of female (F) and vegetarian (V) students:\nClass | F | V\nMCA-I | 0.40 | ?\nMCA-II | 0.45 | 0.50\nMCA-III | ? | 0.55\nTotal | 0.525 | 0.53\n\nWhat is the percentage of female students in class MCA-III?",
+  "options": {
+   "A": "40",
+   "B": "45",
+   "C": "50",
+   "D": "55"
+  },
+  "answer": "D",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "MCA-III 640, MCA-I 80, MCA-II 80. Females 420 − 32 − 36 = 352 → 352/640 = 55%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q33",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 33,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "There are 800 MCA students in all: 80% are in MCA-III and the rest are equally divided between MCA-I and MCA-II. Proportions of female (F) and vegetarian (V) students:\nClass | F | V\nMCA-I | 0.40 | ?\nMCA-II | 0.45 | 0.50\nMCA-III | ? | 0.55\nTotal | 0.525 | 0.53\n\nWhat is the percentage of vegetarian students in class MCA-I?",
+  "options": {
+   "A": "40",
+   "B": "45",
+   "C": "50",
+   "D": "55"
+  },
+  "answer": "A",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Vegetarians 424 − 40 − 352 = 32 → 32/80 = 40%.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q34",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 34,
+  "format": "MCQ",
+  "type": "passage",
+  "question": "There are 800 MCA students in all: 80% are in MCA-III and the rest are equally divided between MCA-I and MCA-II. Proportions of female (F) and vegetarian (V) students:\nClass | F | V\nMCA-I | 0.40 | ?\nMCA-II | 0.45 | 0.50\nMCA-III | ? | 0.55\nTotal | 0.525 | 0.53\n\nHow many total non-vegetarian students are there in class MCA-I and class MCA-II?",
+  "options": {
+   "A": "72",
+   "B": "88",
+   "C": "78",
+   "D": "92"
+  },
+  "answer": "B",
+  "topics": [
+   "General Aptitude",
+   "Paper 1",
+   "Data interpretation",
+   "Table completion"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Non-veg: MCA-I 80 − 32 = 48, MCA-II 80 − 40 = 40 → 88.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q35",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 35,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements regarding the features of Information and Communication Technology (ICT) is/are true?\nI. ICT are the main instruments for the creation of computer networks and the applications based on them.\nII. ICT supports the spread of information and knowledge, separating the content from the place where it belongs physically.\nIII. The digital and virtual nature of most of ICT products allow the expenditure on them to be maximised.",
+  "options": {
+   "A": "I and II only",
+   "B": "I and III only",
+   "C": "II and III only",
+   "D": "I, II and III"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "ICT basics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Digital products have near-zero copying cost, so ICT keeps costs down, not up — III is false.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Statement III wording taken from a solved copy; check against the booklet."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q36",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 36,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "If one GigaByte is equal to 2^30 Bytes of data storage, then 1024 TeraBytes is equal to _____ bits of data storage.",
+  "options": {
+   "A": "2^50",
+   "B": "2^53",
+   "C": "2^40",
+   "D": "2^56"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory units"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "1024 TB = 2^10 × 2^40 = 2^50 bytes = 2^53 bits (1 byte = 2^3 bits).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Exponents are lost in the online copy; restored as powers of 2."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q37",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 37,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The software used to navigate through the web is known as",
+  "options": {
+   "A": "Website",
+   "B": "Web Browser",
+   "C": "Internet",
+   "D": "World Wide Web"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Internet"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A browser (first: WorldWideWeb by Tim Berners-Lee, 1990; Mosaic 1993) displays web pages.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q38",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 38,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "With regard to e-mail, what does Bcc: mean?",
+  "options": {
+   "A": "Blind Computer Communication: The users specified in the Bcc: field will get the e-mail and see the addresses in the to: and cc: fields.",
+   "B": "Blind Carbon Copy: The users specified in the Bcc: field will get the e-mail and see the addresses in the to: and cc: fields.",
+   "C": "Blind Computer Communication: The users specified in the Bcc: field will get the e-mail as an audio file because this is how blind people can also read the e-mail.",
+   "D": "Blind Carbon Copy: The users specified in the Bcc: field will get the e-mail but it will be an image file."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "E-mail"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Bcc recipients see the To and Cc addresses, but nobody sees the Bcc list.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Options (C) and (D) condensed from the solved copy."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q39",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 39,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Random Access Memory (RAM), a form of computer storage, is a ______ memory.",
+  "options": {
+   "A": "Non-volatile",
+   "B": "Volatile",
+   "C": "Permanent",
+   "D": "Secondary"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Memory"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "RAM loses its contents when power is off; ROM is non-volatile (July 2016 Q45).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q40",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 40,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "HTTP is a stateless protocol: it keeps no record of the client's past requests. HTTP is an acronym for",
+  "options": {
+   "A": "Hyper Text Translation Protocol",
+   "B": "Hyper Text Transfer Protocol",
+   "C": "High TeraByte Transfer Protocol",
+   "D": "Hypervisor Test Translation Protocol"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "ICT",
+   "Abbreviations"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "HTTP (Tim Berners-Lee, 1989–91); HTTPS adds TLS encryption.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Stem's first sentence condensed from the solved copy."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q41",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 41,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The arsenic pollution in ground water in Bangladesh and parts of India is due to",
+  "options": {
+   "A": "Industrial waste",
+   "B": "Thermal power plants",
+   "C": "Natural sources",
+   "D": "Agricultural practices"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Water pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Arsenic leaches naturally from Ganga–Brahmaputra delta sediments into tube-well water (West Bengal worst hit in India).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q42",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 42,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Among the following air pollutants which directly impacts human health as well as climate?",
+  "options": {
+   "A": "Soot",
+   "B": "Sulphur dioxide",
+   "C": "Oxides of nitrogen",
+   "D": "Chlorofluoro carbons"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Air pollution"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Soot (black carbon) damages lungs and also absorbs sunlight, warming the climate.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q43",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 43,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): The problems of environmental sustainability are difficult to resolve.\nReason (R): Our understanding how environment works and how different human choices affect environment is inadequate.\n\nChoose the correct code:",
+  "options": {
+   "A": "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are correct, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true and (R) is false.",
+   "D": "(A) is false and (R) is true."
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Sustainable development"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Gaps in understanding how the environment responds to human choices are why sustainability problems are hard to solve.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q44",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 44,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The Government of India's target for 2022 is that solar power will make up approximately what share of the electricity generated from renewable energy?",
+  "options": {
+   "A": "~ 57.1%",
+   "B": "~ 65.5%",
+   "C": "~ 47.5%",
+   "D": "~ 75%"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Energy"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Solar 100 GW of the 175 GW target = 57.1%. July 2016 asked biomass (10 GW), Jan 2017 small hydro (5 GW).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Stem condensed from the solved copy."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q45",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 45,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Under its Intended Nationally Determined Contributions (INDC), India has pledged to create an additional carbon sink of how much CO2 equivalent through additional forest and tree cover by 2030?",
+  "options": {
+   "A": "3.5 to 4 billion tons",
+   "B": "2.5 to 3 billion tons",
+   "C": "1.5 to 2 billion tons",
+   "D": "1 to 1.5 billion tons"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "International agreements"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "India's INDC (Oct 2015): cut emissions intensity 33–35% from 2005, 40% non-fossil power, 2.5–3 billion t CO2e forest sink by 2030.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary. Stem condensed from the solved copy."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q46",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 46,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following is a meteorological hazard?",
+  "options": {
+   "A": "Avalanche",
+   "B": "Coastal erosion",
+   "C": "Landslide",
+   "D": "Blizzard"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Environment",
+   "Natural hazards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "A blizzard is a weather event; avalanches and landslides are geological/mass-movement hazards.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q47",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 47,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following universities/institutes is ranked first in the India Rankings 2016?",
+  "options": {
+   "A": "Jawaharlal Nehru University, New Delhi",
+   "B": "Central University, Hyderabad",
+   "C": "Indian Institute of Science, Bangalore",
+   "D": "Institute of Chemical Technology, Mumbai"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Rankings and awards"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "NIRF 2016 (the first India Rankings) put IISc Bangalore top among universities.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q48",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 48,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are correct about distance education in India?\n(a) It supplements formal education.\n(b) It reduces the cost of education.\n(c) It replaces the formal education.\n(d) It enhances access to education.\n\nCodes:",
+  "options": {
+   "A": "(a), (b), (c) and (d)",
+   "B": "(a), (c) and (d)",
+   "C": "(a), (b) and (d)",
+   "D": "(b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Distance education"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Distance education supplements, never replaces, formal education; IGNOU (1985) is the national open university.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q49",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 49,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following are statutory bodies?\n(a) Election Commission of India\n(b) University Grants Commission (UGC)\n(c) All India Council for Technical Education (AICTE)\n(d) National Assessment and Accreditation Council (NAAC)\n\nCodes:",
+  "options": {
+   "A": "(a), (b) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(b) and (c)",
+   "D": "(b) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Regulatory bodies"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "UGC (Act of 1956) and AICTE (Act of 1987) are statutory; the ECI is constitutional (Art. 324); NAAC is an autonomous body set up by UGC.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q50",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 50,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statements are not correct in respect of Rajya Sabha?\n(a) It has same powers as those of Lok Sabha.\n(b) It can pass a vote of no-confidence against the Council of Ministers.\n(c) It can amend a money bill.\n(d) It can be dissolved during emergency.\n\nCodes:",
+  "options": {
+   "A": "(b) and (c)",
+   "B": "(b), (c) and (d)",
+   "C": "(a), (b) and (c)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Rajya Sabha is permanent (never dissolved), cannot amend money bills (only recommend within 14 days), and the ministry answers only to Lok Sabha.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q51",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 51,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following statement(s) is/are correct about the powers of the Governor of a State?\n(a) He has the power to dissolve the Legislative Assembly.\n(b) He has the power to appoint judges of the State High Court.\n(c) He has the power to grant pardon in case of death sentence.\n(d) He has diplomatic powers.\n\nCodes:",
+  "options": {
+   "A": "(a) only",
+   "B": "(a) and (b)",
+   "C": "(a), (b) and (d)",
+   "D": "(a), (b) and (c)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "HC judges are appointed by the President; only the President can pardon a death sentence (Art. 72 vs 161).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q52",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 52,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "In which of the following cases, the principle of natural justice (Hear the other party) must be followed?\n(a) Dismissal of an employee\n(b) Supersession of a municipality\n(c) Threat to national security\n(d) Disciplinary action against a student or an employee\n\nCodes:",
+  "options": {
+   "A": "(a) and (b)",
+   "B": "(a) and (d)",
+   "C": "(a), (b) and (d)",
+   "D": "(a), (b), (c) and (d)"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Higher education",
+   "Governance and polity"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Audi alteram partem ('hear the other side') may be excluded in emergencies such as national security.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q53",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 53,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following set of statements reflects the basic characteristics of teaching?\n(i) Teaching is the same as training.\n(ii) There is no difference between instruction and conditioning when we teach.\n(iii) Teaching is related to learning.\n(iv) Teaching is a 'task' word while learning is an 'achievement' word.\n(v) Teaching means giving information.\n(vi) One may teach without learning taking place.\n\nCodes:",
+  "options": {
+   "A": "(i), (ii) and (iii)",
+   "B": "(iii), (iv) and (vi)",
+   "C": "(ii), (iii) and (v)",
+   "D": "(i), (iv) and (vi)"
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Nature of teaching"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Gilbert Ryle's task/achievement distinction: teaching is an attempt; learning is the success. Teaching ≠ training or conditioning.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q54",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 54,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following factors affect teaching?\n(i) Teacher's internal locus of control.\n(ii) Learner-motivation.\n(iii) Teacher's biographical data.\n(iv) Teacher's self efficacy.\n(v) Learner's interest in co-curricular activities.\n(vi) Teacher's skill in managing and monitoring.\n(vii) Teacher's knowledge of the subject including general knowledge.\n\nCodes:",
+  "options": {
+   "A": "(i), (ii), (iv), (vi) and (vii)",
+   "B": "(i), (ii), (iii), (iv) and (v)",
+   "C": "(iii), (iv), (v), (vi) and (vii)",
+   "D": "(ii), (iii), (iv), (v) and (vi)"
+  },
+  "answer": "A",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching factors"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Locus of control (Rotter) and self-efficacy (Bandura) shape teaching; biographical data and co-curricular interest do not.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q55",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 55,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which combination of methods of teaching is likely to optimise learning?",
+  "options": {
+   "A": "Lecturing, discussions and seminar method",
+   "B": "Interactive discussions, planned lectures and PowerPoint based presentations",
+   "C": "Interactive lecture sessions followed by buzz sessions, brainstorming and projects",
+   "D": "Lecturing, demonstrations and PowerPoint based presentations"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "The most learner-active mix wins: interactive lecture + buzz groups + brainstorming + projects.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q56",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 56,
+  "format": "MCQ",
+  "type": "assertion-reason",
+  "question": "Assertion (A): Teaching aids have to be considered as effective supplements to instruction.\nReason (R): They keep the students in good humour.\n\nChoose the correct answer from the code:",
+  "options": {
+   "A": "Both (A) and (R) are true and (R) is the correct explanation of (A).",
+   "B": "Both (A) and (R) are true, but (R) is not the correct explanation of (A).",
+   "C": "(A) is true, but (R) is false.",
+   "D": "(A) is false, but (R) is true."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Teaching aids"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Aids supplement instruction because they aid understanding; keeping students cheerful is true but not the reason. Compare July 2016 Q2.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q57",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 57,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "The purpose of formative evaluation is to",
+  "options": {
+   "A": "Grade students' learning outcomes.",
+   "B": "Accelerate students' learning performance.",
+   "C": "Check students' performance graph.",
+   "D": "Provide feedback to teacher effectiveness."
+  },
+  "answer": "B",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Evaluation"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Formative evaluation (Scriven, 1967) gives feedback during learning to speed it up; grading is summative. Jan 2017 repeated the idea.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q58",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 58,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "Which of the following learner characteristics are likely to influence the effectiveness of teaching aids and evaluation systems to ensure positive results?",
+  "options": {
+   "A": "Learner's family background, age and habitation.",
+   "B": "Learner's parentage, socio-economic background and performance in learning of the concerned subject.",
+   "C": "Learner's stage of development, social background and personal interests.",
+   "D": "Learner's maturity level, academic performance level and motivational dispositions."
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Teaching aptitude",
+   "Learner characteristics"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Maturity, academic level and motivation — learner-characteristic items repeat every year (July 2016 Q60).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q59",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 59,
+  "format": "MCQ",
+  "type": "MCQ",
+  "question": "For advancing knowledge, the latest strategy used by mankind is",
+  "options": {
+   "A": "Consulting an authority",
+   "B": "Deductive reasoning",
+   "C": "Scientific thinking",
+   "D": "Inductive reasoning"
+  },
+  "answer": "C",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Sources of knowledge"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Sequence of methods of knowing: authority → deduction (Aristotle) → induction (Bacon) → scientific method (Dewey's reflective thinking).",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
+ },
+ {
+  "id": "NET-2016-AUG-P1-Q60",
+  "exam": "NET",
+  "year": 2016,
+  "session": "August",
+  "shift": 1,
+  "source": "UGC NET August 2016 re-test (28 Aug 2016, CBSE) · Paper I",
+  "section": "Paper 1",
+  "qno": 60,
+  "format": "MCQ",
+  "type": "match",
+  "question": "Set I consists of methods of research and Set II indicates their procedural characteristics. Match the two sets:\nSet I: (a) Experimental method (b) Expost facto method (c) Descriptive method (d) Symbolic interactionism (e) Action research\nSet II: (i) Interventions to ameliorate a given situation (ii) Explaining patterns of behaviour in terms of meanings and their representations which people share (iii) Manipulating an independent variable in controlled conditions and measuring its effect on dependent variable (iv) Depending on primary and secondary sources of data (v) Obtaining information concerning the current status of phenomena (vi) Observing the effect on dependent variable and making probes into factors/variables which explain it (vii) Exegetic analysis\n\nCodes:",
+  "options": {
+   "A": "(a)-(i), (b)-(iii), (c)-(iv), (d)-(v), (e)-(vii)",
+   "B": "(a)-(iii), (b)-(iv), (c)-(v), (d)-(vi), (e)-(vii)",
+   "C": "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv), (e)-(v)",
+   "D": "(a)-(iii), (b)-(vi), (c)-(v), (d)-(ii), (e)-(i)"
+  },
+  "answer": "D",
+  "topics": [
+   "Paper 1",
+   "Research aptitude",
+   "Research methods"
+  ],
+  "keywords": [
+   "paperone"
+  ],
+  "writers": [],
+  "works": [],
+  "infoBite": "Symbolic interactionism (Mead; named by Herbert Blumer, 1937) studies shared meanings; action research ameliorates a situation.",
+  "verified": false,
+  "keySource": "site-key",
+  "note": "CBSE pen-and-paper re-test paper (60 questions, attempt any 50); booklet set not stated. Text and answer from the librarianshipstudies.com and netcomputerscience.com / smartvidya.co.in solved copies (keys agree), re-worked by Claude (all 60 agree). Official CBSE booklet and final key not found online, so not verified. Stems may be lightly reworded; the RC passage is a summary."
  }
 ]

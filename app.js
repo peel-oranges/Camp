@@ -1295,6 +1295,36 @@ const pioneersHTML = () => `
   </section>`;
 const radarTag = x => x.radar ? '<span class="pill nr-radar">🎯 Not yet in GATE</span>' : '';
 const countTags = x => `<span class="pill Low">NET ${x.net}×</span><span class="pill Low">GATE ${x.gate}×</span>`;
+/* Study whole and Must-learn facts: one card per tab, styled like the Syllabus cards.
+   Each work is a single row with just its name; tapping it opens the details below it (one open at a time). */
+function notesRowBody(x) {
+  return `<div class="nn-body">
+      ${x.writer ? `<div class="nr-writer">${esc(x.writer)}</div>` : ''}
+      <div class="chips nr-tags">${countTags(x)}${radarTag(x)}</div>
+      ${x.note ? `<p class="nr-note">${esc(x.note)}</p>` : ''}
+      ${x.fact ? `<p class="nr-note">${esc(x.fact)}</p>` : ''}
+      ${x.asked && x.asked.length ? `<details class="nr-asked"><summary>What NET/GATE asked</summary><ul>${x.asked.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
+      <div class="sy-card-pills" style="margin-top:6px"><button class="sy-outline" data-act="quizWork" data-k="${esc(x.k)}">Quiz me on this · ${x.ids.length} →</button></div>
+      <button class="sy-expand" data-act="notesRow" data-k="${esc(x.k)}">Hide ▴</button>
+    </div>`;
+}
+function notesListCard(title, part, list, help, unit) {
+  return `<article class="sy-card nn-card">
+    <div class="sy-card-part">Short notes · ${esc(part)}</div>
+    <div class="sy-card-title">${esc(title)}</div>
+    <div class="sy-card-pills"><span class="sy-marks">${plural(list.length, unit)}</span></div>
+    <p class="small muted" style="margin:0 0 6px">${esc(help)}</p>
+    <div class="nn-list">${list.map(x => {
+      const open = S.notesOpen === x.k;
+      return `<div class="nn-row ${open ? 'open' : ''}" id="nn-${esc(x.k).replace(/\s+/g, '-')}">
+        <button class="nn-head" data-act="notesRow" data-k="${esc(x.k)}" aria-expanded="${open}">
+          <span class="nn-name">${esc(x.title)}</span><span class="sy-chev" aria-hidden="true">${open ? '▴' : '▾'}</span>
+        </button>
+        ${open ? notesRowBody(x) : ''}
+      </div>`;
+    }).join('') || '<p class="muted small">Nothing here yet.</p>'}</div>
+  </article>`;
+}
 VIEWS.notes = () => {
   const N = notesData(), only = !!S.notesRadar, tab = ['facts', 'pioneers'].includes(S.notesTab) ? S.notesTab : 'whole';
   const whole = N.whole.filter(x => !only || x.radar), facts = N.facts.filter(x => !only || x.radar);
@@ -1314,33 +1344,9 @@ VIEWS.notes = () => {
       <button class="${tab === 'pioneers' ? 'on' : ''}" data-act="notesTab" data-v="pioneers">Founders / Pioneers (Abrams) · ${pioneers().length}</button>
     </div>
   </section>
-  ${tab === 'pioneers' ? pioneersHTML() : tab === 'whole' ? `
-  <section class="card">
-    <h3>Study whole <span class="muted small">· NET asked 7+ times · ${whole.length}</span></h3>
-    <p class="small muted">Read these properly: story or argument, characters, key lines, and the ideas critics attach to them.</p>
-  </section>
-  ${whole.map(x => `
-  <article class="card nr-card">
-    <div class="nr-title">${esc(x.title)}</div>
-    ${x.writer ? `<div class="nr-writer">${esc(x.writer)}</div>` : ''}
-    <div class="chips nr-tags">${countTags(x)}${radarTag(x)}</div>
-    ${x.note ? `<p class="nr-note">${esc(x.note)}</p>` : ''}
-    ${x.asked && x.asked.length ? `<details class="nr-asked"><summary>What NET/GATE asked</summary><ul>${x.asked.map(a => `<li>${esc(a)}</li>`).join('')}</ul></details>` : ''}
-    <button class="chip" data-act="quizWork" data-k="${esc(x.k)}">Quiz me on this · ${x.ids.length}</button>
-  </article>`).join('') || '<section class="card"><p class="muted small">Nothing here yet.</p></section>'}` : `
-
-  <section class="card">
-    <h3>Must-learn facts <span class="muted small">· NET asked 4–6 times · ${facts.length}</span></h3>
-    <p class="small muted">Know the author, date, form and movement, plus the fact below (taken from what was actually asked). Tap a row to quiz on it.</p>
-    <div class="list">${facts.map(x => `
-      <button class="row nr-fact" data-act="quizWork" data-k="${esc(x.k)}">
-        <span class="grow">
-          <span class="name">${esc(x.title)}</span>${x.writer ? ` <span class="sub">— ${esc(x.writer)}</span>` : ''}<br>
-          ${x.fact ? `<span class="nr-fact-line">${esc(x.fact)}</span><br>` : ''}
-          <span class="sub">NET ${x.net}× · GATE ${x.gate}×</span>${x.radar ? ' <span class="nr-radar-dot">🎯</span>' : ''}
-        </span><span class="chev">›</span>
-      </button>`).join('') || '<p class="muted small">Nothing here yet.</p>'}</div>
-  </section>`}`;
+  ${tab === 'pioneers' ? pioneersHTML() : tab === 'whole'
+    ? notesListCard('Study whole', 'NET asked 7+ times', whole, 'Read these properly: story or argument, characters, key lines, and the ideas critics attach to them. Tap a name to open its note.', 'work')
+    : notesListCard('Must-learn facts', 'NET asked 4–6 times', facts, 'Know the author, date, form and movement, plus the fact inside (taken from what was actually asked). Tap a name to open it.', 'work')}`;
 };
 
 /* ---------- Stats ---------- */
@@ -4014,8 +4020,14 @@ const ACT = {
   openGuide: d => { const t = gNode(d.id); if (!t) return; S.guideId = d.id; go(t.cat ? 'guideTopic' : 'guideCat'); },
   openExam: () => { S.examShow = 3; go('exam'); },
   openNotes: () => go('notes'),
-  notesFilter: d => { S.notesRadar = d.v === 'radar'; go('notes', true); },
-  notesTab: d => { S.notesTab = d.v; go('notes', true); },
+  notesFilter: d => { S.notesRadar = d.v === 'radar'; S.notesOpen = null; go('notes', true); },
+  notesTab: d => { S.notesTab = d.v; S.notesOpen = null; go('notes', true); },
+  notesRow: d => {
+    S.notesOpen = S.notesOpen === d.k ? null : d.k;
+    go('notes', true);
+    const el = document.getElementById('nn-' + d.k.replace(/\s+/g, '-'));
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: 'start' });
+  },
   quizWork: d => {
     const x = [...notesData().whole, ...notesData().facts].find(w => w.k === d.k); if (!x) return;
     Object.assign(S.filters, { work: { label: x.title, ids: x.ids }, group: null, tags: null, query: '', mode: 'mix' });
@@ -4236,6 +4248,14 @@ document.addEventListener('keydown', e => {
     .nr-asked li { margin-bottom: 6px; }
     .nr-fact .name { font-weight: 700; }
     .nr-fact-line { display: inline-block; margin: 4px 0; font-size: .9rem; line-height: 1.45; }
+    .nn-card { padding-bottom: 12px; }
+    .nn-row { border-top: 1px solid var(--border); }
+    .nn-head { display: block; width: 100%; position: relative; min-height: 50px; padding: 13px 30px 13px 2px; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+    .nn-head .sy-chev { top: 14px; }
+    .nn-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.22rem; font-weight: 700; line-height: 1.25; }
+    .nn-row.open .nn-name { color: var(--accent-ink); }
+    .nn-body { padding: 0 2px 4px; }
+    .nn-body .sy-expand { margin-top: 10px; }
     .nr-seg { flex-wrap: wrap; }
     .nr-seg button { flex: 1 1 40%; }
     .nr-seg button:last-child { flex-basis: 100%; }
