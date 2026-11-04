@@ -1398,10 +1398,70 @@ VIEWS.stats = () => {
 };
 
 /* ---------- More ---------- */
+/* ---------- Bookmarks (More › Bookmarks) ----------
+   Every bookmarked question, newest first, with its answer hidden until tapped.
+   Chips filter by the broad topic (first tag); “Quiz me” uses the filtered list. */
+function bmList() {
+  const b = S.prog.bookmarks;
+  return S.questions.filter(q => b[q.id]).sort((x, y) => (b[y.id] || 0) - (b[x.id] || 0));
+}
+const bmTopicOf = q => (q.topics || [])[0] || 'Untagged';
+function bmShown() {
+  const all = bmList();
+  return S.bmTopic ? all.filter(q => bmTopicOf(q) === S.bmTopic) : all;
+}
+function bmOptionsHTML(q) {
+  const o = q.options || {}, keys = Object.keys(o);
+  if (!keys.length) return '';
+  const right = String(q.answer || '').toUpperCase().split(/[;,\s]+/).filter(Boolean);
+  return keys.map(k => right.includes(k.toUpperCase())
+    ? `<p class="small ans" style="margin:2px 0"><b>✓ ${esc(k)}. ${esc(o[k])}</b></p>`
+    : `<p class="small" style="margin:2px 0">${esc(k)}. ${esc(o[k])}</p>`).join('');
+}
+VIEWS.bookmarks = () => {
+  const all = bmList();
+  if (S.bmTopic && !all.some(q => bmTopicOf(q) === S.bmTopic)) S.bmTopic = null;
+  const list = bmShown();
+  const groups = new Map();
+  all.forEach(q => { const k = bmTopicOf(q); groups.set(k, (groups.get(k) || 0) + 1); });
+  const chips = groups.size > 1 ? `<div class="chips" style="margin-top:10px">
+      <button class="chip ${S.bmTopic ? '' : 'on'}" data-act="bmTopic" data-v="">All <span class="count">${all.length}</span></button>
+      ${[...groups].sort((a, b) => b[1] - a[1]).map(([k, c]) => `<button class="chip ${S.bmTopic === k ? 'on' : ''}" data-act="bmTopic" data-v="${esc(k)}">${esc(k)} <span class="count">${c}</span></button>`).join('')}
+    </div>` : '';
+  return `
+  <button class="chip back" data-act="tab" data-tab="more">‹ Back</button>
+  <section class="card">
+    <h2>★ Bookmarks</h2>
+    <p class="muted small">${all.length ? `${plural(all.length, 'saved question')} on this device, newest first.` : 'Nothing saved yet.'}</p>
+    ${chips}
+    ${list.length ? `<button class="btn" data-act="bmQuiz" style="margin-top:12px">Quiz me on ${list.length === all.length ? 'all bookmarks' : 'these ' + list.length}</button>` : ''}
+  </section>
+  ${list.length ? `<section class="card">${list.map(q => {
+    const meta = [...(q.writers || []).slice(0, 2), ...(q.works || []).slice(0, 2)].join(' · ');
+    return `<div class="bank-item">
+      <div class="tags" style="margin-bottom:6px"><span class="tag src">${esc(sourceTag(q))}</span></div>
+      <div class="q">${esc(q.question)}</div>
+      <details><summary>Show answer</summary>
+        ${bmOptionsHTML(q) || `<p class="ans"><b>${esc(answerText(q))}</b></p>`}
+        ${meta ? `<p class="small muted" style="margin-top:6px">${esc(meta)}</p>` : ''}
+        ${q.infoBite ? `<div class="bite"><div class="bite-h">✦ Info bite</div><p>${esc(q.infoBite)}</p></div>` : ''}
+      </details>
+      <button class="chip on" data-act="bookmark" data-id="${esc(q.id)}">★ Remove bookmark</button>
+    </div>`;
+  }).join('')}</section>` : `<section class="card center"><p class="muted">Tap <b>☆ Bookmark</b> after answering a question in any quiz, or on the results screen, and it will appear here.</p></section>`}`;
+};
+
 VIEWS.more = () => {
   const g = ghSettings(), admin = isAdmin();
   const unver = S.questions.filter(q => q.verified === false).length;
+  const nBm = S.questions.filter(q => S.prog.bookmarks[q.id]).length;
   return `
+  <section class="card">
+    <h2>★ Bookmarks</h2>
+    <p class="muted small">${nBm ? `${plural(nBm, 'saved question')}. Read them with their answers, remove the ones you have learnt, or quiz yourself on them.` : 'No bookmarks yet. Tap ☆ Bookmark after answering any question and it will be kept here.'}</p>
+    <button class="btn" data-act="openBookmarks">Open bookmarks ›</button>
+  </section>
+
   <section class="card">
     <h2>Appearance</h2>
     <label class="switch-row"><span>Night mode</span><input type="checkbox" class="switch" data-change="theme" ${isDark() ? 'checked' : ''}></label>
@@ -3884,7 +3944,7 @@ const MOCK_IN = { mockNat: v => { const z = S.quiz; if (!z || !z.mock) return; z
    ROUTING & EVENTS
    ========================================================= */
 const MAIN_TABS = ['home', 'guide', 'syllabus', 'plan', 'stats', 'more'];
-const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', adminList: 'more', adminForm: 'more', adminBulk: 'more', sylAdmin: 'syllabus' };
+const TAB_OF = { quiz: 'home', results: 'home', guideTopic: 'guide', guideCat: 'guide', exam: 'guide', notes: 'guide', bookmarks: 'more', adminList: 'more', adminForm: 'more', adminBulk: 'more', sylAdmin: 'syllabus' };
 function render() {
   const v = $('#view');
   if (!S.loaded) {
@@ -4018,6 +4078,9 @@ const ACT = {
 
   /* guide & stats */
   openGuide: d => { const t = gNode(d.id); if (!t) return; S.guideId = d.id; go(t.cat ? 'guideTopic' : 'guideCat'); },
+  openBookmarks: () => { S.bmTopic = null; go('bookmarks'); },
+  bmTopic: d => { S.bmTopic = d.v || null; go('bookmarks', true); },
+  bmQuiz: () => { const l = bmShown(); if (!l.length) return; startQuiz(shuffleArr(l), S.bmTopic ? `Bookmarks · ${S.bmTopic}` : 'Bookmarks'); },
   openExam: () => { S.examShow = 3; go('exam'); },
   openNotes: () => go('notes'),
   notesFilter: d => { S.notesRadar = d.v === 'radar'; S.notesOpen = null; go('notes', true); },
