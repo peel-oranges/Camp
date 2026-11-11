@@ -7257,7 +7257,6 @@
     "latin literature",
     "latin writers",
     "roman writers",
-    "latin",
     "roman literature"
    ],
    "tags": [
@@ -7307,20 +7306,34 @@
    ]
   },
   {
-   "id": "th-classical",
-   "name": "Literary Theory: Mimesis & the Sublime",
+   "id": "th-mimesis",
+   "name": "Literary Theory: Literature and Mimesis",
    "aliases": [
-    "classical criticism",
-    "mimesis",
     "literature and mimesis",
-    "sublime",
-    "literature and the sublime"
+    "mimesis",
+    "classical criticism"
    ],
    "tags": [],
    "works": [],
    "writers": [
     "Plato",
-    "Aristotle",
+    "Aristotle"
+   ],
+   "gaps": []
+  },
+  {
+   "id": "th-sublime",
+   "name": "Literary Theory: Literature and the Sublime",
+   "aliases": [
+    "literature and the sublime",
+    "sublime"
+   ],
+   "tags": [],
+   "works": [
+    "On the Sublime",
+    "Peri Hypsous"
+   ],
+   "writers": [
     "Longinus"
    ],
    "gaps": [
@@ -7470,8 +7483,7 @@
     "marxist theory",
     "marxist criticism",
     "marxist",
-    "frankfurt school",
-    "critical theory"
+    "frankfurt school"
    ],
    "tags": [
     "Marxism",
