@@ -251,6 +251,72 @@ function aboutWorks(q, works) {
   return false;
 }
 
+/* ---------- Ages & folders from my notes list (syllabus.json → "ages") ----------
+   Typing an age's name ("chaucer's age", "age of chaucer", "puritan age", "romantics")
+   brings every question on the writers and works filed under that age in my notes,
+   plus whatever the words themselves find. Extra words narrow it ("victorian novel"). */
+let AGECACHE = { src: null, list: [] };
+const ageTok = t => (t.length > 4 && t.endsWith('s') ? t.slice(0, -1) : t);
+const personWords = n => words(String(n || '').replace(/\([^)]*\)/g, ' '));
+// Same person? "S. T. Coleridge" = "Samuel Taylor Coleridge"; "Bernard Shaw" = "George Bernard Shaw";
+// but "George Eliot" ≠ "T. S. Eliot" and "W. S. Gilbert" ≠ "Sandra Gilbert".
+function samePerson(a, b) {            // a = name in the list, b = name on the question
+  if (!a.length || !b.length) return false;
+  if (a.join(' ') === b.join(' ')) return true;
+  if (a.length === 1) return b.length === 2 && b[1] === a[0];      // "Premchand" = "Munshi Premchand"
+  if (b.length === 1 || a[a.length - 1] !== b[b.length - 1]) return false;
+  const x = a.slice(0, -1), y = b.slice(0, -1);
+  if (x.length === y.length) return x.every((w, i) => w === y[i] || (w.length === 1 && y[i][0] === w) || (y[i].length === 1 && w[0] === y[i]));
+  const [sh, lg] = x.length < y.length ? [x, y] : [y, x];
+  let i = 0;
+  for (const w of lg) if (i < sh.length && w === sh[i]) i++;
+  return i === sh.length;
+}
+function ages() {
+  const src = S.syllabus && Array.isArray(S.syllabus.ages) ? S.syllabus.ages : null;
+  if (!src) return [];
+  if (AGECACHE.src !== src) {
+    AGECACHE = { src, list: src.map(a => ({
+      name: a.name,
+      count: (a.writers || []).length,
+      alias: [a.name].concat(a.aliases || []).map(x => queryTokens(x).map(ageTok)).filter(x => x.length),
+      people: (a.writers || []).map(personWords),
+      tags: new Set((a.tags || []).map(t => String(t).toLowerCase())),
+      works: new Set((a.works || []).map(normTitle)),
+      wmemo: new Map(), more: null
+    })) };
+  }
+  return AGECACHE.list;
+}
+function ageWriter(A, w) {
+  let v = A.wmemo.get(w);
+  if (v === undefined) { const b = personWords(w); v = A.people.some(a => samePerson(a, b)); A.wmemo.set(w, v); }
+  return v;
+}
+function inAge(A, q) {
+  if ((q.topics || []).some(t => A.tags.has(String(t).toLowerCase()))) return true;
+  if ((q.writers || []).some(w => ageWriter(A, w))) return true;
+  if (A.works.size && (q.works || []).some(t => A.works.has(normTitle(t)))) return true;
+  if (!A.more) {                         // works by this age's writers, learnt from the bank and the Guide
+    A.more = new Set();
+    writerWorks().forEach(e => { if (ageWriter(A, e.name)) e.works.forEach(t => A.more.add(t)); });
+  }
+  return A.more.size ? aboutWorks(q, A.more) : false;
+}
+// Finds the longest age name inside the typed words; the other words are left to narrow the search.
+function findAge(toks) {
+  const T = toks.map(ageTok);
+  let best = null;
+  ages().forEach(A => A.alias.forEach(al => {
+    if (best && al.length <= best.len) return;
+    for (let i = 0; i + al.length <= T.length; i++) {
+      if (al.every((w, j) => T[i + j] === w)) { best = { A, at: i, len: al.length }; break; }
+    }
+  }));
+  if (!best) return null;
+  return { A: best.A, span: toks.slice(best.at, best.at + best.len), rest: toks.slice(0, best.at).concat(toks.slice(best.at + best.len)) };
+}
+
 function poolForMode(mode) {
   const Q = S.questions, p = S.prog;
   switch (mode) {
@@ -358,6 +424,12 @@ function searchList(list, raw) {
   S.searchInfo = null;
   {
     const toks = queryTokens(raw);
+    const hit = toks.length ? findAge(toks) : null;
+    if (hit) {
+      const restG = hit.rest.length ? resolveTokens(hit.rest) : null;
+      const res = list.filter(q => (inAge(hit.A, q) || matchesQuery(q, hit.span)) && (!restG || matchesQuery(q, restG)));
+      if (res.length) { S.searchInfo = { age: hit.A.name, ageN: hit.A.count }; return res; }
+    }
     if (toks.length) {
       const groups = resolveTokens(toks);
       const direct = list.filter(q => matchesQuery(q, groups));
@@ -502,6 +574,7 @@ function matchText(n) {
   const notes = [];
   if (info.scope) notes.push(info.scope);
   if (info.years) notes.push(`PYQ years: ${info.years}`);
+  if (info.age) notes.push(`From my notes list: ${info.age}`);
   if (info.fix) notes.push(`Showing results for “${info.fix}”`);
   if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
   return `${notes.length ? notes.join(' · ') + '. ' : ''}${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
