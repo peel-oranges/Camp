@@ -255,9 +255,12 @@ function aboutWorks(q, works) {
    Typing an age's name ("chaucer's age", "age of chaucer", "puritan age", "romantics")
    brings every question on the writers and works filed under that age in my notes,
    plus whatever the words themselves find. Extra words narrow it ("victorian novel"). */
-let AGECACHE = { src: null, list: [] };
+let AGECACHE = { src: null, list: [], strict: new Set() };
 const ageTok = t => (t.length > 4 && t.endsWith('s') ? t.slice(0, -1) : t);
 const personWords = n => words(String(n || '').replace(/\([^)]*\)/g, ' '));
+// A name with a bracket, e.g. "Samuel Butler (poet)", is a different person from the plain name
+// and only ever matches itself.
+const strictKey = n => words(n).join(' ');
 // Same person? "S. T. Coleridge" = "Samuel Taylor Coleridge"; "Bernard Shaw" = "George Bernard Shaw";
 // but "George Eliot" ≠ "T. S. Eliot" and "W. S. Gilbert" ≠ "Sandra Gilbert".
 function samePerson(a, b) {            // a = name in the list, b = name on the question
@@ -276,11 +279,14 @@ function ages() {
   const src = S.syllabus && Array.isArray(S.syllabus.ages) ? S.syllabus.ages : null;
   if (!src) return [];
   if (AGECACHE.src !== src) {
-    AGECACHE = { src, list: src.map(a => ({
+    const strict = new Set();
+    src.forEach(a => (a.writers || []).forEach(w => { if (/\(/.test(w)) strict.add(strictKey(w)); }));
+    AGECACHE = { src, strict, list: src.map(a => ({
       name: a.name,
       count: (a.writers || []).length,
       alias: [a.name].concat(a.aliases || []).map(x => queryTokens(x).map(ageTok)).filter(x => x.length),
-      people: (a.writers || []).map(personWords),
+      people: (a.writers || []).filter(w => !/\(/.test(w)).map(personWords),
+      strict: new Set((a.writers || []).filter(w => /\(/.test(w)).map(strictKey)),
       tags: new Set((a.tags || []).map(t => String(t).toLowerCase())),
       works: new Set((a.works || []).map(normTitle)),
       wmemo: new Map(), more: null
@@ -290,7 +296,12 @@ function ages() {
 }
 function ageWriter(A, w) {
   let v = A.wmemo.get(w);
-  if (v === undefined) { const b = personWords(w); v = A.people.some(a => samePerson(a, b)); A.wmemo.set(w, v); }
+  if (v === undefined) {
+    const k = strictKey(w);
+    if (AGECACHE.strict.has(k)) v = A.strict.has(k);
+    else { const b = personWords(w); v = A.people.some(a => samePerson(a, b)); }
+    A.wmemo.set(w, v);
+  }
   return v;
 }
 function inAge(A, q) {
@@ -302,6 +313,20 @@ function inAge(A, q) {
     writerWorks().forEach(e => { if (ageWriter(A, e.name)) e.works.forEach(t => A.more.add(t)); });
   }
   return A.more.size ? aboutWorks(q, A.more) : false;
+}
+// The age's own name as words: one word is searched as usual; a name of two or more words
+// ("old english", "golden age") must sit together in one of the question's tags, or stand together in its text,
+// so that a question which merely contains "old" and "English" somewhere is not pulled in.
+const META_IDX = new WeakMap(), SEQ_IDX = new WeakMap();
+function spanHit(q, span) {
+  if (span.length < 2) return matchesQuery(q, span);
+  let m = META_IDX.get(q);
+  if (!m) { m = [...(q.topics || []), ...(q.writers || []), ...(q.works || []), ...(q.keywords || [])].map(x => words(x)); META_IDX.set(q, m); }
+  if (m.some(tag => span.every(t => tokenMatch(t, tag)))) return true;      // all the words inside one tag
+  let seq = SEQ_IDX.get(q);
+  if (!seq) { seq = queryTokens(q.question); SEQ_IDX.set(q, seq); }
+  for (let i = 0; i + span.length <= seq.length; i++) if (span.every((t, j) => tokenMatch(t, [seq[i + j]]))) return true;
+  return false;
 }
 // Finds the longest age name inside the typed words; the other words are left to narrow the search.
 function findAge(toks) {
@@ -427,7 +452,7 @@ function searchList(list, raw) {
     const hit = toks.length ? findAge(toks) : null;
     if (hit) {
       const restG = hit.rest.length ? resolveTokens(hit.rest) : null;
-      const res = list.filter(q => (inAge(hit.A, q) || matchesQuery(q, hit.span)) && (!restG || matchesQuery(q, restG)));
+      const res = list.filter(q => (inAge(hit.A, q) || spanHit(q, hit.span)) && (!restG || matchesQuery(q, restG)));
       if (res.length) { S.searchInfo = { age: hit.A.name, ageN: hit.A.count }; return res; }
     }
     if (toks.length) {
