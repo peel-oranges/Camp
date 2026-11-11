@@ -180,6 +180,12 @@ function nameWords() {
   if (!NAMES) { const s = new Set(); S.questions.forEach(q => (q.writers || []).forEach(w => words(w).forEach(x => { if (x.length >= 4) s.add(x); }))); NAMES = [...s]; }
   return NAMES;
 }
+// Every writer's name as a list of words, e.g. ["ben", "jonson"].
+let WNAMES = null;
+function writerNameWords() {
+  if (!WNAMES) { const m = new Map(); S.questions.forEach(q => (q.writers || []).forEach(w => { const ws = words(w); if (ws.length) m.set(ws.join(' '), ws); })); WNAMES = [...m.values()]; }
+  return WNAMES;
+}
 let RTMEMO = { key: null, val: null };
 function resolveTokens(toks) {
   const key = toks.join(' ');
@@ -196,6 +202,27 @@ function resolveTokens(toks) {
       .sort((x, y) => x[1] - y[1]).map(x => '=' + x[0]).slice(0, 6);
     return alts.length ? alts : [t];
   });
+  // A full name typed with a spelling that happens to be another writer's name
+  // ("ben johnson" → Ben Jonson, not Samuel Johnson): when no writer carries all the typed
+  // words, but changing a letter in one of them gives a writer who does, search that writer.
+  if (toks.length >= 2) {
+    const WN = writerNameWords();
+    const bare = t => t.replace(/^=/, '');
+    const full = gs => WN.some(ws => gs.every(g => g.some(t => ws.some(w => w.startsWith(bare(t))))));
+    if (!full(groups)) {
+      outer:
+      for (let i = 0; i < toks.length; i++) {
+        const t = toks[i];
+        if (t.length < 4 || /\d/.test(t)) continue;
+        const max = t.length >= 8 ? 2 : 1;
+        const cands = N.filter(n => n !== t).map(n => [n, editDist(t, n, max)]).filter(x => x[1] <= max).sort((x, y) => x[1] - y[1]);
+        for (const c of cands) {
+          const g2 = groups.map((g, j) => (j === i ? ['=' + c[0]] : g));
+          if (full(g2)) { groups = g2; break outer; }
+        }
+      }
+    }
+  }
   if (S.questions.some(q => matchesQuery(q, groups))) { RTMEMO = { key, val: groups }; return groups; }
   groups = toks.map(t => [t]);
   // 2) Other words:
@@ -229,7 +256,28 @@ function writerWorks() {
     if (!e) { e = { name: w, toks: words(w), works: new Set() }; m.set(k, e); }
     e.works.add(title);
   };
-  S.questions.forEach(q => { const ws = q.writers || []; if (ws.length === 1) (q.works || []).forEach(t => add(ws[0], t)); });
+  // A title is linked to a writer when a question tagged with only that writer names it.
+  // Such a question can also name other writers' works among its options (e.g. "Which is not a
+  // revenge tragedy?" tagged Ben Jonson, with Hamlet and The Duchess of Malfi as options), so a
+  // one-off link is dropped when another writer has that same title three or more times.
+  const votes = new Map();
+  S.questions.forEach(q => {
+    const ws = q.writers || [];
+    if (ws.length !== 1) return;
+    const k = words(ws[0]).join(' ');
+    (q.works || []).forEach(t => {
+      const title = normTitle(t);
+      if (!k || !title) return;
+      let v = votes.get(title);
+      if (!v) { v = new Map(); votes.set(title, v); }
+      const e = v.get(k) || { name: ws[0], n: 0 };
+      e.n++; v.set(k, e);
+    });
+  });
+  votes.forEach((v, title) => {
+    const top = Math.max(...[...v.values()].map(e => e.n));
+    v.forEach(e => { if (!(e.n === 1 && top >= 3)) add(e.name, title); });
+  });
   (S.guide.categories || []).forEach(c => (c.subtopics || []).forEach(t => (t.works || []).forEach(g => { if (g && g.writer && g.title) add(g.writer, g.title); })));
   WCACHE = [...m.values()];
   return WCACHE;
@@ -579,7 +627,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; ECACHE = null; NCACHE = null; ETCACHE = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; WNAMES = null; ECACHE = null; NCACHE = null; ETCACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
