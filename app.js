@@ -92,7 +92,7 @@ function saveProg() {
 const S = {
   questions: [], guide: { categories: [] }, loaded: false, loadError: false,
   prog: loadProg(),
-  filters: { mode: 'mix', query: '', tags: null, group: null, count: '10', shuffle: true, fresh: true },
+  filters: { mode: 'mix', query: '', wide: false, tags: null, group: null, count: '10', shuffle: true, fresh: true },
   screen: 'home', tab: 'home', prevScreen: 'home',
   syllabus: null, sylExam: 'both', planView: 'week', planWeek: null, planMonth: null,
   quiz: null, guideId: null, guideMode: 'cats', guideQuery: '',
@@ -242,10 +242,11 @@ function resolveTokens(toks) {
 
 /* Writer → works: searching a writer also finds questions on that writer's works,
    even when the question itself doesn't name the writer.
-   The list is learnt from the bank (questions tagged with one writer) and from guide.json. */
+   1) syllabus.json → "writerWorks" is my checked list (title → its writer). Those titles are settled.
+   2) Any other title is learnt from the bank (questions tagged with one writer) and from guide.json,
+      so works in newly added questions are picked up by themselves. */
 let WCACHE = null;
 const normTitle = t => words(t).join(' ');
-const TEXT_IDX = new WeakMap();
 function writerWorks() {
   if (WCACHE) return WCACHE;
   const m = new Map();
@@ -256,6 +257,11 @@ function writerWorks() {
     if (!e) { e = { name: w, toks: words(w), works: new Set() }; m.set(k, e); }
     e.works.add(title);
   };
+  const settled = new Set();
+  const WW = (S.syllabus && S.syllabus.writerWorks) || {};
+  Object.keys(WW).forEach(w => (WW[w] || []).forEach(t => { add(w, t); settled.add(normTitle(t)); }));
+  // anonymous works and titles that name no single writer (Everyman, Beowulf, the King James Bible)
+  ((S.syllabus && S.syllabus.noWriterWorks) || []).forEach(t => settled.add(normTitle(t)));
   // A title is linked to a writer when a question tagged with only that writer names it.
   // Such a question can also name other writers' works among its options (e.g. "Which is not a
   // revenge tragedy?" tagged Ben Jonson, with Hamlet and The Duchess of Malfi as options), so a
@@ -267,7 +273,7 @@ function writerWorks() {
     const k = words(ws[0]).join(' ');
     (q.works || []).forEach(t => {
       const title = normTitle(t);
-      if (!k || !title) return;
+      if (!k || !title || settled.has(title)) return;
       let v = votes.get(title);
       if (!v) { v = new Map(); votes.set(title, v); }
       const e = v.get(k) || { name: ws[0], n: 0 };
@@ -278,9 +284,19 @@ function writerWorks() {
     const top = Math.max(...[...v.values()].map(e => e.n));
     v.forEach(e => { if (!(e.n === 1 && top >= 3)) add(e.name, title); });
   });
-  (S.guide.categories || []).forEach(c => (c.subtopics || []).forEach(t => (t.works || []).forEach(g => { if (g && g.writer && g.title) add(g.writer, g.title); })));
+  (S.guide.categories || []).forEach(c => (c.subtopics || []).forEach(t => (t.works || []).forEach(g => { if (g && g.writer && g.title && !settled.has(normTitle(g.title))) add(g.writer, g.title); })));
   WCACHE = [...m.values()];
   return WCACHE;
+}
+// Titles that more than one writer has ("London", "Ulysses"): such a title alone doesn't say whose question it is.
+let TITLE_AMBIG = null;
+function sharedTitle(t) {
+  if (!TITLE_AMBIG) {
+    const m = new Map();
+    writerWorks().forEach(e => e.works.forEach(x => { let s = m.get(x); if (!s) { s = new Set(); m.set(x, s); } s.add(e.toks[e.toks.length - 1]); }));
+    TITLE_AMBIG = new Set([...m].filter(([, s]) => s.size > 1).map(([x]) => x));
+  }
+  return TITLE_AMBIG.has(t);
 }
 function worksForQuery(groups) {
   const hit = writerWorks().filter(e => groups.every(g => g.some(t => tokenMatch(t, e.toks))));
@@ -291,19 +307,52 @@ function worksForQuery(groups) {
 // Short or one-word titles ("Nature", "Words", "I Am") are only matched by their tag,
 // never inside question text, so they don't pull in unrelated questions.
 const longTitle = t => t.split(' ').filter(w => w.length >= 3 && !STOP.has(w)).length >= 2;
+// The question's own work tags, and the known titles named in its text, are worked out once per question.
+let QWORKS = new WeakMap(), QTITLES = new WeakMap(), TITLE_BY_FIRST = null;
+function taggedWorks(q) {
+  let v = QWORKS.get(q);
+  if (!v) { v = (q.works || []).map(normTitle).filter(Boolean); QWORKS.set(q, v); }
+  return v;
+}
+function titlesIn(q) {
+  let v = QTITLES.get(q);
+  if (!v) {
+    if (!TITLE_BY_FIRST) {                 // every known long title, filed under its longest word
+      const all = new Set();
+      writerWorks().forEach(e => e.works.forEach(t => all.add(t)));
+      ages().forEach(N => N.works.forEach(t => all.add(t)));
+      TITLE_BY_FIRST = new Map();
+      all.forEach(t => {
+        if (!longTitle(t)) return;
+        const first = t.split(' ').reduce((a, w) => (w.length > a.length ? w : a), '');
+        let a = TITLE_BY_FIRST.get(first);
+        if (!a) { a = []; TITLE_BY_FIRST.set(first, a); }
+        a.push(t);
+      });
+    }
+    const toks = words(q.question), text = ` ${toks.join(' ')} `;
+    v = [];
+    new Set(toks).forEach(w => (TITLE_BY_FIRST.get(w) || []).forEach(t => { if (text.includes(` ${t} `)) v.push(t); }));
+    QTITLES.set(q, v);
+  }
+  return v;
+}
 function aboutWorks(q, works) {
-  if ((q.works || []).some(t => works.has(normTitle(t)))) return true;
-  let text = TEXT_IDX.get(q);
-  if (!text) { text = ` ${words(q.question).join(' ')} `; TEXT_IDX.set(q, text); }
-  for (const t of works) if (longTitle(t) && text.includes(` ${t} `)) return true;
-  return false;
+  if (!works.size) return false;
+  return taggedWorks(q).some(t => works.has(t)) || titlesIn(q).some(t => works.has(t));
 }
 
-/* ---------- Ages & folders from my notes list (syllabus.json → "ages") ----------
-   Typing an age's name ("chaucer's age", "age of chaucer", "puritan age", "romantics")
-   brings every question on the writers and works filed under that age in my notes,
-   plus whatever the words themselves find. Extra words narrow it ("victorian novel"). */
-let AGECACHE = { src: null, list: [], strict: new Set() };
+/* ---------- Folders from my notes list (syllabus.json → "ages") ----------
+   The list follows my Lit notes exactly: age → folder → sub-folder → writers.
+   • Typing a folder's name ("university wits", "cavalier poets", "restoration comedy") or an
+     age's name ("elizabethan age", "age of chaucer") brings only the questions on the writers
+     filed under it in my notes. A folder inside an age can be reached by adding its name
+     ("elizabethan drama", "victorian novelists", "romantic poets").
+   • Typing a writer ("ben jonson") brings only the questions that are on that writer.
+   A question that merely lists such a writer among others (a wrong option, one row of a
+   match-the-following across several ages) is kept apart as "mixed" and can be added with one tap. */
+let AGECACHE = { src: null, list: [], strict: new Set(), byLast: new Map() };
+let SETMEMO = new Map(), FILED = new Map(), WIDX = null, SHARE = new Map();
 const ageTok = t => (t.length > 4 && t.endsWith('s') ? t.slice(0, -1) : t);
 const personWords = n => words(String(n || '').replace(/\([^)]*\)/g, ' '));
 // A name with a bracket, e.g. "Samuel Butler (poet)", is a different person from the plain name
@@ -323,50 +372,244 @@ function samePerson(a, b) {            // a = name in the list, b = name on the 
   for (const w of lg) if (i < sh.length && w === sh[i]) i++;
   return i === sh.length;
 }
-function ages() {
+// Words that name a kind of writing, so "elizabethan drama" opens the Drama folder of that age.
+const KIND = { poetry: 'poetry', poet: 'poetry', poem: 'poetry', verse: 'poetry',
+  drama: 'drama', dramatist: 'drama', play: 'drama', playwright: 'drama',
+  prose: 'prose', essay: 'prose', essayist: 'prose',
+  novel: 'novel', novelist: 'novel', fiction: 'novel' };
+function ages() {                      // every folder of the notes list, at every depth
   const src = S.syllabus && Array.isArray(S.syllabus.ages) ? S.syllabus.ages : null;
   if (!src) return [];
   if (AGECACHE.src !== src) {
-    const strict = new Set();
-    src.forEach(a => (a.writers || []).forEach(w => { if (/\(/.test(w)) strict.add(strictKey(w)); }));
-    AGECACHE = { src, strict, list: src.map(a => ({
-      name: a.name,
-      count: (a.writers || []).length,
-      alias: [a.name].concat(a.aliases || []).map(x => queryTokens(x).map(ageTok)).filter(x => x.length),
-      people: (a.writers || []).filter(w => !/\(/.test(w)).map(personWords),
-      strict: new Set((a.writers || []).filter(w => /\(/.test(w)).map(strictKey)),
-      tags: new Set((a.tags || []).map(t => String(t).toLowerCase())),
-      works: new Set((a.works || []).map(normTitle)),
-      wmemo: new Map(), more: null
-    })) };
+    const strict = new Set(), list = [];
+    const nameToks = x => queryTokens(String(x).replace(/\([^)]*\)/g, ' ')).map(ageTok);
+    const walk = (a, parent) => {
+      const N = {
+        i: list.length, name: a.name, parent, kids: [], open: !!a.open, topic: !!a.topic,
+        path: parent ? `${parent.path} › ${a.name}` : a.name,
+        // names that work on their own / names that work only after the age's name
+        alias: (parent ? [] : [a.name]).concat(a.aliases || []).map(x => queryTokens(x).map(ageTok)).filter(x => x.length),
+        rel: parent ? [a.name].concat(a.also || []).map(nameToks).filter(x => x.length) : [],
+        kinds: new Set(parent ? nameToks(a.name).map(t => KIND[t]).filter(Boolean) : []),
+        ownW: a.writers || [],
+        tags: (a.tags || []).map(t => String(t).toLowerCase()),
+        works: (a.works || []).map(normTitle)
+      };
+      N.ownW.forEach(w => { if (/\(/.test(w)) strict.add(strictKey(w)); });
+      // "gaps" are writers I have no note on: they belong to the age, but are not "filed" anywhere
+      const gaps = (a.gaps || []).map(personWords);
+      const noted = N.ownW.filter(w => { const b = personWords(w); return !gaps.some(g => samePerson(g, b) || samePerson(b, g)); });
+      N.ownPeople = noted.filter(w => !/\(/.test(w)).map(personWords);
+      N.ownStrict = new Set(noted.filter(w => /\(/.test(w)).map(strictKey));
+      list.push(N);
+      if (parent) parent.kids.push(N);
+      (a.sub || []).forEach(s => walk(s, N));
+    };
+    src.forEach(a => walk(a, null));
+    const byLast = new Map();              // surname → where that surname is filed (keeps the look-ups quick)
+    list.forEach(N => N.ownPeople.forEach(a => { const k = a[a.length - 1]; let v = byLast.get(k); if (!v) { v = []; byLast.set(k, v); } v.push({ i: N.i, a }); }));
+    AGECACHE = { src, strict, list, byLast };
+    SETMEMO = new Map(); FILED = new Map();
   }
   return AGECACHE.list;
 }
-function ageWriter(A, w) {
-  let v = A.wmemo.get(w);
+const below = (n, out = []) => { n.kids.forEach(k => { out.push(k); below(k, out); }); return out; };
+function countPeople(names) {          // "Henry Howard" and "Earl of Surrey" are one person: count by surname + first letter
+  const seen = [];
+  names.forEach(n => { const w = personWords(n); if (w.length && !seen.some(s => samePerson(s, w) || samePerson(w, s))) seen.push(w); });
+  return seen.length;
+}
+// One folder, or several folders taken together, with everything inside them.
+function folderSet(nodes, label) {
+  const key = nodes.map(n => n.i).join(',');
+  let F = SETMEMO.get(key);
+  if (F) return F;
+  const all = [], seen = new Set();
+  const take = n => { if (seen.has(n.i)) return; seen.add(n.i); all.push(n); n.kids.forEach(take); };
+  nodes.forEach(take);
+  const names = [...new Set([].concat(...all.map(n => n.ownW)))];
+  F = {
+    label, nodes: seen, writerMode: false, topic: nodes.every(n => n.topic),
+    people: names.filter(w => !/\(/.test(w)).map(personWords),
+    strict: new Set(names.filter(w => /\(/.test(w)).map(strictKey)),
+    openTags: new Set([].concat(...all.filter(n => n.open).map(n => n.tags))),
+    tags: new Set([].concat(...all.map(n => n.tags))),
+    works: new Set([].concat(...all.map(n => n.works))),
+    count: countPeople(names), wmemo: new Map(), more: null
+  };
+  F.byLast = new Map();
+  F.people.forEach(a => { const k = a[a.length - 1]; let v = F.byLast.get(k); if (!v) { v = []; F.byLast.set(k, v); } v.push(a); });
+  SETMEMO.set(key, F);
+  return F;
+}
+function inSet(F, w) {                 // is this writer (as tagged on a question) in the folder?
+  let v = F.wmemo.get(w);
   if (v === undefined) {
-    const k = strictKey(w);
-    if (AGECACHE.strict.has(k)) v = A.strict.has(k);
-    else { const b = personWords(w); v = A.people.some(a => samePerson(a, b)); }
-    A.wmemo.set(w, v);
+    if (F.exact) v = F.exact.has(w);
+    else {
+      const k = strictKey(w);
+      if (AGECACHE.strict.has(k)) v = F.strict.has(k);
+      else { const b = personWords(w); v = (F.byLast.get(b[b.length - 1]) || []).some(a => samePerson(a, b)); }
+    }
+    F.wmemo.set(w, v);
   }
   return v;
 }
-function inAge(A, q) {
-  if ((q.topics || []).some(t => A.tags.has(String(t).toLowerCase()))) return true;
-  if ((q.writers || []).some(w => ageWriter(A, w))) return true;
-  if (A.works.size && (q.works || []).some(t => A.works.has(normTitle(t)))) return true;
-  if (!A.more) {                         // works by this age's writers, learnt from the bank and the Guide
-    A.more = new Set();
-    writerWorks().forEach(e => { if (ageWriter(A, e.name)) e.works.forEach(t => A.more.add(t)); });
+function filedIn(w) {                  // the folders of my notes this writer is filed in
+  let v = FILED.get(w);
+  if (v === undefined) {
+    const k = strictKey(w), b = personWords(w);
+    const L = ages();
+    if (AGECACHE.strict.has(k)) v = L.filter(N => N.ownStrict.has(k)).map(N => N.i);
+    else v = [...new Set((AGECACHE.byLast.get(b[b.length - 1]) || []).filter(x => samePerson(x.a, b)).map(x => x.i))];
+    FILED.set(w, v);
   }
-  return A.more.size ? aboutWorks(q, A.more) : false;
+  return v;
 }
-// The age's own name as words: one word is searched as usual; a name of two or more words
-// ("old english", "golden age") must sit together in one of the question's tags, or stand together in its text,
-// so that a question which merely contains "old" and "English" somewhere is not pulled in.
+// Filed somewhere else in my notes (and not in this folder).
+const filedOutside = (F, w) => !inSet(F, w) && filedIn(w).length > 0;
+function setWorks(F) {                 // every known work by the folder's writers
+  if (!F.more) {
+    F.more = new Set(F.works);
+    writerWorks().forEach(e => { if (inSet(F, e.name)) e.works.forEach(t => F.more.add(t)); });
+  }
+  return F.more;
+}
+
+/* ----- What is a question "on"? -----
+   The lead is the question itself, before any list (A. B. C. / I. II. / List I) begins.
+   A writer is the subject of a question when
+     · the correct answer is the writer or one of the writer's works, or
+     · the lead names the writer or one of the writer's works, or the writer is tagged first on a
+       question that is not a mixed list — and the answer is not some other writer or their work. */
+let LEAD = new WeakMap(), FULLTXT = new WeakMap(), ANSTXT = new WeakMap(), MIXED = new WeakMap();
+const plainText = s => deaccent(s).replace(/[’‘`]/g, "'").replace(/[“”]/g, '"');
+const LIST_MARKS = [
+  [/(^|[\s:;?.(])A[.)]\s(?![A-Z]\.)/, /[\s;.(]B[.)]\s/], [/(^|[\s:;?.(])a[.)]\s/, /[\s;.(]b[.)]\s/],
+  [/(^|[\s:;?.(])I[.)]\s/, /[\s;.(]II[.)]\s/], [/(^|[\s:;?.(])i[.)]\s/, /[\s;.(]ii[.)]\s/],
+  [/(^|[\s:;?.(])1[.)]\s/, /[\s;.(]2[.)]\s/], [/(^|[\s:;?.(])P[.)]\s/, /[\s;.(]Q[.)]\s/]
+];
+function leadOf(q) {
+  let L = LEAD.get(q);
+  if (!L) {
+    const t = plainText(q.question);
+    let cut = t.length;
+    LIST_MARKS.forEach(([a, b]) => {
+      const m = a.exec(t);
+      if (m && b.test(t.slice(m.index + m[0].length))) cut = Math.min(cut, m.index + (m[1] ? m[1].length : 0));
+    });
+    const raw = t.slice(0, cut);
+    L = { raw, flat: ` ${words(raw).join(' ')} `, seq: queryTokens(raw).map(ageTok) };
+    LEAD.set(q, L);
+  }
+  return L;
+}
+// Options that are only letters and numbers ("A-II, B-IV", "B and E only") say nothing by themselves.
+const COMBO = /^(?:\(?[A-Ea-e]\)?|\(?[ivxIVX]+\)?|\d+|and|only|both|&|[\s,;:.\-–—→()])+$/;
+function answerOf(q) {
+  let A = ANSTXT.get(q);
+  if (!A) {
+    const parts = isNAT(q) ? [] : ansList(q).map(L => String((q.options || {})[L] || '')).filter(x => x && !COMBO.test(x));
+    const raw = plainText(parts.join(' ; '));
+    A = { raw, flat: ` ${words(raw).join(' ')} ` };
+    ANSTXT.set(q, A);
+  }
+  return A;
+}
+function fullOf(q) {
+  let T = FULLTXT.get(q);
+  if (!T) {
+    const raw = plainText([q.question].concat(Object.keys(q.options || {}).map(k => String(q.options[k] || ''))).join(' ; '));
+    T = { raw, flat: ` ${words(raw).join(' ')} ` };
+    FULLTXT.set(q, T);
+  }
+  return T;
+}
+const NAME_RX = new Map();
+function nameRx(w) {                   // the surname as written, e.g. "Jonson", "O'Neill", "Bulwer-Lytton"
+  let r = NAME_RX.get(w);
+  if (r === undefined) {
+    const parts = plainText(String(w).replace(/\([^)]*\)/g, ' ')).trim().split(/\s+/);
+    let sur = parts[parts.length - 1] || '';
+    if (/^(jr\.?|sr\.?|ii|iii)$/i.test(sur) && parts.length > 1) sur = parts[parts.length - 2];
+    sur = sur.replace(/[.,]+$/, '');
+    r = sur.length >= 3 ? new RegExp(`(^|[^A-Za-z])${sur.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z])`) : null;
+    NAME_RX.set(w, r);
+  }
+  return r;
+}
+const names = (T, w) => { const r = nameRx(w); return !!r && r.test(T.raw); };
+function mixedList(q) {                // a list across several writers: match-the-following, chronology, "correctly matched pairs"
+  let v = MIXED.get(q);
+  if (v === undefined) {
+    const ws = q.writers || [];
+    if (ws.length < 2) v = false;
+    else if (/match|chronolog/i.test(q.type || '')) v = true;
+    else if (ws.length < 3) v = false;
+    else { const T = fullOf(q); v = ws.filter(w => names(T, w)).length >= 3; }
+    MIXED.set(q, v);
+  }
+  return v;
+}
+function titleIn(q, T, W, own) {       // does this text name one of these works (as tagged on the question)?
+  if (!W.size) return false;
+  return taggedWorks(q).some(k => W.has(k) && (own || !sharedTitle(k)) && T.flat.includes(` ${k} `));
+}
+function subjectOf(F, q) {
+  const ws = q.writers || [], L = leadOf(q), A = answerOf(q), W = setWorks(F);
+  const own = ws.some(w => inSet(F, w));
+  // The answer decides whose question it is: when the answer is another writer, or another writer's work
+  // ("Which Ben Jonson play imitates Marlowe's Hero and Leander?" → Bartholomew Fair), it is that writer's question.
+  // (An answer that is a long statement and only mentions another work in passing still counts as the writer's own.)
+  let other = 0;
+  ws.forEach(w => { if (!inSet(F, w) && names(A, w)) other += Math.min(personWords(w).length, 2); });
+  taggedWorks(q).forEach(k => { if (!W.has(k) && A.flat.includes(` ${k} `)) other += k.split(' ').length; });
+  const alone = !other || other < 0.4 * A.flat.trim().split(' ').length;
+  // …except in "which is NOT by Marlowe?" questions, where the answer is the outsider by design.
+  const leadOK = alone || NEGATED.test(L.raw);
+  if (leadOK && titleIn(q, L, W, own)) return true;
+  if (alone && titleIn(q, A, W, own)) return true;
+  const whole = A.flat.trim();                            // the answer is itself one of the works ("Tamburlaine")
+  if (alone && whole && W.has(whole) && (own || !sharedTitle(whole))) return true;
+  // a writer typed in the search and named in full in the lead, even when not tagged on the question
+  if (leadOK && F.exact && [...F.exact].some(n => L.flat.includes(` ${personWords(n).join(' ')} `))) return true;
+  for (let i = 0; i < ws.length; i++) {
+    if (!inSet(F, ws[i])) continue;
+    if (leadOK && names(L, ws[i])) return true;
+    if (alone && names(A, ws[i])) return true;
+    if (i === 0 && alone && !NEGATED.test(L.raw) && !mixedList(q)) return true;   // in a "which is NOT…" list the first tag is just the first option
+  }
+  return false;
+}
+const NEGATED = /\b(not|never|except|odd one out|incorrect|incorrectly|wrongly|false)\b/i;
+// The folder's own name as typed ("university wits"): do those words stand together in this text?
+function seqHas(seq, span) {
+  for (let i = 0; i + span.length <= seq.length; i++) if (span.every((t, j) => seq[i + j] === t)) return true;
+  return false;
+}
+// Strictly in the folder: the question is on the folder's writers (or on the folder itself).
+function inFolder(F, q, span) {
+  if (F.topic) return nearFolder(F, q, span);              // a theory or topic folder: everything connected to it
+  const ws = q.writers || [];
+  if (F.works.size && taggedWorks(q).some(k => F.works.has(k))) return true;                  // e.g. Beowulf, Everyman
+  const inside = ws.filter(w => inSet(F, w));
+  if (!ws.length) return aboutWorks(q, setWorks(F)) || subjectOf(F, q) || (!F.writerMode && (hasFolderTag(F, q) || nameInLead(q, span)));
+  // most of the question's writers are from this folder (for one writer: the question is on that writer alone)
+  const counted = F.writerMode ? ws : ws.filter(w => inSet(F, w) || filedOutside(F, w));
+  if (inside.length && inside.length * 2 > counted.length) return true;
+  if (subjectOf(F, q)) return true;
+  if (F.writerMode) return false;
+  if (nameInLead(q, span)) return true;
+  if ((q.topics || []).some(t => F.openTags.has(String(t).toLowerCase()))) return true;
+  // tagged with the folder's own tag, and no writer on it is filed somewhere else in my notes
+  return hasFolderTag(F, q) && !ws.some(w => filedOutside(F, w));
+}
+const hasFolderTag = (F, q) => !!F.tags.size && (q.topics || []).some(t => F.tags.has(String(t).toLowerCase()));
+const nameInLead = (q, span) => !!span && span.length >= 2 && seqHas(leadOf(q).seq, span.map(ageTok));
+// Loosely connected: a folder writer is tagged somewhere on the question, or the words appear in it.
 const META_IDX = new WeakMap(), SEQ_IDX = new WeakMap();
 function spanHit(q, span) {
+  if (!span || !span.length) return false;
   if (span.length < 2) return matchesQuery(q, span);
   let m = META_IDX.get(q);
   if (!m) { m = [...(q.topics || []), ...(q.writers || []), ...(q.works || []), ...(q.keywords || [])].map(x => words(x)); META_IDX.set(q, m); }
@@ -376,18 +619,156 @@ function spanHit(q, span) {
   for (let i = 0; i + span.length <= seq.length; i++) if (span.every((t, j) => tokenMatch(t, [seq[i + j]]))) return true;
   return false;
 }
-// Finds the longest age name inside the typed words; the other words are left to narrow the search.
-function findAge(toks) {
+function nearFolder(F, q, span) {
+  if ((q.writers || []).some(w => inSet(F, w))) return true;
+  if (hasFolderTag(F, q)) return true;
+  if (aboutWorks(q, setWorks(F))) return true;
+  return F.writerMode ? matchesQuery(q, span) : spanHit(q, span);
+}
+
+// Finds a folder in the typed words: first the longest folder or age name, then any folder inside it
+// that the other words point to ("victorian" + "novelists"). Words left over narrow the search.
+function findFolder(toks) {
   const T = toks.map(ageTok);
   let best = null;
-  ages().forEach(A => A.alias.forEach(al => {
+  ages().forEach(N => N.alias.forEach(al => {
     if (best && al.length <= best.len) return;
     for (let i = 0; i + al.length <= T.length; i++) {
-      if (al.every((w, j) => T[i + j] === w)) { best = { A, at: i, len: al.length }; break; }
+      if (al.every((w, j) => T[i + j] === w)) { best = { N, at: i, len: al.length }; break; }
     }
   }));
   if (!best) return null;
-  return { A: best.A, span: toks.slice(best.at, best.at + best.len), rest: toks.slice(0, best.at).concat(toks.slice(best.at + best.len)) };
+  const span = toks.slice(best.at, best.at + best.len);
+  let rest = toks.slice(0, best.at).concat(toks.slice(best.at + best.len));
+  let sel = [best.N], picked = [];
+  const topmost = arr => arr.filter(n => { for (let p = n.parent; p; p = p.parent) if (arr.includes(p)) return false; return true; });
+  for (let guard = 0; guard < 6 && rest.length; guard++) {
+    const R = rest.map(ageTok), inner = [].concat(...sel.map(n => below(n)));
+    let hit = null;
+    const tryRel = minLen => {
+      inner.forEach(n => n.rel.forEach(al => {
+        if (al.length < minLen || (hit && al.length < hit.len)) return;
+        for (let i = 0; i + al.length <= R.length; i++) {
+          if (al.every((w, j) => R[i + j] === w)) {
+            if (hit && hit.len === al.length && hit.at === i) { if (!hit.nodes.includes(n)) hit.nodes.push(n); }
+            else if (!hit || al.length > hit.len) hit = { nodes: [n], at: i, len: al.length };
+            break;
+          }
+        }
+      }));
+    };
+    tryRel(2);                                             // a folder name of two or more words
+    if (!hit) {                                            // a kind of writing: poetry / drama / prose / novel
+      const i = R.findIndex(t => KIND[t] && inner.some(n => n.kinds.has(KIND[t])));
+      if (i >= 0) hit = { nodes: inner.filter(n => n.kinds.has(KIND[R[i]])), at: i, len: 1 };
+    }
+    if (!hit) tryRel(1);                                   // a one-word folder name
+    if (!hit) break;
+    sel = topmost(hit.nodes); picked = sel;
+    rest = rest.slice(0, hit.at).concat(rest.slice(hit.at + hit.len));
+  }
+  const top = best.N;
+  let label = top.path;
+  if (picked.length === 1) label = picked[0].path;
+  else if (picked.length > 1) {
+    const root = (() => { let r = top; while (r.parent) r = r.parent; return r; })();
+    const nm = n => n.path.slice(root.path.length + 3);
+    label = picked.every(n => n.name === picked[0].name)
+      ? `${root.name} › ${picked[0].name} (${picked.length} folders)`
+      : `${root.name} › ${picked.slice(0, 3).map(nm).join(' + ')}${picked.length > 3 ? ` + ${picked.length - 3} more` : ''}`;
+  }
+  return { F: folderSet(sel, label), span, rest };
+}
+
+/* ----- A writer typed in the search ----- */
+function writerIndex() {
+  if (!WIDX) {
+    const m = new Map();
+    S.questions.forEach(q => (q.writers || []).forEach(w => {
+      let e = m.get(w);
+      if (!e) { const t = personWords(w); if (!t.length) return; e = { name: w, toks: t, last: t[t.length - 1], n: 0 }; m.set(w, e); }
+      e.n++;
+    }));
+    WIDX = [...m.values()];
+  }
+  return WIDX;
+}
+// How much of this word's use in the bank is as a writer's surname? ("jonson" ≈ all of it; "london" very little.)
+function nameShare(t) {
+  let v = SHARE.get(t);
+  if (v === undefined) {
+    const sur = new Set(writerIndex().filter(e => e.last === t).map(e => e.name));
+    let tagged = 0, seen = 0;
+    if (sur.size) S.questions.forEach(q => {
+      if (indexQ(q).includes(t)) { seen++; if ((q.writers || []).some(w => sur.has(w))) tagged++; }
+    });
+    v = seen ? tagged / seen : 0;
+    SHARE.set(t, v);
+  }
+  return v;
+}
+function findWriter(toks, groups, raw) {
+  const initials = words(raw || '').filter(t => t.length === 1 && /[a-z]/.test(t));
+  const alts = groups.map((g, i) => [toks[i]].concat(g.map(x => x.replace(/^=/, ''))));
+  const W = writerIndex();
+  const fits = (e, a, b) => {            // typed words a..b-1 are all parts of this name, and the surname is among them
+    let sur = false;
+    for (let i = a; i < b; i++) {
+      const hit = alts[i].find(x => e.toks.includes(x));
+      if (!hit) return false;
+      if (hit === e.last) sur = true;
+    }
+    return sur;
+  };
+  for (let len = toks.length; len >= 1; len--) {
+    for (let a = 0; a + len <= toks.length; a++) {
+      let who = W.filter(e => fits(e, a, a + len));
+      if (!who.length) continue;
+      if (initials.length) {                               // "t s eliot" is T. S. Eliot, not George Eliot
+        const byInit = who.filter(e => initials.every(c => e.toks.slice(0, -1).some(x => x[0] === c)));
+        if (byInit.length) who = byInit;
+      }
+      if (len === 1) {
+        const t = alts[a].find(x => who.some(e => e.last === x));
+        if (nameShare(t) < 0.5) continue;                  // "london", "more", "west": an ordinary word, searched as usual
+      }
+      // the same person under another spelling of the name ("R. B. Sheridan" / "Richard Brinsley Sheridan")
+      const exact = new Set(who.map(e => e.name));
+      W.forEach(e => { if (!exact.has(e.name) && !/\(/.test(e.name) && who.some(x => !/\(/.test(x.name) && (samePerson(x.toks, e.toks) || samePerson(e.toks, x.toks)))) exact.add(e.name); });
+      const people = [];                                   // one entry per person, most-asked first
+      W.filter(e => exact.has(e.name)).sort((x, y) => y.n - x.n).forEach(e => { if (!people.some(p => samePerson(p.w, e.toks) || samePerson(e.toks, p.w))) people.push({ n: e.name, w: e.toks }); });
+      const shown = people.map(p => p.n);
+      const label = shown.slice(0, 3).join(', ') + (shown.length > 3 ? ` + ${shown.length - 3} more` : '');
+      const key = 'w:' + [...exact].sort().join('|');
+      let F = SETMEMO.get(key);
+      if (!F) {
+        F = { label, nodes: new Set(), topic: false, writerMode: true, exact, people: [], strict: new Set(), openTags: new Set(), tags: new Set(), works: new Set(), count: people.length, wmemo: new Map(), more: null };
+        SETMEMO.set(key, F);
+      }
+      const idx = []; for (let i = 0; i < toks.length; i++) if (i < a || i >= a + len) idx.push(i);
+      return { F, span: groups.slice(a, a + len), rest: idx.map(i => groups[i]) };
+    }
+  }
+  return null;
+}
+
+function resetFolderCaches() {
+  AGECACHE = { src: null, list: [], strict: new Set(), byLast: new Map() };
+  SETMEMO = new Map(); FILED = new Map(); WIDX = null; SHARE = new Map(); TITLE_AMBIG = null;
+  QWORKS = new WeakMap(); QTITLES = new WeakMap(); TITLE_BY_FIRST = null;
+  LEAD = new WeakMap(); FULLTXT = new WeakMap(); ANSTXT = new WeakMap(); MIXED = new WeakMap();
+  FMEMO = null;
+}
+// The questions for a folder or a writer: those on it, and (kept apart) the mixed ones that only touch it.
+function folderResults(list, F, span, restG, keep) {
+  let pool = restG ? list.filter(q => matchesQuery(q, restG)) : list;
+  if (keep) pool = pool.filter(keep);
+  const strict = [], loose = [];
+  pool.forEach(q => { if (inFolder(F, q, span)) strict.push(q); else if (nearFolder(F, q, span)) loose.push(q); });
+  if (!strict.length && !loose.length) return null;
+  const wide = !!S.filters.wide || !strict.length;
+  S.searchInfo = { folder: F.label, folderN: F.count, writerMode: F.writerMode, strict: strict.length, loose: loose.length, wide };
+  return wide ? strict.concat(loose) : strict;
 }
 
 function poolForMode(mode) {
@@ -454,7 +835,18 @@ function parseYears(raw) {
   };
 }
 
+// The last search is remembered: the Quiz screen asks for the same list more than once.
+let FMEMO = null;
 function filtered() {
+  const f = S.filters;
+  const key = ['pyq', 'probable', 'abrams', 'mix'].includes(f.mode) && S.loaded
+    ? JSON.stringify([f.mode, f.query, !!f.wide, f.tags, f.group && f.group.id, f.work && f.work.ids, S.questions.length]) : null;
+  if (key && FMEMO && FMEMO.key === key && FMEMO.bank === S.questions) { S.searchInfo = FMEMO.info; return FMEMO.list; }
+  const list = filteredNow();
+  FMEMO = key ? { key, bank: S.questions, list, info: S.searchInfo } : null;
+  return list;
+}
+function filteredNow() {
   const f = S.filters;
   let list = poolForMode(f.mode);
   if (f.tags && f.tags.length) list = list.filter(q => hasTags(q, f.tags));
@@ -484,7 +876,8 @@ function searchWithYears(list, raw) {
     let res;
     if (queryTokens(yr.rest).length) {
       // topic typed with the year: PYQs from those years, plus year-less (Probable / Abrams) on that topic
-      res = searchList(list, yr.rest).filter(q => (qYear(q) ? yr.test(qYear(q)) : true));
+      const keep = q => (qYear(q) ? yr.test(qYear(q)) : true);
+      res = searchList(list, yr.rest, keep).filter(keep);
     } else {
       res = list.filter(inYears);         // only a year typed: every PYQ from those years
     }
@@ -493,33 +886,40 @@ function searchWithYears(list, raw) {
   }
   return searchList(list, raw);
 }
-function searchList(list, raw) {
+function searchList(list, raw, keep) {
   S.searchInfo = null;
-  {
-    const toks = queryTokens(raw);
-    const hit = toks.length ? findAge(toks) : null;
-    if (hit) {
-      const restG = hit.rest.length ? resolveTokens(hit.rest) : null;
-      const res = list.filter(q => (inAge(hit.A, q) || spanHit(q, hit.span)) && (!restG || matchesQuery(q, restG)));
-      if (res.length) { S.searchInfo = { age: hit.A.name, ageN: hit.A.count }; return res; }
-    }
-    if (toks.length) {
-      const groups = resolveTokens(toks);
-      const direct = list.filter(q => matchesQuery(q, groups));
-      const { works, writers } = worksForQuery(groups);
-      let extra = [];
-      if (works.size) {
-        const ids = new Set(direct.map(q => q.id));
-        extra = list.filter(q => !ids.has(q.id) && aboutWorks(q, works));
-      }
-      // For the "Showing results for…" line, pick the spelling in each group that actually found questions.
-      const used = groups.map((g, i) => (g.length === 1 ? g[0] : ([toks[i]].concat(g).find(x => direct.some(q => tokenMatch(x, indexQ(q)))) || toks[i])).replace(/^=/, ''));
-      const fixed = used.some((u, i) => u !== toks[i]);
-      S.searchInfo = { fix: fixed && direct.length ? used.join(' ') : '', extra: extra.length, writers };
-      list = direct.concat(extra);
+  const toks = queryTokens(raw);
+  if (!toks.length) return list;
+  // 1) A folder or an age from my notes list ("university wits", "elizabethan drama").
+  const fh = findFolder(toks);
+  if (fh) {
+    const res = folderResults(list, fh.F, fh.span, fh.rest.length ? resolveTokens(fh.rest) : null, keep);
+    if (res) return res;
+  }
+  const groups = resolveTokens(toks);
+  // 2) A writer ("ben jonson"): only the questions on that writer.
+  const wh = findWriter(toks, groups, raw);
+  if (wh) {
+    const res = folderResults(list, wh.F, wh.span, wh.rest.length ? wh.rest : null, keep);
+    if (res) {
+      const typed = toks.join(' '), used = groups.map((g, i) => (g.length === 1 ? g[0].replace(/^=/, '') : toks[i])).join(' ');
+      if (used !== typed) S.searchInfo.fix = used;
+      return res;
     }
   }
-  return list;
+  // 3) Any other words: searched in topics, writers, works and the question text.
+  const direct = list.filter(q => matchesQuery(q, groups));
+  const { works, writers } = worksForQuery(groups);
+  let extra = [];
+  if (works.size) {
+    const ids = new Set(direct.map(q => q.id));
+    extra = list.filter(q => !ids.has(q.id) && aboutWorks(q, works));
+  }
+  // For the "Showing results for…" line, pick the spelling in each group that actually found questions.
+  const used = groups.map((g, i) => (g.length === 1 ? g[0] : ([toks[i]].concat(g).find(x => direct.some(q => tokenMatch(x, indexQ(q)))) || toks[i])).replace(/^=/, ''));
+  const fixed = used.some((u, i) => u !== toks[i]);
+  S.searchInfo = { fix: fixed && direct.length ? used.join(' ') : '', extra: extra.length, writers };
+  return direct.concat(extra);
 }
 
 /* ---------- Spaced revision ---------- */
@@ -627,7 +1027,7 @@ async function ghUpdate(mutate, message) {
   throw new Error(ghErr(409));
 }
 function applyBank(arr) {
-  GCACHE = null; WCACHE = null; YCACHE = null; VOCAB = null; NAMES = null; WNAMES = null; ECACHE = null; NCACHE = null; ETCACHE = null; RTMEMO = { key: null, val: null };
+  GCACHE = null; WCACHE = null; resetFolderCaches(); YCACHE = null; VOCAB = null; NAMES = null; WNAMES = null; ECACHE = null; NCACHE = null; ETCACHE = null; RTMEMO = { key: null, val: null };
   S.questions = arr.filter(q => q && q.id && q.question && (hasOptions(q) || q.format === 'NAT'));
   if (S.quiz) S.quiz.list = S.quiz.list.map(q => byId(q.id) || q);
 }
@@ -639,6 +1039,14 @@ const VIEWS = {};
 
 /* ---------- Home ---------- */
 const seenQ = q => !!S.prog.attempts[q.id];
+// "Mixed" questions touch the searched writer or folder but are shared with other writers
+// (a wrong option, one row of a match-the-following). They stay out unless this button is tapped.
+function wideBoxHTML() {
+  const i = S.searchInfo || {};
+  if (!i.folder || !i.loose || !i.strict) return '';
+  const what = i.writerMode ? `${plural(i.loose, 'mixed question')} (shared with other writers)` : `${plural(i.loose, 'related question')} (mixed lists, or writers filed elsewhere in my notes)`;
+  return `<button class="chip soft" data-act="toggleWide" style="margin:0 0 14px;height:auto;white-space:normal;text-align:left;line-height:1.35;padding-top:8px;padding-bottom:8px">${i.wide ? `✓ ${i.writerMode ? 'Mixed' : 'Related'} questions added · tap to remove` : `＋ Add ${what}`}</button>`;
+}
 function matchText(n) {
   const c = S.filters.count, take = c === 'all' ? n : Math.min(n, +c);
   if (!n) return 'No questions match yet. Try a broader search or another chip.';
@@ -647,7 +1055,11 @@ function matchText(n) {
   const notes = [];
   if (info.scope) notes.push(info.scope);
   if (info.years) notes.push(`PYQ years: ${info.years}`);
-  if (info.age) notes.push(`From my notes list: ${info.age}`);
+  if (info.folder) {
+    notes.push(info.writerMode ? `Only questions on ${info.folder}` : `From my notes: ${info.folder}${info.folderN ? ` (${plural(info.folderN, 'writer')})` : ''}`);
+    if (!info.strict) notes.push('no question is on this alone, so related ones are shown');
+    else if (info.wide && info.loose) notes.push(`${plural(info.loose, info.writerMode ? 'mixed question' : 'related question')} added`);
+  }
   if (info.fix) notes.push(`Showing results for “${info.fix}”`);
   if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
   return `${notes.length ? notes.join(' · ') + '. ' : ''}${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
@@ -685,6 +1097,7 @@ VIEWS.home = () => {
     <label class="switch-row"><span>New questions first<br><span class="small muted" style="font-weight:600">Ones you haven't answered come before repeats</span></span><input type="checkbox" class="switch" data-change="fresh" ${f.fresh ? 'checked' : ''}></label>
 
     <p class="match muted" id="match-count">${matchText(n)}</p>
+    <div id="wide-box">${wideBoxHTML()}</div>
     <button class="btn" id="start-btn" data-act="start" ${n ? '' : 'disabled'}>Start quiz</button>
     <div id="paper-box">${paperBoxHTML()}</div>
   </section>
@@ -4114,6 +4527,7 @@ function refreshMatch() {
   if (mc) mc.textContent = matchText(n);
   if (sb) sb.disabled = !n;
   if (cq) cq.hidden = !S.filters.query;
+  const wb = $('#wide-box'); if (wb) wb.innerHTML = wideBoxHTML();
   const pb = $('#paper-box'); if (pb) pb.innerHTML = paperBoxHTML();
 }
 
@@ -4124,7 +4538,8 @@ const ACT = {
 
   /* home */
   revise: () => startQuiz(shuffleArr(dueList()), 'Revision'),
-  clearQuery: () => { S.filters.query = ''; render(); },
+  clearQuery: () => { S.filters.query = ''; S.filters.wide = false; render(); },
+  toggleWide: () => { S.filters.wide = !S.filters.wide; refreshMatch(); },
   clearTags: () => { S.filters.tags = null; S.filters.group = null; S.filters.work = null; render(); },
   mode: d => { S.filters.mode = d.v; go('home', true); },
   count: d => { S.filters.count = d.v; go('home', true); },
@@ -4134,7 +4549,7 @@ const ACT = {
     else { const c = gNode(d.id); if (!c) return; Object.assign(f, { group: { id: c.id, label: c.name }, tags: null, query: '', work: null }); }
     go('home', true);
   },
-  pickTopic: d => { S.filters.query = d.v; S.filters.tags = null; S.filters.group = null; S.filters.work = null; go('home', true); toast(`Showing “${d.v}”`); },
+  pickTopic: d => { S.filters.query = d.v; S.filters.wide = false; S.filters.tags = null; S.filters.group = null; S.filters.work = null; go('home', true); toast(`Showing “${d.v}”`); },
   start: () => {
     const f = S.filters;
     let list = filtered();
@@ -4369,7 +4784,7 @@ const ACT = {
 Object.assign(ACT, SYL_ACT, BULK_ACT, EMAIL_ACT, MOCK_ACT);
 
 const IN = {
-  query: v => { S.filters.query = v; refreshMatch(); },
+  query: v => { S.filters.query = v; S.filters.wide = false; refreshMatch(); },
   pioneerQuery: v => { S.pioneerQuery = v; const el = $('#pn-list'); if (el) el.innerHTML = pioneerListHTML(); },
   guideQuery: v => { S.guideQuery = v; const el = $('#guide-list'); if (el) el.innerHTML = guideListHTML(); },
   adminQuery: v => { S.adminQuery = v; S.adminShow = ADMIN_PAGE; const el = $('#admin-list'); if (el) el.innerHTML = adminListHTML(); }
@@ -4498,7 +4913,7 @@ async function loadData() {
     applyBank(Array.isArray(qs) ? qs : (qs.questions || []));
     S.guide = guide && guide.categories ? guide : { categories: [] };
     S.syllabus = syllabus && syllabus.exams && syllabus.topics ? syllabus : null;
-    GCACHE = null; WCACHE = null; YCACHE = null; ECACHE = null; NCACHE = null;
+    GCACHE = null; WCACHE = null; resetFolderCaches(); YCACHE = null; ECACHE = null; NCACHE = null;
     S.loaded = true;
   } catch (e) { S.loadError = true; }
   render();

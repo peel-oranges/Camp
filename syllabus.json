@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-13",
  "note": "Syllabus tracker. Each topic is listed once and linked to every GATE and NET section it belongs to. Questions are linked to topics by writer first (writers, plus alsoWriters for a writer's secondary topic), then by tags (each rule is a list that must all match; 'sec:X' = paper section, '!Tag' = must not have), then by the Guide topic. Each question gets one home topic (counted once) and may also be listed in a few others for quizzing.",
  "exams": {
   "gate": {
@@ -5777,7 +5777,7 @@
    "scope": "aptitude"
   }
  ],
- "agesNote": "Ages and folders exactly as in my Lit notes list. Typing an age's name in Quiz search brings every question on its writers and works. 'gaps' = writers from the gap lists, placed in the age they belong to.",
+ "agesNote": "Ages, folders and sub-folders exactly as in my Lit notes list ('sub' = the folders inside a folder). Typing a folder's or an age's name in Quiz search brings only the questions on the writers filed under it. 'aliases' = names that work on their own; 'also' = names that work after the age's name; 'open' = a topic folder that also takes every question carrying its tag; 'topic' = a theory or topic folder, searched as before (everything connected to it comes in); 'gaps' = writers from the gap lists, kept at the age level.",
  "ages": [
   {
    "id": "old-english",
@@ -5793,21 +5793,35 @@
    "tags": [
     "Old English"
    ],
-   "works": [
-    "Beowulf",
-    "The Anglo-Saxon Chronicle",
-    "Anglo-Saxon Chronicle"
-   ],
-   "writers": [
-    "Caedmon",
-    "Cynewulf",
-    "Aelfric",
-    "Wulfstan",
-    "King Alfred",
-    "Alfred the Great",
-    "Beowulf poet"
-   ],
-   "gaps": []
+   "works": [],
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Poetry",
+     "works": [
+      "Beowulf"
+     ],
+     "writers": [
+      "Beowulf poet",
+      "Caedmon",
+      "Cynewulf"
+     ]
+    },
+    {
+     "name": "Prose",
+     "works": [
+      "The Anglo-Saxon Chronicle",
+      "Anglo-Saxon Chronicle"
+     ],
+     "writers": [
+      "Aelfric",
+      "Wulfstan",
+      "Alfred the Great",
+      "King Alfred"
+     ]
+    }
+   ]
   },
   {
    "id": "middle-english",
@@ -5822,33 +5836,59 @@
    "tags": [
     "Middle English"
    ],
-   "works": [
-    "Brut",
-    "Layamon's Brut",
-    "Sir Gawain and the Green Knight",
-    "Cursor Mundi",
-    "The Cursor Mundi",
-    "The Owl and the Nightingale",
-    "Ormulum",
-    "The Ormulum",
-    "Ayenbite of Inwyt",
-    "The Ayenbite of Inwyt",
-    "Ancrene Riwle",
-    "The Ancrene Riwle",
-    "Ancrene Wisse",
-    "Pearl"
-   ],
-   "writers": [
-    "Layamon",
-    "Robert Mannyng",
-    "Robert Mannyng of Brunne",
-    "Robert of Gloucester",
-    "Richard Rolle",
-    "Orm",
-    "Gawain poet",
-    "Pearl poet"
-   ],
-   "gaps": []
+   "works": [],
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Poetry",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Chronicles",
+       "works": [
+        "Brut",
+        "Layamon's Brut"
+       ],
+       "writers": [
+        "Layamon",
+        "Robert Mannyng",
+        "Robert Mannyng of Brunne",
+        "Robert of Gloucester"
+       ]
+      },
+      {
+       "name": "Religious and Didactic Poetry",
+       "works": [
+        "Sir Gawain and the Green Knight",
+        "Cursor Mundi",
+        "The Cursor Mundi",
+        "The Owl and the Nightingale",
+        "Ormulum",
+        "The Ormulum",
+        "Pearl"
+       ],
+       "writers": [
+        "Gawain poet",
+        "Pearl poet",
+        "Richard Rolle",
+        "Orm"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Prose",
+     "works": [
+      "Ayenbite of Inwyt",
+      "The Ayenbite of Inwyt",
+      "Ancrene Riwle",
+      "The Ancrene Riwle",
+      "Ancrene Wisse"
+     ],
+     "writers": []
+    }
+   ]
   },
   {
    "id": "age-of-chaucer",
@@ -5866,18 +5906,29 @@
     "Age of Chaucer"
    ],
    "works": [],
-   "writers": [
-    "Geoffrey Chaucer",
-    "William Langland",
-    "John Gower",
-    "John Barbour",
-    "Thomas Malory",
-    "John Wycliffe",
-    "John Wyclif",
-    "John Mandeville",
-    "Sir John Mandeville"
-   ],
-   "gaps": []
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Poetry",
+     "writers": [
+      "Geoffrey Chaucer",
+      "William Langland",
+      "John Gower",
+      "John Barbour"
+     ]
+    },
+    {
+     "name": "Prose",
+     "writers": [
+      "Thomas Malory",
+      "John Wyclif",
+      "John Wycliffe",
+      "John Mandeville",
+      "Sir John Mandeville"
+     ]
+    }
+   ]
   },
   {
    "id": "chaucer-to-spenser",
@@ -5887,8 +5938,7 @@
     "chaucer to spenser",
     "15th century",
     "barren age",
-    "age of revival",
-    "scottish chaucerians"
+    "age of revival"
    ],
    "tags": [
     "Chaucerians"
@@ -5896,25 +5946,71 @@
    "works": [
     "Everyman"
    ],
-   "writers": [
-    "Thomas More",
-    "William Caxton",
-    "Hugh Latimer",
-    "John Fisher",
-    "Reginald Pecock",
-    "John Skelton",
-    "John Lydgate",
-    "Alexander Barclay",
-    "Stephen Hawes",
-    "Thomas Hoccleve",
-    "William Dunbar",
-    "Gavin Douglas",
-    "David Lyndsay",
-    "David Lindsay",
-    "James I of Scotland",
-    "Robert Henryson"
-   ],
-   "gaps": []
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Drama",
+     "aliases": [
+      "miracle plays",
+      "morality plays",
+      "mystery plays",
+      "medieval drama",
+      "interludes"
+     ],
+     "tags": [
+      "Morality play",
+      "Morality plays",
+      "Mystery plays",
+      "Miracle plays",
+      "Interlude",
+      "Interludes"
+     ],
+     "works": [
+      "Everyman"
+     ],
+     "open": true,
+     "writers": []
+    },
+    {
+     "name": "Prose",
+     "writers": [
+      "Thomas More",
+      "William Caxton",
+      "Hugh Latimer",
+      "John Fisher",
+      "Reginald Pecock"
+     ]
+    },
+    {
+     "name": "Poetry",
+     "writers": [
+      "John Skelton",
+      "John Lydgate",
+      "Alexander Barclay",
+      "Stephen Hawes",
+      "Thomas Hoccleve"
+     ],
+     "sub": [
+      {
+       "name": "The Scottish Poets",
+       "aliases": [
+        "scottish poets",
+        "scottish chaucerians",
+        "scottish makars"
+       ],
+       "writers": [
+        "William Dunbar",
+        "Gavin Douglas",
+        "David Lyndsay",
+        "David Lindsay",
+        "James I of Scotland",
+        "Robert Henryson"
+       ]
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "elizabethan",
@@ -5930,44 +6026,10 @@
     "shakespeares age"
    ],
    "tags": [
-    "Elizabethan",
-    "University Wits"
+    "Elizabethan"
    ],
    "works": [],
    "writers": [
-    "Henry Howard, Earl of Surrey",
-    "Henry Howard",
-    "Earl of Surrey",
-    "Edmund Spenser",
-    "Philip Sidney",
-    "John Donne",
-    "Thomas Wyatt",
-    "Thomas Sackville",
-    "Thomas Campion",
-    "Samuel Daniel",
-    "Phineas Fletcher",
-    "Giles Fletcher",
-    "Michael Drayton",
-    "George Gascoigne",
-    "William Shakespeare",
-    "Ben Jonson",
-    "Christopher Marlowe",
-    "George Peele",
-    "Thomas Nashe",
-    "Thomas Kyd",
-    "Robert Greene",
-    "Thomas Lodge",
-    "Thomas Middleton",
-    "John Webster",
-    "Francis Beaumont",
-    "John Fletcher",
-    "Thomas Heywood",
-    "Francis Bacon",
-    "Robert Burton",
-    "John Lyly",
-    "Roger Ascham",
-    "Richard Hooker",
-    "Thomas Overbury",
     "Cyril Tourneur",
     "Thomas Dekker",
     "John Marston",
@@ -5981,6 +6043,82 @@
     "John Marston",
     "Walter Raleigh",
     "George Chapman"
+   ],
+   "sub": [
+    {
+     "name": "Poetry",
+     "writers": [
+      "Henry Howard, Earl of Surrey",
+      "Henry Howard",
+      "Earl of Surrey",
+      "Edmund Spenser",
+      "Philip Sidney",
+      "John Donne",
+      "Thomas Wyatt",
+      "Thomas Sackville",
+      "Thomas Campion",
+      "Samuel Daniel",
+      "Phineas Fletcher",
+      "Giles Fletcher",
+      "Michael Drayton",
+      "George Gascoigne"
+     ]
+    },
+    {
+     "name": "Drama",
+     "writers": [
+      "William Shakespeare",
+      "Ben Jonson"
+     ],
+     "sub": [
+      {
+       "name": "University Wits",
+       "aliases": [
+        "university wits",
+        "university wit"
+       ],
+       "tags": [
+        "University Wits"
+       ],
+       "writers": [
+        "Christopher Marlowe",
+        "George Peele",
+        "Thomas Nashe",
+        "Thomas Kyd",
+        "Robert Greene",
+        "Thomas Lodge"
+       ]
+      },
+      {
+       "name": "Post-Shakespearean Drama",
+       "aliases": [
+        "post shakespearean drama",
+        "post shakespearean",
+        "post shakespearean dramatists",
+        "post shakespeare drama"
+       ],
+       "writers": [
+        "Thomas Middleton",
+        "John Webster",
+        "Francis Beaumont",
+        "John Fletcher",
+        "Ben Jonson",
+        "Thomas Heywood"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Prose",
+     "writers": [
+      "Francis Bacon",
+      "Robert Burton",
+      "John Lyly",
+      "Roger Ascham",
+      "Richard Hooker",
+      "Thomas Overbury"
+     ]
+    }
    ]
   },
   {
@@ -6025,30 +6163,68 @@
    ],
    "tags": [
     "Puritan Age",
-    "Cavalier poets",
     "Caroline"
    ],
    "works": [],
    "writers": [
-    "Philip Massinger",
-    "John Ford",
-    "John Milton",
-    "Robert Herrick",
-    "John Suckling",
-    "Richard Lovelace",
-    "Thomas Fuller",
-    "Jeremy Taylor",
-    "Thomas Hobbes",
-    "Thomas Browne",
-    "Edward Hyde",
-    "Edward Hyde, Earl of Clarendon",
-    "Earl of Clarendon",
     "Izaak Walton",
     "James Shirley"
    ],
    "gaps": [
     "Izaak Walton",
     "James Shirley"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Drama",
+       "writers": [
+        "Philip Massinger",
+        "John Ford"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "John Milton"
+       ],
+       "sub": [
+        {
+         "name": "The Cavalier Poets",
+         "aliases": [
+          "cavalier poets",
+          "cavalier poetry",
+          "cavaliers",
+          "cavalier"
+         ],
+         "tags": [
+          "Cavalier poets"
+         ],
+         "writers": [
+          "Robert Herrick",
+          "John Suckling",
+          "Richard Lovelace"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Prose",
+       "writers": [
+        "Thomas Fuller",
+        "Jeremy Taylor",
+        "Thomas Hobbes",
+        "Thomas Browne",
+        "Edward Hyde",
+        "Edward Hyde, Earl of Clarendon",
+        "Earl of Clarendon"
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -6064,32 +6240,10 @@
     "drydens age"
    ],
    "tags": [
-    "Restoration",
-    "Restoration comedy"
+    "Restoration"
    ],
    "works": [],
    "writers": [
-    "Aphra Behn",
-    "George Farquhar",
-    "John Vanbrugh",
-    "William Wycherley",
-    "George Etherege",
-    "William Congreve",
-    "Thomas Shadwell",
-    "John Crowne",
-    "Nathaniel Lee",
-    "Thomas Otway",
-    "Nicholas Rowe",
-    "Elkanah Settle",
-    "John Dryden",
-    "Samuel Butler (poet)",
-    "John Evelyn",
-    "Samuel Pepys",
-    "John Bunyan",
-    "John Tillotson",
-    "Lord Halifax",
-    "George Savile",
-    "William Temple",
     "Moliere",
     "John Wilmot",
     "John Wilmot, Earl of Rochester",
@@ -6099,6 +6253,92 @@
    "gaps": [
     "Earl of Rochester",
     "John Locke"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Dramatists",
+       "writers": [
+        "Aphra Behn"
+       ],
+       "sub": [
+        {
+         "name": "Restoration Comedy",
+         "aliases": [
+          "restoration comedy",
+          "comedy of manners"
+         ],
+         "tags": [
+          "Restoration comedy",
+          "Comedy of manners"
+         ],
+         "writers": [
+          "George Farquhar",
+          "John Vanbrugh",
+          "William Wycherley",
+          "George Etherege",
+          "William Congreve",
+          "Thomas Shadwell"
+         ]
+        },
+        {
+         "name": "Restoration Tragedy",
+         "aliases": [
+          "restoration tragedy",
+          "heroic tragedy",
+          "heroic drama"
+         ],
+         "tags": [
+          "Heroic drama",
+          "Heroic tragedy"
+         ],
+         "writers": [
+          "John Crowne",
+          "Nathaniel Lee",
+          "Thomas Otway",
+          "Nicholas Rowe",
+          "Elkanah Settle"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "John Dryden",
+        "Samuel Butler (poet)"
+       ]
+      },
+      {
+       "name": "The Dairists",
+       "aliases": [
+        "diarists",
+        "the diarists",
+        "dairists"
+       ],
+       "tags": [
+        "Diary"
+       ],
+       "writers": [
+        "John Evelyn",
+        "Samuel Pepys"
+       ]
+      },
+      {
+       "name": "Prose",
+       "writers": [
+        "John Bunyan",
+        "John Tillotson",
+        "Lord Halifax",
+        "George Savile",
+        "William Temple"
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -6123,26 +6363,44 @@
    ],
    "works": [],
    "writers": [
-    "Jonathan Swift",
-    "Joseph Addison",
-    "Daniel Defoe",
-    "Richard Steele",
-    "Alexander Pope",
-    "John Gay",
-    "Matthew Prior",
-    "Allan Ramsay",
-    "Edward Young",
-    "Thomas Parnell",
-    "Samuel Garth",
-    "Anne Finch",
-    "Anne Finch, Countess of Winchilsea",
-    "Lady Winchilsea",
-    "Ambrose Philips",
     "Lady Mary Wortley Montagu",
     "Mary Wortley Montagu"
    ],
    "gaps": [
     "Lady Mary Wortley Montagu"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Prose",
+       "writers": [
+        "Jonathan Swift",
+        "Joseph Addison",
+        "Daniel Defoe",
+        "Richard Steele"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "Alexander Pope",
+        "John Gay",
+        "Matthew Prior",
+        "Allan Ramsay",
+        "Edward Young",
+        "Thomas Parnell",
+        "Samuel Garth",
+        "Anne Finch",
+        "Anne Finch, Countess of Winchilsea",
+        "Lady Winchilsea",
+        "Ambrose Philips"
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -6167,45 +6425,117 @@
    ],
    "works": [],
    "writers": [
-    "Richard Brinsley Sheridan",
-    "Hannah More",
-    "Henry Fielding",
-    "Frances Burney",
-    "Fanny Burney",
-    "Samuel Richardson",
-    "Laurence Sterne",
-    "Tobias Smollett",
-    "William Cowper",
-    "George Crabbe",
-    "Oliver Goldsmith",
-    "William Collins",
-    "James Thomson",
-    "Thomas Gray",
-    "William Godwin",
-    "Edmund Burke",
-    "Gilbert White",
-    "Adam Smith",
-    "Robert Burns",
-    "William Blake",
-    "Thomas Chatterton",
-    "James Macpherson",
-    "Robert Fergusson",
-    "David Hume",
-    "Edward Gibbon",
-    "James Boswell",
-    "William Robertson",
-    "Samuel Johnson",
-    "Horace Walpole",
-    "Ann Radcliffe",
-    "Matthew Gregory Lewis",
-    "Matthew Lewis",
-    "William Beckford",
     "Christopher Smart",
     "Mark Akenside"
    ],
    "gaps": [
     "Christopher Smart",
     "Mark Akenside"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Dramatists",
+       "writers": [
+        "Richard Brinsley Sheridan",
+        "Hannah More"
+       ]
+      },
+      {
+       "name": "The Novelists",
+       "writers": [
+        "Henry Fielding",
+        "Frances Burney",
+        "Fanny Burney",
+        "Samuel Richardson",
+        "Laurence Sterne",
+        "Tobias Smollett"
+       ]
+      },
+      {
+       "name": "The Transitional Poets",
+       "aliases": [
+        "transitional poets",
+        "transition poets"
+       ],
+       "writers": [
+        "William Cowper",
+        "George Crabbe",
+        "Oliver Goldsmith",
+        "William Collins",
+        "James Thomson",
+        "Thomas Gray"
+       ]
+      },
+      {
+       "name": "Prose",
+       "writers": [
+        "William Godwin",
+        "Edmund Burke",
+        "Gilbert White",
+        "Adam Smith"
+       ]
+      },
+      {
+       "name": "The New School Poets",
+       "aliases": [
+        "new school poets",
+        "new school"
+       ],
+       "writers": [
+        "Robert Burns",
+        "William Blake",
+        "Thomas Chatterton",
+        "James Macpherson",
+        "Robert Fergusson"
+       ]
+      },
+      {
+       "name": "The Historians",
+       "aliases": [
+        "the historians"
+       ],
+       "writers": [
+        "David Hume",
+        "Edward Gibbon",
+        "James Boswell",
+        "William Robertson"
+       ]
+      },
+      {
+       "name": "The Reactionary School",
+       "aliases": [
+        "reactionary school"
+       ],
+       "writers": [
+        "Samuel Johnson"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Gothic Literature",
+     "aliases": [
+      "gothic literature",
+      "gothic",
+      "gothic novel",
+      "gothic fiction",
+      "gothic novelists"
+     ],
+     "tags": [
+      "Gothic"
+     ],
+     "writers": [
+      "Horace Walpole",
+      "Ann Radcliffe",
+      "Matthew Gregory Lewis",
+      "Matthew Lewis",
+      "William Beckford"
+     ]
+    }
    ]
   },
   {
@@ -6227,30 +6557,6 @@
    ],
    "works": [],
    "writers": [
-    "Samuel Taylor Coleridge",
-    "John Keats",
-    "William Wordsworth",
-    "Percy Bysshe Shelley",
-    "Lord Byron",
-    "George Gordon Byron",
-    "Robert Southey",
-    "Leigh Hunt",
-    "Thomas Campbell",
-    "Thomas Moore",
-    "Jane Austen",
-    "Washington Irving",
-    "Walter Scott",
-    "Thomas Love Peacock",
-    "Mary Shelley",
-    "William Harrison Ainsworth",
-    "John Galt",
-    "Maria Edgeworth",
-    "Thomas De Quincey",
-    "Charles Lamb",
-    "William Hazlitt",
-    "John Gibson Lockhart",
-    "John G. Lockhart",
-    "William Cobbett",
     "John Clare",
     "Felicia Hemans",
     "Walter Savage Landor",
@@ -6261,6 +6567,47 @@
     "Felicia Hemans",
     "Walter Savage Landor",
     "Dorothy Wordsworth"
+   ],
+   "sub": [
+    {
+     "name": "Poets",
+     "writers": [
+      "Samuel Taylor Coleridge",
+      "John Keats",
+      "William Wordsworth",
+      "Percy Bysshe Shelley",
+      "Lord Byron",
+      "George Gordon Byron",
+      "Robert Southey",
+      "Leigh Hunt",
+      "Thomas Campbell",
+      "Thomas Moore"
+     ]
+    },
+    {
+     "name": "Novelists",
+     "writers": [
+      "Jane Austen",
+      "Washington Irving",
+      "Walter Scott",
+      "Thomas Love Peacock",
+      "Mary Shelley",
+      "William Harrison Ainsworth",
+      "John Galt",
+      "Maria Edgeworth"
+     ]
+    },
+    {
+     "name": "Writers of Miscellaneous Prose",
+     "writers": [
+      "Thomas De Quincey",
+      "Charles Lamb",
+      "William Hazlitt",
+      "John Gibson Lockhart",
+      "John G. Lockhart",
+      "William Cobbett"
+     ]
+    }
    ]
   },
   {
@@ -6280,55 +6627,6 @@
    ],
    "works": [],
    "writers": [
-    "Charles Dickens",
-    "William Makepeace Thackeray",
-    "Anthony Trollope",
-    "George Eliot",
-    "Joseph Conrad",
-    "Arthur Conan Doyle",
-    "Rudyard Kipling",
-    "H. G. Wells",
-    "Thomas Hardy",
-    "Elizabeth Gaskell",
-    "Robert Louis Stevenson",
-    "Wilkie Collins",
-    "George Meredith",
-    "Charlotte Bronte",
-    "Emily Bronte",
-    "Anne Bronte",
-    "Samuel Butler",
-    "Benjamin Disraeli",
-    "Edward Bulwer-Lytton",
-    "Charles Kingsley",
-    "George Gissing",
-    "Arnold Bennett",
-    "Gerard Manley Hopkins",
-    "Robert Browning",
-    "Alfred Tennyson",
-    "Alfred, Lord Tennyson",
-    "Lord Tennyson",
-    "Christina Rossetti",
-    "Matthew Arnold",
-    "Algernon Charles Swinburne",
-    "William Morris",
-    "Dante Gabriel Rossetti",
-    "Elizabeth Barrett Browning",
-    "Walter Pater",
-    "John Ruskin",
-    "Thomas Babington Macaulay",
-    "Thomas Carlyle",
-    "John Stuart Mill",
-    "Herbert Spencer",
-    "Charles Darwin",
-    "Thomas Henry Huxley",
-    "T. H. Huxley",
-    "Ralph Waldo Emerson",
-    "Henry James",
-    "Mark Twain",
-    "Nathaniel Hawthorne",
-    "Walt Whitman",
-    "Henry Wadsworth Longfellow",
-    "George Moore",
     "Arthur Hugh Clough",
     "Lewis Carroll",
     "Bram Stoker",
@@ -6341,6 +6639,122 @@
     "Bram Stoker",
     "John Henry Newman",
     "Edward FitzGerald"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "also": [
+      "british",
+      "british writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Novelists",
+       "writers": [
+        "Charles Dickens",
+        "William Makepeace Thackeray",
+        "Anthony Trollope",
+        "George Eliot",
+        "Joseph Conrad",
+        "Arthur Conan Doyle",
+        "Rudyard Kipling",
+        "H. G. Wells",
+        "Thomas Hardy",
+        "Elizabeth Gaskell",
+        "Robert Louis Stevenson",
+        "Wilkie Collins",
+        "George Meredith",
+        "Charlotte Bronte",
+        "Emily Bronte",
+        "Anne Bronte",
+        "Samuel Butler",
+        "Benjamin Disraeli",
+        "Edward Bulwer-Lytton",
+        "Charles Kingsley",
+        "George Gissing",
+        "Arnold Bennett"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "Gerard Manley Hopkins",
+        "Robert Browning",
+        "Alfred Tennyson",
+        "Alfred, Lord Tennyson",
+        "Lord Tennyson",
+        "Christina Rossetti",
+        "Matthew Arnold",
+        "Algernon Charles Swinburne",
+        "William Morris",
+        "Dante Gabriel Rossetti",
+        "Elizabeth Barrett Browning"
+       ]
+      },
+      {
+       "name": "Miscellaneous",
+       "writers": [
+        "Walter Pater",
+        "John Ruskin",
+        "Thomas Babington Macaulay",
+        "Thomas Carlyle",
+        "John Stuart Mill",
+        "Herbert Spencer",
+        "Charles Darwin",
+        "Thomas Henry Huxley",
+        "T. H. Huxley"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "American Literature",
+     "also": [
+      "american",
+      "american writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Miscellaneous",
+       "writers": [
+        "Ralph Waldo Emerson"
+       ]
+      },
+      {
+       "name": "Novelists",
+       "writers": [
+        "Henry James",
+        "Mark Twain",
+        "Nathaniel Hawthorne"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "Walt Whitman",
+        "Henry Wadsworth Longfellow"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Irish Literature",
+     "also": [
+      "irish",
+      "irish writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Novelists",
+       "writers": [
+        "George Moore"
+       ]
+      }
+     ]
+    }
    ]
   },
   {
@@ -6359,131 +6773,12 @@
    ],
    "tags": [
     "Edwardian",
-    "War poets",
     "Georgian poets",
     "Angry Young Men",
-    "The Movement",
-    "Theatre of the Absurd"
+    "The Movement"
    ],
    "works": [],
    "writers": [
-    "Harold Pinter",
-    "Tom Stoppard",
-    "Arnold Wesker",
-    "John Galsworthy",
-    "Samuel Beckett",
-    "John Arden",
-    "John Osborne",
-    "Noel Coward",
-    "W. Somerset Maugham",
-    "Somerset Maugham",
-    "David Hare",
-    "J. B. Priestley",
-    "E. A. Whitehead",
-    "David Mercer",
-    "J. M. Barrie",
-    "James Barrie",
-    "W. S. Gilbert",
-    "Harley Granville-Barker",
-    "Arthur Wing Pinero",
-    "Henry Arthur Jones",
-    "James Bridie",
-    "Howard Brenton",
-    "Edward Bond",
-    "Alan Ayckbourn",
-    "Alan Bennett",
-    "Joe Orton",
-    "Henry Livings",
-    "N. F. Simpson",
-    "Virginia Woolf",
-    "George Orwell",
-    "D. H. Lawrence",
-    "Anthony Burgess",
-    "William Golding",
-    "John Wain",
-    "Doris Lessing",
-    "Iris Murdoch",
-    "Kingsley Amis",
-    "William Cooper",
-    "Evelyn Waugh",
-    "Graham Greene",
-    "Aldous Huxley",
-    "E. M. Forster",
-    "Dorothy Richardson",
-    "Muriel Spark",
-    "Alan Sillitoe",
-    "Sam Selvon",
-    "Samuel Selvon",
-    "John Braine",
-    "J. G. Farrell",
-    "Anthony Powell",
-    "C. P. Snow",
-    "J. R. R. Tolkien",
-    "Lawrence Durrell",
-    "L. P. Hartley",
-    "Elizabeth Bowen",
-    "T. S. Eliot",
-    "Philip Larkin",
-    "Ted Hughes",
-    "Thom Gunn",
-    "Dylan Thomas",
-    "Robert Bridges",
-    "Stephen Spender",
-    "W. H. Auden",
-    "C. Day Lewis",
-    "Cecil Day-Lewis",
-    "Cecil Day Lewis",
-    "Edmund Blunden",
-    "Walter de la Mare",
-    "Lascelles Abercrombie",
-    "John Betjeman",
-    "Alex Comfort",
-    "Alan Ross",
-    "John Masefield",
-    "W. H. Davies",
-    "A. E. Housman",
-    "Charles Tomlinson",
-    "Hugh MacDiarmid",
-    "Thomas Blackburn",
-    "Peter Porter",
-    "Vernon Scannell",
-    "Vernon Watkins",
-    "Laurie Lee",
-    "Charles Causley",
-    "Roy Fuller",
-    "Sidney Keyes",
-    "Edith Sitwell",
-    "Katherine Mansfield",
-    "Lytton Strachey",
-    "G. K. Chesterton",
-    "Bertrand Russell",
-    "Winston Churchill",
-    "E. V. Lucas",
-    "Hilaire Belloc",
-    "W. H. Hudson",
-    "Robert Frost",
-    "Ezra Pound",
-    "Sinclair Lewis",
-    "Ray Bradbury",
-    "Ernest Hemingway",
-    "John Steinbeck",
-    "F. Scott Fitzgerald",
-    "John Horne Burns",
-    "William Faulkner",
-    "J. M. Synge",
-    "John Millington Synge",
-    "George Bernard Shaw",
-    "Bernard Shaw",
-    "Oscar Wilde",
-    "Sean O'Casey",
-    "James Joyce",
-    "W. B. Yeats",
-    "William Butler Yeats",
-    "Seamus Heaney",
-    "Louis MacNeice",
-    "Siegfried Sassoon",
-    "Wilfred Owen",
-    "Rupert Brooke",
     "Roman Ingarden",
     "Isaac Rosenberg",
     "Ford Madox Ford",
@@ -6492,9 +6787,7 @@
     "T. E. Hulme",
     "Christopher Isherwood",
     "Lady Gregory",
-    "Augusta Gregory",
-    "Eugene Ionesco",
-    "Jean Genet"
+    "Augusta Gregory"
    ],
    "gaps": [
     "Isaac Rosenberg",
@@ -6506,6 +6799,237 @@
     "Lady Gregory",
     "Eugene Ionesco",
     "Jean Genet"
+   ],
+   "sub": [
+    {
+     "name": "British Literature",
+     "also": [
+      "british",
+      "british writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Dramatists",
+       "writers": [
+        "Harold Pinter",
+        "Tom Stoppard",
+        "Arnold Wesker",
+        "John Galsworthy",
+        "Samuel Beckett",
+        "John Arden",
+        "John Osborne",
+        "Noel Coward",
+        "W. Somerset Maugham",
+        "Somerset Maugham",
+        "David Hare",
+        "J. B. Priestley",
+        "E. A. Whitehead",
+        "David Mercer",
+        "J. M. Barrie",
+        "James Barrie",
+        "W. S. Gilbert",
+        "Harley Granville-Barker",
+        "Arthur Wing Pinero",
+        "Henry Arthur Jones",
+        "James Bridie",
+        "Howard Brenton",
+        "Edward Bond",
+        "Alan Ayckbourn",
+        "Alan Bennett",
+        "Joe Orton",
+        "Henry Livings",
+        "N. F. Simpson"
+       ]
+      },
+      {
+       "name": "Novelists",
+       "writers": [
+        "Virginia Woolf",
+        "George Orwell",
+        "D. H. Lawrence",
+        "Anthony Burgess",
+        "William Golding",
+        "John Wain",
+        "Doris Lessing",
+        "Iris Murdoch",
+        "Kingsley Amis",
+        "William Cooper",
+        "Evelyn Waugh",
+        "Graham Greene",
+        "Aldous Huxley",
+        "E. M. Forster",
+        "Dorothy Richardson",
+        "Muriel Spark",
+        "Alan Sillitoe",
+        "Sam Selvon",
+        "Samuel Selvon",
+        "John Braine",
+        "J. G. Farrell",
+        "Anthony Powell",
+        "C. P. Snow",
+        "J. R. R. Tolkien",
+        "Lawrence Durrell",
+        "L. P. Hartley",
+        "Elizabeth Bowen"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "T. S. Eliot",
+        "Philip Larkin",
+        "Ted Hughes",
+        "Thom Gunn",
+        "Dylan Thomas",
+        "Robert Bridges",
+        "Stephen Spender",
+        "W. H. Auden",
+        "C. Day Lewis",
+        "Cecil Day-Lewis",
+        "Cecil Day Lewis",
+        "Edmund Blunden",
+        "Walter de la Mare",
+        "Lascelles Abercrombie",
+        "John Betjeman",
+        "Alex Comfort",
+        "Alan Ross",
+        "John Masefield",
+        "W. H. Davies",
+        "A. E. Housman",
+        "Charles Tomlinson",
+        "Hugh MacDiarmid",
+        "Thomas Blackburn",
+        "Peter Porter",
+        "Vernon Scannell",
+        "Vernon Watkins",
+        "Laurie Lee",
+        "Charles Causley",
+        "Roy Fuller",
+        "Sidney Keyes",
+        "Edith Sitwell"
+       ]
+      },
+      {
+       "name": "Miscellaneous Writers",
+       "writers": [
+        "Katherine Mansfield",
+        "Lytton Strachey",
+        "G. K. Chesterton",
+        "Bertrand Russell",
+        "Winston Churchill",
+        "E. V. Lucas",
+        "Hilaire Belloc",
+        "W. H. Hudson"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "American Literature",
+     "also": [
+      "american",
+      "american writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Poets",
+       "writers": [
+        "Robert Frost",
+        "Ezra Pound"
+       ]
+      },
+      {
+       "name": "Novelists",
+       "writers": [
+        "Sinclair Lewis",
+        "Ray Bradbury",
+        "Ernest Hemingway",
+        "John Steinbeck",
+        "F. Scott Fitzgerald",
+        "John Horne Burns",
+        "William Faulkner"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Irish Literature",
+     "also": [
+      "irish",
+      "irish writers"
+     ],
+     "writers": [],
+     "sub": [
+      {
+       "name": "Drama",
+       "writers": [
+        "J. M. Synge",
+        "John Millington Synge",
+        "George Bernard Shaw",
+        "Bernard Shaw",
+        "Oscar Wilde",
+        "Sean O'Casey"
+       ]
+      },
+      {
+       "name": "Novelists",
+       "writers": [
+        "James Joyce"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "W. B. Yeats",
+        "William Butler Yeats",
+        "Seamus Heaney",
+        "Louis MacNeice"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Poets of The 1914-18 War",
+     "aliases": [
+      "war poets",
+      "war poetry",
+      "poets of the 1914 18 war",
+      "first world war poets",
+      "world war i poets",
+      "trench poets"
+     ],
+     "tags": [
+      "War poets",
+      "War poetry"
+     ],
+     "writers": [
+      "Siegfried Sassoon",
+      "Wilfred Owen",
+      "Rupert Brooke"
+     ]
+    },
+    {
+     "name": "Theatre of Absurd",
+     "aliases": [
+      "theatre of absurd",
+      "theatre of the absurd",
+      "absurd theatre",
+      "absurd drama",
+      "absurdist drama"
+     ],
+     "tags": [
+      "Theatre of the Absurd",
+      "Absurd",
+      "Absurdism"
+     ],
+     "open": true,
+     "writers": [
+      "Eugene Ionesco",
+      "Jean Genet"
+     ]
+    }
    ]
   },
   {
@@ -6586,145 +7110,6 @@
    ],
    "works": [],
    "writers": [
-    "D. D. Kosambi",
-    "Verrier Elwin",
-    "Ananda Coomaraswamy",
-    "Ananda K. Coomaraswamy",
-    "A. K. Coomaraswamy",
-    "Jadunath Sarkar",
-    "Ramananda Chatterjee",
-    "Raja Rao",
-    "Mulk Raj Anand",
-    "R. K. Narayan",
-    "Nirad C. Chaudhuri",
-    "Sri Aurobindo",
-    "Aurobindo Ghose",
-    "M. K. Gandhi",
-    "Mahatma Gandhi",
-    "Mohandas Karamchand Gandhi",
-    "Jawaharlal Nehru",
-    "Cornelia Sorabji",
-    "Rabindranath Tagore",
-    "A. K. Ramanujan",
-    "Sarojini Naidu",
-    "Govardhanram Tripathi",
-    "Behramji Malabari",
-    "Behramji M. Malabari",
-    "Michael Madhusudan Dutt",
-    "Bankim Chandra Chattopadhyay",
-    "Bankim Chandra Chatterjee",
-    "Raja Ram Mohan Roy",
-    "Rammohun Roy",
-    "Ram Mohan Roy",
-    "Debendranath Tagore",
-    "Romesh Chunder Dutt",
-    "Keshab Chandra Sen",
-    "Ishwar Chandra Vidyasagar",
-    "Ishwar Chandra Gupta",
-    "Henry Louis Vivian Derozio",
-    "Henry Derozio",
-    "Toru Dutt",
-    "Bhabani Bhattacharya",
-    "G. V. Desani",
-    "K. S. Venkataramani",
-    "Sarvepalli Radhakrishnan",
-    "S. Radhakrishnan",
-    "Ahmed Ali",
-    "Sudhin N. Ghose",
-    "Aubrey Menen",
-    "K. Nagarajan",
-    "Manohar Malgonkar",
-    "Khushwant Singh",
-    "Kamala Markandaya",
-    "Arun Joshi",
-    "M. Anantanarayanan",
-    "Attia Hosain",
-    "U. R. Ananthamurthy",
-    "Ruth Prawer Jhabvala",
-    "Ruskin Bond",
-    "Nayantara Sahgal",
-    "Kiran Desai",
-    "Anita Desai",
-    "Jhumpa Lahiri",
-    "Amitav Ghosh",
-    "Arundhati Roy",
-    "Pankaj Mishra",
-    "Kiran Nagarkar",
-    "Amit Chaudhuri",
-    "Shashi Tharoor",
-    "Chitra Banerjee Divakaruni",
-    "Githa Hariharan",
-    "Shashi Deshpande",
-    "Salman Rushdie",
-    "Manju Kapur",
-    "I. Allan Sealy",
-    "Irwin Allan Sealy",
-    "Allan Sealy",
-    "Bharati Mukherjee",
-    "Anita Nair",
-    "Vikram Chandra",
-    "Vikram Seth",
-    "Shama Futehally",
-    "V. S. Naipaul",
-    "Upamanyu Chatterjee",
-    "Perumal Murugan",
-    "Dilip Chitre",
-    "Nissim Ezekiel",
-    "Keki N. Daruwalla",
-    "Keki Daruwalla",
-    "Pritish Nandy",
-    "Shiv K. Kumar",
-    "R. Parthasarathy",
-    "P. Lal",
-    "Kamala Das",
-    "Jayanta Mahapatra",
-    "Imtiaz Dharker",
-    "Eunice de Souza",
-    "Arvind Krishna Mehrotra",
-    "Agha Shahid Ali",
-    "Arun Kolatkar",
-    "Adil Jussawalla",
-    "Gieve Patel",
-    "Dom Moraes",
-    "Manohar Shetty",
-    "H. S. Shivaprakash",
-    "Krishna Mohan Banerjee",
-    "Krishna Mohan Banerjea",
-    "Manmohan Ghose",
-    "Girish Chandra Ghosh",
-    "Asif Currimbhoy",
-    "Vijay Tendulkar",
-    "Mahesh Dattani",
-    "Girish Karnad",
-    "Badal Sircar",
-    "Poile Sengupta",
-    "Premchand",
-    "Munshi Premchand",
-    "Mahasweta Devi",
-    "O. V. Vijayan",
-    "Krishna Baldev Vaid",
-    "K. B. Vaid",
-    "Harivansh Rai Bachchan",
-    "Sharankumar Limbale",
-    "Shantabai Kamble",
-    "Omprakash Valmiki",
-    "Om Prakash Valmiki",
-    "Namdeo Dhasal",
-    "Baburao Bagul",
-    "B. R. Ambedkar",
-    "Arjun Dangle",
-    "Rohinton Mistry",
-    "Cyrus Mistry",
-    "Bapsi Sidhwa",
-    "Dina Mehta",
-    "Mamang Dai",
-    "Temsula Ao",
-    "Indira Goswami",
-    "Robin S. Ngangom",
-    "Robin Ngangom",
-    "Robin Singh Ngangom",
-    "K. S. Maniam",
-    "Meena Alexander",
     "Manjula Padmanabhan",
     "Gurcharan Das",
     "Gopinath Mohanty",
@@ -6733,16 +7118,7 @@
     "Easterine Kire",
     "Jeet Thayil",
     "Aravind Adiga",
-    "Ismat Chughtai",
-    "Saadat Hasan Manto",
-    "Qurratulain Hyder",
-    "Amrita Pritam",
-    "Kamila Shamsie",
-    "Vaikom Muhammad Basheer",
-    "Bama",
-    "Urmila Pawar",
-    "Meena Kandasamy",
-    "Sudhindra Nath Ghose"
+    "Vaikom Muhammad Basheer"
    ],
    "gaps": [
     "Manjula Padmanabhan",
@@ -6762,6 +7138,351 @@
     "Bama",
     "Urmila Pawar",
     "Meena Kandasamy"
+   ],
+   "sub": [
+    {
+     "name": "Early 20th Century",
+     "writers": [
+      "D. D. Kosambi",
+      "Verrier Elwin",
+      "Ananda Coomaraswamy",
+      "Ananda K. Coomaraswamy",
+      "A. K. Coomaraswamy",
+      "Jadunath Sarkar",
+      "Ramananda Chatterjee"
+     ],
+     "sub": [
+      {
+       "name": "Novelists",
+       "writers": [
+        "Raja Rao",
+        "Mulk Raj Anand",
+        "R. K. Narayan"
+       ]
+      },
+      {
+       "name": "Prose",
+       "writers": [
+        "Nirad C. Chaudhuri",
+        "Sri Aurobindo",
+        "Aurobindo Ghose",
+        "M. K. Gandhi",
+        "Mahatma Gandhi",
+        "Mohandas Karamchand Gandhi",
+        "Jawaharlal Nehru",
+        "Cornelia Sorabji",
+        "Ananda Coomaraswamy",
+        "Ananda K. Coomaraswamy",
+        "A. K. Coomaraswamy"
+       ]
+      },
+      {
+       "name": "Poets",
+       "writers": [
+        "Rabindranath Tagore",
+        "A. K. Ramanujan",
+        "Sarojini Naidu"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "19th Century",
+     "writers": [
+      "Govardhanram Tripathi",
+      "Behramji Malabari",
+      "Behramji M. Malabari"
+     ],
+     "sub": [
+      {
+       "name": "Bengal Renaissance",
+       "aliases": [
+        "bengal renaissance"
+       ],
+       "tags": [
+        "Bengal Renaissance"
+       ],
+       "writers": [
+        "Michael Madhusudan Dutt",
+        "Bankim Chandra Chattopadhyay",
+        "Bankim Chandra Chatterjee",
+        "Raja Ram Mohan Roy",
+        "Rammohun Roy",
+        "Ram Mohan Roy",
+        "Debendranath Tagore",
+        "Romesh Chunder Dutt",
+        "Keshab Chandra Sen",
+        "Ishwar Chandra Vidyasagar",
+        "Ishwar Chandra Gupta"
+       ]
+      },
+      {
+       "name": "Poetry",
+       "writers": [
+        "Henry Louis Vivian Derozio",
+        "Henry Derozio",
+        "Toru Dutt"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The Novelists of the 1930s and 1940s",
+     "writers": [
+      "Bhabani Bhattacharya",
+      "G. V. Desani",
+      "K. S. Venkataramani",
+      "Sarvepalli Radhakrishnan",
+      "S. Radhakrishnan",
+      "Ahmed Ali",
+      "Sudhin N. Ghose",
+      "Sudhindra Nath Ghose",
+      "Aubrey Menen",
+      "K. Nagarajan"
+     ]
+    },
+    {
+     "name": "The Novelists of the 1950s and 1960s",
+     "writers": [
+      "Manohar Malgonkar",
+      "Khushwant Singh",
+      "Kamala Markandaya",
+      "Arun Joshi",
+      "M. Anantanarayanan",
+      "Attia Hosain",
+      "U. R. Ananthamurthy",
+      "Ruth Prawer Jhabvala",
+      "Ruskin Bond",
+      "Nayantara Sahgal"
+     ]
+    },
+    {
+     "name": "Late 20th & 21st Century Novelists",
+     "writers": [
+      "Kiran Desai",
+      "Anita Desai",
+      "Jhumpa Lahiri",
+      "Amitav Ghosh",
+      "Arundhati Roy",
+      "Pankaj Mishra",
+      "Kiran Nagarkar",
+      "Amit Chaudhuri",
+      "Shashi Tharoor",
+      "Chitra Banerjee Divakaruni",
+      "Githa Hariharan",
+      "Shashi Deshpande",
+      "Salman Rushdie",
+      "Manju Kapur",
+      "I. Allan Sealy",
+      "Irwin Allan Sealy",
+      "Allan Sealy",
+      "Bharati Mukherjee",
+      "Anita Nair",
+      "Vikram Chandra",
+      "Vikram Seth",
+      "Shama Futehally",
+      "V. S. Naipaul",
+      "Upamanyu Chatterjee",
+      "Perumal Murugan"
+     ]
+    },
+    {
+     "name": "Post-Independence Poetry",
+     "aliases": [
+      "post independence poetry",
+      "post independence poets"
+     ],
+     "writers": [
+      "Vikram Seth",
+      "Dilip Chitre",
+      "Nissim Ezekiel",
+      "Keki N. Daruwalla",
+      "Keki Daruwalla",
+      "Pritish Nandy",
+      "Shiv K. Kumar",
+      "R. Parthasarathy",
+      "P. Lal",
+      "Kamala Das",
+      "Jayanta Mahapatra",
+      "Imtiaz Dharker",
+      "Eunice de Souza",
+      "Arvind Krishna Mehrotra",
+      "Agha Shahid Ali",
+      "Arun Kolatkar",
+      "Adil Jussawalla",
+      "Gieve Patel",
+      "Dom Moraes",
+      "Manohar Shetty"
+     ]
+    },
+    {
+     "name": "Dramatists",
+     "writers": [
+      "H. S. Shivaprakash"
+     ],
+     "sub": [
+      {
+       "name": "Early Playwrights",
+       "writers": [
+        "Krishna Mohan Banerjee",
+        "Krishna Mohan Banerjea",
+        "Manmohan Ghose",
+        "Michael Madhusudan Dutt",
+        "Girish Chandra Ghosh"
+       ]
+      },
+      {
+       "name": "20th Century",
+       "writers": [
+        "Asif Currimbhoy",
+        "Vijay Tendulkar",
+        "Mahesh Dattani",
+        "Girish Karnad",
+        "Badal Sircar",
+        "Sri Aurobindo",
+        "Aurobindo Ghose",
+        "Poile Sengupta",
+        "Rabindranath Tagore"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Translations into English",
+     "aliases": [
+      "translations into english"
+     ],
+     "writers": [
+      "Premchand",
+      "Munshi Premchand",
+      "Mahasweta Devi",
+      "O. V. Vijayan",
+      "Krishna Baldev Vaid",
+      "K. B. Vaid",
+      "Harivansh Rai Bachchan"
+     ]
+    },
+    {
+     "name": "Dalit Literature",
+     "aliases": [
+      "dalit literature",
+      "dalit writing",
+      "dalit writers",
+      "dalit"
+     ],
+     "tags": [
+      "Dalit writing",
+      "Dalit literature"
+     ],
+     "open": true,
+     "writers": [
+      "Bama",
+      "Urmila Pawar",
+      "Meena Kandasamy",
+      "Sharankumar Limbale",
+      "Shantabai Kamble",
+      "Omprakash Valmiki",
+      "Om Prakash Valmiki",
+      "Namdeo Dhasal",
+      "Baburao Bagul",
+      "B. R. Ambedkar",
+      "Arjun Dangle"
+     ]
+    },
+    {
+     "name": "Parsi Literature",
+     "aliases": [
+      "parsi literature",
+      "parsi writers",
+      "parsi writing",
+      "parsi"
+     ],
+     "tags": [
+      "Parsi writing"
+     ],
+     "writers": [
+      "Rohinton Mistry",
+      "Cyrus Mistry",
+      "Bapsi Sidhwa",
+      "Dina Mehta"
+     ]
+    },
+    {
+     "name": "Literature from North-East",
+     "aliases": [
+      "literature from north east",
+      "north east literature",
+      "northeast literature",
+      "north east writers",
+      "northeast writers",
+      "north east"
+     ],
+     "writers": [
+      "Mamang Dai",
+      "Temsula Ao",
+      "Indira Goswami",
+      "Robin S. Ngangom",
+      "Robin Ngangom",
+      "Robin Singh Ngangom"
+     ]
+    },
+    {
+     "name": "Partitian Literature",
+     "aliases": [
+      "partition literature",
+      "partitian literature",
+      "partition"
+     ],
+     "tags": [
+      "Partition",
+      "Partition literature"
+     ],
+     "open": true,
+     "writers": [
+      "Ismat Chughtai",
+      "Saadat Hasan Manto",
+      "Qurratulain Hyder",
+      "Amrita Pritam",
+      "Kamila Shamsie"
+     ]
+    },
+    {
+     "name": "Writing by the Indian Diaspora",
+     "aliases": [
+      "writing by the indian diaspora",
+      "indian diaspora",
+      "indian diaspora writing",
+      "diaspora writing"
+     ],
+     "tags": [
+      "Indian diaspora",
+      "Diaspora writing"
+     ],
+     "open": true,
+     "writers": [
+      "K. S. Maniam"
+     ],
+     "sub": [
+      {
+       "name": "Indian-American",
+       "writers": [
+        "Meena Alexander"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Nature Writers",
+     "aliases": [
+      "nature writers",
+      "nature writing"
+     ],
+     "tags": [
+      "Nature writing"
+     ],
+     "open": true,
+     "writers": []
+    }
    ]
   },
   {
@@ -6777,28 +7498,59 @@
     "Hindi"
    ],
    "works": [],
-   "writers": [
-    "Bharatendu Harishchandra",
-    "Devaki Nandan Khatri",
-    "Mahavir Prasad Dwivedi",
-    "Jaishankar Prasad",
-    "Suryakant Tripathi Nirala",
-    "Nirala",
-    "Mahadevi Varma",
-    "Mahadevi Verma",
-    "Sumitranandan Pant",
-    "Premchand",
-    "Munshi Premchand",
-    "Krishna Sobti",
-    "Bhisham Sahni",
-    "Ramdhari Singh Dinkar",
-    "Dharamvir Bharati",
-    "Harivansh Rai Bachchan",
-    "Nirmal Verma",
-    "Phanishwar Nath Renu",
-    "Yashpal"
-   ],
-   "gaps": []
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Bharatiya Renaissance / Early Modern Period",
+     "aliases": [
+      "bharatiya renaissance",
+      "bharatendu era"
+     ],
+     "writers": [
+      "Bharatendu Harishchandra",
+      "Devaki Nandan Khatri",
+      "Mahavir Prasad Dwivedi"
+     ]
+    },
+    {
+     "name": "Chhayavad Era",
+     "aliases": [
+      "chhayavad",
+      "chhayavad era",
+      "chhayavadi poets"
+     ],
+     "writers": [
+      "Jaishankar Prasad",
+      "Suryakant Tripathi Nirala",
+      "Nirala",
+      "Mahadevi Varma",
+      "Mahadevi Verma",
+      "Sumitranandan Pant"
+     ]
+    },
+    {
+     "name": "Pragativad and Nai Kahani Movement",
+     "aliases": [
+      "pragativad",
+      "nai kahani",
+      "nai kahani movement",
+      "pragativad and nai kahani movement"
+     ],
+     "writers": [
+      "Premchand",
+      "Munshi Premchand",
+      "Krishna Sobti",
+      "Bhisham Sahni",
+      "Ramdhari Singh Dinkar",
+      "Dharamvir Bharati",
+      "Harivansh Rai Bachchan",
+      "Nirmal Verma",
+      "Phanishwar Nath Renu",
+      "Yashpal"
+     ]
+    }
+   ]
   },
   {
    "id": "american",
@@ -6814,112 +7566,6 @@
    ],
    "works": [],
    "writers": [
-    "Edgar Allan Poe",
-    "Nathaniel Hawthorne",
-    "Kate Chopin",
-    "Harriet Beecher Stowe",
-    "Charles Brockden Brown",
-    "William Cullen Bryant",
-    "James Fenimore Cooper",
-    "Louisa May Alcott",
-    "Harriet Jacobs",
-    "Frederick Douglass",
-    "Herman Melville",
-    "John Steinbeck",
-    "William Faulkner",
-    "Sinclair Lewis",
-    "Ralph Ellison",
-    "Thomas Pynchon",
-    "Amiri Baraka",
-    "Imamu Amiri Baraka",
-    "LeRoi Jones",
-    "Kurt Vonnegut",
-    "Joseph Heller",
-    "Flannery O'Connor",
-    "Jack Kerouac",
-    "J. D. Salinger",
-    "Theodore Dreiser",
-    "Gertrude Stein",
-    "Ernest Hemingway",
-    "William Styron",
-    "Toni Morrison",
-    "Joyce Carol Oates",
-    "John Updike",
-    "John O'Hara",
-    "John Gardner",
-    "John Cheever",
-    "John Barth",
-    "James Baldwin",
-    "Saul Bellow",
-    "Isaac Bashevis Singer",
-    "Philip Roth",
-    "Norman Mailer",
-    "Eudora Welty",
-    "E. L. Doctorow",
-    "Alice Walker",
-    "Bernard Malamud",
-    "Zora Neale Hurston",
-    "Vladimir Nabokov",
-    "Richard Wright",
-    "Pearl S. Buck",
-    "Pearl Buck",
-    "Margaret Mitchell",
-    "Katherine Anne Porter",
-    "F. Scott Fitzgerald",
-    "Don DeLillo",
-    "Sherwood Anderson",
-    "Jack London",
-    "Upton Sinclair",
-    "Edith Wharton",
-    "Cormac McCarthy",
-    "Leslie Marmon Silko",
-    "Stephen King",
-    "Paul Auster",
-    "Octavia Butler",
-    "Octavia E. Butler",
-    "David Foster Wallace",
-    "Emily Dickinson",
-    "Anne Bradstreet",
-    "Robert Frost",
-    "Maya Angelou",
-    "Rita Dove",
-    "Louise Gluck",
-    "Elizabeth Bishop",
-    "William Carlos Williams",
-    "Langston Hughes",
-    "Hilda Doolittle",
-    "H. D.",
-    "Amy Lowell",
-    "Adrienne Rich",
-    "Anne Sexton",
-    "Sylvia Plath",
-    "Robert Lowell",
-    "John Berryman",
-    "W. D. Snodgrass",
-    "Billy Collins",
-    "Robert Pinsky",
-    "Mary Oliver",
-    "Jane Hirshfield",
-    "Audre Lorde",
-    "Yusef Komunyakaa",
-    "Mark Doty",
-    "Li-Young Lee",
-    "Jorie Graham",
-    "Charles Wright",
-    "Eugene O'Neill",
-    "Edward Albee",
-    "Arthur Miller",
-    "August Wilson",
-    "Tennessee Williams",
-    "Lorraine Hansberry",
-    "David Rabe",
-    "David Mamet",
-    "Sam Shepard",
-    "Lillian Hellman",
-    "William S. Burroughs",
-    "William Burroughs",
-    "Herbert Huncke",
-    "Allen Ginsberg",
     "Harold Bloom",
     "Susan Sontag",
     "Henry David Thoreau",
@@ -6970,6 +7616,191 @@
     "N. Scott Momaday",
     "Louise Erdrich",
     "Wallace Stevens"
+   ],
+   "sub": [
+    {
+     "name": "Novelists",
+     "writers": [],
+     "sub": [
+      {
+       "name": "19th Century",
+       "writers": [
+        "Edgar Allan Poe",
+        "Nathaniel Hawthorne",
+        "Kate Chopin",
+        "Harriet Beecher Stowe",
+        "Charles Brockden Brown",
+        "William Cullen Bryant",
+        "James Fenimore Cooper",
+        "Louisa May Alcott",
+        "Harriet Jacobs",
+        "Frederick Douglass",
+        "Herman Melville"
+       ]
+      },
+      {
+       "name": "20th Century",
+       "writers": [
+        "John Steinbeck",
+        "William Faulkner",
+        "Sinclair Lewis",
+        "Ralph Ellison",
+        "Thomas Pynchon",
+        "Amiri Baraka",
+        "Imamu Amiri Baraka",
+        "LeRoi Jones",
+        "Kurt Vonnegut",
+        "Joseph Heller",
+        "Flannery O'Connor",
+        "Jack Kerouac",
+        "J. D. Salinger",
+        "Theodore Dreiser",
+        "Gertrude Stein",
+        "Ernest Hemingway",
+        "William Styron",
+        "Toni Morrison",
+        "Joyce Carol Oates",
+        "John Updike",
+        "John O'Hara",
+        "John Gardner",
+        "John Cheever",
+        "John Barth",
+        "James Baldwin",
+        "Saul Bellow",
+        "Isaac Bashevis Singer",
+        "Philip Roth",
+        "Norman Mailer",
+        "Eudora Welty",
+        "E. L. Doctorow",
+        "Alice Walker",
+        "Bernard Malamud",
+        "Zora Neale Hurston",
+        "Vladimir Nabokov",
+        "Richard Wright",
+        "Pearl S. Buck",
+        "Pearl Buck",
+        "Margaret Mitchell",
+        "Katherine Anne Porter",
+        "F. Scott Fitzgerald",
+        "Don DeLillo",
+        "Sherwood Anderson",
+        "Jack London",
+        "Upton Sinclair",
+        "Edith Wharton"
+       ]
+      },
+      {
+       "name": "Contemporary",
+       "writers": [
+        "Cormac McCarthy",
+        "Leslie Marmon Silko",
+        "Stephen King",
+        "Paul Auster",
+        "Octavia Butler",
+        "Octavia E. Butler",
+        "David Foster Wallace"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Poets",
+     "writers": [
+      "Emily Dickinson",
+      "Anne Bradstreet",
+      "Robert Frost"
+     ],
+     "sub": [
+      {
+       "name": "20th-century",
+       "writers": [
+        "Maya Angelou",
+        "Rita Dove",
+        "Louise Gluck",
+        "Elizabeth Bishop",
+        "William Carlos Williams",
+        "Langston Hughes",
+        "Hilda Doolittle",
+        "H. D.",
+        "Amy Lowell",
+        "Adrienne Rich"
+       ],
+       "sub": [
+        {
+         "name": "Confessional Poetry",
+         "aliases": [
+          "confessional poetry",
+          "confessional poets",
+          "confessionalism"
+         ],
+         "tags": [
+          "Confessional poetry",
+          "Confessional"
+         ],
+         "writers": [
+          "Anne Sexton",
+          "Sylvia Plath",
+          "Robert Lowell",
+          "John Berryman",
+          "W. D. Snodgrass"
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Contemporary",
+       "writers": [
+        "Billy Collins",
+        "Robert Pinsky",
+        "Mary Oliver",
+        "Jane Hirshfield",
+        "Audre Lorde",
+        "Yusef Komunyakaa",
+        "Mark Doty",
+        "Li-Young Lee",
+        "Jorie Graham",
+        "Charles Wright"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dramatists",
+     "writers": [
+      "Eugene O'Neill",
+      "Edward Albee",
+      "Arthur Miller",
+      "August Wilson",
+      "Tennessee Williams",
+      "Lorraine Hansberry",
+      "David Rabe",
+      "David Mamet",
+      "Amiri Baraka",
+      "Imamu Amiri Baraka",
+      "LeRoi Jones",
+      "Sam Shepard",
+      "Lillian Hellman"
+     ]
+    },
+    {
+     "name": "Beat Generation",
+     "aliases": [
+      "beat generation",
+      "beat poets",
+      "beat writers",
+      "beats"
+     ],
+     "tags": [
+      "Beat Generation"
+     ],
+     "writers": [
+      "William S. Burroughs",
+      "William Burroughs",
+      "Jack Kerouac",
+      "Herbert Huncke",
+      "Allen Ginsberg"
+     ]
+    }
    ]
   },
   {
@@ -6985,41 +7816,62 @@
     "Canadian"
    ],
    "works": [],
-   "writers": [
-    "Frances Brooke",
-    "E. Pauline Johnson",
-    "Pauline Johnson",
-    "Susanna Moodie",
-    "Archibald Lampman",
-    "Catharine Parr Traill",
-    "Charles G. D. Roberts",
-    "Philippe Aubert de Gaspe",
-    "Margaret Laurence",
-    "Sinclair Ross",
-    "Mordecai Richler",
-    "Robertson Davies",
-    "Stephen Leacock",
-    "Leonard Cohen",
-    "E. J. Pratt",
-    "Alistair MacLeod",
-    "Lucy Maud Montgomery",
-    "L. M. Montgomery",
-    "Margaret Atwood",
-    "Yann Martel",
-    "Douglas Coupland",
-    "Beatrice Culleton",
-    "Beatrice Mosionier",
-    "Arnold Itwaru",
-    "Robyn Sarah",
-    "Alice Munro",
-    "Thomas King",
-    "Shyam Selvadurai",
-    "M. G. Vassanji",
-    "Joy Kogawa",
-    "Carol Shields",
-    "Beatrice Culleton Mosionier"
-   ],
-   "gaps": []
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Colonial Period",
+     "writers": [
+      "Frances Brooke"
+     ]
+    },
+    {
+     "name": "19th Century",
+     "writers": [
+      "E. Pauline Johnson",
+      "Pauline Johnson",
+      "Susanna Moodie",
+      "Archibald Lampman",
+      "Catharine Parr Traill",
+      "Charles G. D. Roberts",
+      "Philippe Aubert de Gaspe"
+     ]
+    },
+    {
+     "name": "20th Century",
+     "writers": [
+      "Margaret Laurence",
+      "Sinclair Ross",
+      "Mordecai Richler",
+      "Robertson Davies",
+      "Stephen Leacock",
+      "Leonard Cohen",
+      "E. J. Pratt",
+      "Alistair MacLeod",
+      "Lucy Maud Montgomery",
+      "L. M. Montgomery"
+     ]
+    },
+    {
+     "name": "Contemporary Writers",
+     "writers": [
+      "Margaret Atwood",
+      "Yann Martel",
+      "Douglas Coupland",
+      "Beatrice Culleton",
+      "Beatrice Mosionier",
+      "Beatrice Culleton Mosionier",
+      "Arnold Itwaru",
+      "Robyn Sarah",
+      "Alice Munro",
+      "Thomas King",
+      "Shyam Selvadurai",
+      "M. G. Vassanji",
+      "Joy Kogawa",
+      "Carol Shields"
+     ]
+    }
+   ]
   },
   {
    "id": "australian",
@@ -7034,66 +7886,135 @@
     "Australian"
    ],
    "works": [],
-   "writers": [
-    "Melissa Lucashenko",
-    "Oodgeroo Noonuccal",
-    "Kath Walker",
-    "Sally Morgan",
-    "Jack Davis",
-    "Kevin Gilbert",
-    "Anita Heiss",
-    "Alexis Wright",
-    "Henry Kingsley",
-    "Rosa Praed",
-    "Marcus Clarke",
-    "Louisa Atkinson",
-    "Rolf Boldrewood",
-    "Joseph Furphy",
-    "Katharine Susannah Prichard",
-    "Henry Handel Richardson",
-    "Miles Franklin",
-    "Barbara Baynton",
-    "Patrick White",
-    "Christina Stead",
-    "Nevil Shute",
-    "Eleanor Dark",
-    "Xavier Herbert",
-    "Peter Carey",
-    "Thomas Keneally",
-    "Tim Winton",
-    "Helen Garner",
-    "Frank Moorhouse",
-    "Thea Astley",
-    "Elizabeth Jolley",
-    "David Malouf",
-    "Sofie Laguna",
-    "Trent Dalton",
-    "Richard Flanagan",
-    "Michelle de Kretser",
-    "Charlotte Wood",
-    "Ceridwen Dovey",
-    "Banjo Paterson",
-    "A. B. Paterson",
-    "Henry Lawson",
-    "Dorothea Mackellar",
-    "Judith Wright",
-    "Pi O",
-    "Michelle Cahill",
-    "Michael Dransfield",
-    "Les Murray",
-    "John Tranter",
-    "John Kinsella",
-    "Gwen Harwood",
-    "Gig Ryan",
-    "David Campbell",
-    "A. D. Hope",
-    "Sue Smith",
-    "John Romeril",
-    "Ray Lawler",
-    "Andrew Bovell",
-    "David Williamson"
-   ],
-   "gaps": []
+   "writers": [],
+   "gaps": [],
+   "sub": [
+    {
+     "name": "Australian Aboriginal",
+     "aliases": [
+      "australian aboriginal",
+      "aboriginal writing",
+      "aboriginal writers",
+      "aboriginal literature"
+     ],
+     "tags": [
+      "Aboriginal writing"
+     ],
+     "writers": [
+      "Melissa Lucashenko",
+      "Oodgeroo Noonuccal",
+      "Kath Walker",
+      "Sally Morgan",
+      "Jack Davis",
+      "Kevin Gilbert",
+      "Anita Heiss",
+      "Alexis Wright"
+     ]
+    },
+    {
+     "name": "Novelists",
+     "writers": [],
+     "sub": [
+      {
+       "name": "Colonial and 19th Century",
+       "writers": [
+        "Henry Kingsley",
+        "Rosa Praed",
+        "Marcus Clarke",
+        "Louisa Atkinson",
+        "Rolf Boldrewood"
+       ]
+      },
+      {
+       "name": "Early 20th Century",
+       "writers": [
+        "Joseph Furphy",
+        "Katharine Susannah Prichard",
+        "Henry Handel Richardson",
+        "Miles Franklin",
+        "Barbara Baynton"
+       ]
+      },
+      {
+       "name": "Mid-20th Century (Interwar and Postwar)",
+       "writers": [
+        "Patrick White",
+        "Christina Stead",
+        "Nevil Shute",
+        "Eleanor Dark",
+        "Xavier Herbert"
+       ]
+      },
+      {
+       "name": "Late 20th Century",
+       "writers": [
+        "Peter Carey",
+        "Thomas Keneally",
+        "Tim Winton",
+        "Helen Garner",
+        "Frank Moorhouse",
+        "Thea Astley",
+        "Elizabeth Jolley"
+       ]
+      },
+      {
+       "name": "Contemporary",
+       "writers": [
+        "David Malouf",
+        "Sofie Laguna",
+        "Trent Dalton",
+        "Richard Flanagan",
+        "Michelle de Kretser",
+        "Charlotte Wood",
+        "Ceridwen Dovey"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Poets",
+     "writers": [],
+     "sub": [
+      {
+       "name": "19th Century",
+       "writers": [
+        "Banjo Paterson",
+        "A. B. Paterson",
+        "Henry Lawson",
+        "Dorothea Mackellar"
+       ]
+      },
+      {
+       "name": "20th century",
+       "writers": [
+        "Judith Wright",
+        "Pi O",
+        "Michelle Cahill",
+        "Oodgeroo Noonuccal",
+        "Kath Walker",
+        "Michael Dransfield",
+        "Les Murray",
+        "John Tranter",
+        "John Kinsella",
+        "Gwen Harwood",
+        "Gig Ryan",
+        "David Campbell",
+        "A. D. Hope"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dramatists",
+     "writers": [
+      "Sue Smith",
+      "John Romeril",
+      "Ray Lawler",
+      "Andrew Bovell",
+      "David Williamson"
+     ]
+    }
+   ]
   },
   {
    "id": "world",
@@ -7109,66 +8030,6 @@
    ],
    "works": [],
    "writers": [
-    "Jean-Jacques Rousseau",
-    "Johann Wolfgang von Goethe",
-    "Goethe",
-    "Friedrich Schelling",
-    "F. W. J. Schelling",
-    "Voltaire",
-    "Friedrich Schlegel",
-    "Miguel de Cervantes",
-    "Cervantes",
-    "Friedrich Nietzsche",
-    "Gustave Flaubert",
-    "Victor Hugo",
-    "Henrik Ibsen",
-    "Honore de Balzac",
-    "Fyodor Dostoevsky",
-    "Ivan Turgenev",
-    "Anton Chekhov",
-    "Leo Tolstoy",
-    "Nikolai Gogol",
-    "Luigi Pirandello",
-    "Marcel Proust",
-    "Bertolt Brecht",
-    "Hermann Hesse",
-    "Franz Kafka",
-    "Thomas Mann",
-    "Andre Gide",
-    "Gabriela Mistral",
-    "Nadine Gordimer",
-    "Jorge Luis Borges",
-    "Ngugi wa Thiong'o",
-    "Jean Rhys",
-    "Gunter Grass",
-    "Gabriel Garcia Marquez",
-    "Chinua Achebe",
-    "Italo Calvino",
-    "Jean-Paul Sartre",
-    "Cesare Pavese",
-    "Albert Camus",
-    "Tayeb Salih",
-    "George Lamming",
-    "Yasunari Kawabata",
-    "Pablo Neruda",
-    "Derek Walcott",
-    "Kazuo Ishiguro",
-    "Chimamanda Ngozi Adichie",
-    "Michael Ondaatje",
-    "Buchi Emecheta",
-    "Shehan Karunatilaka",
-    "Ocean Vuong",
-    "Han Kang",
-    "Wole Soyinka",
-    "Umberto Eco",
-    "Kenzaburo Oe",
-    "J. M. Coetzee",
-    "Milan Kundera",
-    "Dario Fo",
-    "Elena Ferrante",
-    "Orhan Pamuk",
-    "Ben Okri",
-    "Haruki Murakami",
     "Michel de Montaigne",
     "Montaigne",
     "Federico Garcia Lorca",
@@ -7213,6 +8074,106 @@
     "August Strindberg",
     "Ama Ata Aidoo",
     "Bessie Head"
+   ],
+   "sub": [
+    {
+     "name": "17th-18th Century",
+     "writers": [
+      "Jean-Jacques Rousseau",
+      "Johann Wolfgang von Goethe",
+      "Goethe",
+      "Friedrich Schelling",
+      "F. W. J. Schelling",
+      "Voltaire",
+      "Friedrich Schlegel",
+      "Miguel de Cervantes",
+      "Cervantes"
+     ]
+    },
+    {
+     "name": "19th Century",
+     "writers": [
+      "Friedrich Nietzsche",
+      "Gustave Flaubert",
+      "Victor Hugo",
+      "Henrik Ibsen",
+      "Honore de Balzac"
+     ]
+    },
+    {
+     "name": "Russian Literature",
+     "aliases": [
+      "russian literature",
+      "russian writers",
+      "russian novelists"
+     ],
+     "tags": [
+      "Russian"
+     ],
+     "writers": [
+      "Fyodor Dostoevsky",
+      "Ivan Turgenev",
+      "Anton Chekhov",
+      "Leo Tolstoy",
+      "Nikolai Gogol"
+     ]
+    },
+    {
+     "name": "Early 20th Century",
+     "writers": [
+      "Luigi Pirandello",
+      "Marcel Proust",
+      "Bertolt Brecht",
+      "Hermann Hesse",
+      "Franz Kafka",
+      "Thomas Mann",
+      "Andre Gide",
+      "Gabriela Mistral"
+     ]
+    },
+    {
+     "name": "Mid-20th Century",
+     "writers": [
+      "Nadine Gordimer",
+      "Jorge Luis Borges",
+      "Ngugi wa Thiong'o",
+      "Jean Rhys",
+      "Gunter Grass",
+      "Gabriel Garcia Marquez",
+      "Chinua Achebe",
+      "Italo Calvino",
+      "Jean-Paul Sartre",
+      "Cesare Pavese",
+      "Albert Camus",
+      "Tayeb Salih",
+      "George Lamming",
+      "Yasunari Kawabata",
+      "Pablo Neruda"
+     ]
+    },
+    {
+     "name": "21st Century",
+     "writers": [
+      "Derek Walcott",
+      "Kazuo Ishiguro",
+      "Chimamanda Ngozi Adichie",
+      "Michael Ondaatje",
+      "Buchi Emecheta",
+      "Shehan Karunatilaka",
+      "Ocean Vuong",
+      "Han Kang",
+      "Wole Soyinka",
+      "Umberto Eco",
+      "Kenzaburo Oe",
+      "J. M. Coetzee",
+      "Milan Kundera",
+      "Dario Fo",
+      "Elena Ferrante",
+      "Orhan Pamuk",
+      "Ben Okri",
+      "Haruki Murakami"
+     ]
+    }
    ]
   },
   {
@@ -7235,8 +8196,6 @@
     "The Odyssey"
    ],
    "writers": [
-    "Homer",
-    "Sophocles",
     "Sappho",
     "Aeschylus",
     "Euripides",
@@ -7247,6 +8206,29 @@
     "Aeschylus",
     "Euripides",
     "Aristophanes"
+   ],
+   "sub": [
+    {
+     "name": "Homer",
+     "works": [
+      "Iliad",
+      "Odyssey",
+      "The Iliad",
+      "The Odyssey"
+     ],
+     "writers": [
+      "Homer"
+     ]
+    },
+    {
+     "name": "Theban Plays",
+     "aliases": [
+      "theban plays"
+     ],
+     "writers": [
+      "Sophocles"
+     ]
+    }
    ]
   },
   {
@@ -7296,8 +8278,8 @@
     "Upanishads"
    ],
    "writers": [
-    "Kalidasa",
-    "Ilango Adigal"
+    "Ilango Adigal",
+    "Kalidasa"
    ],
    "gaps": [
     "Kalidasa",
@@ -7318,7 +8300,40 @@
     "Plato",
     "Aristotle"
    ],
-   "gaps": []
+   "gaps": [],
+   "topic": true
+  },
+  {
+   "id": "detective",
+   "name": "Detective Literature",
+   "aliases": [
+    "detective literature",
+    "detective fiction",
+    "detective novel",
+    "detective novels",
+    "crime fiction"
+   ],
+   "tags": [
+    "Detective fiction"
+   ],
+   "works": [],
+   "writers": [],
+   "gaps": [],
+   "topic": true
+  },
+  {
+   "id": "hermeneutics",
+   "name": "Hermeneutics",
+   "aliases": [
+    "hermeneutics"
+   ],
+   "tags": [
+    "Hermeneutics"
+   ],
+   "works": [],
+   "writers": [],
+   "gaps": [],
+   "topic": true
   },
   {
    "id": "th-sublime",
@@ -7337,7 +8352,8 @@
    ],
    "gaps": [
     "Longinus"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-newcrit",
@@ -7369,7 +8385,8 @@
    ],
    "gaps": [
     "Northrop Frye"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-struct",
@@ -7397,7 +8414,8 @@
     "Vladimir Propp",
     "Gerard Genette",
     "Tzvetan Todorov"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-poststruct",
@@ -7423,7 +8441,8 @@
     "Geoffrey Hartman",
     "Geoffrey H. Hartman"
    ],
-   "gaps": []
+   "gaps": [],
+   "topic": true
   },
   {
    "id": "th-reader",
@@ -7445,7 +8464,8 @@
     "Jonathan Culler",
     "Roman Ingarden"
    ],
-   "gaps": []
+   "gaps": [],
+   "topic": true
   },
   {
    "id": "th-psycho",
@@ -7471,7 +8491,8 @@
    ],
    "gaps": [
     "Cathy Caruth"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-marx",
@@ -7509,7 +8530,8 @@
     "Theodor Adorno",
     "Walter Benjamin",
     "Max Horkheimer"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-feminism",
@@ -7552,7 +8574,8 @@
     "Donna Haraway",
     "Rosi Braidotti",
     "Eve Kosofsky Sedgwick"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-newhist",
@@ -7577,7 +8600,8 @@
     "Stephen Greenblatt",
     "Jonathan Dollimore",
     "Alan Sinfield"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-postcolonial",
@@ -7606,7 +8630,8 @@
     "Gayatri Chakravorty Spivak",
     "Gayatri Spivak"
    ],
-   "gaps": []
+   "gaps": [],
+   "topic": true
   },
   {
    "id": "th-postmodern",
@@ -7630,7 +8655,8 @@
    ],
    "gaps": [
     "Linda Hutcheon"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "th-indian",
@@ -7681,7 +8707,8 @@
     "Rajashekhara",
     "Vakrokti",
     "Riti"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "linguistics",
@@ -7710,7 +8737,8 @@
    "gaps": [
     "Stephen Krashen",
     "Braj Kachru"
-   ]
+   ],
+   "topic": true
   },
   {
    "id": "critics-cultural",
@@ -7718,25 +8746,13 @@
    "aliases": [
     "cultural theorists",
     "critics and cultural theorists",
-    "cultural studies",
-    "birmingham school",
-    "british cultural studies"
+    "cultural studies"
    ],
    "tags": [
-    "Cultural studies",
-    "Birmingham School"
+    "Cultural studies"
    ],
    "works": [],
    "writers": [
-    "Matthew Arnold",
-    "F. R. Leavis",
-    "Raymond Williams",
-    "Richard Hoggart",
-    "Dick Hebdige",
-    "Stuart Hall",
-    "E. P. Thompson",
-    "Pierre Bourdieu",
-    "Guy Debord",
     "K. M. Newton",
     "Marshall McLuhan",
     "Jonathan Dollimore",
@@ -7746,7 +8762,6064 @@
     "Marshall McLuhan",
     "Jonathan Dollimore",
     "Alan Sinfield"
-   ]
+   ],
+   "sub": [
+    {
+     "name": "Early British Tradition",
+     "writers": [
+      "Matthew Arnold",
+      "F. R. Leavis"
+     ]
+    },
+    {
+     "name": "British Cultural Studies (Birmingham School)",
+     "aliases": [
+      "birmingham school",
+      "british cultural studies"
+     ],
+     "tags": [
+      "Birmingham School"
+     ],
+     "writers": [
+      "Raymond Williams",
+      "Richard Hoggart",
+      "Dick Hebdige",
+      "Stuart Hall",
+      "E. P. Thompson"
+     ]
+    },
+    {
+     "name": "French Theorists",
+     "also": [
+      "french",
+      "french theorists"
+     ],
+     "writers": [
+      "Pierre Bourdieu",
+      "Guy Debord"
+     ]
+    }
+   ],
+   "topic": true
   }
- ]
+ ],
+ "writerWorksNote": "Which works belong to which writer (title → writer), checked title by title for every work tagged in the question bank. Used so that searching a writer brings only that writer's questions. Works in newly added questions are learnt by the app itself; add a title here only to correct it.",
+ "noWriterWorksNote": "Titles in the bank that belong to no single writer (anonymous works, Bibles, periodicals, films, edited collections). Listed so the app doesn't guess a writer for them.",
+ "noWriterWorks": [
+  "A Clockwork Orange",
+  "A Handbook of Critical Approaches to Literature",
+  "A Mirror for Magistrates",
+  "An Essay on Death",
+  "Authorized Version",
+  "Authorized Version (King James Bible)",
+  "Beauty",
+  "Bentley's Miscellany",
+  "Beowulf",
+  "Bhagavad Gita",
+  "Bitch",
+  "Blackwood's Magazine",
+  "Bringing Them Home",
+  "British National Corpus",
+  "Bust",
+  "Canadian Multiculturalism Act",
+  "Charaka Samhita",
+  "Chinnamul",
+  "Chrysalis",
+  "Clio",
+  "Constitution of India",
+  "Dead Fox",
+  "Deconstruction and Criticism",
+  "Desire",
+  "Diacritics",
+  "Eighth Schedule",
+  "Everyman",
+  "Fanaa",
+  "Fraser's Magazine",
+  "Gammer Gurton's Needle",
+  "Genesis",
+  "Hobson-Jobson",
+  "I Am an Indian",
+  "Indian Women in Struggle",
+  "Interventions",
+  "Iqbal",
+  "Khamosh Pani",
+  "Khamoshi: The Musical",
+  "King James Bible",
+  "Kunapipi",
+  "Lazarillo de Tormes",
+  "Longman's Magazine",
+  "MHRA Style Guide",
+  "MLA Handbook",
+  "MLA International Bibliography",
+  "MLA Style Sheet",
+  "Macmillan's Magazine",
+  "Manimekalai",
+  "Manusmriti",
+  "Margarita with a Straw",
+  "Memoirs of Martinus Scriblerus",
+  "Nalini",
+  "National Education Policy 2020",
+  "National Policy on Education",
+  "Obsidian",
+  "Official Languages Act",
+  "Official Languages Act 1963",
+  "Opportunity",
+  "Paa",
+  "Polychronicon",
+  "Postcolonial Literary Studies: The First 30 Years",
+  "Publication Manual of the APA",
+  "Ramayana",
+  "Remembered Village",
+  "Sassy",
+  "Second Shepherds' Play",
+  "Signs",
+  "Star Trek",
+  "Stories from Indian Christian Life",
+  "Stray Cats",
+  "TESOL Quarterly",
+  "The Bhagavad Gita",
+  "The Castle of Perseverance",
+  "The Chicago Manual of Style",
+  "The Dream of the Rood",
+  "The Epic of Gilgamesh",
+  "The Grocer's Children",
+  "The Illustrated Weekly of India",
+  "The London Magazine",
+  "The Monthly Review",
+  "The Owl and the Nightingale",
+  "The Oxford Companion to English Literature",
+  "The Oxford India Premchand",
+  "The People's Charter",
+  "The Principles and Practice of Narrative Medicine",
+  "The Quarterly Review",
+  "The Ramayana",
+  "The Saturday Review",
+  "The Second Turn",
+  "The Use of Poetry",
+  "Toward a Black Feminist Criticism",
+  "Upanishads",
+  "Vachanas",
+  "Women of Palestine",
+  "York cycle"
+ ],
+ "writerWorks": {
+  "A. B. Purani": [
+   "Life of Sri Aurobindo"
+  ],
+  "A. C. Bradley": [
+   "Poetry for Poetry's Sake",
+   "Shakespearean Tragedy"
+  ],
+  "A. C. Swinburne": [
+   "Poems and Ballads",
+   "The Sisters"
+  ],
+  "A. D. Hope": [
+   "A Book of Answers",
+   "Australia",
+   "Dunciad Minor",
+   "Imperial Adam",
+   "Meditation on a Bone",
+   "The Wandering Islands"
+  ],
+  "A. E. Dyson": [
+   "Black Papers on Education",
+   "Critical Quarterly"
+  ],
+  "A. K. Ramanujan": [
+   "Is There an Indian Way of Thinking? An Informal Essay",
+   "Poems of Love and War",
+   "Relations",
+   "Second Sight",
+   "Self-Portrait",
+   "Small-Scale Reflections on a Great House",
+   "Speaking of Siva",
+   "The Black Hen",
+   "The Interior Landscape",
+   "The Striders"
+  ],
+  "A. R. Ammons": [
+   "Swoggled"
+  ],
+  "A. Revathi": [
+   "The Truth about Me"
+  ],
+  "A. S. Byatt": [
+   "Possession",
+   "Possession: A Romance"
+  ],
+  "A. W. Pinero": [
+   "The Second Mrs Tanqueray"
+  ],
+  "Abdul JanMohamed": [
+   "Manichean Aesthetics"
+  ],
+  "Abdulrazak Gurnah": [
+   "Afterlives",
+   "Paradise"
+  ],
+  "Abhinavagupta": [
+   "Abhinavabhāratī"
+  ],
+  "Abraham Cowley": [
+   "Of Solitude",
+   "Pindarique Odes",
+   "The Mistress"
+  ],
+  "Adam Smith": [
+   "The Wealth of Nations"
+  ],
+  "Adil Jussawalla": [
+   "Missing Person"
+  ],
+  "Adrienne Rich": [
+   "A Change of World",
+   "A Valediction Forbidding Mourning",
+   "Aunt Jennifer's Tigers",
+   "Diving into the Wreck",
+   "Of Woman Born",
+   "Snapshots of a Daughter-in-Law",
+   "The Will to Change"
+  ],
+  "Advaita Kala": [
+   "Almost Single"
+  ],
+  "Aeschylus": [
+   "Agamemnon",
+   "Oresteia",
+   "The Eumenides",
+   "The Libation Bearers",
+   "The Oresteia"
+  ],
+  "Agatha Christie": [
+   "Death on the Nile",
+   "Murder on the Orient Express",
+   "Sparkling Cyanide",
+   "The Murder of Roger Ackroyd",
+   "The Mysterious Affair at Styles",
+   "Three Act Tragedy"
+  ],
+  "Agha Shahid Ali": [
+   "Call Me Ishmael Tonight",
+   "Postcard from Kashmir"
+  ],
+  "Ahmed Ali": [
+   "Twilight in Delhi"
+  ],
+  "Aijaz Ahmad": [
+   "In Theory: Classes, Nations, Literatures"
+  ],
+  "Aimé Césaire": [
+   "Discourse on Colonialism",
+   "Notebook of a Return to the Native Land",
+   "Une Tempête"
+  ],
+  "Akhila Naik": [
+   "Bheda"
+  ],
+  "Akira Kurosawa": [
+   "Throne of Blood"
+  ],
+  "Alain Locke": [
+   "The New Negro"
+  ],
+  "Alan Ayckbourn": [
+   "The Norman Conquests"
+  ],
+  "Alan Hollinghurst": [
+   "The Swimming-Pool Library"
+  ],
+  "Alan Paton": [
+   "Cry, the Beloved Country"
+  ],
+  "Alan Sillitoe": [
+   "Saturday Night and Sunday Morning"
+  ],
+  "Alan Sinfield": [
+   "Cultural Politics – Queer Reading",
+   "Out on Stage",
+   "Political Shakespeare"
+  ],
+  "Alasdair Gray": [
+   "Lanark"
+  ],
+  "Albert Camus": [
+   "Exile and the Kingdom",
+   "The Myth of Sisyphus",
+   "The Plague",
+   "The Rebel",
+   "The Stranger"
+  ],
+  "Aldous Huxley": [
+   "Antic Hay",
+   "Brave New World",
+   "Crome Yellow",
+   "Point Counter Point",
+   "The Doors of Perception",
+   "Those Barren Leaves"
+  ],
+  "Alexander Baumgarten": [
+   "Aesthetica"
+  ],
+  "Alexander Murray": [
+   "History of the European Languages"
+  ],
+  "Alexander Pope": [
+   "An Epistle to Dr Arbuthnot",
+   "An Essay on Criticism",
+   "An Essay on Man",
+   "Epistle to Dr Arbuthnot",
+   "Epistles to Several Persons",
+   "Epitaph intended for Sir Isaac Newton",
+   "Moral Essays",
+   "Ode on Solitude",
+   "The Dunciad",
+   "The Iliad (Pope's translation)",
+   "The Rape of the Lock",
+   "Three Hours after Marriage",
+   "Windsor-Forest"
+  ],
+  "Alexander Pushkin": [
+   "Eugene Onegin"
+  ],
+  "Alexander Veselovsky": [
+   "Historical Poetics"
+  ],
+  "Alexandre Astruc": [
+   "The Birth of a New Avant-Garde: La Caméra-Stylo"
+  ],
+  "Alexandre Dumas": [
+   "The Count of Monte Cristo"
+  ],
+  "Alexis Wright": [
+   "Plains of Promise"
+  ],
+  "Alfred Jarry": [
+   "Ubu Roi"
+  ],
+  "Alfred Tennyson": [
+   "Break, Break, Break",
+   "Crossing the Bar",
+   "Enoch Arden",
+   "Idylls of the King",
+   "In Memoriam",
+   "In Memoriam A.H.H.",
+   "Locksley Hall",
+   "Morte d'Arthur",
+   "Queen Mary",
+   "The Beggar Maid",
+   "The Charge of the Light Brigade",
+   "The Defence of Lucknow",
+   "The Lady of Shalott",
+   "The Lotos-Eaters",
+   "The Palace of Art",
+   "The Princess",
+   "Tithonus",
+   "Ulysses"
+  ],
+  "Alfred W. Crosby": [
+   "Ecological Imperialism"
+  ],
+  "Alfred the Great": [
+   "Anglo-Saxon Chronicle"
+  ],
+  "Alice Jardine": [
+   "Gynesis"
+  ],
+  "Alice Munro": [
+   "Dance of the Happy Shades",
+   "Dear Life",
+   "Hateship, Friendship, Courtship, Loveship, Marriage",
+   "Lives of Girls and Women",
+   "The Bear Came Over the Mountain"
+  ],
+  "Alice Walker": [
+   "In Search of Our Mothers' Gardens",
+   "The Color Purple"
+  ],
+  "Alistair Thomson": [
+   "The Oral History Reader"
+  ],
+  "Allan Sealy": [
+   "The Everest Hotel",
+   "The Trotter-Nama"
+  ],
+  "Allen Ginsberg": [
+   "A Supermarket in California",
+   "Howl"
+  ],
+  "Allen Tate": [
+   "Tension in Poetry"
+  ],
+  "Alok Mukherjee": [
+   "This Gift of English"
+  ],
+  "Alun Lewis": [
+   "Ha! Ha! Among the Trumpets",
+   "Raiders' Dawn"
+  ],
+  "Ama Ata Aidoo": [
+   "Our Sister Killjoy"
+  ],
+  "Amandeep Sandhu": [
+   "Roll of Honour"
+  ],
+  "Ambai": [
+   "A Purple Sea",
+   "In a Forest, A Deer"
+  ],
+  "Amiri Baraka": [
+   "Dutchman"
+  ],
+  "Amish Tripathi": [
+   "War of Lanka"
+  ],
+  "Amitav Ghosh": [
+   "Flood of Fire",
+   "Gun Island",
+   "River of Smoke",
+   "Sea of Poppies",
+   "The Calcutta Chromosome",
+   "The Circle of Reason",
+   "The Glass Palace",
+   "The Hungry Tide",
+   "The Nutmeg's Curse",
+   "The Shadow Lines"
+  ],
+  "Amitava Kumar": [
+   "A Time Outside This Time"
+  ],
+  "Amrit Shetty": [
+   "Love Over Coffee"
+  ],
+  "Amrita Pritam": [
+   "The Revenue Stamp (Rasidi Ticket)"
+  ],
+  "Amruta Patil": [
+   "Kari"
+  ],
+  "Anand Giridharadas": [
+   "India Calling"
+  ],
+  "Anand Lall": [
+   "The House at Adampur"
+  ],
+  "Anand Neelakantan": [
+   "Ajaya",
+   "Asura: Tale of the Vanquished"
+  ],
+  "Anandavardhana": [
+   "Dhvanyaloka"
+  ],
+  "Anant Pai": [
+   "Amar Chitra Katha",
+   "Tinkle"
+  ],
+  "Andre Agassi": [
+   "Open"
+  ],
+  "Andrew Marvell": [
+   "A Dialogue between the Soul and Body",
+   "An Horatian Ode upon Cromwell's Return from Ireland",
+   "The Coronet",
+   "The Definition of Love",
+   "The Garden",
+   "The Rehearsal Transpros'd",
+   "To His Coy Mistress",
+   "Upon Appleton House"
+  ],
+  "André Breton": [
+   "Manifesto of Surrealism",
+   "Surrealist Manifesto"
+  ],
+  "Angela Carter": [
+   "Nights at the Circus",
+   "The Bloody Chamber",
+   "Wise Children"
+  ],
+  "Angela McRobbie": [
+   "Feminism and Youth Culture",
+   "Jackie: An Ideology of Adolescent Femininity"
+  ],
+  "Ania Loomba": [
+   "Colonialism/Postcolonialism"
+  ],
+  "Anil Menon": [
+   "The Beast with Nine Billion Feet"
+  ],
+  "Anita Desai": [
+   "Baumgartner's Bombay",
+   "Bye-Bye Blackbird",
+   "Clear Light of Day",
+   "Cry, the Peacock",
+   "Diamond Dust",
+   "Fasting, Feasting",
+   "Fire on the Mountain",
+   "Games at Twilight",
+   "In Custody",
+   "The Village by the Sea",
+   "The Zigzag Way",
+   "Voices in the City",
+   "Where Shall We Go This Summer?"
+  ],
+  "Anita Heiss": [
+   "Not Meeting Mr Right"
+  ],
+  "Anita Rau Badami": [
+   "The Hero's Walk"
+  ],
+  "Anjana Appachana": [
+   "Listening Now"
+  ],
+  "Ann Radcliffe": [
+   "The Italian",
+   "The Mysteries of Udolpho",
+   "The Romance of the Forest"
+  ],
+  "Ann Yearsley": [
+   "A Poem on the Inhumanity of the Slave-Trade"
+  ],
+  "Anna Burns": [
+   "Milkman"
+  ],
+  "Anne Brontë": [
+   "Agnes Grey"
+  ],
+  "Anne Sexton": [
+   "The Starry Night"
+  ],
+  "Anthony Burgess": [
+   "A Dead Man in Deptford",
+   "ABBA ABBA",
+   "M/F",
+   "Nothing Like the Sun"
+  ],
+  "Anthony Powell": [
+   "A Dance to the Music of Time"
+  ],
+  "Anthony Trollope": [
+   "Barchester Towers",
+   "The Barsetshire novels"
+  ],
+  "Anthony Wilden": [
+   "The Language of the Self"
+  ],
+  "Anthony Woodbury": [
+   "What Is an Endangered Language?"
+  ],
+  "Anton Chekhov": [
+   "The Cherry Orchard",
+   "The Seagull",
+   "Three Sisters"
+  ],
+  "Antonin Artaud": [
+   "The Theatre and Its Double"
+  ],
+  "Antonio Gramsci": [
+   "Prison Notebooks",
+   "The Intellectuals"
+  ],
+  "Antonio Negri": [
+   "Empire"
+  ],
+  "Anuja Chandramouli": [
+   "Ganga: The Constant Goddess"
+  ],
+  "Anuja Chauhan": [
+   "The Zoya Factor"
+  ],
+  "Aphra Behn": [
+   "Mankind",
+   "Oroonoko",
+   "The City Heiress",
+   "The Dutch Lover",
+   "The Fair Jilt",
+   "The Rover"
+  ],
+  "Apuleius": [
+   "The Golden Ass"
+  ],
+  "Aravind Adiga": [
+   "Between the Assassinations",
+   "Last Man in Tower",
+   "The White Tiger"
+  ],
+  "Ariel Dorfman": [
+   "How to Read Donald Duck"
+  ],
+  "Aristophanes": [
+   "Acharnians",
+   "Clouds",
+   "Lysistrata",
+   "The Clouds",
+   "The Frogs",
+   "Wasps"
+  ],
+  "Aristotle": [
+   "Metaphysics",
+   "Poetics",
+   "Politics",
+   "Rhetoric"
+  ],
+  "Arjun Appadurai": [
+   "Modernity at Large"
+  ],
+  "Armand Mattelart": [
+   "How to Read Donald Duck"
+  ],
+  "Arnold Bennett": [
+   "The Old Wives' Tale"
+  ],
+  "Arnold Wesker": [
+   "Chicken Soup with Barley",
+   "Chips with Everything",
+   "I'm Talking About Jerusalem",
+   "Roots"
+  ],
+  "Art Spiegelman": [
+   "Maus"
+  ],
+  "Arthur Conan Doyle": [
+   "A Study in Scarlet",
+   "Silver Blaze",
+   "The Adventure of the Speckled Band",
+   "The Adventures of Sherlock Holmes",
+   "The Hound of the Baskervilles",
+   "The Man with the Twisted Lip",
+   "The Memoirs of Sherlock Holmes",
+   "The Musgrave Ritual"
+  ],
+  "Arthur Hugh Clough": [
+   "The Bothie of Tober-na-Vuolich"
+  ],
+  "Arthur Koestler": [
+   "Arrow in the Blue"
+  ],
+  "Arthur Miller": [
+   "After the Fall",
+   "Death of a Salesman",
+   "Incident at Vichy",
+   "Some Kind of Love Story",
+   "The Archbishop's Ceiling",
+   "The Crucible",
+   "The Price",
+   "They Too Arise"
+  ],
+  "Arthur O. Lovejoy": [
+   "The Great Chain of Being"
+  ],
+  "Arthur Quiller-Couch": [
+   "The Oxford Book of English Verse"
+  ],
+  "Arthur Symons": [
+   "The Decadent Movement in Literature",
+   "The Symbolist Movement in Literature"
+  ],
+  "Arun Joshi": [
+   "The Foreigner",
+   "The Last Labyrinth",
+   "The Survivor"
+  ],
+  "Arun Kolatkar": [
+   "A Scratch",
+   "Jejuri",
+   "Sarpa Satra"
+  ],
+  "Arundhati Roy": [
+   "The God of Small Things",
+   "The Ministry of Utmost Happiness"
+  ],
+  "Ashapurna Devi": [
+   "Subarnalata"
+  ],
+  "Ashis Nandy": [
+   "The Secret Politics of Our Desires"
+  ],
+  "Asif Currimbhoy": [
+   "An Experiment with Truth",
+   "Angkor",
+   "Goa",
+   "The Captives",
+   "The Dumb Dancer",
+   "The Hungry Ones"
+  ],
+  "Athol Fugard": [
+   "Master Harold and the Boys"
+  ],
+  "Attia Hosain": [
+   "Sunlight on a Broken Column"
+  ],
+  "Audre Lorde": [
+   "Age, Race, Class and Sex: Women Redefining Difference",
+   "Coal",
+   "Sister Outsider"
+  ],
+  "August Strindberg": [
+   "A Dream Play",
+   "Miss Julie"
+  ],
+  "Augusto Boal": [
+   "Theatre of the Oppressed"
+  ],
+  "Austin Warren": [
+   "Theory of Literature"
+  ],
+  "Avtar Brah": [
+   "Cartographies of Diaspora"
+  ],
+  "B. F. Skinner": [
+   "Verbal Behavior"
+  ],
+  "B. G. Sidharth": [
+   "The Yankee and the Yogi"
+  ],
+  "B. R. Ambedkar": [
+   "Annihilation of Caste",
+   "Federation versus Freedom",
+   "Mr Gandhi and the Emancipation of the Untouchables",
+   "The Buddha and His Dhamma",
+   "The Problem of the Rupee",
+   "Waiting for a Visa"
+  ],
+  "Baby Kamble": [
+   "The Prisons We Broke",
+   "The Prisons We Broke (Jina Amucha)"
+  ],
+  "Badal Sircar": [
+   "Bhoma",
+   "Evam Indrajit",
+   "Pagla Ghora"
+  ],
+  "Balachandra Rajan": [
+   "The Dark Dancer"
+  ],
+  "Baldassare Castiglione": [
+   "The Book of the Courtier"
+  ],
+  "Baljinder K. Mahal": [
+   "The Queen's Hinglish"
+  ],
+  "Bama": [
+   "Karukku"
+  ],
+  "Bani Basu": [
+   "The Enemy Within"
+  ],
+  "Bankim Chandra Chatterjee": [
+   "Rajmohan's Wife"
+  ],
+  "Bankim Chandra Chattopadhyay": [
+   "Anandamath",
+   "Durgeshnandini",
+   "Kapalkundala"
+  ],
+  "Bapsi Sidhwa": [
+   "Ice-Candy-Man",
+   "The Pakistani Bride"
+  ],
+  "Barbara Chase-Riboud": [
+   "Sally Hemings"
+  ],
+  "Barbara Christian": [
+   "The Race for Theory"
+  ],
+  "Barbara Herrnstein Smith": [
+   "On the Margins of Discourse"
+  ],
+  "Barbara Johnson": [
+   "A World of Difference",
+   "The Critical Difference"
+  ],
+  "Basudev Sunani": [
+   "Cast Out"
+  ],
+  "Beatrice Culleton Mosionier": [
+   "In Search of April Raintree"
+  ],
+  "Bede": [
+   "Ecclesiastical History of the English People"
+  ],
+  "Ben Jonson": [
+   "A Celebration of Charis",
+   "An Ode to Himself",
+   "Bartholomew Fair",
+   "Bartholomew Fayre",
+   "Catiline",
+   "Catiline His Conspiracy",
+   "Chloridia",
+   "Cynthia's Revels",
+   "Discoveries",
+   "Eastward Ho",
+   "Epicoene",
+   "Epicoene, or The Silent Woman",
+   "Epigrams",
+   "Every Man in His Humour",
+   "Every Man out of His Humour",
+   "Hymenaei",
+   "Inviting a Friend to Supper",
+   "Love Restored",
+   "Mercury Vindicated from the Alchemists at Court",
+   "News from the New World Discovered in the Moon",
+   "Oberon, the Faery Prince",
+   "Oberon, the Fairy Prince",
+   "On My First Daughter",
+   "On My First Son",
+   "Pleasure Reconciled to Virtue",
+   "Poetaster",
+   "Sejanus",
+   "Sejanus His Fall",
+   "Song: To Celia",
+   "The Alchemist",
+   "The Case Is Altered",
+   "The Devil Is an Ass",
+   "The English Grammar",
+   "The Forest",
+   "The Gypsies Metamorphosed",
+   "The Magnetic Lady",
+   "The Masque of Beauty",
+   "The Masque of Blackness",
+   "The Masque of Queens",
+   "The New Inn",
+   "The Poetaster",
+   "The Sad Shepherd",
+   "The Silent Woman",
+   "The Staple of News",
+   "The Vision of Delight",
+   "Timber",
+   "Timber, or Discoveries",
+   "To Celia",
+   "To Penshurst",
+   "To the Immortal Memory and Friendship of that Noble Pair, Sir Lucius Cary and Sir H. Morison",
+   "To the Memory of My Beloved, the Author Mr. William Shakespeare",
+   "Underwood",
+   "Underwoods",
+   "Volpone",
+   "Volpone, or The Fox"
+  ],
+  "Ben Okri": [
+   "Songs of Enchantment",
+   "The Famished Road"
+  ],
+  "Benedict Anderson": [
+   "Imagined Communities"
+  ],
+  "Benjamin Britten": [
+   "Billy Budd"
+  ],
+  "Benjamin Disraeli": [
+   "Coningsby",
+   "Sybil",
+   "Sybil, or The Two Nations"
+  ],
+  "Benjamin Zephaniah": [
+   "The Dread Affair"
+  ],
+  "Bertolt Brecht": [
+   "In the Jungle of Cities",
+   "Life of Galileo",
+   "Man Equals Man",
+   "Mother Courage and Her Children",
+   "Saint Joan of the Stockyards",
+   "The Caucasian Chalk Circle",
+   "The Threepenny Opera"
+  ],
+  "Bertrand Russell": [
+   "History of Western Philosophy"
+  ],
+  "Beryl Bainbridge": [
+   "A Weekend with Claude",
+   "Harriet Said",
+   "The Bottle Factory Outing"
+  ],
+  "Bessie Head": [
+   "A Question of Power"
+  ],
+  "Betty Friedan": [
+   "The Feminine Mystique"
+  ],
+  "Bhabani Bhattacharya": [
+   "A Goddess Named Gold",
+   "He Who Rides a Tiger",
+   "Music for Mohini",
+   "Shadow from Ladakh",
+   "So Many Hungers!"
+  ],
+  "Bhamaha": [
+   "Kavyalankara"
+  ],
+  "Bharata": [
+   "Natyashastra",
+   "Nāṭyaśāstra"
+  ],
+  "Bharati Mukherjee": [
+   "Darkness",
+   "Desirable Daughters",
+   "Jasmine"
+  ],
+  "Bhartrhari": [
+   "Vakyapadiya"
+  ],
+  "Bhasa": [
+   "Charudatta",
+   "Karnabharam",
+   "Svapnavasavadatta",
+   "Urubhanga"
+  ],
+  "Bhavabhuti": [
+   "Malatimadhava",
+   "Uttararamacharita"
+  ],
+  "Bhisham Sahni": [
+   "Amritsar Aa Gaya Hai",
+   "Tamas"
+  ],
+  "Bhoja": [
+   "Sringaraprakasha"
+  ],
+  "Bill Ashcroft": [
+   "The Empire Writes Back",
+   "The Post-colonial Studies Reader"
+  ],
+  "Bill Pearson": [
+   "Coal Flat"
+  ],
+  "Booker T. Washington": [
+   "Up from Slavery"
+  ],
+  "Braj B. Kachru": [
+   "The Alchemy of English",
+   "The Indianization of English"
+  ],
+  "Bram Stoker": [
+   "Dracula"
+  ],
+  "Brendan Behan": [
+   "Confessions of an Irish Rebel"
+  ],
+  "Brian Friel": [
+   "Dancing at Lughnasa",
+   "Translations"
+  ],
+  "Bruno Latour": [
+   "Reassembling the Social",
+   "We Have Never Been Modern"
+  ],
+  "Buchi Emecheta": [
+   "In the Ditch",
+   "Kehinde",
+   "Second Class Citizen",
+   "The Bride Price",
+   "The Joys of Motherhood"
+  ],
+  "C. B. Cox": [
+   "Black Papers on Education",
+   "Critical Quarterly"
+  ],
+  "C. Day Lewis": [
+   "Revolution in Writing"
+  ],
+  "C. K. Ogden": [
+   "Basic English",
+   "The Meaning of Meaning"
+  ],
+  "C. L. R. James": [
+   "The Black Jacobins"
+  ],
+  "C. P. Snow": [
+   "The Masters",
+   "The Two Cultures"
+  ],
+  "C. S. Lewis": [
+   "Prince Caspian",
+   "The Chronicles of Narnia",
+   "The Lion, the Witch and the Wardrobe"
+  ],
+  "C. W. E. Bigsby": [
+   "Modern American Drama"
+  ],
+  "Camille Paglia": [
+   "Vamps and Tramps"
+  ],
+  "Carl Jung": [
+   "The Archetypes and the Collective Unconscious"
+  ],
+  "Carol Ann Duffy": [
+   "Medusa",
+   "The World's Wife"
+  ],
+  "Carol Bolt": [
+   "Red Emma"
+  ],
+  "Carol Gilligan": [
+   "In a Different Voice"
+  ],
+  "Carol Hanisch": [
+   "The Personal Is Political"
+  ],
+  "Carol Maddison": [
+   "Apollo and the Nine"
+  ],
+  "Caryl Churchill": [
+   "Serious Money",
+   "Top Girls"
+  ],
+  "Caryl Phillips": [
+   "The European Tribe",
+   "The Nature of Blood"
+  ],
+  "Casey McQuiston": [
+   "Red, White & Royal Blue"
+  ],
+  "Catherine Belsey": [
+   "John Milton: Language, Gender, Power",
+   "The Subject of Tragedy"
+  ],
+  "Chaman Nahal": [
+   "Azadi",
+   "The Weird Dance and Other Stories"
+  ],
+  "Chandra Talpade Mohanty": [
+   "Feminism Without Borders",
+   "Under Western Eyes"
+  ],
+  "Chantal Mouffe": [
+   "Hegemony and Socialist Strategy"
+  ],
+  "Charles Baudelaire": [
+   "Les Fleurs du mal",
+   "The Painter of Modern Life"
+  ],
+  "Charles Darwin": [
+   "On the Origin of Species",
+   "The Voyage of the Beagle"
+  ],
+  "Charles Dickens": [
+   "A Christmas Carol",
+   "A Tale of Two Cities",
+   "All the Year Round",
+   "American Notes",
+   "Barnaby Rudge",
+   "Bleak House",
+   "David Copperfield",
+   "Dombey and Son",
+   "Great Expectations",
+   "Hard Times",
+   "Household Words",
+   "Little Dorrit",
+   "Martin Chuzzlewit",
+   "Nicholas Nickleby",
+   "Oliver Twist",
+   "Our Mutual Friend",
+   "Sketches by Boz",
+   "The Old Curiosity Shop",
+   "The Pickwick Papers"
+  ],
+  "Charles Dudley Warner": [
+   "The Gilded Age"
+  ],
+  "Charles Grant": [
+   "Observations on the State of Society among the Asiatic Subjects of Great Britain"
+  ],
+  "Charles Kingsley": [
+   "Hypatia"
+  ],
+  "Charles Lamb": [
+   "Essays of Elia",
+   "My Relations",
+   "Old China",
+   "On the Artificial Comedy of the Last Century",
+   "On the Tragedies of Shakspeare",
+   "Specimens of English Dramatic Poets",
+   "The South Sea House"
+  ],
+  "Charles Lyell": [
+   "Principles of Geology"
+  ],
+  "Charles Maturin": [
+   "Melmoth the Wanderer"
+  ],
+  "Charles Olson": [
+   "Projective Verse"
+  ],
+  "Charles Wilkins": [
+   "The Bhagvat-Geeta"
+  ],
+  "Charles Wood": [
+   "Wood's Despatch"
+  ],
+  "Charlotte Brontë": [
+   "Emma (fragment)",
+   "Jane Eyre",
+   "Shirley",
+   "The Professor",
+   "Villette"
+  ],
+  "Charlotte Perkins Gilman": [
+   "Herland",
+   "The Yellow Wallpaper",
+   "Women and Economics"
+  ],
+  "Cherríe Moraga": [
+   "This Bridge Called My Back"
+  ],
+  "Cheryll Glotfelty": [
+   "The Ecocriticism Reader"
+  ],
+  "Chetan Bhagat": [
+   "Five Point Someone",
+   "The 3 Mistakes of My Life"
+  ],
+  "Chimamanda Ngozi Adichie": [
+   "Americanah",
+   "Half of a Yellow Sun",
+   "Purple Hibiscus"
+  ],
+  "Chinua Achebe": [
+   "A Man of the People",
+   "An Image of Africa",
+   "Anthills of the Savannah",
+   "Arrow of God",
+   "Girls at War and Other Stories",
+   "Home and Exile",
+   "No Longer at Ease",
+   "The Novelist as Teacher",
+   "The Voter",
+   "There Was a Country",
+   "Things Fall Apart"
+  ],
+  "Chitra Banerjee Divakaruni": [
+   "Sister of My Heart",
+   "The Last Queen",
+   "The Mistress of Spices",
+   "The Palace of Illusions"
+  ],
+  "Christina Rossetti": [
+   "Goblin Market",
+   "Remember"
+  ],
+  "Christopher Brookmyre": [
+   "A Big Boy Did It and Ran Away"
+  ],
+  "Christopher Caudwell": [
+   "Illusion and Reality",
+   "Studies in a Dying Culture"
+  ],
+  "Christopher Fry": [
+   "The Lady's Not for Burning",
+   "Venus Observed"
+  ],
+  "Christopher Hill": [
+   "Milton and the English Revolution"
+  ],
+  "Christopher Isherwood": [
+   "Lions and Shadows",
+   "On the Frontier",
+   "The Ascent of F6",
+   "The Dog Beneath the Skin"
+  ],
+  "Christopher Marlowe": [
+   "Doctor Faustus",
+   "Edward II",
+   "Hero and Leander",
+   "Tamburlaine",
+   "Tamburlaine the Great",
+   "The Jew of Malta"
+  ],
+  "Claire G. Coleman": [
+   "Terra Nullius"
+  ],
+  "Claude Lévi-Strauss": [
+   "Structural Anthropology",
+   "The Raw and the Cooked",
+   "The Savage Mind"
+  ],
+  "Cleanth Brooks": [
+   "The Formalist Critics",
+   "The Language of Paradox",
+   "The Southern Review",
+   "The Well Wrought Urn",
+   "Understanding Poetry"
+  ],
+  "Clifford Geertz": [
+   "The Interpretation of Cultures"
+  ],
+  "Colin Wilson": [
+   "The Outsider"
+  ],
+  "Colley Cibber": [
+   "The Provok'd Husband"
+  ],
+  "Constantin Stanislavski": [
+   "My Life in Art"
+  ],
+  "Cormac McCarthy": [
+   "The Road"
+  ],
+  "Cornel West": [
+   "The Future of the Race"
+  ],
+  "Cornelia Sorabji": [
+   "Between the Twilights"
+  ],
+  "Coventry Patmore": [
+   "The Angel in the House"
+  ],
+  "Cyril Dabydeen": [
+   "Drums of My Flesh"
+  ],
+  "Cyril Tourneur": [
+   "The Atheist's Tragedy",
+   "The Revenger's Tragedy"
+  ],
+  "Cyrus Mistry": [
+   "Doongaji House"
+  ],
+  "D. A. Wilkins": [
+   "Notional Syllabuses"
+  ],
+  "D. F. Strauss": [
+   "The Life of Jesus"
+  ],
+  "D. G. James": [
+   "Scepticism and Poetry"
+  ],
+  "D. G. Jones": [
+   "Butterfly on Rock"
+  ],
+  "D. G. Rossetti": [
+   "A Superscription",
+   "Dante and His Circle",
+   "The Blessed Damozel",
+   "The Germ",
+   "The House of Life",
+   "The Stealthy School of Criticism"
+  ],
+  "D. H. Lawrence": [
+   "Aaron's Rod",
+   "Birds, Beasts and Flowers",
+   "Gloire de Dijon",
+   "Kangaroo",
+   "Lady Chatterley's Lover",
+   "Look! We Have Come Through!",
+   "Snake",
+   "Sons and Lovers",
+   "Sorrow",
+   "St Mawr",
+   "The Plumed Serpent",
+   "The Rainbow",
+   "The Trespasser",
+   "The White Peacock",
+   "The Widowing of Mrs Holroyd",
+   "Why the Novel Matters",
+   "Women in Love"
+  ],
+  "D. J. Enright": [
+   "It's Your Own Fault"
+  ],
+  "D. S. Kothari": [
+   "Education and National Development"
+  ],
+  "Dadabhai Naoroji": [
+   "Poverty and Un-British Rule in India"
+  ],
+  "Dale Spender": [
+   "Man Made Language"
+  ],
+  "Dandin": [
+   "Kavyadarsha"
+  ],
+  "Daniel Defoe": [
+   "A Journal of the Plague Year",
+   "Captain Singleton",
+   "Colonel Jack",
+   "Memoirs of a Cavalier",
+   "Moll Flanders",
+   "Robinson Crusoe",
+   "The Review",
+   "The Shortest Way with the Dissenters"
+  ],
+  "Daniel Jones": [
+   "English Pronouncing Dictionary"
+  ],
+  "Dante Alighieri": [
+   "Divine Comedy",
+   "Inferno",
+   "The Divine Comedy"
+  ],
+  "Darieck Scott": [
+   "Extravagant Abjection"
+  ],
+  "Dashiell Hammett": [
+   "The Maltese Falcon"
+  ],
+  "David Baker": [
+   "Meter in English"
+  ],
+  "David Gauntlett": [
+   "Making Is Connecting"
+  ],
+  "David Hare": [
+   "Murmuring Judges",
+   "Racing Demon",
+   "The Absence of War",
+   "The Power of Yes"
+  ],
+  "David Hume": [
+   "A Treatise of Human Nature",
+   "An Enquiry Concerning Human Understanding",
+   "Essays, Moral and Political"
+  ],
+  "David Kennedy": [
+   "New Relations"
+  ],
+  "David Lodge": [
+   "Changing Places",
+   "Nice Work",
+   "Small World",
+   "The British Museum Is Falling Down"
+  ],
+  "David Lyndsay": [
+   "Ane Satyre of the Thrie Estaitis"
+  ],
+  "David Malouf": [
+   "An Imaginary Life",
+   "Ransom",
+   "Remembering Babylon"
+  ],
+  "David Marr": [
+   "Patrick White: A Life"
+  ],
+  "David McCutchion": [
+   "Indian Writing in English: Critical Essays"
+  ],
+  "David Unaipon": [
+   "Native Legends"
+  ],
+  "Dayanita Singh": [
+   "Myself Mona Ahmed"
+  ],
+  "Deborah Tannen": [
+   "You Just Don't Understand"
+  ],
+  "Deepa Anappara": [
+   "Djinn Patrol on the Purple Line"
+  ],
+  "Deepti Naval": [
+   "A Country Called Childhood"
+  ],
+  "Delia da Sousa Correa": [
+   "The Handbook to Literary Research"
+  ],
+  "Dennis Scott": [
+   "An Echo in the Bone"
+  ],
+  "Denys Thompson": [
+   "Culture and Environment"
+  ],
+  "Derek Walcott": [
+   "A Far Cry from Africa",
+   "Dream on Monkey Mountain",
+   "Goats and Monkeys",
+   "Omeros",
+   "Pantomime",
+   "The Saddhu of Couva",
+   "The Schooner Flight",
+   "The Sea Is History",
+   "The Sea at Dauphin",
+   "The Star-Apple Kingdom",
+   "The Swamp"
+  ],
+  "Dev Virahsawmy": [
+   "Toufann"
+  ],
+  "Devanur Mahadeva": [
+   "Kusumabale"
+  ],
+  "Devdutt Pattanaik": [
+   "Shyam"
+  ],
+  "Dhananjaya": [
+   "Dasharupaka",
+   "Daśarūpaka"
+  ],
+  "Dharamvir Bharati": [
+   "Andha Yug",
+   "Suraj Ka Satvan Ghoda"
+  ],
+  "Dick Hebdige": [
+   "Subculture: The Meaning of Style"
+  ],
+  "Dilip Chitre": [
+   "Says Tuka"
+  ],
+  "Dilip Kumar Roy": [
+   "Among the Great"
+  ],
+  "Dina Mehta": [
+   "The Other Woman and Other Stories"
+  ],
+  "Dinabandhu Mitra": [
+   "Nil Darpan"
+  ],
+  "Dipesh Chakrabarty": [
+   "Postcoloniality and the Artifice of History",
+   "Provincializing Europe",
+   "The Climate of History in a Planetary Age"
+  ],
+  "Dom Moraes": [
+   "Kanheri Caves",
+   "My Son's Father"
+  ],
+  "Domingo Dzul Poot": [
+   "Chilam Balam"
+  ],
+  "Dominic Strinati": [
+   "An Introduction to Theories of Popular Culture"
+  ],
+  "Donald Barthelme": [
+   "Snow White"
+  ],
+  "Donald Davie": [
+   "The Shires"
+  ],
+  "Donna Haraway": [
+   "A Cyborg Manifesto",
+   "When Species Meet"
+  ],
+  "Dora Marsden": [
+   "The Egoist"
+  ],
+  "Doris Lessing": [
+   "Alfred and Emily",
+   "Children of Violence",
+   "Shikasta",
+   "The Four-Gated City",
+   "The Golden Notebook",
+   "The Good Terrorist",
+   "The Grass Is Singing",
+   "Under My Skin"
+  ],
+  "Doris Pilkington": [
+   "Caprice: A Stockman's Daughter",
+   "Follow the Rabbit-Proof Fence"
+  ],
+  "Dorothy Livesay": [
+   "Joe Derry"
+  ],
+  "Dorothy Richardson": [
+   "Pilgrimage"
+  ],
+  "Douglas Biber": [
+   "Longman Grammar of Spoken and Written English"
+  ],
+  "Dylan Thomas": [
+   "Deaths and Entrances",
+   "Fern Hill",
+   "Under Milk Wood"
+  ],
+  "E. D. Hirsch": [
+   "Validity in Interpretation"
+  ],
+  "E. D. Hirsch Jr.": [
+   "What Isn't Literature?"
+  ],
+  "E. F. Oaten": [
+   "A Sketch of Anglo-Indian Literature"
+  ],
+  "E. L. Doctorow": [
+   "Ragtime"
+  ],
+  "E. M. Forster": [
+   "A Passage to India",
+   "A Room with a View",
+   "Aspects of the Novel",
+   "Howards End",
+   "Maurice",
+   "The Celestial Omnibus",
+   "The Longest Journey",
+   "What I Believe",
+   "Where Angels Fear to Tread"
+  ],
+  "E. M. W. Tillyard": [
+   "The Elizabethan World Picture",
+   "The Muse Unchained"
+  ],
+  "E. P. Thompson": [
+   "The Making of the English Working Class"
+  ],
+  "Earl of Shaftesbury": [
+   "Characteristics of Men, Manners, Opinions, Times"
+  ],
+  "Ed Bullins": [
+   "Clara's Ole Man"
+  ],
+  "Edgar Allan Poe": [
+   "Tales of the Grotesque and Arabesque",
+   "The Fall of the House of Usher",
+   "The Murders in the Rue Morgue",
+   "The Philosophy of Composition",
+   "The Purloined Letter",
+   "The Raven",
+   "William Wilson"
+  ],
+  "Edith Sitwell": [
+   "Façade"
+  ],
+  "Edith Wharton": [
+   "The Age of Innocence"
+  ],
+  "Edmund Burke": [
+   "A Philosophical Enquiry into the Origin of Our Ideas of the Sublime and Beautiful",
+   "Reflections on the Revolution in France"
+  ],
+  "Edmund Husserl": [
+   "Logical Investigations"
+  ],
+  "Edmund Spenser": [
+   "Amoretti",
+   "Colin Clouts Come Home Againe",
+   "Daphnaïda",
+   "Epithalamion",
+   "Letter to Raleigh",
+   "Prothalamion",
+   "The Faerie Queene",
+   "The Shepheardes Calender"
+  ],
+  "Edna O'Brien": [
+   "The Country Girls"
+  ],
+  "Edna St. Vincent Millay": [
+   "Apostrophe to Man"
+  ],
+  "Edward Albee": [
+   "A Delicate Balance",
+   "The American Dream",
+   "The Crying of Lot 49",
+   "The Zoo Story",
+   "Tiny Alice",
+   "Who's Afraid of Virginia Woolf?"
+  ],
+  "Edward Bond": [
+   "Bingo",
+   "Lear",
+   "Saved"
+  ],
+  "Edward Bulwer-Lytton": [
+   "Richelieu"
+  ],
+  "Edward Cave": [
+   "The Gentleman's Magazine"
+  ],
+  "Edward Gibbon": [
+   "The Decline and Fall of the Roman Empire",
+   "The History of the Decline and Fall of the Roman Empire"
+  ],
+  "Edward Larrissy": [
+   "Reading Twentieth-Century Poetry"
+  ],
+  "Edward Marsh": [
+   "Georgian Poetry"
+  ],
+  "Edward Sapir": [
+   "Language"
+  ],
+  "Edward Soja": [
+   "Postmetropolis",
+   "Postmodern Geographies",
+   "Thirdspace"
+  ],
+  "Edward Thomas": [
+   "Adlestrop"
+  ],
+  "Edward W. Said": [
+   "Culture and Imperialism",
+   "Joseph Conrad and the Fiction of Autobiography",
+   "On Late Style",
+   "Orientalism",
+   "Out of Place",
+   "The Question of Palestine",
+   "The World, the Text, and the Critic",
+   "White Mythologies"
+  ],
+  "Edward Young": [
+   "Night Thoughts"
+  ],
+  "Ekow Eshun": [
+   "Black Gold of the Sun"
+  ],
+  "Elaine Showalter": [
+   "A Literature of Their Own",
+   "Feminist Criticism in the Wilderness",
+   "Sexual Anarchy",
+   "Toward a Feminist Poetics",
+   "Towards a Feminist Poetics"
+  ],
+  "Eleanor Catton": [
+   "Birnam Wood"
+  ],
+  "Elizabeth Barrett Browning": [
+   "Aurora Leigh",
+   "Sonnets from the Portuguese"
+  ],
+  "Elizabeth Bishop": [
+   "Geography III",
+   "North & South"
+  ],
+  "Elizabeth Bowen": [
+   "The Last September"
+  ],
+  "Elizabeth Gaskell": [
+   "Mary Barton",
+   "North and South",
+   "Wives and Daughters"
+  ],
+  "Elizabeth I": [
+   "When I was fair and young"
+  ],
+  "Elizabeth Keckley": [
+   "Behind the Scenes"
+  ],
+  "Ellen Moers": [
+   "Literary Women"
+  ],
+  "Elmer Rice": [
+   "The Adding Machine"
+  ],
+  "Emily Brontë": [
+   "Wuthering Heights"
+  ],
+  "Emily Dickinson": [
+   "A Bird came down the Walk",
+   "After great pain, a formal feeling comes",
+   "Because I could not stop for Death",
+   "I heard a Fly buzz – when I died",
+   "I like a look of Agony",
+   "Success is counted sweetest"
+  ],
+  "Emmanuel Levinas": [
+   "Totality and Infinity"
+  ],
+  "Eoin Colfer": [
+   "Artemis Fowl"
+  ],
+  "Eric Bentley": [
+   "The Life of the Drama",
+   "The Playwright as Thinker"
+  ],
+  "Eric Partridge": [
+   "Usage and Abusage"
+  ],
+  "Erich Auerbach": [
+   "Mimesis"
+  ],
+  "Ernest Gellner": [
+   "Nations and Nationalism"
+  ],
+  "Ernest Gowers": [
+   "The Complete Plain Words"
+  ],
+  "Ernest Hemingway": [
+   "A Clean, Well-Lighted Place",
+   "A Farewell to Arms",
+   "Across the River and into the Trees",
+   "Green Hills of Africa",
+   "The Killers",
+   "The Old Man and the Sea",
+   "The Sun Also Rises"
+  ],
+  "Ernest Jones": [
+   "Hamlet and Oedipus"
+  ],
+  "Ernest Mandel": [
+   "Late Capitalism"
+  ],
+  "Ernst Cassirer": [
+   "The Philosophy of Symbolic Forms"
+  ],
+  "Ernst-August Gutt": [
+   "Translation and Relevance"
+  ],
+  "Essex Hemphill": [
+   "Brother to Brother"
+  ],
+  "Eugene O'Neill": [
+   "All God's Chillun Got Wings",
+   "Anna Christie",
+   "Beyond the Horizon",
+   "Bound East for Cardiff",
+   "Long Day's Journey into Night",
+   "Strange Interlude",
+   "The Emperor Jones",
+   "The Hairy Ape",
+   "The Iceman Cometh"
+  ],
+  "Eugène Ionesco": [
+   "Amédée, or How to Get Rid of It",
+   "Rhinoceros",
+   "The Bald Soprano",
+   "The Chairs"
+  ],
+  "Eunice de Souza": [
+   "Advice to Women"
+  ],
+  "Euripides": [
+   "Alcestis",
+   "Hippolytus",
+   "Medea",
+   "The Suppliants"
+  ],
+  "Eve Kosofsky Sedgwick": [
+   "Between Men",
+   "Epistemology of the Closet"
+  ],
+  "Evelyn Waugh": [
+   "A Handful of Dust",
+   "Brideshead Revisited",
+   "Decline and Fall",
+   "Men at Arms",
+   "Officers and Gentlemen",
+   "Rossetti: His Life and Works",
+   "Sword of Honour",
+   "The Man Who Liked Dickens",
+   "Unconditional Surrender"
+  ],
+  "Ezra Pound": [
+   "A Few Don'ts by an Imagiste",
+   "A Retrospect",
+   "ABC of Reading",
+   "Des Imagistes",
+   "How to Read",
+   "Hugh Selwyn Mauberley",
+   "In a Station of the Metro",
+   "The Cantos"
+  ],
+  "F. J. Turner": [
+   "The Significance of the Frontier in American History"
+  ],
+  "F. R. Leavis": [
+   "Culture and Environment",
+   "Education and the University",
+   "New Bearings in English Poetry",
+   "Revaluation",
+   "Scrutiny",
+   "The Great Tradition"
+  ],
+  "F. Scott Fitzgerald": [
+   "Tales of the Jazz Age",
+   "The Great Gatsby"
+  ],
+  "F. T. Marinetti": [
+   "The Founding and Manifesto of Futurism",
+   "The Futurist Manifesto"
+  ],
+  "Fanny Burney": [
+   "Evelina"
+  ],
+  "Fay Weldon": [
+   "The Life and Loves of a She-Devil"
+  ],
+  "Federico García Lorca": [
+   "Lament for Ignacio Sánchez Mejías"
+  ],
+  "Ferdinand de Saussure": [
+   "Course in General Linguistics"
+  ],
+  "Fiona Tolan": [
+   "Feminisms"
+  ],
+  "Firdausi": [
+   "Shahnameh"
+  ],
+  "Ford Madox Ford": [
+   "The English Review",
+   "The Good Soldier"
+  ],
+  "Frances Hodgson Burnett": [
+   "The Secret Garden"
+  ],
+  "Francis Bacon": [
+   "De Augmentis Scientiarum",
+   "Essays",
+   "History of the Reign of King Henry VII",
+   "New Atlantis",
+   "Novum Organum",
+   "Of Ambition",
+   "Of Death",
+   "Of Great Place",
+   "Of Studies",
+   "Of Suspicion",
+   "Of Travel",
+   "Of Unity in Religion",
+   "The Advancement of Learning",
+   "The New Atlantis"
+  ],
+  "Francis Beaumont": [
+   "Cupid's Revenge",
+   "Philaster",
+   "The Knight of the Burning Pestle",
+   "The Maid's Tragedy"
+  ],
+  "Francis Fergusson": [
+   "The Idea of a Theater"
+  ],
+  "Francis Fukuyama": [
+   "The End of History and the Last Man"
+  ],
+  "Francis Hutcheson": [
+   "An Inquiry into the Original of Our Ideas of Beauty and Virtue"
+  ],
+  "Francis Jeffrey": [
+   "Edinburgh Review",
+   "Quarterly Review",
+   "The Edinburgh Review"
+  ],
+  "Francis Mulhern": [
+   "Contemporary Marxist Literary Criticism"
+  ],
+  "Francis Quarles": [
+   "Emblemes",
+   "Emblems"
+  ],
+  "Frank Kermode": [
+   "An Appetite for Poetry",
+   "Not Entitled",
+   "Romantic Image",
+   "The Genesis of Secrecy",
+   "The Sense of an Ending"
+  ],
+  "Frank Schätzing": [
+   "The Swarm"
+  ],
+  "Franklin Edgerton": [
+   "The Panchatantra Reconstructed"
+  ],
+  "Frantz Fanon": [
+   "Black Skin, White Masks",
+   "The Wretched of the Earth",
+   "Toward the African Revolution"
+  ],
+  "Franz Kafka": [
+   "Amerika",
+   "The Castle",
+   "The Metamorphosis",
+   "The Trial"
+  ],
+  "Françoise d'Eaubonne": [
+   "Le Féminisme ou la mort"
+  ],
+  "Frederick Douglass": [
+   "Narrative of the Life of Frederick Douglass"
+  ],
+  "Frederick S. Boas": [
+   "Shakspere and His Predecessors"
+  ],
+  "Fredric Jameson": [
+   "Postmodernism, or, the Cultural Logic of Late Capitalism",
+   "The Cultural Turn",
+   "The Political Unconscious"
+  ],
+  "Fredson Bowers": [
+   "Principles of Bibliographical Description"
+  ],
+  "Friedrich Engels": [
+   "The Condition of the Working Class in England",
+   "The German Ideology"
+  ],
+  "Friedrich Nietzsche": [
+   "The Birth of Tragedy",
+   "The Gay Science",
+   "The Will to Power"
+  ],
+  "Friedrich Schiller": [
+   "The Robbers"
+  ],
+  "Fyodor Dostoevsky": [
+   "Crime and Punishment",
+   "Notes from Underground",
+   "Poor Folk",
+   "The Brothers Karamazov",
+   "The Grand Inquisitor",
+   "The Idiot"
+  ],
+  "Félix Guattari": [
+   "A Thousand Plateaus",
+   "Anti-Oedipus",
+   "Kafka: Toward a Minor Literature"
+  ],
+  "G. M. Hopkins": [
+   "As Kingfishers Catch Fire",
+   "No worst, there is none",
+   "Poems of Gerard Manley Hopkins",
+   "The Windhover",
+   "The Wreck of the Deutschland"
+  ],
+  "G. N. Devy": [
+   "After Amnesia"
+  ],
+  "G. N. Shuster": [
+   "The English Ode from Milton to Keats"
+  ],
+  "G. V. Desani": [
+   "All About H. Hatterr"
+  ],
+  "G. W. F. Hegel": [
+   "The Phenomenology of Spirit"
+  ],
+  "Gabriel García Márquez": [
+   "Living to Tell the Tale",
+   "Love in the Time of Cholera",
+   "One Hundred Years of Solitude",
+   "The General in His Labyrinth",
+   "The Solitude of Latin America"
+  ],
+  "Gabriele Griffin": [
+   "Research Methods for English Studies"
+  ],
+  "Gabrielle Zevin": [
+   "Tomorrow, and Tomorrow, and Tomorrow"
+  ],
+  "Gaiutra Bahadur": [
+   "Coolie Woman"
+  ],
+  "Gauri Viswanathan": [
+   "Masks of Conquest"
+  ],
+  "Gautam Bhatia": [
+   "The Wall"
+  ],
+  "Gawain poet": [
+   "Sir Gawain and the Green Knight"
+  ],
+  "Gayatri Chakravorty Spivak": [
+   "A Critique of Postcolonial Reason",
+   "Can the Subaltern Speak?",
+   "In Other Worlds",
+   "The Politics of Translation",
+   "Three Women's Texts and a Critique of Imperialism"
+  ],
+  "Geetanjali Shree": [
+   "Bel Patra",
+   "Mai",
+   "Tomb of Sand"
+  ],
+  "Geoffrey Chaucer": [
+   "General Prologue",
+   "Parliament of Fowls",
+   "Tale of Melibee",
+   "Tale of Sir Thopas",
+   "The Book of the Duchess",
+   "The Canterbury Tales",
+   "The General Prologue",
+   "The House of Fame",
+   "The Knight's Tale",
+   "The Legend of Good Women",
+   "The Miller's Tale",
+   "The Nun's Priest's Tale",
+   "The Pardoner's Tale",
+   "The Parliament of Fowls",
+   "The Parson's Tale",
+   "The Prioress's Tale",
+   "The Romaunt of the Rose",
+   "The Wife of Bath's Prologue and Tale",
+   "Troilus and Criseyde"
+  ],
+  "Geoffrey Hartman": [
+   "Criticism in the Wilderness",
+   "Saving the Text"
+  ],
+  "Geoffrey Hill": [
+   "For the Unfallen",
+   "Lachrimae",
+   "Mercian Hymns",
+   "Tenebrae"
+  ],
+  "Georg Lukács": [
+   "The Historical Novel",
+   "The Theory of the Novel"
+  ],
+  "George Berkeley": [
+   "An Essay Towards a New Theory of Vision"
+  ],
+  "George Bernard Shaw": [
+   "Arms and the Man",
+   "Back to Methuselah",
+   "Candida",
+   "Heartbreak House",
+   "John Bull's Other Island",
+   "Man and Superman",
+   "Mrs Warren's Profession",
+   "Pygmalion",
+   "Saint Joan",
+   "The Dark Lady of the Sonnets",
+   "The Doctor's Dilemma",
+   "Too True to Be Good",
+   "You Never Can Tell"
+  ],
+  "George Chapman": [
+   "All Fools",
+   "Bussy D'Ambois",
+   "Eastward Ho"
+  ],
+  "George Crabbe": [
+   "The Village"
+  ],
+  "George Eliot": [
+   "Adam Bede",
+   "Daniel Deronda",
+   "Felix Holt, the Radical",
+   "Middlemarch",
+   "Romola",
+   "Scenes of Clerical Life",
+   "Silas Marner",
+   "Silly Novels by Lady Novelists",
+   "The Mill on the Floss"
+  ],
+  "George Etherege": [
+   "The Man of Mode"
+  ],
+  "George Farquhar": [
+   "The Recruiting Officer"
+  ],
+  "George Gascoigne": [
+   "Supposes",
+   "The Steel Glass"
+  ],
+  "George Gissing": [
+   "New Grub Street",
+   "The Odd Women"
+  ],
+  "George Herbert": [
+   "Easter Wings",
+   "The Altar",
+   "The Collar",
+   "The Temple"
+  ],
+  "George Lamming": [
+   "In the Castle of My Skin",
+   "The Pleasures of Exile"
+  ],
+  "George Mackay Brown": [
+   "Beside the Ocean of Time"
+  ],
+  "George Manuel": [
+   "The Fourth World"
+  ],
+  "George Mathen": [
+   "Moonward"
+  ],
+  "George Meredith": [
+   "Evan Harrington",
+   "Modern Love",
+   "The Ordeal of Richard Feverel"
+  ],
+  "George Orwell": [
+   "Animal Farm",
+   "Burmese Days",
+   "Down and Out in Paris and London",
+   "Inside the Whale",
+   "Lear, Tolstoy and the Fool",
+   "Nineteen Eighty-Four",
+   "Politics and the English Language",
+   "Rudyard Kipling (essay)",
+   "Shooting an Elephant",
+   "The Road to Wigan Pier",
+   "Why I Write"
+  ],
+  "George Peele": [
+   "Edward I",
+   "The Arraignment of Paris"
+  ],
+  "George Puttenham": [
+   "The Art of English Poesy",
+   "The Arte of English Poesie"
+  ],
+  "George Saintsbury": [
+   "A History of English Prose Rhythm"
+  ],
+  "George Villiers": [
+   "The Rehearsal"
+  ],
+  "George Yule": [
+   "The Study of Language"
+  ],
+  "Georgi Gospodinov": [
+   "Time Shelter"
+  ],
+  "Gerald Graff": [
+   "Professing Literature"
+  ],
+  "Germaine Greer": [
+   "The Female Eunuch"
+  ],
+  "Gerrard Winstanley": [
+   "The New Law of Righteousness"
+  ],
+  "Giambattista Vico": [
+   "The New Science"
+  ],
+  "Gieve Patel": [
+   "Mister Behram",
+   "Savaksa"
+  ],
+  "Gilles Deleuze": [
+   "A Thousand Plateaus",
+   "Anti-Oedipus",
+   "Kafka: Toward a Minor Literature"
+  ],
+  "Giorgio Agamben": [
+   "Homo Sacer",
+   "Remnants of Auschwitz"
+  ],
+  "Giovanni Boccaccio": [
+   "The Decameron"
+  ],
+  "Girish Karnad": [
+   "Bali: The Sacrifice",
+   "Flowers",
+   "Hayavadana",
+   "Naga-Mandala",
+   "The Fire and the Rain",
+   "Tughlaq",
+   "Yayati"
+  ],
+  "Githa Hariharan": [
+   "The Ghosts of Vasu Master",
+   "The Thousand Faces of Night"
+  ],
+  "Gloria Anzaldúa": [
+   "Borderlands/La Frontera",
+   "This Bridge Called My Back"
+  ],
+  "Gopinath Mohanty": [
+   "Amrutara Santana"
+  ],
+  "Graeme Turner": [
+   "British Cultural Studies: An Introduction"
+  ],
+  "Graham Greene": [
+   "A Sort of Life",
+   "Brighton Rock",
+   "England Made Me",
+   "The Comedians",
+   "The End of the Affair",
+   "The Heart of the Matter",
+   "The Honorary Consul",
+   "The Human Factor",
+   "The Lawless Roads",
+   "The Man Within",
+   "The Ministry of Fear",
+   "The Power and the Glory",
+   "The Quiet American",
+   "The Third Man"
+  ],
+  "Graham Swift": [
+   "Waterland"
+  ],
+  "Gregory Woods": [
+   "A History of Gay Literature"
+  ],
+  "Guillaume de Lorris": [
+   "Roman de la Rose"
+  ],
+  "Gulzar": [
+   "Angoor"
+  ],
+  "Gurcharan Das": [
+   "Larins Sahib",
+   "Mira"
+  ],
+  "Gustav Freytag": [
+   "Technique of the Drama"
+  ],
+  "Gustave Flaubert": [
+   "A Simple Heart",
+   "Madame Bovary",
+   "Sentimental Education",
+   "The Temptation of Saint Anthony"
+  ],
+  "Gwen Pharis Ringwood": [
+   "Dark Harvest"
+  ],
+  "Gérard Genette": [
+   "Narrative Discourse",
+   "Palimpsests",
+   "Seuils"
+  ],
+  "Günter Grass": [
+   "Cat and Mouse",
+   "Dog Years",
+   "The Tin Drum"
+  ],
+  "H. G. Wells": [
+   "The Time Machine",
+   "Tono-Bungay"
+  ],
+  "H. M. Green": [
+   "A History of Australian Literature"
+  ],
+  "H. R. F. Keating": [
+   "The Perfect Murder"
+  ],
+  "H. Rider Haggard": [
+   "Allan Quatermain"
+  ],
+  "H. W. Fowler": [
+   "A Dictionary of Modern English Usage"
+  ],
+  "Habib Tanvir": [
+   "Agra Bazar"
+  ],
+  "Hanif Kureishi": [
+   "Loose Tongues",
+   "The Black Album",
+   "The Buddha of Suburbia"
+  ],
+  "Hannah Arendt": [
+   "Lying in Politics"
+  ],
+  "Hannah Crafts": [
+   "The Bondwoman's Narrative"
+  ],
+  "Hannah More": [
+   "Slavery, a Poem"
+  ],
+  "Hans Richter": [
+   "The Film Essay"
+  ],
+  "Hans Robert Jauss": [
+   "Toward an Aesthetic of Reception"
+  ],
+  "Hansda Sowvendra Shekhar": [
+   "The Adivasi Will Not Dance"
+  ],
+  "Harindranath Chattopadhyay": [
+   "The Feast of Youth"
+  ],
+  "Harish Trivedi": [
+   "Colonial Transactions",
+   "Post-colonial Translation"
+  ],
+  "Harold Bloom": [
+   "A Map of Misreading",
+   "Poetry and Repression",
+   "The Anxiety of Influence",
+   "The Visionary Company",
+   "The Western Canon"
+  ],
+  "Harold Pinter": [
+   "Betrayal",
+   "Family Voices",
+   "Mountain Language",
+   "No Man's Land",
+   "One for the Road",
+   "The Birthday Party",
+   "The Caretaker",
+   "The Dumb Waiter",
+   "The Homecoming",
+   "The Proust Screenplay",
+   "The Room",
+   "Writing for the Theatre"
+  ],
+  "Harriet Jacobs": [
+   "Incidents in the Life of a Slave Girl"
+  ],
+  "Harriet Monroe": [
+   "Poetry"
+  ],
+  "Harsha": [
+   "Ratnavali"
+  ],
+  "Haruki Murakami": [
+   "Drive My Car",
+   "Men Without Women",
+   "The Wind-Up Bird Chronicle"
+  ],
+  "Harun Farocki": [
+   "As You See"
+  ],
+  "Hayden White": [
+   "Metahistory"
+  ],
+  "Hazel Carby": [
+   "Reconstructing Womanhood"
+  ],
+  "Heinrich Heine": [
+   "Buch der Lieder"
+  ],
+  "Helen Gardner": [
+   "The Business of Criticism"
+  ],
+  "Henri Lefebvre": [
+   "Critique of Everyday Life",
+   "The Production of Space"
+  ],
+  "Henrietta Maria Bowdler": [
+   "The Family Shakespeare"
+  ],
+  "Henrik Ibsen": [
+   "A Doll's House",
+   "An Enemy of the People",
+   "Ghosts",
+   "Hedda Gabler"
+  ],
+  "Henry David Thoreau": [
+   "Civil Disobedience",
+   "Smoke",
+   "Walden"
+  ],
+  "Henry Fielding": [
+   "Joseph Andrews",
+   "Shamela",
+   "Tom Jones"
+  ],
+  "Henry Howard, Earl of Surrey": [
+   "Aeneid (Surrey's translation)",
+   "So Cruel Prison How Could Betide"
+  ],
+  "Henry James": [
+   "Daisy Miller",
+   "Hawthorne",
+   "The Ambassadors",
+   "The Art of Fiction",
+   "The Golden Bowl",
+   "The Portrait of a Lady",
+   "The Spoils of Poynton",
+   "The Tragic Muse",
+   "The Two Magics"
+  ],
+  "Henry King": [
+   "An Exequy to His Matchless Never to Be Forgotten Friend"
+  ],
+  "Henry Louis Gates Jr.": [
+   "Black Literature and Literary Theory",
+   "The Signifying Monkey"
+  ],
+  "Henry Louis Vivian Derozio": [
+   "The Harp of India",
+   "To India – My Native Land"
+  ],
+  "Henry Mackenzie": [
+   "The Man of Feeling",
+   "The Mirror",
+   "The Story of La Roche"
+  ],
+  "Henry Mayhew": [
+   "London Labour and the London Poor"
+  ],
+  "Henry Miller": [
+   "Tropic of Cancer"
+  ],
+  "Henry Newbolt": [
+   "The Teaching of English in England"
+  ],
+  "Henry Owuor-Anyumba": [
+   "On the Abolition of the English Department"
+  ],
+  "Henry Vaughan": [
+   "The Retreat"
+  ],
+  "Herbert Marcuse": [
+   "One-Dimensional Man"
+  ],
+  "Herbert Read": [
+   "To Hell with Culture"
+  ],
+  "Herman Melville": [
+   "Bartleby, the Scrivener",
+   "Moby-Dick",
+   "Omoo",
+   "Typee"
+  ],
+  "Hermann Hesse": [
+   "Siddhartha",
+   "Steppenwolf"
+  ],
+  "Hippocrates": [
+   "Aphorisms"
+  ],
+  "Hippolyte Taine": [
+   "History of English Literature"
+  ],
+  "Homer": [
+   "Iliad",
+   "Odyssey",
+   "The Odyssey"
+  ],
+  "Homi K. Bhabha": [
+   "DissemiNation",
+   "Nation and Narration",
+   "Of Mimicry and Man",
+   "Signs Taken for Wonders",
+   "The Location of Culture"
+  ],
+  "Honoré de Balzac": [
+   "La Comédie humaine",
+   "Le Père Goriot",
+   "Lost Illusions",
+   "Thérèse Raquin"
+  ],
+  "Horace": [
+   "Ars Poetica"
+  ],
+  "Horace Walpole": [
+   "The Castle of Otranto"
+  ],
+  "Howard Jacobson": [
+   "J"
+  ],
+  "Hugh Conway": [
+   "Called Back"
+  ],
+  "Hugh Kenner": [
+   "The Pound Era"
+  ],
+  "Hugo Gernsback": [
+   "Amazing Stories",
+   "Ralph 124C 41+"
+  ],
+  "Humayun Kabir": [
+   "Men and Rivers"
+  ],
+  "Hélène Cixous": [
+   "The Laugh of the Medusa"
+  ],
+  "I. A. Richards": [
+   "Practical Criticism",
+   "Practical Criticism: A Study of Literary Judgment",
+   "Principles of Literary Criticism",
+   "Science and Poetry",
+   "The Meaning of Meaning",
+   "The Philosophy of Rhetoric"
+  ],
+  "Ian McEwan": [
+   "Amsterdam",
+   "Atonement",
+   "Enduring Love",
+   "Nutshell",
+   "On Chesil Beach",
+   "Saturday",
+   "The Child in Time"
+  ],
+  "Ian Watt": [
+   "The Rise of the Novel"
+  ],
+  "Ien Ang": [
+   "Watching Dallas"
+  ],
+  "Ignatius Sancho": [
+   "Letters of the Late Ignatius Sancho"
+  ],
+  "Ilango Adigal": [
+   "Cilappatikaram"
+  ],
+  "Immanuel Kant": [
+   "Critique of Judgement",
+   "Critique of Pure Reason",
+   "Groundwork of the Metaphysics of Morals",
+   "What Is Enlightenment?"
+  ],
+  "Imtiaz Dharker": [
+   "Postcards from God",
+   "Purdah and Other Poems"
+  ],
+  "Indira Ganesan": [
+   "Inheritance"
+  ],
+  "Indra Sinha": [
+   "Animal's People"
+  ],
+  "Intizar Husain": [
+   "Basti"
+  ],
+  "Iris Murdoch": [
+   "The Bell",
+   "The Sea, the Sea",
+   "Under the Net"
+  ],
+  "Irvine Welsh": [
+   "Filth",
+   "The Acid House",
+   "Trainspotting"
+  ],
+  "Isaiah Berlin": [
+   "The Hedgehog and the Fox"
+  ],
+  "Ismat Chughtai": [
+   "Jadein"
+  ],
+  "Italo Calvino": [
+   "If on a Winter's Night a Traveller",
+   "The Castle of Crossed Destinies"
+  ],
+  "Ivan Turgenev": [
+   "Fathers and Sons",
+   "The Diary of a Superfluous Man"
+  ],
+  "Izaak Walton": [
+   "Lives",
+   "The Compleat Angler"
+  ],
+  "J. C. Smith": [
+   "A Study of Wordsworth"
+  ],
+  "J. D. Salinger": [
+   "The Catcher in the Rye"
+  ],
+  "J. D. Scott": [
+   "In the Movement"
+  ],
+  "J. G. Ballard": [
+   "Concrete Island",
+   "Empire of the Sun",
+   "The Atrocity Exhibition",
+   "The Crystal World",
+   "The Drowned World"
+  ],
+  "J. G. Farrell": [
+   "The Lung",
+   "The Siege of Krishnapur",
+   "The Singapore Grip",
+   "Troubles"
+  ],
+  "J. Hillis Miller": [
+   "The Critic as Host"
+  ],
+  "J. I. M. Stewart": [
+   "Lament for a Maker"
+  ],
+  "J. K. Rowling": [
+   "Harry Potter and the Goblet of Fire",
+   "Harry Potter series",
+   "The Ink Black Heart"
+  ],
+  "J. L. Austin": [
+   "How to Do Things with Words"
+  ],
+  "J. L. Styan": [
+   "Modern Drama in Theory and Practice"
+  ],
+  "J. M. Barrie": [
+   "A Window in Thrums",
+   "Peter Pan"
+  ],
+  "J. M. Coetzee": [
+   "Disgrace",
+   "Foe",
+   "Life & Times of Michael K",
+   "The Childhood of Jesus"
+  ],
+  "J. M. Synge": [
+   "In the Shadow of the Glen",
+   "The Playboy of the Western World"
+  ],
+  "J. R. R. Tolkien": [
+   "The Hobbit",
+   "The Lord of the Rings"
+  ],
+  "J. W. von Goethe": [
+   "Faust",
+   "The Sorrows of Young Werther",
+   "Wilhelm Meister's Apprenticeship"
+  ],
+  "Jack Davis": [
+   "Barungin"
+  ],
+  "Jack Kerouac": [
+   "On the Road"
+  ],
+  "Jacob Grimm": [
+   "Deutsche Grammatik"
+  ],
+  "Jacques Derrida": [
+   "Archive Fever",
+   "Glas",
+   "Limited Inc",
+   "Of Grammatology",
+   "Plato's Pharmacy",
+   "Signature Event Context",
+   "Structure, Sign, and Play",
+   "Structure, Sign, and Play in the Discourse of the Human Sciences",
+   "The Truth in Painting",
+   "Writing and Difference"
+  ],
+  "Jacques Lacan": [
+   "The Instance of the Letter in the Unconscious",
+   "Écrits"
+  ],
+  "Jamaica Kincaid": [
+   "A Small Place",
+   "Annie John"
+  ],
+  "James Augustus Hicky": [
+   "Hicky's Bengal Gazette"
+  ],
+  "James Baldwin": [
+   "Another Country",
+   "Everybody's Protest Novel",
+   "Go Tell It on the Mountain",
+   "No Name in the Street"
+  ],
+  "James Boswell": [
+   "Life of Johnson",
+   "Life of Samuel Johnson",
+   "The Life of Samuel Johnson"
+  ],
+  "James Ellroy": [
+   "Brown's Requiem",
+   "L.A. Confidential",
+   "My Dark Places",
+   "The Black Dahlia"
+  ],
+  "James Fenimore Cooper": [
+   "The Deerslayer",
+   "The Last of the Mohicans",
+   "The Leatherstocking Tales"
+  ],
+  "James George Frazer": [
+   "The Golden Bough"
+  ],
+  "James Jones": [
+   "From Here to Eternity"
+  ],
+  "James Joyce": [
+   "A Portrait of the Artist as a Young Man",
+   "Dubliners",
+   "Finnegans Wake",
+   "Stephen Hero",
+   "Ulysses"
+  ],
+  "James Murray": [
+   "Oxford English Dictionary"
+  ],
+  "James Thomson": [
+   "The Castle of Indolence",
+   "The Seasons"
+  ],
+  "Jane Austen": [
+   "Emma",
+   "Mansfield Park",
+   "Northanger Abbey",
+   "Persuasion",
+   "Plan of a Novel",
+   "Pride and Prejudice",
+   "Sanditon",
+   "Sense and Sensibility",
+   "The Watsons"
+  ],
+  "Jane Collins": [
+   "Reading National Geographic"
+  ],
+  "Jane Rule": [
+   "Desert of the Heart"
+  ],
+  "Janice Radway": [
+   "Reading the Romance"
+  ],
+  "Jawaharlal Nehru": [
+   "An Autobiography",
+   "Toward Freedom"
+  ],
+  "Jay McInerney": [
+   "Bright Lights, Big City"
+  ],
+  "Jayanta Mahapatra": [
+   "Dawn at Puri",
+   "Hunger",
+   "Relationship",
+   "Sunset at Puri"
+  ],
+  "Jean Baudrillard": [
+   "Simulacra and Simulation",
+   "The Gulf War Did Not Take Place"
+  ],
+  "Jean Racine": [
+   "Phèdre"
+  ],
+  "Jean Rhys": [
+   "After Leaving Mr Mackenzie",
+   "Good Morning, Midnight",
+   "Quartet",
+   "The Left Bank",
+   "Voyage in the Dark",
+   "Wide Sargasso Sea"
+  ],
+  "Jean de Meun": [
+   "Roman de la Rose"
+  ],
+  "Jean-François Lyotard": [
+   "The Postmodern Condition"
+  ],
+  "Jean-Jacques Rousseau": [
+   "The Social Contract",
+   "Émile"
+  ],
+  "Jean-Paul Sartre": [
+   "Being and Nothingness",
+   "Les Temps modernes",
+   "No Exit",
+   "The Flies",
+   "The Transcendence of the Ego"
+  ],
+  "Jeanette Winterson": [
+   "Oranges Are Not the Only Fruit",
+   "Written on the Body"
+  ],
+  "Jeremy Bentham": [
+   "Panopticon",
+   "The Westminster Review"
+  ],
+  "Jeremy Collier": [
+   "A Short View of the Immorality and Profaneness of the English Stage"
+  ],
+  "Jeremy Taylor": [
+   "Holy Dying",
+   "Holy Living",
+   "The Worthy Communicant"
+  ],
+  "Jerome K. Jerome": [
+   "Three Men in a Boat"
+  ],
+  "Jerome McGann": [
+   "A Critique of Modern Textual Criticism",
+   "Radiant Textuality"
+  ],
+  "Jerzy Grotowski": [
+   "Towards a Poor Theatre"
+  ],
+  "Jessie Weston": [
+   "From Ritual to Romance"
+  ],
+  "Jhumpa Lahiri": [
+   "The Lowland",
+   "The Namesake",
+   "Translating Myself and Others",
+   "Whereabouts"
+  ],
+  "Jim Corbett": [
+   "My India"
+  ],
+  "Joan Rubin": [
+   "What the Good Language Learner Can Teach Us"
+  ],
+  "Joanna Baillie": [
+   "Plays on the Passions"
+  ],
+  "Joe Orton": [
+   "Entertaining Mr Sloane",
+   "Loot",
+   "What the Butler Saw"
+  ],
+  "Joe Sacco": [
+   "Footnotes in Gaza"
+  ],
+  "Johannes Gutenberg": [
+   "Gutenberg Bible"
+  ],
+  "John Arbuthnot": [
+   "Three Hours after Marriage"
+  ],
+  "John Arden": [
+   "Serjeant Musgrave's Dance"
+  ],
+  "John Banville": [
+   "Athena",
+   "The Book of Evidence"
+  ],
+  "John Barth": [
+   "Lost in the Funhouse"
+  ],
+  "John Berger": [
+   "G.",
+   "Ways of Seeing"
+  ],
+  "John Braine": [
+   "Room at the Top"
+  ],
+  "John Bunyan": [
+   "Grace Abounding to the Chief of Sinners",
+   "The Holy War",
+   "The Life and Death of Mr. Badman",
+   "The Pilgrim's Progress"
+  ],
+  "John Campbell Shairp": [
+   "Aspects of Poetry"
+  ],
+  "John Clare": [
+   "I Am",
+   "Poems Descriptive of Rural Life and Scenery",
+   "Tam o' Shanter",
+   "The Shepherd's Calendar"
+  ],
+  "John Crowe Ransom": [
+   "Criticism, Inc.",
+   "The Kenyon Review",
+   "The New Criticism",
+   "The World's Body"
+  ],
+  "John Denham": [
+   "Cooper's Hill"
+  ],
+  "John Dennis": [
+   "An Essay on the Genius and Writings of Shakespeare",
+   "The Advancement and Reformation of Modern Poetry",
+   "The Grounds of Criticism in Poetry"
+  ],
+  "John Donne": [
+   "A Hymn to God the Father",
+   "A Valediction Forbidding Mourning",
+   "A Valediction: Of Weeping",
+   "Anniversaries",
+   "Death's Duell",
+   "Death, Be Not Proud",
+   "Holy Sonnets",
+   "Hymn to God, My God, in My Sickness",
+   "Songs and Sonnets",
+   "The Canonization",
+   "The Good-Morrow",
+   "Twicknam Garden"
+  ],
+  "John Dryden": [
+   "A Song for St Cecilia's Day",
+   "Absalom and Achitophel",
+   "Alexander's Feast",
+   "All for Love",
+   "An Essay of Dramatic Poesy",
+   "Astraea Redux",
+   "Aureng-Zebe",
+   "Mac Flecknoe",
+   "MacFlecknoe",
+   "Preface to Fables, Ancient and Modern",
+   "Religio Laici",
+   "The Hind and the Panther",
+   "The Indian Queen",
+   "The Medall",
+   "The State of Innocence"
+  ],
+  "John Dyer": [
+   "Grongar Hill"
+  ],
+  "John Evelyn": [
+   "Diary of John Evelyn",
+   "Sylva"
+  ],
+  "John Fiske": [
+   "Reading the Popular",
+   "Television Culture",
+   "Understanding Popular Culture"
+  ],
+  "John Fletcher": [
+   "All Is True",
+   "Cupid's Revenge",
+   "Henry VIII",
+   "Philaster",
+   "The Faithful Shepherdess",
+   "The Maid's Tragedy"
+  ],
+  "John Forster": [
+   "The Life of Charles Dickens"
+  ],
+  "John Fowles": [
+   "The French Lieutenant's Woman",
+   "The Magus"
+  ],
+  "John Galsworthy": [
+   "In Chancery",
+   "Loyalties",
+   "The Forsyte Saga",
+   "The Man of Property",
+   "To Let"
+  ],
+  "John Gay": [
+   "The Beggar's Opera",
+   "Three Hours after Marriage"
+  ],
+  "John Gower": [
+   "Confessio Amantis"
+  ],
+  "John Grinder": [
+   "The Structure of Magic"
+  ],
+  "John Gross": [
+   "The Oxford Book of Essays"
+  ],
+  "John Heath-Stubbs": [
+   "The Ode"
+  ],
+  "John Henry Newman": [
+   "Apologia Pro Vita Sua",
+   "Callista",
+   "Loss and Gain",
+   "Tracts for the Times"
+  ],
+  "John Heywood": [
+   "The Four PP",
+   "The Play of the Weather"
+  ],
+  "John Keats": [
+   "Endymion",
+   "Hyperion",
+   "Isabella, or the Pot of Basil",
+   "La Belle Dame sans Merci",
+   "Lamia",
+   "Letter to George and Tom Keats (December 1817)",
+   "Letters of John Keats",
+   "Lines on the Mermaid Tavern",
+   "Ode on Melancholy",
+   "Ode on a Grecian Urn",
+   "Ode to Psyche",
+   "Ode to a Nightingale",
+   "Odes",
+   "On First Looking into Chapman's Homer",
+   "On Sitting Down to Read King Lear Once Again",
+   "Robin Hood",
+   "The Eve of St. Agnes",
+   "The Fall of Hyperion",
+   "The Fall of Hyperion: A Dream",
+   "To Autumn"
+  ],
+  "John Keble": [
+   "National Apostasy"
+  ],
+  "John King": [
+   "The Football Factory"
+  ],
+  "John Locke": [
+   "An Essay Concerning Human Understanding",
+   "Of the Conduct of the Understanding",
+   "Two Treatises of Government"
+  ],
+  "John Lydgate": [
+   "Siege of Thebes"
+  ],
+  "John Lyly": [
+   "Campaspe",
+   "Endymion (Lyly)",
+   "Euphues",
+   "Euphues: The Anatomy of Wit",
+   "Gallathea",
+   "Sappho and Phao",
+   "The Woman in the Moon"
+  ],
+  "John Mandeville": [
+   "The Travels of Sir John Mandeville"
+  ],
+  "John Marston": [
+   "Antonio's Revenge",
+   "Eastward Ho",
+   "The Malcontent"
+  ],
+  "John Masefield": [
+   "Cargoes"
+  ],
+  "John McGahern": [
+   "The Dark"
+  ],
+  "John Miles Foley": [
+   "Oral Traditional Literature"
+  ],
+  "John Milton": [
+   "Areopagitica",
+   "Comus",
+   "Il Penseroso",
+   "L'Allegro",
+   "Lycidas",
+   "On His Blindness",
+   "On Shakespeare",
+   "On the Morning of Christ's Nativity",
+   "Paradise Lost",
+   "Paradise Regained",
+   "Samson Agonistes",
+   "The Doctrine and Discipline of Divorce",
+   "When I consider how my light is spent"
+  ],
+  "John Moss": [
+   "Patterns of Isolation"
+  ],
+  "John Osborne": [
+   "Déjàvu",
+   "Look Back in Anger",
+   "The Entertainer"
+  ],
+  "John Polidori": [
+   "The Vampyre"
+  ],
+  "John Ruskin": [
+   "Modern Painters",
+   "The Harbours of England",
+   "The Nature of Gothic",
+   "The Stones of Venice",
+   "Unto This Last"
+  ],
+  "John Searle": [
+   "Speech Acts"
+  ],
+  "John Skelton": [
+   "Colin Clout",
+   "Magnificence",
+   "Phyllyp Sparowe"
+  ],
+  "John Steinbeck": [
+   "Cannery Row",
+   "East of Eden",
+   "The Grapes of Wrath"
+  ],
+  "John Storey": [
+   "Cultural Consumption and Everyday Life",
+   "Cultural Theory and Popular Culture",
+   "Culture and Power in Cultural Studies",
+   "Inventing Popular Culture",
+   "What is Cultural Studies?"
+  ],
+  "John Strachey": [
+   "The Coming Struggle for Power"
+  ],
+  "John Stuart Mill": [
+   "On Liberty",
+   "The Subjection of Women",
+   "Utilitarianism"
+  ],
+  "John Suckling": [
+   "Why so pale and wan, fond lover?"
+  ],
+  "John Updike": [
+   "Bech Is Back",
+   "Bech: A Book",
+   "Rabbit, Run"
+  ],
+  "John Urry": [
+   "The Tourist Gaze"
+  ],
+  "John Vanbrugh": [
+   "The Provok'd Wife",
+   "The Provoked Wife",
+   "The Relapse"
+  ],
+  "John Wain": [
+   "Hurry on Down"
+  ],
+  "John Webster": [
+   "The Duchess of Malfi",
+   "The White Devil"
+  ],
+  "John Wycliffe": [
+   "Wycliffe Bible",
+   "Wycliffite Bible"
+  ],
+  "Jonathan Bate": [
+   "Romantic Ecology",
+   "The Song of the Earth"
+  ],
+  "Jonathan Culler": [
+   "Literary Theory: A Very Short Introduction",
+   "Structuralist Poetics",
+   "The Pursuit of Signs"
+  ],
+  "Jonathan Dollimore": [
+   "Sexual Dissidence"
+  ],
+  "Jonathan Swift": [
+   "A Description of a City Shower",
+   "A Modest Proposal",
+   "A Proposal for Correcting, Improving and Ascertaining the English Tongue",
+   "A Tale of a Tub",
+   "Gulliver's Travels",
+   "Journal to Stella",
+   "The Battle of the Books",
+   "The Drapier's Letters",
+   "The Examiner",
+   "Verses on the Death of Dr Swift"
+  ],
+  "Jorge Luis Borges": [
+   "Ficciones",
+   "The Analytical Language of John Wilkins",
+   "The Library of Babel"
+  ],
+  "Jorge de Montemayor": [
+   "Diana"
+  ],
+  "Joseph Addison": [
+   "Cato",
+   "The Pleasures of the Imagination",
+   "The Spectator",
+   "The Tory Fox-Hunter",
+   "The Vision of Mirza"
+  ],
+  "Joseph Beam": [
+   "In the Life"
+  ],
+  "Joseph Carroll": [
+   "Literary Darwinism"
+  ],
+  "Joseph Conrad": [
+   "Almayer's Folly",
+   "An Outcast of the Islands",
+   "An Outpost of Progress",
+   "Heart of Darkness",
+   "Lord Jim",
+   "Nostromo",
+   "Tales of Unrest",
+   "The Secret Agent",
+   "The Shadow-Line"
+  ],
+  "Joseph Heller": [
+   "Catch-22"
+  ],
+  "Josephine Miles": [
+   "Pathetic Fallacy in the Nineteenth Century"
+  ],
+  "José Martí": [
+   "Versos sencillos"
+  ],
+  "Joy Kogawa": [
+   "Obasan"
+  ],
+  "Joyce Cary": [
+   "Herself Surprised",
+   "The Horse's Mouth",
+   "To Be a Pilgrim"
+  ],
+  "Judith Butler": [
+   "Bodies That Matter",
+   "Gender Trouble"
+  ],
+  "Judith Fetterley": [
+   "The Resisting Reader"
+  ],
+  "Judith Wright": [
+   "Bora Ring",
+   "The Moving Image",
+   "The Old Prison",
+   "Woman to Man"
+  ],
+  "Jules Verne": [
+   "Around the World in Eighty Days"
+  ],
+  "Julia Heaberlin": [
+   "We Are All the Same in the Dark"
+  ],
+  "Julia Kristeva": [
+   "Desire in Language",
+   "Powers of Horror",
+   "Revolution in Poetic Language",
+   "Strangers to Ourselves",
+   "Word, Dialogue and Novel"
+  ],
+  "Julian Bamford": [
+   "Extensive Reading in the Second Language Classroom"
+  ],
+  "Julian of Norwich": [
+   "Revelations of Divine Love"
+  ],
+  "Juvenal": [
+   "Satires"
+  ],
+  "Jürgen Habermas": [
+   "The Structural Transformation of the Public Sphere"
+  ],
+  "K. A. Abbas": [
+   "Inquilab",
+   "Tomorrow Is Ours"
+  ],
+  "K. J. Dover": [
+   "Greek Homosexuality"
+  ],
+  "K. M. Newton": [
+   "Theory into Practice"
+  ],
+  "K. R. Srinivasa Iyengar": [
+   "The Indian Contribution to English Literature"
+  ],
+  "K. S. Maniam": [
+   "Between Lives",
+   "In a Far Country",
+   "The Return"
+  ],
+  "K. S. Venkataramani": [
+   "Murugan the Tiller"
+  ],
+  "Kahlil Gibran": [
+   "Jesus, the Son of Man"
+  ],
+  "Kailash Sankhala": [
+   "Wild Beauty"
+  ],
+  "Kalhana": [
+   "Rajatarangini"
+  ],
+  "Kalidasa": [
+   "Abhijnanashakuntalam",
+   "Abhijñānaśākuntalam",
+   "Malavikagnimitram",
+   "Meghadūta"
+  ],
+  "Kamala Das": [
+   "A Widow's Lament",
+   "An Introduction",
+   "My Story",
+   "Summer in Calcutta",
+   "The Looking Glass",
+   "The Old Playhouse and Other Poems",
+   "The Sirens",
+   "Words"
+  ],
+  "Kamala Markandaya": [
+   "Nectar in a Sieve",
+   "Some Inner Fury",
+   "The Coffer Dams",
+   "The Golden Honeycomb",
+   "The Nowhere Man",
+   "Two Virgins"
+  ],
+  "Kamau Brathwaite": [
+   "Calypso",
+   "Islands",
+   "Masks",
+   "Rights of Passage",
+   "The Arrivants"
+  ],
+  "Kamila Shamsie": [
+   "Home Fire",
+   "Kartography"
+  ],
+  "Karel Čapek": [
+   "R.U.R."
+  ],
+  "Karl Marx": [
+   "Capital",
+   "The Eighteenth Brumaire of Louis Bonaparte",
+   "The German Ideology"
+  ],
+  "Kate Millett": [
+   "Sexual Politics"
+  ],
+  "Katharine Susannah Prichard": [
+   "Coonardoo"
+  ],
+  "Katherine Mansfield": [
+   "The Garden Party"
+  ],
+  "Kavita Kané": [
+   "Ahalya's Awakening",
+   "Menaka's Choice"
+  ],
+  "Kazuo Ishiguro": [
+   "A Pale View of Hills",
+   "An Artist of the Floating World",
+   "Never Let Me Go",
+   "The Remains of the Day"
+  ],
+  "Khaled Hosseini": [
+   "The Kite Runner"
+  ],
+  "Khushwant Singh": [
+   "I Shall Not Hear the Nightingale",
+   "Train to Pakistan"
+  ],
+  "Kim Scott": [
+   "Benang",
+   "That Deadman Dance"
+  ],
+  "Kimberlé Crenshaw": [
+   "Demarginalizing the Intersection of Race and Sex",
+   "Mapping the Margins"
+  ],
+  "King Alfred": [
+   "Chester cycle",
+   "Wakefield (Towneley) cycle"
+  ],
+  "Kingsley Amis": [
+   "A Bookshop Idyll",
+   "Against Romanticism",
+   "Lucky Jim"
+  ],
+  "Kiran Desai": [
+   "Hullabaloo in the Guava Orchard",
+   "The Inheritance of Loss"
+  ],
+  "Kiran Nagarkar": [
+   "Cuckold",
+   "Ravan and Eddie"
+  ],
+  "Kisari Mohan Ganguli": [
+   "The Mahabharata"
+  ],
+  "Krishna Baldev Vaid": [
+   "The Diary of a Maidservant"
+  ],
+  "Krishna Sobti": [
+   "Zindaginama"
+  ],
+  "Krupabai Satthianadhan": [
+   "Kamala",
+   "Saguna"
+  ],
+  "Kshemendra": [
+   "Auchitya-vichara-charcha",
+   "Auchityavicharacharcha"
+  ],
+  "Kumud Pawde": [
+   "Antasphot"
+  ],
+  "Kuntaka": [
+   "Vakroktijivitam",
+   "Vakroktijīvita"
+  ],
+  "Kwame Nkrumah": [
+   "Neo-Colonialism: The Last Stage of Imperialism"
+  ],
+  "Kylas Chunder Dutt": [
+   "A Journal of Forty-Eight Hours of the Year 1945"
+  ],
+  "L. C. Knights": [
+   "How Many Children Had Lady Macbeth?",
+   "Restoration Comedy: The Reality and the Myth"
+  ],
+  "L. K. Advani": [
+   "My Country My Life"
+  ],
+  "L. P. Hartley": [
+   "The Go-Between"
+  ],
+  "Lakhan Deb": [
+   "Tiger Claw"
+  ],
+  "Langston Hughes": [
+   "Don't You Want to Be Free?",
+   "Harlem",
+   "I, Too",
+   "Mother to Son",
+   "The Weary Blues"
+  ],
+  "Laozi": [
+   "Tao Te Ching"
+  ],
+  "Larry Selinker": [
+   "Interlanguage"
+  ],
+  "Laura Mulvey": [
+   "Visual Pleasure and Narrative Cinema"
+  ],
+  "Laurence Ricou": [
+   "Vertical Man/Horizontal World"
+  ],
+  "Laurence Sterne": [
+   "Tristram Shandy"
+  ],
+  "Lawrence Buell": [
+   "The Environmental Imagination"
+  ],
+  "Lawrence Durrell": [
+   "The Alexandria Quartet"
+  ],
+  "Layamon": [
+   "Brut"
+  ],
+  "Leela Gandhi": [
+   "Postcolonial Theory: A Critical Introduction"
+  ],
+  "Leigh Hunt": [
+   "Of Dreams",
+   "The Examiner",
+   "The Indicator",
+   "The Reflector",
+   "The Round Table",
+   "What is Poetry?"
+  ],
+  "Lennard J. Davis": [
+   "Enforcing Normalcy"
+  ],
+  "Leo Tolstoy": [
+   "Anna Karenina",
+   "The Death of Ivan Ilyich",
+   "War and Peace"
+  ],
+  "Leslie Marmon Silko": [
+   "Ceremony"
+  ],
+  "Lev Manovich": [
+   "Cultural Analytics",
+   "The Language of New Media"
+  ],
+  "Lewis Bayly": [
+   "The Practice of Piety"
+  ],
+  "Lewis Carroll": [
+   "Alice's Adventures in Wonderland",
+   "Jabberwocky",
+   "Through the Looking-Glass"
+  ],
+  "Lewis Grassic Gibbon": [
+   "A Scots Quair",
+   "Cloud Howe",
+   "Grey Granite",
+   "Sunset Song"
+  ],
+  "Lewis Theobald": [
+   "Shakespeare Restored"
+  ],
+  "Linda Hutcheon": [
+   "A Poetics of Postmodernism"
+  ],
+  "Lionel Trilling": [
+   "Beyond Culture",
+   "On the Teaching of Modern Literature",
+   "Sincerity and Authenticity",
+   "The Sense of the Past"
+  ],
+  "Lois Reynolds Kerr": [
+   "Guest of Honour"
+  ],
+  "Longinus": [
+   "On the Sublime"
+  ],
+  "Lord Byron": [
+   "A Fragment",
+   "Beppo",
+   "Cain",
+   "Childe Harold's Pilgrimage",
+   "Don Juan",
+   "English Bards and Scotch Reviewers",
+   "Hebrew Melodies",
+   "Manfred",
+   "Mazeppa",
+   "Sardanapalus",
+   "She Walks in Beauty",
+   "The Isles of Greece",
+   "The Two Foscari",
+   "The Vision of Judgment",
+   "When We Two Parted"
+  ],
+  "Lord Curzon": [
+   "Indian Universities Act 1904"
+  ],
+  "Lorraine Hansberry": [
+   "A Raisin in the Sun"
+  ],
+  "Louis Althusser": [
+   "Essays on Ideology",
+   "Ideology and Ideological State Apparatuses"
+  ],
+  "Louis MacNeice": [
+   "Bagpipe Music",
+   "Entirely",
+   "Letters from Iceland",
+   "Prayer Before Birth",
+   "Star-gazer",
+   "Sunday Morning",
+   "The Agamemnon of Aeschylus"
+  ],
+  "Louisa May Alcott": [
+   "Good Wives",
+   "Jo's Boys",
+   "Little Men",
+   "Little Women"
+  ],
+  "Louise Rosenblatt": [
+   "The Poem as Event",
+   "The Reader, the Text, the Poem"
+  ],
+  "Luce Irigaray": [
+   "Speculum of the Other Woman",
+   "This Sex Which Is Not One"
+  ],
+  "Lucien Goldmann": [
+   "The Hidden God"
+  ],
+  "Lucille Clifton": [
+   "Quilting",
+   "poem in praise of menstruation"
+  ],
+  "Lucy Hutchinson": [
+   "Memoirs of the Life of Colonel Hutchinson"
+  ],
+  "Ludovico Ariosto": [
+   "Orlando Furioso"
+  ],
+  "Ludwig Wittgenstein": [
+   "Tractatus Logico-Philosophicus"
+  ],
+  "Luigi Pirandello": [
+   "Six Characters in Search of an Author",
+   "The Rules of the Game"
+  ],
+  "Lytton Strachey": [
+   "Eminent Victorians",
+   "Queen Victoria"
+  ],
+  "M. Anantanarayanan": [
+   "The Silver Pilgrimage"
+  ],
+  "M. C. Chagla": [
+   "Roses in December"
+  ],
+  "M. G. Lewis": [
+   "The Monk"
+  ],
+  "M. G. Vassanji": [
+   "The Gunny Sack"
+  ],
+  "M. H. Abrams": [
+   "The Mirror and the Lamp"
+  ],
+  "M. K. Gandhi": [
+   "Hind Swaraj",
+   "Nai Talim",
+   "The Story of My Experiments with Truth"
+  ],
+  "M. K. Naik": [
+   "A History of Indian English Literature",
+   "Indian English Literature 1980–2000: A Critical Survey"
+  ],
+  "M. Krishnan": [
+   "Nights and Days"
+  ],
+  "M. N. Srinivas": [
+   "The Remembered Village"
+  ],
+  "M. S. Sathyu": [
+   "Garm Hava"
+  ],
+  "Machado de Assis": [
+   "Epitaph of a Small Winner"
+  ],
+  "Madeleine Ryan": [
+   "A Room Called Earth"
+  ],
+  "Mahasweta Devi": [
+   "Aranyer Adhikar",
+   "Breast-Giver",
+   "Draupadi",
+   "Hajar Churashir Maa",
+   "Imaginary Maps",
+   "Mother of 1084",
+   "Rudali"
+  ],
+  "Mahesh Dattani": [
+   "Bravely Fought the Queen",
+   "Dance Like a Man",
+   "Final Solutions",
+   "Mango Soufflé",
+   "On a Muggy Night in Mumbai",
+   "Tara",
+   "Thirty Days in September",
+   "Where There's a Will"
+  ],
+  "Makarand Deshpande": [
+   "Manushya"
+  ],
+  "Malcolm Bradbury": [
+   "The History Man"
+  ],
+  "Malik Sajad": [
+   "Munnu"
+  ],
+  "Mamta Kalia": [
+   "Tribute to Papa and Other Poems"
+  ],
+  "Manjula Padmanabhan": [
+   "Harvest"
+  ],
+  "Manmohan Ghose": [
+   "Love Songs and Elegies"
+  ],
+  "Manohar Malgonkar": [
+   "A Bend in the Ganges",
+   "Combat of Shadows",
+   "Distant Drum",
+   "Rumble-Tumble",
+   "The Devil's Wind"
+  ],
+  "Marcel Mauss": [
+   "The Gift"
+  ],
+  "Marcel Proust": [
+   "In Search of Lost Time"
+  ],
+  "Margaret Anne Doody": [
+   "The True Story of the Novel"
+  ],
+  "Margaret Atwood": [
+   "Alias Grace",
+   "Bored",
+   "Gertrude Talks Back",
+   "Good Bones",
+   "Lady Oracle",
+   "Morning in the Burned House",
+   "Surfacing",
+   "Survival",
+   "The Blind Assassin",
+   "The Edible Woman",
+   "The Handmaid's Tale",
+   "The Robber Bride",
+   "The Testaments"
+  ],
+  "Margaret Cavendish": [
+   "Nature's Pictures"
+  ],
+  "Margaret Chatterjee": [
+   "The Spring and the Spectacle"
+  ],
+  "Margaret Drabble": [
+   "The Millstone"
+  ],
+  "Margaret Laurence": [
+   "The Diviners",
+   "The Stone Angel"
+  ],
+  "Margaret Wetherell": [
+   "Discourse Theory and Practice"
+  ],
+  "Marge Piercy": [
+   "Woman on the Edge of Time"
+  ],
+  "Maria Edgeworth": [
+   "Castle Rackrent"
+  ],
+  "Marina Warner": [
+   "Indigo"
+  ],
+  "Mario Vargas Llosa": [
+   "The Autumn of the Patriarch",
+   "The Feast of the Goat"
+  ],
+  "Marjorie Boulton": [
+   "The Anatomy of Drama"
+  ],
+  "Marjorie L. Barstow": [
+   "Wordsworth's Theory of Poetic Diction"
+  ],
+  "Mark Schorer": [
+   "Technique as Discovery"
+  ],
+  "Mark Turner": [
+   "Death is the Mother of Beauty",
+   "More than Cool Reason"
+  ],
+  "Mark Twain": [
+   "Adventures of Huckleberry Finn",
+   "Following the Equator",
+   "Pudd'nhead Wilson",
+   "The Adventures of Tom Sawyer",
+   "The Gilded Age"
+  ],
+  "Marlon James": [
+   "The Book of Night Women"
+  ],
+  "Marshall McLuhan": [
+   "Understanding Media"
+  ],
+  "Marshall Sahlins": [
+   "Culture and Practical Reason"
+  ],
+  "Martin Amis": [
+   "Experience",
+   "The Rachel Papers"
+  ],
+  "Martin Esslin": [
+   "The Theatre of the Absurd"
+  ],
+  "Martin Heidegger": [
+   "Being and Time",
+   "Identity and Difference"
+  ],
+  "Martin Luther": [
+   "Ninety-five Theses"
+  ],
+  "Mary Elizabeth Braddon": [
+   "Lady Audley's Secret"
+  ],
+  "Mary Ellmann": [
+   "Thinking About Women"
+  ],
+  "Mary Hiatt": [
+   "The Way Women Write"
+  ],
+  "Mary I": [
+   "Statute of Anne"
+  ],
+  "Mary Kom": [
+   "Unbreakable"
+  ],
+  "Mary Louise Pratt": [
+   "Imperial Eyes"
+  ],
+  "Mary McCarthy": [
+   "The Groves of Academe"
+  ],
+  "Mary Prince": [
+   "The History of Mary Prince"
+  ],
+  "Mary Shelley": [
+   "Falkner",
+   "Frankenstein",
+   "Frankenstein; or, The Modern Prometheus",
+   "The Last Man"
+  ],
+  "Mary Wollstonecraft": [
+   "A Vindication of the Rights of Men",
+   "A Vindication of the Rights of Woman",
+   "Maria; or, The Wrongs of Woman",
+   "Mary: A Fiction",
+   "The Wrongs of Woman, or Maria",
+   "Thoughts on the Education of Daughters"
+  ],
+  "Matthew Arnold": [
+   "Culture and Anarchy",
+   "Dover Beach",
+   "Empedocles on Etna",
+   "Essays in Criticism",
+   "Friendship's Garland",
+   "Literature and Dogma",
+   "Memorial Verses",
+   "Shakespeare (sonnet)",
+   "Sohrab and Rustum",
+   "Stanzas from the Grande Chartreuse",
+   "The Function of Criticism at the Present Time",
+   "The Scholar-Gipsy",
+   "The Study of Poetry",
+   "Thyrsis",
+   "Wordsworth (essay)"
+  ],
+  "Maud Bodkin": [
+   "Archetypal Patterns in Poetry"
+  ],
+  "Max Horkheimer": [
+   "Dialectic of Enlightenment",
+   "Traditional and Critical Theory"
+  ],
+  "Maxim Gorky": [
+   "Mother",
+   "The Lower Depths"
+  ],
+  "Maya Angelou": [
+   "I Know Why the Caged Bird Sings",
+   "Still I Rise"
+  ],
+  "Meena Alexander": [
+   "Fault Lines",
+   "Raw Silk",
+   "River and Bridge",
+   "Stone Roots"
+  ],
+  "Meena Kandasamy": [
+   "Touch"
+  ],
+  "Meenakshi Mukherjee": [
+   "The Perishable Empire",
+   "The Twice Born Fiction"
+  ],
+  "Melanie Klein": [
+   "The Psycho-Analysis of Children"
+  ],
+  "Menander": [
+   "Dyskolos"
+  ],
+  "Michael Hardt": [
+   "Empire"
+  ],
+  "Michael Madhusudan Dutt": [
+   "The Captive Ladie"
+  ],
+  "Michael Ondaatje": [
+   "Anil's Ghost",
+   "The English Patient"
+  ],
+  "Michael Roberts": [
+   "The Faber Book of Modern Verse"
+  ],
+  "Michael West": [
+   "A General Service List of English Words"
+  ],
+  "Michel Foucault": [
+   "Discipline and Punish",
+   "Madness and Civilization",
+   "Nietzsche, Genealogy, History",
+   "Power/Knowledge",
+   "The Archaeology of Knowledge",
+   "The Birth of the Clinic",
+   "The History of Sexuality",
+   "The Order of Discourse",
+   "The Order of Things",
+   "What Is an Author?"
+  ],
+  "Michel de Certeau": [
+   "The Practice of Everyday Life"
+  ],
+  "Michel de Montaigne": [
+   "Essais",
+   "Essays",
+   "Of Cannibals",
+   "Of Liars",
+   "Of Solitude"
+  ],
+  "Michèle Barrett": [
+   "Women's Oppression Today"
+  ],
+  "Miguel de Cervantes": [
+   "Don Quixote"
+  ],
+  "Mike Phillips": [
+   "London Crossings"
+  ],
+  "Mikhail Bakhtin": [
+   "Discourse in the Novel",
+   "Epic and Novel",
+   "Forms of Time and of the Chronotope in the Novel",
+   "Problems of Dostoevsky's Poetics",
+   "Rabelais and His World",
+   "The Dialogic Imagination"
+  ],
+  "Milan Kundera": [
+   "Testaments Betrayed",
+   "The Unbearable Lightness of Being"
+  ],
+  "Miles Coverdale": [
+   "Coverdale Bible"
+  ],
+  "Mirza Waheed": [
+   "The Collaborator"
+  ],
+  "Mohammed Hanif": [
+   "A Case of Exploding Mangoes"
+  ],
+  "Mohan Rakesh": [
+   "Malbe ka Malik"
+  ],
+  "Mohsin Hamid": [
+   "Moth Smoke",
+   "The Reluctant Fundamentalist"
+  ],
+  "Molière": [
+   "The Misanthrope"
+  ],
+  "Monica Ali": [
+   "Brick Lane"
+  ],
+  "Monica Clare": [
+   "Karobran"
+  ],
+  "Monique Wittig": [
+   "The Straight Mind"
+  ],
+  "Monroe Beardsley": [
+   "The Affective Fallacy",
+   "The Intentional Fallacy"
+  ],
+  "Mudrooroo": [
+   "Wild Cat Falling"
+  ],
+  "Muhammad Iqbal": [
+   "The Secrets of the Self"
+  ],
+  "Mulk Raj Anand": [
+   "Across the Black Waters",
+   "Confession of a Lover",
+   "Coolie",
+   "Morning Face",
+   "Seven Summers",
+   "The Barber's Trade Union",
+   "The Big Heart",
+   "The Sword and the Sickle",
+   "Two Leaves and a Bud",
+   "Untouchable"
+  ],
+  "Muriel Spark": [
+   "Memento Mori",
+   "Robinson",
+   "The Ballad of Peckham Rye",
+   "The Driver's Seat",
+   "The Girls of Slender Means",
+   "The Prime of Miss Jean Brodie"
+  ],
+  "Nadine Gordimer": [
+   "Beethoven Was One-Sixteenth Black",
+   "Burger's Daughter",
+   "July's People",
+   "My Son's Story",
+   "Six Feet of the Country",
+   "The Conservationist",
+   "The House Gun",
+   "The Lying Days"
+  ],
+  "Nahum Tate": [
+   "The History of King Lear"
+  ],
+  "Namdeo Dhasal": [
+   "Golpitha"
+  ],
+  "Namita Gokhale": [
+   "A Himalayan Love Story",
+   "Paro: Dreams of Passion",
+   "Things to Leave Behind"
+  ],
+  "Nancy Chodorow": [
+   "The Reproduction of Mothering"
+  ],
+  "Nancy Dorian": [
+   "Language Death"
+  ],
+  "Narayan": [
+   "Kocharethi"
+  ],
+  "Narayana": [
+   "Hitopadesha"
+  ],
+  "Nathaniel Hawthorne": [
+   "The Scarlet Letter",
+   "Twice-Told Tales",
+   "Young Goodman Brown"
+  ],
+  "Nayantara Sahgal": [
+   "A Time to Be Happy",
+   "Prison and Chocolate Cake",
+   "Rich Like Us"
+  ],
+  "Neel Mukherjee": [
+   "The Lives of Others"
+  ],
+  "Neelum Saran Gour": [
+   "Requiem in Raga Janki"
+  ],
+  "Nelson Mandela": [
+   "Long Walk to Freedom"
+  ],
+  "Nevil Shute": [
+   "On the Beach"
+  ],
+  "Ngũgĩ wa Thiong'o": [
+   "A Grain of Wheat",
+   "Decolonising the Mind",
+   "Devil on the Cross",
+   "Literature in Schools",
+   "On the Abolition of the English Department",
+   "Petals of Blood",
+   "The Language of Languages",
+   "The Trial of Dedan Kimathi",
+   "Weep Not, Child",
+   "Writers in Politics"
+  ],
+  "Niccolò Machiavelli": [
+   "The Prince"
+  ],
+  "Nicholas Udall": [
+   "Ralph Roister Doister"
+  ],
+  "Nick Hornby": [
+   "Fever Pitch"
+  ],
+  "Nicolas Boileau": [
+   "L'Art poétique"
+  ],
+  "Nigel Dennis": [
+   "Cards of Identity"
+  ],
+  "Nigel Thrift": [
+   "Knowing Capitalism"
+  ],
+  "Nikolai Gogol": [
+   "Dead Souls"
+  ],
+  "Nikos Kazantzakis": [
+   "Buddha",
+   "Zorba the Greek"
+  ],
+  "Nira Yuval-Davis": [
+   "Gender and Nation"
+  ],
+  "Nirad C. Chaudhuri": [
+   "A Passage to England",
+   "The Autobiography of an Unknown Indian",
+   "The Continent of Circe",
+   "Thy Hand, Great Anarch!"
+  ],
+  "Nirmal Kumar Bose": [
+   "My Days with Gandhi"
+  ],
+  "Nissim Ezekiel": [
+   "A Morning Walk",
+   "A Time to Change",
+   "Goodbye Party for Miss Pushpa T.S.",
+   "Hymns in Darkness",
+   "Latter-Day Psalms",
+   "Marriage Poem",
+   "Naipaul's India and Mine",
+   "Night of the Scorpion",
+   "Poet, Lover, Birdwatcher",
+   "Quest",
+   "Sixty Poems",
+   "The Exact Name",
+   "The Patriot",
+   "The Railway Clerk",
+   "The Sleepwalkers",
+   "The Unfinished Man",
+   "Three Plays",
+   "Time to Change",
+   "Very Indian Poem in Indian English",
+   "Very Indian Poems in Indian English"
+  ],
+  "Noah Webster": [
+   "An American Dictionary of the English Language"
+  ],
+  "Noam Chomsky": [
+   "Aspects of the Theory of Syntax",
+   "Knowledge of Language",
+   "Problems of Knowledge and Freedom",
+   "Reflections on Language",
+   "Syntactic Structures"
+  ],
+  "Norman Holland": [
+   "5 Readers Reading"
+  ],
+  "Norman Mailer": [
+   "The Naked and the Dead",
+   "To Kill a Mockingbird"
+  ],
+  "Northrop Frye": [
+   "Anatomy of Criticism",
+   "The Bush Garden",
+   "The Educated Imagination",
+   "The Great Code"
+  ],
+  "Noël Coward": [
+   "Blithe Spirit"
+  ],
+  "Nuruddin Farah": [
+   "Gifts",
+   "Knots",
+   "Maps",
+   "Secrets"
+  ],
+  "O. V. Vijayan": [
+   "The Legends of Khasak",
+   "The Saga of Dharmapuri"
+  ],
+  "Octavia E. Butler": [
+   "Kindred"
+  ],
+  "Octavio Paz": [
+   "The Labyrinth of Solitude"
+  ],
+  "Olaudah Equiano": [
+   "The Interesting Narrative",
+   "The Interesting Narrative of the Life of Olaudah Equiano"
+  ],
+  "Oliver Goldsmith": [
+   "An Account of the Augustan Age of England",
+   "Irene",
+   "She Stoops to Conquer",
+   "The Citizen of the World",
+   "The Deserted Village",
+   "The Traveller",
+   "The Vicar of Wakefield"
+  ],
+  "Omprakash Valmiki": [
+   "Joothan"
+  ],
+  "Oodgeroo Noonuccal": [
+   "We Are Going"
+  ],
+  "Orhan Pamuk": [
+   "My Name Is Red",
+   "Other Colors",
+   "The Naive and the Sentimental Novelist"
+  ],
+  "Orijit Sen": [
+   "The River of Stories"
+  ],
+  "Oscar Wilde": [
+   "At Verona",
+   "Intentions",
+   "Salomé",
+   "The Critic as Artist",
+   "The Decay of Lying",
+   "The Importance of Being Earnest",
+   "The Picture of Dorian Gray"
+  ],
+  "Ovid": [
+   "Metamorphoses"
+  ],
+  "P. A. Krishnaswamy": [
+   "The Flute of Krishna"
+  ],
+  "P. B. Shelley": [
+   "A Defence of Poetry",
+   "A Lament",
+   "Adonais",
+   "Alastor",
+   "Alastor, or The Spirit of Solitude",
+   "Hellas",
+   "Hymn to Intellectual Beauty",
+   "Julian and Maddalo",
+   "Mutability",
+   "Ode to the West Wind",
+   "Ozymandias",
+   "Prometheus Unbound",
+   "Queen Mab",
+   "Stanzas.—April, 1814",
+   "The Cenci",
+   "The Mask of Anarchy",
+   "The Triumph of Life",
+   "The Wandering Jew",
+   "To Wordsworth",
+   "To a Skylark"
+  ],
+  "P. G. Wodehouse": [
+   "The Man with Two Left Feet"
+  ],
+  "P. Lal": [
+   "Calcutta: A Long Poem",
+   "The Man of Dharma and the Rasa of Silence"
+  ],
+  "P. Sivakami": [
+   "The Grip of Change"
+  ],
+  "Pablo Neruda": [
+   "Canto General",
+   "Crepusculario",
+   "El habitante y su esperanza",
+   "España en el corazón",
+   "Memoirs",
+   "Tentativa del hombre infinito",
+   "Tonight I Can Write the Saddest Lines",
+   "Twenty Love Poems and a Song of Despair"
+  ],
+  "Padma Venkatraman": [
+   "A Time to Dance"
+  ],
+  "Panchkouree Khan": [
+   "The Revelations of an Orderly"
+  ],
+  "Partap Sharma": [
+   "A Touch of Brightness"
+  ],
+  "Patricia Meyer Spacks": [
+   "The Female Imagination"
+  ],
+  "Patricia Waugh": [
+   "Harvest of the Sixties"
+  ],
+  "Patrick White": [
+   "A Fringe of Leaves",
+   "Happy Valley",
+   "Riders in the Chariot",
+   "The Aunt's Story",
+   "The Solid Mandala",
+   "The Tree of Man",
+   "The Vivisector",
+   "Voss"
+  ],
+  "Paul Auster": [
+   "City of Glass",
+   "The Locked Room",
+   "The New York Trilogy"
+  ],
+  "Paul Beatty": [
+   "The Sellout"
+  ],
+  "Paul Carter": [
+   "The Road to Botany Bay"
+  ],
+  "Paul Ehrlich": [
+   "The Population Bomb"
+  ],
+  "Paul Gilroy": [
+   "The Black Atlantic"
+  ],
+  "Paul Grice": [
+   "Logic and Conversation"
+  ],
+  "Paul H. Fry": [
+   "The Poet's Calling in the English Ode"
+  ],
+  "Paul Laurence Dunbar": [
+   "Sympathy"
+  ],
+  "Paul Muldoon": [
+   "Widgeon"
+  ],
+  "Paul Ricoeur": [
+   "Freud and Philosophy",
+   "The Rule of Metaphor"
+  ],
+  "Paul Thompson": [
+   "The Voice of the Past"
+  ],
+  "Paul de Man": [
+   "Allegories of Reading",
+   "Blindness and Insight"
+  ],
+  "Pearl S. Buck": [
+   "The Good Earth"
+  ],
+  "Perumal Murugan": [
+   "One Part Woman",
+   "Poonachi",
+   "Pyre"
+  ],
+  "Peter Ackroyd": [
+   "Blake",
+   "Dickens",
+   "English Music",
+   "Escape from Earth",
+   "Hawksmoor",
+   "T. S. Eliot",
+   "The English Ghost",
+   "The Great Fire of London"
+  ],
+  "Peter Barry": [
+   "Beginning Theory"
+  ],
+  "Peter Brook": [
+   "The Empty Space"
+  ],
+  "Peter Carey": [
+   "Jack Maggs",
+   "Oscar and Lucinda",
+   "True History of the Kelly Gang"
+  ],
+  "Peter Middleton": [
+   "Distant Reading"
+  ],
+  "Peter Shaffer": [
+   "Equus"
+  ],
+  "Petrarch": [
+   "Canzoniere (Rime sparse)"
+  ],
+  "Phanishwar Nath Renu": [
+   "Maila Aanchal"
+  ],
+  "Philip Henslowe": [
+   "Henslowe's Diary"
+  ],
+  "Philip Larkin": [
+   "A Study of Reading Habits",
+   "An Arundel Tomb",
+   "Aubade",
+   "Church Going",
+   "Deceptions",
+   "High Windows",
+   "Home Is So Sad",
+   "MCMXIV",
+   "Mr Bleaney",
+   "Sad Steps",
+   "Sunny Prestatyn",
+   "Talking in Bed",
+   "The Less Deceived",
+   "The North Ship",
+   "The Oxford Book of Twentieth-Century English Verse",
+   "The Whitsun Weddings"
+  ],
+  "Philip Massinger": [
+   "A New Way to Pay Old Debts",
+   "The City Madam"
+  ],
+  "Philip Pullman": [
+   "Northern Lights"
+  ],
+  "Philip Roth": [
+   "American Pastoral",
+   "The Human Stain"
+  ],
+  "Philip Sidney": [
+   "An Apology for Poetry",
+   "Arcadia",
+   "Astrophel and Stella",
+   "Astrophil and Stella",
+   "The Defence of Poesy"
+  ],
+  "Philip Wylie": [
+   "Generation of Vipers"
+  ],
+  "Phillip Brian Harper": [
+   "Are We Not Men?"
+  ],
+  "Phillis Wheatley": [
+   "Poems on Various Subjects, Religious and Moral"
+  ],
+  "Pico della Mirandola": [
+   "Oration on the Dignity of Man"
+  ],
+  "Pierre Bourdieu": [
+   "Distinction",
+   "Outline of a Theory of Practice"
+  ],
+  "Pierre Macherey": [
+   "A Theory of Literary Production"
+  ],
+  "Pierre de Ronsard": [
+   "Quand vous serez bien vieille"
+  ],
+  "Pindar": [
+   "Epinicia"
+  ],
+  "Plato": [
+   "Crito",
+   "Ion",
+   "Phaedo",
+   "Phaedrus",
+   "Republic",
+   "Sophist",
+   "Symposium",
+   "The Republic",
+   "Timaeus"
+  ],
+  "Plotinus": [
+   "Enneads"
+  ],
+  "Plutarch": [
+   "Parallel Lives"
+  ],
+  "Pratibha Ray": [
+   "Yajnaseni"
+  ],
+  "Premchand": [
+   "Godaan",
+   "Godan",
+   "Premashram"
+  ],
+  "Priya Sarukkai Chabria": [
+   "Generation 14"
+  ],
+  "Probal Dasgupta": [
+   "The Otherness of English"
+  ],
+  "Q. D. Leavis": [
+   "Fiction and the Reading Public"
+  ],
+  "Quintilian": [
+   "Institutio Oratoria"
+  ],
+  "Qurratulain Hyder": [
+   "Aag Ka Darya"
+  ],
+  "R. B. Sheridan": [
+   "St Patrick's Day",
+   "The Duenna",
+   "The Rivals",
+   "The School for Scandal"
+  ],
+  "R. Chudamani": [
+   "Yamini"
+  ],
+  "R. D. Blackmore": [
+   "Lorna Doone"
+  ],
+  "R. K. Narayan": [
+   "A Horse and Two Goats",
+   "A Tiger for Malgudi",
+   "Mr Sampath",
+   "Swami and Friends",
+   "The Bachelor of Arts",
+   "The Dark Room",
+   "The English Teacher",
+   "The Financial Expert",
+   "The Guide",
+   "The Man-Eater of Malgudi",
+   "The Martyr's Corner",
+   "The Painter of Signs",
+   "The Vendor of Sweets",
+   "Waiting for the Mahatma"
+  ],
+  "R. M. Ballantyne": [
+   "The Coral Island"
+  ],
+  "R. P. Blackmur": [
+   "A Critic's Job of Work"
+  ],
+  "R. Parthasarathy": [
+   "Rough Passage"
+  ],
+  "R. Raj Rao": [
+   "The Boyfriend"
+  ],
+  "R. S. Crane": [
+   "Critics and Criticism"
+  ],
+  "R. W. Emerson": [
+   "Brahma",
+   "English Traits",
+   "Essays: First Series",
+   "Nature",
+   "Self-Reliance",
+   "The American Scholar"
+  ],
+  "Rabindranath Tagore": [
+   "Chandalika",
+   "Gitanjali",
+   "Gitanjali (Song Offerings)",
+   "Gora",
+   "Mukta-Dhara",
+   "Muktadhara",
+   "Nastanirh (The Broken Nest)",
+   "Sacrifice",
+   "The Child",
+   "The Post Office",
+   "The Religion of Man",
+   "Visarjan"
+  ],
+  "Rachel Bowlby": [
+   "Just Looking"
+  ],
+  "Rachel Carson": [
+   "Silent Spring"
+  ],
+  "Radclyffe Hall": [
+   "The Well of Loneliness"
+  ],
+  "Rahi Masoom Raza": [
+   "Aadha Gaon"
+  ],
+  "Rainer Maria Rilke": [
+   "Duino Elegies",
+   "Sonnets to Orpheus"
+  ],
+  "Raj Lakshmi Debi": [
+   "The Hindu Wife"
+  ],
+  "Raja Rao": [
+   "Kanthapura",
+   "The Cat and Shakespeare",
+   "The Serpent and the Rope"
+  ],
+  "Rajam Krishnan": [
+   "Lamp in the Whirlpool"
+  ],
+  "Rajashekhara": [
+   "Kavyamimamsa"
+  ],
+  "Rajeswari Sunder Rajan": [
+   "The Lie of the Land"
+  ],
+  "Rajinder Singh Bedi": [
+   "Lajwanti"
+  ],
+  "Rajlakshmi Debi": [
+   "The Enchanted Fruit"
+  ],
+  "Ralph Ellison": [
+   "Invisible Man"
+  ],
+  "Ramabai Espinet": [
+   "The Swinging Bridge"
+  ],
+  "Ranajit Guha": [
+   "On Some Aspects of the Historiography of Colonial India",
+   "Subaltern Studies"
+  ],
+  "Randolph Quirk": [
+   "A Comprehensive Grammar of the English Language"
+  ],
+  "Ranjan Gogoi": [
+   "Justice for the Judge"
+  ],
+  "Ray B. Browne": [
+   "Journal of Popular Culture"
+  ],
+  "Ray Bradbury": [
+   "Fahrenheit 451",
+   "The Golden Apples of the Sun"
+  ],
+  "Raymond Chandler": [
+   "The Big Sleep"
+  ],
+  "Raymond Williams": [
+   "Culture Is Ordinary",
+   "Culture and Society",
+   "Keywords",
+   "Marxism and Literature",
+   "Modern Tragedy",
+   "Preface to Film",
+   "Resources of Hope",
+   "The Country and the City",
+   "The Long Revolution",
+   "The Politics of Modernism",
+   "Writing in Society"
+  ],
+  "Rebecca Walkowitz": [
+   "Born Translated"
+  ],
+  "Rebecca West": [
+   "The Return of the Soldier"
+  ],
+  "Reginald Rose": [
+   "Twelve Angry Men"
+  ],
+  "René Descartes": [
+   "Discourse on Method"
+  ],
+  "René Wellek": [
+   "Theory of Literature"
+  ],
+  "Rey Chow": [
+   "The Protestant Ethnic and the Spirit of Capitalism"
+  ],
+  "Richard A. Lanham": [
+   "Analyzing Prose"
+  ],
+  "Richard Altick": [
+   "The Art of Literary Research"
+  ],
+  "Richard Bandler": [
+   "The Structure of Magic"
+  ],
+  "Richard Crashaw": [
+   "Steps to the Temple"
+  ],
+  "Richard Dawkins": [
+   "The Selfish Gene"
+  ],
+  "Richard Day": [
+   "Extensive Reading in the Second Language Classroom"
+  ],
+  "Richard Ellmann": [
+   "James Joyce"
+  ],
+  "Richard Hoggart": [
+   "A Local Habitation",
+   "A Sort of Clowning",
+   "An Imagined Life",
+   "The Uses of Literacy"
+  ],
+  "Richard Hooker": [
+   "Of the Laws of Ecclesiastical Polity"
+  ],
+  "Richard Lovelace": [
+   "Lucasta",
+   "To Althea, from Prison"
+  ],
+  "Richard Steele": [
+   "The Christian Hero",
+   "The Conscious Lovers",
+   "The Guardian",
+   "The Spectator",
+   "The Tatler"
+  ],
+  "Richard Tottel": [
+   "Songes and Sonettes",
+   "Tottel's Miscellany"
+  ],
+  "Richard Wright": [
+   "American Hunger",
+   "Black Boy",
+   "Native Son"
+  ],
+  "Rita Dove": [
+   "Thomas and Beulah"
+  ],
+  "Rita Kothari": [
+   "Chutneyfying English",
+   "Translating India"
+  ],
+  "Ritwik Ghatak": [
+   "Subarnarekha"
+  ],
+  "Robert Blair": [
+   "The Grave"
+  ],
+  "Robert Browning": [
+   "A Blot in the 'Scutcheon",
+   "Abt Vogler",
+   "Andrea del Sarto",
+   "Asolando",
+   "Bishop Blougram's Apology",
+   "Caliban upon Setebos",
+   "Childe Roland to the Dark Tower Came",
+   "Cleon",
+   "Cristina",
+   "Dramatic Lyrics",
+   "Dramatis Personae",
+   "Fra Lippo Lippi",
+   "How It Strikes a Contemporary",
+   "Men and Women",
+   "My Last Duchess",
+   "One Word More",
+   "Pauline",
+   "Pippa Passes",
+   "Rabbi Ben Ezra",
+   "Sordello",
+   "Strafford",
+   "The Inn Album",
+   "The Pied Piper of Hamelin",
+   "The Ring and the Book",
+   "Two in the Campagna"
+  ],
+  "Robert Brustein": [
+   "The Theatre of Revolt"
+  ],
+  "Robert Buchanan": [
+   "The Fleshly School of Poetry"
+  ],
+  "Robert Burns": [
+   "A Red, Red Rose",
+   "Poems, Chiefly in the Scottish Dialect"
+  ],
+  "Robert Burton": [
+   "The Anatomy of Melancholy"
+  ],
+  "Robert Cawdrey": [
+   "A Table Alphabeticall"
+  ],
+  "Robert Chester": [
+   "Love's Martyr"
+  ],
+  "Robert Conquest": [
+   "New Lines"
+  ],
+  "Robert Frost": [
+   "Birches",
+   "Mending Wall",
+   "North of Boston",
+   "Stopping by Woods on a Snowy Evening",
+   "The Figure a Poem Makes",
+   "The Road Not Taken"
+  ],
+  "Robert Gagné": [
+   "The Conditions of Learning"
+  ],
+  "Robert Graves": [
+   "In Broken Images",
+   "The White Goddess"
+  ],
+  "Robert Greene": [
+   "Alphonsus, King of Aragon",
+   "Friar Bacon and Friar Bungay",
+   "James IV",
+   "Pandosto"
+  ],
+  "Robert Henryson": [
+   "The Testament of Cresseid"
+  ],
+  "Robert Herrick": [
+   "Hesperides",
+   "To the Virgins, to Make Much of Time"
+  ],
+  "Robert Howard": [
+   "The Indian Queen"
+  ],
+  "Robert J. C. Young": [
+   "Colonial Desire"
+  ],
+  "Robert Lado": [
+   "Linguistics Across Cultures"
+  ],
+  "Robert Langbaum": [
+   "The Poetry of Experience"
+  ],
+  "Robert Louis Stevenson": [
+   "Kidnapped",
+   "Strange Case of Dr Jekyll and Mr Hyde",
+   "Treasure Island"
+  ],
+  "Robert Lowell": [
+   "For the Union Dead",
+   "Life Studies",
+   "Night Sweat",
+   "Skunk Hour"
+  ],
+  "Robert Lynd": [
+   "The Pleasures of Ignorance"
+  ],
+  "Robert Penn Warren": [
+   "The Southern Review",
+   "Understanding Fiction",
+   "Understanding Poetry"
+  ],
+  "Robert Putnam": [
+   "Bowling Alone"
+  ],
+  "Robert Southey": [
+   "A Vision of Judgement",
+   "A Vision of Judgement (Southey)",
+   "Thalaba the Destroyer",
+   "The Curse of Kehama",
+   "The Life of Nelson"
+  ],
+  "Robert Walpole": [
+   "Licensing Act 1737"
+  ],
+  "Roddy Doyle": [
+   "The Barrytown Trilogy"
+  ],
+  "Roger Fry": [
+   "Manet and the Post-Impressionists"
+  ],
+  "Rohinton Mistry": [
+   "A Fine Balance",
+   "Family Matters",
+   "Such a Long Journey",
+   "Tales from Firozsha Baag"
+  ],
+  "Roland Barthes": [
+   "Empire of Signs",
+   "From Work to Text",
+   "Image–Music–Text",
+   "Introduction to the Structural Analysis of Narratives",
+   "Myth Today",
+   "Mythologies",
+   "S/Z",
+   "The Death of the Author",
+   "The Photographic Message",
+   "The Pleasure of the Text",
+   "Toys",
+   "Writing Degree Zero"
+  ],
+  "Roman Jakobson": [
+   "Modern Russian Poetry",
+   "Two Aspects of Language and Two Types of Aphasic Disturbances"
+  ],
+  "Romen Basu": [
+   "The Tamarind Tree"
+  ],
+  "Romesh Chunder Dutt": [
+   "The Slave Girl of Agra"
+  ],
+  "Rosemarie Garland-Thomson": [
+   "Extraordinary Bodies"
+  ],
+  "Roxane Gay": [
+   "An Untamed State"
+  ],
+  "Rudolf Bultmann": [
+   "New Testament and Mythology"
+  ],
+  "Rudolf Pannwitz": [
+   "The Crisis of European Culture"
+  ],
+  "Rudyard Kipling": [
+   "Barrack-Room Ballads",
+   "Epitaphs of the War",
+   "If—",
+   "Just So Stories",
+   "Kim",
+   "Mrs Bathurst",
+   "Puck of Pook's Hill",
+   "Recessional",
+   "The Ballad of East and West",
+   "The Jungle Book",
+   "The Last Suttee",
+   "The Man Who Would Be King",
+   "The White Man's Burden",
+   "Traffics and Discoveries",
+   "Wireless"
+  ],
+  "Rukun Advani": [
+   "Beethoven Among the Cows"
+  ],
+  "Rumi": [
+   "Masnavi"
+  ],
+  "Rupert Brooke": [
+   "The Great Lover"
+  ],
+  "Rupert Snell": [
+   "Chutneyfying English"
+  ],
+  "Ruqaiya Hasan": [
+   "Cohesion in English"
+  ],
+  "Ruskin Bond": [
+   "Neighbour's Wife and Other Stories",
+   "The Room on the Roof"
+  ],
+  "Ruth Prawer Jhabvala": [
+   "Heat and Dust",
+   "To Whom She Will"
+  ],
+  "S. L. Bhyrappa": [
+   "Parva"
+  ],
+  "S. Menon Marath": [
+   "The Wound of Spring"
+  ],
+  "S. Radhakrishnan": [
+   "Eastern Religions and Western Thought",
+   "Occasional Speeches and Writings",
+   "Report of the University Education Commission",
+   "The Dhammapada",
+   "The Heart of Hindustan",
+   "The Principal Upanishads"
+  ],
+  "S. T. Coleridge": [
+   "Biographia Literaria",
+   "Christabel",
+   "Dejection: An Ode",
+   "France: An Ode",
+   "Frost at Midnight",
+   "Kubla Khan",
+   "Limbo",
+   "Lyrical Ballads",
+   "Remorse",
+   "Sir Patrick Spens",
+   "Table Talk",
+   "The Eolian Harp",
+   "The Friend",
+   "The Mad Monk",
+   "The Rime of the Ancient Mariner"
+  ],
+  "Saadat Hasan Manto": [
+   "Thanda Gosht",
+   "Toba Tek Singh"
+  ],
+  "Sachin Tendulkar": [
+   "Playing It My Way"
+  ],
+  "Saki": [
+   "Reginald",
+   "Reginald in Russia"
+  ],
+  "Salim Ali": [
+   "The Fall of a Sparrow"
+  ],
+  "Sally Morgan": [
+   "My Place"
+  ],
+  "Sally Munt": [
+   "New Lesbian Criticism"
+  ],
+  "Salman Rushdie": [
+   "Fury",
+   "Grimus",
+   "Imaginary Homelands",
+   "Knife",
+   "Midnight's Children",
+   "The Enchantress of Florence",
+   "The Ground Beneath Her Feet",
+   "The Moor's Last Sigh",
+   "The Prophet's Hair",
+   "The Satanic Verses",
+   "Victory City"
+  ],
+  "Sam Selvon": [
+   "The Lonely Londoners"
+  ],
+  "Sam Shepard": [
+   "Operation Sidewinder"
+  ],
+  "Samuel Beckett": [
+   "Endgame",
+   "Happy Days",
+   "Krapp's Last Tape",
+   "Malone Dies",
+   "Molloy",
+   "Murphy",
+   "The Unnamable",
+   "Three Novels",
+   "Waiting for Godot"
+  ],
+  "Samuel Butler": [
+   "Erewhon",
+   "The Way of All Flesh"
+  ],
+  "Samuel Butler (poet)": [
+   "Hudibras"
+  ],
+  "Samuel Daniel": [
+   "A Defence of Rhyme",
+   "Delia"
+  ],
+  "Samuel Johnson": [
+   "A Dictionary of the English Language",
+   "Letter to Lord Chesterfield",
+   "Life of Cowley",
+   "Life of Gray",
+   "Life of Milton",
+   "Life of Savage",
+   "Lives of the English Poets",
+   "Lives of the Poets",
+   "London",
+   "Notes on King Lear",
+   "Preface to Shakespeare",
+   "Rasselas",
+   "The Idler",
+   "The Plan of a Dictionary of the English Language",
+   "The Rambler",
+   "The Vanity of Human Wishes"
+  ],
+  "Samuel P. Huntington": [
+   "The Clash of Civilizations"
+  ],
+  "Samuel Pepys": [
+   "The Diary of Samuel Pepys"
+  ],
+  "Samuel Purchas": [
+   "Purchas his Pilgrimage"
+  ],
+  "Samuel Richardson": [
+   "Clarissa",
+   "Familiar Letters",
+   "Pamela"
+  ],
+  "Sandra Gilbert": [
+   "The Madwoman in the Attic"
+  ],
+  "Sara Ahmed": [
+   "Affective Economies",
+   "The Cultural Politics of Emotion"
+  ],
+  "Sara Suleri": [
+   "Meatless Days"
+  ],
+  "Sarat Chandra Chattopadhyay": [
+   "Parineeta"
+  ],
+  "Sarnath Banerjee": [
+   "Corridor"
+  ],
+  "Sarojini Naidu": [
+   "Indian Dancers",
+   "Palanquin Bearers",
+   "The Golden Threshold",
+   "The Sceptred Flute"
+  ],
+  "Saros Cowasjee": [
+   "Goodbye to Elsa"
+  ],
+  "Sasthi Brata": [
+   "My God Died Young"
+  ],
+  "Satya P. Mohanty": [
+   "Literary Theory and the Claims of History"
+  ],
+  "Satyajit Ray": [
+   "Charulata",
+   "Feluda"
+  ],
+  "Seamus Heaney": [
+   "An Open Letter",
+   "Death of a Naturalist",
+   "Digging",
+   "Door into the Dark",
+   "North",
+   "Punishment",
+   "Responsibilities",
+   "Seeing Things",
+   "Station Island",
+   "Strange Fruit",
+   "The Otter",
+   "The Tollund Man",
+   "Wintering Out"
+  ],
+  "Sean O'Casey": [
+   "Juno and the Paycock",
+   "The Plough and the Stars",
+   "The Silver Tassie",
+   "Time and the Conways"
+  ],
+  "Sebastian Faulks": [
+   "Birdsong"
+  ],
+  "Sergei Eisenstein": [
+   "Notes for a Film of Capital"
+  ],
+  "Shahnaz Bashir": [
+   "The Half Mother"
+  ],
+  "Shantabai Krushnaji Kamble": [
+   "Majya Jalmachi Chittarkatha"
+  ],
+  "Sharankumar Limbale": [
+   "Akkarmashi",
+   "Towards an Aesthetic of Dalit Literature"
+  ],
+  "Sharon L. Snyder": [
+   "Narrative Prosthesis"
+  ],
+  "Shashi Deshpande": [
+   "Small Remedies",
+   "That Long Silence"
+  ],
+  "Shashi Tharoor": [
+   "An Era of Darkness",
+   "The Great Indian Novel"
+  ],
+  "Shauna Singh Baldwin": [
+   "What the Body Remembers"
+  ],
+  "Shelagh Delaney": [
+   "A Taste of Honey"
+  ],
+  "Shevantibai M. Nikambe": [
+   "Ratanbai"
+  ],
+  "Shivani Gupta": [
+   "No Looking Back"
+  ],
+  "Shobasakthi": [
+   "Gorilla"
+  ],
+  "Shoshee Chunder Dutt": [
+   "The Republic of Orissa"
+  ],
+  "Shri Purohit Swami": [
+   "The Ten Principal Upanishads"
+  ],
+  "Shudraka": [
+   "Mṛcchakaṭika"
+  ],
+  "Shulamith Firestone": [
+   "The Dialectic of Sex"
+  ],
+  "Shyam Selvadurai": [
+   "Funny Boy"
+  ],
+  "Shyamala A. Narayan": [
+   "Indian English Literature 1980–2000: A Critical Survey"
+  ],
+  "Siddharth Dhanvant Shanghvi": [
+   "The Lost Flamingoes of Bombay"
+  ],
+  "Siddhartha Gigoo": [
+   "The Garden of Solitude"
+  ],
+  "Siddhartha Mukherjee": [
+   "The Emperor of All Maladies"
+  ],
+  "Sidney Keyes": [
+   "The Iron Laurel"
+  ],
+  "Siegfried Sassoon": [
+   "A Soldier's Declaration",
+   "When I'm Alone"
+  ],
+  "Sigmund Freud": [
+   "Civilization and Its Discontents",
+   "Creative Writers and Day-Dreaming",
+   "Fetishism",
+   "Group Psychology and the Analysis of the Ego",
+   "The Interpretation of Dreams",
+   "The Psychopathology of Everyday Life",
+   "The Uncanny"
+  ],
+  "Simon Gikandi": [
+   "Maps of Englishness"
+  ],
+  "Simone de Beauvoir": [
+   "The Second Sex"
+  ],
+  "Sinclair Lewis": [
+   "Babbitt"
+  ],
+  "Sinclair Ross": [
+   "As for Me and My House"
+  ],
+  "Sky Lee": [
+   "Disappearing Moon Cafe"
+  ],
+  "Solomon Northup": [
+   "Twelve Years a Slave"
+  ],
+  "Somadeva": [
+   "Kathasaritsagara"
+  ],
+  "Sophocles": [
+   "Antigone",
+   "Oedipus Rex",
+   "Oedipus at Colonus",
+   "Oedipus the King"
+  ],
+  "Sri Aurobindo": [
+   "Savitri",
+   "The Future Poetry",
+   "The Hour of God",
+   "The Life Divine",
+   "The Mother",
+   "The Synthesis of Yoga",
+   "The Viziers of Bassora"
+  ],
+  "Srividya Natarajan": [
+   "Bhimayana"
+  ],
+  "St Augustine": [
+   "Confessions"
+  ],
+  "St Jerome": [
+   "Vulgate"
+  ],
+  "Stanley Fish": [
+   "Is There a Text in This Class?",
+   "Surprised by Sin"
+  ],
+  "Stendhal": [
+   "The Red and the Black"
+  ],
+  "Stephen Crane": [
+   "The Bride Comes to Yellow Sky"
+  ],
+  "Stephen Gosson": [
+   "Plays Confuted in Five Actions",
+   "The School of Abuse"
+  ],
+  "Stephen Greenblatt": [
+   "Renaissance Self-Fashioning",
+   "Resonance and Wonder",
+   "Shakespearean Negotiations",
+   "The Swerve"
+  ],
+  "Stephen Spender": [
+   "Daybreak",
+   "Poems (1933)",
+   "The Pylons",
+   "The Still Centre"
+  ],
+  "Steve Mentz": [
+   "An Introduction to the Blue Humanities",
+   "Shipwreck Modernity"
+  ],
+  "Steven Pinker": [
+   "The Language Instinct"
+  ],
+  "Stevie Smith": [
+   "Not Waving but Drowning",
+   "Novel on Yellow Paper"
+  ],
+  "Stuart Hall": [
+   "Cultural Studies: Two Paradigms",
+   "Encoding/Decoding",
+   "New Ethnicities",
+   "The Popular Arts",
+   "The Rediscovery of Ideology"
+  ],
+  "Subramani": [
+   "Dauka Puran",
+   "The Fantasy Eaters"
+  ],
+  "Sudeep Sen": [
+   "Anthropocene"
+  ],
+  "Sudhindra Nath Ghose": [
+   "The Vermilion Boat"
+  ],
+  "Sujata Bhatt": [
+   "Search for My Tongue"
+  ],
+  "Suniti Namjoshi": [
+   "Feminist Fables",
+   "The Blue Donkey Fables",
+   "The Mothers of Maya Diip"
+  ],
+  "Susan Bassnett": [
+   "Comparative Literature: A Critical Introduction",
+   "Post-colonial Translation"
+  ],
+  "Susan Faludi": [
+   "Backlash"
+  ],
+  "Susan Glaspell": [
+   "Trifles"
+  ],
+  "Susan Gubar": [
+   "The Madwoman in the Attic"
+  ],
+  "Susan Sontag": [
+   "Against Interpretation",
+   "Illness as Metaphor",
+   "The World as India"
+  ],
+  "Suzanne Keen": [
+   "Empathy and the Novel"
+  ],
+  "Svati Joshi": [
+   "Rethinking English"
+  ],
+  "Sylvia Plath": [
+   "Ariel",
+   "Daddy",
+   "Gospel of John",
+   "Lady Lazarus",
+   "Mirror",
+   "The Applicant",
+   "The Bell Jar"
+  ],
+  "T. N. Seshan": [
+   "Through the Broken Glass"
+  ],
+  "T. S. Eliot": [
+   "Andrew Marvell",
+   "Ash-Wednesday",
+   "Burnt Norton",
+   "East Coker",
+   "Four Quartets",
+   "Gerontion",
+   "Hamlet and His Problems",
+   "Little Gidding",
+   "Murder in the Cathedral",
+   "Notes towards the Definition of Culture",
+   "Old Possum's Book of Practical Cats",
+   "On Poetry and Poets",
+   "Poems (1920)",
+   "Prufrock and Other Observations",
+   "The Cocktail Party",
+   "The Confidential Clerk",
+   "The Criterion",
+   "The Family Reunion",
+   "The Frontiers of Criticism",
+   "The Function of Criticism",
+   "The Love Song of J. Alfred Prufrock",
+   "The Metaphysical Poets",
+   "The Sacred Wood",
+   "The Use of Poetry and the Use of Criticism",
+   "The Waste Land",
+   "Tradition and the Individual Talent",
+   "What Is a Classic?",
+   "Whispers of Immortality"
+  ],
+  "Taban Lo Liyong": [
+   "On the Abolition of the English Department"
+  ],
+  "Talal Asad": [
+   "Anthropology and the Colonial Encounter"
+  ],
+  "Taslima Nasrin": [
+   "Lajja"
+  ],
+  "Tayeb Salih": [
+   "Season of Migration to the North"
+  ],
+  "Ted Hughes": [
+   "Birthday Letters",
+   "Daffodils",
+   "Ghost Crabs",
+   "Hawk Roosting",
+   "Lupercal",
+   "Relic",
+   "Remains of Elmet",
+   "The Hawk in the Rain",
+   "The Jaguar",
+   "The Thought-Fox",
+   "Thrushes",
+   "Wodwo"
+  ],
+  "Tehmina Durrani": [
+   "Blasphemy"
+  ],
+  "Teju Cole": [
+   "Open City"
+  ],
+  "Tennessee Williams": [
+   "A Streetcar Named Desire",
+   "Cat on a Hot Tin Roof",
+   "The Glass Menagerie"
+  ],
+  "Terence Hawkes": [
+   "Presentist Shakespeares",
+   "Structuralism and Semiotics"
+  ],
+  "Terence Rattigan": [
+   "The Winslow Boy"
+  ],
+  "Terry Eagleton": [
+   "Criticism and Ideology",
+   "Literary Theory: An Introduction",
+   "The Function of Criticism: From The Spectator to Post-Structuralism",
+   "The Illusions of Postmodernism",
+   "Why Marx Was Right"
+  ],
+  "Thakazhi Sivasankara Pillai": [
+   "Chemmeen"
+  ],
+  "Theodor Adorno": [
+   "Dialectic of Enlightenment",
+   "On Popular Music"
+  ],
+  "Theodore Dreiser": [
+   "Sister Carrie"
+  ],
+  "Theodore Roethke": [
+   "My Papa's Waltz"
+  ],
+  "Thom Gunn": [
+   "Jack Straw's Castle"
+  ],
+  "Thomas Aquinas": [
+   "Summa Theologica"
+  ],
+  "Thomas Babington Macaulay": [
+   "Essay on Milton",
+   "Minute on Indian Education"
+  ],
+  "Thomas Bowdler": [
+   "The Family Shakespeare"
+  ],
+  "Thomas Browne": [
+   "Hydriotaphia, Urn Burial",
+   "Of Toleration",
+   "Pseudodoxia Epidemica",
+   "Religio Medici",
+   "Urn Burial"
+  ],
+  "Thomas Carew": [
+   "An Elegy upon the Death of the Dean of Paul's, Dr John Donne",
+   "Poems (1640)"
+  ],
+  "Thomas Carlyle": [
+   "Chartism",
+   "Occasional Discourse on the Negro Question",
+   "On Heroes and Hero-Worship",
+   "On Heroes, Hero-Worship, and the Heroic in History",
+   "Past and Present",
+   "Sartor Resartus",
+   "Signs of the Times",
+   "The French Revolution",
+   "The Life of John Sterling"
+  ],
+  "Thomas Chatterton": [
+   "The Rowley Poems"
+  ],
+  "Thomas Cranmer": [
+   "Book of Common Prayer"
+  ],
+  "Thomas De Quincey": [
+   "Confessions of an English Opium-Eater",
+   "On Murder Considered as One of the Fine Arts",
+   "On the Knocking at the Gate in Macbeth",
+   "Recollections of the Lakes and the Lake Poets",
+   "Suspiria de Profundis",
+   "Tales from Shakespeare",
+   "The English Mail-Coach",
+   "The Poetry of Pope",
+   "The Revolt of the Tartars"
+  ],
+  "Thomas Dekker": [
+   "Old Fortunatus",
+   "The Honest Whore",
+   "The Shoemaker's Holiday"
+  ],
+  "Thomas Elyot": [
+   "The Book Named the Governour"
+  ],
+  "Thomas Friedman": [
+   "The World Is Flat"
+  ],
+  "Thomas Fuller": [
+   "The Holy State and the Profane State"
+  ],
+  "Thomas Gray": [
+   "Elegy Written in a Country Churchyard",
+   "Ode on a Distant Prospect of Eton College",
+   "The Progress of Poesy"
+  ],
+  "Thomas Hardy": [
+   "A Pair of Blue Eyes",
+   "A Trampwoman's Tragedy",
+   "Channel Firing",
+   "Far from the Madding Crowd",
+   "He Never Expected Much",
+   "In Time of 'The Breaking of Nations'",
+   "Jude the Obscure",
+   "Poems of 1912–13",
+   "Tess of the d'Urbervilles",
+   "The Darkling Thrush",
+   "The Hand of Ethelberta",
+   "The Mayor of Casterbridge",
+   "The Return of the Native",
+   "The Trumpet-Major",
+   "The Voice",
+   "The Woodlanders",
+   "Under the Greenwood Tree"
+  ],
+  "Thomas Heywood": [
+   "A Woman Killed with Kindness",
+   "The English Traveller"
+  ],
+  "Thomas Hobbes": [
+   "De Cive",
+   "Leviathan"
+  ],
+  "Thomas Keneally": [
+   "Schindler's Ark"
+  ],
+  "Thomas King": [
+   "Medicine River"
+  ],
+  "Thomas Kyd": [
+   "The Spanish Tragedy"
+  ],
+  "Thomas Love Peacock": [
+   "Gryll Grange",
+   "Headlong Hall",
+   "Nightmare Abbey",
+   "The Four Ages of Poetry"
+  ],
+  "Thomas Malory": [
+   "Le Morte Darthur",
+   "Le Morte d'Arthur"
+  ],
+  "Thomas Mann": [
+   "Buddenbrooks",
+   "Confessions of Felix Krull",
+   "Death in Venice",
+   "The Magic Mountain",
+   "The Transposed Heads"
+  ],
+  "Thomas Middleton": [
+   "A Game at Chess",
+   "A Trick to Catch the Old One",
+   "The Changeling",
+   "The Revenger's Tragedy",
+   "Women Beware Women"
+  ],
+  "Thomas More": [
+   "Utopia"
+  ],
+  "Thomas N. Corns": [
+   "Milton's Language"
+  ],
+  "Thomas Nashe": [
+   "The Terrors of the Night",
+   "The Unfortunate Traveller"
+  ],
+  "Thomas Norton": [
+   "Gorboduc"
+  ],
+  "Thomas Otway": [
+   "The Orphan",
+   "The Princess of Cleves",
+   "The Soldier's Fortune",
+   "Venice Preserv'd"
+  ],
+  "Thomas Paine": [
+   "Rights of Man",
+   "The Age of Reason"
+  ],
+  "Thomas Percy": [
+   "Reliques of Ancient English Poetry"
+  ],
+  "Thomas Pringle": [
+   "African Sketches"
+  ],
+  "Thomas Pynchon": [
+   "V."
+  ],
+  "Thomas Rymer": [
+   "A Short View of Tragedy",
+   "The Tragedies of the Last Age"
+  ],
+  "Thomas Sackville": [
+   "Gorboduc"
+  ],
+  "Thomas Sprat": [
+   "History of the Royal Society",
+   "The History of the Royal Society"
+  ],
+  "Thomas Wilson": [
+   "The Arte of Rhetorique"
+  ],
+  "Thomas Wyatt": [
+   "Whoso List to Hunt"
+  ],
+  "Timothy Mo": [
+   "Sour Sweet"
+  ],
+  "Tobias Smollett": [
+   "A Complete History of England",
+   "Roderick Random",
+   "The Critical Review"
+  ],
+  "Tolkappiyar": [
+   "Tolkappiyam"
+  ],
+  "Tom Shakespeare": [
+   "Disability Rights and Wrongs"
+  ],
+  "Tom Stoppard": [
+   "Indian Ink",
+   "Jumpers",
+   "Rosencrantz and Guildenstern Are Dead",
+   "Shakespeare in Love",
+   "The Real Inspector Hound",
+   "The Real Thing",
+   "Travesties"
+  ],
+  "Toni Morrison": [
+   "A Mercy",
+   "Beloved",
+   "Jazz",
+   "Playing in the Dark",
+   "Song of Solomon",
+   "Sula",
+   "Tar Baby",
+   "The Bluest Eye"
+  ],
+  "Tony Bennett": [
+   "Formalism and Marxism"
+  ],
+  "Tony Kushner": [
+   "Angels in America"
+  ],
+  "Toril Moi": [
+   "Feminist, Female, Feminine",
+   "French Feminist Thought",
+   "Sexual/Textual Politics",
+   "What Is a Woman?"
+  ],
+  "Torrey Peters": [
+   "Detransition, Baby"
+  ],
+  "Toru Dutt": [
+   "A Sheaf Gleaned in French Fields",
+   "Ancient Ballads and Legends of Hindustan",
+   "Bianca",
+   "Our Casuarina Tree",
+   "The Lotus"
+  ],
+  "Tripurari Sharma": [
+   "A Tale from the Year 1857: Azizun Nisa"
+  ],
+  "Tulsi Ram": [
+   "Murdahiya"
+  ],
+  "Tzvetan Todorov": [
+   "The Poetics of Prose",
+   "The Typology of Detective Fiction"
+  ],
+  "U. R. Ananthamurthy": [
+   "Samskara"
+  ],
+  "Uma Parameswaran": [
+   "Trishanku"
+  ],
+  "Umberto Eco": [
+   "Foucault's Pendulum",
+   "How to Write a Thesis",
+   "Semiotics and the Philosophy of Language",
+   "The Aesthetics of Thomas Aquinas",
+   "The Name of the Rose",
+   "Travels in Hyperreality"
+  ],
+  "Upamanyu Chatterjee": [
+   "English, August"
+  ],
+  "Urmila Pawar": [
+   "The Weave of My Life"
+  ],
+  "Urvashi Butalia": [
+   "The Other Side of Silence"
+  ],
+  "V. K. Gokak": [
+   "English in India: Its Present and Future"
+  ],
+  "V. S. Naipaul": [
+   "A House for Mr Biswas",
+   "An Area of Darkness",
+   "Half a Life",
+   "In a Free State",
+   "India: A Million Mutinies Now",
+   "India: A Wounded Civilization",
+   "Magic Seeds",
+   "Miguel Street",
+   "The Masque of Africa",
+   "The Middle Passage",
+   "The Mimic Men",
+   "The Mystic Masseur",
+   "The Suffrage of Elvira",
+   "The Writer and the World"
+  ],
+  "Valentin Voloshinov": [
+   "Marxism and the Philosophy of Language"
+  ],
+  "Vandana Singh": [
+   "The Woman Who Thought She Was a Planet"
+  ],
+  "Ved Mehta": [
+   "Delinquent Chacha",
+   "Face to Face"
+  ],
+  "Vijay Tendulkar": [
+   "Encounter in Umbugland",
+   "Ghashiram Kotwal",
+   "Gidhade",
+   "Sakharam Binder",
+   "Shantata! Court Chalu Aahe",
+   "Silence! The Court Is in Session"
+  ],
+  "Vikas Swarup": [
+   "Q & A"
+  ],
+  "Vikram Chandra": [
+   "Love and Longing in Bombay",
+   "Red Earth and Pouring Rain",
+   "Sacred Games"
+  ],
+  "Vikram Seth": [
+   "A Suitable Boy",
+   "An Equal Music",
+   "From Heaven Lake",
+   "The Golden Gate",
+   "The Rivered Earth"
+  ],
+  "Viktor Shklovsky": [
+   "Art as Technique"
+  ],
+  "Virgil": [
+   "Aeneid",
+   "Eclogues"
+  ],
+  "Virginia Woolf": [
+   "A Room of One's Own",
+   "A Sketch of the Past",
+   "Am I a Snob?",
+   "Jacob's Room",
+   "Modern Fiction",
+   "Moments of Being",
+   "Mr Bennett and Mrs Brown",
+   "Mrs Dalloway",
+   "Night and Day",
+   "On Re-reading Novels",
+   "Orlando",
+   "Orlando: A Biography",
+   "Professions for Women",
+   "The Common Reader",
+   "The Death of the Moth",
+   "The Leaning Tower",
+   "To the Lighthouse"
+  ],
+  "Vishnu Sharma": [
+   "Panchatantra",
+   "Tantrakhyayika"
+  ],
+  "Vishwajyoti Ghosh": [
+   "This Side, That Side"
+  ],
+  "Vladimir Nabokov": [
+   "Lolita",
+   "Pale Fire",
+   "Speak, Memory"
+  ],
+  "Voltaire": [
+   "Candide"
+  ],
+  "Vyasa": [
+   "Mahabharata"
+  ],
+  "Václav Havel": [
+   "Temptation"
+  ],
+  "W. B. Yeats": [
+   "A Prayer for My Daughter",
+   "A Prayer for Old Age",
+   "A Vision",
+   "Adam's Curse",
+   "Among School Children",
+   "Byzantium",
+   "Coole Park and Ballylee, 1931",
+   "Coole and Ballylee, 1931",
+   "Easter, 1916",
+   "In Memory of Major Robert Gregory",
+   "Lapis Lazuli",
+   "Last Poems",
+   "Leda and the Swan",
+   "Michael Robartes and the Dancer",
+   "No Second Troy",
+   "Sailing to Byzantium",
+   "The Celtic Twilight",
+   "The Circus Animals' Desertion",
+   "The Coming of Wisdom with Time",
+   "The Countess Cathleen",
+   "The Green Helmet and Other Poems",
+   "The Land of Heart's Desire",
+   "The Second Coming",
+   "The Song of Wandering Aengus",
+   "The Ten Principal Upanishads",
+   "The Tower",
+   "The Wild Swans at Coole",
+   "Two Songs from a Play",
+   "Under Ben Bulben",
+   "When You Are Old"
+  ],
+  "W. E. B. Du Bois": [
+   "The Crisis",
+   "The Souls of Black Folk"
+  ],
+  "W. H. Auden": [
+   "Consider",
+   "Funeral Blues",
+   "In Memory of W. B. Yeats",
+   "In Praise of Limestone",
+   "Letters from Iceland",
+   "Look, Stranger!",
+   "Lullaby",
+   "Musée des Beaux Arts",
+   "On This Island",
+   "On the Frontier",
+   "Psychology and Art To-day",
+   "September 1, 1939",
+   "The Ascent of F6",
+   "The Dog Beneath the Skin",
+   "The Dyer's Hand",
+   "The Sea and the Mirror",
+   "The Shield of Achilles",
+   "The Unknown Citizen"
+  ],
+  "W. K. Wimsatt": [
+   "The Affective Fallacy",
+   "The Intentional Fallacy",
+   "The Verbal Icon"
+  ],
+  "W. M. Thackeray": [
+   "Henry Esmond",
+   "Men's Wives",
+   "Pendennis",
+   "The Cornhill Magazine",
+   "The History of Henry Esmond",
+   "The Newcomes",
+   "The Virginians",
+   "Vanity Fair"
+  ],
+  "W. R. Owens": [
+   "The Handbook to Literary Research"
+  ],
+  "W. Somerset Maugham": [
+   "Ashenden",
+   "Cakes and Ale",
+   "Katha Upanishad",
+   "Of Human Bondage",
+   "Ten Novels and Their Authors",
+   "The Hour and the Man",
+   "The Lion's Skin",
+   "The Razor's Edge"
+  ],
+  "W. W. Greg": [
+   "The Rationale of Copy-Text"
+  ],
+  "Wakefield Master": [
+   "The Second Shepherds' Play"
+  ],
+  "Wallace Stevens": [
+   "Sunday Morning",
+   "Thirteen Ways of Looking at a Blackbird"
+  ],
+  "Walt Whitman": [
+   "Beat! Beat! Drums!",
+   "Calamus",
+   "I Hear America Singing",
+   "Leaves of Grass",
+   "O Captain! My Captain!",
+   "Out of the Cradle Endlessly Rocking",
+   "Song of Myself",
+   "When Lilacs Last in the Dooryard Bloom'd"
+  ],
+  "Walter Benjamin": [
+   "Illuminations",
+   "The Storyteller"
+  ],
+  "Walter Hilton": [
+   "The Scale of Perfection"
+  ],
+  "Walter J. Slatoff": [
+   "With Respect to Readers"
+  ],
+  "Walter Pater": [
+   "Appreciations",
+   "Studies in the History of the Renaissance",
+   "Style",
+   "The Renaissance"
+  ],
+  "Walter Savage Landor": [
+   "Imaginary Conversations"
+  ],
+  "Walter Scott": [
+   "Guy Mannering",
+   "Ivanhoe",
+   "Minstrelsy of the Scottish Border",
+   "Quentin Durward",
+   "Redgauntlet",
+   "The Antiquary",
+   "The Heart of Midlothian",
+   "The Lay of the Last Minstrel",
+   "Waverley"
+  ],
+  "Washington Irving": [
+   "Rip Van Winkle"
+  ],
+  "Wayne C. Booth": [
+   "The Rhetoric of Fiction"
+  ],
+  "Wendy Martin": [
+   "Essays by Contemporary American Women"
+  ],
+  "Wendy Mass": [
+   "A Mango-Shaped Space"
+  ],
+  "Wilfred Owen": [
+   "Anthem for Doomed Youth",
+   "Dulce et Decorum Est"
+  ],
+  "Wilkie Collins": [
+   "Armadale",
+   "Basil",
+   "The Moonstone",
+   "The Woman in White"
+  ],
+  "Will Wright": [
+   "Sixguns and Society"
+  ],
+  "William Beckford": [
+   "Vathek"
+  ],
+  "William Bentinck": [
+   "English Education Act 1835"
+  ],
+  "William Blake": [
+   "A Poison Tree",
+   "And did those feet in ancient time",
+   "Annotations to Reynolds's Discourses",
+   "Annotations to Watson's Apology for the Bible",
+   "Auguries of Innocence",
+   "Holy Thursday",
+   "Illustrations of the Book of Job",
+   "London",
+   "Milton",
+   "Songs of Experience",
+   "Songs of Innocence",
+   "The Book of Urizen",
+   "The Clod and the Pebble",
+   "The Human Abstract",
+   "The Marriage of Heaven and Hell",
+   "The Sick Rose",
+   "The Tyger"
+  ],
+  "William Carlos Williams": [
+   "The Red Wheelbarrow"
+  ],
+  "William Caxton": [
+   "Recuyell of the Historyes of Troye"
+  ],
+  "William Collins": [
+   "Ode Occasion'd by the Death of Mr Thomson"
+  ],
+  "William Congreve": [
+   "Incognita",
+   "The Double Dealer",
+   "The Mourning Bride",
+   "The Old Bachelor",
+   "The Way of the World"
+  ],
+  "William Cooper": [
+   "Memoirs of a New Man",
+   "Scenes from Married Life",
+   "Scenes from Provincial Life"
+  ],
+  "William Cowper": [
+   "The Task"
+  ],
+  "William Dampier": [
+   "A New Voyage Round the World"
+  ],
+  "William Dean Howells": [
+   "A Modern Instance"
+  ],
+  "William Dunbar": [
+   "Lament for the Makaris"
+  ],
+  "William Empson": [
+   "Milton's God",
+   "Seven Types of Ambiguity",
+   "Some Versions of Pastoral"
+  ],
+  "William Faulkner": [
+   "Absalom, Absalom!",
+   "As I Lay Dying",
+   "Light in August",
+   "Sanctuary",
+   "The Sound and the Fury"
+  ],
+  "William Franklin": [
+   "The Loves of Camarupa and Camalata"
+  ],
+  "William Gibson": [
+   "Neuromancer"
+  ],
+  "William Godwin": [
+   "Caleb Williams",
+   "Political Justice"
+  ],
+  "William Golding": [
+   "Darkness Visible",
+   "Lord of the Flies",
+   "Rites of Passage",
+   "The Inheritors"
+  ],
+  "William Hazlitt": [
+   "An Essay on the Principles of Human Action",
+   "Characters of Shakespeare's Plays",
+   "Lectures on the English Comic Writers",
+   "Lectures on the English Poets",
+   "My First Acquaintance with Poets",
+   "On Poetry in General",
+   "On Wit and Humour",
+   "Table Talk",
+   "The Indian Jugglers",
+   "The Round Table",
+   "The Spirit of the Age"
+  ],
+  "William James": [
+   "The Principles of Psychology"
+  ],
+  "William Jones": [
+   "Asiatic Society",
+   "Institutes of Hindu Law",
+   "Sacontala",
+   "Sacontalá, or the Fatal Ring",
+   "Third Anniversary Discourse"
+  ],
+  "William Langland": [
+   "Piers Plowman"
+  ],
+  "William Morris": [
+   "The Earthly Paradise"
+  ],
+  "William Painter": [
+   "The Palace of Pleasure"
+  ],
+  "William Rowley": [
+   "The Changeling"
+  ],
+  "William S. Burroughs": [
+   "Naked Lunch"
+  ],
+  "William Shakespeare": [
+   "A Midsummer Night's Dream",
+   "All Is True",
+   "All's Well That Ends Well",
+   "Antony and Cleopatra",
+   "As You Like It",
+   "Coriolanus",
+   "Cymbeline",
+   "First Folio",
+   "Hamlet",
+   "Henry IV, Part 1",
+   "Henry IV, Part 2",
+   "Henry V",
+   "Henry VIII",
+   "Julius Caesar",
+   "King Lear",
+   "Love's Labour's Lost",
+   "Macbeth",
+   "Measure for Measure",
+   "Much Ado About Nothing",
+   "Othello",
+   "Richard II",
+   "Richard III",
+   "Romeo and Juliet",
+   "Shakespeare's Sonnets",
+   "Sonnet 106",
+   "Sonnet 123",
+   "Sonnet 18",
+   "Sonnets",
+   "The Comedy of Errors",
+   "The Merchant of Venice",
+   "The Merry Wives of Windsor",
+   "The Phoenix and the Turtle",
+   "The Taming of the Shrew",
+   "The Tempest",
+   "The Two Gentlemen of Verona",
+   "The Winter's Tale",
+   "Troilus and Cressida",
+   "Twelfth Night"
+  ],
+  "William Tyndale": [
+   "Tyndale New Testament",
+   "Tyndale's New Testament"
+  ],
+  "William V. Spanos": [
+   "boundary 2"
+  ],
+  "William Walwyn": [
+   "The Power of Love"
+  ],
+  "William Whittingham": [
+   "Geneva Bible"
+  ],
+  "William Wilson": [
+   "A Little Earnest Book upon a Great Old Subject"
+  ],
+  "William Wordsworth": [
+   "French Revolution as It Appeared to Enthusiasts at Its Commencement",
+   "Lines Composed a Few Miles above Tintern Abbey",
+   "Lines Written a Few Miles above Tintern Abbey",
+   "London, 1802",
+   "Lyrical Ballads",
+   "Nuns Fret Not at Their Convent's Narrow Room",
+   "Ode: Intimations of Immortality",
+   "Poems, in Two Volumes",
+   "Preface to Lyrical Ballads",
+   "Resolution and Independence",
+   "The Borderers",
+   "The Excursion",
+   "The Prelude",
+   "The Ruined Cottage",
+   "The Solitary Reaper",
+   "The Tables Turned",
+   "The Thorn",
+   "The World Is Too Much with Us",
+   "There Was a Boy"
+  ],
+  "William Wycherley": [
+   "Love in a Wood",
+   "The Country Wife",
+   "The Plain Dealer"
+  ],
+  "Wilson Harris": [
+   "Palace of the Peacock"
+  ],
+  "Wim Wenders": [
+   "Notebook on Cities and Clothes"
+  ],
+  "Wole Soyinka": [
+   "A Dance of the Forests",
+   "Death and the King's Horseman",
+   "Kongi's Harvest",
+   "Madmen and Specialists",
+   "Telephone Conversation",
+   "The Interpreters",
+   "The Lion and the Jewel",
+   "The Swamp Dwellers"
+  ],
+  "Wolfgang Iser": [
+   "The Act of Reading",
+   "The Implied Reader"
+  ],
+  "Won-pyung Sohn": [
+   "Almond"
+  ],
+  "Wyndham Lewis": [
+   "Blast"
+  ],
+  "Yann Martel": [
+   "Life of Pi"
+  ],
+  "Yasmin Alibhai-Brown": [
+   "No Place Like Home"
+  ],
+  "Yasmine Gooneratne": [
+   "The Pleasures of Conquest",
+   "This Language, This Woman"
+  ],
+  "Yevgeny Zamyatin": [
+   "We"
+  ],
+  "Yusef Komunyakaa": [
+   "Banking Potatoes"
+  ],
+  "Zadie Smith": [
+   "White Teeth"
+  ],
+  "Ziauddin Sardar": [
+   "Introducing Cultural Studies"
+  ],
+  "Zora Neale Hurston": [
+   "Color Struck",
+   "Their Eyes Were Watching God"
+  ],
+  "Zygmunt Bauman": [
+   "Liquid Modernity"
+  ],
+  "Émile Durkheim": [
+   "The Rules of Sociological Method"
+  ],
+  "Émile Zola": [
+   "Germinal"
+  ]
+ }
 }
