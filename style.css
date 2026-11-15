@@ -485,3 +485,8 @@ details summary { cursor: pointer; font-weight: 800; color: var(--accent-ink); m
 .bank-item .ans { margin: 4px 0; }
 .bank-item .ans b { color: var(--ok); }
 .clamp { white-space: pre-line; display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Guide: writers of a notes folder, each opening to the works asked */
+details.wr summary { gap: 10px; color: inherit; font-weight: 700; }
+details.wr summary .grow { flex: 1; min-width: 0; font-family: "Lora", Georgia, serif; font-size: 16.5px; }
+details.wr.pink { background: var(--pinkrow); border-radius: 12px; padding-left: 10px; padding-right: 10px; }

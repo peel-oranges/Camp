@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-11-15",
   "note": "Sections and their tag rules. Each question is sorted automatically by its topic tags; add works, lines, patterns or highlightWriters to any subtopic to enrich its page.",
   "categories": [
     {
       "id": "british",
       "name": "British Literature",
       "icon": "♛",
-      "about": "From Old English to the contemporary, period by period.",
+      "about": "My Lit notes order: the 13 British ages plus Contemporary. Tap an age for its folders, then a folder for its writers and works.",
       "match": [
         {
           "any": [
@@ -197,13 +197,31 @@
           ]
         }
       ],
-      "otherName": "Other — period not tagged"
+      "otherName": "Other — period not tagged",
+      "notes": {
+        "ages": [
+          "Old English Age",
+          "The Middle English Period",
+          "Age of Chaucer",
+          "From Chaucer to Spenser",
+          "Elizabethan Age (Golden Age)",
+          "Metaphysical Poets",
+          "Puritan Age",
+          "Restoration Age",
+          "Neoclassical Age",
+          "Transition Age",
+          "Romantic Age",
+          "Victorian Era",
+          "Early 20th Century & 20th Century",
+          "Contemporary"
+        ]
+      }
     },
     {
       "id": "american",
       "name": "American Literature",
       "icon": "✪",
-      "about": "Colonial beginnings to the contemporary, including African American writing.",
+      "about": "My Lit notes order: American Writers › Novelists, Poets, Dramatists, Beat Generation.",
       "match": [
         {
           "any": [
@@ -293,13 +311,18 @@
           ]
         }
       ],
-      "otherName": "Other American writing"
+      "otherName": "Other American writing",
+      "notes": {
+        "ages": [
+          "American Writers"
+        ]
+      }
     },
     {
       "id": "indian",
       "name": "Indian Literature",
       "icon": "❁",
-      "about": "Indian writing in English, in translation, Dalit writing, diaspora and Indian aesthetics.",
+      "about": "My Lit notes order: Indian Writing in English, Hindi Writers and Classical Sanskrit.",
       "match": [
         {
           "any": [
@@ -454,13 +477,20 @@
           ]
         }
       ],
-      "otherName": "Other Indian writing"
+      "otherName": "Other Indian writing",
+      "notes": {
+        "ages": [
+          "Indian Writing in English",
+          "Hindi Writers",
+          "Classical Sanskrit"
+        ]
+      }
     },
     {
       "id": "world",
-      "name": "World & Postcolonial Literature",
+      "name": "World & Commonwealth Literature",
       "icon": "◎",
-      "about": "African, Caribbean, Canadian, Australian, European and Russian writing in translation, and the classics.",
+      "about": "My Lit notes order: Canadian, Australian, World Literature, Classical Greek, Latin/Roman and Detective Literature.",
       "match": [
         {
           "any": [
@@ -582,13 +612,23 @@
           ]
         }
       ],
-      "otherName": "Other world writing"
+      "otherName": "Other world writing",
+      "notes": {
+        "ages": [
+          "Canadian Writers",
+          "Australian Literature",
+          "World Literature",
+          "Classical Greek",
+          "Latin/Roman Writers",
+          "Detective Literature"
+        ]
+      }
     },
     {
       "id": "theory",
       "name": "Literary Theory & Criticism",
       "icon": "✎",
-      "about": "Classical and Indian poetics, English criticism from Sidney to Eliot, and modern theory.",
+      "about": "My Lit notes order: the Literary Theory folders, then Critics & Cultural Theorists, Hermeneutics, Translation Studies and Comparative Literature. A question on a critic's view of a writer is listed here and under the writer's age.",
       "match": [
         {
           "any": [
@@ -803,7 +843,520 @@
           ]
         }
       ],
-      "otherName": "Other theorists (e.g. Bakhtin)"
+      "otherName": "Other theorists (e.g. Bakhtin)",
+      "notes": {
+        "critTags": [
+          "Literary theory",
+          "Literary criticism",
+          "Criticism",
+          "Shakespeare criticism",
+          "Practical criticism",
+          "Practical Criticism",
+          "Critical theory",
+          "Schools of criticism",
+          "Identify the critic",
+          "Identify the theorist",
+          "Criticism by novelists",
+          "Novel theory",
+          "Theory of the novel",
+          "Drama theory",
+          "Romantic theory",
+          "Aesthetics",
+          "Art criticism",
+          "Culture criticism",
+          "Social criticism",
+          "Textual criticism",
+          "Biographical criticism",
+          "Genre theory",
+          "Narrative theory"
+        ],
+        "folders": [
+          {
+            "name": "Literature and Mimesis",
+            "tags": [
+              "Mimesis",
+              "Poetics"
+            ],
+            "broad": [],
+            "theorists": [
+              "Plato",
+              "Aristotle",
+              "Horace"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Literature and the Sublime",
+            "tags": [
+              "Sublime",
+              "The sublime",
+              "The Sublime"
+            ],
+            "broad": [],
+            "theorists": [
+              "Longinus"
+            ],
+            "critics": [
+              "Edmund Burke",
+              "Immanuel Kant"
+            ]
+          },
+          {
+            "name": "Neoclassical",
+            "tags": [
+              "Neoclassical criticism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Thomas Rymer",
+              "John Dennis"
+            ],
+            "critics": [
+              "John Dryden",
+              "Alexander Pope",
+              "Samuel Johnson",
+              "Joseph Addison",
+              "Richard Steele",
+              "Ben Jonson",
+              "Philip Sidney"
+            ]
+          },
+          {
+            "name": "Romanticism",
+            "tags": [
+              "Romantic theory"
+            ],
+            "broad": [],
+            "theorists": [],
+            "critics": [
+              "William Wordsworth",
+              "Samuel Taylor Coleridge",
+              "Percy Bysshe Shelley",
+              "John Keats",
+              "William Hazlitt",
+              "Charles Lamb",
+              "Thomas De Quincey",
+              "Thomas Love Peacock",
+              "Friedrich Schlegel",
+              "Friedrich Schiller"
+            ]
+          },
+          {
+            "name": "Formalism",
+            "tags": [
+              "Russian Formalism",
+              "Formalism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Viktor Shklovsky",
+              "Boris Eichenbaum",
+              "Yury Tynyanov",
+              "Boris Tomashevsky",
+              "Vladimir Propp"
+            ],
+            "critics": [
+              "Roman Jakobson"
+            ]
+          },
+          {
+            "name": "New Criticism (Anglo-American Criticism)",
+            "tags": [
+              "New Criticism",
+              "Practical criticism",
+              "Practical Criticism",
+              "Archetypal criticism",
+              "Myth criticism"
+            ],
+            "broad": [],
+            "theorists": [
+              "I. A. Richards",
+              "Cleanth Brooks",
+              "William Empson",
+              "R. P. Blackmur",
+              "W. K. Wimsatt",
+              "Monroe Beardsley",
+              "Allen Tate",
+              "John Crowe Ransom",
+              "Robert Penn Warren",
+              "F. R. Leavis",
+              "Northrop Frye",
+              "Maud Bodkin",
+              "Yvor Winters"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Literary Criticism",
+            "tags": [],
+            "broad": [],
+            "theorists": [],
+            "critics": [],
+            "rest": true
+          },
+          {
+            "name": "Structuralism",
+            "tags": [
+              "Structuralism",
+              "Semiotics",
+              "Genetic structuralism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Ferdinand de Saussure",
+              "Claude Lévi-Strauss",
+              "A. J. Greimas",
+              "C. S. Peirce",
+              "Lucien Goldmann"
+            ],
+            "critics": [
+              "Roland Barthes"
+            ]
+          },
+          {
+            "name": "Narratology",
+            "tags": [
+              "Narratology",
+              "Narrative theory"
+            ],
+            "broad": [],
+            "theorists": [
+              "Gérard Genette",
+              "Tzvetan Todorov",
+              "Gerald Prince",
+              "Mieke Bal",
+              "Seymour Chatman",
+              "Wayne C. Booth",
+              "Franz Stanzel"
+            ],
+            "critics": [
+              "Vladimir Propp"
+            ]
+          },
+          {
+            "name": "Poststructuralism & Deconstruction",
+            "tags": [
+              "Post-structuralism",
+              "Poststructuralism",
+              "Deconstruction",
+              "Yale School",
+              "Death of the author"
+            ],
+            "broad": [],
+            "theorists": [
+              "Jacques Derrida",
+              "Paul de Man",
+              "J. Hillis Miller",
+              "Geoffrey Hartman",
+              "Geoffrey Galt Harpham",
+              "Michel Foucault",
+              "Roland Barthes",
+              "Harold Bloom"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Reader Response Theory",
+            "tags": [
+              "Reader-response criticism",
+              "Reader-response",
+              "Phenomenology",
+              "Reception theory",
+              "Transactional theory"
+            ],
+            "broad": [],
+            "theorists": [
+              "Wolfgang Iser",
+              "Hans Robert Jauss",
+              "Stanley Fish",
+              "Jonathan Culler",
+              "Norman Holland",
+              "Louise Rosenblatt",
+              "Roman Ingarden",
+              "Georges Poulet",
+              "David Bleich",
+              "Edmund Husserl",
+              "Michael Riffaterre",
+              "Umberto Eco"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Psychoanalysis",
+            "tags": [
+              "Psychoanalysis",
+              "Psychoanalytic criticism",
+              "Psychosexual stages"
+            ],
+            "broad": [],
+            "theorists": [
+              "Sigmund Freud",
+              "Jacques Lacan",
+              "Carl Jung",
+              "Julia Kristeva",
+              "Ernest Jones",
+              "Melanie Klein"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Marxist Literary Theory & Frankfurt School",
+            "tags": [
+              "Marxism",
+              "Frankfurt School",
+              "Post-Marxism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Karl Marx",
+              "Friedrich Engels",
+              "Antonio Gramsci",
+              "Louis Althusser",
+              "György Lukács",
+              "Terry Eagleton",
+              "Fredric Jameson",
+              "Theodor Adorno",
+              "Max Horkheimer",
+              "Walter Benjamin",
+              "Herbert Marcuse",
+              "Jürgen Habermas",
+              "Pierre Macherey",
+              "Christopher Caudwell"
+            ],
+            "critics": [
+              "Raymond Williams",
+              "Stuart Hall"
+            ]
+          },
+          {
+            "name": "Feminism",
+            "tags": [
+              "Gynocriticism",
+              "French feminism",
+              "Black feminism",
+              "Second-wave feminism",
+              "Post-feminism",
+              "Postcolonial feminism",
+              "Standpoint theory"
+            ],
+            "broad": [
+              "Feminism"
+            ],
+            "theorists": [
+              "Mary Wollstonecraft",
+              "Simone de Beauvoir",
+              "Elaine Showalter",
+              "Sandra Gilbert",
+              "Susan Gubar",
+              "Kate Millett",
+              "Hélène Cixous",
+              "Luce Irigaray",
+              "Toril Moi",
+              "bell hooks",
+              "Patricia Meyer Spacks",
+              "Ellen Moers",
+              "Mary Ellmann",
+              "Chandra Talpade Mohanty",
+              "Betty Friedan"
+            ],
+            "critics": [
+              "Virginia Woolf",
+              "Judith Butler",
+              "Julia Kristeva",
+              "Alice Walker",
+              "Adrienne Rich"
+            ]
+          },
+          {
+            "name": "Queer Theory",
+            "tags": [
+              "Queer theory"
+            ],
+            "broad": [],
+            "theorists": [
+              "Eve Kosofsky Sedgwick",
+              "Judith Butler",
+              "Michael Warner",
+              "David Halperin",
+              "Lee Edelman",
+              "Teresa de Lauretis",
+              "Gayle Rubin"
+            ],
+            "critics": [
+              "Michel Foucault",
+              "Adrienne Rich"
+            ]
+          },
+          {
+            "name": "Historicism / New Historicism",
+            "tags": [
+              "New Historicism",
+              "Cultural materialism",
+              "Historicism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Stephen Greenblatt",
+              "Louis Montrose",
+              "Jonathan Dollimore",
+              "Alan Sinfield",
+              "H. Aram Veeser",
+              "Catherine Gallagher"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Dialogism",
+            "tags": [
+              "Dialogism",
+              "Bakhtin",
+              "Bakhtin Circle"
+            ],
+            "broad": [],
+            "theorists": [
+              "Mikhail Bakhtin",
+              "V. N. Voloshinov"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Postcolonial Theory",
+            "tags": [
+              "Orientalism",
+              "Postcolonial theory"
+            ],
+            "broad": [
+              "Postcolonialism",
+              "Postcolonial"
+            ],
+            "theorists": [
+              "Edward Said",
+              "Frantz Fanon",
+              "Homi K. Bhabha",
+              "Gayatri Chakravorty Spivak",
+              "C. L. R. James",
+              "Aimé Césaire",
+              "Albert Memmi",
+              "Bill Ashcroft",
+              "Robert Young",
+              "Aijaz Ahmad",
+              "Ngũgĩ wa Thiong'o"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Subaltern Studies",
+            "tags": [
+              "Subaltern Studies",
+              "Subaltern studies",
+              "Subaltern"
+            ],
+            "broad": [],
+            "theorists": [
+              "Ranajit Guha",
+              "Dipesh Chakrabarty",
+              "Partha Chatterjee",
+              "Shahid Amin"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Modernism and Postmodernism",
+            "tags": [
+              "Simulacra"
+            ],
+            "broad": [
+              "Postmodernism",
+              "Modernism"
+            ],
+            "theorists": [
+              "Gilles Deleuze",
+              "Félix Guattari",
+              "Jean Baudrillard",
+              "Jean-François Lyotard",
+              "Linda Hutcheon",
+              "Ihab Hassan",
+              "Brian McHale"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Eco-criticism",
+            "tags": [
+              "Ecocriticism",
+              "Ecofeminism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Lawrence Buell",
+              "Cheryll Glotfelty",
+              "Greg Garrard",
+              "William Rueckert",
+              "Jonathan Bate",
+              "Timothy Morton"
+            ],
+            "critics": []
+          },
+          {
+            "name": "Darwinian Literary Studies",
+            "tags": [
+              "Darwinian literary studies",
+              "Literary Darwinism"
+            ],
+            "broad": [],
+            "theorists": [
+              "Joseph Carroll",
+              "Brian Boyd"
+            ],
+            "critics": []
+          },
+          {
+            "age": "Indian Poetics"
+          },
+          {
+            "age": "Critics & Cultural Theorists"
+          },
+          {
+            "age": "Hermeneutics"
+          },
+          {
+            "name": "Translation Studies",
+            "tags": [
+              "Translation studies",
+              "Bible translation"
+            ],
+            "broad": [
+              "Translation"
+            ],
+            "theorists": [
+              "Lawrence Venuti",
+              "Susan Bassnett",
+              "Eugene Nida",
+              "André Lefevere",
+              "Itamar Even-Zohar",
+              "Gideon Toury",
+              "J. C. Catford"
+            ],
+            "critics": [
+              "Roman Jakobson",
+              "Walter Benjamin"
+            ]
+          },
+          {
+            "name": "Comparative Literature",
+            "tags": [
+              "Comparative literature",
+              "Comparative"
+            ],
+            "broad": [],
+            "theorists": [
+              "Susan Bassnett",
+              "René Wellek"
+            ],
+            "critics": []
+          }
+        ]
+      }
     },
     {
       "id": "cultural",

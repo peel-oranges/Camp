@@ -757,7 +757,7 @@ function resetFolderCaches() {
   SETMEMO = new Map(); FILED = new Map(); WIDX = null; SHARE = new Map(); TITLE_AMBIG = null;
   QWORKS = new WeakMap(); QTITLES = new WeakMap(); TITLE_BY_FIRST = null;
   LEAD = new WeakMap(); FULLTXT = new WeakMap(); ANSTXT = new WeakMap(); MIXED = new WeakMap();
-  FMEMO = null;
+  FMEMO = null; GIDX = null;
 }
 // The questions for a folder or a writer: those on it, and (kept apart) the mixed ones that only touch it.
 function folderResults(list, F, span, restG, keep) {
@@ -1064,9 +1064,18 @@ function matchText(n) {
   if (info.extra) notes.push(`includes ${plural(info.extra, 'question')} on works by ${info.writers.slice(0, 2).join(', ')}${info.writers.length > 2 ? '…' : ''}`);
   return `${notes.length ? notes.join(' · ') + '. ' : ''}${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
 }
+// The sections list is drawn a moment after the Home screen, so the app opens without waiting for the Guide to be sorted.
+function browseHTML() {
+  if (!GCACHE) {
+    setTimeout(() => { buildGuide(); const box = $('#browse-box'); if (box) box.innerHTML = browseHTML(); }, 30);
+    return '';
+  }
+  const f = S.filters, browse = GCACHE.cats.filter(c => c.qs.length);
+  return browse.length ? `<section class="card"><h3>Browse by section</h3><div class="chips">${browse.map(c => `<button class="chip soft ${f.group && f.group.id === c.id ? 'on' : ''}" data-act="pickSection" data-id="${esc(c.id)}">${esc(c.name)} <span class="count">${c.qs.length}</span></button>`).join('')}</div>
+    <p class="small muted" style="margin-top:8px">For smaller topics inside a section, open it in the Guide and tap “Quiz me”.</p></section>` : '';
+}
 VIEWS.home = () => {
   const f = S.filters, due = dueList().length, n = filtered().length;
-  const browse = buildGuide().cats.filter(c => c.qs.length);
   return `
   ${mockResumeCard()}
   <section class="card revise ${due ? 'has-due' : ''}">
@@ -1102,8 +1111,7 @@ VIEWS.home = () => {
     <div id="paper-box">${paperBoxHTML()}</div>
   </section>
 
-  ${browse.length ? `<section class="card"><h3>Browse by section</h3><div class="chips">${browse.map(c => `<button class="chip soft ${f.group && f.group.id === c.id ? 'on' : ''}" data-act="pickSection" data-id="${esc(c.id)}">${esc(c.name)} <span class="count">${c.qs.length}</span></button>`).join('')}</div>
-    <p class="small muted" style="margin-top:8px">For smaller topics inside a section, open it in the Guide and tap “Quiz me”.</p></section>` : ''}
+  <div id="browse-box">${browseHTML()}</div>
   <p class="foot muted small">${plural(S.questions.length, 'question')} in the bank${pyqYearsLine() ? `<br>${esc(pyqYearsLine())}` : ''}</p>`;
 };
 
@@ -1299,13 +1307,191 @@ function matchAny(q, rules, not) {
 }
 
 let GCACHE = null;              // rebuilt whenever the question bank or guide changes
+const guideCounts = qs => {
+  const pyq = qs.filter(isPYQ);
+  return { qs, pyq, net: pyq.filter(q => q.exam === 'NET').length, gate: pyq.filter(q => q.exam === 'GATE').length, total: pyq.length };
+};
+/* ---------- Guide sections laid out as my Lit notes (guide.json → a section's "notes") ----------
+   British, American, Indian, World and Theory follow my notes folders: section → age → folder → sub-folder.
+   A question goes under every age or folder whose writer it is on (so Johnson's Preface to Shakespeare is
+   under Johnson's age and Shakespeare's), and a critic's question also goes under the Theory folder of that
+   critic. Writers named only as wrong options or in a mixed list don't pull a question in.
+   The older tag-based topics (british-medieval, …) are still worked out, unseen, for the Syllabus links.   */
+const NF = new Map();           // folder of my notes (by its path) → its Guide node
+const nfId = N => 'nf:' + N.path;
+const isWrapper = N => N.name === 'British Literature';              // a folder that only holds the others: its folders show one level up
+function shownKids(N) {
+  const out = [];
+  N.kids.forEach(k => { if (isWrapper(k)) out.push(...k.kids); else out.push(k); });
+  return out;
+}
+const shownWriters = N => N.ownW.concat(...N.kids.filter(isWrapper).map(k => k.ownW));
+function nfNode(N, parent, pool) {
+  const id = nfId(N);
+  let t = NF.get(id);
+  if (t) return t;
+  const span = queryTokens(N.name.replace(/\([^)]*\)/g, ' '));
+  const F = folderSet([N], N.path);
+  const sp = span.length >= 2 ? span : null;
+  const qs = (folderCandidates(F, sp, pool) || pool).filter(q => guideIn(F, q, sp));
+  t = Object.assign({ id, name: N.name, notes: true, N, parent, cat: parent.cat || parent, F }, guideCounts(qs));
+  NF.set(id, t);
+  if (GCACHE) GCACHE.nodes.set(id, t);
+  return t;
+}
+// inFolder, with a quick first look: a question that has writers, none of them in this folder, and none of the
+// folder's works can only come in by the folder's tag or name, so the slow checks are skipped for it.
+function guideIn(F, q, span) {
+  // a theory or topic folder: its writers, its tags or its works (the Guide doesn't search the question's words)
+  if (F.topic) return (q.writers || []).some(w => inSet(F, w)) || hasFolderTag(F, q) || aboutWorks(q, setWorks(F));
+  if (!F.topic && (q.writers || []).length && !(q.writers || []).some(w => inSet(F, w))) {
+    const W = setWorks(F);
+    if (!taggedWorks(q).some(k => W.has(k) || F.works.has(k)) && !W.has(answerOf(q).flat.trim())
+      && !hasFolderTag(F, q) && !nameInLead(q, span) && !(q.topics || []).some(t => F.openTags.has(String(t).toLowerCase()))) return false;
+  }
+  if (inFolder(F, q, span)) return true;
+  // One writer's view of another (Johnson's Preface to Shakespeare): the question also goes under the
+  // other writer's age when it names that writer in the question or the answer.
+  const ws = q.writers || [];
+  return !F.topic && ws.length === 2 && !mixedList(q) && !NEGATED.test(leadOf(q).raw)
+    && ws.some(w => inSet(F, w) && (names(leadOf(q), w) || names(answerOf(q), w)));
+}
+// Look-up tables over the bank (writer, tag, work, lead word → questions), so each Guide folder only
+// checks the questions that could be in it.
+let GIDX = null;
+function guideIndex() {
+  if (GIDX && GIDX.src === S.questions) return GIDX;
+  const byW = new Map(), byTag = new Map(), byWork = new Map(), byAns = new Map(), noW = [], pos = new Map();
+  const push = (m, k, q) => { let a = m.get(k); if (!a) { a = []; m.set(k, a); } a.push(q); };
+  S.questions.forEach((q, i) => {
+    pos.set(q, i);
+    const ws = q.writers || [];
+    if (!ws.length) noW.push(q);
+    ws.forEach(w => push(byW, w, q));
+    (q.topics || []).forEach(t => push(byTag, String(t).toLowerCase(), q));
+    taggedWorks(q).forEach(k => push(byWork, k, q));
+    const a = answerOf(q).flat.trim(); if (a) push(byAns, a, q);
+  });
+  GIDX = { src: S.questions, byW, byTag, byWork, byAns, noW, pos, byLead: null };
+  return GIDX;
+}
+function leadIndex() {
+  const X = guideIndex();
+  if (!X.byLead) {
+    X.byLead = new Map();
+    S.questions.forEach(q => new Set(leadOf(q).seq).forEach(t => { let a = X.byLead.get(t); if (!a) { a = []; X.byLead.set(t, a); } a.push(q); }));
+  }
+  return X.byLead;
+}
+function titleIndex() {                 // known titles named in the text of questions that tag no writer
+  const X = guideIndex();
+  if (!X.byTitle) {
+    X.byTitle = new Map();
+    X.noW.forEach(q => titlesIn(q).forEach(t => { let a = X.byTitle.get(t); if (!a) { a = []; X.byTitle.set(t, a); } a.push(q); }));
+  }
+  return X.byTitle;
+}
+function inOrder(set, pool) {           // the candidates, kept in bank order and inside the pool
+  const X = guideIndex(), inPool = pool === S.questions ? null : new Set(pool);
+  return [...set].filter(q => !inPool || inPool.has(q)).sort((a, b) => X.pos.get(a) - X.pos.get(b));
+}
+function folderCandidates(F, span, pool) {
+  const X = guideIndex(), c = new Set(), add = a => (a || []).forEach(q => c.add(q));
+  if (F.topic) {                         // topic folders: writers, tags, works and the folder name anywhere
+    X.byW.forEach((a, w) => { if (inSet(F, w)) add(a); });
+    F.tags.forEach(t => add(X.byTag.get(t)));
+    const TI = titleIndex();
+    setWorks(F).forEach(k => { add(X.byWork.get(k)); add(TI.get(k)); });
+    return inOrder(c, pool);
+  }
+  X.byW.forEach((a, w) => { if (inSet(F, w)) add(a); });
+  const W = setWorks(F);
+  const TI = titleIndex();
+  W.forEach(k => { add(X.byWork.get(k)); add(X.byAns.get(k)); add(TI.get(k)); });
+  F.works.forEach(k => add(X.byWork.get(k)));
+  F.tags.forEach(t => add(X.byTag.get(t)));
+  F.openTags.forEach(t => add(X.byTag.get(t)));
+  if (span && span.length >= 2) add(leadIndex().get(ageTok(span[0])));
+  return inOrder(c, pool);
+}
+function nfKids(t) {                    // the Guide nodes of a folder's own folders (made when first opened)
+  if (!t.kidNodes) t.kidNodes = t.N ? shownKids(t.N).map(k => nfNode(k, t, t.qs)) : [];
+  return t.kidNodes;
+}
+function nfFind(id) {                   // a folder opened straight from a link: build the path down to it
+  const N = ages().find(n => nfId(n) === id);
+  if (!N) return null;
+  const chain = [];
+  for (let n = N; n; n = n.parent) if (!isWrapper(n)) chain.unshift(n);
+  const G = buildGuide();
+  let t = null;
+  for (const n of chain) {
+    const hit = NF.get(nfId(n)) || (t ? nfKids(t).find(k => k.N === n) : null);
+    if (!hit) return null;
+    t = hit;
+  }
+  return t && t.id === id ? t : G.nodes.get(id) || null;
+}
+// A Theory folder written in guide.json: its own tags, or a theorist on the question, or a critic on a criticism question.
+const PWORDS = new Map();
+const pwords = w => { let v = PWORDS.get(w); if (!v) { v = personWords(w); PWORDS.set(w, v); } return v; };
+function theoryNode(def, cat, Q, crit) {
+  const people = list => list.map(personWords);
+  const T = people(def.theorists || []), C = people(def.critics || []);
+  const tags = (def.tags || []).map(norm), broad = (def.broad || []).map(norm);
+  const memo = [new Map(), new Map()], lastT = new Set(T.map(a => a[a.length - 1])), lastC = new Set(C.map(a => a[a.length - 1]));
+  const has = (q, P) => { const m = memo[P === T ? 0 : 1], L = P === T ? lastT : lastC; return P.length && (q.writers || []).some(w => {
+    let v = m.get(w);
+    if (v === undefined) { const b = pwords(w); v = L.has(b[b.length - 1]) && P.some(a => samePerson(a, b) || samePerson(b, a)); m.set(w, v); }
+    return v;
+  }); };
+  const isCrit = q => (q.topics || []).some(x => crit.has(norm(x)));
+  const X = guideIndex(), cand = new Set(), add = a => (a || []).forEach(q => cand.add(q));
+  tags.forEach(t => add(X.byTag.get(t)));
+  X.byW.forEach((a, w) => { if (has({ writers: [w] }, T) || has({ writers: [w] }, C)) add(a); });
+  broad.forEach(t => add(X.byTag.get(t)));
+  const qs = def.rest ? [] : inOrder(cand, Q).filter(q => {
+    const s = qTagSet(q);
+    if (tags.some(x => s.has(x)) || has(q, T)) return true;
+    return (broad.length || C.length) && isCrit(q) && (broad.some(x => s.has(x)) || has(q, C));
+  });
+  const id = 'th:' + norm(def.name).replace(/[^a-z0-9]+/g, '-');
+  return Object.assign({ id, name: def.name, notes: true, theory: true, def, writersList: (def.theorists || []).concat(def.critics || []), cat }, guideCounts(qs));
+}
+function notesCard(c, legacy, Q) {
+  const cat = Object.assign({}, c, { notesCard: true, legacy });
+  const L = ages(), top = name => L.find(n => !n.parent && n.name === name);
+  let subs = [];
+  if (c.notes.folders) {                  // Theory: folders written in guide.json, plus folders of my notes list
+    const crit = new Set((c.notes.critTags || []).map(norm));
+    c.notes.folders.forEach(def => {
+      if (def.age) { const N = top(def.age); if (N) subs.push(nfNode(N, cat, Q)); }
+      else subs.push(theoryNode(def, cat, Q, crit));
+    });
+    const rest = subs.find(t => t.def && t.def.rest);
+    if (rest) {                           // "Literary Criticism": criticism questions no other folder took
+      const taken = new Set(); subs.forEach(t => t.qs.forEach(q => taken.add(q.id)));
+      Object.assign(rest, guideCounts(Q.filter(q => !taken.has(q.id) && (q.topics || []).some(x => crit.has(norm(x))))));
+    }
+  } else {
+    const roots = (c.notes.ages || []).map(top).filter(Boolean);
+    if (roots.length === 1) {             // one notes folder (American Writers): its own folders are the topics
+      const root = nfNode(roots[0], cat, Q);
+      cat.root = root;
+      subs = nfKids(root);
+    } else subs = roots.map(N => nfNode(N, cat, Q));
+  }
+  const ids = new Set(); subs.forEach(t => t.qs.forEach(q => ids.add(q.id)));
+  if (cat.root) cat.root.qs.forEach(q => ids.add(q.id));
+  const left = legacy.filter(q => !ids.has(q.id));
+  if (left.length) subs.push(Object.assign({ id: `${c.id}-other`, name: 'Not filed in my notes', isOther: true, cat }, guideCounts(left)));
+  left.forEach(q => ids.add(q.id));
+  return Object.assign(cat, guideCounts(Q.filter(q => ids.has(q.id))), { subs });
+}
 function buildGuide() {
   if (GCACHE) return GCACHE;
-  const cats = [], nodes = new Map(), Q = S.questions;
-  const counts = qs => {
-    const pyq = qs.filter(isPYQ);
-    return { qs, pyq, net: pyq.filter(q => q.exam === 'NET').length, gate: pyq.filter(q => q.exam === 'GATE').length, total: pyq.length };
-  };
+  NF.clear();
+  const cats = [], nodes = new Map(), Q = S.questions, counts = guideCounts;
   (S.guide.categories || []).forEach(c => {
     if (c.auto === 'unmatched') return;
     const inCat = Q.filter(q => matchAny(q, c.match, c.not));
@@ -1316,10 +1502,17 @@ function buildGuide() {
     const used = new Set(); subs.forEach(t => t.qs.forEach(q => used.add(q.id)));
     const left = inCat.filter(q => !used.has(q.id));
     if (left.length && subs.length) subs.push(Object.assign({ id: `${c.id}-other`, name: c.otherName || 'Other / not tagged to a topic', isOther: true, cat: c }, counts(left)));
-    const cat = Object.assign({}, c, counts(inCat), { subs });
+    const legacy = Object.assign({}, c, counts(inCat), { subs });
+    subs.forEach(t => nodes.set(t.id, t));                 // kept for the Syllabus links
+    let cat = legacy;
+    if (c.notes && ages().length) {
+      cat = notesCard(c, inCat, Q);
+      cat.subs.forEach(t => nodes.set(t.id, t));
+      if (cat.root) nodes.set(cat.root.id, cat.root);
+    }
     cats.push(cat); nodes.set(c.id, cat);
-    subs.forEach(t => nodes.set(t.id, t));
   });
+  NF.forEach((t, id) => nodes.set(id, t));
   const un = (S.guide.categories || []).find(c => c.auto === 'unmatched');
   if (un) {
     const seen = new Set();
@@ -1338,8 +1531,13 @@ function buildGuide() {
   GCACHE = { cats, nodes, allSubs };
   return GCACHE;
 }
-const gNode = id => buildGuide().nodes.get(id);
-const nodeLabel = t => t.cat ? `${t.cat.name} › ${t.name}` : t.name;
+const gNode = id => buildGuide().nodes.get(id) || (String(id).startsWith('nf:') ? nfFind(id) : null);
+const nodeLabel = t => {
+  if (!t.cat) return t.name;
+  const parts = [];
+  for (let p = t; p && p !== t.cat; p = p.parent) parts.unshift(p.name);
+  return `${t.cat.name} › ${parts.join(' › ')}`;
+};
 const nodeSub = t => `NET ${t.net} · GATE ${t.gate}${t.qs.length > t.total ? ` · ${t.qs.length - t.total} practice` : ''}`;
 
 function rowHTML(t, rank, showCat) {
@@ -1347,7 +1545,7 @@ function rowHTML(t, rank, showCat) {
   return `
     <button class="row ${empty ? 'empty' : ''}" data-act="openGuide" data-id="${esc(t.id)}">
       ${rank ? `<span class="rank">${rank}</span>` : ''}
-      <span class="grow">${showCat && t.cat ? `<span class="sub">${esc(t.cat.name)} ›</span><br>` : ''}<span class="name">${esc(t.name)}</span><br>
+      <span class="grow">${showCat && t.cat ? `<span class="sub">${esc(t.notes && t.parent && t.parent !== t.cat ? nodeLabel(t.parent) : t.cat.name)} ›</span><br>` : ''}<span class="name">${esc(t.name)}</span><br>
         <span class="sub">${empty ? 'No PYQs yet' : nodeSub(t)}</span></span>
       ${empty ? '' : `<span class="pill ${esc(t.level)}">${esc(t.level)}</span>`}<span class="chev">›</span>
     </button>`;
@@ -1357,6 +1555,11 @@ function guideListHTML() {
   if (toks.length) {
     const hit = t => toks.every(tok => tokenMatch(tok, words([t.name, t.cat ? t.cat.name : '', t.about || ''].join(' '))));
     const list = [...G.cats.filter(hit), ...G.allSubs.filter(hit)];
+    const have = new Set(list.map(t => t.id));
+    ages().filter(N => N.parent && !isWrapper(N) && toks.every(tok => tokenMatch(tok, words(N.path)))).forEach(N => {
+      const t = have.has(nfId(N)) ? null : gNode(nfId(N));
+      if (t) { have.add(t.id); list.push(t); }
+    });
     return list.length ? `<div class="list">${list.map(t => rowHTML(t, 0, true)).join('')}</div>` : '<p class="muted">No guide topics match.</p>';
   }
   if (S.guideMode === 'rank') {
@@ -1426,9 +1629,117 @@ function bankHTML(qs, kind, limit) {
   }).join('') + (qs.length > list.length ? `<p class="small muted">Showing ${list.length} of ${qs.length}. Use “Quiz me” to practise them all.</p>` : '');
 }
 
+/* ---------- Guide pages for the folders of my notes ---------- */
+function writerGroups(names) {          // "John Wilmot", "Earl of Rochester", "John Wilmot, Earl of Rochester" → one person
+  const groups = [];
+  names.forEach(n => {
+    const b = personWords(n), low = n.toLowerCase().replace(/\([^)]*\)/g, '').trim();
+    const g = groups.find(g => g.some(m => {
+      const a = personWords(m), ml = m.toLowerCase().replace(/\([^)]*\)/g, '').trim();
+      return /\(/.test(m) === /\(/.test(n) && (samePerson(a, b) || samePerson(b, a) || ml.includes(low) || low.includes(ml));
+    }));
+    if (g) g.push(n); else groups.push([n]);
+  });
+  return groups.map(g => ({ name: g.slice().sort((x, y) => y.length - x.length)[0], members: g }));
+}
+function personF(members) {
+  const F = { exact: null, people: members.filter(w => !/\(/.test(w)).map(personWords), strict: new Set(members.filter(w => /\(/.test(w)).map(strictKey)),
+    works: new Set(), wmemo: new Map(), byLast: new Map(), more: null };
+  F.people.forEach(a => { const k = a[a.length - 1]; let v = F.byLast.get(k); if (!v) { v = []; F.byLast.set(k, v); } v.push(a); });
+  return F;
+}
+// How often each writer of a folder was asked there, and which of their works.
+function writerRows(names, qs) {
+  ages();
+  return writerGroups(names).map(g => {
+    const F = personF(g.members);
+    const mine = new Set();
+    writerWorks().forEach(e => { if (g.members.some(m => inSet(F, e.name) || samePerson(personWords(m), e.toks))) e.works.forEach(t => mine.add(t)); });
+    const onSet = new Set(qs.filter(q => { const ws = q.writers || []; return ws.some(w => inSet(F, w)) && (ws.length === 1 || subjectOf(F, q)); }));
+    // match-the-following and chronology questions that list this writer count too (from the whole bank)
+    const X = guideIndex(), lists = new Set();
+    X.byW.forEach((a, w) => { if (inSet(F, w)) a.forEach(q => { if (!onSet.has(q) && (mixedList(q) || /match|chronolog/i.test(q.type || ''))) lists.add(q); }); });
+    const on = [...onSet, ...lists];
+    const wm = new Map();
+    on.forEach(q => (q.works || []).forEach(w => {
+      const k = normTitle(w);
+      if (!k || ((q.writers || []).length > 1 && !mine.has(k))) return;
+      const e = wm.get(k) || { title: w, n: 0 }; e.n++; wm.set(k, e);
+    }));
+    return { name: g.name, n: on.length, lists: lists.size, works: [...wm.values()].sort((a, b) => b.n - a.n || a.title.localeCompare(b.title)) };
+  });
+}
+function writerListHTML(rows) {
+  return rows.map(r => `
+    <details class="work wr ${r.n >= 3 ? 'pink' : ''}">
+      <summary><span class="grow">${esc(r.name)}</span><span class="pill ${r.n >= 3 ? 'High' : 'Low'}">${r.n ? `asked ${r.n}×` : 'not asked yet'}</span></summary>
+      ${r.lists ? `<p class="small muted" style="margin:0 0 4px">Includes ${plural(r.lists, 'match / chronology question')}.</p>` : ''}
+      ${r.works.length ? `<ul>${r.works.map(w => `<li>${esc(w.title)} <span class="muted">· ${w.n}×</span></li>`).join('')}</ul>` : `<p class="small muted">${r.n ? 'No single work named in these questions.' : 'No PYQ on this writer yet.'}</p>`}
+      ${r.n ? `<button class="chip soft" style="margin-top:8px" data-act="pickTopic" data-v="${esc(r.name)}">Quiz me on ${esc(r.name)}</button>` : ''}
+    </details>`).join('');
+}
+function rankSiblings(list) {
+  const ranked = list.slice().sort((a, b) => b.total - a.total), w = ranked.filter(t => t.total > 0).length;
+  ranked.forEach((t, i) => { if (!t.level || t.kidLevel) { t.kidLevel = true; t.level = t.total === 0 ? 'Low' : i < Math.ceil(w / 3) ? 'High' : i < Math.ceil((2 * w) / 3) ? 'Medium' : 'Low'; } });
+  return list;
+}
+function linesPatternsHTML(t) {
+  const types = freqList(t.pyq.map(q => ({ t: [q.type || 'MCQ'] })), 't');
+  const quoteQs = t.qs.filter(isQuoteQ);
+  return `
+  <section class="card">
+    <h3>Lines asked</h3>
+    ${quoteQs.length ? bankHTML(quoteQs, 'quote', 30) : '<p class="muted small">No quoted lines asked here yet.</p>'}
+  </section>
+  <section class="card">
+    <h3>Recurring question patterns</h3>
+    ${types.length ? `<div class="chips">${types.map(x => `<span class="chip soft">${esc(x.name)} ×${x.count}</span>`).join('')}</div>` : '<p class="muted small">Patterns appear once PYQs are tagged.</p>'}
+  </section>`;
+}
+function notesPageHTML(t, kids, own, back) {
+  const deep = t.N ? below(t.N).filter(n => !isWrapper(n)) : [];
+  const allNames = [...new Set(t.allNames || (t.theory ? t.writersList : t.N ? [...t.N.ownW, ...[].concat(...deep.map(n => n.ownW))] : []))];
+  const top = kids.length && allNames.length ? writerRows(allNames, t.qs).filter(r => r.n).sort((a, b) => b.n - a.n).slice(0, 12) : [];
+  const ownRows = own.length ? writerRows(own, t.qs) : [];
+  return `
+  ${back}
+  <section class="card">
+    <span class="label">${esc(t.isCard ? 'From my Lit notes' : nodeLabel(t).split(' › ').slice(0, -1).join(' › '))}</span>
+    <h2>${esc(t.isCard && t.icon ? t.icon + ' ' : '')}${esc(t.name)}</h2>
+    <div class="chips" style="margin-bottom:10px">
+      ${t.qs.length && t.level ? `<span class="pill ${esc(t.level)}">${esc(t.level)} weightage</span>` : ''}
+      <span class="pill Low">NET ${t.net}</span><span class="pill Low">GATE ${t.gate}</span>
+      ${t.qs.length > t.total ? `<span class="pill Low">${t.qs.length - t.total} practice</span>` : ''}
+    </div>
+    ${t.about ? `<p class="muted">${esc(t.about)}</p>` : ''}
+    ${t.qs.length ? `<button class="btn" data-act="quizTopic" data-id="${esc(t.id)}">Quiz me on ${t.isCard ? 'this section' : 'this folder'}</button>` : '<p class="muted small">No questions here yet. They appear automatically as papers are added.</p>'}
+  </section>
+  ${kids.length ? `<section class="card"><h3>Folders</h3><div class="list">${kids.map(k => rowHTML(k)).join('')}</div>
+    <p class="small muted" style="margin-top:8px">In my notes order. Greyed folders have no PYQs yet.</p></section>` : ''}
+  ${ownRows.length ? `<section class="card"><h3>${kids.length ? 'Writers directly in this folder' : 'Writers'}</h3>
+    <p class="small muted">In my notes order. Tap a writer for the works asked. Counts include match and chronology questions. Pink = asked 3 or more times.</p>${writerListHTML(ownRows)}</section>` : ''}
+  ${top.length ? `<section class="card"><h3>Most-asked writers here</h3>
+    <table class="freq">${top.map(r => `<tr class="${r.n >= 3 ? 'pink' : ''}"><td>${esc(r.name)}</td><td>${r.n}×</td></tr>`).join('')}</table>
+    <p class="small muted" style="margin-top:8px">Only writers filed in this folder of my notes.</p></section>` : ''}
+  ${t.qs.length ? linesPatternsHTML(t) : ''}`;
+}
+function notesCatView(c) {
+  const t = Object.assign({}, c, { N: c.root ? c.root.N : null, isCard: true });
+  if (!t.N) t.allNames = c.subs.filter(s => s.N).flatMap(s => [s.N, ...below(s.N)].flatMap(n => n.ownW));
+  return notesPageHTML(t, c.subs, c.root ? shownWriters(c.root.N) : [], '<button class="chip back" data-act="tab" data-tab="guide">‹ All sections</button>');
+}
+function notesFolderView(t) {
+  const up = t.parent && t.parent !== t.cat ? t.parent : t.cat;
+  const back = `<button class="chip back" data-act="openGuide" data-id="${esc(up.id)}">‹ ${esc(up.name)}</button>`;
+  const kids = t.N ? rankSiblings(nfKids(t)) : [];
+  const own = t.theory ? t.writersList : t.N ? shownWriters(t.N) : [];
+  return notesPageHTML(t, kids, own, back);
+}
+
 VIEWS.guideCat = () => {
   const c = gNode(S.guideId);
   if (!c || c.cat) return VIEWS.guide();
+  if (c.notesCard) return notesCatView(c);
   const bank = c.kind === 'quotes' ? 'quote' : c.kind === 'awards' ? 'award' : '';
   return `
   <button class="chip back" data-act="tab" data-tab="guide">‹ All sections</button>
@@ -1452,6 +1763,7 @@ VIEWS.guideCat = () => {
 VIEWS.guideTopic = () => {
   const t = gNode(S.guideId);
   if (!t || !t.cat) return VIEWS.guide();
+  if (t.notes) return notesFolderView(t);
   const liveWorks = freqList(t.pyq, 'works');
   const wmap = new Map();
   liveWorks.forEach(w => wmap.set(w.name.toLowerCase(), { title: w.name, count: w.count, frequent: w.frequent }));
