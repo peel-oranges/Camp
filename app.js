@@ -855,6 +855,10 @@ function filteredNow() {
   let raw = f.query.trim();
   S.searchInfo = null;
   if (!raw) return list;
+  // "Shakespeare + Dryden + Marlowe": each part searched on its own, then put together.
+  const parts = raw.split('+').map(x => x.trim()).filter(Boolean);
+  if (parts.length > 1) return comboSearch(list, parts);
+  raw = raw.replace(/\+/g, ' ').trim();
   const exact = list.filter(q => q.id.toLowerCase() === raw.toLowerCase());
   if (exact.length) return exact;
   // Exam, paper and section words ("gate", "net", "paper 1", "general aptitude", "shift 2") filter the list;
@@ -868,6 +872,46 @@ function filteredNow() {
   const res = searchWithYears(list, raw);
   if (P.any) S.searchInfo = Object.assign(S.searchInfo || {}, { scope: P.label });
   return res;
+}
+/* ---------- Combined search: "Indian poetics + literary theory", "Shakespeare + Dryden + Jonson" ----------
+   Every part is searched exactly as if it were typed alone (folder, age, writer, work or keyword).
+   Exam or year words typed in the FIRST part ("gate shakespeare + dryden", "2015-2025 shakespeare + dryden")
+   also apply to the other parts, unless a part has its own.
+   The results are taken turn by turn (one from each part, then the next…), so a 10-question quiz
+   without shuffle still has questions from every part. A question on two parts comes only once. */
+function searchPart(base, raw, carry) {
+  S.searchInfo = null;
+  const P = parseScope(raw);
+  const useP = P.any ? P : carry && carry.P;
+  const list = useP ? applyScope(base, useP) : base;
+  const rest = P.any ? P.rest : raw;
+  let res;
+  if (!rest) res = list;
+  else if (carry && carry.yr && !parseYears(rest)) {
+    const yr = carry.yr, keep = q => (qYear(q) ? yr.test(qYear(q)) : true);
+    res = searchList(list, rest, keep).filter(keep);
+    S.searchInfo = Object.assign(S.searchInfo || {}, { years: yr.label });
+  } else res = searchWithYears(list, rest);
+  if (useP) S.searchInfo = Object.assign(S.searchInfo || {}, { scope: useP.label });
+  return { res, info: S.searchInfo || {} };
+}
+function comboSearch(base, parts) {
+  const P0 = parseScope(parts[0]);
+  const yr0 = parseYears(P0.any ? P0.rest : parts[0]);
+  const carry = { P: P0.any ? P0 : null, yr: yr0 && queryTokens(yr0.rest).length ? yr0 : null };
+  const out = parts.map((p, i) => searchPart(base, p, i ? carry : null));
+  const seen = new Set(), list = [];
+  const longest = Math.max(...out.map(o => o.res.length));
+  for (let k = 0; k < longest; k++) out.forEach(o => { const q = o.res[k]; if (q && !seen.has(q.id)) { seen.add(q.id); list.push(q); } });
+  const withFolder = out.filter(o => o.info.folder && o.info.strict);
+  S.searchInfo = {
+    combo: out.map((o, i) => ({ name: o.info.folder || o.info.fix || parts[i], n: o.res.length, note: [o.info.scope, o.info.years && `PYQ years: ${o.info.years}`].filter(Boolean).join(', ') })),
+    shared: out.reduce((a, o) => a + o.res.length, 0) - list.length,
+    folder: withFolder.length ? 'combo' : '', writerMode: withFolder.every(o => o.info.writerMode),
+    strict: withFolder.reduce((a, o) => a + o.info.strict, 0), loose: withFolder.reduce((a, o) => a + o.info.loose, 0),
+    wide: !!S.filters.wide
+  };
+  return list;
 }
 function searchWithYears(list, raw) {
   const yr = parseYears(raw);
@@ -1053,6 +1097,13 @@ function matchText(n) {
   const fresh = filtered().filter(q => !seenQ(q)).length;
   const info = S.searchInfo || {};
   const notes = [];
+  if (info.combo) {
+    notes.push('Together: ' + info.combo.map(c => `${c.name} (${c.n}${c.note ? ', ' + c.note : ''})`).join(' + '));
+    if (info.combo.some(c => !c.n)) notes.push('a part with 0 found nothing, check its spelling');
+    if (info.shared) notes.push(`${plural(info.shared, 'question')} on more than one part counted once`);
+    if (info.wide && info.loose) notes.push(`${plural(info.loose, 'mixed/related question')} added`);
+    return `${notes.join(' · ')}. ${plural(n, 'question')} match (${fresh} new, ${n - fresh} done before) · this quiz will have ${take}`;
+  }
   if (info.scope) notes.push(info.scope);
   if (info.years) notes.push(`PYQ years: ${info.years}`);
   if (info.folder) {
@@ -1089,9 +1140,9 @@ VIEWS.home = () => {
 
   <section class="card">
     <h2>Build a quiz</h2>
-    <label class="field-label" for="q-search">Topic, writer, work, keyword, year or paper</label>
+    <label class="field-label" for="q-search">Topic, writer, work, keyword, year or paper · join with + to mix</label>
     <div class="search">
-      <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. 19th century Indian dramatists" autocomplete="off" enterkeyhint="search">
+      <input id="q-search" type="search" data-in="query" value="${esc(f.query)}" placeholder="e.g. Shakespeare + Dryden" autocomplete="off" enterkeyhint="search">
       <button class="icon-btn" id="clear-q" data-act="clearQuery" aria-label="Clear search" ${f.query ? '' : 'hidden'}>✕</button>
     </div>
     ${f.tags || f.group || f.work ? `<div class="chips" style="margin-top:10px"><button class="chip on" data-act="clearTags">${f.work ? 'Work' : 'Topic'}: ${esc(f.work ? f.work.label : f.group ? f.group.label : f.tags.join(' › '))} ✕</button></div>` : ''}
@@ -4490,7 +4541,7 @@ function paperBoxHTML() {
   const f = S.filters;
   S.paperGroups = null;
   if (f.tags || f.group || f.work) return '';
-  const raw = f.query.trim(); if (!raw) return '';
+  const raw = f.query.trim(); if (!raw || raw.includes('+')) return '';
   const P = parseScope(raw), yr = parseYears(P.rest);
   if (!yr) return '';
   const toks = queryTokens(yr.rest);
