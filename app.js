@@ -42,7 +42,10 @@ const addDays = n => { const d = new Date(); d.setDate(d.getDate() + n); return 
 const shuffleArr = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const fmtTime = ms => { const s = Math.round(ms / 1000), m = Math.floor(s / 60); return m ? `${m} min ${s % 60} s` : `${s} s`; };
 const plural = (n, w) => `${n} ${w}${n === 1 ? '' : 's'}`;
-const splitList = s => String(s || '').split(String(s).includes(';') ? ';' : ',').map(x => x.trim()).filter(Boolean);
+// Lists typed in forms: commas normally. When an item itself has a comma or a semicolon
+// ("Bright Lights, Big City"; "Henry Howard, Earl of Surrey"), the items are separated with | instead.
+const splitList = s => { s = String(s || ''); return s.split(s.includes('|') ? '|' : s.includes(';') ? ';' : ',').map(x => x.trim()).filter(Boolean); };
+const joinList = arr => { const a = (arr || []).map(x => String(x).trim()).filter(Boolean); return a.some(x => /[,;]/.test(x)) ? a.join(' | ') + (a.length === 1 ? ' |' : '') : a.join(', '); };
 
 let toastTimer;
 function toast(msg, ms = 2800) {
@@ -58,7 +61,11 @@ const ansList = q => letterList(q.answer);
 const hasOptions = q => !!q.options && LETTERS.some(L => q.options[L] != null && q.options[L] !== '');
 const isNAT = q => q.format === 'NAT' || !hasOptions(q);
 const isMSQ = q => !isNAT(q) && (q.format === 'MSQ' || ansList(q).length > 1);
-const toNum = s => parseFloat(String(s == null ? '' : s).trim().replace(',', '.'));
+const toNum = s => {
+  let t = String(s == null ? '' : s).trim();
+  if (/^-?\d{1,3}(,\d{2,3})*,\d{3}(\.\d+)?$/.test(t)) t = t.replace(/,/g, '');   // "6,200" or "1,00,000" = thousands commas
+  return parseFloat(t.replace(',', '.'));
+};
 function isCorrect(q, given) {
   if (given == null || given === '') return false;
   if (isNAT(q)) {
@@ -1189,7 +1196,7 @@ VIEWS.quiz = () => {
   const natBox = !nat ? '' : picked
     ? `<p class="nat-given">Your answer: <b>${esc(picked)}</b></p>`
     : `<label class="field-label" for="nat-input">Type your answer (a number)</label>
-       <input type="text" id="nat-input" inputmode="decimal" enterkeyhint="done" autocomplete="off" placeholder="e.g. 25">`;
+       <input type="text" id="nat-input" data-in="natDraft" inputmode="decimal" enterkeyhint="done" autocomplete="off" placeholder="e.g. 25" value="${esc(typeof sel === 'string' ? sel : '')}">`;
   const ok = picked ? isCorrect(q, picked) : false;
   const needsCheck = !picked && (multi || nat);
   const last = z.i >= n - 1;
@@ -2516,13 +2523,13 @@ VIEWS.adminForm = () => {
       <div>${txt('f-answer', 'Correct answer', q.answer == null ? 'A' : q.answer, 'A  or  A;C  or  25')}</div>
     </div>
     <p class="small muted">MCQ = one letter (A). MSQ = one or more letters (A;C). NAT = a number (25); options can stay empty.</p>
-    ${txt('f-topics', 'Topic tags (broad → narrow, commas)', (q.topics || []).join(', '), 'British, Victorian, Novel  (start with the section)')}
-    ${txt('f-writers', 'Writers (commas)', (q.writers || []).join(', '))}
-    ${txt('f-works', 'Works (commas, or ; if a title has a comma)', (q.works || []).join(String((q.works || []).join('')).includes(',') ? '; ' : ', '))}
+    ${txt('f-topics', 'Topic tags (broad → narrow, commas)', joinList(q.topics), 'British, Victorian, Novel  (start with the section)')}
+    ${txt('f-writers', 'Writers (commas; use | between names if a name has a comma)', joinList(q.writers))}
+    ${txt('f-works', 'Works (commas; use | between titles if a title has a comma)', joinList(q.works))}
     ${txt('f-source', 'Source label (optional)', q.source, 'Blank = made from exam, session, year, shift')}
     ${area('f-bite', 'Info bite (1–3 lines)', q.infoBite, 3)}
     ${area('f-study', 'Study whole text / lines asked (optional)', q.studyNote, 2)}
-    ${txt('f-keywords', 'Extra search keywords (optional)', (q.keywords || []).join(', '))}
+    ${txt('f-keywords', 'Extra search keywords (optional)', joinList(q.keywords))}
     <label class="check-row"><input type="checkbox" id="f-verified" ${q.verified === false ? '' : 'checked'}> Answer verified with the official key</label>
     ${txt('f-note', 'Note if anything is uncertain', q.note)}
     <button class="btn" data-act="saveQ" id="save-q">Save to GitHub</button>
@@ -2544,7 +2551,7 @@ function collectForm() {
   q.type = v('f-type');
   q.format = v('f-format');
   q.question = v('f-question');
-  q.options = {}; LETTERS.forEach(L => { q.options[L] = v('f-opt' + L); });
+  q.options = {}; LETTERS.forEach(L => { const t = v('f-opt' + L); if (t || q.format !== 'NAT') q.options[L] = t; });   // a number question keeps no empty options
   q.answer = q.format === 'NAT' ? v('f-answer') : letterList(v('f-answer')).join(';');
   q.topics = splitList(v('f-topics'));
   q.writers = splitList(v('f-writers'));
@@ -4241,6 +4248,18 @@ const BH_RE = /^\s*(exam|year|session|shift|topics?|writers?|works?|source|verif
 const BQ_RE = /^\s*(?:Q(?:uestion)?\s*\.?\s*)?(\d{1,3})\s*[.):]\s+(.*)$/i;
 const BF_RE = /^\s*(answer|ans|correct(?: answer)?|key|topics?|writers?|works?|info(?: ?bite)?|note|type|id|study(?: note)?|keywords?)\s*[:=]\s*(.*)$/i;
 const BO_RE = /^\s*[\(\[]?([A-Da-d1-4])[\)\].]\s+(.+)$/;
+// "Section: Paper 1" at the top of a paste. Without it, NET questions are filed as Paper 2 and
+// GATE questions by their number (1–10 GA, then Reasoning & Comprehension, then English), so that
+// "paper 2", "xh-c2" and full-paper mocks find pasted questions too.
+const BULK_SECS = { 'paper 1': 'Paper 1', 'paper i': 'Paper 1', 'paper 2': 'Paper 2', 'paper ii': 'Paper 2', 'paper 3': 'Paper 3', 'paper iii': 'Paper 3', ga: 'GA', 'general aptitude': 'GA', 'xh-b1': 'XH-B1', 'reasoning & comprehension': 'XH-B1', 'reasoning and comprehension': 'XH-B1', 'xh-c2': 'XH-C2', english: 'XH-C2' };
+function bulkSection(typed, exam, year, no) {
+  const k = String(typed || '').toLowerCase().replace(/\s+/g, ' ').replace(/paper\s*-\s*/, 'paper ').replace(/xh\s*-?\s*/, 'xh-').trim();
+  if (BULK_SECS[k]) return BULK_SECS[k];
+  if (exam === 'NET') return 'Paper 2';
+  if (exam === 'GATE') return no <= 10 ? 'GA' : no <= (year && year <= 2021 ? 25 : 26) ? 'XH-B1' : 'XH-C2';
+  return '';
+}
+const isBulkSec = typed => !!BULK_SECS[String(typed || '').toLowerCase().replace(/\s+/g, ' ').replace(/paper\s*-\s*/, 'paper ').replace(/xh\s*-?\s*/, 'xh-').trim()];
 function parseBulk(text) {
   const raw = String(text || '').trim();
   if (!raw) return { qs: [], errs: [] };
@@ -4289,7 +4308,7 @@ function parseBulk(text) {
     if (!nat) answer = [...new Set(answer)].sort().join(';');
     const tl = (fields.type || '').toLowerCase();
     const type = tl || (/list\s*-?\s*i\b|match/i.test(question) ? 'match' : /assertion/i.test(question) ? 'assertion-reason' : /chronolog|sequence|correct order|earliest to|order of (their )?(publication|appearance)/i.test(question) ? 'chronology' : /passage|read the (following )?(extract|lines|poem)/i.test(question) ? 'passage' : nat ? 'numerical' : 'MCQ');
-    const id = fields.id || (exam === 'GATE' ? `GATE-${yr || 'X'}-Q${b.no}` : exam === 'NET' ? `NET-${yr || 'X'}-${(sess || 'X').slice(0, 3).toUpperCase()}${sh ? '-S' + sh : ''}-Q${b.no}` : `${exam.toUpperCase()}-${yr || 'X'}-Q${b.no}`);
+    const id = fields.id || (exam === 'GATE' ? `GATE-${yr || 'X'}-Q${b.no}` : exam === 'NET' ? `NET-${yr || 'X'}-${(sess || 'X').slice(0, 3).toUpperCase()}${sh ? '-S' + sh : ''}${bulkSection(head.section, exam, 0, 0) === 'Paper 1' ? '-P1' : ''}-Q${b.no}` : `${exam.toUpperCase()}-${yr || 'X'}-Q${b.no}`);
     const q = { id, exam, question, options: nat ? {} : options, answer, type, format: nat ? 'NAT' : answer.includes(';') ? 'MSQ' : 'MCQ',
       topics: splitList(fields.topics || fields.topic || head.topic || ''), writers: splitList(fields.writers || fields.writer || head.writer || ''), works: splitList(fields.works || fields.work || head.work || ''),
       infoBite: fields.info || fields['info bite'] || fields.infobite || '', verified: !/^(no|false|n)$/i.test(head.verified || 'yes') };
@@ -4297,7 +4316,8 @@ function parseBulk(text) {
     if (sess) q.session = sess;
     if (sh) q.shift = /^\d+$/.test(sh) ? +sh : sh;
     if (head.source) q.source = head.source;
-    if (head.section) q.topics = q.topics.length ? q.topics : splitList(head.section);
+    if (head.section && !isBulkSec(head.section)) q.topics = q.topics.length ? q.topics : splitList(head.section);
+    if (exam === 'NET' || exam === 'GATE') { q.section = bulkSection(head.section, exam, +yr || 0, b.no); q.qno = b.no; }
     if (fields.note) q.note = fields.note;
     if (fields.study || fields['study note']) q.studyNote = fields.study || fields['study note'];
     if (fields.keywords || fields.keyword) q.keywords = splitList(fields.keywords || fields.keyword);
@@ -4333,6 +4353,8 @@ VIEWS.adminBulk = () => {
         <li><b>Answer:</b> a letter or number (B or 2); for more than one, <b>A, C</b>; for a number answer with no options, just the number.</li>
         <li>Optional lines under any question: <b>Topics:</b>, <b>Writers:</b>, <b>Works:</b>, <b>Info:</b>, <b>Note:</b>. A <b>Topics:</b> line at the top applies to every question that has none.</li>
         <li>Add <b>Verified: no</b> at the top if the answers are not from the final official key yet.</li>
+        <li>For a NET Paper 1, add <b>Section: Paper 1</b> at the top. Without it, NET questions are filed as Paper 2, and GATE questions by their number (1–10 General Aptitude, then Reasoning &amp; Comprehension, then English).</li>
+        <li>If a title or name has a comma in it, separate the items with <b>|</b> — for example <b>Works: Bright Lights, Big City | Less Than Zero</b>.</li>
       </ul>
       <button class="btn ghost" data-act="bulkExample">Fill in the example</button>
     </details>
@@ -4478,7 +4500,7 @@ function parseScope(raw) {
 function inScope(q, P) {
   if (P.exams.size && !P.exams.has(q.exam)) return false;
   if (P.secs.size && !P.secs.has(qSec(q))) return false;
-  if (P.shift && q.exam === 'NET' && shiftNum(q) !== P.shift) return false;
+  if (P.shift && (q.exam !== 'NET' || shiftNum(q) !== P.shift)) return false;   // only NET papers have shifts
   return true;
 }
 const applyScope = (list, P) => list.filter(q => inScope(q, P));
@@ -4827,7 +4849,11 @@ const MOCK_ACT = {
     go('quiz', true);
   }
 };
-const MOCK_IN = { mockNat: v => { const z = S.quiz; if (!z || !z.mock) return; z.sel[z.list[z.i].id] = v; saveMock(); } };
+const MOCK_IN = {
+  mockNat: v => { const z = S.quiz; if (!z || !z.mock) return; z.sel[z.list[z.i].id] = v; saveMock(); },
+  // normal quiz: keep the typed number if the screen is redrawn (Bookmark or "I guessed" tapped before Check answer)
+  natDraft: v => { const z = S.quiz; if (!z || z.mock) return; z.sel = z.sel || {}; z.sel[z.list[z.i].id] = v; }
+};
 
 (function addMockStyles() {
   const s = document.createElement('style');
