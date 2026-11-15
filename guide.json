@@ -72,7 +72,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -238,7 +239,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -348,7 +350,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -525,7 +528,8 @@
       "not": [
         "General Aptitude",
         "Reasoning & Comprehension",
-        "Sanskrit"
+        "Sanskrit",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -664,7 +668,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1385,7 +1390,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1479,7 +1485,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1606,7 +1613,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1687,7 +1695,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1735,7 +1744,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1837,7 +1847,8 @@
       ],
       "not": [
         "General Aptitude",
-        "Reasoning & Comprehension"
+        "Reasoning & Comprehension",
+        "Paper 1"
       ],
       "subtopics": [
         {
@@ -1900,6 +1911,132 @@
       ]
     },
     {
+      "id": "paper1",
+      "name": "NET Paper 1",
+      "icon": "①",
+      "about": "UGC NET Paper 1 (General Paper on Teaching & Research Aptitude) — compulsory for every NET subject. The ten units of the syllabus, each with its PYQs.",
+      "match": [
+        {
+          "any": [
+            "Paper 1"
+          ]
+        }
+      ],
+      "subtopics": [
+        {
+          "id": "p1g-teaching",
+          "name": "Teaching Aptitude",
+          "match": [
+            {
+              "any": [
+                "Teaching aptitude"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-research",
+          "name": "Research Aptitude",
+          "match": [
+            {
+              "any": [
+                "Research aptitude"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-rc",
+          "name": "Reading Comprehension",
+          "match": [
+            {
+              "any": [
+                "Reading comprehension",
+                "Comprehension"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-communication",
+          "name": "Communication",
+          "match": [
+            {
+              "any": [
+                "Communication"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-maths",
+          "name": "Mathematical Reasoning & Aptitude",
+          "match": [
+            {
+              "any": [
+                "Mathematical reasoning"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-logic",
+          "name": "Logical Reasoning",
+          "match": [
+            {
+              "any": [
+                "Logical reasoning"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-di",
+          "name": "Data Interpretation",
+          "match": [
+            {
+              "any": [
+                "Data interpretation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-ict",
+          "name": "Information & Communication Technology (ICT)",
+          "match": [
+            {
+              "any": [
+                "ICT"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-environment",
+          "name": "People, Development & Environment",
+          "match": [
+            {
+              "any": [
+                "Environment"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "p1g-highered",
+          "name": "Higher Education System",
+          "match": [
+            {
+              "any": [
+                "Higher education"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "aptitude",
       "name": "GATE Aptitude & Reasoning",
       "icon": "∑",
@@ -1909,14 +2046,9 @@
           "first": [
             "General Aptitude",
             "Reasoning & Comprehension"
-          ]
-        },
-        {
-          "first": [
-            "Paper 1"
           ],
-          "any": [
-            "Reading comprehension"
+          "none": [
+            "Paper 1"
           ]
         }
       ],

@@ -2516,6 +2516,11 @@ VIEWS.adminForm = () => {
       <div>${txt('f-session', 'Session', q.session, 'June')}</div>
       <div>${txt('f-shift', 'Shift', q.shift, '1')}</div>
     </div>
+    <div class="grid2">
+      <div><label class="field-label" for="f-section">Paper / section</label><select id="f-section"><option value="">— none (Probable / Abrams)</option>${FORM_SECS.map(x => `<option value="${x[0]}" ${(BULK_SECS[norm(q.section)] || q.section || '') === x[0] ? 'selected' : ''}>${x[1]}</option>`).join('')}</select></div>
+      <div>${txt('f-qno', 'Question no. in the paper', q.qno == null ? '' : q.qno, '37')}</div>
+    </div>
+    <p class="small muted">For a NET or GATE PYQ, choose its paper and type its number, so “paper 2” searches and full-paper mocks include it.</p>
     ${area('f-question', 'Question', q.question, 5, 'For match / chronology, put each list item on its own line')}
     ${LETTERS.map(L => area(`f-opt${L}`, `Option ${L}`, o[L], 2)).join('')}
     <div class="grid2">
@@ -2536,6 +2541,7 @@ VIEWS.adminForm = () => {
     ${S.edit ? `<button class="btn ghost danger" data-act="deleteQ" data-id="${esc(q.id)}">Delete this question</button>` : ''}
   </section>`;
 };
+const FORM_SECS = [['Paper 1', 'NET Paper 1'], ['Paper 2', 'NET Paper 2 (English)'], ['Paper 3', 'NET Paper 3 (till 2017)'], ['GA', 'GATE General Aptitude'], ['XH-B1', 'GATE XH-B1 Reasoning & Comprehension'], ['XH-C2', 'GATE XH-C2 English']];
 function collectForm() {
   const v = id => ($('#' + id).value || '').trim();
   const exam = v('f-exam');
@@ -2544,7 +2550,9 @@ function collectForm() {
   const keep = S.edit || {};
   // Keep any extra fields an existing question already has (for example section or qno).
   const q = Object.assign({}, keep, { id, exam });
-  ['year', 'session', 'shift', 'keywords', 'source', 'studyNote', 'note'].forEach(k => { delete q[k]; });
+  ['year', 'session', 'shift', 'keywords', 'source', 'studyNote', 'note', 'section', 'qno'].forEach(k => { delete q[k]; });
+  if (v('f-section')) q.section = v('f-section');
+  if (v('f-qno')) q.qno = /^\d+$/.test(v('f-qno')) ? +v('f-qno') : v('f-qno');
   const year = v('f-year'); if (year) q.year = /^\d+$/.test(year) ? +year : year;
   if (v('f-session')) q.session = v('f-session');
   if (v('f-shift')) q.shift = /^\d+$/.test(v('f-shift')) ? +v('f-shift') : v('f-shift');
@@ -5137,6 +5145,8 @@ const ACT = {
       if (q.format === 'MSQ' && n < 1) return toast('MSQ needs at least one answer letter, like A;C');
     }
     if (!q.topics.length) return toast('Please add at least one topic tag');
+    if ((q.exam === 'NET' || q.exam === 'GATE') && !q.section) return toast('Please choose the paper / section this PYQ is from');
+    if (q.section && ((q.exam === 'NET') !== /^Paper/.test(q.section))) return toast(q.exam === 'NET' ? 'A NET question needs Paper 1, 2 or 3' : q.exam === 'GATE' ? 'A GATE question needs GA, XH-B1 or XH-C2' : 'Probable and Abrams questions have no paper — set it to “none”');
     if (!orig && byId(q.id)) return toast('That ID already exists — choose another');
     if (orig && q.id !== orig && byId(q.id)) return toast('That ID already exists — choose another');
     const btn = $('#save-q'); btn.disabled = true; btn.textContent = 'Saving…';
